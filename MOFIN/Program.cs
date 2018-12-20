@@ -16,7 +16,8 @@ namespace MOFIN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //  Application.Run(new BarradeHerramientas());
+            Application.Run(new PruebadeMultiplesFormilarios());
         }
     }
 }
