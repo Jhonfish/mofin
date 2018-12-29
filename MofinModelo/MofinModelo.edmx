@@ -1,0 +1,1626 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MonitorOperacionesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="B_Buscados">
+          <Key>
+            <PropertyRef Name="ID_Sistema" />
+            <PropertyRef Name="Nombre" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="text" Nullable="false" />
+          <Property Name="Doc_ID" Type="char" MaxLength="20" />
+          <Property Name="Ente_Busca" Type="text" />
+          <Property Name="Fec_Busqueda" Type="date" />
+          <Property Name="Fec_Registro" Type="date" />
+          <Property Name="Pais_Busca" Type="char" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="C_Clientes">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="TipoPersona" Type="tinyint" Nullable="false" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="Doc_ID" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Nombre" Type="char" MaxLength="96" Nullable="false" />
+          <Property Name="Cliente_Punt" Type="tinyint" />
+          <Property Name="Benef_Punt" Type="tinyint" />
+          <Property Name="InfGen_Punt" Type="tinyint" />
+          <Property Name="ConstExped_Punt" Type="tinyint" />
+          <Property Name="CondEspSeguridad" Type="bit" />
+          <Property Name="IG_PaisNacim" Type="smallint" />
+          <Property Name="IG_Nacionalidad" Type="smallint" />
+          <Property Name="IG_PaisResid" Type="smallint" />
+          <Property Name="IG_Estado" Type="smallint" />
+          <Property Name="IG_PEP" Type="smallint" />
+          <Property Name="IG_Profesion" Type="smallint" />
+          <Property Name="IG_TipDocID" Type="smallint" />
+          <Property Name="IG_FecVencDocID" Type="date" />
+          <Property Name="IG_TipoPersJur" Type="smallint" />
+          <Property Name="IG_Edad" Type="smallint" />
+          <Property Name="IG_ActivComer" Type="smallint" />
+          <Property Name="IG_VolumOperac" Type="smallint" />
+          <Property Name="IG_Criptomoneda" Type="smallint" />
+          <Property Name="IG_TipoEstructura" Type="smallint" />
+          <Property Name="IG_Servicio1" Type="bit" />
+          <Property Name="IG_Servicio2" Type="bit" />
+          <Property Name="IG_Servicio3" Type="bit" />
+          <Property Name="IG_Servicio4" Type="bit" />
+          <Property Name="IG_Servicio5" Type="bit" />
+          <Property Name="IG_Servicio6" Type="bit" />
+          <Property Name="IG_Servicio7" Type="bit" />
+          <Property Name="IG_Servicio8" Type="bit" />
+          <Property Name="IG_Servicio9" Type="bit" />
+          <Property Name="IG_Servicio10" Type="bit" />
+          <Property Name="IG_Producto1" Type="bit" />
+          <Property Name="IG_Producto2" Type="bit" />
+          <Property Name="IG_Producto3" Type="bit" />
+          <Property Name="IG_Producto4" Type="bit" />
+          <Property Name="IG_Producto5" Type="bit" />
+          <Property Name="IG_Producto6" Type="bit" />
+          <Property Name="IG_Producto7" Type="bit" />
+          <Property Name="IG_Producto8" Type="bit" />
+          <Property Name="IG_Producto9" Type="bit" />
+          <Property Name="IG_Producto10" Type="bit" />
+          <Property Name="CE_Opc1" Type="bit" />
+          <Property Name="CE_Opc2" Type="bit" />
+          <Property Name="CE_Opc3" Type="bit" />
+          <Property Name="CE_Opc4" Type="bit" />
+          <Property Name="CE_Opc5" Type="bit" />
+          <Property Name="CE_Opc6" Type="bit" />
+          <Property Name="CE_Opc7" Type="bit" />
+          <Property Name="CE_Opc8" Type="bit" />
+          <Property Name="CE_Opc9" Type="bit" />
+          <Property Name="CE_Opc10" Type="bit" />
+          <Property Name="CE_Opc11" Type="bit" />
+          <Property Name="CE_Opc12" Type="bit" />
+          <Property Name="CE_Opc13" Type="bit" />
+          <Property Name="CE_Opc14" Type="bit" />
+          <Property Name="CE_Opc15" Type="bit" />
+          <Property Name="CE_Opc16" Type="bit" />
+          <Property Name="CE_Opc17" Type="bit" />
+          <Property Name="CE_Opc18" Type="bit" />
+          <Property Name="CE_Opc19" Type="bit" />
+          <Property Name="CE_Opc20" Type="bit" />
+          <Property Name="CE_Opc21" Type="bit" />
+          <Property Name="CE_Opc22" Type="bit" />
+          <Property Name="CE_Opc23" Type="bit" />
+          <Property Name="CE_Opc24" Type="bit" />
+          <Property Name="CE_Opc25" Type="bit" />
+          <Property Name="CE_Opc26" Type="bit" />
+          <Property Name="CE_Opc27" Type="bit" />
+          <Property Name="CE_Opc28" Type="bit" />
+          <Property Name="CE_Opc29" Type="bit" />
+          <Property Name="CE_Opc30" Type="bit" />
+          <Property Name="Observacion" Type="text" />
+          <Property Name="Ejecutivo" Type="char" MaxLength="30" />
+          <Property Name="NivelRiesgo" Type="smallint" />
+          <Property Name="PerfilFinanciero" Type="money" />
+          <Property Name="PeriodUsoCta" Type="tinyint" />
+          <Property Name="NroTransacciones" Type="tinyint" />
+          <Property Name="Fec_UltimAct" Type="date" />
+          <Property Name="Trim_Mes" Type="tinyint" />
+          <Property Name="Trim_Ano" Type="smallint" />
+          <Property Name="Trim_NroOperac" Type="smallint" />
+          <Property Name="Trim_MontoOperac" Type="money" />
+          <Property Name="MapaEmpresa" Type="text" />
+        </EntityType>
+        <EntityType Name="C_FirBenAcc">
+          <Key>
+            <PropertyRef Name="Cod_Cliente" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cod_Cliente" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="TipoVinculo" Type="tinyint" />
+          <Property Name="Doc_ID" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Fec_Vencimiento" Type="date" />
+          <Property Name="Nombre" Type="char" MaxLength="50" />
+          <Property Name="Edad" Type="smallint" />
+          <Property Name="PaisNacim" Type="smallint" />
+          <Property Name="Nacionalidad" Type="smallint" />
+          <Property Name="PaisResid" Type="smallint" />
+          <Property Name="Estado" Type="smallint" />
+          <Property Name="Profesion" Type="smallint" />
+          <Property Name="Criptomoneda" Type="smallint" />
+          <Property Name="VincEmpresa" Type="char" MaxLength="50" />
+          <Property Name="VincPorcent" Type="tinyint" />
+          <Property Name="PEP" Type="smallint" />
+          <Property Name="Puntuacion" Type="smallint" />
+          <Property Name="CondEspSeguridad" Type="bit" />
+        </EntityType>
+        <EntityType Name="C_HistActClientes">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+          <Property Name="FechaCambio" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="C_ValorItemConsExp">
+          <Key>
+            <PropertyRef Name="empresa" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="empresa" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="CE_Opc1" Type="tinyint" />
+          <Property Name="CE_Opc2" Type="tinyint" />
+          <Property Name="CE_Opc3" Type="tinyint" />
+          <Property Name="CE_Opc4" Type="tinyint" />
+          <Property Name="CE_Opc5" Type="tinyint" />
+          <Property Name="CE_Opc6" Type="tinyint" />
+          <Property Name="CE_Opc7" Type="tinyint" />
+          <Property Name="CE_Opc8" Type="tinyint" />
+          <Property Name="CE_Opc9" Type="tinyint" />
+          <Property Name="CE_Opc10" Type="tinyint" />
+          <Property Name="CE_Opc11" Type="tinyint" />
+          <Property Name="CE_Opc12" Type="tinyint" />
+          <Property Name="CE_Opc13" Type="tinyint" />
+          <Property Name="CE_Opc14" Type="tinyint" />
+          <Property Name="CE_Opc15" Type="tinyint" />
+          <Property Name="CE_Opc16" Type="tinyint" />
+          <Property Name="CE_Opc17" Type="tinyint" />
+          <Property Name="CE_Opc18" Type="tinyint" />
+          <Property Name="CE_Opc19" Type="tinyint" />
+          <Property Name="CE_Opc20" Type="tinyint" />
+          <Property Name="CE_Opc21" Type="tinyint" />
+          <Property Name="CE_Opc22" Type="tinyint" />
+          <Property Name="CE_Opc23" Type="tinyint" />
+          <Property Name="CE_Opc24" Type="tinyint" />
+          <Property Name="CE_Opc25" Type="tinyint" />
+          <Property Name="CE_Opc26" Type="tinyint" />
+          <Property Name="CE_Opc27" Type="tinyint" />
+          <Property Name="CE_Opc28" Type="tinyint" />
+          <Property Name="CE_Opc29" Type="tinyint" />
+          <Property Name="CE_Opc30" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="M_ActivComercial">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="smallint" Nullable="false" />
+          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Valor" Type="tinyint" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="bit" />
+        </EntityType>
+        <EntityType Name="M_Antiguedad">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="smallint" Nullable="false" />
+          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Valor" Type="tinyint" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="bit" />
+        </EntityType>
+        <EntityType Name="M_Criptomonedas">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="smallint" Nullable="false" />
+          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Valor" Type="tinyint" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="bit" />
+        </EntityType>
+        <EntityType Name="M_Edad">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" Nullable="false" />
+          <Property Name="Codigo" Type="smallint" Nullable="false" />
+          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Valor" Type="tinyint" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="bit" />
+        </EntityType>
+        <EntityType Name="M_Estados">
+          <Key>
+            <PropertyRef Name="Cod_Compuesto" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="smallint" Nullable="false" />
+          <Property Name="Cod_Pais" Type="smallint" />
+          <Property Name="Cod_Compuesto" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="text" />
+          <Property Name="Valor" Type="tinyint" />
+          <Property Name="CondEspSeguridad" Type="bit" />
+        </EntityType>
+        <EntityType Name="M_NivelRiesgo">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="smallint" Nullable="false" />
+          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="valor" Type="tinyint" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="M_Pais">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="smallint" Nullable="false" />
+          <Property Name="Cod_AlfaNum2" Type="text" Nullable="false" />
+          <Property Name="Cod_AlfaNum3" Type="text" Nullable="false" />
+          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Valor" Type="tinyint" />
+          <Property Name="CondEspSeguridad" Type="bit" />
+        </EntityType>
+        <EntityType Name="M_PEP">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="smallint" Nullable="false" />
+          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Valor" Type="tinyint" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="bit" />
+        </EntityType>
+        <EntityType Name="M_Productos">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="smallint" Nullable="false" />
+          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Valor" Type="tinyint" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="bit" />
+        </EntityType>
+        <EntityType Name="M_Profesiones">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="smallint" Nullable="false" />
+          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Valor" Type="tinyint" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="bit" />
+        </EntityType>
+        <EntityType Name="M_Servicios">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="smallint" Nullable="false" />
+          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Valor" Type="tinyint" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="bit" />
+        </EntityType>
+        <EntityType Name="M_TipoDocID">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="smallint" Nullable="false" />
+          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Valor" Type="tinyint" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="bit" />
+        </EntityType>
+        <EntityType Name="M_TipoEstructuraEmpresa">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="smallint" Nullable="false" />
+          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Valor" Type="tinyint" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="bit" />
+        </EntityType>
+        <EntityType Name="M_TipoPersJuridica">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="smallint" Nullable="false" />
+          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Valor" Type="tinyint" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="bit" />
+        </EntityType>
+        <EntityType Name="M_VolOperPersJur">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="smallint" Nullable="false" />
+          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Valor" Type="tinyint" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="bit" />
+        </EntityType>
+        <EntityType Name="M_VolOperPersNat">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="smallint" Nullable="false" />
+          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Valor" Type="tinyint" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="bit" />
+        </EntityType>
+        <EntityType Name="O_HistPerfOperac">
+          <Key>
+            <PropertyRef Name="Cod_Cliente" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tipo_Perfil" Type="tinyint" Nullable="false" />
+          <Property Name="Cod_Cliente" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Mto_Perfil" Type="money" Nullable="false" />
+          <Property Name="Nro_Transacciones" Type="tinyint" Nullable="false" />
+          <Property Name="Nivel_Riesgo" Type="char" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="O_Observaciones">
+          <Key>
+            <PropertyRef Name="Cod_Cliente" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tipo_Perfil" Type="tinyint" Nullable="false" />
+          <Property Name="Cod_Cliente" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="Observacion" Type="text" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_Operfinancieras' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="O_Operfinancieras">
+          <Key>
+            <PropertyRef Name="Tipo_Orden" />
+            <PropertyRef Name="Fec_Pacto" />
+            <PropertyRef Name="Doc_ID" />
+          </Key>
+          <Property Name="Tipo_Orden" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="Fec_Pacto" Type="date" Nullable="false" />
+          <Property Name="Doc_ID" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Cod_Cliente" Type="char" MaxLength="8" />
+          <Property Name="Nme_Cliente" Type="char" MaxLength="50" />
+          <Property Name="Fec_Cierre" Type="date" />
+          <Property Name="Fec_Valor" Type="date" />
+          <Property Name="Mto_Solicitado" Type="money" />
+          <Property Name="Mto_Pactado" Type="money" />
+          <Property Name="Cod_Titulo" Type="char" MaxLength="20" />
+          <Property Name="Precio_USD" Type="money" />
+          <Property Name="Efectivo" Type="money" />
+          <Property Name="Comision_Clie" Type="money" />
+          <Property Name="Cod_Contraparte" Type="char" MaxLength="10" />
+          <Property Name="Nme_Contraparte" Type="char" MaxLength="50" />
+          <Property Name="Agencia" Type="char" MaxLength="30" />
+          <Property Name="Sec_Operac" Type="int" />
+          <Property Name="Cod_Bloq" Type="int" />
+          <Property Name="Nro_OrdBCV" Type="int" />
+          <Property Name="Cta_USD" Type="char" MaxLength="35" />
+          <Property Name="Comprobante" Type="text" />
+          <Property Name="Hora_carga" Type="datetime" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="O_OperTransaccionales">
+          <Key>
+            <PropertyRef Name="Tipo_Orden" />
+            <PropertyRef Name="Fec_Pacto" />
+            <PropertyRef Name="Doc_ID" />
+            <PropertyRef Name="Cod_Cliente" />
+          </Key>
+          <Property Name="Tipo_Orden" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="Fec_Pacto" Type="date" Nullable="false" />
+          <Property Name="Doc_ID" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Cod_Cliente" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="Nme_Cliente" Type="char" MaxLength="50" />
+          <Property Name="Fec_Cierre" Type="date" />
+          <Property Name="Fec_Valor" Type="date" />
+          <Property Name="Monto_Pactado" Type="money" />
+          <Property Name="Tipo_Operacion" Type="char" MaxLength="20" />
+          <Property Name="Valor_Efectivo" Type="money" />
+          <Property Name="Grp_Cliente" Type="char" MaxLength="5" />
+          <Property Name="Comprobante" Type="text" />
+          <Property Name="Hora_Carga" Type="datetime" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="O_RepOperacional">
+          <Property Name="Fec_Generacion" Type="date" />
+          <Property Name="Fec_UltOperac" Type="date" />
+          <Property Name="Cod_Cliente" Type="char" MaxLength="8" />
+          <Property Name="Nme_cliente" Type="char" MaxLength="50" />
+          <Property Name="Doc_ID" Type="char" MaxLength="20" />
+          <Property Name="Niv_Riesgo" Type="char" MaxLength="10" />
+          <Property Name="Period_UsoCta" Type="char" MaxLength="20" />
+          <Property Name="Nro_Transac" Type="smallint" />
+          <Property Name="Perf_NroTransac" Type="tinyint" />
+          <Property Name="Porc_Transac" Type="smallint" />
+          <Property Name="Mto_Compras" Type="money" />
+          <Property Name="Mto_Ventas" Type="money" />
+          <Property Name="Tot_Operaciones" Type="money" />
+          <Property Name="Perf_Financiero" Type="money" />
+          <Property Name="Porc_Operaciones" Type="smallint" />
+          <Property Name="Alarma" Type="bit" />
+          <Property Name="Ejecutivo" Type="char" MaxLength="50" />
+          <Property Name="Comentario" Type="text" />
+        </EntityType>-->
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_C_FirBenAcc_C_Clientes">
+          <End Role="C_Clientes" Type="Self.C_Clientes" Multiplicity="1" />
+          <End Role="C_FirBenAcc" Type="Self.C_FirBenAcc" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="C_Clientes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="C_FirBenAcc">
+              <PropertyRef Name="Cod_Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_C_HistActClientes_C_Clientes">
+          <End Role="C_Clientes" Type="Self.C_Clientes" Multiplicity="1" />
+          <End Role="C_HistActClientes" Type="Self.C_HistActClientes" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="C_Clientes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="C_HistActClientes">
+              <PropertyRef Name="Codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_M_Estados_M_Pais">
+          <End Role="M_Pais" Type="Self.M_Pais" Multiplicity="0..1" />
+          <End Role="M_Estados" Type="Self.M_Estados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="M_Pais">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="M_Estados">
+              <PropertyRef Name="Cod_Pais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_O_HistPerfOperac_C_Clientes">
+          <End Role="C_Clientes" Type="Self.C_Clientes" Multiplicity="1" />
+          <End Role="O_HistPerfOperac" Type="Self.O_HistPerfOperac" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="C_Clientes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="O_HistPerfOperac">
+              <PropertyRef Name="Cod_Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_O_Observaciones_C_Clientes">
+          <End Role="C_Clientes" Type="Self.C_Clientes" Multiplicity="1" />
+          <End Role="O_Observaciones" Type="Self.O_Observaciones" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="C_Clientes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="O_Observaciones">
+              <PropertyRef Name="Cod_Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MonitorOperacionesModelStoreContainer">
+          <EntitySet Name="C_Clientes" EntityType="Self.C_Clientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="C_FirBenAcc" EntityType="Self.C_FirBenAcc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="C_HistActClientes" EntityType="Self.C_HistActClientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="C_ValorItemConsExp" EntityType="Self.C_ValorItemConsExp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_ActivComercial" EntityType="Self.M_ActivComercial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_Antiguedad" EntityType="Self.M_Antiguedad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_Criptomonedas" EntityType="Self.M_Criptomonedas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_Edad" EntityType="Self.M_Edad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_Estados" EntityType="Self.M_Estados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_NivelRiesgo" EntityType="Self.M_NivelRiesgo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_Pais" EntityType="Self.M_Pais" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_PEP" EntityType="Self.M_PEP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_Productos" EntityType="Self.M_Productos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_Profesiones" EntityType="Self.M_Profesiones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_Servicios" EntityType="Self.M_Servicios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_TipoDocID" EntityType="Self.M_TipoDocID" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_TipoEstructuraEmpresa" EntityType="Self.M_TipoEstructuraEmpresa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_TipoPersJuridica" EntityType="Self.M_TipoPersJuridica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_VolOperPersJur" EntityType="Self.M_VolOperPersJur" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_VolOperPersNat" EntityType="Self.M_VolOperPersNat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="O_HistPerfOperac" EntityType="Self.O_HistPerfOperac" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="O_Observaciones" EntityType="Self.O_Observaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="B_Buscados" EntityType="Self.B_Buscados" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [B_Buscados].[ID_Sistema] AS [ID_Sistema], 
+    [B_Buscados].[Nombre] AS [Nombre], 
+    [B_Buscados].[Doc_ID] AS [Doc_ID], 
+    [B_Buscados].[Ente_Busca] AS [Ente_Busca], 
+    [B_Buscados].[Fec_Busqueda] AS [Fec_Busqueda], 
+    [B_Buscados].[Fec_Registro] AS [Fec_Registro], 
+    [B_Buscados].[Pais_Busca] AS [Pais_Busca]
+    FROM [dbo].[B_Buscados] AS [B_Buscados]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="O_Operfinancieras" EntityType="Self.O_Operfinancieras" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [O_Operfinancieras].[Tipo_Orden] AS [Tipo_Orden], 
+    [O_Operfinancieras].[Fec_Pacto] AS [Fec_Pacto], 
+    [O_Operfinancieras].[Doc_ID] AS [Doc_ID], 
+    [O_Operfinancieras].[Cod_Cliente] AS [Cod_Cliente], 
+    [O_Operfinancieras].[Nme_Cliente] AS [Nme_Cliente], 
+    [O_Operfinancieras].[Fec_Cierre] AS [Fec_Cierre], 
+    [O_Operfinancieras].[Fec_Valor] AS [Fec_Valor], 
+    [O_Operfinancieras].[Mto_Solicitado] AS [Mto_Solicitado], 
+    [O_Operfinancieras].[Mto_Pactado] AS [Mto_Pactado], 
+    [O_Operfinancieras].[Cod_Titulo] AS [Cod_Titulo], 
+    [O_Operfinancieras].[Precio_USD] AS [Precio_USD], 
+    [O_Operfinancieras].[Efectivo] AS [Efectivo], 
+    [O_Operfinancieras].[Comision_Clie] AS [Comision_Clie], 
+    [O_Operfinancieras].[Cod_Contraparte] AS [Cod_Contraparte], 
+    [O_Operfinancieras].[Nme_Contraparte] AS [Nme_Contraparte], 
+    [O_Operfinancieras].[Agencia] AS [Agencia], 
+    [O_Operfinancieras].[Sec_Operac] AS [Sec_Operac], 
+    [O_Operfinancieras].[Cod_Bloq] AS [Cod_Bloq], 
+    [O_Operfinancieras].[Nro_OrdBCV] AS [Nro_OrdBCV], 
+    [O_Operfinancieras].[Cta_USD] AS [Cta_USD], 
+    [O_Operfinancieras].[Comprobante] AS [Comprobante], 
+    [O_Operfinancieras].[Hora_carga] AS [Hora_carga]
+    FROM [dbo].[O_Operfinancieras] AS [O_Operfinancieras]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="O_OperTransaccionales" EntityType="Self.O_OperTransaccionales" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [O_OperTransaccionales].[Tipo_Orden] AS [Tipo_Orden], 
+    [O_OperTransaccionales].[Fec_Pacto] AS [Fec_Pacto], 
+    [O_OperTransaccionales].[Doc_ID] AS [Doc_ID], 
+    [O_OperTransaccionales].[Cod_Cliente] AS [Cod_Cliente], 
+    [O_OperTransaccionales].[Nme_Cliente] AS [Nme_Cliente], 
+    [O_OperTransaccionales].[Fec_Cierre] AS [Fec_Cierre], 
+    [O_OperTransaccionales].[Fec_Valor] AS [Fec_Valor], 
+    [O_OperTransaccionales].[Monto_Pactado] AS [Monto_Pactado], 
+    [O_OperTransaccionales].[Tipo_Operacion] AS [Tipo_Operacion], 
+    [O_OperTransaccionales].[Valor_Efectivo] AS [Valor_Efectivo], 
+    [O_OperTransaccionales].[Grp_Cliente] AS [Grp_Cliente], 
+    [O_OperTransaccionales].[Comprobante] AS [Comprobante], 
+    [O_OperTransaccionales].[Hora_Carga] AS [Hora_Carga]
+    FROM [dbo].[O_OperTransaccionales] AS [O_OperTransaccionales]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_C_FirBenAcc_C_Clientes" Association="Self.FK_C_FirBenAcc_C_Clientes">
+            <End Role="C_Clientes" EntitySet="C_Clientes" />
+            <End Role="C_FirBenAcc" EntitySet="C_FirBenAcc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_C_HistActClientes_C_Clientes" Association="Self.FK_C_HistActClientes_C_Clientes">
+            <End Role="C_Clientes" EntitySet="C_Clientes" />
+            <End Role="C_HistActClientes" EntitySet="C_HistActClientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_M_Estados_M_Pais" Association="Self.FK_M_Estados_M_Pais">
+            <End Role="M_Pais" EntitySet="M_Pais" />
+            <End Role="M_Estados" EntitySet="M_Estados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_O_HistPerfOperac_C_Clientes" Association="Self.FK_O_HistPerfOperac_C_Clientes">
+            <End Role="C_Clientes" EntitySet="C_Clientes" />
+            <End Role="O_HistPerfOperac" EntitySet="O_HistPerfOperac" />
+          </AssociationSet>
+          <AssociationSet Name="FK_O_Observaciones_C_Clientes" Association="Self.FK_O_Observaciones_C_Clientes">
+            <End Role="C_Clientes" EntitySet="C_Clientes" />
+            <End Role="O_Observaciones" EntitySet="O_Observaciones" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MonitorOperacionesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C_Clientes">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TipoPersona" Type="Byte" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" />
+          <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="96" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Cliente_Punt" Type="Byte" />
+          <Property Name="Benef_Punt" Type="Byte" />
+          <Property Name="InfGen_Punt" Type="Byte" />
+          <Property Name="ConstExped_Punt" Type="Byte" />
+          <Property Name="CondEspSeguridad" Type="Boolean" />
+          <Property Name="IG_PaisNacim" Type="Int16" />
+          <Property Name="IG_Nacionalidad" Type="Int16" />
+          <Property Name="IG_PaisResid" Type="Int16" />
+          <Property Name="IG_Estado" Type="Int16" />
+          <Property Name="IG_PEP" Type="Int16" />
+          <Property Name="IG_Profesion" Type="Int16" />
+          <Property Name="IG_TipDocID" Type="Int16" />
+          <Property Name="IG_FecVencDocID" Type="DateTime" Precision="0" />
+          <Property Name="IG_TipoPersJur" Type="Int16" />
+          <Property Name="IG_Edad" Type="Int16" />
+          <Property Name="IG_ActivComer" Type="Int16" />
+          <Property Name="IG_VolumOperac" Type="Int16" />
+          <Property Name="IG_Criptomoneda" Type="Int16" />
+          <Property Name="IG_TipoEstructura" Type="Int16" />
+          <Property Name="IG_Servicio1" Type="Boolean" />
+          <Property Name="IG_Servicio2" Type="Boolean" />
+          <Property Name="IG_Servicio3" Type="Boolean" />
+          <Property Name="IG_Servicio4" Type="Boolean" />
+          <Property Name="IG_Servicio5" Type="Boolean" />
+          <Property Name="IG_Servicio6" Type="Boolean" />
+          <Property Name="IG_Servicio7" Type="Boolean" />
+          <Property Name="IG_Servicio8" Type="Boolean" />
+          <Property Name="IG_Servicio9" Type="Boolean" />
+          <Property Name="IG_Servicio10" Type="Boolean" />
+          <Property Name="IG_Producto1" Type="Boolean" />
+          <Property Name="IG_Producto2" Type="Boolean" />
+          <Property Name="IG_Producto3" Type="Boolean" />
+          <Property Name="IG_Producto4" Type="Boolean" />
+          <Property Name="IG_Producto5" Type="Boolean" />
+          <Property Name="IG_Producto6" Type="Boolean" />
+          <Property Name="IG_Producto7" Type="Boolean" />
+          <Property Name="IG_Producto8" Type="Boolean" />
+          <Property Name="IG_Producto9" Type="Boolean" />
+          <Property Name="IG_Producto10" Type="Boolean" />
+          <Property Name="CE_Opc1" Type="Boolean" />
+          <Property Name="CE_Opc2" Type="Boolean" />
+          <Property Name="CE_Opc3" Type="Boolean" />
+          <Property Name="CE_Opc4" Type="Boolean" />
+          <Property Name="CE_Opc5" Type="Boolean" />
+          <Property Name="CE_Opc6" Type="Boolean" />
+          <Property Name="CE_Opc7" Type="Boolean" />
+          <Property Name="CE_Opc8" Type="Boolean" />
+          <Property Name="CE_Opc9" Type="Boolean" />
+          <Property Name="CE_Opc10" Type="Boolean" />
+          <Property Name="CE_Opc11" Type="Boolean" />
+          <Property Name="CE_Opc12" Type="Boolean" />
+          <Property Name="CE_Opc13" Type="Boolean" />
+          <Property Name="CE_Opc14" Type="Boolean" />
+          <Property Name="CE_Opc15" Type="Boolean" />
+          <Property Name="CE_Opc16" Type="Boolean" />
+          <Property Name="CE_Opc17" Type="Boolean" />
+          <Property Name="CE_Opc18" Type="Boolean" />
+          <Property Name="CE_Opc19" Type="Boolean" />
+          <Property Name="CE_Opc20" Type="Boolean" />
+          <Property Name="CE_Opc21" Type="Boolean" />
+          <Property Name="CE_Opc22" Type="Boolean" />
+          <Property Name="CE_Opc23" Type="Boolean" />
+          <Property Name="CE_Opc24" Type="Boolean" />
+          <Property Name="CE_Opc25" Type="Boolean" />
+          <Property Name="CE_Opc26" Type="Boolean" />
+          <Property Name="CE_Opc27" Type="Boolean" />
+          <Property Name="CE_Opc28" Type="Boolean" />
+          <Property Name="CE_Opc29" Type="Boolean" />
+          <Property Name="CE_Opc30" Type="Boolean" />
+          <Property Name="Observacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Ejecutivo" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="NivelRiesgo" Type="Int16" />
+          <Property Name="PerfilFinanciero" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PeriodUsoCta" Type="Byte" />
+          <Property Name="NroTransacciones" Type="Byte" />
+          <Property Name="Fec_UltimAct" Type="DateTime" Precision="0" />
+          <Property Name="Trim_Mes" Type="Byte" />
+          <Property Name="Trim_Ano" Type="Int16" />
+          <Property Name="Trim_NroOperac" Type="Int16" />
+          <Property Name="Trim_MontoOperac" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MapaEmpresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="C_FirBenAcc" Relationship="Self.FK_C_FirBenAcc_C_Clientes" FromRole="C_Clientes" ToRole="C_FirBenAcc" />
+          <NavigationProperty Name="C_HistActClientes" Relationship="Self.FK_C_HistActClientes_C_Clientes" FromRole="C_Clientes" ToRole="C_HistActClientes" />
+          <NavigationProperty Name="O_HistPerfOperac" Relationship="Self.FK_O_HistPerfOperac_C_Clientes" FromRole="C_Clientes" ToRole="O_HistPerfOperac" />
+          <NavigationProperty Name="O_Observaciones" Relationship="Self.FK_O_Observaciones_C_Clientes" FromRole="C_Clientes" ToRole="O_Observaciones" />
+        </EntityType>
+        <EntityType Name="C_FirBenAcc">
+          <Key>
+            <PropertyRef Name="Cod_Cliente" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cod_Cliente" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TipoVinculo" Type="Byte" />
+          <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Fec_Vencimiento" Type="DateTime" Precision="0" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Edad" Type="Int16" />
+          <Property Name="PaisNacim" Type="Int16" />
+          <Property Name="Nacionalidad" Type="Int16" />
+          <Property Name="PaisResid" Type="Int16" />
+          <Property Name="Estado" Type="Int16" />
+          <Property Name="Profesion" Type="Int16" />
+          <Property Name="Criptomoneda" Type="Int16" />
+          <Property Name="VincEmpresa" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="VincPorcent" Type="Byte" />
+          <Property Name="PEP" Type="Int16" />
+          <Property Name="Puntuacion" Type="Int16" />
+          <Property Name="CondEspSeguridad" Type="Boolean" />
+          <NavigationProperty Name="C_Clientes" Relationship="Self.FK_C_FirBenAcc_C_Clientes" FromRole="C_FirBenAcc" ToRole="C_Clientes" />
+        </EntityType>
+        <EntityType Name="C_HistActClientes">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <Property Name="FechaCambio" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="C_Clientes" Relationship="Self.FK_C_HistActClientes_C_Clientes" FromRole="C_HistActClientes" ToRole="C_Clientes" />
+        </EntityType>
+        <EntityType Name="C_ValorItemConsExp">
+          <Key>
+            <PropertyRef Name="empresa" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="empresa" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CE_Opc1" Type="Byte" />
+          <Property Name="CE_Opc2" Type="Byte" />
+          <Property Name="CE_Opc3" Type="Byte" />
+          <Property Name="CE_Opc4" Type="Byte" />
+          <Property Name="CE_Opc5" Type="Byte" />
+          <Property Name="CE_Opc6" Type="Byte" />
+          <Property Name="CE_Opc7" Type="Byte" />
+          <Property Name="CE_Opc8" Type="Byte" />
+          <Property Name="CE_Opc9" Type="Byte" />
+          <Property Name="CE_Opc10" Type="Byte" />
+          <Property Name="CE_Opc11" Type="Byte" />
+          <Property Name="CE_Opc12" Type="Byte" />
+          <Property Name="CE_Opc13" Type="Byte" />
+          <Property Name="CE_Opc14" Type="Byte" />
+          <Property Name="CE_Opc15" Type="Byte" />
+          <Property Name="CE_Opc16" Type="Byte" />
+          <Property Name="CE_Opc17" Type="Byte" />
+          <Property Name="CE_Opc18" Type="Byte" />
+          <Property Name="CE_Opc19" Type="Byte" />
+          <Property Name="CE_Opc20" Type="Byte" />
+          <Property Name="CE_Opc21" Type="Byte" />
+          <Property Name="CE_Opc22" Type="Byte" />
+          <Property Name="CE_Opc23" Type="Byte" />
+          <Property Name="CE_Opc24" Type="Byte" />
+          <Property Name="CE_Opc25" Type="Byte" />
+          <Property Name="CE_Opc26" Type="Byte" />
+          <Property Name="CE_Opc27" Type="Byte" />
+          <Property Name="CE_Opc28" Type="Byte" />
+          <Property Name="CE_Opc29" Type="Byte" />
+          <Property Name="CE_Opc30" Type="Byte" />
+        </EntityType>
+        <EntityType Name="M_ActivComercial">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="Int16" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Valor" Type="Byte" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="M_Antiguedad">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="Int16" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Valor" Type="Byte" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="M_Criptomonedas">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="Int16" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Valor" Type="Byte" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="M_Edad">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" />
+          <Property Name="Codigo" Type="Int16" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Valor" Type="Byte" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="M_Estados">
+          <Key>
+            <PropertyRef Name="Cod_Compuesto" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="Int16" Nullable="false" />
+          <Property Name="Cod_Compuesto" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Valor" Type="Byte" />
+          <Property Name="CondEspSeguridad" Type="Boolean" />
+          <NavigationProperty Name="M_Pais" Relationship="Self.FK_M_Estados_M_Pais" FromRole="M_Estados" ToRole="M_Pais" />
+        </EntityType>
+        <EntityType Name="M_NivelRiesgo">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="Int16" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="valor" Type="Byte" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="M_Pais">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="Int16" Nullable="false" />
+          <Property Name="Cod_AlfaNum2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cod_AlfaNum3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Valor" Type="Byte" />
+          <Property Name="CondEspSeguridad" Type="Boolean" />
+          <NavigationProperty Name="M_Estados" Relationship="Self.FK_M_Estados_M_Pais" FromRole="M_Pais" ToRole="M_Estados" />
+        </EntityType>
+        <EntityType Name="M_PEP">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="Int16" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Valor" Type="Byte" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="M_Productos">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="Int16" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Valor" Type="Byte" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="M_Profesiones">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="Int16" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Valor" Type="Byte" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="M_Servicios">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="Int16" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Valor" Type="Byte" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="M_TipoDocID">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="Int16" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Valor" Type="Byte" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="M_TipoEstructuraEmpresa">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="Int16" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Valor" Type="Byte" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="M_TipoPersJuridica">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="Int16" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Valor" Type="Byte" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="M_VolOperPersJur">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="Int16" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Valor" Type="Byte" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="M_VolOperPersNat">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="Int16" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Valor" Type="Byte" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="O_HistPerfOperac">
+          <Key>
+            <PropertyRef Name="Cod_Cliente" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tipo_Perfil" Type="Byte" Nullable="false" />
+          <Property Name="Cod_Cliente" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Mto_Perfil" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Nro_Transacciones" Type="Byte" Nullable="false" />
+          <Property Name="Nivel_Riesgo" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="C_Clientes" Relationship="Self.FK_O_HistPerfOperac_C_Clientes" FromRole="O_HistPerfOperac" ToRole="C_Clientes" />
+        </EntityType>
+        <EntityType Name="O_Observaciones">
+          <Key>
+            <PropertyRef Name="Cod_Cliente" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tipo_Perfil" Type="Byte" Nullable="false" />
+          <Property Name="Cod_Cliente" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Observacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="C_Clientes" Relationship="Self.FK_O_Observaciones_C_Clientes" FromRole="O_Observaciones" ToRole="C_Clientes" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="B_Buscados">
+          <Key>
+            <PropertyRef Name="ID_Sistema" />
+            <PropertyRef Name="Nombre" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="Ente_Busca" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Fec_Busqueda" Type="DateTime" Precision="0" />
+          <Property Name="Fec_Registro" Type="DateTime" Precision="0" />
+          <Property Name="Pais_Busca" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="O_Operfinancieras">
+          <Key>
+            <PropertyRef Name="Tipo_Orden" />
+            <PropertyRef Name="Fec_Pacto" />
+            <PropertyRef Name="Doc_ID" />
+          </Key>
+          <Property Name="Tipo_Orden" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Fec_Pacto" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Cod_Cliente" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="Nme_Cliente" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Fec_Cierre" Type="DateTime" Precision="0" />
+          <Property Name="Fec_Valor" Type="DateTime" Precision="0" />
+          <Property Name="Mto_Solicitado" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Mto_Pactado" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Cod_Titulo" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="Precio_USD" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Efectivo" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Comision_Clie" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Cod_Contraparte" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Nme_Contraparte" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Agencia" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="Sec_Operac" Type="Int32" />
+          <Property Name="Cod_Bloq" Type="Int32" />
+          <Property Name="Nro_OrdBCV" Type="Int32" />
+          <Property Name="Cta_USD" Type="String" MaxLength="35" FixedLength="true" Unicode="false" />
+          <Property Name="Comprobante" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Hora_carga" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="O_OperTransaccionales">
+          <Key>
+            <PropertyRef Name="Tipo_Orden" />
+            <PropertyRef Name="Fec_Pacto" />
+            <PropertyRef Name="Doc_ID" />
+            <PropertyRef Name="Cod_Cliente" />
+          </Key>
+          <Property Name="Tipo_Orden" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Fec_Pacto" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Cod_Cliente" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Nme_Cliente" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Fec_Cierre" Type="DateTime" Precision="0" />
+          <Property Name="Fec_Valor" Type="DateTime" Precision="0" />
+          <Property Name="Monto_Pactado" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Tipo_Operacion" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="Valor_Efectivo" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Grp_Cliente" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="Comprobante" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Hora_Carga" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="FK_C_FirBenAcc_C_Clientes">
+          <End Role="C_Clientes" Type="Self.C_Clientes" Multiplicity="1" />
+          <End Role="C_FirBenAcc" Type="Self.C_FirBenAcc" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="C_Clientes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="C_FirBenAcc">
+              <PropertyRef Name="Cod_Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_C_HistActClientes_C_Clientes">
+          <End Role="C_Clientes" Type="Self.C_Clientes" Multiplicity="1" />
+          <End Role="C_HistActClientes" Type="Self.C_HistActClientes" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="C_Clientes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="C_HistActClientes">
+              <PropertyRef Name="Codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_O_HistPerfOperac_C_Clientes">
+          <End Role="C_Clientes" Type="Self.C_Clientes" Multiplicity="1" />
+          <End Role="O_HistPerfOperac" Type="Self.O_HistPerfOperac" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="C_Clientes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="O_HistPerfOperac">
+              <PropertyRef Name="Cod_Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_O_Observaciones_C_Clientes">
+          <End Role="C_Clientes" Type="Self.C_Clientes" Multiplicity="1" />
+          <End Role="O_Observaciones" Type="Self.O_Observaciones" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="C_Clientes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="O_Observaciones">
+              <PropertyRef Name="Cod_Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_M_Estados_M_Pais">
+          <End Role="M_Pais" Type="Self.M_Pais" Multiplicity="0..1" />
+          <End Role="M_Estados" Type="Self.M_Estados" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="MonitorOperacionesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C_Clientes" EntityType="Self.C_Clientes" />
+          <EntitySet Name="C_FirBenAcc" EntityType="Self.C_FirBenAcc" />
+          <EntitySet Name="C_HistActClientes" EntityType="Self.C_HistActClientes" />
+          <EntitySet Name="C_ValorItemConsExp" EntityType="Self.C_ValorItemConsExp" />
+          <EntitySet Name="M_ActivComercial" EntityType="Self.M_ActivComercial" />
+          <EntitySet Name="M_Antiguedad" EntityType="Self.M_Antiguedad" />
+          <EntitySet Name="M_Criptomonedas" EntityType="Self.M_Criptomonedas" />
+          <EntitySet Name="M_Edad" EntityType="Self.M_Edad" />
+          <EntitySet Name="M_Estados" EntityType="Self.M_Estados" />
+          <EntitySet Name="M_NivelRiesgo" EntityType="Self.M_NivelRiesgo" />
+          <EntitySet Name="M_Pais" EntityType="Self.M_Pais" />
+          <EntitySet Name="M_PEP" EntityType="Self.M_PEP" />
+          <EntitySet Name="M_Productos" EntityType="Self.M_Productos" />
+          <EntitySet Name="M_Profesiones" EntityType="Self.M_Profesiones" />
+          <EntitySet Name="M_Servicios" EntityType="Self.M_Servicios" />
+          <EntitySet Name="M_TipoDocID" EntityType="Self.M_TipoDocID" />
+          <EntitySet Name="M_TipoEstructuraEmpresa" EntityType="Self.M_TipoEstructuraEmpresa" />
+          <EntitySet Name="M_TipoPersJuridica" EntityType="Self.M_TipoPersJuridica" />
+          <EntitySet Name="M_VolOperPersJur" EntityType="Self.M_VolOperPersJur" />
+          <EntitySet Name="M_VolOperPersNat" EntityType="Self.M_VolOperPersNat" />
+          <EntitySet Name="O_HistPerfOperac" EntityType="Self.O_HistPerfOperac" />
+          <EntitySet Name="O_Observaciones" EntityType="Self.O_Observaciones" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="B_Buscados" EntityType="Self.B_Buscados" />
+          <EntitySet Name="O_Operfinancieras" EntityType="Self.O_Operfinancieras" />
+          <EntitySet Name="O_OperTransaccionales" EntityType="Self.O_OperTransaccionales" />
+          <AssociationSet Name="FK_C_FirBenAcc_C_Clientes" Association="Self.FK_C_FirBenAcc_C_Clientes">
+            <End Role="C_Clientes" EntitySet="C_Clientes" />
+            <End Role="C_FirBenAcc" EntitySet="C_FirBenAcc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_C_HistActClientes_C_Clientes" Association="Self.FK_C_HistActClientes_C_Clientes">
+            <End Role="C_Clientes" EntitySet="C_Clientes" />
+            <End Role="C_HistActClientes" EntitySet="C_HistActClientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_O_HistPerfOperac_C_Clientes" Association="Self.FK_O_HistPerfOperac_C_Clientes">
+            <End Role="C_Clientes" EntitySet="C_Clientes" />
+            <End Role="O_HistPerfOperac" EntitySet="O_HistPerfOperac" />
+          </AssociationSet>
+          <AssociationSet Name="FK_O_Observaciones_C_Clientes" Association="Self.FK_O_Observaciones_C_Clientes">
+            <End Role="C_Clientes" EntitySet="C_Clientes" />
+            <End Role="O_Observaciones" EntitySet="O_Observaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_M_Estados_M_Pais" Association="Self.FK_M_Estados_M_Pais">
+            <End Role="M_Pais" EntitySet="M_Pais" />
+            <End Role="M_Estados" EntitySet="M_Estados" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MonitorOperacionesModelStoreContainer" CdmEntityContainer="MonitorOperacionesEntities">
+          <EntitySetMapping Name="C_Clientes">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.C_Clientes">
+              <MappingFragment StoreEntitySet="C_Clientes">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="TipoPersona" ColumnName="TipoPersona" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Doc_ID" ColumnName="Doc_ID" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Cliente_Punt" ColumnName="Cliente_Punt" />
+                <ScalarProperty Name="Benef_Punt" ColumnName="Benef_Punt" />
+                <ScalarProperty Name="InfGen_Punt" ColumnName="InfGen_Punt" />
+                <ScalarProperty Name="ConstExped_Punt" ColumnName="ConstExped_Punt" />
+                <ScalarProperty Name="CondEspSeguridad" ColumnName="CondEspSeguridad" />
+                <ScalarProperty Name="IG_PaisNacim" ColumnName="IG_PaisNacim" />
+                <ScalarProperty Name="IG_Nacionalidad" ColumnName="IG_Nacionalidad" />
+                <ScalarProperty Name="IG_PaisResid" ColumnName="IG_PaisResid" />
+                <ScalarProperty Name="IG_Estado" ColumnName="IG_Estado" />
+                <ScalarProperty Name="IG_PEP" ColumnName="IG_PEP" />
+                <ScalarProperty Name="IG_Profesion" ColumnName="IG_Profesion" />
+                <ScalarProperty Name="IG_TipDocID" ColumnName="IG_TipDocID" />
+                <ScalarProperty Name="IG_FecVencDocID" ColumnName="IG_FecVencDocID" />
+                <ScalarProperty Name="IG_TipoPersJur" ColumnName="IG_TipoPersJur" />
+                <ScalarProperty Name="IG_Edad" ColumnName="IG_Edad" />
+                <ScalarProperty Name="IG_ActivComer" ColumnName="IG_ActivComer" />
+                <ScalarProperty Name="IG_VolumOperac" ColumnName="IG_VolumOperac" />
+                <ScalarProperty Name="IG_Criptomoneda" ColumnName="IG_Criptomoneda" />
+                <ScalarProperty Name="IG_TipoEstructura" ColumnName="IG_TipoEstructura" />
+                <ScalarProperty Name="IG_Servicio1" ColumnName="IG_Servicio1" />
+                <ScalarProperty Name="IG_Servicio2" ColumnName="IG_Servicio2" />
+                <ScalarProperty Name="IG_Servicio3" ColumnName="IG_Servicio3" />
+                <ScalarProperty Name="IG_Servicio4" ColumnName="IG_Servicio4" />
+                <ScalarProperty Name="IG_Servicio5" ColumnName="IG_Servicio5" />
+                <ScalarProperty Name="IG_Servicio6" ColumnName="IG_Servicio6" />
+                <ScalarProperty Name="IG_Servicio7" ColumnName="IG_Servicio7" />
+                <ScalarProperty Name="IG_Servicio8" ColumnName="IG_Servicio8" />
+                <ScalarProperty Name="IG_Servicio9" ColumnName="IG_Servicio9" />
+                <ScalarProperty Name="IG_Servicio10" ColumnName="IG_Servicio10" />
+                <ScalarProperty Name="IG_Producto1" ColumnName="IG_Producto1" />
+                <ScalarProperty Name="IG_Producto2" ColumnName="IG_Producto2" />
+                <ScalarProperty Name="IG_Producto3" ColumnName="IG_Producto3" />
+                <ScalarProperty Name="IG_Producto4" ColumnName="IG_Producto4" />
+                <ScalarProperty Name="IG_Producto5" ColumnName="IG_Producto5" />
+                <ScalarProperty Name="IG_Producto6" ColumnName="IG_Producto6" />
+                <ScalarProperty Name="IG_Producto7" ColumnName="IG_Producto7" />
+                <ScalarProperty Name="IG_Producto8" ColumnName="IG_Producto8" />
+                <ScalarProperty Name="IG_Producto9" ColumnName="IG_Producto9" />
+                <ScalarProperty Name="IG_Producto10" ColumnName="IG_Producto10" />
+                <ScalarProperty Name="CE_Opc1" ColumnName="CE_Opc1" />
+                <ScalarProperty Name="CE_Opc2" ColumnName="CE_Opc2" />
+                <ScalarProperty Name="CE_Opc3" ColumnName="CE_Opc3" />
+                <ScalarProperty Name="CE_Opc4" ColumnName="CE_Opc4" />
+                <ScalarProperty Name="CE_Opc5" ColumnName="CE_Opc5" />
+                <ScalarProperty Name="CE_Opc6" ColumnName="CE_Opc6" />
+                <ScalarProperty Name="CE_Opc7" ColumnName="CE_Opc7" />
+                <ScalarProperty Name="CE_Opc8" ColumnName="CE_Opc8" />
+                <ScalarProperty Name="CE_Opc9" ColumnName="CE_Opc9" />
+                <ScalarProperty Name="CE_Opc10" ColumnName="CE_Opc10" />
+                <ScalarProperty Name="CE_Opc11" ColumnName="CE_Opc11" />
+                <ScalarProperty Name="CE_Opc12" ColumnName="CE_Opc12" />
+                <ScalarProperty Name="CE_Opc13" ColumnName="CE_Opc13" />
+                <ScalarProperty Name="CE_Opc14" ColumnName="CE_Opc14" />
+                <ScalarProperty Name="CE_Opc15" ColumnName="CE_Opc15" />
+                <ScalarProperty Name="CE_Opc16" ColumnName="CE_Opc16" />
+                <ScalarProperty Name="CE_Opc17" ColumnName="CE_Opc17" />
+                <ScalarProperty Name="CE_Opc18" ColumnName="CE_Opc18" />
+                <ScalarProperty Name="CE_Opc19" ColumnName="CE_Opc19" />
+                <ScalarProperty Name="CE_Opc20" ColumnName="CE_Opc20" />
+                <ScalarProperty Name="CE_Opc21" ColumnName="CE_Opc21" />
+                <ScalarProperty Name="CE_Opc22" ColumnName="CE_Opc22" />
+                <ScalarProperty Name="CE_Opc23" ColumnName="CE_Opc23" />
+                <ScalarProperty Name="CE_Opc24" ColumnName="CE_Opc24" />
+                <ScalarProperty Name="CE_Opc25" ColumnName="CE_Opc25" />
+                <ScalarProperty Name="CE_Opc26" ColumnName="CE_Opc26" />
+                <ScalarProperty Name="CE_Opc27" ColumnName="CE_Opc27" />
+                <ScalarProperty Name="CE_Opc28" ColumnName="CE_Opc28" />
+                <ScalarProperty Name="CE_Opc29" ColumnName="CE_Opc29" />
+                <ScalarProperty Name="CE_Opc30" ColumnName="CE_Opc30" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="Ejecutivo" ColumnName="Ejecutivo" />
+                <ScalarProperty Name="NivelRiesgo" ColumnName="NivelRiesgo" />
+                <ScalarProperty Name="PerfilFinanciero" ColumnName="PerfilFinanciero" />
+                <ScalarProperty Name="PeriodUsoCta" ColumnName="PeriodUsoCta" />
+                <ScalarProperty Name="NroTransacciones" ColumnName="NroTransacciones" />
+                <ScalarProperty Name="Fec_UltimAct" ColumnName="Fec_UltimAct" />
+                <ScalarProperty Name="Trim_Mes" ColumnName="Trim_Mes" />
+                <ScalarProperty Name="Trim_Ano" ColumnName="Trim_Ano" />
+                <ScalarProperty Name="Trim_NroOperac" ColumnName="Trim_NroOperac" />
+                <ScalarProperty Name="Trim_MontoOperac" ColumnName="Trim_MontoOperac" />
+                <ScalarProperty Name="MapaEmpresa" ColumnName="MapaEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="C_FirBenAcc">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.C_FirBenAcc">
+              <MappingFragment StoreEntitySet="C_FirBenAcc">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Cod_Cliente" ColumnName="Cod_Cliente" />
+                <ScalarProperty Name="TipoVinculo" ColumnName="TipoVinculo" />
+                <ScalarProperty Name="Doc_ID" ColumnName="Doc_ID" />
+                <ScalarProperty Name="Fec_Vencimiento" ColumnName="Fec_Vencimiento" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="PaisNacim" ColumnName="PaisNacim" />
+                <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+                <ScalarProperty Name="PaisResid" ColumnName="PaisResid" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Profesion" ColumnName="Profesion" />
+                <ScalarProperty Name="Criptomoneda" ColumnName="Criptomoneda" />
+                <ScalarProperty Name="VincEmpresa" ColumnName="VincEmpresa" />
+                <ScalarProperty Name="VincPorcent" ColumnName="VincPorcent" />
+                <ScalarProperty Name="PEP" ColumnName="PEP" />
+                <ScalarProperty Name="Puntuacion" ColumnName="Puntuacion" />
+                <ScalarProperty Name="CondEspSeguridad" ColumnName="CondEspSeguridad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="C_HistActClientes">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.C_HistActClientes">
+              <MappingFragment StoreEntitySet="C_HistActClientes">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="FechaCambio" ColumnName="FechaCambio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="C_ValorItemConsExp">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.C_ValorItemConsExp">
+              <MappingFragment StoreEntitySet="C_ValorItemConsExp">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="empresa" ColumnName="empresa" />
+                <ScalarProperty Name="CE_Opc1" ColumnName="CE_Opc1" />
+                <ScalarProperty Name="CE_Opc2" ColumnName="CE_Opc2" />
+                <ScalarProperty Name="CE_Opc3" ColumnName="CE_Opc3" />
+                <ScalarProperty Name="CE_Opc4" ColumnName="CE_Opc4" />
+                <ScalarProperty Name="CE_Opc5" ColumnName="CE_Opc5" />
+                <ScalarProperty Name="CE_Opc6" ColumnName="CE_Opc6" />
+                <ScalarProperty Name="CE_Opc7" ColumnName="CE_Opc7" />
+                <ScalarProperty Name="CE_Opc8" ColumnName="CE_Opc8" />
+                <ScalarProperty Name="CE_Opc9" ColumnName="CE_Opc9" />
+                <ScalarProperty Name="CE_Opc10" ColumnName="CE_Opc10" />
+                <ScalarProperty Name="CE_Opc11" ColumnName="CE_Opc11" />
+                <ScalarProperty Name="CE_Opc12" ColumnName="CE_Opc12" />
+                <ScalarProperty Name="CE_Opc13" ColumnName="CE_Opc13" />
+                <ScalarProperty Name="CE_Opc14" ColumnName="CE_Opc14" />
+                <ScalarProperty Name="CE_Opc15" ColumnName="CE_Opc15" />
+                <ScalarProperty Name="CE_Opc16" ColumnName="CE_Opc16" />
+                <ScalarProperty Name="CE_Opc17" ColumnName="CE_Opc17" />
+                <ScalarProperty Name="CE_Opc18" ColumnName="CE_Opc18" />
+                <ScalarProperty Name="CE_Opc19" ColumnName="CE_Opc19" />
+                <ScalarProperty Name="CE_Opc20" ColumnName="CE_Opc20" />
+                <ScalarProperty Name="CE_Opc21" ColumnName="CE_Opc21" />
+                <ScalarProperty Name="CE_Opc22" ColumnName="CE_Opc22" />
+                <ScalarProperty Name="CE_Opc23" ColumnName="CE_Opc23" />
+                <ScalarProperty Name="CE_Opc24" ColumnName="CE_Opc24" />
+                <ScalarProperty Name="CE_Opc25" ColumnName="CE_Opc25" />
+                <ScalarProperty Name="CE_Opc26" ColumnName="CE_Opc26" />
+                <ScalarProperty Name="CE_Opc27" ColumnName="CE_Opc27" />
+                <ScalarProperty Name="CE_Opc28" ColumnName="CE_Opc28" />
+                <ScalarProperty Name="CE_Opc29" ColumnName="CE_Opc29" />
+                <ScalarProperty Name="CE_Opc30" ColumnName="CE_Opc30" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_ActivComercial">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_ActivComercial">
+              <MappingFragment StoreEntitySet="M_ActivComercial">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="CondEspSeguridad" ColumnName="CondEspSeguridad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_Antiguedad">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_Antiguedad">
+              <MappingFragment StoreEntitySet="M_Antiguedad">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="CondEspSeguridad" ColumnName="CondEspSeguridad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_Criptomonedas">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_Criptomonedas">
+              <MappingFragment StoreEntitySet="M_Criptomonedas">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="CondEspSeguridad" ColumnName="CondEspSeguridad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_Edad">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_Edad">
+              <MappingFragment StoreEntitySet="M_Edad">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="CondEspSeguridad" ColumnName="CondEspSeguridad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_Estados">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_Estados">
+              <MappingFragment StoreEntitySet="M_Estados">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Cod_Compuesto" ColumnName="Cod_Compuesto" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="CondEspSeguridad" ColumnName="CondEspSeguridad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_NivelRiesgo">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_NivelRiesgo">
+              <MappingFragment StoreEntitySet="M_NivelRiesgo">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="CondEspSeguridad" ColumnName="CondEspSeguridad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_Pais">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_Pais">
+              <MappingFragment StoreEntitySet="M_Pais">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Cod_AlfaNum2" ColumnName="Cod_AlfaNum2" />
+                <ScalarProperty Name="Cod_AlfaNum3" ColumnName="Cod_AlfaNum3" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="CondEspSeguridad" ColumnName="CondEspSeguridad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_PEP">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_PEP">
+              <MappingFragment StoreEntitySet="M_PEP">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="CondEspSeguridad" ColumnName="CondEspSeguridad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_Productos">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_Productos">
+              <MappingFragment StoreEntitySet="M_Productos">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="CondEspSeguridad" ColumnName="CondEspSeguridad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_Profesiones">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_Profesiones">
+              <MappingFragment StoreEntitySet="M_Profesiones">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="CondEspSeguridad" ColumnName="CondEspSeguridad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_Servicios">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_Servicios">
+              <MappingFragment StoreEntitySet="M_Servicios">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="CondEspSeguridad" ColumnName="CondEspSeguridad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_TipoDocID">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_TipoDocID">
+              <MappingFragment StoreEntitySet="M_TipoDocID">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="CondEspSeguridad" ColumnName="CondEspSeguridad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_TipoEstructuraEmpresa">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_TipoEstructuraEmpresa">
+              <MappingFragment StoreEntitySet="M_TipoEstructuraEmpresa">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="CondEspSeguridad" ColumnName="CondEspSeguridad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_TipoPersJuridica">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_TipoPersJuridica">
+              <MappingFragment StoreEntitySet="M_TipoPersJuridica">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="CondEspSeguridad" ColumnName="CondEspSeguridad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_VolOperPersJur">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_VolOperPersJur">
+              <MappingFragment StoreEntitySet="M_VolOperPersJur">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="CondEspSeguridad" ColumnName="CondEspSeguridad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_VolOperPersNat">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_VolOperPersNat">
+              <MappingFragment StoreEntitySet="M_VolOperPersNat">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="CondEspSeguridad" ColumnName="CondEspSeguridad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="O_HistPerfOperac">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.O_HistPerfOperac">
+              <MappingFragment StoreEntitySet="O_HistPerfOperac">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Tipo_Perfil" ColumnName="Tipo_Perfil" />
+                <ScalarProperty Name="Cod_Cliente" ColumnName="Cod_Cliente" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Mto_Perfil" ColumnName="Mto_Perfil" />
+                <ScalarProperty Name="Nro_Transacciones" ColumnName="Nro_Transacciones" />
+                <ScalarProperty Name="Nivel_Riesgo" ColumnName="Nivel_Riesgo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="O_Observaciones">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.O_Observaciones">
+              <MappingFragment StoreEntitySet="O_Observaciones">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Tipo_Perfil" ColumnName="Tipo_Perfil" />
+                <ScalarProperty Name="Cod_Cliente" ColumnName="Cod_Cliente" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="B_Buscados">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.B_Buscados">
+              <MappingFragment StoreEntitySet="B_Buscados">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Doc_ID" ColumnName="Doc_ID" />
+                <ScalarProperty Name="Ente_Busca" ColumnName="Ente_Busca" />
+                <ScalarProperty Name="Fec_Busqueda" ColumnName="Fec_Busqueda" />
+                <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+                <ScalarProperty Name="Pais_Busca" ColumnName="Pais_Busca" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="O_Operfinancieras">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.O_Operfinancieras">
+              <MappingFragment StoreEntitySet="O_Operfinancieras">
+                <ScalarProperty Name="Tipo_Orden" ColumnName="Tipo_Orden" />
+                <ScalarProperty Name="Fec_Pacto" ColumnName="Fec_Pacto" />
+                <ScalarProperty Name="Doc_ID" ColumnName="Doc_ID" />
+                <ScalarProperty Name="Cod_Cliente" ColumnName="Cod_Cliente" />
+                <ScalarProperty Name="Nme_Cliente" ColumnName="Nme_Cliente" />
+                <ScalarProperty Name="Fec_Cierre" ColumnName="Fec_Cierre" />
+                <ScalarProperty Name="Fec_Valor" ColumnName="Fec_Valor" />
+                <ScalarProperty Name="Mto_Solicitado" ColumnName="Mto_Solicitado" />
+                <ScalarProperty Name="Mto_Pactado" ColumnName="Mto_Pactado" />
+                <ScalarProperty Name="Cod_Titulo" ColumnName="Cod_Titulo" />
+                <ScalarProperty Name="Precio_USD" ColumnName="Precio_USD" />
+                <ScalarProperty Name="Efectivo" ColumnName="Efectivo" />
+                <ScalarProperty Name="Comision_Clie" ColumnName="Comision_Clie" />
+                <ScalarProperty Name="Cod_Contraparte" ColumnName="Cod_Contraparte" />
+                <ScalarProperty Name="Nme_Contraparte" ColumnName="Nme_Contraparte" />
+                <ScalarProperty Name="Agencia" ColumnName="Agencia" />
+                <ScalarProperty Name="Sec_Operac" ColumnName="Sec_Operac" />
+                <ScalarProperty Name="Cod_Bloq" ColumnName="Cod_Bloq" />
+                <ScalarProperty Name="Nro_OrdBCV" ColumnName="Nro_OrdBCV" />
+                <ScalarProperty Name="Cta_USD" ColumnName="Cta_USD" />
+                <ScalarProperty Name="Comprobante" ColumnName="Comprobante" />
+                <ScalarProperty Name="Hora_carga" ColumnName="Hora_carga" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="O_OperTransaccionales">
+            <EntityTypeMapping TypeName="MonitorOperacionesModel.O_OperTransaccionales">
+              <MappingFragment StoreEntitySet="O_OperTransaccionales">
+                <ScalarProperty Name="Tipo_Orden" ColumnName="Tipo_Orden" />
+                <ScalarProperty Name="Fec_Pacto" ColumnName="Fec_Pacto" />
+                <ScalarProperty Name="Doc_ID" ColumnName="Doc_ID" />
+                <ScalarProperty Name="Cod_Cliente" ColumnName="Cod_Cliente" />
+                <ScalarProperty Name="Nme_Cliente" ColumnName="Nme_Cliente" />
+                <ScalarProperty Name="Fec_Cierre" ColumnName="Fec_Cierre" />
+                <ScalarProperty Name="Fec_Valor" ColumnName="Fec_Valor" />
+                <ScalarProperty Name="Monto_Pactado" ColumnName="Monto_Pactado" />
+                <ScalarProperty Name="Tipo_Operacion" ColumnName="Tipo_Operacion" />
+                <ScalarProperty Name="Valor_Efectivo" ColumnName="Valor_Efectivo" />
+                <ScalarProperty Name="Grp_Cliente" ColumnName="Grp_Cliente" />
+                <ScalarProperty Name="Comprobante" ColumnName="Comprobante" />
+                <ScalarProperty Name="Hora_Carga" ColumnName="Hora_Carga" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_M_Estados_M_Pais" TypeName="MonitorOperacionesModel.FK_M_Estados_M_Pais" StoreEntitySet="M_Estados">
+            <EndProperty Name="M_Pais">
+              <ScalarProperty Name="Codigo" ColumnName="Cod_Pais" />
+            </EndProperty>
+            <EndProperty Name="M_Estados">
+              <ScalarProperty Name="Cod_Compuesto" ColumnName="Cod_Compuesto" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="Cod_Pais" />
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
