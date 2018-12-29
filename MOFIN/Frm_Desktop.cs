@@ -7,14 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace MOFIN
 {
-    public partial class PruebadeMultiplesFormilarios : Form
+    public partial class Frm_Desktop : MetroForm
     {
         private int childFormNumber = 0;
 
-        public PruebadeMultiplesFormilarios()
+        public Frm_Desktop()
         {
             InitializeComponent();
         }
@@ -66,14 +67,9 @@ namespace MOFIN
         {
         }
 
-        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
+         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          //  toolStrip.Visible = toolBarToolStripMenuItem.Checked;
-        }
-
-        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
+            SS_BarradeEstadoPrincipal.Visible = statusBarToolStripMenuItem.Checked;
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,6 +98,63 @@ namespace MOFIN
             {
                 childForm.Close();
             }
+        }
+
+        private void Frm_Desktop_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void Actualiza_Menu(int vl_RegistroGrupo)
+        {
+            this.Mnu_Clientes.Enabled = true;
+            this.Mnu_Operaciones.Enabled = false;
+            this.Mnu_TablasMaestras.Enabled = true;
+            this.Mnu_Herramientas.Enabled = false;
+            
+        }
+
+
+        private void Her_Usuarios_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Frm_Usuarios();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+        private void Her_Grupos_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Frm_Grupos();
+            childForm.MdiParent = this;
+            childForm.Show();
+
+        }
+
+        private void Her_Empresas_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Frm_Empresas();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
+        private void Arc_SelEmpresa_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Frm_SeleccionEmpresa();
+            childForm.MdiParent = this;
+            childForm.Show();
+
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tablasMaestrasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Frm_TablasMaestras();
+            childForm.MdiParent = this;
+            childForm.Show();
+
         }
     }
 }

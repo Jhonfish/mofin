@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +48,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MetroFramework">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationFramework.Aero2" />
+    <Reference Include="PresentationFramework.Royale" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,18 +73,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BarraHerramientas.cs">
+    <Compile Include="EntornoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntornoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Desktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BarraHerramientas.Designer.cs">
-      <DependentUpon>BarraHerramientas.cs</DependentUpon>
+    <Compile Include="Frm_Desktop.Designer.cs">
+      <DependentUpon>Frm_Desktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Component1.cs">
-      <SubType>Component</SubType>
+    <Compile Include="Frm_Empresas.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Component1.Designer.cs">
-      <DependentUpon>Component1.cs</DependentUpon>
+    <Compile Include="Frm_Empresas.Designer.cs">
+      <DependentUpon>Frm_Empresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Grupos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Grupos.Designer.cs">
+      <DependentUpon>Frm_Grupos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_TablasMaestras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_TablasMaestras.Designer.cs">
+      <DependentUpon>Frm_TablasMaestras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Usuarios.Designer.cs">
+      <DependentUpon>Frm_Usuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_SeleccionEmpresa.cs">
       <SubType>Form</SubType>
@@ -65,25 +114,30 @@
     <Compile Include="Frm_SeleccionEmpresa.Designer.cs">
       <DependentUpon>Frm_SeleccionEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="MonitorOperacionesDataSet.cs">
+      <DependentUpon>MonitorOperacionesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MonitorOperacionesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonitorOperacionesDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PruebadeMultiplesFormilarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PruebadeMultiplesFormilarios.Designer.cs">
-      <DependentUpon>PruebadeMultiplesFormilarios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="pruebaJF_BarraMantenimiento.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="pruebaJF_BarraMantenimiento.Designer.cs">
-      <DependentUpon>pruebaJF_BarraMantenimiento.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="BarraHerramientas.resx">
-      <DependentUpon>BarraHerramientas.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Desktop.resx">
+      <DependentUpon>Frm_Desktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Component1.resx">
-      <DependentUpon>Component1.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Empresas.resx">
+      <DependentUpon>Frm_Empresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Grupos.resx">
+      <DependentUpon>Frm_Grupos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_TablasMaestras.resx">
+      <DependentUpon>Frm_TablasMaestras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Usuarios.resx">
+      <DependentUpon>Frm_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_SeleccionEmpresa.resx">
       <DependentUpon>Frm_SeleccionEmpresa.cs</DependentUpon>
@@ -97,12 +151,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="PruebadeMultiplesFormilarios.resx">
-      <DependentUpon>PruebadeMultiplesFormilarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="pruebaJF_BarraMantenimiento.resx">
-      <DependentUpon>pruebaJF_BarraMantenimiento.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="EntornoDataSet.xsc">
+      <DependentUpon>EntornoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EntornoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EntornoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EntornoDataSet.xss">
+      <DependentUpon>EntornoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MonitorOperacionesDataSet.xsc">
+      <DependentUpon>MonitorOperacionesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MonitorOperacionesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MonitorOperacionesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MonitorOperacionesDataSet.xss">
+      <DependentUpon>MonitorOperacionesDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -115,6 +185,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MOFIN_Lib\MOFIN_Lib.csproj">
+      <Project>{bd8686af-ad7b-4792-b1dd-cc8f6f41f4dc}</Project>
+      <Name>MOFIN_Lib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
