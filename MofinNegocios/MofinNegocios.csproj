@@ -41,7 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NM_ActivComercial.cs" />
+    <Compile Include="NM_Antiguedad.cs" />
+    <Compile Include="NM_Criptomonedas.cs" />
+    <Compile Include="NM_Edad.cs" />
+    <Compile Include="NM_Estados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MofinDatos\MofinDatos.csproj">
+      <Project>{ec2d3e5d-8fc9-4c15-860c-1d83fd6e962b}</Project>
+      <Name>MofinDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MofinModelo\MofinModelo.csproj">
+      <Project>{e80cc34e-56cf-429a-8a96-89336ae0c024}</Project>
+      <Name>MofinModelo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
