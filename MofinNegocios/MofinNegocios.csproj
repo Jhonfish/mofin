@@ -52,6 +52,17 @@
     <Compile Include="NM_Criptomonedas.cs" />
     <Compile Include="NM_Edad.cs" />
     <Compile Include="NM_Estados.cs" />
+    <Compile Include="NM_NivelRiesgo.cs" />
+    <Compile Include="NM_Pais.cs" />
+    <Compile Include="NM_PEP.cs" />
+    <Compile Include="NM_Productos.cs" />
+    <Compile Include="NM_Profesiones.cs" />
+    <Compile Include="NM_Servicios.cs" />
+    <Compile Include="NM_TipoDocID.cs" />
+    <Compile Include="NM_TipoEstructuraEmpresa.cs" />
+    <Compile Include="NM_TipoPersJuridica.cs" />
+    <Compile Include="NM_VolOperPersJur.cs" />
+    <Compile Include="NM_VolOperPersNat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
