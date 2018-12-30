@@ -12,9 +12,9 @@ using MetroFramework.Forms;
 
 namespace MOFIN
 {
-    public partial class Frm_Empresas : MetroForm
+    public partial class Frm_Clientes : MetroForm
     {
-        public Frm_Empresas()
+        public Frm_Clientes()
         {
             InitializeComponent();
         }
