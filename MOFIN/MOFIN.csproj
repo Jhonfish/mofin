@@ -48,6 +48,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\EF3Neptuno\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\EF3Neptuno\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
@@ -83,6 +90,12 @@
     </Compile>
     <Compile Include="Frm_Desktop.Designer.cs">
       <DependentUpon>Frm_Desktop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Edad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Edad.Designer.cs">
+      <DependentUpon>Frm_Edad.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Empresas.cs">
       <SubType>Form</SubType>
@@ -126,6 +139,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Frm_Desktop.resx">
       <DependentUpon>Frm_Desktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Edad.resx">
+      <DependentUpon>Frm_Edad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Empresas.resx">
       <DependentUpon>Frm_Empresas.cs</DependentUpon>
@@ -174,6 +190,8 @@
       <DependentUpon>MonitorOperacionesDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\MofinModelo.M_Edad.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NM_Edad.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -200,9 +218,20 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MOFIN_Lib\MOFIN_Lib.csproj">
-      <Project>{bd8686af-ad7b-4792-b1dd-cc8f6f41f4dc}</Project>
-      <Name>MOFIN_Lib</Name>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MofinDatos\MofinDatos.csproj">
+      <Project>{ec2d3e5d-8fc9-4c15-860c-1d83fd6e962b}</Project>
+      <Name>MofinDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MofinModelo\MofinModelo.csproj">
+      <Project>{e80cc34e-56cf-429a-8a96-89336ae0c024}</Project>
+      <Name>MofinModelo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MofinNegocios\MofinNegocios.csproj">
+      <Project>{fc87a849-0770-4439-a6c2-5ee0d9f16d0f}</Project>
+      <Name>MofinNegocios</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
