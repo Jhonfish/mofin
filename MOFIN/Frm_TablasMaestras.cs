@@ -43,6 +43,7 @@ namespace MOFIN
             this.TA_MEstados.Fill(this.DS_MonitorOperaciones.M_Estados);
 
             BS_TablaMaestra = BS_MPais;
+//            Cmb_TablaMaestra.Text = Cmb_TablaMaestra.Items.;
             this.Modo_Consulta();
 
         }
@@ -64,6 +65,7 @@ namespace MOFIN
         private void Modo_Consulta()
         {
             this.Txt_Codigo.Enabled = false;
+            this.Cmb_Pais.Enabled = false;
             this.Txt_CodAlfa2.Enabled = false;
             this.Txt_CodAlfa3.Enabled = false;
             this.Txt_Nombre.Enabled = false;
@@ -82,6 +84,7 @@ namespace MOFIN
         private void Modo_Edicion()
         {
             this.Txt_Codigo.Enabled = true;
+            this.Cmb_Pais.Enabled = true;
             this.Txt_CodAlfa2.Enabled = true;
             this.Txt_CodAlfa3.Enabled = true;
             this.Txt_Nombre.Enabled = true;
@@ -94,6 +97,10 @@ namespace MOFIN
             this.Btn_Aceptar.Visible = true;
             this.Btn_Cancelar.Visible = true;
         }
+
+        //************
+        // Comportamiento de Los Botones 
+        //************
         private void TSB_ActualizaBotonesNavegacion()
         {
             if (BS_TablaMaestra.Count <= 1)
@@ -102,6 +109,9 @@ namespace MOFIN
                 this.TSB_Anterior.Enabled = false;
                 this.TSB_Siguiente.Enabled = false;
                 this.TSB_Ultimo.Enabled = false;
+                this.TSB_Modificar.Enabled = false;
+                this.TSB_Eliminar.Enabled = false;
+                this.TSB_Imprimir.Enabled = false;
             }
             else
             {
@@ -109,12 +119,12 @@ namespace MOFIN
                 this.TSB_Anterior.Enabled = (BS_TablaMaestra.Position == 0) ? false : true;
                 this.TSB_Siguiente.Enabled = (BS_TablaMaestra.Position == BS_TablaMaestra.Count - 1) ? false : true;
                 this.TSB_Ultimo.Enabled = (BS_TablaMaestra.Position == BS_TablaMaestra.Count - 1) ? false : true;
+                this.TSB_Modificar.Enabled = true;
+                this.TSB_Eliminar.Enabled = true;
+                this.TSB_Imprimir.Enabled = true;
+
             }
         }
-
-        //************
-        // Comportamiento de Los Botones 
-        //************
 
         private void Btn_Aceptar_Click(object sender, EventArgs e)
         {
@@ -153,9 +163,8 @@ namespace MOFIN
 
         private void TSB_Eliminar_Click(object sender, EventArgs e)
         {
-            //  string vl_texto = BS_TablaMaestra.Current("Nombre");      // (char)Grd_Detalles.CurrentRow.Cells["Nombre"].Value;
-
-            DialogResult vl_Resp = MessageBox.Show("Desea Eliminar este Registro? " + "\n\n" + "***",
+            string vl_RegEliminar = ((DataRowView)this.BS_TablaMaestra.Current).Row["Nombre"].ToString();
+            DialogResult vl_Resp = MessageBox.Show("Desea Eliminar este Registro? " + "\n\n" + vl_RegEliminar,
                 "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (vl_Resp == DialogResult.Yes)
             {
@@ -250,6 +259,7 @@ namespace MOFIN
             this.Txt_Nombre.DataBindings.Add("Text", BS_TablaMaestra, "Descripcion");
             this.NUD_Valor.DataBindings.Add("Value", BS_TablaMaestra, "Valor");
             Grd_Detalles.DataSource = BS_TablaMaestra;
+            TSB_ActualizaBotonesNavegacion();
             Grd_Detalles.Refresh();
         }
 

@@ -76,6 +76,7 @@
             this.TA_MNivelRiesgo = new MOFIN.MonitorOperacionesDataSetTableAdapters.M_NivelRiesgoTableAdapter();
             this.BS_MProfesiones = new System.Windows.Forms.BindingSource(this.components);
             this.TA_MProfesiones = new MOFIN.MonitorOperacionesDataSetTableAdapters.M_ProfesionesTableAdapter();
+            this.Cmb_Pais = new System.Windows.Forms.ComboBox();
             Lbl_Codigo = new System.Windows.Forms.Label();
             Lbl_CodAlfa2 = new System.Windows.Forms.Label();
             Lbl_CodAlfa3 = new System.Windows.Forms.Label();
@@ -316,6 +317,7 @@
             // 
             this.Grd_Detalles.AllowUserToAddRows = false;
             this.Grd_Detalles.AllowUserToDeleteRows = false;
+            this.Grd_Detalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.Grd_Detalles.BackgroundColor = System.Drawing.Color.White;
             this.Grd_Detalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grd_Detalles.Location = new System.Drawing.Point(397, 165);
@@ -354,7 +356,7 @@
             // Txt_CodAlfa3
             // 
             this.Txt_CodAlfa3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_MPais, "Cod_AlfaNum3", true));
-            this.Txt_CodAlfa3.Location = new System.Drawing.Point(299, 179);
+            this.Txt_CodAlfa3.Location = new System.Drawing.Point(297, 179);
             this.Txt_CodAlfa3.Name = "Txt_CodAlfa3";
             this.Txt_CodAlfa3.Size = new System.Drawing.Size(57, 22);
             this.Txt_CodAlfa3.TabIndex = 43;
@@ -382,7 +384,7 @@
             // NUD_Valor
             // 
             this.NUD_Valor.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BS_MPais, "Valor", true));
-            this.NUD_Valor.Location = new System.Drawing.Point(142, 324);
+            this.NUD_Valor.Location = new System.Drawing.Point(84, 324);
             this.NUD_Valor.Name = "NUD_Valor";
             this.NUD_Valor.Size = new System.Drawing.Size(57, 22);
             this.NUD_Valor.TabIndex = 50;
@@ -512,6 +514,15 @@
             // 
             this.TA_MProfesiones.ClearBeforeFill = true;
             // 
+            // Cmb_Pais
+            // 
+            this.Cmb_Pais.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_MPais, "Descripcion", true));
+            this.Cmb_Pais.FormattingEnabled = true;
+            this.Cmb_Pais.Location = new System.Drawing.Point(181, 134);
+            this.Cmb_Pais.Name = "Cmb_Pais";
+            this.Cmb_Pais.Size = new System.Drawing.Size(175, 24);
+            this.Cmb_Pais.TabIndex = 53;
+            // 
             // Frm_TablasMaestras
             // 
             this.AcceptButton = this.Btn_Aceptar;
@@ -519,6 +530,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(782, 458);
+            this.Controls.Add(this.Cmb_Pais);
             this.Controls.Add(label1);
             this.Controls.Add(this.Cmb_TablaMaestra);
             this.Controls.Add(Lbl_Valor);
@@ -606,5 +618,6 @@
         private MonitorOperacionesDataSetTableAdapters.M_NivelRiesgoTableAdapter TA_MNivelRiesgo;
         private System.Windows.Forms.BindingSource BS_MProfesiones;
         private MonitorOperacionesDataSetTableAdapters.M_ProfesionesTableAdapter TA_MProfesiones;
+        private System.Windows.Forms.ComboBox Cmb_Pais;
     }
 }

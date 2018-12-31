@@ -78,6 +78,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EntornoDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Clientes.Designer.cs">
+      <DependentUpon>Frm_Clientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Desktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Frm_Clientes.resx">
+      <DependentUpon>Frm_Clientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Desktop.resx">
       <DependentUpon>Frm_Desktop.cs</DependentUpon>
     </EmbeddedResource>

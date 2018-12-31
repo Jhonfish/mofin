@@ -102,6 +102,10 @@ namespace MOFIN
                 this.TSB_Anterior.Enabled = false;
                 this.TSB_Siguiente.Enabled = false;
                 this.TSB_Ultimo.Enabled = false;
+                this.TSB_Modificar.Enabled = false;
+                this.TSB_Eliminar.Enabled = false;
+                this.TSB_Imprimir.Enabled = false;
+
             }
             else
             {
@@ -109,6 +113,9 @@ namespace MOFIN
                 this.TSB_Anterior.Enabled = (BS_Usuarios.Position == 0) ? false : true;
                 this.TSB_Siguiente.Enabled = (BS_Usuarios.Position == BS_Usuarios.Count - 1) ? false : true;
                 this.TSB_Ultimo.Enabled = (BS_Usuarios.Position == BS_Usuarios.Count - 1) ? false : true;
+                this.TSB_Modificar.Enabled = true;
+                this.TSB_Eliminar.Enabled = true;
+                this.TSB_Imprimir.Enabled = true;
             }
         }
 
@@ -153,9 +160,8 @@ namespace MOFIN
 
         private void TSB_Eliminar_Click(object sender, EventArgs e)
         {
-          //  string vl_texto = BS_Usuarios.Current("Nombre");      // (char)Grd_Usuarios.CurrentRow.Cells["Nombre"].Value;
-
-            DialogResult vl_Resp = MessageBox.Show("Desea Eliminar este Registro? " + "\n\n" + "***", 
+            string vl_RegEliminar = ((DataRowView)this.BS_Usuarios.Current).Row["Nombre"].ToString();
+            DialogResult vl_Resp = MessageBox.Show("Desea Eliminar este Registro? " + "\n\n" + vl_RegEliminar, 
                 "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(vl_Resp == DialogResult.Yes)
             {

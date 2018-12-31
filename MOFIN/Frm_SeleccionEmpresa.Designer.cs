@@ -61,7 +61,7 @@
             // Lbl_Usuario
             // 
             this.Lbl_Usuario.AutoSize = true;
-            this.Lbl_Usuario.Location = new System.Drawing.Point(69, 118);
+            this.Lbl_Usuario.Location = new System.Drawing.Point(69, 124);
             this.Lbl_Usuario.Name = "Lbl_Usuario";
             this.Lbl_Usuario.Size = new System.Drawing.Size(64, 16);
             this.Lbl_Usuario.TabIndex = 1;
@@ -70,7 +70,7 @@
             // Lbl_Contraseña
             // 
             this.Lbl_Contraseña.AutoSize = true;
-            this.Lbl_Contraseña.Location = new System.Drawing.Point(69, 151);
+            this.Lbl_Contraseña.Location = new System.Drawing.Point(69, 163);
             this.Lbl_Contraseña.Name = "Lbl_Contraseña";
             this.Lbl_Contraseña.Size = new System.Drawing.Size(88, 16);
             this.Lbl_Contraseña.TabIndex = 2;
@@ -83,7 +83,7 @@
             this.Cmb_Empresa.FormattingEnabled = true;
             this.Cmb_Empresa.Location = new System.Drawing.Point(179, 81);
             this.Cmb_Empresa.Name = "Cmb_Empresa";
-            this.Cmb_Empresa.Size = new System.Drawing.Size(250, 24);
+            this.Cmb_Empresa.Size = new System.Drawing.Size(300, 24);
             this.Cmb_Empresa.TabIndex = 3;
             this.Cmb_Empresa.ValueMember = "Codigo";
             // 
@@ -100,7 +100,7 @@
             // Txt_Usuario
             // 
             this.Txt_Usuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.Txt_Usuario.Location = new System.Drawing.Point(179, 115);
+            this.Txt_Usuario.Location = new System.Drawing.Point(179, 121);
             this.Txt_Usuario.MaxLength = 32;
             this.Txt_Usuario.Name = "Txt_Usuario";
             this.Txt_Usuario.Size = new System.Drawing.Size(150, 22);
@@ -109,7 +109,7 @@
             // Txt_Password
             // 
             this.Txt_Password.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.Txt_Password.Location = new System.Drawing.Point(179, 148);
+            this.Txt_Password.Location = new System.Drawing.Point(179, 160);
             this.Txt_Password.MaxLength = 32;
             this.Txt_Password.Name = "Txt_Password";
             this.Txt_Password.Size = new System.Drawing.Size(150, 22);
