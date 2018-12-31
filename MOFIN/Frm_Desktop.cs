@@ -131,7 +131,7 @@ namespace MOFIN
 
         private void Her_Empresas_Click(object sender, EventArgs e)
         {
-            Form childForm = new Frm_Empresas();
+            Form childForm = new Frm_Clientes();
             childForm.MdiParent = this;
             childForm.Show();
         }
