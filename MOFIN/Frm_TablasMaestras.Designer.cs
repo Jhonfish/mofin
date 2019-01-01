@@ -1,6 +1,8 @@
-﻿namespace MOFIN
+﻿using MetroFramework.Forms;
+
+namespace MOFIN
 {
-    partial class Frm_TablasMaestras
+    partial class Frm_TablasMaestras : MetroForm
     {
         /// <summary>
         /// Required designer variable.

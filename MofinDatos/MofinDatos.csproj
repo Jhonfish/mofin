@@ -47,6 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB_Buscados.cs" />
+    <Compile Include="DC_FirBenAcc.cs" />
+    <Compile Include="DC_Clientes.cs" />
+    <Compile Include="DC_HistActClientes.cs" />
+    <Compile Include="DC_ValorItemConsExp.cs" />
+    <Compile Include="DEmpresas.cs" />
+    <Compile Include="DEmp_Accesos.cs" />
+    <Compile Include="DGrupos.cs" />
+    <Compile Include="DGrupo_Opciones.cs" />
     <Compile Include="DM_ActivComercial.cs" />
     <Compile Include="DM_Antiguedad.cs" />
     <Compile Include="DM_Criptomonedas.cs" />
@@ -63,9 +72,14 @@
     <Compile Include="DM_TipoPersJuridica.cs" />
     <Compile Include="DM_VolOperPersJur.cs" />
     <Compile Include="DM_VolOperPersNat.cs" />
+    <Compile Include="DUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MofinModeloEntorno\MofinModeloEntorno.csproj">
+      <Project>{4d37c5b6-8f39-4bce-9547-c89db8ce242d}</Project>
+      <Name>MofinModeloEntorno</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MofinModelo\MofinModelo.csproj">
       <Project>{e80cc34e-56cf-429a-8a96-89336ae0c024}</Project>
       <Name>MofinModelo</Name>
