@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.mEdadBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.btnIncluir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,11 +42,10 @@
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mEdadBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEdad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mEdadBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEdad)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCodigo
@@ -55,6 +55,10 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 0;
+            // 
+            // mEdadBindingSource
+            // 
+            this.mEdadBindingSource.DataSource = typeof(MofinModelo.M_Edad);
             // 
             // label1
             // 
@@ -152,10 +156,6 @@
             this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
             this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
             // 
-            // mEdadBindingSource
-            // 
-            this.mEdadBindingSource.DataSource = typeof(MofinModelo.M_Edad);
-            // 
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(435, 280);
@@ -164,6 +164,7 @@
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnGuardar
             // 
@@ -194,8 +195,8 @@
             this.Name = "Frm_Edad";
             this.Text = "Tabla de Edad";
             this.Load += new System.EventHandler(this.Frm_Edad_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEdad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mEdadBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEdad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

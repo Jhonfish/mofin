@@ -43,7 +43,8 @@ namespace MOFIN
             this.TA_MEstados.Fill(this.DS_MonitorOperaciones.M_Estados);
 
             BS_TablaMaestra = BS_MPais;
-//            Cmb_TablaMaestra.Text = Cmb_TablaMaestra.Items.;
+            Cmb_TablaMaestra.SelectedIndex = 0;
+            //            Cmb_TablaMaestra.Text = Cmb_TablaMaestra.Items.;
             this.Modo_Consulta();
 
         }
@@ -77,12 +78,13 @@ namespace MOFIN
 
             this.Btn_Aceptar.Visible = false;
             this.Btn_Cancelar.Visible = false;
-
+            
             TSB_ActualizaBotonesNavegacion();
         }
 
         private void Modo_Edicion()
         {
+            
             this.Txt_Codigo.Enabled = true;
             this.Cmb_Pais.Enabled = true;
             this.Txt_CodAlfa2.Enabled = true;
@@ -207,6 +209,7 @@ namespace MOFIN
 
         private void Cmb_TablaMaestra_SelectedIndexChanged(object sender, EventArgs e)
         {
+                            
             //MessageBox.Show(Cmb_TablaMaestra.SelectedIndex.ToString());
             switch (Cmb_TablaMaestra.SelectedIndex)
             {
@@ -224,12 +227,18 @@ namespace MOFIN
                     break;
                 case 4:  // "Estados"
                     BS_TablaMaestra = BS_MEstados;
+                    this.Lbl_Pais.Visible = true;
+                    this.Cmb_Pais.Visible = true;
                     break;
                 case 5: // Nivel de Riesgo
                     BS_TablaMaestra = BS_MNivelRiesgo;
                     break;
                 case 6:  // "Pais"
                     BS_TablaMaestra = BS_MPais;
+                    this.Lbl_CodAlfa2.Visible = true;
+                    this.Lbl_CodAlfa3.Visible = true;
+                    this.Txt_CodAlfa2.Visible = true;
+                    this.Txt_CodAlfa3.Visible = true;
                     break;
                 case 7:  // "P.E.P."
                     break;
@@ -260,9 +269,18 @@ namespace MOFIN
             this.NUD_Valor.DataBindings.Add("Value", BS_TablaMaestra, "Valor");
             Grd_Detalles.DataSource = BS_TablaMaestra;
             TSB_ActualizaBotonesNavegacion();
-            Grd_Detalles.Refresh();
-        }
 
+            Grd_Detalles.Refresh();
+
+            this.Cmb_Pais.Visible = false;
+            this.Txt_CodAlfa2.Visible = false;
+            this.Txt_CodAlfa3.Visible = false;
+
+            this.Lbl_Pais.Visible = false;
+            this.Lbl_CodAlfa2.Visible = false;
+            this.Lbl_CodAlfa3.Visible = false;
+
+        }
     }
 }
     
