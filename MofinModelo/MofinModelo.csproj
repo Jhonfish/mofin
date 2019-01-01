@@ -128,7 +128,6 @@
     <Compile Include="M_VolOperPersNat.cs">
       <DependentUpon>MofinModelo.tt</DependentUpon>
     </Compile>
-    <Compile Include="NM_Profesiones.cs" />
     <Compile Include="O_HistPerfOperac.cs">
       <DependentUpon>MofinModelo.tt</DependentUpon>
     </Compile>
