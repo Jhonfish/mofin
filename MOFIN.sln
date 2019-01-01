@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MofinDatos", "MofinDatos\Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MofinNegocios", "MofinNegocios\MofinNegocios.csproj", "{FC87A849-0770-4439-A6C2-5EE0D9F16D0F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MofinModeloEntorno", "MofinModeloEntorno\MofinModeloEntorno.csproj", "{4D37C5B6-8F39-4BCE-9547-C89DB8CE242D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{FC87A849-0770-4439-A6C2-5EE0D9F16D0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC87A849-0770-4439-A6C2-5EE0D9F16D0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC87A849-0770-4439-A6C2-5EE0D9F16D0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D37C5B6-8F39-4BCE-9547-C89DB8CE242D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D37C5B6-8F39-4BCE-9547-C89DB8CE242D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D37C5B6-8F39-4BCE-9547-C89DB8CE242D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D37C5B6-8F39-4BCE-9547-C89DB8CE242D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

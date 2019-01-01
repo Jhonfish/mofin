@@ -22,6 +22,7 @@ namespace MOFIN
 
         // Private BindingSource BS_TablaMaestra;
         private BindingSource BS_TablaMaestra;
+       
 
         private void Frm_TablasMaestras_Load(object sender, EventArgs e)
         {
