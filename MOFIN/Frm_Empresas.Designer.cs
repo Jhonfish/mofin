@@ -1,6 +1,6 @@
 ﻿namespace MOFIN
 {
-    partial class Frm_Empresas
+    partial class Frm_Clientes
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,7 @@
             System.Windows.Forms.Label telefono2Label;
             System.Windows.Forms.Label direccionLabel;
             System.Windows.Forms.Label logoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Empresas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Clientes));
             this.Btn_Cancelar = new System.Windows.Forms.Button();
             this.Btn_Aceptar = new System.Windows.Forms.Button();
             this.TS_BarraHerramientas = new System.Windows.Forms.ToolStrip();
