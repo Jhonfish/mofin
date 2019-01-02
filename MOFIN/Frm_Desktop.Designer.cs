@@ -345,6 +345,7 @@
             this.monitorDeClientesToolStripMenuItem.Name = "monitorDeClientesToolStripMenuItem";
             this.monitorDeClientesToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
             this.monitorDeClientesToolStripMenuItem.Text = "Monitor de Clientes";
+            this.monitorDeClientesToolStripMenuItem.Click += new System.EventHandler(this.monitorDeClientesToolStripMenuItem_Click);
             // 
             // búsquedaDeClientesToolStripMenuItem
             // 

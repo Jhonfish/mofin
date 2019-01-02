@@ -31,13 +31,14 @@ namespace MOFIN
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label Lbl_Codigo;
-            System.Windows.Forms.Label Lbl_CodAlfa2;
-            System.Windows.Forms.Label Lbl_CodAlfa3;
-            System.Windows.Forms.Label Lbl_Nombre;
-            System.Windows.Forms.Label Lbl_Valor;
-            System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_TablasMaestras));
+            this.Lbl_Codigo = new System.Windows.Forms.Label();
+            this.Lbl_CodAlfa2 = new System.Windows.Forms.Label();
+            this.Lbl_CodAlfa3 = new System.Windows.Forms.Label();
+            this.Lbl_Nombre = new System.Windows.Forms.Label();
+            this.Lbl_Valor = new System.Windows.Forms.Label();
+            this.Lbl_tablaMaestra = new System.Windows.Forms.Label();
+            this.Lbl_Pais = new System.Windows.Forms.Label();
             this.Btn_Cancelar = new System.Windows.Forms.Button();
             this.Btn_Aceptar = new System.Windows.Forms.Button();
             this.TS_BarraHerramientas = new System.Windows.Forms.ToolStrip();
@@ -78,12 +79,7 @@ namespace MOFIN
             this.TA_MNivelRiesgo = new MOFIN.MonitorOperacionesDataSetTableAdapters.M_NivelRiesgoTableAdapter();
             this.BS_MProfesiones = new System.Windows.Forms.BindingSource(this.components);
             this.TA_MProfesiones = new MOFIN.MonitorOperacionesDataSetTableAdapters.M_ProfesionesTableAdapter();
-            Lbl_Codigo = new System.Windows.Forms.Label();
-            Lbl_CodAlfa2 = new System.Windows.Forms.Label();
-            Lbl_CodAlfa3 = new System.Windows.Forms.Label();
-            Lbl_Nombre = new System.Windows.Forms.Label();
-            Lbl_Valor = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
+            this.Cmb_Pais = new System.Windows.Forms.ComboBox();
             this.TS_BarraHerramientas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Detalles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MPais)).BeginInit();
@@ -100,57 +96,69 @@ namespace MOFIN
             // 
             // Lbl_Codigo
             // 
-            Lbl_Codigo.AutoSize = true;
-            Lbl_Codigo.Location = new System.Drawing.Point(16, 182);
-            Lbl_Codigo.Name = "Lbl_Codigo";
-            Lbl_Codigo.Size = new System.Drawing.Size(64, 16);
-            Lbl_Codigo.TabIndex = 38;
-            Lbl_Codigo.Text = "Codigo:";
+            this.Lbl_Codigo.AutoSize = true;
+            this.Lbl_Codigo.Location = new System.Drawing.Point(16, 182);
+            this.Lbl_Codigo.Name = "Lbl_Codigo";
+            this.Lbl_Codigo.Size = new System.Drawing.Size(64, 16);
+            this.Lbl_Codigo.TabIndex = 38;
+            this.Lbl_Codigo.Text = "Codigo:";
             // 
             // Lbl_CodAlfa2
             // 
-            Lbl_CodAlfa2.AutoSize = true;
-            Lbl_CodAlfa2.Location = new System.Drawing.Point(171, 161);
-            Lbl_CodAlfa2.Name = "Lbl_CodAlfa2";
-            Lbl_CodAlfa2.Size = new System.Drawing.Size(80, 16);
-            Lbl_CodAlfa2.TabIndex = 40;
-            Lbl_CodAlfa2.Text = "AlfaNum 2";
+            this.Lbl_CodAlfa2.AutoSize = true;
+            this.Lbl_CodAlfa2.Location = new System.Drawing.Point(174, 161);
+            this.Lbl_CodAlfa2.Name = "Lbl_CodAlfa2";
+            this.Lbl_CodAlfa2.Size = new System.Drawing.Size(72, 16);
+            this.Lbl_CodAlfa2.TabIndex = 40;
+            this.Lbl_CodAlfa2.Text = "AlfaNum2";
+            this.Lbl_CodAlfa2.Visible = false;
             // 
             // Lbl_CodAlfa3
             // 
-            Lbl_CodAlfa3.AutoSize = true;
-            Lbl_CodAlfa3.Location = new System.Drawing.Point(294, 161);
-            Lbl_CodAlfa3.Name = "Lbl_CodAlfa3";
-            Lbl_CodAlfa3.Size = new System.Drawing.Size(72, 16);
-            Lbl_CodAlfa3.TabIndex = 42;
-            Lbl_CodAlfa3.Text = "AlfaNum3";
+            this.Lbl_CodAlfa3.AutoSize = true;
+            this.Lbl_CodAlfa3.Location = new System.Drawing.Point(292, 161);
+            this.Lbl_CodAlfa3.Name = "Lbl_CodAlfa3";
+            this.Lbl_CodAlfa3.Size = new System.Drawing.Size(72, 16);
+            this.Lbl_CodAlfa3.TabIndex = 42;
+            this.Lbl_CodAlfa3.Text = "AlfaNum3";
+            this.Lbl_CodAlfa3.Visible = false;
             // 
             // Lbl_Nombre
             // 
-            Lbl_Nombre.AutoSize = true;
-            Lbl_Nombre.Location = new System.Drawing.Point(16, 211);
-            Lbl_Nombre.Name = "Lbl_Nombre";
-            Lbl_Nombre.Size = new System.Drawing.Size(64, 16);
-            Lbl_Nombre.TabIndex = 44;
-            Lbl_Nombre.Text = "Nombre:";
+            this.Lbl_Nombre.AutoSize = true;
+            this.Lbl_Nombre.Location = new System.Drawing.Point(16, 211);
+            this.Lbl_Nombre.Name = "Lbl_Nombre";
+            this.Lbl_Nombre.Size = new System.Drawing.Size(64, 16);
+            this.Lbl_Nombre.TabIndex = 44;
+            this.Lbl_Nombre.Text = "Nombre:";
             // 
             // Lbl_Valor
             // 
-            Lbl_Valor.AutoSize = true;
-            Lbl_Valor.Location = new System.Drawing.Point(16, 326);
-            Lbl_Valor.Name = "Lbl_Valor";
-            Lbl_Valor.Size = new System.Drawing.Size(56, 16);
-            Lbl_Valor.TabIndex = 49;
-            Lbl_Valor.Text = "Valor:";
+            this.Lbl_Valor.AutoSize = true;
+            this.Lbl_Valor.Location = new System.Drawing.Point(16, 326);
+            this.Lbl_Valor.Name = "Lbl_Valor";
+            this.Lbl_Valor.Size = new System.Drawing.Size(56, 16);
+            this.Lbl_Valor.TabIndex = 49;
+            this.Lbl_Valor.Text = "Valor:";
             // 
-            // label1
+            // Lbl_tablaMaestra
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(16, 100);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(216, 16);
-            label1.TabIndex = 52;
-            label1.Text = "Seleccionar Tabla Maestra:";
+            this.Lbl_tablaMaestra.AutoSize = true;
+            this.Lbl_tablaMaestra.Location = new System.Drawing.Point(16, 100);
+            this.Lbl_tablaMaestra.Name = "Lbl_tablaMaestra";
+            this.Lbl_tablaMaestra.Size = new System.Drawing.Size(216, 16);
+            this.Lbl_tablaMaestra.TabIndex = 52;
+            this.Lbl_tablaMaestra.Text = "Seleccionar Tabla Maestra:";
+            // 
+            // Lbl_Pais
+            // 
+            this.Lbl_Pais.AutoSize = true;
+            this.Lbl_Pais.Location = new System.Drawing.Point(30, 153);
+            this.Lbl_Pais.Name = "Lbl_Pais";
+            this.Lbl_Pais.Size = new System.Drawing.Size(48, 16);
+            this.Lbl_Pais.TabIndex = 54;
+            this.Lbl_Pais.Text = "País:";
+            this.Lbl_Pais.Visible = false;
             // 
             // Btn_Cancelar
             // 
@@ -318,13 +326,14 @@ namespace MOFIN
             // 
             this.Grd_Detalles.AllowUserToAddRows = false;
             this.Grd_Detalles.AllowUserToDeleteRows = false;
+            this.Grd_Detalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.Grd_Detalles.BackgroundColor = System.Drawing.Color.White;
             this.Grd_Detalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grd_Detalles.Location = new System.Drawing.Point(397, 165);
+            this.Grd_Detalles.Location = new System.Drawing.Point(397, 150);
             this.Grd_Detalles.Name = "Grd_Detalles";
             this.Grd_Detalles.ReadOnly = true;
             this.Grd_Detalles.RowHeadersVisible = false;
-            this.Grd_Detalles.Size = new System.Drawing.Size(365, 273);
+            this.Grd_Detalles.Size = new System.Drawing.Size(365, 288);
             this.Grd_Detalles.TabIndex = 38;
             // 
             // BS_MPais
@@ -352,14 +361,16 @@ namespace MOFIN
             this.Txt_CodAlfa2.Name = "Txt_CodAlfa2";
             this.Txt_CodAlfa2.Size = new System.Drawing.Size(57, 22);
             this.Txt_CodAlfa2.TabIndex = 41;
+            this.Txt_CodAlfa2.Visible = false;
             // 
             // Txt_CodAlfa3
             // 
             this.Txt_CodAlfa3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_MPais, "Cod_AlfaNum3", true));
-            this.Txt_CodAlfa3.Location = new System.Drawing.Point(299, 179);
+            this.Txt_CodAlfa3.Location = new System.Drawing.Point(297, 180);
             this.Txt_CodAlfa3.Name = "Txt_CodAlfa3";
             this.Txt_CodAlfa3.Size = new System.Drawing.Size(57, 22);
             this.Txt_CodAlfa3.TabIndex = 43;
+            this.Txt_CodAlfa3.Visible = false;
             // 
             // Txt_Nombre
             // 
@@ -367,7 +378,7 @@ namespace MOFIN
             this.Txt_Nombre.Location = new System.Drawing.Point(84, 208);
             this.Txt_Nombre.Multiline = true;
             this.Txt_Nombre.Name = "Txt_Nombre";
-            this.Txt_Nombre.Size = new System.Drawing.Size(272, 110);
+            this.Txt_Nombre.Size = new System.Drawing.Size(270, 110);
             this.Txt_Nombre.TabIndex = 45;
             // 
             // Chk_CES
@@ -384,7 +395,7 @@ namespace MOFIN
             // NUD_Valor
             // 
             this.NUD_Valor.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BS_MPais, "Valor", true));
-            this.NUD_Valor.Location = new System.Drawing.Point(142, 324);
+            this.NUD_Valor.Location = new System.Drawing.Point(84, 324);
             this.NUD_Valor.Name = "NUD_Valor";
             this.NUD_Valor.Size = new System.Drawing.Size(57, 22);
             this.NUD_Valor.TabIndex = 50;
@@ -489,8 +500,7 @@ namespace MOFIN
             // 
             // BS_MEdad
             // 
-            this.BS_MEdad.DataMember = "M_Edad";
-            this.BS_MEdad.DataSource = this.DS_MonitorOperaciones;
+            this.BS_MEdad.DataSource = typeof(MofinModelo.M_Edad);
             // 
             // TA_MEdad
             // 
@@ -514,6 +524,16 @@ namespace MOFIN
             // 
             this.TA_MProfesiones.ClearBeforeFill = true;
             // 
+            // Cmb_Pais
+            // 
+            this.Cmb_Pais.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_MPais, "Descripcion", true));
+            this.Cmb_Pais.FormattingEnabled = true;
+            this.Cmb_Pais.Location = new System.Drawing.Point(84, 150);
+            this.Cmb_Pais.Name = "Cmb_Pais";
+            this.Cmb_Pais.Size = new System.Drawing.Size(270, 24);
+            this.Cmb_Pais.TabIndex = 53;
+            this.Cmb_Pais.Visible = false;
+            // 
             // Frm_TablasMaestras
             // 
             this.AcceptButton = this.Btn_Aceptar;
@@ -521,23 +541,25 @@ namespace MOFIN
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(782, 458);
-            this.Controls.Add(label1);
+            this.Controls.Add(this.Lbl_Pais);
+            this.Controls.Add(this.Lbl_tablaMaestra);
             this.Controls.Add(this.Cmb_TablaMaestra);
-            this.Controls.Add(Lbl_Valor);
+            this.Controls.Add(this.Lbl_Valor);
             this.Controls.Add(this.NUD_Valor);
-            this.Controls.Add(Lbl_Codigo);
+            this.Controls.Add(this.Lbl_Codigo);
             this.Controls.Add(this.Txt_Codigo);
-            this.Controls.Add(Lbl_CodAlfa2);
+            this.Controls.Add(this.Lbl_CodAlfa2);
             this.Controls.Add(this.Txt_CodAlfa2);
-            this.Controls.Add(Lbl_CodAlfa3);
+            this.Controls.Add(this.Lbl_CodAlfa3);
             this.Controls.Add(this.Txt_CodAlfa3);
-            this.Controls.Add(Lbl_Nombre);
+            this.Controls.Add(this.Lbl_Nombre);
             this.Controls.Add(this.Txt_Nombre);
             this.Controls.Add(this.Chk_CES);
             this.Controls.Add(this.Grd_Detalles);
             this.Controls.Add(this.TS_BarraHerramientas);
             this.Controls.Add(this.Btn_Cancelar);
             this.Controls.Add(this.Btn_Aceptar);
+            this.Controls.Add(this.Cmb_Pais);
             this.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -608,5 +630,13 @@ namespace MOFIN
         private MonitorOperacionesDataSetTableAdapters.M_NivelRiesgoTableAdapter TA_MNivelRiesgo;
         private System.Windows.Forms.BindingSource BS_MProfesiones;
         private MonitorOperacionesDataSetTableAdapters.M_ProfesionesTableAdapter TA_MProfesiones;
+        private System.Windows.Forms.ComboBox Cmb_Pais;
+        private System.Windows.Forms.Label Lbl_Valor;
+        private System.Windows.Forms.Label Lbl_Codigo;
+        private System.Windows.Forms.Label Lbl_CodAlfa2;
+        private System.Windows.Forms.Label Lbl_CodAlfa3;
+        private System.Windows.Forms.Label Lbl_Nombre;
+        private System.Windows.Forms.Label Lbl_tablaMaestra;
+        private System.Windows.Forms.Label Lbl_Pais;
     }
 }

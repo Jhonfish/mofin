@@ -98,7 +98,7 @@
             // Lbl_IDUsuario
             // 
             Lbl_IDUsuario.AutoSize = true;
-            Lbl_IDUsuario.Location = new System.Drawing.Point(34, 74);
+            Lbl_IDUsuario.Location = new System.Drawing.Point(34, 71);
             Lbl_IDUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             Lbl_IDUsuario.Name = "Lbl_IDUsuario";
             Lbl_IDUsuario.Size = new System.Drawing.Size(96, 16);
@@ -108,7 +108,7 @@
             // Lbl_Nombre
             // 
             Lbl_Nombre.AutoSize = true;
-            Lbl_Nombre.Location = new System.Drawing.Point(34, 106);
+            Lbl_Nombre.Location = new System.Drawing.Point(34, 103);
             Lbl_Nombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             Lbl_Nombre.Name = "Lbl_Nombre";
             Lbl_Nombre.Size = new System.Drawing.Size(64, 16);
@@ -118,7 +118,7 @@
             // Lbl_Password
             // 
             Lbl_Password.AutoSize = true;
-            Lbl_Password.Location = new System.Drawing.Point(34, 138);
+            Lbl_Password.Location = new System.Drawing.Point(34, 135);
             Lbl_Password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             Lbl_Password.Name = "Lbl_Password";
             Lbl_Password.Size = new System.Drawing.Size(80, 16);
@@ -128,7 +128,7 @@
             // Lbl_FondoEscritorio
             // 
             Lbl_FondoEscritorio.AutoSize = true;
-            Lbl_FondoEscritorio.Location = new System.Drawing.Point(34, 176);
+            Lbl_FondoEscritorio.Location = new System.Drawing.Point(34, 173);
             Lbl_FondoEscritorio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             Lbl_FondoEscritorio.Name = "Lbl_FondoEscritorio";
             Lbl_FondoEscritorio.Size = new System.Drawing.Size(168, 16);
@@ -138,7 +138,7 @@
             // Lbl_Idioma
             // 
             Lbl_Idioma.AutoSize = true;
-            Lbl_Idioma.Location = new System.Drawing.Point(34, 239);
+            Lbl_Idioma.Location = new System.Drawing.Point(34, 236);
             Lbl_Idioma.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             Lbl_Idioma.Name = "Lbl_Idioma";
             Lbl_Idioma.Size = new System.Drawing.Size(64, 16);
@@ -148,7 +148,7 @@
             // Lbl_PaisUso
             // 
             Lbl_PaisUso.AutoSize = true;
-            Lbl_PaisUso.Location = new System.Drawing.Point(34, 302);
+            Lbl_PaisUso.Location = new System.Drawing.Point(34, 299);
             Lbl_PaisUso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             Lbl_PaisUso.Name = "Lbl_PaisUso";
             Lbl_PaisUso.Size = new System.Drawing.Size(80, 16);
@@ -158,7 +158,7 @@
             // Lbl_FormatoFecha
             // 
             Lbl_FormatoFecha.AutoSize = true;
-            Lbl_FormatoFecha.Location = new System.Drawing.Point(34, 365);
+            Lbl_FormatoFecha.Location = new System.Drawing.Point(34, 362);
             Lbl_FormatoFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             Lbl_FormatoFecha.Name = "Lbl_FormatoFecha";
             Lbl_FormatoFecha.Size = new System.Drawing.Size(144, 16);
@@ -174,7 +174,7 @@
             this.Btn_Cancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Btn_Cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Cancelar.Location = new System.Drawing.Point(608, 400);
+            this.Btn_Cancelar.Location = new System.Drawing.Point(608, 409);
             this.Btn_Cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Cancelar.Name = "Btn_Cancelar";
             this.Btn_Cancelar.Size = new System.Drawing.Size(38, 38);
@@ -193,7 +193,7 @@
             this.Btn_Aceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Btn_Aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Btn_Aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Aceptar.Location = new System.Drawing.Point(526, 400);
+            this.Btn_Aceptar.Location = new System.Drawing.Point(526, 409);
             this.Btn_Aceptar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Aceptar.Name = "Btn_Aceptar";
             this.Btn_Aceptar.Size = new System.Drawing.Size(38, 38);
@@ -220,7 +220,7 @@
             // Txt_IDUsuario
             // 
             this.Txt_IDUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Usuarios, "ID_Usuario", true));
-            this.Txt_IDUsuario.Location = new System.Drawing.Point(136, 74);
+            this.Txt_IDUsuario.Location = new System.Drawing.Point(136, 71);
             this.Txt_IDUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_IDUsuario.Name = "Txt_IDUsuario";
             this.Txt_IDUsuario.Size = new System.Drawing.Size(200, 22);
@@ -229,7 +229,7 @@
             // Txt_Nombre
             // 
             this.Txt_Nombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Usuarios, "Nombre", true));
-            this.Txt_Nombre.Location = new System.Drawing.Point(136, 106);
+            this.Txt_Nombre.Location = new System.Drawing.Point(136, 103);
             this.Txt_Nombre.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Nombre.Name = "Txt_Nombre";
             this.Txt_Nombre.Size = new System.Drawing.Size(362, 22);
@@ -238,7 +238,7 @@
             // Txt_Password
             // 
             this.Txt_Password.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Usuarios, "Password", true));
-            this.Txt_Password.Location = new System.Drawing.Point(136, 138);
+            this.Txt_Password.Location = new System.Drawing.Point(136, 135);
             this.Txt_Password.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Password.Name = "Txt_Password";
             this.Txt_Password.Size = new System.Drawing.Size(200, 22);
@@ -372,7 +372,7 @@
             // 
             this.Grp_Desktop.Controls.Add(this.Opc_Desktop2);
             this.Grp_Desktop.Controls.Add(this.Opc_Desktop1);
-            this.Grp_Desktop.Location = new System.Drawing.Point(206, 164);
+            this.Grp_Desktop.Location = new System.Drawing.Point(206, 161);
             this.Grp_Desktop.Name = "Grp_Desktop";
             this.Grp_Desktop.Size = new System.Drawing.Size(132, 57);
             this.Grp_Desktop.TabIndex = 38;
@@ -404,7 +404,7 @@
             // 
             this.Grp_Idioma.Controls.Add(this.Opc_Idioma2);
             this.Grp_Idioma.Controls.Add(this.Opc_Idioma1);
-            this.Grp_Idioma.Location = new System.Drawing.Point(206, 227);
+            this.Grp_Idioma.Location = new System.Drawing.Point(206, 224);
             this.Grp_Idioma.Name = "Grp_Idioma";
             this.Grp_Idioma.Size = new System.Drawing.Size(132, 57);
             this.Grp_Idioma.TabIndex = 39;
@@ -436,7 +436,7 @@
             // 
             this.Grp_Pais.Controls.Add(this.Opc_Pais2);
             this.Grp_Pais.Controls.Add(this.Opc_Pais1);
-            this.Grp_Pais.Location = new System.Drawing.Point(206, 290);
+            this.Grp_Pais.Location = new System.Drawing.Point(206, 287);
             this.Grp_Pais.Name = "Grp_Pais";
             this.Grp_Pais.Size = new System.Drawing.Size(132, 57);
             this.Grp_Pais.TabIndex = 40;
@@ -468,7 +468,7 @@
             // 
             this.Grp_FormatoFecha.Controls.Add(this.Opc_FormFec2);
             this.Grp_FormatoFecha.Controls.Add(this.Opc_FormFec1);
-            this.Grp_FormatoFecha.Location = new System.Drawing.Point(206, 353);
+            this.Grp_FormatoFecha.Location = new System.Drawing.Point(206, 350);
             this.Grp_FormatoFecha.Name = "Grp_FormatoFecha";
             this.Grp_FormatoFecha.Size = new System.Drawing.Size(132, 57);
             this.Grp_FormatoFecha.TabIndex = 41;
@@ -501,7 +501,7 @@
             this.Chk_Sonido.AutoSize = true;
             this.Chk_Sonido.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Chk_Sonido.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Usuarios, "Cnfg_SonidoClick", true));
-            this.Chk_Sonido.Location = new System.Drawing.Point(34, 416);
+            this.Chk_Sonido.Location = new System.Drawing.Point(34, 413);
             this.Chk_Sonido.Name = "Chk_Sonido";
             this.Chk_Sonido.Size = new System.Drawing.Size(187, 20);
             this.Chk_Sonido.TabIndex = 42;
@@ -523,11 +523,11 @@
             this.Cnfg_PaisUso,
             this.Cnfg_FormFecha});
             this.Grd_Usuarios.DataSource = this.BS_Usuarios;
-            this.Grd_Usuarios.Location = new System.Drawing.Point(344, 138);
+            this.Grd_Usuarios.Location = new System.Drawing.Point(344, 135);
             this.Grd_Usuarios.Name = "Grd_Usuarios";
             this.Grd_Usuarios.ReadOnly = true;
             this.Grd_Usuarios.RowHeadersVisible = false;
-            this.Grd_Usuarios.Size = new System.Drawing.Size(412, 255);
+            this.Grd_Usuarios.Size = new System.Drawing.Size(412, 272);
             this.Grd_Usuarios.TabIndex = 42;
             this.Grd_Usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grd_Usuarios_CellContentClick);
             this.Grd_Usuarios.CurrentCellChanged += new System.EventHandler(this.Grd_Usuarios_CurrentCellChanged);
@@ -598,7 +598,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(765, 445);
+            this.ClientSize = new System.Drawing.Size(765, 450);
             this.Controls.Add(this.Grd_Usuarios);
             this.Controls.Add(this.Chk_Sonido);
             this.Controls.Add(this.Grp_FormatoFecha);

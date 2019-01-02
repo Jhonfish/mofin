@@ -26,6 +26,8 @@ namespace MOFIN
             this.TA_Empresas.Fill(this.DS_Entorno.Empresas);
             // TODO: esta línea de código carga datos en la tabla 'entornoDataSet.Empresas' Puede moverla o quitarla según sea necesario.
             this.TA_Empresas.Fill(this.DS_Entorno.Empresas);
+
+            this.Cmb_Empresa.SelectedIndex = 0;
             this.Cmb_Empresa.Focus();
         }
 

@@ -131,7 +131,7 @@ namespace MOFIN
 
         private void Her_Empresas_Click(object sender, EventArgs e)
         {
-            Form childForm = new Frm_Clientes();
+            Form childForm = new Frm_Empresas();
             childForm.MdiParent = this;
             childForm.Show();
         }
@@ -152,6 +152,14 @@ namespace MOFIN
         private void tablasMaestrasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form childForm = new Frm_TablasMaestras();
+            childForm.MdiParent = this;
+            childForm.Show();
+
+        }
+
+        private void monitorDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Frm_Clientes();
             childForm.MdiParent = this;
             childForm.Show();
 
