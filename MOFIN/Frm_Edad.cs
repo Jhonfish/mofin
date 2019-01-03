@@ -11,14 +11,13 @@ using MetroFramework.Forms;
 using MofinNegocios;
 using MofinModelo;
 
-
-
 namespace MOFIN
 {
     public partial class Frm_Edad : MetroForm
     {
         bool EsNuevo = true;
         M_Edad m_Edad = new M_Edad();
+        
         public Frm_Edad()
         {
             InitializeComponent();
@@ -27,7 +26,6 @@ namespace MOFIN
         private void Frm_Edad_Load(object sender, EventArgs e)
         {
             mEdadBindingSource.DataSource = NM_Edad.Listar();
-
         }
 
         private void btnIncluir_Click(object sender, EventArgs e)
@@ -68,6 +66,8 @@ namespace MOFIN
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            string vaina = m_Edad.Descripcion.ToString();
+            MessageBox.Show(vaina);
             NM_Edad.Elimiar(mEdadBindingSource.Current as M_Edad);
         }
     }
