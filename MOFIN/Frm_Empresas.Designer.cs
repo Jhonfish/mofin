@@ -56,6 +56,8 @@
             this.tableAdapterManager = new MOFIN.EntornoDataSetTableAdapters.TableAdapterManager();
             this.TA_Empresas = new MOFIN.EntornoDataSetTableAdapters.EmpresasTableAdapter();
             this.Txt_Codigo = new System.Windows.Forms.TextBox();
+            this.BS_Empresas = new System.Windows.Forms.BindingSource(this.components);
+            this.DS_Entorno = new MOFIN.EntornoDataSet();
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
             this.Txt_Siglas = new System.Windows.Forms.TextBox();
             this.Txt_DocID = new System.Windows.Forms.TextBox();
@@ -64,8 +66,6 @@
             this.Txt_Telf2 = new System.Windows.Forms.TextBox();
             this.Txt_Direc = new System.Windows.Forms.TextBox();
             this.Txt_Logo = new System.Windows.Forms.TextBox();
-            this.DS_Entorno = new MOFIN.EntornoDataSet();
-            this.BS_Empresas = new System.Windows.Forms.BindingSource(this.components);
             this.Grd_Empresas = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,8 +87,8 @@
             direccionLabel = new System.Windows.Forms.Label();
             logoLabel = new System.Windows.Forms.Label();
             this.TS_BarraHerramientas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DS_Entorno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Empresas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_Entorno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Empresas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -360,6 +360,16 @@
             this.Txt_Codigo.Size = new System.Drawing.Size(100, 22);
             this.Txt_Codigo.TabIndex = 38;
             // 
+            // BS_Empresas
+            // 
+            this.BS_Empresas.DataMember = "Empresas";
+            this.BS_Empresas.DataSource = this.DS_Entorno;
+            // 
+            // DS_Entorno
+            // 
+            this.DS_Entorno.DataSetName = "EntornoDataSet";
+            this.DS_Entorno.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Txt_Nombre
             // 
             this.Txt_Nombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Empresas, "Nombre", true));
@@ -426,16 +436,6 @@
             this.Txt_Logo.Name = "Txt_Logo";
             this.Txt_Logo.Size = new System.Drawing.Size(280, 50);
             this.Txt_Logo.TabIndex = 56;
-            // 
-            // DS_Entorno
-            // 
-            this.DS_Entorno.DataSetName = "EntornoDataSet";
-            this.DS_Entorno.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // BS_Empresas
-            // 
-            this.BS_Empresas.DataMember = "Empresas";
-            this.BS_Empresas.DataSource = this.DS_Entorno;
             // 
             // Grd_Empresas
             // 
@@ -586,8 +586,8 @@
             this.Load += new System.EventHandler(this.Frm_Empresas_Load);
             this.TS_BarraHerramientas.ResumeLayout(false);
             this.TS_BarraHerramientas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DS_Entorno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Empresas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_Entorno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Empresas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
