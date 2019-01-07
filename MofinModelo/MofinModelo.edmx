@@ -215,7 +215,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           <Key>
             <PropertyRef Name="Codigo" />
           </Key>
-          <Property Name="ID_Sistema" Type="int" Nullable="false" />
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Codigo" Type="smallint" Nullable="false" />
           <Property Name="Descripcion" Type="text" Nullable="false" />
           <Property Name="Valor" Type="tinyint" Nullable="false" />
