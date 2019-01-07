@@ -26,49 +26,87 @@ namespace MOFIN
 
         private void Frm_Edad_Load(object sender, EventArgs e)
         {
-            mEdadBindingSource.DataSource = NM_Edad.Listar();
+            //mEdadBindingSource.DataSource = NM_Edad.Listar();
+            dgvEdad.DataSource = NM_Edad.Listar();
+            deshabilitar();
+        }
 
+        private void deshabilitar()
+        {
+            panel1.Enabled = false;
+            /*
+            txtCodigo.Enabled = false;
+            txtDescripcion.Enabled = false;
+            txtValor.Enabled = false;
+            */
+        }
+
+        private void habilitar()
+        {
+            panel1.Enabled = true;
+            /*
+            txtCodigo.Enabled = true;
+            txtDescripcion.Enabled = true;
+            txtValor.Enabled = true;
+            */
         }
 
         private void btnIncluir_Click(object sender, EventArgs e)
         {
             //mEdadBindingSource.Add(new M_Edad());
             //mEdadBindingSource.MoveLast();
-            
+
             //mEdadBindingSource.DataSource = new M_Edad();
-            
+            habilitar();
+      
             txtCodigo.Text = null;
             txtDescripcion.Clear();
             txtValor.Clear();
-            
-            m_Edad.Codigo = short.Parse(txtCodigo.Text);
-            m_Edad.Descripcion = txtDescripcion.Text;
-            m_Edad.Valor = byte.Parse(txtValor.Text);
-            
+          
             EsNuevo = true;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            m_Edad.Codigo = short.Parse(txtCodigo.Text);
+            m_Edad.Descripcion = txtDescripcion.Text;
+            m_Edad.Valor = byte.Parse(txtValor.Text);
+
             if (EsNuevo)
+            {
                 //NM_Edad.Insertar(mEdadBindingSource.Current as M_Edad);
                 NM_Edad.Insertar(m_Edad);
+            }   
             else
-                NM_Edad.Actualizar(mEdadBindingSource.Current as M_Edad);
-            dgvEdad.Refresh();
+            {
+                //NM_Edad.Actualizar(mEdadBindingSource.Current as M_Edad);
+                NM_Edad.Actualizar(m_Edad);
+            }
+            deshabilitar();
+            dgvEdad.DataSource = NM_Edad.Listar();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (mEdadBindingSource.Current == null)
-                return;
+            habilitar();
+            txtCodigo.Enabled = false;
+            //if (mEdadBindingSource.Current == null)
+            //    return;
             EsNuevo = false;
-            txtCodigo.Focus();
+           
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            NM_Edad.Elimiar(mEdadBindingSource.Current as M_Edad);
+            //NM_Edad.Eliminar(mEdadBindingSource.Current as M_Edad);
+            NM_Edad.Elimiar(m_Edad);
+        }
+
+        private void dgvEdad_SelectionChanged(object sender, EventArgs e)
+        {
+            txtCodigo.Text = Convert.ToString(dgvEdad.CurrentRow.Cells["Codigo"].Value);
+            txtDescripcion.Text = Convert.ToString(dgvEdad.CurrentRow.Cells["Descripcion"].Value);
+            txtValor.Text = Convert.ToString(dgvEdad.CurrentRow.Cells["Valor"].Value);
         }
     }
 }

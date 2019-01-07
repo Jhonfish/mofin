@@ -22,7 +22,7 @@
           <Property Name="Codigo" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="Nombre" Type="char" MaxLength="40" Nullable="false" />
           <Property Name="Siglas" Type="char" MaxLength="5" />
-          <Property Name="Directorio" Type="char" MaxLength="254" Nullable="false" />
+          <Property Name="Directorio" Type="char" MaxLength="254" />
           <Property Name="Doc_ID" Type="char" MaxLength="20" />
           <Property Name="Email" Type="char" MaxLength="64" />
           <Property Name="Telefono1" Type="char" MaxLength="20" />
@@ -104,7 +104,7 @@
           <Property Name="Cnfg_Idioma" Type="tinyint" />
           <Property Name="Cnfg_PaisUso" Type="tinyint" />
           <Property Name="Cnfg_FormFecha" Type="tinyint" />
-          <Property Name="Cnfg_SonidoClick" Type="tinyint" />
+          <Property Name="Cnfg_SonidoClick" Type="bit" />
         </EntityType>
         <Association Name="FK_Emp_Accesos_Empresas">
           <End Role="Empresas" Type="Self.Empresas" Multiplicity="1" />
@@ -169,7 +169,7 @@
           <Property Name="Codigo" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="Nombre" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="Siglas" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
-          <Property Name="Directorio" Type="String" MaxLength="254" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Directorio" Type="String" MaxLength="254" FixedLength="true" Unicode="false" />
           <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="64" FixedLength="true" Unicode="false" />
           <Property Name="Telefono1" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
@@ -246,7 +246,7 @@
           <Property Name="Cnfg_Idioma" Type="Byte" />
           <Property Name="Cnfg_PaisUso" Type="Byte" />
           <Property Name="Cnfg_FormFecha" Type="Byte" />
-          <Property Name="Cnfg_SonidoClick" Type="Byte" />
+          <Property Name="Cnfg_SonidoClick" Type="Boolean" />
         </EntityType>
         <Association Name="FK_Emp_Accesos_Empresas">
           <End Role="Empresas" Type="Self.Empresas" Multiplicity="1" />

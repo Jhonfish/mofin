@@ -39,10 +39,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Usuarios));
             this.Btn_Cancelar = new System.Windows.Forms.Button();
             this.Btn_Aceptar = new System.Windows.Forms.Button();
-            this.DS_Entorno = new MOFIN.EntornoDataSet();
-            this.BS_Usuarios = new System.Windows.Forms.BindingSource(this.components);
-            this.TA_Usuarios = new MOFIN.EntornoDataSetTableAdapters.UsuariosTableAdapter();
             this.Txt_IDUsuario = new System.Windows.Forms.TextBox();
+            this.BS_Usuarios = new System.Windows.Forms.BindingSource(this.components);
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
             this.Txt_Password = new System.Windows.Forms.TextBox();
             this.TS_BarraHerramientas = new System.Windows.Forms.ToolStrip();
@@ -71,13 +69,15 @@
             this.Opc_FormFec1 = new System.Windows.Forms.RadioButton();
             this.Chk_Sonido = new System.Windows.Forms.CheckBox();
             this.Grd_Usuarios = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_Sistema = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cnfg_Desktop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cnfg_Idioma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cnfg_PaisUso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cnfg_FormFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tableAdapterManager = new MOFIN.EntornoDataSetTableAdapters.TableAdapterManager();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             Lbl_IDUsuario = new System.Windows.Forms.Label();
             Lbl_Nombre = new System.Windows.Forms.Label();
             Lbl_Password = new System.Windows.Forms.Label();
@@ -85,7 +85,6 @@
             Lbl_Idioma = new System.Windows.Forms.Label();
             Lbl_PaisUso = new System.Windows.Forms.Label();
             Lbl_FormatoFecha = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.DS_Entorno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).BeginInit();
             this.TS_BarraHerramientas.SuspendLayout();
             this.Grp_Desktop.SuspendLayout();
@@ -174,11 +173,11 @@
             this.Btn_Cancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Btn_Cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Cancelar.Location = new System.Drawing.Point(608, 409);
+            this.Btn_Cancelar.Location = new System.Drawing.Point(605, 395);
             this.Btn_Cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Cancelar.Name = "Btn_Cancelar";
             this.Btn_Cancelar.Size = new System.Drawing.Size(38, 38);
-            this.Btn_Cancelar.TabIndex = 20;
+            this.Btn_Cancelar.TabIndex = 11;
             this.Btn_Cancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_Cancelar.UseVisualStyleBackColor = true;
             this.Btn_Cancelar.Visible = false;
@@ -193,29 +192,15 @@
             this.Btn_Aceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Btn_Aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Btn_Aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Aceptar.Location = new System.Drawing.Point(526, 409);
+            this.Btn_Aceptar.Location = new System.Drawing.Point(523, 395);
             this.Btn_Aceptar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Aceptar.Name = "Btn_Aceptar";
             this.Btn_Aceptar.Size = new System.Drawing.Size(38, 38);
-            this.Btn_Aceptar.TabIndex = 19;
+            this.Btn_Aceptar.TabIndex = 10;
             this.Btn_Aceptar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_Aceptar.UseVisualStyleBackColor = true;
             this.Btn_Aceptar.Visible = false;
             this.Btn_Aceptar.Click += new System.EventHandler(this.Btn_Aceptar_Click);
-            // 
-            // DS_Entorno
-            // 
-            this.DS_Entorno.DataSetName = "EntornoDataSet";
-            this.DS_Entorno.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // BS_Usuarios
-            // 
-            this.BS_Usuarios.DataMember = "Usuarios";
-            this.BS_Usuarios.DataSource = this.DS_Entorno;
-            // 
-            // TA_Usuarios
-            // 
-            this.TA_Usuarios.ClearBeforeFill = true;
             // 
             // Txt_IDUsuario
             // 
@@ -224,7 +209,11 @@
             this.Txt_IDUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_IDUsuario.Name = "Txt_IDUsuario";
             this.Txt_IDUsuario.Size = new System.Drawing.Size(200, 22);
-            this.Txt_IDUsuario.TabIndex = 22;
+            this.Txt_IDUsuario.TabIndex = 0;
+            // 
+            // BS_Usuarios
+            // 
+            this.BS_Usuarios.DataSource = typeof(MofinModeloEntorno.Usuarios);
             // 
             // Txt_Nombre
             // 
@@ -233,7 +222,7 @@
             this.Txt_Nombre.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Nombre.Name = "Txt_Nombre";
             this.Txt_Nombre.Size = new System.Drawing.Size(362, 22);
-            this.Txt_Nombre.TabIndex = 24;
+            this.Txt_Nombre.TabIndex = 1;
             // 
             // Txt_Password
             // 
@@ -242,7 +231,7 @@
             this.Txt_Password.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Password.Name = "Txt_Password";
             this.Txt_Password.Size = new System.Drawing.Size(200, 22);
-            this.Txt_Password.TabIndex = 26;
+            this.Txt_Password.TabIndex = 2;
             // 
             // TS_BarraHerramientas
             // 
@@ -266,7 +255,7 @@
             this.TS_BarraHerramientas.Location = new System.Drawing.Point(342, 13);
             this.TS_BarraHerramientas.Name = "TS_BarraHerramientas";
             this.TS_BarraHerramientas.Size = new System.Drawing.Size(384, 43);
-            this.TS_BarraHerramientas.TabIndex = 37;
+            this.TS_BarraHerramientas.TabIndex = 9;
             this.TS_BarraHerramientas.Text = "toolStrip1";
             // 
             // TSB_Primero
@@ -375,7 +364,7 @@
             this.Grp_Desktop.Location = new System.Drawing.Point(206, 161);
             this.Grp_Desktop.Name = "Grp_Desktop";
             this.Grp_Desktop.Size = new System.Drawing.Size(132, 57);
-            this.Grp_Desktop.TabIndex = 38;
+            this.Grp_Desktop.TabIndex = 4;
             this.Grp_Desktop.TabStop = false;
             // 
             // Opc_Desktop2
@@ -407,7 +396,7 @@
             this.Grp_Idioma.Location = new System.Drawing.Point(206, 224);
             this.Grp_Idioma.Name = "Grp_Idioma";
             this.Grp_Idioma.Size = new System.Drawing.Size(132, 57);
-            this.Grp_Idioma.TabIndex = 39;
+            this.Grp_Idioma.TabIndex = 5;
             this.Grp_Idioma.TabStop = false;
             // 
             // Opc_Idioma2
@@ -439,7 +428,7 @@
             this.Grp_Pais.Location = new System.Drawing.Point(206, 287);
             this.Grp_Pais.Name = "Grp_Pais";
             this.Grp_Pais.Size = new System.Drawing.Size(132, 57);
-            this.Grp_Pais.TabIndex = 40;
+            this.Grp_Pais.TabIndex = 6;
             this.Grp_Pais.TabStop = false;
             // 
             // Opc_Pais2
@@ -459,7 +448,7 @@
             this.Opc_Pais1.Location = new System.Drawing.Point(10, 10);
             this.Opc_Pais1.Name = "Opc_Pais1";
             this.Opc_Pais1.Size = new System.Drawing.Size(98, 20);
-            this.Opc_Pais1.TabIndex = 0;
+            this.Opc_Pais1.TabIndex = 1;
             this.Opc_Pais1.TabStop = true;
             this.Opc_Pais1.Text = "Venezuela";
             this.Opc_Pais1.UseVisualStyleBackColor = true;
@@ -471,7 +460,7 @@
             this.Grp_FormatoFecha.Location = new System.Drawing.Point(206, 350);
             this.Grp_FormatoFecha.Name = "Grp_FormatoFecha";
             this.Grp_FormatoFecha.Size = new System.Drawing.Size(132, 57);
-            this.Grp_FormatoFecha.TabIndex = 41;
+            this.Grp_FormatoFecha.TabIndex = 7;
             this.Grp_FormatoFecha.TabStop = false;
             // 
             // Opc_FormFec2
@@ -512,41 +501,60 @@
             // 
             this.Grd_Usuarios.AllowUserToAddRows = false;
             this.Grd_Usuarios.AllowUserToDeleteRows = false;
+            this.Grd_Usuarios.AllowUserToResizeRows = false;
             this.Grd_Usuarios.AutoGenerateColumns = false;
-            this.Grd_Usuarios.BackgroundColor = System.Drawing.Color.White;
+            this.Grd_Usuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.Grd_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grd_Usuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
+            this.ID_Sistema,
+            this.ID_Usuario,
+            this.Nombre,
+            this.Password,
             this.Cnfg_Desktop,
             this.Cnfg_Idioma,
             this.Cnfg_PaisUso,
-            this.Cnfg_FormFecha});
+            this.Cnfg_FormFecha,
+            this.dataGridViewTextBoxColumn9});
             this.Grd_Usuarios.DataSource = this.BS_Usuarios;
-            this.Grd_Usuarios.Location = new System.Drawing.Point(344, 135);
+            this.Grd_Usuarios.Location = new System.Drawing.Point(360, 142);
             this.Grd_Usuarios.Name = "Grd_Usuarios";
             this.Grd_Usuarios.ReadOnly = true;
             this.Grd_Usuarios.RowHeadersVisible = false;
-            this.Grd_Usuarios.Size = new System.Drawing.Size(412, 272);
-            this.Grd_Usuarios.TabIndex = 42;
-            this.Grd_Usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grd_Usuarios_CellContentClick);
+            this.Grd_Usuarios.Size = new System.Drawing.Size(453, 246);
+            this.Grd_Usuarios.TabIndex = 8;
             this.Grd_Usuarios.CurrentCellChanged += new System.EventHandler(this.Grd_Usuarios_CurrentCellChanged);
             // 
-            // dataGridViewTextBoxColumn1
+            // ID_Sistema
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_Usuario";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID_Usuario";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 150;
+            this.ID_Sistema.DataPropertyName = "ID_Sistema";
+            this.ID_Sistema.HeaderText = "ID_Sistema";
+            this.ID_Sistema.Name = "ID_Sistema";
+            this.ID_Sistema.ReadOnly = true;
+            this.ID_Sistema.Width = 113;
             // 
-            // dataGridViewTextBoxColumn2
+            // ID_Usuario
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 259;
+            this.ID_Usuario.DataPropertyName = "ID_Usuario";
+            this.ID_Usuario.HeaderText = "ID_Usuario";
+            this.ID_Usuario.Name = "ID_Usuario";
+            this.ID_Usuario.ReadOnly = true;
+            this.ID_Usuario.Width = 113;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 81;
+            // 
+            // Password
+            // 
+            this.Password.DataPropertyName = "Password";
+            this.Password.HeaderText = "Password";
+            this.Password.Name = "Password";
+            this.Password.ReadOnly = true;
+            this.Password.Width = 97;
             // 
             // Cnfg_Desktop
             // 
@@ -554,7 +562,7 @@
             this.Cnfg_Desktop.HeaderText = "Cnfg_Desktop";
             this.Cnfg_Desktop.Name = "Cnfg_Desktop";
             this.Cnfg_Desktop.ReadOnly = true;
-            this.Cnfg_Desktop.Visible = false;
+            this.Cnfg_Desktop.Width = 129;
             // 
             // Cnfg_Idioma
             // 
@@ -562,7 +570,7 @@
             this.Cnfg_Idioma.HeaderText = "Cnfg_Idioma";
             this.Cnfg_Idioma.Name = "Cnfg_Idioma";
             this.Cnfg_Idioma.ReadOnly = true;
-            this.Cnfg_Idioma.Visible = false;
+            this.Cnfg_Idioma.Width = 121;
             // 
             // Cnfg_PaisUso
             // 
@@ -570,7 +578,7 @@
             this.Cnfg_PaisUso.HeaderText = "Cnfg_PaisUso";
             this.Cnfg_PaisUso.Name = "Cnfg_PaisUso";
             this.Cnfg_PaisUso.ReadOnly = true;
-            this.Cnfg_PaisUso.Visible = false;
+            this.Cnfg_PaisUso.Width = 129;
             // 
             // Cnfg_FormFecha
             // 
@@ -578,19 +586,15 @@
             this.Cnfg_FormFecha.HeaderText = "Cnfg_FormFecha";
             this.Cnfg_FormFecha.Name = "Cnfg_FormFecha";
             this.Cnfg_FormFecha.ReadOnly = true;
-            this.Cnfg_FormFecha.Visible = false;
+            this.Cnfg_FormFecha.Width = 145;
             // 
-            // tableAdapterManager
+            // dataGridViewTextBoxColumn9
             // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Emp_AccesosTableAdapter = null;
-            this.tableAdapterManager.EmpresasTableAdapter = null;
-            this.tableAdapterManager.Grupo_OpcionesTableAdapter = null;
-            this.tableAdapterManager.GruposTableAdapter = null;
-            this.tableAdapterManager.IdiomasTableAdapter = null;
-            this.tableAdapterManager.Opc_SistemaTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = MOFIN.EntornoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UsuariosTableAdapter = this.TA_Usuarios;
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Cnfg_SonidoClick";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Cnfg_SonidoClick";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 161;
             // 
             // Frm_Usuarios
             // 
@@ -598,7 +602,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(765, 450);
+            this.ClientSize = new System.Drawing.Size(833, 456);
             this.Controls.Add(this.Grd_Usuarios);
             this.Controls.Add(this.Chk_Sonido);
             this.Controls.Add(this.Grp_FormatoFecha);
@@ -628,7 +632,6 @@
             this.Style = MetroFramework.MetroColorStyle.Brown;
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.Frm_Usuarios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DS_Entorno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).EndInit();
             this.TS_BarraHerramientas.ResumeLayout(false);
             this.TS_BarraHerramientas.PerformLayout();
@@ -650,9 +653,6 @@
 
         private System.Windows.Forms.Button Btn_Cancelar;
         private System.Windows.Forms.Button Btn_Aceptar;
-        private EntornoDataSet DS_Entorno;
-        private System.Windows.Forms.BindingSource BS_Usuarios;
-        private EntornoDataSetTableAdapters.UsuariosTableAdapter TA_Usuarios;
         private System.Windows.Forms.TextBox Txt_IDUsuario;
         private System.Windows.Forms.TextBox Txt_Nombre;
         private System.Windows.Forms.TextBox Txt_Password;
@@ -681,13 +681,16 @@
         private System.Windows.Forms.RadioButton Opc_FormFec2;
         private System.Windows.Forms.RadioButton Opc_FormFec1;
         private System.Windows.Forms.CheckBox Chk_Sonido;
+        private System.Windows.Forms.BindingSource BS_Usuarios;
         private System.Windows.Forms.DataGridView Grd_Usuarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Sistema;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cnfg_Desktop;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cnfg_Idioma;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cnfg_PaisUso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cnfg_FormFecha;
-        private EntornoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
     }
 }

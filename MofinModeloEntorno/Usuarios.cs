@@ -22,6 +22,6 @@ namespace MofinModeloEntorno
         public Nullable<byte> Cnfg_Idioma { get; set; }
         public Nullable<byte> Cnfg_PaisUso { get; set; }
         public Nullable<byte> Cnfg_FormFecha { get; set; }
-        public Nullable<byte> Cnfg_SonidoClick { get; set; }
+        public Nullable<bool> Cnfg_SonidoClick { get; set; }
     }
 }

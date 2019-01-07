@@ -30,6 +30,7 @@ namespace MofinNegocios
 
         public static Empresas Insertar(Empresas obj)
         {
+            obj.Directorio = "No tiene";
             return dEmpresas.Isertar(obj);
         }
 

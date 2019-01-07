@@ -175,6 +175,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="EntornoDataSet.xsc">
       <DependentUpon>EntornoDataSet.xsd</DependentUpon>
@@ -201,6 +202,14 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\MofinDatos.DEmpresas.datasource" />
     <None Include="Properties\DataSources\MofinModelo.M_Edad.datasource" />
+    <None Include="Properties\DataSources\MofinModeloEntorno.Empresas.datasource" />
+    <None Include="Properties\DataSources\MofinModeloEntorno.Emp_Accesos.datasource" />
+    <None Include="Properties\DataSources\MofinModeloEntorno.Grupos.datasource" />
+    <None Include="Properties\DataSources\MofinModeloEntorno.Grupo_Opciones.datasource" />
+    <None Include="Properties\DataSources\MofinModeloEntorno.Idiomas.datasource" />
+    <None Include="Properties\DataSources\MofinModeloEntorno.MofinEntornoEntidad.datasource" />
+    <None Include="Properties\DataSources\MofinModeloEntorno.Opc_Sistema.datasource" />
+    <None Include="Properties\DataSources\MofinModeloEntorno.Usuarios.datasource" />
     <None Include="Properties\DataSources\MofinNegocios.NM_Edad.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -235,6 +244,10 @@
       <Project>{ec2d3e5d-8fc9-4c15-860c-1d83fd6e962b}</Project>
       <Name>MofinDatos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MofinModeloEntorno\MofinModeloEntorno.csproj">
+      <Project>{4d37c5b6-8f39-4bce-9547-c89db8ce242d}</Project>
+      <Name>MofinModeloEntorno</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MofinModelo\MofinModelo.csproj">
       <Project>{e80cc34e-56cf-429a-8a96-89336ae0c024}</Project>
       <Name>MofinModelo</Name>
@@ -243,6 +256,24 @@
       <Project>{fc87a849-0770-4439-a6c2-5ee0d9f16d0f}</Project>
       <Name>MofinNegocios</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aceptar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aceptar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aceptar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modificar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
