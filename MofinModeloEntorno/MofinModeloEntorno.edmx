@@ -88,7 +88,7 @@
           <Key>
             <PropertyRef Name="ID_Sistema" />
           </Key>
-          <Property Name="FuenteLetra" Type="nchar" MaxLength="30" />
+          <Property Name="FuenteLetra" Type="varchar" MaxLength="50" />
           <Property Name="Desktop_NroImgs" Type="tinyint" />
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
@@ -97,14 +97,14 @@
             <PropertyRef Name="ID_Usuario" />
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ID_Usuario" Type="char" MaxLength="16" Nullable="false" />
-          <Property Name="Nombre" Type="char" MaxLength="30" Nullable="false" />
-          <Property Name="Password" Type="char" MaxLength="16" Nullable="false" />
+          <Property Name="ID_Usuario" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="16" Nullable="false" />
           <Property Name="Cnfg_Desktop" Type="tinyint" />
           <Property Name="Cnfg_Idioma" Type="tinyint" />
           <Property Name="Cnfg_PaisUso" Type="tinyint" />
           <Property Name="Cnfg_FormFecha" Type="tinyint" />
-          <Property Name="Cnfg_SonidoClick" Type="tinyint" />
+          <Property Name="Cnfg_SonidoClick" Type="bit" />
         </EntityType>
         <Association Name="FK_Emp_Accesos_Empresas">
           <End Role="Empresas" Type="Self.Empresas" Multiplicity="1" />
@@ -239,14 +239,14 @@
             <PropertyRef Name="ID_Usuario" />
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ID_Usuario" Type="String" MaxLength="16" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="16" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_Usuario" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Cnfg_Desktop" Type="Byte" />
           <Property Name="Cnfg_Idioma" Type="Byte" />
           <Property Name="Cnfg_PaisUso" Type="Byte" />
           <Property Name="Cnfg_FormFecha" Type="Byte" />
-          <Property Name="Cnfg_SonidoClick" Type="Byte" />
+          <Property Name="Cnfg_SonidoClick" Type="Boolean" />
         </EntityType>
         <Association Name="FK_Emp_Accesos_Empresas">
           <End Role="Empresas" Type="Self.Empresas" Multiplicity="1" />
@@ -287,13 +287,13 @@
             <End Role="Grupos" EntitySet="Grupos" />
             <End Role="Grupo_Opciones" EntitySet="Grupo_Opciones" />
           </AssociationSet>
-          <EntitySet Name="Opc_Sistema" EntityType="EntornoModel.Opc_Sistema" />
+          <EntitySet Name="Opc_SistemaSet" EntityType="EntornoModel.Opc_Sistema" />
         </EntityContainer>
         <EntityType Name="Opc_Sistema">
           <Key>
             <PropertyRef Name="ID_Sistema" />
           </Key>
-          <Property Name="FuenteLetra" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="FuenteLetra" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Desktop_NroImgs" Type="Byte" />
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
@@ -402,7 +402,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Opc_Sistema">
+          <EntitySetMapping Name="Opc_SistemaSet">
             <EntityTypeMapping TypeName="EntornoModel.Opc_Sistema">
               <MappingFragment StoreEntitySet="Opc_Sistema">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />

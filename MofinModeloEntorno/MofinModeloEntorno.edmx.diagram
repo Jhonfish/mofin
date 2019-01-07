@@ -13,7 +13,7 @@
         <EntityTypeShape EntityType="EntornoModel.Usuarios" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
         <AssociationConnector Association="EntornoModel.FK_Emp_Accesos_Empresas" ManuallyRouted="false" />
         <AssociationConnector Association="EntornoModel.FK_Grupo_Opciones_Grupos" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="EntornoModel.Opc_Sistema" Width="1.5" PointX="8.375" PointY="4.75" />
+        <EntityTypeShape EntityType="EntornoModel.Opc_Sistema" Width="1.5" PointX="5.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
