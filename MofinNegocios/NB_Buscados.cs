@@ -9,7 +9,7 @@ using MofinDatos;
 
 namespace MofinNegocios
 {
-    public class NB_Buscados
+    public static class NB_Buscados
     {
         static DB_Buscados dB_Buscados;
 

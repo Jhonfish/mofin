@@ -47,7 +47,6 @@ namespace MofinModelo
         public virtual DbSet<M_VolOperPersNat> M_VolOperPersNat { get; set; }
         public virtual DbSet<O_HistPerfOperac> O_HistPerfOperac { get; set; }
         public virtual DbSet<O_Observaciones> O_Observaciones { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<B_Buscados> B_Buscados { get; set; }
         public virtual DbSet<O_Operfinancieras> O_Operfinancieras { get; set; }
         public virtual DbSet<O_OperTransaccionales> O_OperTransaccionales { get; set; }

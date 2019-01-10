@@ -13,12 +13,12 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
             <PropertyRef Name="Nombre" />
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="text" Nullable="false" />
-          <Property Name="Doc_ID" Type="char" MaxLength="20" />
-          <Property Name="Ente_Busca" Type="text" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Doc_ID" Type="varchar" MaxLength="20" />
+          <Property Name="Ente_Busca" Type="varchar" MaxLength="50" />
           <Property Name="Fec_Busqueda" Type="date" />
           <Property Name="Fec_Registro" Type="date" />
-          <Property Name="Pais_Busca" Type="char" MaxLength="30" />
+          <Property Name="Pais_Busca" Type="varchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="C_Clientes">
           <Key>
@@ -28,8 +28,8 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           <Property Name="Codigo" Type="char" MaxLength="8" Nullable="false" />
           <Property Name="TipoPersona" Type="tinyint" Nullable="false" />
           <Property Name="Activo" Type="bit" />
-          <Property Name="Doc_ID" Type="char" MaxLength="20" Nullable="false" />
-          <Property Name="Nombre" Type="char" MaxLength="96" Nullable="false" />
+          <Property Name="Doc_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Cliente_Punt" Type="tinyint" />
           <Property Name="Benef_Punt" Type="tinyint" />
           <Property Name="InfGen_Punt" Type="tinyint" />
@@ -100,7 +100,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           <Property Name="CE_Opc29" Type="bit" />
           <Property Name="CE_Opc30" Type="bit" />
           <Property Name="Observacion" Type="text" />
-          <Property Name="Ejecutivo" Type="char" MaxLength="30" />
+          <Property Name="Ejecutivo" Type="varchar" MaxLength="30" />
           <Property Name="NivelRiesgo" Type="smallint" />
           <Property Name="PerfilFinanciero" Type="money" />
           <Property Name="PeriodUsoCta" Type="tinyint" />
@@ -119,9 +119,9 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Cod_Cliente" Type="char" MaxLength="8" Nullable="false" />
           <Property Name="TipoVinculo" Type="tinyint" />
-          <Property Name="Doc_ID" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Doc_ID" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Fec_Vencimiento" Type="date" />
-          <Property Name="Nombre" Type="char" MaxLength="50" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
           <Property Name="Edad" Type="smallint" />
           <Property Name="PaisNacim" Type="smallint" />
           <Property Name="Nacionalidad" Type="smallint" />
@@ -129,7 +129,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           <Property Name="Estado" Type="smallint" />
           <Property Name="Profesion" Type="smallint" />
           <Property Name="Criptomoneda" Type="smallint" />
-          <Property Name="VincEmpresa" Type="char" MaxLength="50" />
+          <Property Name="VincEmpresa" Type="varchar" MaxLength="50" />
           <Property Name="VincPorcent" Type="tinyint" />
           <Property Name="PEP" Type="smallint" />
           <Property Name="Puntuacion" Type="smallint" />
@@ -187,7 +187,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Codigo" Type="smallint" Nullable="false" />
-          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Valor" Type="tinyint" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="bit" />
         </EntityType>
@@ -197,7 +197,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Codigo" Type="smallint" Nullable="false" />
-          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Valor" Type="tinyint" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="bit" />
         </EntityType>
@@ -207,7 +207,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Codigo" Type="smallint" Nullable="false" />
-          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Valor" Type="tinyint" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="bit" />
         </EntityType>
@@ -217,7 +217,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Codigo" Type="smallint" Nullable="false" />
-          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Valor" Type="tinyint" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="bit" />
         </EntityType>
@@ -229,7 +229,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           <Property Name="Codigo" Type="smallint" Nullable="false" />
           <Property Name="Cod_Pais" Type="smallint" />
           <Property Name="Cod_Compuesto" Type="int" Nullable="false" />
-          <Property Name="Descripcion" Type="text" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" />
           <Property Name="Valor" Type="tinyint" />
           <Property Name="CondEspSeguridad" Type="bit" />
         </EntityType>
@@ -239,7 +239,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Codigo" Type="smallint" Nullable="false" />
-          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="valor" Type="tinyint" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="bit" Nullable="false" />
         </EntityType>
@@ -249,9 +249,9 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Codigo" Type="smallint" Nullable="false" />
-          <Property Name="Cod_AlfaNum2" Type="text" Nullable="false" />
-          <Property Name="Cod_AlfaNum3" Type="text" Nullable="false" />
-          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Cod_AlfaNum2" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cod_AlfaNum3" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Valor" Type="tinyint" />
           <Property Name="CondEspSeguridad" Type="bit" />
         </EntityType>
@@ -261,7 +261,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Codigo" Type="smallint" Nullable="false" />
-          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Valor" Type="tinyint" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="bit" />
         </EntityType>
@@ -271,7 +271,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Codigo" Type="smallint" Nullable="false" />
-          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Valor" Type="tinyint" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="bit" />
         </EntityType>
@@ -281,7 +281,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Codigo" Type="smallint" Nullable="false" />
-          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Valor" Type="tinyint" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="bit" />
         </EntityType>
@@ -291,7 +291,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Codigo" Type="smallint" Nullable="false" />
-          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Valor" Type="tinyint" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="bit" />
         </EntityType>
@@ -301,7 +301,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Codigo" Type="smallint" Nullable="false" />
-          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Valor" Type="tinyint" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="bit" />
         </EntityType>
@@ -311,7 +311,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Codigo" Type="smallint" Nullable="false" />
-          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Valor" Type="tinyint" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="bit" />
         </EntityType>
@@ -321,7 +321,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Codigo" Type="smallint" Nullable="false" />
-          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Valor" Type="tinyint" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="bit" />
         </EntityType>
@@ -331,7 +331,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Codigo" Type="smallint" Nullable="false" />
-          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Valor" Type="tinyint" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="bit" />
         </EntityType>
@@ -341,7 +341,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Codigo" Type="smallint" Nullable="false" />
-          <Property Name="Descripcion" Type="text" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Valor" Type="tinyint" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="bit" />
         </EntityType>
@@ -355,7 +355,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           <Property Name="Fecha" Type="date" Nullable="false" />
           <Property Name="Mto_Perfil" Type="money" Nullable="false" />
           <Property Name="Nro_Transacciones" Type="tinyint" Nullable="false" />
-          <Property Name="Nivel_Riesgo" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Nivel_Riesgo" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="O_Observaciones">
           <Key>
@@ -377,24 +377,24 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_Operfinancieras' no
           </Key>
           <Property Name="Tipo_Orden" Type="char" MaxLength="5" Nullable="false" />
           <Property Name="Fec_Pacto" Type="date" Nullable="false" />
-          <Property Name="Doc_ID" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Doc_ID" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Cod_Cliente" Type="char" MaxLength="8" />
-          <Property Name="Nme_Cliente" Type="char" MaxLength="50" />
+          <Property Name="Nme_Cliente" Type="varchar" MaxLength="50" />
           <Property Name="Fec_Cierre" Type="date" />
           <Property Name="Fec_Valor" Type="date" />
           <Property Name="Mto_Solicitado" Type="money" />
           <Property Name="Mto_Pactado" Type="money" />
-          <Property Name="Cod_Titulo" Type="char" MaxLength="20" />
+          <Property Name="Cod_Titulo" Type="varchar" MaxLength="20" />
           <Property Name="Precio_USD" Type="money" />
           <Property Name="Efectivo" Type="money" />
           <Property Name="Comision_Clie" Type="money" />
-          <Property Name="Cod_Contraparte" Type="char" MaxLength="10" />
-          <Property Name="Nme_Contraparte" Type="char" MaxLength="50" />
-          <Property Name="Agencia" Type="char" MaxLength="30" />
+          <Property Name="Cod_Contraparte" Type="varchar" MaxLength="10" />
+          <Property Name="Nme_Contraparte" Type="varchar" MaxLength="50" />
+          <Property Name="Agencia" Type="varchar" MaxLength="30" />
           <Property Name="Sec_Operac" Type="int" />
           <Property Name="Cod_Bloq" Type="int" />
           <Property Name="Nro_OrdBCV" Type="int" />
-          <Property Name="Cta_USD" Type="char" MaxLength="35" />
+          <Property Name="Cta_USD" Type="varchar" MaxLength="35" />
           <Property Name="Comprobante" Type="text" />
           <Property Name="Hora_carga" Type="datetime" />
         </EntityType>
@@ -409,28 +409,40 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           </Key>
           <Property Name="Tipo_Orden" Type="char" MaxLength="5" Nullable="false" />
           <Property Name="Fec_Pacto" Type="date" Nullable="false" />
-          <Property Name="Doc_ID" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Doc_ID" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Cod_Cliente" Type="char" MaxLength="8" Nullable="false" />
-          <Property Name="Nme_Cliente" Type="char" MaxLength="50" />
+          <Property Name="Nme_Cliente" Type="varchar" MaxLength="50" />
           <Property Name="Fec_Cierre" Type="date" />
           <Property Name="Fec_Valor" Type="date" />
           <Property Name="Monto_Pactado" Type="money" />
-          <Property Name="Tipo_Operacion" Type="char" MaxLength="20" />
+          <Property Name="Tipo_Operacion" Type="varchar" MaxLength="20" />
           <Property Name="Valor_Efectivo" Type="money" />
           <Property Name="Grp_Cliente" Type="char" MaxLength="5" />
-          <Property Name="Comprobante" Type="text" />
+          <Property Name="Comprobante" Type="varchar" MaxLength="100" />
           <Property Name="Hora_Carga" Type="datetime" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="O_RepOperacional">
+          <Property Name="Fec_Generacion" Type="date" />
+          <Property Name="Fec_UltOperac" Type="date" />
+          <Property Name="Cod_Cliente" Type="char" MaxLength="8" />
+          <Property Name="Nme_cliente" Type="varchar" MaxLength="50" />
+          <Property Name="Doc_ID" Type="varchar" MaxLength="20" />
+          <Property Name="Niv_Riesgo" Type="varchar" MaxLength="10" />
+          <Property Name="Period_UsoCta" Type="varchar" MaxLength="20" />
+          <Property Name="Nro_Transac" Type="smallint" />
+          <Property Name="Perf_NroTransac" Type="tinyint" />
+          <Property Name="Porc_Transac" Type="smallint" />
+          <Property Name="Mto_Compras" Type="money" />
+          <Property Name="Mto_Ventas" Type="money" />
+          <Property Name="Tot_Operaciones" Type="money" />
+          <Property Name="Perf_Financiero" Type="money" />
+          <Property Name="Porc_Operaciones" Type="smallint" />
+          <Property Name="Alarma" Type="bit" />
+          <Property Name="Ejecutivo" Type="varchar" MaxLength="50" />
+          <Property Name="Comentario" Type="varchar" MaxLength="200" />
+        </EntityType>-->
         <Association Name="FK_C_FirBenAcc_C_Clientes">
           <End Role="C_Clientes" Type="Self.C_Clientes" Multiplicity="1" />
           <End Role="C_FirBenAcc" Type="Self.C_FirBenAcc" Multiplicity="0..1" />
@@ -514,7 +526,6 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           <EntitySet Name="M_VolOperPersNat" EntityType="Self.M_VolOperPersNat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="O_HistPerfOperac" EntityType="Self.O_HistPerfOperac" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="O_Observaciones" EntityType="Self.O_Observaciones" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="B_Buscados" EntityType="Self.B_Buscados" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [B_Buscados].[ID_Sistema] AS [ID_Sistema], 
@@ -602,8 +613,8 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           <Property Name="Codigo" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="TipoPersona" Type="Byte" Nullable="false" />
           <Property Name="Activo" Type="Boolean" />
-          <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="96" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Doc_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Cliente_Punt" Type="Byte" />
           <Property Name="Benef_Punt" Type="Byte" />
           <Property Name="InfGen_Punt" Type="Byte" />
@@ -674,7 +685,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           <Property Name="CE_Opc29" Type="Boolean" />
           <Property Name="CE_Opc30" Type="Boolean" />
           <Property Name="Observacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Ejecutivo" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="Ejecutivo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="NivelRiesgo" Type="Int16" />
           <Property Name="PerfilFinanciero" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="PeriodUsoCta" Type="Byte" />
@@ -697,9 +708,9 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Cod_Cliente" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="TipoVinculo" Type="Byte" />
-          <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Fec_Vencimiento" Type="DateTime" Precision="0" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Edad" Type="Int16" />
           <Property Name="PaisNacim" Type="Int16" />
           <Property Name="Nacionalidad" Type="Int16" />
@@ -707,7 +718,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           <Property Name="Estado" Type="Int16" />
           <Property Name="Profesion" Type="Int16" />
           <Property Name="Criptomoneda" Type="Int16" />
-          <Property Name="VincEmpresa" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="VincEmpresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="VincPorcent" Type="Byte" />
           <Property Name="PEP" Type="Int16" />
           <Property Name="Puntuacion" Type="Int16" />
@@ -767,7 +778,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Codigo" Type="Int16" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Valor" Type="Byte" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="Boolean" />
         </EntityType>
@@ -777,7 +788,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Codigo" Type="Int16" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Valor" Type="Byte" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="Boolean" />
         </EntityType>
@@ -787,7 +798,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Codigo" Type="Int16" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Valor" Type="Byte" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="Boolean" />
         </EntityType>
@@ -797,7 +808,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" />
           <Property Name="Codigo" Type="Int16" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Valor" Type="Byte" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="Boolean" />
         </EntityType>
@@ -808,7 +819,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Codigo" Type="Int16" Nullable="false" />
           <Property Name="Cod_Compuesto" Type="Int32" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Valor" Type="Byte" />
           <Property Name="CondEspSeguridad" Type="Boolean" />
           <NavigationProperty Name="M_Pais" Relationship="Self.FK_M_Estados_M_Pais" FromRole="M_Estados" ToRole="M_Pais" />
@@ -819,7 +830,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Codigo" Type="Int16" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="valor" Type="Byte" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="Boolean" Nullable="false" />
         </EntityType>
@@ -829,9 +840,9 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Codigo" Type="Int16" Nullable="false" />
-          <Property Name="Cod_AlfaNum2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Cod_AlfaNum3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cod_AlfaNum2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cod_AlfaNum3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Valor" Type="Byte" />
           <Property Name="CondEspSeguridad" Type="Boolean" />
           <NavigationProperty Name="M_Estados" Relationship="Self.FK_M_Estados_M_Pais" FromRole="M_Pais" ToRole="M_Estados" />
@@ -842,7 +853,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Codigo" Type="Int16" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Valor" Type="Byte" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="Boolean" />
         </EntityType>
@@ -852,7 +863,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Codigo" Type="Int16" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Valor" Type="Byte" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="Boolean" />
         </EntityType>
@@ -862,7 +873,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Codigo" Type="Int16" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Valor" Type="Byte" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="Boolean" />
         </EntityType>
@@ -872,7 +883,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Codigo" Type="Int16" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Valor" Type="Byte" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="Boolean" />
         </EntityType>
@@ -882,7 +893,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Codigo" Type="Int16" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Valor" Type="Byte" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="Boolean" />
         </EntityType>
@@ -892,7 +903,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Codigo" Type="Int16" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Valor" Type="Byte" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="Boolean" />
         </EntityType>
@@ -902,7 +913,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Codigo" Type="Int16" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Valor" Type="Byte" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="Boolean" />
         </EntityType>
@@ -912,7 +923,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Codigo" Type="Int16" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Valor" Type="Byte" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="Boolean" />
         </EntityType>
@@ -922,7 +933,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Codigo" Type="Int16" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Valor" Type="Byte" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="Boolean" />
         </EntityType>
@@ -936,7 +947,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Mto_Perfil" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Nro_Transacciones" Type="Byte" Nullable="false" />
-          <Property Name="Nivel_Riesgo" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Nivel_Riesgo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="C_Clientes" Relationship="Self.FK_O_HistPerfOperac_C_Clientes" FromRole="O_HistPerfOperac" ToRole="C_Clientes" />
         </EntityType>
         <EntityType Name="O_Observaciones">
@@ -950,28 +961,18 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           <Property Name="Observacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="C_Clientes" Relationship="Self.FK_O_Observaciones_C_Clientes" FromRole="O_Observaciones" ToRole="C_Clientes" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <EntityType Name="B_Buscados">
           <Key>
             <PropertyRef Name="ID_Sistema" />
             <PropertyRef Name="Nombre" />
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-          <Property Name="Ente_Busca" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Ente_Busca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Fec_Busqueda" Type="DateTime" Precision="0" />
           <Property Name="Fec_Registro" Type="DateTime" Precision="0" />
-          <Property Name="Pais_Busca" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="Pais_Busca" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="O_Operfinancieras">
           <Key>
@@ -981,24 +982,24 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           </Key>
           <Property Name="Tipo_Orden" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="Fec_Pacto" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Cod_Cliente" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
-          <Property Name="Nme_Cliente" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Nme_Cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Fec_Cierre" Type="DateTime" Precision="0" />
           <Property Name="Fec_Valor" Type="DateTime" Precision="0" />
           <Property Name="Mto_Solicitado" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Mto_Pactado" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="Cod_Titulo" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="Cod_Titulo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Precio_USD" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Efectivo" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Comision_Clie" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="Cod_Contraparte" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="Nme_Contraparte" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
-          <Property Name="Agencia" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="Cod_Contraparte" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Nme_Contraparte" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Agencia" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Sec_Operac" Type="Int32" />
           <Property Name="Cod_Bloq" Type="Int32" />
           <Property Name="Nro_OrdBCV" Type="Int32" />
-          <Property Name="Cta_USD" Type="String" MaxLength="35" FixedLength="true" Unicode="false" />
+          <Property Name="Cta_USD" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
           <Property Name="Comprobante" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Hora_carga" Type="DateTime" Precision="3" />
         </EntityType>
@@ -1011,16 +1012,16 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           </Key>
           <Property Name="Tipo_Orden" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="Fec_Pacto" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Cod_Cliente" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Nme_Cliente" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Nme_Cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Fec_Cierre" Type="DateTime" Precision="0" />
           <Property Name="Fec_Valor" Type="DateTime" Precision="0" />
           <Property Name="Monto_Pactado" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="Tipo_Operacion" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="Tipo_Operacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Valor_Efectivo" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Grp_Cliente" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
-          <Property Name="Comprobante" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Comprobante" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Hora_Carga" Type="DateTime" Precision="3" />
         </EntityType>
         <Association Name="FK_C_FirBenAcc_C_Clientes">
@@ -1098,7 +1099,6 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           <EntitySet Name="M_VolOperPersNat" EntityType="Self.M_VolOperPersNat" />
           <EntitySet Name="O_HistPerfOperac" EntityType="Self.O_HistPerfOperac" />
           <EntitySet Name="O_Observaciones" EntityType="Self.O_Observaciones" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="B_Buscados" EntityType="Self.B_Buscados" />
           <EntitySet Name="O_Operfinancieras" EntityType="Self.O_Operfinancieras" />
           <EntitySet Name="O_OperTransaccionales" EntityType="Self.O_OperTransaccionales" />
@@ -1494,17 +1494,6 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
                 <ScalarProperty Name="Cod_Cliente" ColumnName="Cod_Cliente" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="Observacion" ColumnName="Observacion" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

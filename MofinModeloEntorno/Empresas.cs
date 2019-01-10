@@ -25,7 +25,5 @@ namespace MofinModeloEntorno
         public string Telefono2 { get; set; }
         public string Direccion { get; set; }
         public string Logo { get; set; }
-    
-        public virtual Emp_Accesos Emp_Accesos { get; set; }
     }
 }

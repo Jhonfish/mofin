@@ -32,7 +32,5 @@ namespace MofinModeloEntorno
         public Nullable<bool> TabMaestras_M { get; set; }
         public Nullable<bool> TabMaestras_E { get; set; }
         public Nullable<bool> TabMaestras_P { get; set; }
-    
-        public virtual Grupos Grupos { get; set; }
     }
 }

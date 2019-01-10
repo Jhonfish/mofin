@@ -40,7 +40,6 @@
             this.Btn_Cancelar = new System.Windows.Forms.Button();
             this.Btn_Aceptar = new System.Windows.Forms.Button();
             this.Txt_IDUsuario = new System.Windows.Forms.TextBox();
-            this.BS_Usuarios = new System.Windows.Forms.BindingSource(this.components);
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
             this.Txt_Password = new System.Windows.Forms.TextBox();
             this.TS_BarraHerramientas = new System.Windows.Forms.ToolStrip();
@@ -78,6 +77,7 @@
             this.Cnfg_PaisUso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cnfg_FormFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BS_Usuarios = new System.Windows.Forms.BindingSource(this.components);
             Lbl_IDUsuario = new System.Windows.Forms.Label();
             Lbl_Nombre = new System.Windows.Forms.Label();
             Lbl_Password = new System.Windows.Forms.Label();
@@ -85,13 +85,13 @@
             Lbl_Idioma = new System.Windows.Forms.Label();
             Lbl_PaisUso = new System.Windows.Forms.Label();
             Lbl_FormatoFecha = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).BeginInit();
             this.TS_BarraHerramientas.SuspendLayout();
             this.Grp_Desktop.SuspendLayout();
             this.Grp_Idioma.SuspendLayout();
             this.Grp_Pais.SuspendLayout();
             this.Grp_FormatoFecha.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Usuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_IDUsuario
@@ -207,19 +207,17 @@
             this.Txt_IDUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Usuarios, "ID_Usuario", true));
             this.Txt_IDUsuario.Location = new System.Drawing.Point(136, 71);
             this.Txt_IDUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt_IDUsuario.MaxLength = 16;
             this.Txt_IDUsuario.Name = "Txt_IDUsuario";
             this.Txt_IDUsuario.Size = new System.Drawing.Size(200, 22);
             this.Txt_IDUsuario.TabIndex = 0;
-            // 
-            // BS_Usuarios
-            // 
-            this.BS_Usuarios.DataSource = typeof(MofinModeloEntorno.Usuarios);
             // 
             // Txt_Nombre
             // 
             this.Txt_Nombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Usuarios, "Nombre", true));
             this.Txt_Nombre.Location = new System.Drawing.Point(136, 103);
             this.Txt_Nombre.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt_Nombre.MaxLength = 60;
             this.Txt_Nombre.Name = "Txt_Nombre";
             this.Txt_Nombre.Size = new System.Drawing.Size(362, 22);
             this.Txt_Nombre.TabIndex = 1;
@@ -229,6 +227,7 @@
             this.Txt_Password.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Usuarios, "Password", true));
             this.Txt_Password.Location = new System.Drawing.Point(136, 135);
             this.Txt_Password.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt_Password.MaxLength = 20;
             this.Txt_Password.Name = "Txt_Password";
             this.Txt_Password.Size = new System.Drawing.Size(200, 22);
             this.Txt_Password.TabIndex = 2;
@@ -596,6 +595,10 @@
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
             this.dataGridViewTextBoxColumn9.Width = 161;
             // 
+            // BS_Usuarios
+            // 
+            this.BS_Usuarios.DataSource = typeof(MofinModeloEntorno.Usuarios);
+            // 
             // Frm_Usuarios
             // 
             this.AcceptButton = this.Btn_Aceptar;
@@ -632,7 +635,6 @@
             this.Style = MetroFramework.MetroColorStyle.Brown;
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.Frm_Usuarios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).EndInit();
             this.TS_BarraHerramientas.ResumeLayout(false);
             this.TS_BarraHerramientas.PerformLayout();
             this.Grp_Desktop.ResumeLayout(false);
@@ -644,6 +646,7 @@
             this.Grp_FormatoFecha.ResumeLayout(false);
             this.Grp_FormatoFecha.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Usuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

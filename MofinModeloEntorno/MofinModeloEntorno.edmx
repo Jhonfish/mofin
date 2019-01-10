@@ -10,25 +10,25 @@
             <PropertyRef Name="Cod_Empresa" />
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ID_Usuario" Type="char" MaxLength="16" Nullable="false" />
-          <Property Name="Cod_Empresa" Type="char" MaxLength="3" Nullable="false" />
-          <Property Name="Cod_Grupo" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="ID_Usuario" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="Cod_Empresa" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="Cod_Grupo" Type="varchar" MaxLength="3" Nullable="false" />
         </EntityType>
         <EntityType Name="Empresas">
           <Key>
             <PropertyRef Name="Codigo" />
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Codigo" Type="char" MaxLength="3" Nullable="false" />
-          <Property Name="Nombre" Type="char" MaxLength="40" Nullable="false" />
-          <Property Name="Siglas" Type="char" MaxLength="5" />
-          <Property Name="Directorio" Type="char" MaxLength="254" />
-          <Property Name="Doc_ID" Type="char" MaxLength="20" />
-          <Property Name="Email" Type="char" MaxLength="64" />
-          <Property Name="Telefono1" Type="char" MaxLength="20" />
-          <Property Name="Telefono2" Type="char" MaxLength="20" />
-          <Property Name="Direccion" Type="char" MaxLength="60" />
-          <Property Name="Logo" Type="char" MaxLength="254" />
+          <Property Name="Codigo" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Siglas" Type="varchar" MaxLength="5" />
+          <Property Name="Directorio" Type="varchar" MaxLength="254" />
+          <Property Name="Doc_ID" Type="varchar" MaxLength="20" />
+          <Property Name="Email" Type="varchar" MaxLength="64" />
+          <Property Name="Telefono1" Type="varchar" MaxLength="20" />
+          <Property Name="Telefono2" Type="varchar" MaxLength="20" />
+          <Property Name="Direccion" Type="varchar" MaxLength="60" />
+          <Property Name="Logo" Type="varchar" MaxLength="254" />
         </EntityType>
         <EntityType Name="Grupo_Opciones">
           <Key>
@@ -59,7 +59,7 @@
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Codigo" Type="char" MaxLength="3" Nullable="false" />
-          <Property Name="Nombre" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Archivos" Type="bit" />
           <Property Name="Opc_Sistema" Type="bit" />
           <Property Name="Ops_Empresas" Type="bit" />
@@ -80,7 +80,7 @@
             <PropertyRef Name="Codigo" />
           </Key>
           <Property Name="Codigo" Type="int" Nullable="false" />
-          <Property Name="Descripcion" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="espanol" Type="text" Nullable="false" />
           <Property Name="ingles" Type="text" Nullable="false" />
         </EntityType>
@@ -88,7 +88,7 @@
           <Key>
             <PropertyRef Name="ID_Sistema" />
           </Key>
-          <Property Name="FuenteLetra" Type="nchar" MaxLength="30" />
+          <Property Name="FuenteLetra" Type="varchar" MaxLength="30" />
           <Property Name="Desktop_NroImgs" Type="tinyint" />
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
@@ -97,9 +97,9 @@
             <PropertyRef Name="ID_Usuario" />
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ID_Usuario" Type="char" MaxLength="16" Nullable="false" />
-          <Property Name="Nombre" Type="char" MaxLength="30" Nullable="false" />
-          <Property Name="Password" Type="char" MaxLength="16" Nullable="false" />
+          <Property Name="ID_Usuario" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="16" Nullable="false" />
           <Property Name="Cnfg_Desktop" Type="tinyint" />
           <Property Name="Cnfg_Idioma" Type="tinyint" />
           <Property Name="Cnfg_PaisUso" Type="tinyint" />
@@ -156,27 +156,25 @@
             <PropertyRef Name="Cod_Empresa" />
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ID_Usuario" Type="String" MaxLength="16" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Cod_Empresa" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Cod_Grupo" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Empresas" Relationship="Self.FK_Emp_Accesos_Empresas" FromRole="Emp_Accesos" ToRole="Empresas" />
+          <Property Name="ID_Usuario" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cod_Empresa" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cod_Grupo" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="Empresas">
           <Key>
             <PropertyRef Name="Codigo" />
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Codigo" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Siglas" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
-          <Property Name="Directorio" Type="String" MaxLength="254" FixedLength="true" Unicode="false" />
-          <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="64" FixedLength="true" Unicode="false" />
-          <Property Name="Telefono1" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-          <Property Name="Telefono2" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-          <Property Name="Direccion" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
-          <Property Name="Logo" Type="String" MaxLength="254" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="Emp_Accesos" Relationship="Self.FK_Emp_Accesos_Empresas" FromRole="Empresas" ToRole="Emp_Accesos" />
+          <Property Name="Codigo" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Siglas" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Directorio" Type="String" MaxLength="254" FixedLength="false" Unicode="false" />
+          <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Logo" Type="String" MaxLength="254" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Grupo_Opciones">
           <Key>
@@ -200,7 +198,6 @@
           <Property Name="TabMaestras_M" Type="Boolean" />
           <Property Name="TabMaestras_E" Type="Boolean" />
           <Property Name="TabMaestras_P" Type="Boolean" />
-          <NavigationProperty Name="Grupos" Relationship="Self.FK_Grupo_Opciones_Grupos" FromRole="Grupo_Opciones" ToRole="Grupos" />
         </EntityType>
         <EntityType Name="Grupos">
           <Key>
@@ -208,7 +205,7 @@
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Codigo" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Archivos" Type="Boolean" />
           <Property Name="Opc_Sistema" Type="Boolean" />
           <Property Name="Ops_Empresas" Type="Boolean" />
@@ -223,14 +220,13 @@
           <Property Name="Reportes" Type="Boolean" />
           <Property Name="Tablas_Maestras" Type="Boolean" />
           <Property Name="Tab_Maestras" Type="Boolean" />
-          <NavigationProperty Name="Grupo_Opciones" Relationship="Self.FK_Grupo_Opciones_Grupos" FromRole="Grupos" ToRole="Grupo_Opciones" />
         </EntityType>
         <EntityType Name="Idiomas">
           <Key>
             <PropertyRef Name="Codigo" />
           </Key>
           <Property Name="Codigo" Type="Int32" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="espanol" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ingles" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
@@ -239,9 +235,9 @@
             <PropertyRef Name="ID_Usuario" />
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ID_Usuario" Type="String" MaxLength="16" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="16" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_Usuario" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Cnfg_Desktop" Type="Byte" />
           <Property Name="Cnfg_Idioma" Type="Byte" />
           <Property Name="Cnfg_PaisUso" Type="Byte" />
@@ -293,7 +289,7 @@
           <Key>
             <PropertyRef Name="ID_Sistema" />
           </Key>
-          <Property Name="FuenteLetra" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="FuenteLetra" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Desktop_NroImgs" Type="Byte" />
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
