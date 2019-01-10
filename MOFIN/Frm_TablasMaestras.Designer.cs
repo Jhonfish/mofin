@@ -54,44 +54,59 @@ namespace MOFIN
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_Salir = new System.Windows.Forms.ToolStripButton();
             this.Grd_Detalles = new System.Windows.Forms.DataGridView();
+            this.iDSistemaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.condEspSeguridadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BS_MActivComercial = new System.Windows.Forms.BindingSource(this.components);
+            this.Cmb_TablaMaestra = new System.Windows.Forms.ComboBox();
+            this.BS_MAntiguedad = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_MCriptomonedas = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_MEdad = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_MEstados = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_MNivelRiesgo = new System.Windows.Forms.BindingSource(this.components);
             this.BS_MPais = new System.Windows.Forms.BindingSource(this.components);
-            this.DS_MonitorOperaciones = new MOFIN.MonitorOperacionesDataSet();
+            this.BS_MPEP = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_MProductos = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_MProfesiones = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_MServicios = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_MTipoDocID = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_MTipoEstructuraEmpresa = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_MTipoPersJuridica = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_MVolOperPersJur = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_MVolOperPersNat = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_TablaMaestra = new System.Windows.Forms.BindingSource(this.components);
+            this.Pan_Elementos = new System.Windows.Forms.Panel();
+            this.NUD_Valor = new System.Windows.Forms.NumericUpDown();
             this.Txt_Codigo = new System.Windows.Forms.TextBox();
             this.Txt_CodAlfa2 = new System.Windows.Forms.TextBox();
             this.Txt_CodAlfa3 = new System.Windows.Forms.TextBox();
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
             this.Chk_CES = new System.Windows.Forms.CheckBox();
-            this.NUD_Valor = new System.Windows.Forms.NumericUpDown();
-            this.Cmb_TablaMaestra = new System.Windows.Forms.ComboBox();
-            this.tableAdapterManager = new MOFIN.MonitorOperacionesDataSetTableAdapters.TableAdapterManager();
-            this.BS_MEstados = new System.Windows.Forms.BindingSource(this.components);
-            this.TA_MEstados = new MOFIN.MonitorOperacionesDataSetTableAdapters.M_EstadosTableAdapter();
-            this.TA_MPais = new MOFIN.MonitorOperacionesDataSetTableAdapters.M_PaisTableAdapter();
-            this.BS_MAntiguedad = new System.Windows.Forms.BindingSource(this.components);
-            this.TA_MAntiguedad = new MOFIN.MonitorOperacionesDataSetTableAdapters.M_AntiguedadTableAdapter();
-            this.BS_MActivComercial = new System.Windows.Forms.BindingSource(this.components);
-            this.TA_MActivComercial = new MOFIN.MonitorOperacionesDataSetTableAdapters.M_ActivComercialTableAdapter();
-            this.BS_MCriptomonedas = new System.Windows.Forms.BindingSource(this.components);
-            this.TA_MCriptomonedas = new MOFIN.MonitorOperacionesDataSetTableAdapters.M_CriptomonedasTableAdapter();
-            this.BS_MEdad = new System.Windows.Forms.BindingSource(this.components);
-            this.TA_MEdad = new MOFIN.MonitorOperacionesDataSetTableAdapters.M_EdadTableAdapter();
-            this.BS_MNivelRiesgo = new System.Windows.Forms.BindingSource(this.components);
-            this.TA_MNivelRiesgo = new MOFIN.MonitorOperacionesDataSetTableAdapters.M_NivelRiesgoTableAdapter();
-            this.BS_MProfesiones = new System.Windows.Forms.BindingSource(this.components);
-            this.TA_MProfesiones = new MOFIN.MonitorOperacionesDataSetTableAdapters.M_ProfesionesTableAdapter();
             this.Cmb_Pais = new System.Windows.Forms.ComboBox();
+            this.Txt_Valor = new System.Windows.Forms.TextBox();
             this.TS_BarraHerramientas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Detalles)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_MPais)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DS_MonitorOperaciones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_Valor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_MEstados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_MAntiguedad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MActivComercial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MAntiguedad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MCriptomonedas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MEdad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MEstados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MNivelRiesgo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MPais)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MPEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MProfesiones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MServicios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MTipoDocID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MTipoEstructuraEmpresa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MTipoPersJuridica)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MVolOperPersJur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MVolOperPersNat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_TablaMaestra)).BeginInit();
+            this.Pan_Elementos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Valor)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_Codigo
@@ -217,7 +232,7 @@ namespace MOFIN
             this.toolStripSeparator3,
             this.TSB_Salir});
             this.TS_BarraHerramientas.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.TS_BarraHerramientas.Location = new System.Drawing.Point(342, 13);
+            this.TS_BarraHerramientas.Location = new System.Drawing.Point(340, 12);
             this.TS_BarraHerramientas.Name = "TS_BarraHerramientas";
             this.TS_BarraHerramientas.Size = new System.Drawing.Size(384, 43);
             this.TS_BarraHerramientas.TabIndex = 37;
@@ -276,7 +291,7 @@ namespace MOFIN
             this.TSB_Agregar.Name = "TSB_Agregar";
             this.TSB_Agregar.Size = new System.Drawing.Size(40, 40);
             this.TSB_Agregar.Text = "Incluir";
-            this.TSB_Agregar.Click += new System.EventHandler(this.toolStripButton6_Click);
+            this.TSB_Agregar.Click += new System.EventHandler(this.TSB_Agregar_Click);
             // 
             // TSB_Modificar
             // 
@@ -286,7 +301,7 @@ namespace MOFIN
             this.TSB_Modificar.Name = "TSB_Modificar";
             this.TSB_Modificar.Size = new System.Drawing.Size(40, 40);
             this.TSB_Modificar.Text = "Modificar";
-            this.TSB_Modificar.Click += new System.EventHandler(this.toolStripButton7_Click);
+            this.TSB_Modificar.Click += new System.EventHandler(this.TSB_Modificar_Click);
             // 
             // TSB_Eliminar
             // 
@@ -320,85 +335,78 @@ namespace MOFIN
             this.TSB_Salir.Name = "TSB_Salir";
             this.TSB_Salir.Size = new System.Drawing.Size(40, 40);
             this.TSB_Salir.Text = "Salir";
-            this.TSB_Salir.Click += new System.EventHandler(this.toolStripButton10_Click);
+            this.TSB_Salir.Click += new System.EventHandler(this.TSB_Salir_Click);
             // 
             // Grd_Detalles
             // 
             this.Grd_Detalles.AllowUserToAddRows = false;
             this.Grd_Detalles.AllowUserToDeleteRows = false;
+            this.Grd_Detalles.AutoGenerateColumns = false;
             this.Grd_Detalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.Grd_Detalles.BackgroundColor = System.Drawing.Color.White;
             this.Grd_Detalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grd_Detalles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDSistemaDataGridViewTextBoxColumn,
+            this.codigoDataGridViewTextBoxColumn,
+            this.descripcionDataGridViewTextBoxColumn,
+            this.valorDataGridViewTextBoxColumn,
+            this.condEspSeguridadDataGridViewTextBoxColumn});
+            this.Grd_Detalles.DataSource = this.BS_MActivComercial;
             this.Grd_Detalles.Location = new System.Drawing.Point(397, 150);
             this.Grd_Detalles.Name = "Grd_Detalles";
             this.Grd_Detalles.ReadOnly = true;
             this.Grd_Detalles.RowHeadersVisible = false;
             this.Grd_Detalles.Size = new System.Drawing.Size(365, 288);
             this.Grd_Detalles.TabIndex = 38;
+            this.Grd_Detalles.CurrentCellChanged += new System.EventHandler(this.Grd_Detalles_CurrentCellChanged);
             // 
-            // BS_MPais
+            // iDSistemaDataGridViewTextBoxColumn
             // 
-            this.BS_MPais.DataMember = "M_Pais";
-            this.BS_MPais.DataSource = this.DS_MonitorOperaciones;
+            this.iDSistemaDataGridViewTextBoxColumn.DataPropertyName = "ID_Sistema";
+            this.iDSistemaDataGridViewTextBoxColumn.HeaderText = "ID_Sistema";
+            this.iDSistemaDataGridViewTextBoxColumn.Name = "iDSistemaDataGridViewTextBoxColumn";
+            this.iDSistemaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDSistemaDataGridViewTextBoxColumn.Visible = false;
+            this.iDSistemaDataGridViewTextBoxColumn.Width = 94;
             // 
-            // DS_MonitorOperaciones
+            // codigoDataGridViewTextBoxColumn
             // 
-            this.DS_MonitorOperaciones.DataSetName = "MonitorOperacionesDataSet";
-            this.DS_MonitorOperaciones.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
+            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoDataGridViewTextBoxColumn.Width = 81;
             // 
-            // Txt_Codigo
+            // descripcionDataGridViewTextBoxColumn
             // 
-            this.Txt_Codigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_MPais, "Codigo", true));
-            this.Txt_Codigo.Location = new System.Drawing.Point(84, 180);
-            this.Txt_Codigo.Name = "Txt_Codigo";
-            this.Txt_Codigo.Size = new System.Drawing.Size(57, 22);
-            this.Txt_Codigo.TabIndex = 39;
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.MinimumWidth = 280;
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descripcionDataGridViewTextBoxColumn.Width = 280;
             // 
-            // Txt_CodAlfa2
+            // valorDataGridViewTextBoxColumn
             // 
-            this.Txt_CodAlfa2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_MPais, "Cod_AlfaNum2", true));
-            this.Txt_CodAlfa2.Location = new System.Drawing.Point(181, 180);
-            this.Txt_CodAlfa2.Name = "Txt_CodAlfa2";
-            this.Txt_CodAlfa2.Size = new System.Drawing.Size(57, 22);
-            this.Txt_CodAlfa2.TabIndex = 41;
-            this.Txt_CodAlfa2.Visible = false;
+            this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
+            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
+            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
+            this.valorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.valorDataGridViewTextBoxColumn.Visible = false;
+            this.valorDataGridViewTextBoxColumn.Width = 73;
             // 
-            // Txt_CodAlfa3
+            // condEspSeguridadDataGridViewTextBoxColumn
             // 
-            this.Txt_CodAlfa3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_MPais, "Cod_AlfaNum3", true));
-            this.Txt_CodAlfa3.Location = new System.Drawing.Point(297, 180);
-            this.Txt_CodAlfa3.Name = "Txt_CodAlfa3";
-            this.Txt_CodAlfa3.Size = new System.Drawing.Size(57, 22);
-            this.Txt_CodAlfa3.TabIndex = 43;
-            this.Txt_CodAlfa3.Visible = false;
+            this.condEspSeguridadDataGridViewTextBoxColumn.DataPropertyName = "CondEspSeguridad";
+            this.condEspSeguridadDataGridViewTextBoxColumn.HeaderText = "CondEspSeguridad";
+            this.condEspSeguridadDataGridViewTextBoxColumn.Name = "condEspSeguridadDataGridViewTextBoxColumn";
+            this.condEspSeguridadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.condEspSeguridadDataGridViewTextBoxColumn.Visible = false;
+            this.condEspSeguridadDataGridViewTextBoxColumn.Width = 161;
             // 
-            // Txt_Nombre
+            // BS_MActivComercial
             // 
-            this.Txt_Nombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_MPais, "Descripcion", true));
-            this.Txt_Nombre.Location = new System.Drawing.Point(84, 208);
-            this.Txt_Nombre.Multiline = true;
-            this.Txt_Nombre.Name = "Txt_Nombre";
-            this.Txt_Nombre.Size = new System.Drawing.Size(270, 110);
-            this.Txt_Nombre.TabIndex = 45;
-            // 
-            // Chk_CES
-            // 
-            this.Chk_CES.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Chk_CES.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_MPais, "CondEspSeguridad", true));
-            this.Chk_CES.Location = new System.Drawing.Point(16, 351);
-            this.Chk_CES.Name = "Chk_CES";
-            this.Chk_CES.Size = new System.Drawing.Size(303, 24);
-            this.Chk_CES.TabIndex = 49;
-            this.Chk_CES.Text = "Condición Especial de Seguridad";
-            this.Chk_CES.UseVisualStyleBackColor = true;
-            // 
-            // NUD_Valor
-            // 
-            this.NUD_Valor.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BS_MPais, "Valor", true));
-            this.NUD_Valor.Location = new System.Drawing.Point(84, 324);
-            this.NUD_Valor.Name = "NUD_Valor";
-            this.NUD_Valor.Size = new System.Drawing.Size(57, 22);
-            this.NUD_Valor.TabIndex = 50;
+            this.BS_MActivComercial.DataSource = typeof(MofinModelo.M_ActivComercial);
             // 
             // Cmb_TablaMaestra
             // 
@@ -426,113 +434,152 @@ namespace MOFIN
             this.Cmb_TablaMaestra.TabIndex = 51;
             this.Cmb_TablaMaestra.SelectedIndexChanged += new System.EventHandler(this.Cmb_TablaMaestra_SelectedIndexChanged);
             // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.B_BuscadosTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.C_ClientesTableAdapter = null;
-            this.tableAdapterManager.C_FirBenAccTableAdapter = null;
-            this.tableAdapterManager.C_HistActClientesTableAdapter = null;
-            this.tableAdapterManager.C_ValorItemConsExpTableAdapter = null;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.M_ActivComercialTableAdapter = null;
-            this.tableAdapterManager.M_AntiguedadTableAdapter = null;
-            this.tableAdapterManager.M_CriptomonedasTableAdapter = null;
-            this.tableAdapterManager.M_EdadTableAdapter = null;
-            this.tableAdapterManager.M_EstadosTableAdapter = null;
-            this.tableAdapterManager.M_NivelRiesgoTableAdapter = null;
-            this.tableAdapterManager.M_PaisTableAdapter = null;
-            this.tableAdapterManager.M_PEPTableAdapter = null;
-            this.tableAdapterManager.M_ProductosTableAdapter = null;
-            this.tableAdapterManager.M_ProfesionesTableAdapter = null;
-            this.tableAdapterManager.M_ServiciosTableAdapter = null;
-            this.tableAdapterManager.M_TipoDocIDTableAdapter = null;
-            this.tableAdapterManager.M_TipoEstructuraEmpresaTableAdapter = null;
-            this.tableAdapterManager.M_TipoPersJuridicaTableAdapter = null;
-            this.tableAdapterManager.M_VolOperPersJurTableAdapter = null;
-            this.tableAdapterManager.M_VolOperPersNatTableAdapter = null;
-            this.tableAdapterManager.O_HistPerfOperacTableAdapter = null;
-            this.tableAdapterManager.O_ObservacionesTableAdapter = null;
-            this.tableAdapterManager.O_OperfinancierasTableAdapter = null;
-            this.tableAdapterManager.O_OperTransaccionalesTableAdapter = null;
-            this.tableAdapterManager.O_RepOperacionalTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = MOFIN.MonitorOperacionesDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // BS_MEstados
-            // 
-            this.BS_MEstados.DataMember = "M_Estados";
-            this.BS_MEstados.DataSource = this.DS_MonitorOperaciones;
-            // 
-            // TA_MEstados
-            // 
-            this.TA_MEstados.ClearBeforeFill = true;
-            // 
-            // TA_MPais
-            // 
-            this.TA_MPais.ClearBeforeFill = true;
-            // 
             // BS_MAntiguedad
             // 
-            this.BS_MAntiguedad.DataMember = "M_Antiguedad";
-            this.BS_MAntiguedad.DataSource = this.DS_MonitorOperaciones;
-            // 
-            // TA_MAntiguedad
-            // 
-            this.TA_MAntiguedad.ClearBeforeFill = true;
-            // 
-            // BS_MActivComercial
-            // 
-            this.BS_MActivComercial.DataMember = "M_ActivComercial";
-            this.BS_MActivComercial.DataSource = this.DS_MonitorOperaciones;
-            // 
-            // TA_MActivComercial
-            // 
-            this.TA_MActivComercial.ClearBeforeFill = true;
+            this.BS_MAntiguedad.DataSource = typeof(MofinModelo.M_Antiguedad);
             // 
             // BS_MCriptomonedas
             // 
-            this.BS_MCriptomonedas.DataMember = "M_Criptomonedas";
-            this.BS_MCriptomonedas.DataSource = this.DS_MonitorOperaciones;
-            // 
-            // TA_MCriptomonedas
-            // 
-            this.TA_MCriptomonedas.ClearBeforeFill = true;
+            this.BS_MCriptomonedas.DataSource = typeof(MofinModelo.M_Criptomonedas);
             // 
             // BS_MEdad
             // 
             this.BS_MEdad.DataSource = typeof(MofinModelo.M_Edad);
             // 
-            // TA_MEdad
+            // BS_MEstados
             // 
-            this.TA_MEdad.ClearBeforeFill = true;
+            this.BS_MEstados.DataSource = typeof(MofinModelo.M_Estados);
             // 
             // BS_MNivelRiesgo
             // 
-            this.BS_MNivelRiesgo.DataMember = "M_NivelRiesgo";
-            this.BS_MNivelRiesgo.DataSource = this.DS_MonitorOperaciones;
+            this.BS_MNivelRiesgo.DataSource = typeof(MofinModelo.M_NivelRiesgo);
             // 
-            // TA_MNivelRiesgo
+            // BS_MPais
             // 
-            this.TA_MNivelRiesgo.ClearBeforeFill = true;
+            this.BS_MPais.DataSource = typeof(MofinModelo.M_Pais);
+            // 
+            // BS_MPEP
+            // 
+            this.BS_MPEP.DataSource = typeof(MofinModelo.M_PEP);
+            // 
+            // BS_MProductos
+            // 
+            this.BS_MProductos.DataSource = typeof(MofinModelo.M_Productos);
             // 
             // BS_MProfesiones
             // 
-            this.BS_MProfesiones.DataMember = "M_Profesiones";
-            this.BS_MProfesiones.DataSource = this.DS_MonitorOperaciones;
+            this.BS_MProfesiones.DataSource = typeof(MofinModelo.M_Profesiones);
             // 
-            // TA_MProfesiones
+            // BS_MServicios
             // 
-            this.TA_MProfesiones.ClearBeforeFill = true;
+            this.BS_MServicios.DataSource = typeof(MofinModelo.M_Servicios);
+            // 
+            // BS_MTipoDocID
+            // 
+            this.BS_MTipoDocID.DataSource = typeof(MofinModelo.M_TipoDocID);
+            // 
+            // BS_MTipoEstructuraEmpresa
+            // 
+            this.BS_MTipoEstructuraEmpresa.DataSource = typeof(MofinModelo.M_TipoEstructuraEmpresa);
+            // 
+            // BS_MTipoPersJuridica
+            // 
+            this.BS_MTipoPersJuridica.DataSource = typeof(MofinModelo.M_TipoPersJuridica);
+            // 
+            // BS_MVolOperPersJur
+            // 
+            this.BS_MVolOperPersJur.DataSource = typeof(MofinModelo.M_VolOperPersJur);
+            // 
+            // BS_MVolOperPersNat
+            // 
+            this.BS_MVolOperPersNat.DataSource = typeof(MofinModelo.M_VolOperPersNat);
+            // 
+            // Pan_Elementos
+            // 
+            this.Pan_Elementos.Controls.Add(this.NUD_Valor);
+            this.Pan_Elementos.Controls.Add(this.Txt_Codigo);
+            this.Pan_Elementos.Controls.Add(this.Txt_CodAlfa2);
+            this.Pan_Elementos.Controls.Add(this.Txt_CodAlfa3);
+            this.Pan_Elementos.Controls.Add(this.Txt_Nombre);
+            this.Pan_Elementos.Controls.Add(this.Chk_CES);
+            this.Pan_Elementos.Location = new System.Drawing.Point(17, 146);
+            this.Pan_Elementos.Name = "Pan_Elementos";
+            this.Pan_Elementos.Size = new System.Drawing.Size(353, 236);
+            this.Pan_Elementos.TabIndex = 55;
+            // 
+            // NUD_Valor
+            // 
+            this.NUD_Valor.Location = new System.Drawing.Point(63, 179);
+            this.NUD_Valor.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.NUD_Valor.Name = "NUD_Valor";
+            this.NUD_Valor.Size = new System.Drawing.Size(57, 22);
+            this.NUD_Valor.TabIndex = 59;
+            this.NUD_Valor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Txt_Codigo
+            // 
+            this.Txt_Codigo.Location = new System.Drawing.Point(63, 35);
+            this.Txt_Codigo.Name = "Txt_Codigo";
+            this.Txt_Codigo.Size = new System.Drawing.Size(57, 22);
+            this.Txt_Codigo.TabIndex = 54;
+            // 
+            // Txt_CodAlfa2
+            // 
+            this.Txt_CodAlfa2.Location = new System.Drawing.Point(160, 35);
+            this.Txt_CodAlfa2.Name = "Txt_CodAlfa2";
+            this.Txt_CodAlfa2.Size = new System.Drawing.Size(57, 22);
+            this.Txt_CodAlfa2.TabIndex = 55;
+            this.Txt_CodAlfa2.Visible = false;
+            // 
+            // Txt_CodAlfa3
+            // 
+            this.Txt_CodAlfa3.Location = new System.Drawing.Point(276, 35);
+            this.Txt_CodAlfa3.Name = "Txt_CodAlfa3";
+            this.Txt_CodAlfa3.Size = new System.Drawing.Size(57, 22);
+            this.Txt_CodAlfa3.TabIndex = 56;
+            this.Txt_CodAlfa3.Visible = false;
+            // 
+            // Txt_Nombre
+            // 
+            this.Txt_Nombre.Location = new System.Drawing.Point(63, 63);
+            this.Txt_Nombre.Multiline = true;
+            this.Txt_Nombre.Name = "Txt_Nombre";
+            this.Txt_Nombre.Size = new System.Drawing.Size(270, 110);
+            this.Txt_Nombre.TabIndex = 57;
+            // 
+            // Chk_CES
+            // 
+            this.Chk_CES.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Chk_CES.Location = new System.Drawing.Point(0, 205);
+            this.Chk_CES.Name = "Chk_CES";
+            this.Chk_CES.Size = new System.Drawing.Size(303, 24);
+            this.Chk_CES.TabIndex = 58;
+            this.Chk_CES.Text = "Condición Especial de Seguridad";
+            this.Chk_CES.UseVisualStyleBackColor = true;
             // 
             // Cmb_Pais
             // 
-            this.Cmb_Pais.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_MPais, "Descripcion", true));
+            this.Cmb_Pais.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.BS_MPais, "Codigo", true));
+            this.Cmb_Pais.DataSource = this.BS_MPais;
+            this.Cmb_Pais.DisplayMember = "Descripcion";
             this.Cmb_Pais.FormattingEnabled = true;
-            this.Cmb_Pais.Location = new System.Drawing.Point(84, 150);
+            this.Cmb_Pais.Location = new System.Drawing.Point(80, 152);
             this.Cmb_Pais.Name = "Cmb_Pais";
             this.Cmb_Pais.Size = new System.Drawing.Size(270, 24);
-            this.Cmb_Pais.TabIndex = 53;
+            this.Cmb_Pais.TabIndex = 61;
             this.Cmb_Pais.Visible = false;
+            this.Cmb_Pais.SelectedIndexChanged += new System.EventHandler(this.Cmb_Pais_SelectedIndexChanged);
+            // 
+            // Txt_Valor
+            // 
+            this.Txt_Valor.Location = new System.Drawing.Point(7, 69);
+            this.Txt_Valor.Name = "Txt_Valor";
+            this.Txt_Valor.Size = new System.Drawing.Size(766, 22);
+            this.Txt_Valor.TabIndex = 62;
             // 
             // Frm_TablasMaestras
             // 
@@ -541,25 +588,21 @@ namespace MOFIN
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(782, 458);
+            this.Controls.Add(this.Txt_Valor);
+            this.Controls.Add(this.Cmb_Pais);
             this.Controls.Add(this.Lbl_Pais);
             this.Controls.Add(this.Lbl_tablaMaestra);
             this.Controls.Add(this.Cmb_TablaMaestra);
             this.Controls.Add(this.Lbl_Valor);
-            this.Controls.Add(this.NUD_Valor);
             this.Controls.Add(this.Lbl_Codigo);
-            this.Controls.Add(this.Txt_Codigo);
             this.Controls.Add(this.Lbl_CodAlfa2);
-            this.Controls.Add(this.Txt_CodAlfa2);
             this.Controls.Add(this.Lbl_CodAlfa3);
-            this.Controls.Add(this.Txt_CodAlfa3);
             this.Controls.Add(this.Lbl_Nombre);
-            this.Controls.Add(this.Txt_Nombre);
-            this.Controls.Add(this.Chk_CES);
             this.Controls.Add(this.Grd_Detalles);
             this.Controls.Add(this.TS_BarraHerramientas);
             this.Controls.Add(this.Btn_Cancelar);
             this.Controls.Add(this.Btn_Aceptar);
-            this.Controls.Add(this.Cmb_Pais);
+            this.Controls.Add(this.Pan_Elementos);
             this.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -573,16 +616,26 @@ namespace MOFIN
             this.TS_BarraHerramientas.ResumeLayout(false);
             this.TS_BarraHerramientas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Detalles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_MPais)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DS_MonitorOperaciones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_Valor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_MEstados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_MAntiguedad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MActivComercial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MAntiguedad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MCriptomonedas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MEdad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MEstados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MNivelRiesgo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MPais)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MPEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MProfesiones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MServicios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MTipoDocID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MTipoEstructuraEmpresa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MTipoPersJuridica)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MVolOperPersJur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MVolOperPersNat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_TablaMaestra)).EndInit();
+            this.Pan_Elementos.ResumeLayout(false);
+            this.Pan_Elementos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Valor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -604,33 +657,8 @@ namespace MOFIN
         private System.Windows.Forms.ToolStripButton TSB_Imprimir;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton TSB_Salir;
-        private MonitorOperacionesDataSet DS_MonitorOperaciones;
-        private MonitorOperacionesDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView Grd_Detalles;
-        private System.Windows.Forms.TextBox Txt_Codigo;
-        private System.Windows.Forms.TextBox Txt_CodAlfa2;
-        private System.Windows.Forms.TextBox Txt_CodAlfa3;
-        private System.Windows.Forms.TextBox Txt_Nombre;
-        private System.Windows.Forms.CheckBox Chk_CES;
-        private System.Windows.Forms.NumericUpDown NUD_Valor;
         private System.Windows.Forms.ComboBox Cmb_TablaMaestra;
-        private System.Windows.Forms.BindingSource BS_MEstados;
-        private MonitorOperacionesDataSetTableAdapters.M_EstadosTableAdapter TA_MEstados;
-        private System.Windows.Forms.BindingSource BS_MPais;
-        private MonitorOperacionesDataSetTableAdapters.M_PaisTableAdapter TA_MPais;
-        private System.Windows.Forms.BindingSource BS_MAntiguedad;
-        private MonitorOperacionesDataSetTableAdapters.M_AntiguedadTableAdapter TA_MAntiguedad;
-        private System.Windows.Forms.BindingSource BS_MActivComercial;
-        private MonitorOperacionesDataSetTableAdapters.M_ActivComercialTableAdapter TA_MActivComercial;
-        private System.Windows.Forms.BindingSource BS_MCriptomonedas;
-        private MonitorOperacionesDataSetTableAdapters.M_CriptomonedasTableAdapter TA_MCriptomonedas;
-        private System.Windows.Forms.BindingSource BS_MEdad;
-        private MonitorOperacionesDataSetTableAdapters.M_EdadTableAdapter TA_MEdad;
-        private System.Windows.Forms.BindingSource BS_MNivelRiesgo;
-        private MonitorOperacionesDataSetTableAdapters.M_NivelRiesgoTableAdapter TA_MNivelRiesgo;
-        private System.Windows.Forms.BindingSource BS_MProfesiones;
-        private MonitorOperacionesDataSetTableAdapters.M_ProfesionesTableAdapter TA_MProfesiones;
-        private System.Windows.Forms.ComboBox Cmb_Pais;
         private System.Windows.Forms.Label Lbl_Valor;
         private System.Windows.Forms.Label Lbl_Codigo;
         private System.Windows.Forms.Label Lbl_CodAlfa2;
@@ -638,5 +666,36 @@ namespace MOFIN
         private System.Windows.Forms.Label Lbl_Nombre;
         private System.Windows.Forms.Label Lbl_tablaMaestra;
         private System.Windows.Forms.Label Lbl_Pais;
+        private System.Windows.Forms.BindingSource BS_MActivComercial;
+        private System.Windows.Forms.BindingSource BS_MAntiguedad;
+        private System.Windows.Forms.BindingSource BS_MCriptomonedas;
+        private System.Windows.Forms.BindingSource BS_MEdad;
+        private System.Windows.Forms.BindingSource BS_MEstados;
+        private System.Windows.Forms.BindingSource BS_MNivelRiesgo;
+        private System.Windows.Forms.BindingSource BS_MPais;
+        private System.Windows.Forms.BindingSource BS_MPEP;
+        private System.Windows.Forms.BindingSource BS_MProductos;
+        private System.Windows.Forms.BindingSource BS_MProfesiones;
+        private System.Windows.Forms.BindingSource BS_MServicios;
+        private System.Windows.Forms.BindingSource BS_MTipoDocID;
+        private System.Windows.Forms.BindingSource BS_MTipoEstructuraEmpresa;
+        private System.Windows.Forms.BindingSource BS_MTipoPersJuridica;
+        private System.Windows.Forms.BindingSource BS_MVolOperPersJur;
+        private System.Windows.Forms.BindingSource BS_MVolOperPersNat;
+        private System.Windows.Forms.BindingSource BS_TablaMaestra;
+        private System.Windows.Forms.Panel Pan_Elementos;
+        private System.Windows.Forms.NumericUpDown NUD_Valor;
+        private System.Windows.Forms.TextBox Txt_Codigo;
+        private System.Windows.Forms.TextBox Txt_CodAlfa2;
+        private System.Windows.Forms.TextBox Txt_CodAlfa3;
+        private System.Windows.Forms.TextBox Txt_Nombre;
+        private System.Windows.Forms.CheckBox Chk_CES;
+        private System.Windows.Forms.ComboBox Cmb_Pais;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDSistemaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn condEspSeguridadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox Txt_Valor;
     }
 }

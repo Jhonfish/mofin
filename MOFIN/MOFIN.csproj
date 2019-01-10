@@ -175,7 +175,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="EntornoDataSet.xsc">
       <DependentUpon>EntornoDataSet.xsd</DependentUpon>
@@ -200,8 +199,34 @@
       <DependentUpon>MonitorOperacionesDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\MofinDatos.DEmpresas.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.B_Buscados.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.C_Clientes.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.C_FirBenAcc.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.C_HistActClientes.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.C_ValorItemConsExp.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.MonitorOperacionesEntities.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.M_ActivComercial.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.M_Antiguedad.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.M_Criptomonedas.datasource" />
     <None Include="Properties\DataSources\MofinModelo.M_Edad.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.M_Estados.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.M_NivelRiesgo.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.M_Pais.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.M_PEP.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.M_Productos.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.M_Profesiones.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.M_Servicios.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.M_TipoDocID.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.M_TipoEstructuraEmpresa.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.M_TipoPersJuridica.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.M_VolOperPersJur.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.M_VolOperPersNat.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.NM_Profesiones.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.O_HistPerfOperac.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.O_Observaciones.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.O_Operfinancieras.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.O_OperTransaccionales.datasource" />
+    <None Include="Properties\DataSources\MofinModelo.sysdiagrams.datasource" />
     <None Include="Properties\DataSources\MofinModeloEntorno.Empresas.datasource" />
     <None Include="Properties\DataSources\MofinModeloEntorno.Emp_Accesos.datasource" />
     <None Include="Properties\DataSources\MofinModeloEntorno.Grupos.datasource" />
@@ -210,7 +235,30 @@
     <None Include="Properties\DataSources\MofinModeloEntorno.MofinEntornoEntidad.datasource" />
     <None Include="Properties\DataSources\MofinModeloEntorno.Opc_Sistema.datasource" />
     <None Include="Properties\DataSources\MofinModeloEntorno.Usuarios.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NB_Buscados.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NC_Clientes.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NC_FirBenAcc.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NC_HistActClientes.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NC_ValorItemConsExp.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NEmpresas.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NEmp_Accesos.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NGrupos.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NGrupo_Opciones.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NM_ActivComercial.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NM_Antiguedad.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NM_Criptomonedas.datasource" />
     <None Include="Properties\DataSources\MofinNegocios.NM_Edad.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NM_Estados.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NM_NivelRiesgo.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NM_Pais.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NM_PEP.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NM_Productos.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NM_Servicios.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NM_TipoDocID.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NM_TipoEstructuraEmpresa.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NM_VolOperPersJur.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NM_VolOperPersNat.datasource" />
+    <None Include="Properties\DataSources\MofinNegocios.NUsuarios.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -256,24 +304,6 @@
       <Project>{fc87a849-0770-4439-a6c2-5ee0d9f16d0f}</Project>
       <Name>MofinNegocios</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Aceptar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Aceptar1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Aceptar2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Cancelar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Eliminar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Modificar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

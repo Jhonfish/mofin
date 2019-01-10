@@ -8,46 +8,62 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
-
+using MofinNegocios;
+using MofinModelo;
+using MofinModeloEntorno;
 
 namespace MOFIN
 {
     public partial class Frm_TablasMaestras : MetroForm
     {
+        bool vl_EsNuevo = true;
+        string vl_RegEliminar = "";
+
+        M_ActivComercial t_TablasMaestras = new M_ActivComercial();
+        M_ActivComercial t_TablaMaestra0 = new M_ActivComercial();
+        M_Antiguedad t_TablaMaestra1 = new M_Antiguedad();
+        M_Criptomonedas t_TablaMaestra2 = new M_Criptomonedas();
+        M_Edad t_TablaMaestra3 = new M_Edad();
+        M_Estados t_TablaMaestra4 = new M_Estados();
+        M_NivelRiesgo t_TablaMaestra5 = new M_NivelRiesgo();
+        M_Pais t_TablaMaestra6 = new M_Pais();
+        M_PEP t_TablaMaestra7 = new M_PEP();
+        M_Productos t_TablaMaestra8 = new M_Productos();
+        M_Profesiones t_TablaMaestra9 = new M_Profesiones();
+        M_Servicios t_TablaMaestra10 = new M_Servicios();
+        M_TipoDocID t_TablaMaestra11 = new M_TipoDocID();
+        M_TipoEstructuraEmpresa t_TablaMaestra12 = new M_TipoEstructuraEmpresa();
+        M_TipoPersJuridica t_TablaMaestra13 = new M_TipoPersJuridica();
+        M_VolOperPersNat t_TablaMaestra14 = new M_VolOperPersNat();
+        M_VolOperPersJur t_TablaMaestra15 = new M_VolOperPersJur();
+
         public Frm_TablasMaestras()
         {
             InitializeComponent();
-
         }
-
-        // Private BindingSource BS_TablaMaestra;
-        private BindingSource BS_TablaMaestra;
-       
-
+               
         private void Frm_TablasMaestras_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'DS_MonitorOperaciones.M_Profesiones' Puede moverla o quitarla según sea necesario.
-            this.TA_MProfesiones.Fill(this.DS_MonitorOperaciones.M_Profesiones);
-            // TODO: esta línea de código carga datos en la tabla 'DS_MonitorOperaciones.M_NivelRiesgo' Puede moverla o quitarla según sea necesario.
-            this.TA_MNivelRiesgo.Fill(this.DS_MonitorOperaciones.M_NivelRiesgo);
-            // TODO: esta línea de código carga datos en la tabla 'DS_MonitorOperaciones.M_Edad' Puede moverla o quitarla según sea necesario.
-            this.TA_MEdad.Fill(this.DS_MonitorOperaciones.M_Edad);
-            // TODO: esta línea de código carga datos en la tabla 'DS_MonitorOperaciones.M_Criptomonedas' Puede moverla o quitarla según sea necesario.
-            this.TA_MCriptomonedas.Fill(this.DS_MonitorOperaciones.M_Criptomonedas);
-            // TODO: esta línea de código carga datos en la tabla 'DS_MonitorOperaciones.M_ActivComercial' Puede moverla o quitarla según sea necesario.
-            this.TA_MActivComercial.Fill(this.DS_MonitorOperaciones.M_ActivComercial);
-            // TODO: esta línea de código carga datos en la tabla 'DS_MonitorOperaciones.M_Antiguedad' Puede moverla o quitarla según sea necesario.
-            this.TA_MAntiguedad.Fill(this.DS_MonitorOperaciones.M_Antiguedad);
-            // TODO: esta línea de código carga datos en la tabla 'DS_MonitorOperaciones.M_Pais' Puede moverla o quitarla según sea necesario.
-            this.TA_MPais.Fill(this.DS_MonitorOperaciones.M_Pais);
-            // TODO: esta línea de código carga datos en la tabla 'DS_MonitorOperaciones.M_Estados' Puede moverla o quitarla según sea necesario.
-            this.TA_MEstados.Fill(this.DS_MonitorOperaciones.M_Estados);
+            BS_MActivComercial.DataSource = NM_ActivComercial.Listar();
+            BS_MAntiguedad.DataSource = NM_Antiguedad.Listar();
+            BS_MCriptomonedas.DataSource = NM_Criptomonedas.Listar();
+            BS_MEdad.DataSource = NM_Edad.Listar();
+            BS_MEstados.DataSource = NM_Estados.Listar();
+            BS_MNivelRiesgo.DataSource = NM_NivelRiesgo.Listar();
+            BS_MPais.DataSource = NM_Pais.Listar();
+            BS_MPEP.DataSource = NM_PEP.Listar();
+            BS_MProductos.DataSource = NM_Productos.Listar();
+            BS_MProfesiones.DataSource = NM_Profesiones.Listar();
+            BS_MServicios.DataSource = NM_Servicios.Listar();
+            BS_MTipoDocID.DataSource = NM_TipoDocID.Listar();
+            BS_MTipoEstructuraEmpresa.DataSource = NM_TipoEstructuraEmpresa.Listar();
+            //BS_MTipoPersJuridicav = NM_TipoPersJuridica.Listar();
+            BS_MVolOperPersNat.DataSource = NM_VolOperPersNat.Listar();
+            BS_MVolOperPersJur.DataSource = NM_VolOperPersJur.Listar();
 
-            BS_TablaMaestra = BS_MPais;
             Cmb_TablaMaestra.SelectedIndex = 0;
-            //            Cmb_TablaMaestra.Text = Cmb_TablaMaestra.Items.;
             this.Modo_Consulta();
-
+            this.Grd_Detalles.Focus();
         }
 
         //**************
@@ -56,24 +72,159 @@ namespace MOFIN
 
         private void Grd_Detalles_CurrentCellChanged(object sender, EventArgs e)
         {
+            switch (Cmb_TablaMaestra.SelectedIndex)
+            {
+                case 0:  // "Actividad Comercial"
+                    if (BS_TablaMaestra.Position > 0)
+                    {
+                        BS_MActivComercial.Position = BS_TablaMaestra.Position;
+                        t_TablaMaestra0 = BS_MActivComercial.Current as M_ActivComercial;
+//                        if (t_TablaMaestra0.Descripcion != null)
+                            vl_RegEliminar = t_TablaMaestra0.Descripcion.Trim();
+                    }
+                    break;
+                case 1:  // "Antigüedad"
+                    if (BS_TablaMaestra.Position > 0)
+                    {
+                        BS_MAntiguedad.Position = BS_TablaMaestra.Position;
+                        t_TablaMaestra1 = BS_MAntiguedad.Current as M_Antiguedad;
+//                        if (t_TablaMaestra1 != null & t_TablaMaestra1.Descripcion != null)
+                            vl_RegEliminar = t_TablaMaestra1.Descripcion.Trim();
+                    }
+                    break;
+                case 2:  // "Criptomonedas"
+                    if (BS_TablaMaestra.Position > 0)
+                    {
+                        BS_MCriptomonedas.Position = BS_TablaMaestra.Position;
+                        t_TablaMaestra2 = BS_MCriptomonedas.Current as M_Criptomonedas;
+                        //                    if (t_TablaMaestra2.Descripcion != null)
+                        vl_RegEliminar = t_TablaMaestra2.Descripcion.Trim();
+                    }
+                    break;
+                case 3:  // "Edad"
+                    if (BS_TablaMaestra.Position > 0)
+                    {
+                        BS_MEdad.Position = BS_TablaMaestra.Position;
+                        t_TablaMaestra3 = BS_MEdad.Current as M_Edad;
+                        //if (t_TablaMaestra3.Descripcion != null)
+                        vl_RegEliminar = t_TablaMaestra3.Descripcion.Trim();
+                    }
+                    break;
+                case 4:  // "Estados"
+                    if (BS_TablaMaestra.Position > 0)
+                    {
+                        BS_MEstados.Position = BS_TablaMaestra.Position;
+                        t_TablaMaestra4 = BS_MEstados.Current as M_Estados;
+                        //if (t_TablaMaestra4.Descripcion != null)
+                        vl_RegEliminar = t_TablaMaestra4.Descripcion.Trim();
+                    }
+                    break;
+                case 5: // Nivel de Riesgo
+                    if (BS_TablaMaestra.Position > 0)
+                    {
+                        BS_MNivelRiesgo.Position = BS_TablaMaestra.Position;
+                        t_TablaMaestra5 = BS_MNivelRiesgo.Current as M_NivelRiesgo;
+                        //if (t_TablaMaestra5.Descripcion != null)
+                        vl_RegEliminar = t_TablaMaestra5.Descripcion.Trim();
+                    }
+                    break;
+                case 6:  // "Pais"
+                    if (BS_TablaMaestra.Position > 0)
+                    {
+                        BS_MPais.Position = BS_TablaMaestra.Position;
+                        t_TablaMaestra6 = BS_MPais.Current as M_Pais;
+                        //if (t_TablaMaestra6.Descripcion != null)
+                        vl_RegEliminar = t_TablaMaestra6.Descripcion.Trim();
+                    }
+                    break;
+                case 7:  // "P.E.P."
+                    if (BS_TablaMaestra.Position > 0)
+                    {
+                        BS_MPEP.Position = BS_TablaMaestra.Position;
+                        t_TablaMaestra7 = BS_MPEP.Current as M_PEP;
+                        //if (t_TablaMaestra7.Descripcion != null)
+                        vl_RegEliminar = t_TablaMaestra7.Descripcion.Trim();
+                    }
+                    break;
+                case 8:  // "Productos"
+                    if (BS_TablaMaestra.Position > 0)
+                    {
+                        BS_MProductos.Position = BS_TablaMaestra.Position;
+                        t_TablaMaestra8 = BS_MProductos.Current as M_Productos;
+                        //if (t_TablaMaestra8.Descripcion != null)
+                        vl_RegEliminar = t_TablaMaestra8.Descripcion.Trim();
+                    }
+                    break;
+                case 9:  // "Profesión"
+                    if (BS_TablaMaestra.Position > 0)
+                    {
+                        BS_MProfesiones.Position = BS_TablaMaestra.Position;
+                        t_TablaMaestra9 = BS_MProfesiones.Current as M_Profesiones;
+                        //if (t_TablaMaestra9.Descripcion != null)
+                        vl_RegEliminar = t_TablaMaestra9.Descripcion.Trim();
+                    }
+                    break;
+                case 10:  // "Servicios"
+                    if (BS_TablaMaestra.Position > 0)
+                    {
+                        BS_MServicios.Position = BS_TablaMaestra.Position;
+                        t_TablaMaestra10 = BS_MServicios.Current as M_Servicios;
+                        //if (t_TablaMaestra10.Descripcion != null)
+                        vl_RegEliminar = t_TablaMaestra10.Descripcion.Trim();
+                    }
+                    break;
+                case 11:  // "Tipo de Documento Identidad"
+                    if (BS_TablaMaestra.Position > 0)
+                    {
+                        BS_MTipoDocID.Position = BS_TablaMaestra.Position;
+                        t_TablaMaestra11 = BS_MTipoDocID.Current as M_TipoDocID;
+                        //if (t_TablaMaestra11.Descripcion != null)
+                        vl_RegEliminar = t_TablaMaestra11.Descripcion.Trim();
+                    }
+                    break;
+                case 12:  // "Tipo de Estructura"
+                    if (BS_TablaMaestra.Position > 0)
+                    {
+                        BS_MTipoEstructuraEmpresa.Position = BS_TablaMaestra.Position;
+                        t_TablaMaestra12 = BS_MTipoEstructuraEmpresa.Current as M_TipoEstructuraEmpresa;
+                        //if (t_TablaMaestra12.Descripcion != null)
+                        vl_RegEliminar = t_TablaMaestra12.Descripcion.Trim();
+                    }
+                    break;
+                case 13:  // "Tipo de Persona Jurídica"
+                    if (BS_TablaMaestra.Position > 0)
+                    {
+                        BS_MTipoPersJuridica.Position = BS_TablaMaestra.Position;
+                        t_TablaMaestra13 = BS_MTipoPersJuridica.Current as M_TipoPersJuridica;
+                        //if (t_TablaMaestra13.Descripcion != null)
+                        vl_RegEliminar = t_TablaMaestra13.Descripcion.Trim();
+                    }
+                    break;
+                case 14:  // "Vol. Oper. Pers. Natural"
+                    if (BS_TablaMaestra.Position > 0)
+                    {
+                        BS_MVolOperPersNat.Position = BS_TablaMaestra.Position;
+                        t_TablaMaestra14 = BS_MVolOperPersNat.Current as M_VolOperPersNat;
+                        //if (t_TablaMaestra14.Descripcion != null)
+                        vl_RegEliminar = t_TablaMaestra14.Descripcion.Trim();
+                    }
+                    break;
+                case 15:  // "Vol. Oper. Pers. Jurídica"
+                    if (BS_TablaMaestra.Position > 0)
+                    {
+                        BS_MVolOperPersJur.Position = BS_TablaMaestra.Position;
+                        t_TablaMaestra15 = BS_MVolOperPersJur.Current as M_VolOperPersJur;
+                        //if (t_TablaMaestra15.Descripcion != null)
+                        vl_RegEliminar = t_TablaMaestra15.Descripcion.Trim();
+                    }
+                    break;
+            }
             TSB_ActualizaBotonesNavegacion();
-        }
-
-        private void Grd_Detalles_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void Modo_Consulta()
         {
-            this.Txt_Codigo.Enabled = false;
-            this.Cmb_Pais.Enabled = false;
-            this.Txt_CodAlfa2.Enabled = false;
-            this.Txt_CodAlfa3.Enabled = false;
-            this.Txt_Nombre.Enabled = false;
-            this.NUD_Valor.Enabled = false;
-            this.Chk_CES.Enabled = false;
-
+            this.Pan_Elementos.Enabled = false;
             this.TS_BarraHerramientas.Enabled = true;
             this.Grd_Detalles.Enabled = true;
 
@@ -85,20 +236,99 @@ namespace MOFIN
 
         private void Modo_Edicion()
         {
-            
-            this.Txt_Codigo.Enabled = true;
-            this.Cmb_Pais.Enabled = true;
-            this.Txt_CodAlfa2.Enabled = true;
-            this.Txt_CodAlfa3.Enabled = true;
-            this.Txt_Nombre.Enabled = true;
-            this.NUD_Valor.Enabled = true;
-            this.Chk_CES.Enabled = true;
+            this.Txt_Codigo.Enabled = vl_EsNuevo;
+            this.Pan_Elementos.Enabled = true;
 
             this.TS_BarraHerramientas.Enabled = false;
             this.Grd_Detalles.Enabled = false;
 
             this.Btn_Aceptar.Visible = true;
             this.Btn_Cancelar.Visible = true;
+        }
+        private void Cmb_TablaMaestra_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.Cmb_Pais.Visible = false;
+            this.Txt_CodAlfa2.Visible = false;
+            this.Txt_CodAlfa3.Visible = false;
+
+            this.Lbl_Pais.Visible = false;
+            this.Lbl_CodAlfa2.Visible = false;
+            this.Lbl_CodAlfa3.Visible = false;
+
+            switch (Cmb_TablaMaestra.SelectedIndex)
+            {
+                case 0:  // "Actividad Comercial"
+                    BS_TablaMaestra.DataSource = BS_MActivComercial;
+                    //Grd_Detalles.DataSource = BS_MActivComercial;
+                    break;
+                case 1:  // "Antigüedad"
+                    BS_TablaMaestra.DataSource = BS_MAntiguedad;
+                    //Grd_Detalles.DataSource = BS_MAntiguedad;
+                    break;
+                case 2:  // "Criptomonedas"
+                    BS_TablaMaestra.DataSource = BS_MCriptomonedas;
+                    //Grd_Detalles.DataSource = BS_MCriptomonedas;
+                    break;
+                case 3:  // "Edad"
+                    BS_TablaMaestra.DataSource = BS_MEdad;
+                    //Grd_Detalles.DataSource = BS_MEdad;
+                    break;
+                case 4:  // "Estados"
+                    BS_TablaMaestra.DataSource = BS_MEstados;
+                    this.Lbl_Pais.Visible = true;
+                    this.Cmb_Pais.Visible = true;
+                    break;
+                case 5: // Nivel de Riesgo
+                    BS_TablaMaestra.DataSource = BS_MNivelRiesgo;
+                    break;
+                case 6:  // "Pais"
+                    BS_TablaMaestra.DataSource = BS_MPais;
+                    this.Lbl_CodAlfa2.Visible = true;
+                    this.Lbl_CodAlfa3.Visible = true;
+                    this.Txt_CodAlfa2.Visible = true;
+                    this.Txt_CodAlfa3.Visible = true;
+                    break;
+                case 7:  // "P.E.P."
+                    BS_TablaMaestra.DataSource = BS_MPEP;
+                    break;
+                case 8:  // "Productos"
+                    BS_TablaMaestra.DataSource = BS_MProductos;
+                    break;
+                case 9:  // "Profesión"
+                    BS_TablaMaestra.DataSource = BS_MProfesiones;
+                    break;
+                case 10:  // "Servicios"
+                    BS_TablaMaestra.DataSource = BS_MServicios;
+                    break;
+                case 11:  // "Tipo de Documento Identidad"
+                    BS_TablaMaestra.DataSource = BS_MTipoDocID;
+                    break;
+                case 12:  // "Tipo de Estructura"
+                    BS_TablaMaestra.DataSource = BS_MTipoEstructuraEmpresa;
+                    break;
+                case 13:  // "Tipo de Persona Jurídica"
+                    BS_TablaMaestra.DataSource = BS_MTipoPersJuridica;
+                    break;
+                case 14:  // "Vol. Oper. Pers. Natural"
+                    BS_TablaMaestra.DataSource = BS_MVolOperPersNat;
+                    break;
+                case 15:  // "Vol. Oper. Pers. Jurídica"
+                    BS_TablaMaestra.DataSource = BS_MVolOperPersJur;
+                    break;
+            }
+            
+            // Cambio del origen de los controles
+            this.Txt_Codigo.DataBindings.Clear();
+            this.Txt_Nombre.DataBindings.Clear();
+            this.NUD_Valor.DataBindings.Clear();
+            this.Txt_Codigo.DataBindings.Add("Text", BS_TablaMaestra, "Codigo");
+            this.Txt_Nombre.DataBindings.Add("Text", BS_TablaMaestra, "Descripcion");
+            this.NUD_Valor.DataBindings.Add("Value", BS_TablaMaestra, "Valor");
+
+            Grd_Detalles.DataSource = BS_TablaMaestra;
+            TSB_ActualizaBotonesNavegacion();
+            Grd_Detalles.Refresh();
+
         }
 
         //************
@@ -125,12 +355,127 @@ namespace MOFIN
                 this.TSB_Modificar.Enabled = true;
                 this.TSB_Eliminar.Enabled = true;
                 this.TSB_Imprimir.Enabled = true;
-
             }
         }
 
         private void Btn_Aceptar_Click(object sender, EventArgs e)
         {
+            switch (Cmb_TablaMaestra.SelectedIndex)
+            {
+                case 0:  // "Actividad Comercial"
+                    if (vl_EsNuevo)
+                        NM_ActivComercial.Insertar(t_TablaMaestra0);
+                    else
+                        NM_ActivComercial.Actualizar(t_TablaMaestra0);
+                    BS_MActivComercial.DataSource = NM_ActivComercial.Listar();
+                    break;
+                case 1:  // "Antigüedad"
+                    if (vl_EsNuevo)
+                        NM_Antiguedad.Insertar(t_TablaMaestra1);
+                    else
+                        NM_Antiguedad.Actualizar(t_TablaMaestra1);
+                    BS_MAntiguedad.DataSource = NM_Antiguedad.Listar();
+                    break;
+                case 2:  // "Criptomonedas"
+                    if (vl_EsNuevo)
+                        NM_Criptomonedas.Insertar(t_TablaMaestra2);
+                    else
+                        NM_Criptomonedas.Actualizar(t_TablaMaestra2);
+                    BS_MCriptomonedas.DataSource = NM_Criptomonedas.Listar();
+                    break;
+                case 3:  // "Edad"
+                    if (vl_EsNuevo)
+                        NM_Edad.Insertar(t_TablaMaestra3);
+                    else
+                        NM_Edad.Actualizar(t_TablaMaestra3);
+                    BS_MEdad.DataSource = NM_Edad.Listar();
+                    break;
+                case 4:  // "Estados"
+                    if (vl_EsNuevo)
+                        NM_Estados.Insertar(t_TablaMaestra4);
+                    else
+                        NM_Estados.Actualizar(t_TablaMaestra4);
+                    BS_MEstados.DataSource = NM_Estados.Listar();
+                    break;
+                case 5: // Nivel de Riesgo
+                    if (vl_EsNuevo)
+                        NM_NivelRiesgo.Insertar(t_TablaMaestra5);
+                    else
+                        NM_NivelRiesgo.Actualizar(t_TablaMaestra5);
+                    BS_MNivelRiesgo.DataSource = NM_NivelRiesgo.Listar();
+                    break;
+                case 6:  // "Pais"
+                    if (vl_EsNuevo)
+                        NM_Pais.Insertar(t_TablaMaestra6);
+                    else
+                        NM_Pais.Actualizar(t_TablaMaestra6);
+                    BS_MPais.DataSource = NM_Pais.Listar();
+                    break;
+                case 7:  // "P.E.P."
+                    if (vl_EsNuevo)
+                        NM_PEP.Insertar(t_TablaMaestra7);
+                    else
+                        NM_PEP.Actualizar(t_TablaMaestra7);
+                    BS_MPEP.DataSource = NM_PEP.Listar();
+                    break;
+                case 8:  // "Productos"
+                    if (vl_EsNuevo)
+                        NM_Productos.Insertar(t_TablaMaestra8);
+                    else
+                        NM_Productos.Actualizar(t_TablaMaestra8);
+                    BS_MProductos.DataSource = NM_Productos.Listar();
+                    break;
+                case 9:  // "Profesión"
+                    if (vl_EsNuevo)
+                        NM_Profesiones.Insertar(t_TablaMaestra9);
+                    else
+                        NM_Profesiones.Actualizar(t_TablaMaestra9);
+                    BS_MProfesiones.DataSource = NM_Profesiones.Listar();
+                    break;
+                case 10:  // "Servicios"
+                    if (vl_EsNuevo)
+                        NM_Servicios.Insertar(t_TablaMaestra10);
+                    else
+                        NM_Servicios.Actualizar(t_TablaMaestra10);
+                    BS_MServicios.DataSource = NM_Servicios.Listar();
+                    break;
+                case 11:  // "Tipo de Documento Identidad"
+                    if (vl_EsNuevo)
+                        NM_TipoDocID.Insertar(t_TablaMaestra11);
+                    else
+                        NM_TipoDocID.Actualizar(t_TablaMaestra11);
+                    BS_MServicios.DataSource = NM_TipoDocID.Listar();
+                    break;
+                case 12:  // "Tipo de Estructura"
+                    if (vl_EsNuevo)
+                        NM_TipoEstructuraEmpresa.Insertar(t_TablaMaestra12);
+                    else
+                        NM_TipoEstructuraEmpresa.Actualizar(t_TablaMaestra12);
+                    BS_MTipoEstructuraEmpresa.DataSource = NM_TipoEstructuraEmpresa.Listar();
+                    break;
+                case 13:  // "Tipo de Persona Jurídica"
+/*                    if (vl_EsNuevo)
+                        NM_PerJuridica.Insertar(t_TablaMaestra13);
+                    else
+                        NM_PerJuridica.Actualizar(t_TablaMaestra13);
+                    BS_MTipoPersJuridica.DataSource = NM_PerJuridica.Listar();
+ */
+                        break;
+                case 14:  // "Vol. Oper. Pers. Natural"
+                    if (vl_EsNuevo)
+                        NM_VolOperPersNat.Insertar(t_TablaMaestra14);
+                    else
+                        NM_VolOperPersNat.Actualizar(t_TablaMaestra14);
+                    BS_MVolOperPersNat.DataSource = NM_VolOperPersNat.Listar();
+                    break;
+                case 15:  // "Vol. Oper. Pers. Jurídica"
+                    if (vl_EsNuevo)
+                        NM_VolOperPersJur.Insertar(t_TablaMaestra15);
+                    else
+                        NM_VolOperPersJur.Actualizar(t_TablaMaestra15);
+                    BS_MVolOperPersJur.DataSource = NM_VolOperPersJur.Listar();
+                    break;
+            }
             this.Modo_Consulta();
         }
 
@@ -139,38 +484,100 @@ namespace MOFIN
             this.Modo_Consulta();
         }
 
-        private void usuariosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.BS_TablaMaestra.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.DS_MonitorOperaciones);
-
-        }
-
-        private void toolStripButton6_Click(object sender, EventArgs e)
+        private void TSB_Agregar_Click(object sender, EventArgs e)
         {
             this.Modo_Edicion();
             BS_TablaMaestra.AddNew();
-
         }
 
-        private void toolStripButton7_Click(object sender, EventArgs e)
+        private void TSB_Modificar_Click(object sender, EventArgs e)
         {
+            vl_EsNuevo = false;
             this.Modo_Edicion();
+            this.Txt_Codigo.Focus();
         }
 
-        private void toolStripButton10_Click(object sender, EventArgs e)
+        private void TSB_Salir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         private void TSB_Eliminar_Click(object sender, EventArgs e)
         {
-            string vl_RegEliminar = ((DataRowView)this.BS_TablaMaestra.Current).Row["Nombre"].ToString();
-            DialogResult vl_Resp = MessageBox.Show("Desea Eliminar este Registro? " + "\n\n" + vl_RegEliminar,
+            DialogResult vl_Resp = MessageBox.Show("Desea Eliminar este Registro? " + "\n\n"+ vl_RegEliminar,
                 "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (vl_Resp == DialogResult.Yes)
             {
+                switch (Cmb_TablaMaestra.SelectedIndex)
+                {
+                    case 0:  // "Actividad Comercial"
+                        NM_ActivComercial.Elimiar(BS_MActivComercial.Current as M_ActivComercial);
+                        BS_MActivComercial.DataSource = NM_ActivComercial.Listar();
+                        //BS_TablaMaestra.DataSource = NM_ActivComercial.Listar();
+                        break;
+                    case 1:  // "Antigüedad"
+                        NM_Antiguedad.Elimiar(BS_MAntiguedad.Current as M_Antiguedad);
+                        BS_MAntiguedad.DataSource = NM_Antiguedad.Listar();
+                        break;
+                    case 2:  // "Criptomonedas"
+                        NM_Criptomonedas.Elimiar(BS_MCriptomonedas.Current as M_Criptomonedas);
+                        BS_MCriptomonedas.DataSource = NM_Criptomonedas.Listar();
+                        break;
+                    case 3:  // "Edad"
+                        NM_Edad.Elimiar(BS_MEdad.Current as M_Edad);
+                        BS_MEdad.DataSource = NM_Edad.Listar();
+                        break;
+                    case 4:  // "Estados"
+                        NM_Estados.Elimiar(BS_MEstados.Current as M_Estados);
+                        BS_MEstados.DataSource = NM_Estados.Listar();
+                        break;
+                    case 5: // Nivel de Riesgo
+                        NM_NivelRiesgo.Elimiar(BS_MNivelRiesgo.Current as M_NivelRiesgo);
+                        BS_MNivelRiesgo.DataSource = NM_NivelRiesgo.Listar();
+                        break;
+                    case 6:  // "Pais"
+                        NM_Pais.Elimiar(BS_MPais.Current as M_Pais);
+                        BS_MPais.DataSource = NM_Pais.Listar();
+                        break;
+                    case 7:  // "P.E.P."
+                        NM_PEP.Elimiar(BS_MPEP.Current as M_PEP);
+                        BS_MPEP.DataSource = NM_PEP.Listar();
+                        break;
+                    case 8:  // "Productos"
+                        NM_Productos.Elimiar(BS_MProductos.Current as M_Productos);
+                        BS_MProductos.DataSource = NM_Productos.Listar();
+                        break;
+                    case 9:  // "Profesión"
+                        NM_Profesiones.Elimiar(BS_MProfesiones.Current as M_Profesiones);
+                        BS_MProfesiones.DataSource = NM_Profesiones.Listar();
+                        break;
+                    case 10:  // "Servicios"
+                        NM_Servicios.Elimiar(BS_MServicios.Current as M_Servicios);
+                        BS_MServicios.DataSource = NM_Servicios.Listar();
+                        break;
+                    case 11:  // "Tipo de Documento Identidad"
+                        NM_TipoDocID.Elimiar(BS_MTipoDocID.Current as M_TipoDocID);
+                        BS_MTipoDocID.DataSource = NM_TipoDocID.Listar();
+                        break;
+                    case 12:  // "Tipo de Estructura"
+                        NM_TipoEstructuraEmpresa.Elimiar(BS_MTipoEstructuraEmpresa.Current as M_TipoEstructuraEmpresa);
+                        BS_MTipoEstructuraEmpresa.DataSource = NM_TipoEstructuraEmpresa.Listar();
+                        break;
+                    case 13:  // "Tipo de Persona Jurídica"
+                        //NM_TipoPersJuridica.Elimiar(BS_MTipoPersJuridica.Current as M_TipoPersJuridica);
+                        //BS_MTipoPersJuridica.DataSource = NM_TipoPersJuridica.Listar();
+                        break;
+                    case 14:  // "Vol. Oper. Pers. Natural"
+                        NM_VolOperPersNat.Elimiar(BS_MVolOperPersNat.Current as M_VolOperPersNat);
+                        BS_MVolOperPersNat.DataSource = NM_VolOperPersNat.Listar();
+
+                        break;
+                    case 15:  // "Vol. Oper. Pers. Jurídica"
+                        NM_VolOperPersJur.Elimiar(BS_MVolOperPersJur.Current as M_VolOperPersJur);
+                        BS_MVolOperPersJur.DataSource = NM_VolOperPersJur.Listar();
+                        break;
+                }
+                Grd_Detalles.Refresh();
                 MessageBox.Show("Se eliminó el registro actual", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
@@ -200,87 +607,13 @@ namespace MOFIN
             TSB_ActualizaBotonesNavegacion();
         }
 
-        private void m_PaisBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void Cmb_Pais_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.Validate();
-            this.BS_MPais.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.DS_MonitorOperaciones);
-
-        }
-
-        private void Cmb_TablaMaestra_SelectedIndexChanged(object sender, EventArgs e)
-        {
-                            
-            //MessageBox.Show(Cmb_TablaMaestra.SelectedIndex.ToString());
-            switch (Cmb_TablaMaestra.SelectedIndex)
-            {
-                case 0:  // "Actividad Comercial"
-                    BS_TablaMaestra = BS_MActivComercial;
-                    break;
-                case 1:  // "Antigüedad"
-                    BS_TablaMaestra = BS_MAntiguedad;
-                    break;
-                case 2:  // "Criptomonedas"
-                    BS_TablaMaestra = BS_MCriptomonedas;
-                    break;
-                case 3:  // "Edad"
-                    BS_TablaMaestra = BS_MEdad;
-                    break;
-                case 4:  // "Estados"
-                    BS_TablaMaestra = BS_MEstados;
-                    this.Lbl_Pais.Visible = true;
-                    this.Cmb_Pais.Visible = true;
-                    break;
-                case 5: // Nivel de Riesgo
-                    BS_TablaMaestra = BS_MNivelRiesgo;
-                    break;
-                case 6:  // "Pais"
-                    BS_TablaMaestra = BS_MPais;
-                    this.Lbl_CodAlfa2.Visible = true;
-                    this.Lbl_CodAlfa3.Visible = true;
-                    this.Txt_CodAlfa2.Visible = true;
-                    this.Txt_CodAlfa3.Visible = true;
-                    break;
-                case 7:  // "P.E.P."
-                    break;
-                case 8:  // "Productos"
-                    break;
-                case 9:  // "Profesión"
-                    BS_TablaMaestra = BS_MProfesiones;
-                    break;
-                case 10:  // "Servicios"
-                    break;
-                case 11:  // "Tipo de Documento Identidad"
-                    break;
-                case 12:  // "Tipo de Estructura"
-                    break;
-                case 13:  // "Tipo de Persona Jurídica"
-                    break;
-                case 14:  // "Vol. Oper. Pers. Natural"
-                    break;
-                case 15:  // "Vol. Oper. Pers. Jurídica"
-                    break;
-            }
-            this.Txt_Codigo.DataBindings.Clear();
-            this.Txt_Nombre.DataBindings.Clear();
-            this.NUD_Valor.DataBindings.Clear();
-
-            this.Txt_Codigo.DataBindings.Add("Text", BS_TablaMaestra, "Codigo");
-            this.Txt_Nombre.DataBindings.Add("Text", BS_TablaMaestra, "Descripcion");
-            this.NUD_Valor.DataBindings.Add("Value", BS_TablaMaestra, "Valor");
-            Grd_Detalles.DataSource = BS_TablaMaestra;
-            TSB_ActualizaBotonesNavegacion();
-
-            Grd_Detalles.Refresh();
-
-            this.Cmb_Pais.Visible = false;
-            this.Txt_CodAlfa2.Visible = false;
-            this.Txt_CodAlfa3.Visible = false;
-
-            this.Lbl_Pais.Visible = false;
-            this.Lbl_CodAlfa2.Visible = false;
-            this.Lbl_CodAlfa3.Visible = false;
-
+            string vl_Filtro = "Cod_Pais = " + this.Cmb_Pais.Tag.ToString();
+            this.Txt_Valor.Text = this.Cmb_Pais.Tag.ToString();
+            //            BS_MEstados.Filter = vl_Filtro;
+            //            Grd_Detalles.Refresh();
+            MessageBox.Show(vl_Filtro); // muestra la anterior.
         }
     }
 }

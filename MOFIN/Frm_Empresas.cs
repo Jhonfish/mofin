@@ -8,12 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
-
+using MofinNegocios;
+using MofinModelo;
+using MofinModeloEntorno;
 
 namespace MOFIN
 {
     public partial class Frm_Empresas: MetroForm
     {
+        bool vl_EsNuevo = true;
+        Empresas t_Empresas = new Empresas();
+
         public Frm_Empresas()
         {
             InitializeComponent();
@@ -21,11 +26,9 @@ namespace MOFIN
 
         private void Frm_Empresas_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'DS_Entorno.Empresas' Puede moverla o quitarla según sea necesario.
-            this.TA_Empresas.Fill(this.DS_Entorno.Empresas);
+            BS_Empresas.DataSource = NEmpresas.Listar();
             this.Modo_Consulta();
             this.Grd_Empresas.Focus();
-
         }
 
         //**************
@@ -34,29 +37,13 @@ namespace MOFIN
 
         private void Grd_Empresas_CurrentCellChanged(object sender, EventArgs e)
         {
-            if (Grd_Empresas.CurrentRow != null)
-            {
- 
-            }
-        }
-
-        private void Grd_Empresas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            t_Empresas = BS_Empresas.Current as Empresas;
+            TSB_ActualizaBotonesNavegacion();
         }
 
         private void Modo_Consulta()
         {
-            this.Txt_Codigo.Enabled = false;
-            this.Txt_Nombre.Enabled = false;
-            this.Txt_Siglas.Enabled = false;
-            this.Txt_DocID.Enabled = false;
-            this.Txt_Email.Enabled = false;
-            this.Txt_Direc.Enabled = false;
-            this.Txt_Telf1.Enabled = false;
-            this.Txt_Telf2.Enabled = false;
-            this.Txt_Logo.Enabled = false;
-
+            this.Pan_Elementos.Enabled = false;
             this.TS_BarraHerramientas.Enabled = true;
             this.Grd_Empresas.Enabled = true;
 
@@ -68,16 +55,7 @@ namespace MOFIN
 
         private void Modo_Edicion()
         {
-            this.Txt_Codigo.Enabled = true;
-            this.Txt_Nombre.Enabled = true;
-            this.Txt_Siglas.Enabled = true;
-            this.Txt_DocID.Enabled = true;
-            this.Txt_Email.Enabled = true;
-            this.Txt_Direc.Enabled = true;
-            this.Txt_Telf1.Enabled = true;
-            this.Txt_Telf2.Enabled = true;
-            this.Txt_Logo.Enabled = true;
-
+            this.Pan_Elementos.Enabled = true;
             this.TS_BarraHerramientas.Enabled = false;
             this.Grd_Empresas.Enabled = false;
 
@@ -114,7 +92,13 @@ namespace MOFIN
 
         private void Btn_Aceptar_Click(object sender, EventArgs e)
         {
+            if (vl_EsNuevo)
+                NEmpresas.Insertar(t_Empresas);
+            else
+                NEmpresas.Actualizar(t_Empresas);
             this.Modo_Consulta();
+            BS_Empresas.DataSource = NEmpresas.Listar();
+
         }
 
         private void Btn_Cancelar_Click(object sender, EventArgs e)
@@ -122,41 +106,40 @@ namespace MOFIN
             this.Modo_Consulta();   
         }
 
-        private void usuariosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void TSB_Agregar_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.BS_Empresas.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.DS_Entorno);
-
-        }
-
-        private void toolStripButton6_Click(object sender, EventArgs e)
-        {
-            this.Modo_Edicion();
-            BS_Empresas.AddNew();
-
-        }
-
-        private void toolStripButton7_Click(object sender, EventArgs e)
-        {
+            vl_EsNuevo = true;
+            BS_Empresas.Add(t_Empresas);
+            BS_Empresas.MoveLast();
             this.Modo_Edicion();
         }
 
-        private void toolStripButton10_Click(object sender, EventArgs e)
+        private void TSB_Modificar_Click(object sender, EventArgs e)
+        {
+            if (BS_Empresas.Current == null)
+                return;
+            vl_EsNuevo = false;
+            this.Modo_Edicion();
+            this.Txt_Nombre.Focus();
+        }
+
+        private void TSB_Salir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         private void TSB_Eliminar_Click(object sender, EventArgs e)
         {
-            string vl_RegEliminar = ((DataRowView)this.BS_Empresas.Current).Row["Nombre"].ToString();
-            DialogResult vl_Resp = MessageBox.Show("Desea Eliminar este Registro? " + "\n\n" + vl_RegEliminar, 
+            string vl_RegEliminar = t_Empresas.Nombre.ToString();
+            DialogResult vl_Resp = MessageBox.Show("Desea Eliminar este Registro? " + "\n\n" + vl_RegEliminar,
                 "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(vl_Resp == DialogResult.Yes)
+            if (vl_Resp == DialogResult.Yes)
             {
-                MessageBox.Show("Se eliminó el registro actual", "Atención", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                NUsuarios.Elimiar(BS_Empresas.Current as Usuarios);
+                BS_Empresas.DataSource = NUsuarios.Listar();
+                Grd_Empresas.Refresh();
+                MessageBox.Show("Se eliminó el registro actual", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
 
         private void TSB_Primero_Click(object sender, EventArgs e)
@@ -196,6 +179,7 @@ namespace MOFIN
             }
 
         }
+
     }
 }
     

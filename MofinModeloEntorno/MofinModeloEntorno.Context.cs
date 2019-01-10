@@ -31,6 +31,6 @@ namespace MofinModeloEntorno
         public virtual DbSet<Grupos> Grupos { get; set; }
         public virtual DbSet<Idiomas> Idiomas { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
-        public virtual DbSet<Opc_Sistema> Opc_Sistema { get; set; }
+        public virtual DbSet<Opc_Sistema> Opc_SistemaSet { get; set; }
     }
 }
