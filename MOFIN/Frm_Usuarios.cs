@@ -209,7 +209,7 @@ namespace MOFIN
 
         }
 
-        private void toolStripButton6_Click(object sender, EventArgs e)
+        private void TSB_Agregar_Click(object sender, EventArgs e)
         {
             /*
             this.Txt_IDUsuario.Clear();
@@ -238,7 +238,7 @@ namespace MOFIN
 
         }
 
-        private void toolStripButton7_Click(object sender, EventArgs e)
+        private void TSB_Modificar_Click(object sender, EventArgs e)
         {
             if (BS_Usuarios.Current == null)
                 return;
@@ -247,7 +247,7 @@ namespace MOFIN
             this.Txt_IDUsuario.Focus();
         }
 
-        private void toolStripButton10_Click(object sender, EventArgs e)
+        private void TSB_Salir_Click(object sender, EventArgs e)
         {
             this.Close();
         }

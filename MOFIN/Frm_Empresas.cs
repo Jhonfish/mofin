@@ -93,9 +93,11 @@ namespace MOFIN
         private void Btn_Aceptar_Click(object sender, EventArgs e)
         {
             if (vl_EsNuevo)
-                NEmpresas.Insertar(t_Empresas);
+                //NEmpresas.Insertar(t_Empresas);
+                NEmpresas.Insertar(BS_Empresas.Current as Empresas);
             else
-                NEmpresas.Actualizar(t_Empresas);
+                //NEmpresas.Actualizar(t_Empresas);
+                NEmpresas.Actualizar(BS_Empresas.Current as Empresas);
             this.Modo_Consulta();
             BS_Empresas.DataSource = NEmpresas.Listar();
 
@@ -109,7 +111,8 @@ namespace MOFIN
         private void TSB_Agregar_Click(object sender, EventArgs e)
         {
             vl_EsNuevo = true;
-            BS_Empresas.Add(t_Empresas);
+            BS_Empresas.AddNew();
+            //BS_Empresas.Add(t_Empresas);
             BS_Empresas.MoveLast();
             this.Modo_Edicion();
         }
@@ -130,14 +133,14 @@ namespace MOFIN
 
         private void TSB_Eliminar_Click(object sender, EventArgs e)
         {
-            string vl_RegEliminar = t_Empresas.Nombre.ToString();
+           string vl_RegEliminar = t_Empresas.Nombre.ToString();
             DialogResult vl_Resp = MessageBox.Show("Desea Eliminar este Registro? " + "\n\n" + vl_RegEliminar,
                 "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (vl_Resp == DialogResult.Yes)
             {
-                NUsuarios.Elimiar(BS_Empresas.Current as Usuarios);
-                BS_Empresas.DataSource = NUsuarios.Listar();
-                Grd_Empresas.Refresh();
+                NEmpresas.Elimiar(BS_Empresas.Current as Empresas);
+                BS_Empresas.DataSource = NEmpresas.Listar();
+                //Grd_Empresas.Refresh();
                 MessageBox.Show("Se eliminó el registro actual", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -179,7 +182,6 @@ namespace MOFIN
             }
 
         }
-
     }
 }
     

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnIncluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.dgvEdad = new System.Windows.Forms.DataGridView();
@@ -40,8 +41,15 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.mEdadBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iDSistemaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.condEspSeguridadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEdad)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mEdadBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnIncluir
@@ -66,12 +74,19 @@
             // 
             // dgvEdad
             // 
+            this.dgvEdad.AutoGenerateColumns = false;
             this.dgvEdad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEdad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDSistemaDataGridViewTextBoxColumn,
+            this.codigoDataGridViewTextBoxColumn,
+            this.descripcionDataGridViewTextBoxColumn,
+            this.valorDataGridViewTextBoxColumn,
+            this.condEspSeguridadDataGridViewTextBoxColumn});
+            this.dgvEdad.DataSource = this.mEdadBindingSource;
             this.dgvEdad.Location = new System.Drawing.Point(23, 83);
             this.dgvEdad.Name = "dgvEdad";
             this.dgvEdad.Size = new System.Drawing.Size(334, 220);
             this.dgvEdad.TabIndex = 8;
-            this.dgvEdad.SelectionChanged += new System.EventHandler(this.dgvEdad_SelectionChanged);
             // 
             // btnEliminar
             // 
@@ -155,6 +170,40 @@
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 11;
             // 
+            // mEdadBindingSource
+            // 
+            this.mEdadBindingSource.DataSource = typeof(MofinModelo.M_Edad);
+            // 
+            // iDSistemaDataGridViewTextBoxColumn
+            // 
+            this.iDSistemaDataGridViewTextBoxColumn.DataPropertyName = "ID_Sistema";
+            this.iDSistemaDataGridViewTextBoxColumn.HeaderText = "ID_Sistema";
+            this.iDSistemaDataGridViewTextBoxColumn.Name = "iDSistemaDataGridViewTextBoxColumn";
+            // 
+            // codigoDataGridViewTextBoxColumn
+            // 
+            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            // 
+            // valorDataGridViewTextBoxColumn
+            // 
+            this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
+            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
+            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
+            // 
+            // condEspSeguridadDataGridViewTextBoxColumn
+            // 
+            this.condEspSeguridadDataGridViewTextBoxColumn.DataPropertyName = "CondEspSeguridad";
+            this.condEspSeguridadDataGridViewTextBoxColumn.HeaderText = "CondEspSeguridad";
+            this.condEspSeguridadDataGridViewTextBoxColumn.Name = "condEspSeguridadDataGridViewTextBoxColumn";
+            // 
             // Frm_Edad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,6 +220,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvEdad)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mEdadBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -188,5 +238,11 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDSistemaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn condEspSeguridadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource mEdadBindingSource;
     }
 }

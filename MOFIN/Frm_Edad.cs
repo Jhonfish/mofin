@@ -18,6 +18,7 @@ namespace MOFIN
         bool EsNuevo = true;
         M_Edad m_Edad = new M_Edad();
         
+        
         public Frm_Edad()
         {
             InitializeComponent();
