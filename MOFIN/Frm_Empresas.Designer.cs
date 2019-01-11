@@ -51,7 +51,6 @@
             this.TSB_Imprimir = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_Salir = new System.Windows.Forms.ToolStripButton();
-            this.BS_Empresas = new System.Windows.Forms.BindingSource(this.components);
             this.Grd_Empresas = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,7 +63,7 @@
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BS_Empresas = new System.Windows.Forms.BindingSource(this.components);
             this.Pan_Elementos = new System.Windows.Forms.Panel();
             this.Txt_Codigo = new System.Windows.Forms.TextBox();
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
@@ -87,8 +86,8 @@
             direccionLabel = new System.Windows.Forms.Label();
             logoLabel = new System.Windows.Forms.Label();
             this.TS_BarraHerramientas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_Empresas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Empresas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Empresas)).BeginInit();
             this.Pan_Elementos.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -297,10 +296,6 @@
             this.TSB_Salir.Text = "Salir";
             this.TSB_Salir.Click += new System.EventHandler(this.TSB_Salir_Click);
             // 
-            // BS_Empresas
-            // 
-            this.BS_Empresas.DataSource = typeof(MofinModeloEntorno.Empresas);
-            // 
             // Grd_Empresas
             // 
             this.Grd_Empresas.AllowUserToAddRows = false;
@@ -319,8 +314,7 @@
             this.dataGridViewTextBoxColumn18,
             this.dataGridViewTextBoxColumn19,
             this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22});
+            this.dataGridViewTextBoxColumn21});
             this.Grd_Empresas.DataSource = this.BS_Empresas;
             this.Grd_Empresas.Location = new System.Drawing.Point(414, 135);
             this.Grd_Empresas.Name = "Grd_Empresas";
@@ -395,11 +389,9 @@
             this.dataGridViewTextBoxColumn21.HeaderText = "Logo";
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
             // 
-            // dataGridViewTextBoxColumn22
+            // BS_Empresas
             // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "Emp_Accesos";
-            this.dataGridViewTextBoxColumn22.HeaderText = "Emp_Accesos";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.BS_Empresas.DataSource = typeof(MofinModeloEntorno.Empresas);
             // 
             // Pan_Elementos
             // 
@@ -421,6 +413,7 @@
             // 
             this.Txt_Codigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Empresas, "Codigo", true));
             this.Txt_Codigo.Location = new System.Drawing.Point(3, 3);
+            this.Txt_Codigo.MaxLength = 3;
             this.Txt_Codigo.Name = "Txt_Codigo";
             this.Txt_Codigo.Size = new System.Drawing.Size(100, 22);
             this.Txt_Codigo.TabIndex = 57;
@@ -429,6 +422,7 @@
             // 
             this.Txt_Nombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Empresas, "Nombre", true));
             this.Txt_Nombre.Location = new System.Drawing.Point(3, 31);
+            this.Txt_Nombre.MaxLength = 50;
             this.Txt_Nombre.Name = "Txt_Nombre";
             this.Txt_Nombre.Size = new System.Drawing.Size(363, 22);
             this.Txt_Nombre.TabIndex = 58;
@@ -437,6 +431,7 @@
             // 
             this.Txt_Siglas.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Empresas, "Siglas", true));
             this.Txt_Siglas.Location = new System.Drawing.Point(3, 59);
+            this.Txt_Siglas.MaxLength = 5;
             this.Txt_Siglas.Name = "Txt_Siglas";
             this.Txt_Siglas.Size = new System.Drawing.Size(100, 22);
             this.Txt_Siglas.TabIndex = 59;
@@ -445,6 +440,7 @@
             // 
             this.Txt_DocID.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Empresas, "Doc_ID", true));
             this.Txt_DocID.Location = new System.Drawing.Point(181, 3);
+            this.Txt_DocID.MaxLength = 20;
             this.Txt_DocID.Name = "Txt_DocID";
             this.Txt_DocID.Size = new System.Drawing.Size(185, 22);
             this.Txt_DocID.TabIndex = 60;
@@ -453,6 +449,7 @@
             // 
             this.Txt_Email.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Empresas, "Email", true));
             this.Txt_Email.Location = new System.Drawing.Point(3, 143);
+            this.Txt_Email.MaxLength = 64;
             this.Txt_Email.Multiline = true;
             this.Txt_Email.Name = "Txt_Email";
             this.Txt_Email.Size = new System.Drawing.Size(280, 50);
@@ -462,6 +459,7 @@
             // 
             this.Txt_Telf1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Empresas, "Telefono1", true));
             this.Txt_Telf1.Location = new System.Drawing.Point(3, 199);
+            this.Txt_Telf1.MaxLength = 20;
             this.Txt_Telf1.Name = "Txt_Telf1";
             this.Txt_Telf1.Size = new System.Drawing.Size(280, 22);
             this.Txt_Telf1.TabIndex = 62;
@@ -470,6 +468,7 @@
             // 
             this.Txt_Telf2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Empresas, "Telefono2", true));
             this.Txt_Telf2.Location = new System.Drawing.Point(3, 227);
+            this.Txt_Telf2.MaxLength = 20;
             this.Txt_Telf2.Name = "Txt_Telf2";
             this.Txt_Telf2.Size = new System.Drawing.Size(280, 22);
             this.Txt_Telf2.TabIndex = 63;
@@ -478,6 +477,7 @@
             // 
             this.Txt_Direc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Empresas, "Direccion", true));
             this.Txt_Direc.Location = new System.Drawing.Point(3, 87);
+            this.Txt_Direc.MaxLength = 254;
             this.Txt_Direc.Multiline = true;
             this.Txt_Direc.Name = "Txt_Direc";
             this.Txt_Direc.Size = new System.Drawing.Size(280, 50);
@@ -487,6 +487,7 @@
             // 
             this.Txt_Logo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Empresas, "Logo", true));
             this.Txt_Logo.Location = new System.Drawing.Point(3, 255);
+            this.Txt_Logo.MaxLength = 254;
             this.Txt_Logo.Multiline = true;
             this.Txt_Logo.Name = "Txt_Logo";
             this.Txt_Logo.Size = new System.Drawing.Size(280, 50);
@@ -509,6 +510,7 @@
             this.Btn_Cancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_Cancelar.UseVisualStyleBackColor = true;
             this.Btn_Cancelar.Visible = false;
+            this.Btn_Cancelar.Click += new System.EventHandler(this.Btn_Cancelar_Click);
             // 
             // Btn_Aceptar
             // 
@@ -527,6 +529,7 @@
             this.Btn_Aceptar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_Aceptar.UseVisualStyleBackColor = true;
             this.Btn_Aceptar.Visible = false;
+            this.Btn_Aceptar.Click += new System.EventHandler(this.Btn_Aceptar_Click);
             // 
             // Frm_Empresas
             // 
@@ -560,8 +563,8 @@
             this.Load += new System.EventHandler(this.Frm_Empresas_Load);
             this.TS_BarraHerramientas.ResumeLayout(false);
             this.TS_BarraHerramientas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_Empresas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Empresas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Empresas)).EndInit();
             this.Pan_Elementos.ResumeLayout(false);
             this.Pan_Elementos.PerformLayout();
             this.ResumeLayout(false);

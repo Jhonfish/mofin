@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MofinModelo;
 
 
+
 namespace MofinDatos
 {
     public class DB_Buscados
