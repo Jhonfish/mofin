@@ -85,7 +85,7 @@ namespace MOFIN
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
             this.Chk_CES = new System.Windows.Forms.CheckBox();
             this.Cmb_Pais = new System.Windows.Forms.ComboBox();
-            this.Txt_Valor = new System.Windows.Forms.TextBox();
+            this.Txt_CodPais = new System.Windows.Forms.TextBox();
             this.TS_BarraHerramientas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Detalles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MActivComercial)).BeginInit();
@@ -529,6 +529,7 @@ namespace MOFIN
             // 
             // Txt_CodAlfa2
             // 
+            this.Txt_CodAlfa2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_MPais, "Cod_AlfaNum2", true));
             this.Txt_CodAlfa2.Location = new System.Drawing.Point(160, 35);
             this.Txt_CodAlfa2.Name = "Txt_CodAlfa2";
             this.Txt_CodAlfa2.Size = new System.Drawing.Size(57, 22);
@@ -537,6 +538,7 @@ namespace MOFIN
             // 
             // Txt_CodAlfa3
             // 
+            this.Txt_CodAlfa3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_MPais, "Cod_AlfaNum3", true));
             this.Txt_CodAlfa3.Location = new System.Drawing.Point(276, 35);
             this.Txt_CodAlfa3.Name = "Txt_CodAlfa3";
             this.Txt_CodAlfa3.Size = new System.Drawing.Size(57, 22);
@@ -571,15 +573,17 @@ namespace MOFIN
             this.Cmb_Pais.Name = "Cmb_Pais";
             this.Cmb_Pais.Size = new System.Drawing.Size(270, 24);
             this.Cmb_Pais.TabIndex = 61;
+            this.Cmb_Pais.ValueMember = "Codigo";
             this.Cmb_Pais.Visible = false;
-            this.Cmb_Pais.SelectedIndexChanged += new System.EventHandler(this.Cmb_Pais_SelectedIndexChanged);
             // 
-            // Txt_Valor
+            // Txt_CodPais
             // 
-            this.Txt_Valor.Location = new System.Drawing.Point(7, 69);
-            this.Txt_Valor.Name = "Txt_Valor";
-            this.Txt_Valor.Size = new System.Drawing.Size(766, 22);
-            this.Txt_Valor.TabIndex = 62;
+            this.Txt_CodPais.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_MPais, "Codigo", true));
+            this.Txt_CodPais.Location = new System.Drawing.Point(317, 127);
+            this.Txt_CodPais.Name = "Txt_CodPais";
+            this.Txt_CodPais.Size = new System.Drawing.Size(33, 22);
+            this.Txt_CodPais.TabIndex = 62;
+            this.Txt_CodPais.TextChanged += new System.EventHandler(this.Txt_CodPais_TextChanged);
             // 
             // Frm_TablasMaestras
             // 
@@ -588,7 +592,7 @@ namespace MOFIN
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(782, 458);
-            this.Controls.Add(this.Txt_Valor);
+            this.Controls.Add(this.Txt_CodPais);
             this.Controls.Add(this.Cmb_Pais);
             this.Controls.Add(this.Lbl_Pais);
             this.Controls.Add(this.Lbl_tablaMaestra);
@@ -696,6 +700,6 @@ namespace MOFIN
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn condEspSeguridadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox Txt_Valor;
+        private System.Windows.Forms.TextBox Txt_CodPais;
     }
 }

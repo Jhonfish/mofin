@@ -97,12 +97,6 @@
     <Compile Include="Frm_Desktop.Designer.cs">
       <DependentUpon>Frm_Desktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Edad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_Edad.Designer.cs">
-      <DependentUpon>Frm_Edad.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm_Empresas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,9 +142,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Desktop.resx">
       <DependentUpon>Frm_Desktop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Edad.resx">
-      <DependentUpon>Frm_Edad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Empresas.resx">
       <DependentUpon>Frm_Empresas.cs</DependentUpon>

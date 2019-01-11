@@ -8,11 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using MofinNegocios;
+using MofinModelo;
+using MofinModeloEntorno;
+
 
 namespace MOFIN
 {
     public partial class Frm_Clientes : MetroForm
     {
+        bool vl_EsNuevo = true;
+        C_Clientes t_Cliente = new C_Clientes();
+        C_FirBenAcc t_FirBenAcc = new C_FirBenAcc();
+
         public Frm_Clientes()
         {
             InitializeComponent();
@@ -20,220 +28,62 @@ namespace MOFIN
 
         private void Frm_Clientes_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'DS_MonitorOperaciones.M_Servicios' Puede moverla o quitarla según sea necesario.
-            this.m_ServiciosTableAdapter.Fill(this.DS_MonitorOperaciones.M_Servicios);
-            // TODO: esta línea de código carga datos en la tabla 'DS_MonitorOperaciones.M_Productos' Puede moverla o quitarla según sea necesario.
-            this.m_ProductosTableAdapter.Fill(this.DS_MonitorOperaciones.M_Productos);
-            // TODO: esta línea de código carga datos en la tabla 'DS_MonitorOperaciones.C_FirBenAcc' Puede moverla o quitarla según sea necesario.
-            this.TA_CFirBenAcc.Fill(this.DS_MonitorOperaciones.C_FirBenAcc);
-            // TODO: esta línea de código carga datos en la tabla 'monitorOperacionesDataSet.C_Clientes' Puede moverla o quitarla según sea necesario.
-            this.TA_CClientes.Fill(this.DS_MonitorOperaciones.C_Clientes);
+            BS_CClientes.DataSource = NC_Clientes.Listar();
+            BS_CFirBenAcc.DataSource = NC_FirBenAcc.Listar();
+            BS_CHistActClientes.DataSource = NC_FirBenAcc.Listar();
+
+            BS_MActivComercial.DataSource = NM_ActivComercial.Listar();
+            BS_MAntiguedad.DataSource = NM_Antiguedad.Listar();
+            BS_MCriptomonedas.DataSource = NM_Criptomonedas.Listar();
+            BS_MEdad.DataSource = NM_Edad.Listar();
+            BS_MEstados.DataSource = NM_Estados.Listar();
+            BS_MNivelRiesgo.DataSource = NM_NivelRiesgo.Listar();
+            BS_MPais.DataSource = NM_Pais.Listar();
+            BS_MPEP.DataSource = NM_PEP.Listar();
+            BS_MProductos.DataSource = NM_Productos.Listar();
+            BS_MProfesiones.DataSource = NM_Profesiones.Listar();
+            BS_MServicios.DataSource = NM_Servicios.Listar();
+            BS_MTipoDocID.DataSource = NM_TipoDocID.Listar();
+            BS_MTipoEstructuraEmpresa.DataSource = NM_TipoEstructuraEmpresa.Listar();
+            BS_MTipoPersJuridica.DataSource = NM_TipoPersJuridica.Listar();
+            BS_MVolOperPersNat.DataSource = NM_VolOperPersNat.Listar();
+            BS_MVolOperPersJur.DataSource = NM_VolOperPersJur.Listar();
+
             this.Modo_Consulta();
         }
 
-        private void c_ClientesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.BS_CClientes.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.DS_MonitorOperaciones);
-
-        }
         //**************
         // Eventos del formulario
         //**************
         private void Modo_Consulta()
         {
-
-            this.Grp_TipoPersona.Enabled = false;
-            this.Txt_Codigo.Enabled = false;
-            this.Txt_DocID.Enabled = false;
-            this.Txt_Nombre.Enabled = false;
+            this.Pan_DetallesEnc.Enabled = false;
+            this.Pan_Detalles1.Enabled = false;
+            this.Pan_Detalles2.Enabled = false;
+            this.Pan_Detalles3.Enabled = false;
+            this.Pan_Detalles4.Enabled = false;
 
             this.TS_BarraHerramientas.Enabled = true;
 
             this.Btn_Aceptar.Visible = false;
             this.Btn_Cancelar.Visible = false;
 
-
-            // Pagina 1
-            this.Cmb_TipDocID.Enabled = false;
-            this.DTP_FecVencDocID.Enabled = false;
-            this.Cmb_Nacionalidad.Enabled = false;
-            this.Cmb_PaisNacimiento.Enabled = false;
-            this.Cmb_PaisResidencia.Enabled = false;
-            this.Cmb_Estado.Enabled = false;
-            this.Cmb_Edad.Enabled = false;
-            this.Cmb_TipoPersJuridica.Enabled = false;
-            this.Cmb_TipoEstructura.Enabled = false;
-            this.Cmb_PEP.Enabled = false;
-            this.Cmb_VolOperNat.Enabled = false;
-            this.Cmb_Criptomonedas.Enabled = false;
-            this.Cmb_Profesion.Enabled = false;
-            this.Cmb_ActivComercial.Enabled = false;
-            this.Lst_Servicios.Enabled = false;
-            this.Lst_Productos.Enabled = false;
-
-            // Pagina 2
-            this.Grp_BenfTipoVinculacion.Enabled = false;
-            this.Txt_BenefDoc_ID.Enabled = false;
-            this.Dtp_BenefFec_Venc.Enabled = false;
-            this.Txt_BenefNme.Enabled = false;
-            this.Cmb_BenefPaisNacim.Enabled = false;
-            this.Cmb_BenefNacionalidad.Enabled = false;
-            this.Cmb_BenefPaisResid.Enabled = false;
-            this.Cmb_BenefEstado.Enabled = false;
-            this.Cmb_BenefEdad.Enabled = false;
-            this.Cmb_BenefPEP.Enabled = false;
-            this.Cmb_BenefProfesion.Enabled = false;
-            this.Cmb_BenefCriptomonedas.Enabled = false;
-            this.Cmb_BenefVincEmpresa.Enabled = false;
-            this.Nud_BenefVincPorcent.Enabled = false;
-
-            this.Pan_BenefBtns.Visible = false;
-
-
-            // Pagina 3
-            Chk_Opc1.Enabled = false;
-            Chk_Opc2.Enabled = false;
-            Chk_Opc3.Enabled = false;
-            Chk_Opc4.Enabled = false;
-            Chk_Opc5.Enabled = false;
-            Chk_Opc6.Enabled = false;
-            Chk_Opc7.Enabled = false;
-            Chk_Opc8.Enabled = false;
-            Chk_Opc9.Enabled = false;
-            Chk_Opc10.Enabled = false;
-            Chk_Opc11.Enabled = false;
-            Chk_Opc12.Enabled = false;
-            Chk_Opc13.Enabled = false;
-            Chk_Opc14.Enabled = false;
-            Chk_Opc15.Enabled = false;
-            Chk_Opc16.Enabled = false;
-            Chk_Opc17.Enabled = false;
-            Chk_Opc18.Enabled = false;
-            Chk_Opc19.Enabled = false;
-            Chk_Opc20.Enabled = false;
-            Chk_Opc21.Enabled = false;
-            Chk_Opc22.Enabled = false;
-            Chk_Opc23.Enabled = false;
-            Chk_Opc24.Enabled = false;
-            Chk_Opc25.Enabled = false;
-            Chk_Opc26.Enabled = false;
-            Chk_Opc27.Enabled = false;
-            Chk_Opc28.Enabled = false;
-            Chk_Opc29.Enabled = false;
-            Chk_Opc30.Enabled = false;
-
-            // Pagina 4
-            this.Txt_Observacion.Enabled = false;
-            this.Txt_Ejecutivo.Enabled = false;
-            this.Txt_NivRiesgo.Enabled = false;
-            this.Txt_PerFinanciero.Enabled = false;
-            this.Grp_PerUsoCta.Enabled = false;
-            this.NUD_NroTransacciones.Enabled = false;
-            this.DTP_FecUltAct.Enabled = false;
-            this.NUD_TriMes.Enabled = false;
-            this.NUD_TriAno.Enabled = false;
-            
-
-            // Pagina 5
-
             TSB_ActualizaBotonesNavegacion();
         }
 
         private void Modo_Edicion()
         {
-            this.Grp_TipoPersona.Enabled = true;
-            this.Txt_Codigo.Enabled = true;
-            this.Txt_DocID.Enabled = true;
-            this.Txt_Nombre.Enabled = true;
+            this.Pan_DetallesEnc.Enabled = true;
+            this.Txt_Codigo.Enabled = vl_EsNuevo;
+            this.Pan_Detalles1.Enabled = true;
+            this.Pan_Detalles2.Enabled = true;
+            this.Pan_Detalles3.Enabled = true;
+            this.Pan_Detalles4.Enabled = true;
 
             this.TS_BarraHerramientas.Enabled = false;
 
             this.Btn_Aceptar.Visible = true;
             this.Btn_Cancelar.Visible = true;
-
-            // Pagina 1
-            this.Cmb_TipDocID.Enabled = true;
-            this.DTP_FecVencDocID.Enabled = true;
-            this.Cmb_Nacionalidad.Enabled = true;
-            this.Cmb_PaisNacimiento.Enabled = true;
-            this.Cmb_PaisResidencia.Enabled = true;
-            this.Cmb_Estado.Enabled = true;
-            this.Cmb_Edad.Enabled = true;
-            this.Cmb_TipoPersJuridica.Enabled = true;
-            this.Cmb_TipoEstructura.Enabled = true;
-            this.Cmb_PEP.Enabled = true;
-            this.Cmb_VolOperNat.Enabled = true;
-            this.Cmb_Criptomonedas.Enabled = true;
-            this.Cmb_Profesion.Enabled = true;
-            this.Cmb_ActivComercial.Enabled = true;
-            this.Lst_Servicios.Enabled = true;
-            this.Lst_Productos.Enabled = true;
-
-            // Pagina 2
-            this.Grp_BenfTipoVinculacion.Enabled = true;
-            this.Txt_BenefDoc_ID.Enabled = true;
-            this.Dtp_BenefFec_Venc.Enabled = true;
-            this.Txt_BenefNme.Enabled = true;
-            this.Cmb_BenefPaisNacim.Enabled = true;
-            this.Cmb_BenefNacionalidad.Enabled = true;
-            this.Cmb_BenefPaisResid.Enabled = true;
-            this.Cmb_BenefEstado.Enabled = true;
-            this.Cmb_BenefEdad.Enabled = true;
-            this.Cmb_BenefPEP.Enabled = true;
-            this.Cmb_BenefProfesion.Enabled = true;
-            this.Cmb_BenefCriptomonedas.Enabled = true;
-            this.Cmb_BenefVincEmpresa.Enabled = true;
-            this.Nud_BenefVincPorcent.Enabled = true;
-
-            this.Pan_BenefBtns.Visible = true;
-
-            // Pagina 3
-            Chk_Opc1.Enabled = true;
-            Chk_Opc2.Enabled = true;
-            Chk_Opc3.Enabled = true;
-            Chk_Opc4.Enabled = true;
-            Chk_Opc5.Enabled = true;
-            Chk_Opc6.Enabled = true;
-            Chk_Opc7.Enabled = true;
-            Chk_Opc8.Enabled = true;
-            Chk_Opc9.Enabled = true;
-            Chk_Opc10.Enabled = true;
-            Chk_Opc11.Enabled = true;
-            Chk_Opc12.Enabled = true;
-            Chk_Opc13.Enabled = true;
-            Chk_Opc14.Enabled = true;
-            Chk_Opc15.Enabled = true;
-            Chk_Opc16.Enabled = true;
-            Chk_Opc17.Enabled = true;
-            Chk_Opc18.Enabled = true;
-            Chk_Opc19.Enabled = true;
-            Chk_Opc20.Enabled = true;
-            Chk_Opc21.Enabled = true;
-            Chk_Opc22.Enabled = true;
-            Chk_Opc23.Enabled = true;
-            Chk_Opc24.Enabled = true;
-            Chk_Opc25.Enabled = true;
-            Chk_Opc26.Enabled = true;
-            Chk_Opc27.Enabled = true;
-            Chk_Opc28.Enabled = true;
-            Chk_Opc29.Enabled = true;
-            Chk_Opc30.Enabled = true;
-
-            // Pagina 4
-            this.Txt_Observacion.Enabled = true;
-            this.Txt_Ejecutivo.Enabled = true;
-            this.Txt_NivRiesgo.Enabled = true;
-            this.Txt_PerFinanciero.Enabled = true;
-            this.Grp_PerUsoCta.Enabled = true;
-            this.NUD_NroTransacciones.Enabled = true;
-            this.DTP_FecUltAct.Enabled = true;
-            this.NUD_TriMes.Enabled = true;
-            this.NUD_TriAno.Enabled = true;
-
-            // Pagina 5
-
         }
 
         //************
@@ -242,7 +92,7 @@ namespace MOFIN
 
         private void TSB_ActualizaBotonesNavegacion()
         {
-            if (BS_CClientes.Count <= 1)
+            if (BS_CClientes.Count < 1)
             {
                 this.TSB_Primero.Enabled = false;
                 this.TSB_Anterior.Enabled = false;
@@ -251,7 +101,6 @@ namespace MOFIN
                 this.TSB_Modificar.Enabled = false;
                 this.TSB_Eliminar.Enabled = false;
                 this.TSB_Imprimir.Enabled = false;
-
             }
             else
             {
@@ -298,17 +147,25 @@ namespace MOFIN
             BS_CClientes.MoveLast();
             TSB_ActualizaBotonesNavegacion();
         }
+        private void TSB_Agregar_Click(object sender, EventArgs e)
+        {
+            vl_EsNuevo = true;
+            this.Modo_Edicion();
+        }
         private void TSB_Modificar_Click(object sender, EventArgs e)
         {
             this.Modo_Edicion();
         }
         private void TSB_Eliminar_Click(object sender, EventArgs e)
         {
-            string vl_RegEliminar = ((DataRowView)this.BS_CClientes.Current).Row["Nombre"].ToString();
+            string vl_RegEliminar = t_Cliente.Nombre.Trim();
             DialogResult vl_Resp = MessageBox.Show("Desea Eliminar este Registro? " + "\n\n" + vl_RegEliminar,
                 "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (vl_Resp == DialogResult.Yes)
             {
+                NC_Clientes.Elimiar(BS_CClientes.Current as C_Clientes);
+                BS_CClientes.DataSource = NC_Clientes.Listar();
+                Grd_Clientes.Refresh();
                 MessageBox.Show("Se eliminó el registro actual", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -317,9 +174,11 @@ namespace MOFIN
             this.Close();
         }
 
-        private void Pag1_Click(object sender, EventArgs e)
+        private void Grd_Clientes_CurrentCellChanged(object sender, EventArgs e)
         {
-
+            t_Cliente = BS_CClientes.Current as C_Clientes;
+            t_FirBenAcc = BS_CFirBenAcc.Current as C_FirBenAcc;
         }
+
     }
 }

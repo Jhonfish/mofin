@@ -9,7 +9,7 @@ using MofinDatos;
 
 namespace MofinNegocios
 {
-    class NM_TipoPersJuridica
+    public class NM_TipoPersJuridica
     {
         static DM_TipoPersJuridica dmTipoPersJuridica;
 

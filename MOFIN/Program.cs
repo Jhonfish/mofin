@@ -16,15 +16,9 @@ namespace MOFIN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Frm_Desktop());
-            Application.Run(new Frm_TablasMaestras());
+            Application.Run(new Frm_Desktop());
+            //Application.Run(new Frm_Usuarios());
             // Application.Run(new Frm_Edad());
-
-            //            Form childForm = new Frm_SeleccionEmpresa();
-            //            childForm.MdiParent = Frm_Desktop;
-            //            childForm.Show();
-
-
         }
     }
 }

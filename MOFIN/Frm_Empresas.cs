@@ -135,9 +135,9 @@ namespace MOFIN
                 "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (vl_Resp == DialogResult.Yes)
             {
-                NUsuarios.Elimiar(BS_Empresas.Current as Usuarios);
-                BS_Empresas.DataSource = NUsuarios.Listar();
-                Grd_Empresas.Refresh();
+                NEmpresas.Elimiar(BS_Empresas.Current as Empresas);
+                BS_Empresas.DataSource = NEmpresas.Listar();
+                //Grd_Empresas.Refresh();
                 MessageBox.Show("Se eliminó el registro actual", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

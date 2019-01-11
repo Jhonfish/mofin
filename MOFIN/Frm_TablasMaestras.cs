@@ -57,7 +57,7 @@ namespace MOFIN
             BS_MServicios.DataSource = NM_Servicios.Listar();
             BS_MTipoDocID.DataSource = NM_TipoDocID.Listar();
             BS_MTipoEstructuraEmpresa.DataSource = NM_TipoEstructuraEmpresa.Listar();
-            //BS_MTipoPersJuridicav = NM_TipoPersJuridica.Listar();
+            BS_MTipoPersJuridica.DataSource = NM_TipoPersJuridica.Listar();
             BS_MVolOperPersNat.DataSource = NM_VolOperPersNat.Listar();
             BS_MVolOperPersJur.DataSource = NM_VolOperPersJur.Listar();
 
@@ -102,7 +102,7 @@ namespace MOFIN
                     }
                     break;
                 case 3:  // "Edad"
-                    if (BS_TablaMaestra.Position > 0)
+                    if (BS_TablaMaestra.Position >= 0)
                     {
                         BS_MEdad.Position = BS_TablaMaestra.Position;
                         t_TablaMaestra3 = BS_MEdad.Current as M_Edad;
@@ -607,13 +607,12 @@ namespace MOFIN
             TSB_ActualizaBotonesNavegacion();
         }
 
-        private void Cmb_Pais_SelectedIndexChanged(object sender, EventArgs e)
+        private void Txt_CodPais_TextChanged(object sender, EventArgs e)
         {
-            string vl_Filtro = "Cod_Pais = " + this.Cmb_Pais.Tag.ToString();
-            this.Txt_Valor.Text = this.Cmb_Pais.Tag.ToString();
-            //            BS_MEstados.Filter = vl_Filtro;
-            //            Grd_Detalles.Refresh();
-            MessageBox.Show(vl_Filtro); // muestra la anterior.
+            string vl_Filtro = "Cod_Pais = " + this.Txt_CodPais.Text.ToString();
+            BS_TablaMaestra.Filter = vl_Filtro;
+            Grd_Detalles.Refresh();
+
         }
     }
 }

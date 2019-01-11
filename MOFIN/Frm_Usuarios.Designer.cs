@@ -52,6 +52,16 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_Salir = new System.Windows.Forms.ToolStripButton();
             this.Grd_Usuarios = new System.Windows.Forms.DataGridView();
+            this.ID_Sistema = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cnfg_Desktop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cnfg_Idioma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cnfg_PaisUso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cnfg_FormFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BS_Usuarios = new System.Windows.Forms.BindingSource(this.components);
             this.Pan_Elementos = new System.Windows.Forms.Panel();
             this.Chk_Sonido = new System.Windows.Forms.CheckBox();
             this.Grp_FormatoFecha = new System.Windows.Forms.GroupBox();
@@ -69,16 +79,6 @@
             this.Txt_IDUsuario = new System.Windows.Forms.TextBox();
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
             this.Txt_Password = new System.Windows.Forms.TextBox();
-            this.ID_Sistema = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cnfg_Desktop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cnfg_Idioma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cnfg_PaisUso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cnfg_FormFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BS_Usuarios = new System.Windows.Forms.BindingSource(this.components);
             Lbl_IDUsuario = new System.Windows.Forms.Label();
             Lbl_Nombre = new System.Windows.Forms.Label();
             Lbl_Password = new System.Windows.Forms.Label();
@@ -88,12 +88,12 @@
             Lbl_FormatoFecha = new System.Windows.Forms.Label();
             this.TS_BarraHerramientas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Usuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).BeginInit();
             this.Pan_Elementos.SuspendLayout();
             this.Grp_FormatoFecha.SuspendLayout();
             this.Grp_Pais.SuspendLayout();
             this.Grp_Idioma.SuspendLayout();
             this.Grp_Desktop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_IDUsuario
@@ -223,7 +223,7 @@
             this.toolStripSeparator3,
             this.TSB_Salir});
             this.TS_BarraHerramientas.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.TS_BarraHerramientas.Location = new System.Drawing.Point(342, 13);
+            this.TS_BarraHerramientas.Location = new System.Drawing.Point(311, 13);
             this.TS_BarraHerramientas.Name = "TS_BarraHerramientas";
             this.TS_BarraHerramientas.Size = new System.Drawing.Size(384, 43);
             this.TS_BarraHerramientas.TabIndex = 9;
@@ -355,191 +355,6 @@
             this.Grd_Usuarios.TabIndex = 8;
             this.Grd_Usuarios.CurrentCellChanged += new System.EventHandler(this.Grd_Usuarios_CurrentCellChanged);
             // 
-            // Pan_Elementos
-            // 
-            this.Pan_Elementos.Controls.Add(this.Chk_Sonido);
-            this.Pan_Elementos.Controls.Add(this.Grp_FormatoFecha);
-            this.Pan_Elementos.Controls.Add(this.Grp_Pais);
-            this.Pan_Elementos.Controls.Add(this.Grp_Idioma);
-            this.Pan_Elementos.Controls.Add(this.Grp_Desktop);
-            this.Pan_Elementos.Controls.Add(this.Txt_IDUsuario);
-            this.Pan_Elementos.Controls.Add(this.Txt_Nombre);
-            this.Pan_Elementos.Controls.Add(this.Txt_Password);
-            this.Pan_Elementos.Location = new System.Drawing.Point(26, 70);
-            this.Pan_Elementos.Name = "Pan_Elementos";
-            this.Pan_Elementos.Size = new System.Drawing.Size(636, 363);
-            this.Pan_Elementos.TabIndex = 34;
-            // 
-            // Chk_Sonido
-            // 
-            this.Chk_Sonido.AutoSize = true;
-            this.Chk_Sonido.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Chk_Sonido.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Usuarios, "Cnfg_SonidoClick", true));
-            this.Chk_Sonido.Location = new System.Drawing.Point(6, 342);
-            this.Chk_Sonido.Name = "Chk_Sonido";
-            this.Chk_Sonido.Size = new System.Drawing.Size(187, 20);
-            this.Chk_Sonido.TabIndex = 50;
-            this.Chk_Sonido.Text = "Sonido de Click:    ";
-            this.Chk_Sonido.UseVisualStyleBackColor = true;
-            // 
-            // Grp_FormatoFecha
-            // 
-            this.Grp_FormatoFecha.Controls.Add(this.Opc_FormFec2);
-            this.Grp_FormatoFecha.Controls.Add(this.Opc_FormFec1);
-            this.Grp_FormatoFecha.Location = new System.Drawing.Point(178, 279);
-            this.Grp_FormatoFecha.Name = "Grp_FormatoFecha";
-            this.Grp_FormatoFecha.Size = new System.Drawing.Size(132, 57);
-            this.Grp_FormatoFecha.TabIndex = 49;
-            this.Grp_FormatoFecha.TabStop = false;
-            // 
-            // Opc_FormFec2
-            // 
-            this.Opc_FormFec2.AutoSize = true;
-            this.Opc_FormFec2.Location = new System.Drawing.Point(10, 33);
-            this.Opc_FormFec2.Name = "Opc_FormFec2";
-            this.Opc_FormFec2.Size = new System.Drawing.Size(106, 20);
-            this.Opc_FormFec2.TabIndex = 1;
-            this.Opc_FormFec2.TabStop = true;
-            this.Opc_FormFec2.Text = "MM/DD/AAAA";
-            this.Opc_FormFec2.UseVisualStyleBackColor = true;
-            // 
-            // Opc_FormFec1
-            // 
-            this.Opc_FormFec1.AutoSize = true;
-            this.Opc_FormFec1.Location = new System.Drawing.Point(10, 10);
-            this.Opc_FormFec1.Name = "Opc_FormFec1";
-            this.Opc_FormFec1.Size = new System.Drawing.Size(106, 20);
-            this.Opc_FormFec1.TabIndex = 0;
-            this.Opc_FormFec1.TabStop = true;
-            this.Opc_FormFec1.Text = "DD/MM/AAAA";
-            this.Opc_FormFec1.UseVisualStyleBackColor = true;
-            // 
-            // Grp_Pais
-            // 
-            this.Grp_Pais.Controls.Add(this.Opc_Pais2);
-            this.Grp_Pais.Controls.Add(this.Opc_Pais1);
-            this.Grp_Pais.Location = new System.Drawing.Point(178, 216);
-            this.Grp_Pais.Name = "Grp_Pais";
-            this.Grp_Pais.Size = new System.Drawing.Size(132, 57);
-            this.Grp_Pais.TabIndex = 48;
-            this.Grp_Pais.TabStop = false;
-            // 
-            // Opc_Pais2
-            // 
-            this.Opc_Pais2.AutoSize = true;
-            this.Opc_Pais2.Location = new System.Drawing.Point(10, 33);
-            this.Opc_Pais2.Name = "Opc_Pais2";
-            this.Opc_Pais2.Size = new System.Drawing.Size(74, 20);
-            this.Opc_Pais2.TabIndex = 1;
-            this.Opc_Pais2.TabStop = true;
-            this.Opc_Pais2.Text = "Panamá";
-            this.Opc_Pais2.UseVisualStyleBackColor = true;
-            // 
-            // Opc_Pais1
-            // 
-            this.Opc_Pais1.AutoSize = true;
-            this.Opc_Pais1.Location = new System.Drawing.Point(10, 10);
-            this.Opc_Pais1.Name = "Opc_Pais1";
-            this.Opc_Pais1.Size = new System.Drawing.Size(98, 20);
-            this.Opc_Pais1.TabIndex = 1;
-            this.Opc_Pais1.TabStop = true;
-            this.Opc_Pais1.Text = "Venezuela";
-            this.Opc_Pais1.UseVisualStyleBackColor = true;
-            // 
-            // Grp_Idioma
-            // 
-            this.Grp_Idioma.Controls.Add(this.Opc_Idioma2);
-            this.Grp_Idioma.Controls.Add(this.Opc_Idioma1);
-            this.Grp_Idioma.Location = new System.Drawing.Point(178, 153);
-            this.Grp_Idioma.Name = "Grp_Idioma";
-            this.Grp_Idioma.Size = new System.Drawing.Size(132, 57);
-            this.Grp_Idioma.TabIndex = 47;
-            this.Grp_Idioma.TabStop = false;
-            // 
-            // Opc_Idioma2
-            // 
-            this.Opc_Idioma2.AutoSize = true;
-            this.Opc_Idioma2.Location = new System.Drawing.Point(10, 33);
-            this.Opc_Idioma2.Name = "Opc_Idioma2";
-            this.Opc_Idioma2.Size = new System.Drawing.Size(74, 20);
-            this.Opc_Idioma2.TabIndex = 1;
-            this.Opc_Idioma2.TabStop = true;
-            this.Opc_Idioma2.Text = "Inglés";
-            this.Opc_Idioma2.UseVisualStyleBackColor = true;
-            // 
-            // Opc_Idioma1
-            // 
-            this.Opc_Idioma1.AutoSize = true;
-            this.Opc_Idioma1.Location = new System.Drawing.Point(10, 10);
-            this.Opc_Idioma1.Name = "Opc_Idioma1";
-            this.Opc_Idioma1.Size = new System.Drawing.Size(82, 20);
-            this.Opc_Idioma1.TabIndex = 0;
-            this.Opc_Idioma1.TabStop = true;
-            this.Opc_Idioma1.Text = "Español";
-            this.Opc_Idioma1.UseVisualStyleBackColor = true;
-            // 
-            // Grp_Desktop
-            // 
-            this.Grp_Desktop.Controls.Add(this.Opc_Desktop2);
-            this.Grp_Desktop.Controls.Add(this.Opc_Desktop1);
-            this.Grp_Desktop.Location = new System.Drawing.Point(178, 90);
-            this.Grp_Desktop.Name = "Grp_Desktop";
-            this.Grp_Desktop.Size = new System.Drawing.Size(132, 57);
-            this.Grp_Desktop.TabIndex = 46;
-            this.Grp_Desktop.TabStop = false;
-            // 
-            // Opc_Desktop2
-            // 
-            this.Opc_Desktop2.AutoSize = true;
-            this.Opc_Desktop2.Location = new System.Drawing.Point(10, 33);
-            this.Opc_Desktop2.Name = "Opc_Desktop2";
-            this.Opc_Desktop2.Size = new System.Drawing.Size(98, 20);
-            this.Opc_Desktop2.TabIndex = 1;
-            this.Opc_Desktop2.TabStop = true;
-            this.Opc_Desktop2.Text = "Aleatorio";
-            this.Opc_Desktop2.UseVisualStyleBackColor = true;
-            // 
-            // Opc_Desktop1
-            // 
-            this.Opc_Desktop1.AutoSize = true;
-            this.Opc_Desktop1.Location = new System.Drawing.Point(10, 10);
-            this.Opc_Desktop1.Name = "Opc_Desktop1";
-            this.Opc_Desktop1.Size = new System.Drawing.Size(58, 20);
-            this.Opc_Desktop1.TabIndex = 0;
-            this.Opc_Desktop1.TabStop = true;
-            this.Opc_Desktop1.Text = "Fijo";
-            this.Opc_Desktop1.UseVisualStyleBackColor = true;
-            // 
-            // Txt_IDUsuario
-            // 
-            this.Txt_IDUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Usuarios, "ID_Usuario", true));
-            this.Txt_IDUsuario.Location = new System.Drawing.Point(108, 0);
-            this.Txt_IDUsuario.Margin = new System.Windows.Forms.Padding(4);
-            this.Txt_IDUsuario.MaxLength = 16;
-            this.Txt_IDUsuario.Name = "Txt_IDUsuario";
-            this.Txt_IDUsuario.Size = new System.Drawing.Size(200, 22);
-            this.Txt_IDUsuario.TabIndex = 43;
-            // 
-            // Txt_Nombre
-            // 
-            this.Txt_Nombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Usuarios, "Nombre", true));
-            this.Txt_Nombre.Location = new System.Drawing.Point(108, 32);
-            this.Txt_Nombre.Margin = new System.Windows.Forms.Padding(4);
-            this.Txt_Nombre.MaxLength = 50;
-            this.Txt_Nombre.Name = "Txt_Nombre";
-            this.Txt_Nombre.Size = new System.Drawing.Size(362, 22);
-            this.Txt_Nombre.TabIndex = 44;
-            // 
-            // Txt_Password
-            // 
-            this.Txt_Password.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Usuarios, "Password", true));
-            this.Txt_Password.Location = new System.Drawing.Point(108, 64);
-            this.Txt_Password.Margin = new System.Windows.Forms.Padding(4);
-            this.Txt_Password.MaxLength = 20;
-            this.Txt_Password.Name = "Txt_Password";
-            this.Txt_Password.Size = new System.Drawing.Size(200, 22);
-            this.Txt_Password.TabIndex = 45;
-            // 
             // ID_Sistema
             // 
             this.ID_Sistema.DataPropertyName = "ID_Sistema";
@@ -621,6 +436,191 @@
             // 
             this.BS_Usuarios.DataSource = typeof(MofinModeloEntorno.Usuarios);
             // 
+            // Pan_Elementos
+            // 
+            this.Pan_Elementos.Controls.Add(this.Chk_Sonido);
+            this.Pan_Elementos.Controls.Add(this.Grp_FormatoFecha);
+            this.Pan_Elementos.Controls.Add(this.Grp_Pais);
+            this.Pan_Elementos.Controls.Add(this.Grp_Idioma);
+            this.Pan_Elementos.Controls.Add(this.Grp_Desktop);
+            this.Pan_Elementos.Controls.Add(this.Txt_IDUsuario);
+            this.Pan_Elementos.Controls.Add(this.Txt_Nombre);
+            this.Pan_Elementos.Controls.Add(this.Txt_Password);
+            this.Pan_Elementos.Location = new System.Drawing.Point(26, 68);
+            this.Pan_Elementos.Name = "Pan_Elementos";
+            this.Pan_Elementos.Size = new System.Drawing.Size(477, 365);
+            this.Pan_Elementos.TabIndex = 34;
+            // 
+            // Chk_Sonido
+            // 
+            this.Chk_Sonido.AutoSize = true;
+            this.Chk_Sonido.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Chk_Sonido.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Usuarios, "Cnfg_SonidoClick", true));
+            this.Chk_Sonido.Location = new System.Drawing.Point(6, 344);
+            this.Chk_Sonido.Name = "Chk_Sonido";
+            this.Chk_Sonido.Size = new System.Drawing.Size(187, 20);
+            this.Chk_Sonido.TabIndex = 50;
+            this.Chk_Sonido.Text = "Sonido de Click:    ";
+            this.Chk_Sonido.UseVisualStyleBackColor = true;
+            // 
+            // Grp_FormatoFecha
+            // 
+            this.Grp_FormatoFecha.Controls.Add(this.Opc_FormFec2);
+            this.Grp_FormatoFecha.Controls.Add(this.Opc_FormFec1);
+            this.Grp_FormatoFecha.Location = new System.Drawing.Point(178, 281);
+            this.Grp_FormatoFecha.Name = "Grp_FormatoFecha";
+            this.Grp_FormatoFecha.Size = new System.Drawing.Size(132, 57);
+            this.Grp_FormatoFecha.TabIndex = 49;
+            this.Grp_FormatoFecha.TabStop = false;
+            // 
+            // Opc_FormFec2
+            // 
+            this.Opc_FormFec2.AutoSize = true;
+            this.Opc_FormFec2.Location = new System.Drawing.Point(10, 33);
+            this.Opc_FormFec2.Name = "Opc_FormFec2";
+            this.Opc_FormFec2.Size = new System.Drawing.Size(106, 20);
+            this.Opc_FormFec2.TabIndex = 1;
+            this.Opc_FormFec2.TabStop = true;
+            this.Opc_FormFec2.Text = "MM/DD/AAAA";
+            this.Opc_FormFec2.UseVisualStyleBackColor = true;
+            // 
+            // Opc_FormFec1
+            // 
+            this.Opc_FormFec1.AutoSize = true;
+            this.Opc_FormFec1.Location = new System.Drawing.Point(10, 10);
+            this.Opc_FormFec1.Name = "Opc_FormFec1";
+            this.Opc_FormFec1.Size = new System.Drawing.Size(106, 20);
+            this.Opc_FormFec1.TabIndex = 0;
+            this.Opc_FormFec1.TabStop = true;
+            this.Opc_FormFec1.Text = "DD/MM/AAAA";
+            this.Opc_FormFec1.UseVisualStyleBackColor = true;
+            // 
+            // Grp_Pais
+            // 
+            this.Grp_Pais.Controls.Add(this.Opc_Pais2);
+            this.Grp_Pais.Controls.Add(this.Opc_Pais1);
+            this.Grp_Pais.Location = new System.Drawing.Point(178, 218);
+            this.Grp_Pais.Name = "Grp_Pais";
+            this.Grp_Pais.Size = new System.Drawing.Size(132, 57);
+            this.Grp_Pais.TabIndex = 48;
+            this.Grp_Pais.TabStop = false;
+            // 
+            // Opc_Pais2
+            // 
+            this.Opc_Pais2.AutoSize = true;
+            this.Opc_Pais2.Location = new System.Drawing.Point(10, 33);
+            this.Opc_Pais2.Name = "Opc_Pais2";
+            this.Opc_Pais2.Size = new System.Drawing.Size(74, 20);
+            this.Opc_Pais2.TabIndex = 1;
+            this.Opc_Pais2.TabStop = true;
+            this.Opc_Pais2.Text = "Panamá";
+            this.Opc_Pais2.UseVisualStyleBackColor = true;
+            // 
+            // Opc_Pais1
+            // 
+            this.Opc_Pais1.AutoSize = true;
+            this.Opc_Pais1.Location = new System.Drawing.Point(10, 10);
+            this.Opc_Pais1.Name = "Opc_Pais1";
+            this.Opc_Pais1.Size = new System.Drawing.Size(98, 20);
+            this.Opc_Pais1.TabIndex = 1;
+            this.Opc_Pais1.TabStop = true;
+            this.Opc_Pais1.Text = "Venezuela";
+            this.Opc_Pais1.UseVisualStyleBackColor = true;
+            // 
+            // Grp_Idioma
+            // 
+            this.Grp_Idioma.Controls.Add(this.Opc_Idioma2);
+            this.Grp_Idioma.Controls.Add(this.Opc_Idioma1);
+            this.Grp_Idioma.Location = new System.Drawing.Point(178, 155);
+            this.Grp_Idioma.Name = "Grp_Idioma";
+            this.Grp_Idioma.Size = new System.Drawing.Size(132, 57);
+            this.Grp_Idioma.TabIndex = 47;
+            this.Grp_Idioma.TabStop = false;
+            // 
+            // Opc_Idioma2
+            // 
+            this.Opc_Idioma2.AutoSize = true;
+            this.Opc_Idioma2.Location = new System.Drawing.Point(10, 33);
+            this.Opc_Idioma2.Name = "Opc_Idioma2";
+            this.Opc_Idioma2.Size = new System.Drawing.Size(74, 20);
+            this.Opc_Idioma2.TabIndex = 1;
+            this.Opc_Idioma2.TabStop = true;
+            this.Opc_Idioma2.Text = "Inglés";
+            this.Opc_Idioma2.UseVisualStyleBackColor = true;
+            // 
+            // Opc_Idioma1
+            // 
+            this.Opc_Idioma1.AutoSize = true;
+            this.Opc_Idioma1.Location = new System.Drawing.Point(10, 10);
+            this.Opc_Idioma1.Name = "Opc_Idioma1";
+            this.Opc_Idioma1.Size = new System.Drawing.Size(82, 20);
+            this.Opc_Idioma1.TabIndex = 0;
+            this.Opc_Idioma1.TabStop = true;
+            this.Opc_Idioma1.Text = "Español";
+            this.Opc_Idioma1.UseVisualStyleBackColor = true;
+            // 
+            // Grp_Desktop
+            // 
+            this.Grp_Desktop.Controls.Add(this.Opc_Desktop2);
+            this.Grp_Desktop.Controls.Add(this.Opc_Desktop1);
+            this.Grp_Desktop.Location = new System.Drawing.Point(178, 92);
+            this.Grp_Desktop.Name = "Grp_Desktop";
+            this.Grp_Desktop.Size = new System.Drawing.Size(132, 57);
+            this.Grp_Desktop.TabIndex = 46;
+            this.Grp_Desktop.TabStop = false;
+            // 
+            // Opc_Desktop2
+            // 
+            this.Opc_Desktop2.AutoSize = true;
+            this.Opc_Desktop2.Location = new System.Drawing.Point(10, 33);
+            this.Opc_Desktop2.Name = "Opc_Desktop2";
+            this.Opc_Desktop2.Size = new System.Drawing.Size(98, 20);
+            this.Opc_Desktop2.TabIndex = 1;
+            this.Opc_Desktop2.TabStop = true;
+            this.Opc_Desktop2.Text = "Aleatorio";
+            this.Opc_Desktop2.UseVisualStyleBackColor = true;
+            // 
+            // Opc_Desktop1
+            // 
+            this.Opc_Desktop1.AutoSize = true;
+            this.Opc_Desktop1.Location = new System.Drawing.Point(10, 10);
+            this.Opc_Desktop1.Name = "Opc_Desktop1";
+            this.Opc_Desktop1.Size = new System.Drawing.Size(58, 20);
+            this.Opc_Desktop1.TabIndex = 0;
+            this.Opc_Desktop1.TabStop = true;
+            this.Opc_Desktop1.Text = "Fijo";
+            this.Opc_Desktop1.UseVisualStyleBackColor = true;
+            // 
+            // Txt_IDUsuario
+            // 
+            this.Txt_IDUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Usuarios, "ID_Usuario", true));
+            this.Txt_IDUsuario.Location = new System.Drawing.Point(108, 2);
+            this.Txt_IDUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt_IDUsuario.MaxLength = 16;
+            this.Txt_IDUsuario.Name = "Txt_IDUsuario";
+            this.Txt_IDUsuario.Size = new System.Drawing.Size(200, 22);
+            this.Txt_IDUsuario.TabIndex = 43;
+            // 
+            // Txt_Nombre
+            // 
+            this.Txt_Nombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Usuarios, "Nombre", true));
+            this.Txt_Nombre.Location = new System.Drawing.Point(108, 34);
+            this.Txt_Nombre.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt_Nombre.MaxLength = 50;
+            this.Txt_Nombre.Name = "Txt_Nombre";
+            this.Txt_Nombre.Size = new System.Drawing.Size(362, 22);
+            this.Txt_Nombre.TabIndex = 44;
+            // 
+            // Txt_Password
+            // 
+            this.Txt_Password.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Usuarios, "Password", true));
+            this.Txt_Password.Location = new System.Drawing.Point(108, 66);
+            this.Txt_Password.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt_Password.MaxLength = 20;
+            this.Txt_Password.Name = "Txt_Password";
+            this.Txt_Password.Size = new System.Drawing.Size(200, 22);
+            this.Txt_Password.TabIndex = 45;
+            // 
             // Frm_Usuarios
             // 
             this.AcceptButton = this.Btn_Aceptar;
@@ -653,6 +653,7 @@
             this.TS_BarraHerramientas.ResumeLayout(false);
             this.TS_BarraHerramientas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Usuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).EndInit();
             this.Pan_Elementos.ResumeLayout(false);
             this.Pan_Elementos.PerformLayout();
             this.Grp_FormatoFecha.ResumeLayout(false);
@@ -663,7 +664,6 @@
             this.Grp_Idioma.PerformLayout();
             this.Grp_Desktop.ResumeLayout(false);
             this.Grp_Desktop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
