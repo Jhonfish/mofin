@@ -259,6 +259,7 @@ namespace MOFIN
             {
                 case 0:  // "Actividad Comercial"
                     BS_TablaMaestra.DataSource = BS_MActivComercial;
+//                    this.Txt_Codigo.
                     //Grd_Detalles.DataSource = BS_MActivComercial;
                     break;
                 case 1:  // "Antigüedad"
@@ -336,7 +337,7 @@ namespace MOFIN
         //************
         private void TSB_ActualizaBotonesNavegacion()
         {
-            if (BS_TablaMaestra.Count <= 1)
+            if (BS_TablaMaestra.Count < 1)
             {
                 this.TSB_Primero.Enabled = false;
                 this.TSB_Anterior.Enabled = false;
@@ -363,6 +364,10 @@ namespace MOFIN
             switch (Cmb_TablaMaestra.SelectedIndex)
             {
                 case 0:  // "Actividad Comercial"
+                    t_TablaMaestra0.Codigo = short.Parse(Txt_Codigo.Text);
+                    t_TablaMaestra0.Descripcion = this.Txt_Nombre.Text.Trim();
+                    t_TablaMaestra0.Valor = byte.Parse(this.NUD_Valor.Value.ToString());
+                    t_TablaMaestra0.CondEspSeguridad = this.Chk_CES.Checked;
                     if (vl_EsNuevo)
                         NM_ActivComercial.Insertar(t_TablaMaestra0);
                     else
@@ -370,6 +375,10 @@ namespace MOFIN
                     BS_MActivComercial.DataSource = NM_ActivComercial.Listar();
                     break;
                 case 1:  // "Antigüedad"
+                    t_TablaMaestra1.Codigo = short.Parse(Txt_Codigo.Text);
+                    t_TablaMaestra1.Descripcion = this.Txt_Nombre.Text.Trim();
+                    t_TablaMaestra1.Valor = byte.Parse(this.NUD_Valor.Value.ToString());
+                    t_TablaMaestra1.CondEspSeguridad = this.Chk_CES.Checked;
                     if (vl_EsNuevo)
                         NM_Antiguedad.Insertar(t_TablaMaestra1);
                     else
@@ -377,6 +386,10 @@ namespace MOFIN
                     BS_MAntiguedad.DataSource = NM_Antiguedad.Listar();
                     break;
                 case 2:  // "Criptomonedas"
+                    t_TablaMaestra2.Codigo = short.Parse(Txt_Codigo.Text);
+                    t_TablaMaestra2.Descripcion = this.Txt_Nombre.Text.Trim();
+                    t_TablaMaestra2.Valor = byte.Parse(this.NUD_Valor.Value.ToString());
+                    t_TablaMaestra2.CondEspSeguridad = this.Chk_CES.Checked;
                     if (vl_EsNuevo)
                         NM_Criptomonedas.Insertar(t_TablaMaestra2);
                     else
@@ -384,6 +397,10 @@ namespace MOFIN
                     BS_MCriptomonedas.DataSource = NM_Criptomonedas.Listar();
                     break;
                 case 3:  // "Edad"
+                    t_TablaMaestra3.Codigo = short.Parse(Txt_Codigo.Text);
+                    t_TablaMaestra3.Descripcion = this.Txt_Nombre.Text.Trim();
+                    t_TablaMaestra3.Valor = byte.Parse(this.NUD_Valor.Value.ToString());
+                    t_TablaMaestra3.CondEspSeguridad = this.Chk_CES.Checked;
                     if (vl_EsNuevo)
                         NM_Edad.Insertar(t_TablaMaestra3);
                     else
@@ -391,6 +408,11 @@ namespace MOFIN
                     BS_MEdad.DataSource = NM_Edad.Listar();
                     break;
                 case 4:  // "Estados"
+                    t_TablaMaestra4.Codigo = short.Parse(Txt_Codigo.Text);
+                    // t_TablaMaestra4.M_Pais = 862;
+                    t_TablaMaestra4.Descripcion = this.Txt_Nombre.Text.Trim();
+                    t_TablaMaestra4.Valor = byte.Parse(this.NUD_Valor.Value.ToString());
+                    t_TablaMaestra4.CondEspSeguridad = this.Chk_CES.Checked;
                     if (vl_EsNuevo)
                         NM_Estados.Insertar(t_TablaMaestra4);
                     else
@@ -398,6 +420,10 @@ namespace MOFIN
                     BS_MEstados.DataSource = NM_Estados.Listar();
                     break;
                 case 5: // Nivel de Riesgo
+                    t_TablaMaestra5.Codigo = short.Parse(Txt_Codigo.Text);
+                    t_TablaMaestra5.Descripcion = this.Txt_Nombre.Text.Trim();
+                    t_TablaMaestra5.valor = byte.Parse(this.NUD_Valor.Value.ToString());
+                    t_TablaMaestra5.CondEspSeguridad = this.Chk_CES.Checked;
                     if (vl_EsNuevo)
                         NM_NivelRiesgo.Insertar(t_TablaMaestra5);
                     else
@@ -405,6 +431,12 @@ namespace MOFIN
                     BS_MNivelRiesgo.DataSource = NM_NivelRiesgo.Listar();
                     break;
                 case 6:  // "Pais"
+                    t_TablaMaestra6.Codigo = short.Parse(Txt_Codigo.Text);
+                    t_TablaMaestra6.Cod_AlfaNum2 = this.Txt_CodAlfa2.Text;
+                    t_TablaMaestra6.Cod_AlfaNum3 = this.Txt_CodAlfa2.Text;
+                    t_TablaMaestra6.Descripcion = this.Txt_Nombre.Text.Trim();
+                    t_TablaMaestra6.Valor = byte.Parse(this.NUD_Valor.Value.ToString());
+                    t_TablaMaestra6.CondEspSeguridad = this.Chk_CES.Checked;
                     if (vl_EsNuevo)
                         NM_Pais.Insertar(t_TablaMaestra6);
                     else
@@ -412,6 +444,10 @@ namespace MOFIN
                     BS_MPais.DataSource = NM_Pais.Listar();
                     break;
                 case 7:  // "P.E.P."
+                    t_TablaMaestra7.Codigo = short.Parse(Txt_Codigo.Text);
+                    t_TablaMaestra7.Descripcion = this.Txt_Nombre.Text.Trim();
+                    t_TablaMaestra7.Valor = byte.Parse(this.NUD_Valor.Value.ToString());
+                    t_TablaMaestra7.CondEspSeguridad = this.Chk_CES.Checked;
                     if (vl_EsNuevo)
                         NM_PEP.Insertar(t_TablaMaestra7);
                     else
@@ -419,6 +455,10 @@ namespace MOFIN
                     BS_MPEP.DataSource = NM_PEP.Listar();
                     break;
                 case 8:  // "Productos"
+                    t_TablaMaestra8.Codigo = short.Parse(Txt_Codigo.Text);
+                    t_TablaMaestra8.Descripcion = this.Txt_Nombre.Text.Trim();
+                    t_TablaMaestra8.Valor = byte.Parse(this.NUD_Valor.Value.ToString());
+                    t_TablaMaestra8.CondEspSeguridad = this.Chk_CES.Checked;
                     if (vl_EsNuevo)
                         NM_Productos.Insertar(t_TablaMaestra8);
                     else
@@ -426,6 +466,10 @@ namespace MOFIN
                     BS_MProductos.DataSource = NM_Productos.Listar();
                     break;
                 case 9:  // "Profesión"
+                    t_TablaMaestra9.Codigo = short.Parse(Txt_Codigo.Text);
+                    t_TablaMaestra9.Descripcion = this.Txt_Nombre.Text.Trim();
+                    t_TablaMaestra9.Valor = byte.Parse(this.NUD_Valor.Value.ToString());
+                    t_TablaMaestra9.CondEspSeguridad = this.Chk_CES.Checked;
                     if (vl_EsNuevo)
                         NM_Profesiones.Insertar(t_TablaMaestra9);
                     else
@@ -433,6 +477,10 @@ namespace MOFIN
                     BS_MProfesiones.DataSource = NM_Profesiones.Listar();
                     break;
                 case 10:  // "Servicios"
+                    t_TablaMaestra10.Codigo = short.Parse(Txt_Codigo.Text);
+                    t_TablaMaestra10.Descripcion = this.Txt_Nombre.Text.Trim();
+                    t_TablaMaestra10.Valor = byte.Parse(this.NUD_Valor.Value.ToString());
+                    t_TablaMaestra10.CondEspSeguridad = this.Chk_CES.Checked;
                     if (vl_EsNuevo)
                         NM_Servicios.Insertar(t_TablaMaestra10);
                     else
@@ -440,6 +488,10 @@ namespace MOFIN
                     BS_MServicios.DataSource = NM_Servicios.Listar();
                     break;
                 case 11:  // "Tipo de Documento Identidad"
+                    t_TablaMaestra11.Codigo = short.Parse(Txt_Codigo.Text);
+                    t_TablaMaestra11.Descripcion = this.Txt_Nombre.Text.Trim();
+                    t_TablaMaestra11.Valor = byte.Parse(this.NUD_Valor.Value.ToString());
+                    t_TablaMaestra11.CondEspSeguridad = this.Chk_CES.Checked;
                     if (vl_EsNuevo)
                         NM_TipoDocID.Insertar(t_TablaMaestra11);
                     else
@@ -447,6 +499,10 @@ namespace MOFIN
                     BS_MServicios.DataSource = NM_TipoDocID.Listar();
                     break;
                 case 12:  // "Tipo de Estructura"
+                    t_TablaMaestra12.Codigo = short.Parse(Txt_Codigo.Text);
+                    t_TablaMaestra12.Descripcion = this.Txt_Nombre.Text.Trim();
+                    t_TablaMaestra12.Valor = byte.Parse(this.NUD_Valor.Value.ToString());
+                    t_TablaMaestra12.CondEspSeguridad = this.Chk_CES.Checked;
                     if (vl_EsNuevo)
                         NM_TipoEstructuraEmpresa.Insertar(t_TablaMaestra12);
                     else
@@ -454,14 +510,23 @@ namespace MOFIN
                     BS_MTipoEstructuraEmpresa.DataSource = NM_TipoEstructuraEmpresa.Listar();
                     break;
                 case 13:  // "Tipo de Persona Jurídica"
-/*                    if (vl_EsNuevo)
-                        NM_PerJuridica.Insertar(t_TablaMaestra13);
+                    t_TablaMaestra13.Codigo = short.Parse(Txt_Codigo.Text);
+                    t_TablaMaestra13.Descripcion = this.Txt_Nombre.Text.Trim();
+                    t_TablaMaestra13.Valor = byte.Parse(this.NUD_Valor.Value.ToString());
+                    t_TablaMaestra13.CondEspSeguridad = this.Chk_CES.Checked;
+
+                    if (vl_EsNuevo)
+                        NM_TipoPersJuridica.Insertar(t_TablaMaestra13);
                     else
-                        NM_PerJuridica.Actualizar(t_TablaMaestra13);
-                    BS_MTipoPersJuridica.DataSource = NM_PerJuridica.Listar();
- */
-                        break;
+                        NM_TipoPersJuridica.Actualizar(t_TablaMaestra13);
+                        BS_MTipoPersJuridica.DataSource = NM_TipoPersJuridica.Listar();
+                    break;
+
                 case 14:  // "Vol. Oper. Pers. Natural"
+                    t_TablaMaestra14.Codigo = short.Parse(Txt_Codigo.Text);
+                    t_TablaMaestra14.Descripcion = this.Txt_Nombre.Text.Trim();
+                    t_TablaMaestra14.Valor = byte.Parse(this.NUD_Valor.Value.ToString());
+                    t_TablaMaestra14.CondEspSeguridad = this.Chk_CES.Checked;
                     if (vl_EsNuevo)
                         NM_VolOperPersNat.Insertar(t_TablaMaestra14);
                     else
@@ -469,6 +534,10 @@ namespace MOFIN
                     BS_MVolOperPersNat.DataSource = NM_VolOperPersNat.Listar();
                     break;
                 case 15:  // "Vol. Oper. Pers. Jurídica"
+                    t_TablaMaestra15.Codigo = short.Parse(Txt_Codigo.Text);
+                    t_TablaMaestra15.Descripcion = this.Txt_Nombre.Text.Trim();
+                    t_TablaMaestra15.Valor = byte.Parse(this.NUD_Valor.Value.ToString());
+                    t_TablaMaestra15.CondEspSeguridad = this.Chk_CES.Checked;
                     if (vl_EsNuevo)
                         NM_VolOperPersJur.Insertar(t_TablaMaestra15);
                     else
@@ -486,8 +555,10 @@ namespace MOFIN
 
         private void TSB_Agregar_Click(object sender, EventArgs e)
         {
-            this.Modo_Edicion();
+            vl_EsNuevo = true;
             BS_TablaMaestra.AddNew();
+            BS_TablaMaestra.MoveLast();
+            this.Modo_Edicion();
         }
 
         private void TSB_Modificar_Click(object sender, EventArgs e)
@@ -612,6 +683,16 @@ namespace MOFIN
             string vl_Filtro = "Cod_Pais = " + this.Txt_CodPais.Text.ToString();
             BS_TablaMaestra.Filter = vl_Filtro;
             Grd_Detalles.Refresh();
+
+        }
+
+        private void NUD_Valor_Validating(object sender, CancelEventArgs e)
+        {
+            if (this.NUD_Valor.Value >= this.NUD_Valor.Maximum)
+                this.NUD_Valor.Value = this.NUD_Valor.Maximum;
+
+            if (this.NUD_Valor.Value <= this.NUD_Valor.Minimum)
+                this.NUD_Valor.Value = this.NUD_Valor.Minimum;
 
         }
     }

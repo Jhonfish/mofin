@@ -502,14 +502,15 @@ namespace MOFIN
             this.Pan_Elementos.Controls.Add(this.Txt_CodAlfa3);
             this.Pan_Elementos.Controls.Add(this.Txt_Nombre);
             this.Pan_Elementos.Controls.Add(this.Chk_CES);
-            this.Pan_Elementos.Location = new System.Drawing.Point(17, 146);
+            this.Pan_Elementos.Location = new System.Drawing.Point(14, 146);
             this.Pan_Elementos.Name = "Pan_Elementos";
             this.Pan_Elementos.Size = new System.Drawing.Size(353, 236);
             this.Pan_Elementos.TabIndex = 55;
             // 
             // NUD_Valor
             // 
-            this.NUD_Valor.Location = new System.Drawing.Point(63, 179);
+            this.NUD_Valor.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BS_MActivComercial, "Valor", true));
+            this.NUD_Valor.Location = new System.Drawing.Point(66, 179);
             this.NUD_Valor.Maximum = new decimal(new int[] {
             3,
             0,
@@ -519,10 +520,12 @@ namespace MOFIN
             this.NUD_Valor.Size = new System.Drawing.Size(57, 22);
             this.NUD_Valor.TabIndex = 59;
             this.NUD_Valor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.NUD_Valor.Validating += new System.ComponentModel.CancelEventHandler(this.NUD_Valor_Validating);
             // 
             // Txt_Codigo
             // 
-            this.Txt_Codigo.Location = new System.Drawing.Point(63, 35);
+            this.Txt_Codigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_MActivComercial, "Codigo", true));
+            this.Txt_Codigo.Location = new System.Drawing.Point(66, 35);
             this.Txt_Codigo.Name = "Txt_Codigo";
             this.Txt_Codigo.Size = new System.Drawing.Size(57, 22);
             this.Txt_Codigo.TabIndex = 54;
@@ -547,7 +550,8 @@ namespace MOFIN
             // 
             // Txt_Nombre
             // 
-            this.Txt_Nombre.Location = new System.Drawing.Point(63, 63);
+            this.Txt_Nombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_MActivComercial, "Descripcion", true));
+            this.Txt_Nombre.Location = new System.Drawing.Point(66, 63);
             this.Txt_Nombre.Multiline = true;
             this.Txt_Nombre.Name = "Txt_Nombre";
             this.Txt_Nombre.Size = new System.Drawing.Size(270, 110);
@@ -556,7 +560,8 @@ namespace MOFIN
             // Chk_CES
             // 
             this.Chk_CES.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Chk_CES.Location = new System.Drawing.Point(0, 205);
+            this.Chk_CES.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_MActivComercial, "CondEspSeguridad", true));
+            this.Chk_CES.Location = new System.Drawing.Point(4, 205);
             this.Chk_CES.Name = "Chk_CES";
             this.Chk_CES.Size = new System.Drawing.Size(303, 24);
             this.Chk_CES.TabIndex = 58;

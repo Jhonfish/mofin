@@ -9,10 +9,10 @@
         <EntityTypeShape EntityType="MonitorOperacionesModel.C_FirBenAcc" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModel.C_HistActClientes" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModel.C_ValorItemConsExp" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModel.M_ActivComercial" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModel.M_Antiguedad" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModel.M_ActivComercial" Width="1.5" PointX="2.875" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModel.M_Antiguedad" Width="1.75" PointX="7.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModel.M_Criptomonedas" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModel.M_Edad" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModel.M_Edad" Width="1.75" PointX="9.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModel.M_Estados" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModel.M_NivelRiesgo" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModel.M_Pais" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
@@ -29,12 +29,13 @@
         <EntityTypeShape EntityType="MonitorOperacionesModel.O_Observaciones" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModel.B_Buscados" Width="1.5" PointX="13.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModel.O_Operfinancieras" Width="1.5" PointX="7.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModel.O_OperTransaccionales" Width="1.5" PointX="13.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModel.O_OperTransaccionales" Width="1.5" PointX="9.625" PointY="13.625" IsExpanded="true" />
         <AssociationConnector Association="MonitorOperacionesModel.FK_C_FirBenAcc_C_Clientes" ManuallyRouted="false" />
         <AssociationConnector Association="MonitorOperacionesModel.FK_C_HistActClientes_C_Clientes" ManuallyRouted="false" />
         <AssociationConnector Association="MonitorOperacionesModel.FK_O_HistPerfOperac_C_Clientes" ManuallyRouted="false" />
         <AssociationConnector Association="MonitorOperacionesModel.FK_O_Observaciones_C_Clientes" ManuallyRouted="false" />
         <AssociationConnector Association="MonitorOperacionesModel.FK_M_Estados_M_Pais" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MonitorOperacionesModel.O_RepOperacional" Width="1.5" PointX="5.75" PointY="13.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

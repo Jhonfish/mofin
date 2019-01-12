@@ -107,6 +107,28 @@ namespace MOFIN
 
         private void Btn_Aceptar_Click(object sender, EventArgs e)
         {
+            if (Opc_Desktop2.Checked == true)
+                t_Usuarios.Cnfg_Desktop = 2;
+              else
+                t_Usuarios.Cnfg_Desktop = 1;
+
+            if (Opc_Idioma2.Checked == true)
+                t_Usuarios.Cnfg_Idioma = 2;
+            else
+                t_Usuarios.Cnfg_Idioma = 1;
+
+            if (Opc_Pais2.Checked == true)
+                t_Usuarios.Cnfg_PaisUso = 2;
+            else
+                t_Usuarios.Cnfg_PaisUso = 1;
+
+            if (Opc_FormFec2.Checked == true)
+                t_Usuarios.Cnfg_FormFecha = 2;
+            else
+                t_Usuarios.Cnfg_FormFecha = 1;
+
+//            t_Usuarios.Cnfg_Desktop = Opc_Desktop2.Checked == true ? 2 : 1;
+
             if (vl_EsNuevo)
                 NUsuarios.Insertar(t_Usuarios);
                 //NUsuarios.Insertar(BS_Usuarios.Current as Usuarios);

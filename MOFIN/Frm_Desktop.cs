@@ -111,7 +111,7 @@ namespace MOFIN
             this.Mnu_Operaciones.Enabled = false;
             this.Mnu_TablasMaestras.Enabled = true;
             this.Mnu_Herramientas.Enabled = false;
-            
+           
         }
 
 
@@ -126,7 +126,6 @@ namespace MOFIN
             Form childForm = new Frm_Grupos();
             childForm.MdiParent = this;
             childForm.Show();
-
         }
 
         private void Her_Empresas_Click(object sender, EventArgs e)
@@ -141,12 +140,6 @@ namespace MOFIN
             Form childForm = new Frm_SeleccionEmpresa();
             childForm.MdiParent = this;
             childForm.Show();
-
-        }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void tablasMaestrasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -154,7 +147,6 @@ namespace MOFIN
             Form childForm = new Frm_TablasMaestras();
             childForm.MdiParent = this;
             childForm.Show();
-
         }
 
         private void monitorDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -162,7 +154,13 @@ namespace MOFIN
             Form childForm = new Frm_Clientes();
             childForm.MdiParent = this;
             childForm.Show();
+        }
 
+        private void financierasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Frm_OpeFinancieras();
+            childForm.MdiParent = this;
+            childForm.Show();
         }
     }
 }

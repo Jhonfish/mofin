@@ -27,5 +27,6 @@ namespace MofinModelo
         public string Grp_Cliente { get; set; }
         public string Comprobante { get; set; }
         public Nullable<System.DateTime> Hora_Carga { get; set; }
+        public int ID_Sistema { get; set; }
     }
 }

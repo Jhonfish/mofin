@@ -43,24 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DS_Maestros.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_Maestros.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_MantenimientoBase.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_MantenimientoBase.Designer.cs">
-      <DependentUpon>Frm_MantenimientoBase.cs</DependentUpon>
-    </Compile>
     <Compile Include="Libreria.cs" />
-    <Compile Include="OpcionGroup_JF.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="OpcionGroup_JF.Designer.cs">
-      <DependentUpon>OpcionGroup_JF.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -77,29 +60,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="DS_Maestros.xsc">
-      <DependentUpon>DS_Maestros.xsd</DependentUpon>
-    </None>
-    <None Include="DS_Maestros.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_Maestros.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DS_Maestros.xss">
-      <DependentUpon>DS_Maestros.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Frm_MantenimientoBase.resx">
-      <DependentUpon>Frm_MantenimientoBase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OpcionGroup_JF.resx">
-      <DependentUpon>OpcionGroup_JF.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

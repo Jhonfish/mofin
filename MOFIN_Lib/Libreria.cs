@@ -10,6 +10,14 @@ namespace MOFIN
 {
     class Libreria
     {
+        public static void ToolTipText(PictureBox objeto, string vl_Mensaje)
+        {
+            ToolTip PictureTooltip = new ToolTip();
+            PictureTooltip.AutoPopDelay = 5000;
+            PictureTooltip.InitialDelay = 250;
+            PictureTooltip.ReshowDelay = 500;
+            PictureTooltip.SetToolTip(objeto, vl_Mensaje);
+        }
     }
     public class C_DeclarVar
     {
@@ -17,5 +25,4 @@ namespace MOFIN
 
     }
 
-  
 }

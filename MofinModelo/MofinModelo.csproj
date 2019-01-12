@@ -140,6 +140,9 @@
     <Compile Include="O_OperTransaccionales.cs">
       <DependentUpon>MofinModelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="O_RepOperacional.cs">
+      <DependentUpon>MofinModelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

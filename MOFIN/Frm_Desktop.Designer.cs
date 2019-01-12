@@ -361,13 +361,13 @@
             this.Mnu_Operaciones.Name = "Mnu_Operaciones";
             this.Mnu_Operaciones.Size = new System.Drawing.Size(108, 20);
             this.Mnu_Operaciones.Text = "Operaciones";
-            this.Mnu_Operaciones.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // financierasToolStripMenuItem
             // 
             this.financierasToolStripMenuItem.Name = "financierasToolStripMenuItem";
             this.financierasToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.financierasToolStripMenuItem.Text = "Financieras";
+            this.financierasToolStripMenuItem.Click += new System.EventHandler(this.financierasToolStripMenuItem_Click);
             // 
             // transaccionalesToolStripMenuItem
             // 
@@ -559,6 +559,7 @@
             this.Controls.Add(this.SS_BarradeEstadoPrincipal);
             this.Controls.Add(this.TS_MenuPrincipal);
             this.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.TS_MenuPrincipal;
             this.Margin = new System.Windows.Forms.Padding(4);
