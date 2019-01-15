@@ -18,7 +18,6 @@ namespace MOFIN
         public Frm_Desktop()
         {
             InitializeComponent();
-            //TS_MenuPrincipal.ForeColor = Color.White; ;
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -157,12 +156,6 @@ namespace MOFIN
             childForm.Show();
         }
 
-        private void búsquedaDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form childForm = new Frm_BusqPersonas();
-            childForm.MdiParent = this;
-            childForm.Show();
-        }
         private void financierasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form childForm = new Frm_OpeFinancieras();

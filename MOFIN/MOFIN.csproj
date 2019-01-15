@@ -236,7 +236,6 @@
     <None Include="Properties\DataSources\MofinModelo.O_Observaciones.datasource" />
     <None Include="Properties\DataSources\MofinModelo.O_Operfinancieras.datasource" />
     <None Include="Properties\DataSources\MofinModelo.O_OperTransaccionales.datasource" />
-    <None Include="Properties\DataSources\MofinModelo.sysdiagrams.datasource" />
     <None Include="Properties\DataSources\MofinModeloEntorno.Empresas.datasource" />
     <None Include="Properties\DataSources\MofinModeloEntorno.Emp_Accesos.datasource" />
     <None Include="Properties\DataSources\MofinModeloEntorno.Grupos.datasource" />

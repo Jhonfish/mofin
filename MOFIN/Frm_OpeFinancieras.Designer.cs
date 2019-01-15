@@ -1276,8 +1276,6 @@
             // Chk_IncSoloExcep
             // 
             this.Chk_IncSoloExcep.AutoSize = true;
-            this.Chk_IncSoloExcep.Checked = true;
-            this.Chk_IncSoloExcep.CheckState = System.Windows.Forms.CheckState.Checked;
             this.Chk_IncSoloExcep.Location = new System.Drawing.Point(55, 416);
             this.Chk_IncSoloExcep.Name = "Chk_IncSoloExcep";
             this.Chk_IncSoloExcep.Size = new System.Drawing.Size(194, 18);
@@ -1288,8 +1286,6 @@
             // Chk_ExcMeses
             // 
             this.Chk_ExcMeses.AutoSize = true;
-            this.Chk_ExcMeses.Checked = true;
-            this.Chk_ExcMeses.CheckState = System.Windows.Forms.CheckState.Checked;
             this.Chk_ExcMeses.Location = new System.Drawing.Point(55, 392);
             this.Chk_ExcMeses.Name = "Chk_ExcMeses";
             this.Chk_ExcMeses.Size = new System.Drawing.Size(229, 18);
@@ -3276,7 +3272,7 @@
             // Lbl_DetOperaciones
             // 
             this.Lbl_DetOperaciones.AutoSize = true;
-            this.Lbl_DetOperaciones.Location = new System.Drawing.Point(366, 7);
+            this.Lbl_DetOperaciones.Location = new System.Drawing.Point(366, 3);
             this.Lbl_DetOperaciones.Name = "Lbl_DetOperaciones";
             this.Lbl_DetOperaciones.Size = new System.Drawing.Size(168, 14);
             this.Lbl_DetOperaciones.TabIndex = 26;
@@ -3285,7 +3281,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 7);
+            this.label3.Location = new System.Drawing.Point(16, 3);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(140, 14);
             this.label3.TabIndex = 25;
@@ -3370,7 +3366,6 @@
             this.MinimizeBox = false;
             this.Name = "Frm_OpeFinancieras";
             this.Padding = new System.Windows.Forms.Padding(23, 65, 23, 22);
-            this.Resizable = false;
             this.Text = "Monitor de Operaciones Financieras";
             this.Load += new System.EventHandler(this.Frm_OpeFinancieras_Load);
             this.Tab_MonOperaciones.ResumeLayout(false);
