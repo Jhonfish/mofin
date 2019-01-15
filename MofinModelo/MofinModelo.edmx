@@ -4,13 +4,10 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="MonitorOperacionesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+      <Schema Namespace="MonitorOperacionesModelo.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="B_Buscados">
           <Key>
             <PropertyRef Name="ID_Sistema" />
-            <PropertyRef Name="Nombre" />
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
@@ -114,7 +111,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
         </EntityType>
         <EntityType Name="C_FirBenAcc">
           <Key>
-            <PropertyRef Name="Cod_Cliente" />
+            <PropertyRef Name="ID_Sistema" />
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Cod_Cliente" Type="char" MaxLength="8" Nullable="false" />
@@ -137,7 +134,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
         </EntityType>
         <EntityType Name="C_HistActClientes">
           <Key>
-            <PropertyRef Name="Codigo" />
+            <PropertyRef Name="ID_Sistema" />
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Codigo" Type="char" MaxLength="8" Nullable="false" />
@@ -227,10 +224,10 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Codigo" Type="smallint" Nullable="false" />
-          <Property Name="Cod_Pais" Type="smallint" />
+          <Property Name="Cod_Pais" Type="smallint" Nullable="false" />
           <Property Name="Cod_Compuesto" Type="int" Nullable="false" />
-          <Property Name="Descripcion" Type="varchar" MaxLength="100" />
-          <Property Name="Valor" Type="tinyint" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Valor" Type="tinyint" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="bit" />
         </EntityType>
         <EntityType Name="M_NivelRiesgo">
@@ -241,7 +238,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           <Property Name="Codigo" Type="smallint" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="valor" Type="tinyint" Nullable="false" />
-          <Property Name="CondEspSeguridad" Type="bit" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="bit" />
         </EntityType>
         <EntityType Name="M_Pais">
           <Key>
@@ -252,7 +249,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           <Property Name="Cod_AlfaNum2" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Cod_AlfaNum3" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="Valor" Type="tinyint" />
+          <Property Name="Valor" Type="tinyint" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="bit" />
         </EntityType>
         <EntityType Name="M_PEP">
@@ -347,7 +344,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
         </EntityType>
         <EntityType Name="O_HistPerfOperac">
           <Key>
-            <PropertyRef Name="Cod_Cliente" />
+            <PropertyRef Name="ID_Sistema" />
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Tipo_Perfil" Type="tinyint" Nullable="false" />
@@ -359,7 +356,7 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
         </EntityType>
         <EntityType Name="O_Observaciones">
           <Key>
-            <PropertyRef Name="Cod_Cliente" />
+            <PropertyRef Name="ID_Sistema" />
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Tipo_Perfil" Type="tinyint" Nullable="false" />
@@ -367,14 +364,11 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.B_Buscados' no tiene 
           <Property Name="fecha" Type="date" Nullable="false" />
           <Property Name="Observacion" Type="text" Nullable="false" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_Operfinancieras' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="O_Operfinancieras">
           <Key>
-            <PropertyRef Name="Tipo_Orden" />
-            <PropertyRef Name="Fec_Pacto" />
-            <PropertyRef Name="Doc_ID" />
+            <PropertyRef Name="ID_Sistema" />
           </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Tipo_Orden" Type="char" MaxLength="5" Nullable="false" />
           <Property Name="Fec_Pacto" Type="date" Nullable="false" />
           <Property Name="Doc_ID" Type="varchar" MaxLength="20" Nullable="false" />
@@ -398,15 +392,11 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_Operfinancieras' no
           <Property Name="Comprobante" Type="text" />
           <Property Name="Hora_carga" Type="datetime" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="O_OperTransaccionales">
           <Key>
-            <PropertyRef Name="Tipo_Orden" />
-            <PropertyRef Name="Fec_Pacto" />
-            <PropertyRef Name="Doc_ID" />
-            <PropertyRef Name="Cod_Cliente" />
+            <PropertyRef Name="ID_Sistema" />
           </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Tipo_Orden" Type="char" MaxLength="5" Nullable="false" />
           <Property Name="Fec_Pacto" Type="date" Nullable="false" />
           <Property Name="Doc_ID" Type="varchar" MaxLength="20" Nullable="false" />
@@ -421,9 +411,11 @@ advertencia 6002: La tabla o vista 'MonitorOperaciones.dbo.O_OperTransaccionales
           <Property Name="Comprobante" Type="varchar" MaxLength="100" />
           <Property Name="Hora_Carga" Type="datetime" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
         <EntityType Name="O_RepOperacional">
+          <Key>
+            <PropertyRef Name="ID_Sistema" />
+          </Key>
+          <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Fec_Generacion" Type="date" />
           <Property Name="Fec_UltOperac" Type="date" />
           <Property Name="Cod_Cliente" Type="char" MaxLength="8" />
@@ -442,10 +434,20 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
           <Property Name="Alarma" Type="bit" />
           <Property Name="Ejecutivo" Type="varchar" MaxLength="50" />
           <Property Name="Comentario" Type="varchar" MaxLength="200" />
-        </EntityType>-->
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <Association Name="FK_C_FirBenAcc_C_Clientes">
           <End Role="C_Clientes" Type="Self.C_Clientes" Multiplicity="1" />
-          <End Role="C_FirBenAcc" Type="Self.C_FirBenAcc" Multiplicity="0..1" />
+          <End Role="C_FirBenAcc" Type="Self.C_FirBenAcc" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="C_Clientes">
               <PropertyRef Name="Codigo" />
@@ -457,7 +459,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
         </Association>
         <Association Name="FK_C_HistActClientes_C_Clientes">
           <End Role="C_Clientes" Type="Self.C_Clientes" Multiplicity="1" />
-          <End Role="C_HistActClientes" Type="Self.C_HistActClientes" Multiplicity="0..1" />
+          <End Role="C_HistActClientes" Type="Self.C_HistActClientes" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="C_Clientes">
               <PropertyRef Name="Codigo" />
@@ -468,7 +470,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_M_Estados_M_Pais">
-          <End Role="M_Pais" Type="Self.M_Pais" Multiplicity="0..1" />
+          <End Role="M_Pais" Type="Self.M_Pais" Multiplicity="1" />
           <End Role="M_Estados" Type="Self.M_Estados" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="M_Pais">
@@ -481,7 +483,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
         </Association>
         <Association Name="FK_O_HistPerfOperac_C_Clientes">
           <End Role="C_Clientes" Type="Self.C_Clientes" Multiplicity="1" />
-          <End Role="O_HistPerfOperac" Type="Self.O_HistPerfOperac" Multiplicity="0..1" />
+          <End Role="O_HistPerfOperac" Type="Self.O_HistPerfOperac" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="C_Clientes">
               <PropertyRef Name="Codigo" />
@@ -493,7 +495,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
         </Association>
         <Association Name="FK_O_Observaciones_C_Clientes">
           <End Role="C_Clientes" Type="Self.C_Clientes" Multiplicity="1" />
-          <End Role="O_Observaciones" Type="Self.O_Observaciones" Multiplicity="0..1" />
+          <End Role="O_Observaciones" Type="Self.O_Observaciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="C_Clientes">
               <PropertyRef Name="Codigo" />
@@ -503,7 +505,8 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="MonitorOperacionesModelStoreContainer">
+        <EntityContainer Name="MonitorOperacionesModeloStoreContainer">
+          <EntitySet Name="B_Buscados" EntityType="Self.B_Buscados" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="C_Clientes" EntityType="Self.C_Clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="C_FirBenAcc" EntityType="Self.C_FirBenAcc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="C_HistActClientes" EntityType="Self.C_HistActClientes" Schema="dbo" store:Type="Tables" />
@@ -526,60 +529,10 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
           <EntitySet Name="M_VolOperPersNat" EntityType="Self.M_VolOperPersNat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="O_HistPerfOperac" EntityType="Self.O_HistPerfOperac" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="O_Observaciones" EntityType="Self.O_Observaciones" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="B_Buscados" EntityType="Self.B_Buscados" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [B_Buscados].[ID_Sistema] AS [ID_Sistema], 
-    [B_Buscados].[Nombre] AS [Nombre], 
-    [B_Buscados].[Doc_ID] AS [Doc_ID], 
-    [B_Buscados].[Ente_Busca] AS [Ente_Busca], 
-    [B_Buscados].[Fec_Busqueda] AS [Fec_Busqueda], 
-    [B_Buscados].[Fec_Registro] AS [Fec_Registro], 
-    [B_Buscados].[Pais_Busca] AS [Pais_Busca]
-    FROM [dbo].[B_Buscados] AS [B_Buscados]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="O_Operfinancieras" EntityType="Self.O_Operfinancieras" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [O_Operfinancieras].[Tipo_Orden] AS [Tipo_Orden], 
-    [O_Operfinancieras].[Fec_Pacto] AS [Fec_Pacto], 
-    [O_Operfinancieras].[Doc_ID] AS [Doc_ID], 
-    [O_Operfinancieras].[Cod_Cliente] AS [Cod_Cliente], 
-    [O_Operfinancieras].[Nme_Cliente] AS [Nme_Cliente], 
-    [O_Operfinancieras].[Fec_Cierre] AS [Fec_Cierre], 
-    [O_Operfinancieras].[Fec_Valor] AS [Fec_Valor], 
-    [O_Operfinancieras].[Mto_Solicitado] AS [Mto_Solicitado], 
-    [O_Operfinancieras].[Mto_Pactado] AS [Mto_Pactado], 
-    [O_Operfinancieras].[Cod_Titulo] AS [Cod_Titulo], 
-    [O_Operfinancieras].[Precio_USD] AS [Precio_USD], 
-    [O_Operfinancieras].[Efectivo] AS [Efectivo], 
-    [O_Operfinancieras].[Comision_Clie] AS [Comision_Clie], 
-    [O_Operfinancieras].[Cod_Contraparte] AS [Cod_Contraparte], 
-    [O_Operfinancieras].[Nme_Contraparte] AS [Nme_Contraparte], 
-    [O_Operfinancieras].[Agencia] AS [Agencia], 
-    [O_Operfinancieras].[Sec_Operac] AS [Sec_Operac], 
-    [O_Operfinancieras].[Cod_Bloq] AS [Cod_Bloq], 
-    [O_Operfinancieras].[Nro_OrdBCV] AS [Nro_OrdBCV], 
-    [O_Operfinancieras].[Cta_USD] AS [Cta_USD], 
-    [O_Operfinancieras].[Comprobante] AS [Comprobante], 
-    [O_Operfinancieras].[Hora_carga] AS [Hora_carga]
-    FROM [dbo].[O_Operfinancieras] AS [O_Operfinancieras]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="O_OperTransaccionales" EntityType="Self.O_OperTransaccionales" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [O_OperTransaccionales].[Tipo_Orden] AS [Tipo_Orden], 
-    [O_OperTransaccionales].[Fec_Pacto] AS [Fec_Pacto], 
-    [O_OperTransaccionales].[Doc_ID] AS [Doc_ID], 
-    [O_OperTransaccionales].[Cod_Cliente] AS [Cod_Cliente], 
-    [O_OperTransaccionales].[Nme_Cliente] AS [Nme_Cliente], 
-    [O_OperTransaccionales].[Fec_Cierre] AS [Fec_Cierre], 
-    [O_OperTransaccionales].[Fec_Valor] AS [Fec_Valor], 
-    [O_OperTransaccionales].[Monto_Pactado] AS [Monto_Pactado], 
-    [O_OperTransaccionales].[Tipo_Operacion] AS [Tipo_Operacion], 
-    [O_OperTransaccionales].[Valor_Efectivo] AS [Valor_Efectivo], 
-    [O_OperTransaccionales].[Grp_Cliente] AS [Grp_Cliente], 
-    [O_OperTransaccionales].[Comprobante] AS [Comprobante], 
-    [O_OperTransaccionales].[Hora_Carga] AS [Hora_Carga]
-    FROM [dbo].[O_OperTransaccionales] AS [O_OperTransaccionales]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="O_Operfinancieras" EntityType="Self.O_Operfinancieras" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="O_OperTransaccionales" EntityType="Self.O_OperTransaccionales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="O_RepOperacional" EntityType="Self.O_RepOperacional" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_C_FirBenAcc_C_Clientes" Association="Self.FK_C_FirBenAcc_C_Clientes">
             <End Role="C_Clientes" EntitySet="C_Clientes" />
             <End Role="C_FirBenAcc" EntitySet="C_FirBenAcc" />
@@ -601,10 +554,23 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             <End Role="O_Observaciones" EntitySet="O_Observaciones" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="MonitorOperacionesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="MonitorOperacionesModelo" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="B_Buscados">
+          <Key>
+            <PropertyRef Name="ID_Sistema" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Ente_Busca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fec_Busqueda" Type="DateTime" Precision="0" />
+          <Property Name="Fec_Registro" Type="DateTime" Precision="0" />
+          <Property Name="Pais_Busca" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="C_Clientes">
           <Key>
             <PropertyRef Name="Codigo" />
@@ -703,7 +669,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
         </EntityType>
         <EntityType Name="C_FirBenAcc">
           <Key>
-            <PropertyRef Name="Cod_Cliente" />
+            <PropertyRef Name="ID_Sistema" />
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Cod_Cliente" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
@@ -727,7 +693,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
         </EntityType>
         <EntityType Name="C_HistActClientes">
           <Key>
-            <PropertyRef Name="Codigo" />
+            <PropertyRef Name="ID_Sistema" />
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Codigo" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
@@ -806,7 +772,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
           <Key>
             <PropertyRef Name="Codigo" />
           </Key>
-          <Property Name="ID_Sistema" Type="Int32" Nullable="false" />
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Codigo" Type="Int16" Nullable="false" />
           <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Valor" Type="Byte" Nullable="false" />
@@ -818,9 +784,10 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Codigo" Type="Int16" Nullable="false" />
+          <Property Name="Cod_Pais" Type="Int16" Nullable="false" />
           <Property Name="Cod_Compuesto" Type="Int32" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Valor" Type="Byte" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Valor" Type="Byte" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="Boolean" />
           <NavigationProperty Name="M_Pais" Relationship="Self.FK_M_Estados_M_Pais" FromRole="M_Estados" ToRole="M_Pais" />
         </EntityType>
@@ -832,7 +799,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
           <Property Name="Codigo" Type="Int16" Nullable="false" />
           <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="valor" Type="Byte" Nullable="false" />
-          <Property Name="CondEspSeguridad" Type="Boolean" Nullable="false" />
+          <Property Name="CondEspSeguridad" Type="Boolean" />
         </EntityType>
         <EntityType Name="M_Pais">
           <Key>
@@ -843,9 +810,8 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
           <Property Name="Cod_AlfaNum2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Cod_AlfaNum3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Valor" Type="Byte" />
+          <Property Name="Valor" Type="Byte" Nullable="false" />
           <Property Name="CondEspSeguridad" Type="Boolean" />
-          <NavigationProperty Name="M_Estados" Relationship="Self.FK_M_Estados_M_Pais" FromRole="M_Pais" ToRole="M_Estados" />
         </EntityType>
         <EntityType Name="M_PEP">
           <Key>
@@ -939,7 +905,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
         </EntityType>
         <EntityType Name="O_HistPerfOperac">
           <Key>
-            <PropertyRef Name="Cod_Cliente" />
+            <PropertyRef Name="ID_Sistema" />
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Tipo_Perfil" Type="Byte" Nullable="false" />
@@ -952,7 +918,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
         </EntityType>
         <EntityType Name="O_Observaciones">
           <Key>
-            <PropertyRef Name="Cod_Cliente" />
+            <PropertyRef Name="ID_Sistema" />
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Tipo_Perfil" Type="Byte" Nullable="false" />
@@ -961,25 +927,11 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
           <Property Name="Observacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="C_Clientes" Relationship="Self.FK_O_Observaciones_C_Clientes" FromRole="O_Observaciones" ToRole="C_Clientes" />
         </EntityType>
-        <EntityType Name="B_Buscados">
-          <Key>
-            <PropertyRef Name="ID_Sistema" />
-            <PropertyRef Name="Nombre" />
-          </Key>
-          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Ente_Busca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Fec_Busqueda" Type="DateTime" Precision="0" />
-          <Property Name="Fec_Registro" Type="DateTime" Precision="0" />
-          <Property Name="Pais_Busca" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="O_Operfinancieras">
           <Key>
-            <PropertyRef Name="Tipo_Orden" />
-            <PropertyRef Name="Fec_Pacto" />
-            <PropertyRef Name="Doc_ID" />
+            <PropertyRef Name="ID_Sistema" />
           </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Tipo_Orden" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="Fec_Pacto" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
@@ -1005,11 +957,9 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
         </EntityType>
         <EntityType Name="O_OperTransaccionales">
           <Key>
-            <PropertyRef Name="Tipo_Orden" />
-            <PropertyRef Name="Fec_Pacto" />
-            <PropertyRef Name="Doc_ID" />
-            <PropertyRef Name="Cod_Cliente" />
+            <PropertyRef Name="ID_Sistema" />
           </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Tipo_Orden" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="Fec_Pacto" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
@@ -1024,9 +974,43 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
           <Property Name="Comprobante" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Hora_Carga" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="O_RepOperacional">
+          <Key>
+            <PropertyRef Name="ID_Sistema" />
+          </Key>
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fec_Generacion" Type="DateTime" Precision="0" />
+          <Property Name="Fec_UltOperac" Type="DateTime" Precision="0" />
+          <Property Name="Cod_Cliente" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="Nme_cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Doc_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Niv_Riesgo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Period_UsoCta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Nro_Transac" Type="Int16" />
+          <Property Name="Perf_NroTransac" Type="Byte" />
+          <Property Name="Porc_Transac" Type="Int16" />
+          <Property Name="Mto_Compras" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Mto_Ventas" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Tot_Operaciones" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Perf_Financiero" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Porc_Operaciones" Type="Int16" />
+          <Property Name="Alarma" Type="Boolean" />
+          <Property Name="Ejecutivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comentario" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <Association Name="FK_C_FirBenAcc_C_Clientes">
           <End Role="C_Clientes" Type="Self.C_Clientes" Multiplicity="1" />
-          <End Role="C_FirBenAcc" Type="Self.C_FirBenAcc" Multiplicity="0..1" />
+          <End Role="C_FirBenAcc" Type="Self.C_FirBenAcc" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="C_Clientes">
               <PropertyRef Name="Codigo" />
@@ -1038,7 +1022,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
         </Association>
         <Association Name="FK_C_HistActClientes_C_Clientes">
           <End Role="C_Clientes" Type="Self.C_Clientes" Multiplicity="1" />
-          <End Role="C_HistActClientes" Type="Self.C_HistActClientes" Multiplicity="0..1" />
+          <End Role="C_HistActClientes" Type="Self.C_HistActClientes" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="C_Clientes">
               <PropertyRef Name="Codigo" />
@@ -1050,7 +1034,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
         </Association>
         <Association Name="FK_O_HistPerfOperac_C_Clientes">
           <End Role="C_Clientes" Type="Self.C_Clientes" Multiplicity="1" />
-          <End Role="O_HistPerfOperac" Type="Self.O_HistPerfOperac" Multiplicity="0..1" />
+          <End Role="O_HistPerfOperac" Type="Self.O_HistPerfOperac" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="C_Clientes">
               <PropertyRef Name="Codigo" />
@@ -1062,7 +1046,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
         </Association>
         <Association Name="FK_O_Observaciones_C_Clientes">
           <End Role="C_Clientes" Type="Self.C_Clientes" Multiplicity="1" />
-          <End Role="O_Observaciones" Type="Self.O_Observaciones" Multiplicity="0..1" />
+          <End Role="O_Observaciones" Type="Self.O_Observaciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="C_Clientes">
               <PropertyRef Name="Codigo" />
@@ -1073,10 +1057,19 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_M_Estados_M_Pais">
-          <End Role="M_Pais" Type="Self.M_Pais" Multiplicity="0..1" />
+          <End Role="M_Pais" Type="Self.M_Pais" Multiplicity="1" />
           <End Role="M_Estados" Type="Self.M_Estados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="M_Pais">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="M_Estados">
+              <PropertyRef Name="Cod_Pais" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <EntityContainer Name="MonitorOperacionesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="B_Buscados" EntityType="Self.B_Buscados" />
           <EntitySet Name="C_Clientes" EntityType="Self.C_Clientes" />
           <EntitySet Name="C_FirBenAcc" EntityType="Self.C_FirBenAcc" />
           <EntitySet Name="C_HistActClientes" EntityType="Self.C_HistActClientes" />
@@ -1099,9 +1092,10 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
           <EntitySet Name="M_VolOperPersNat" EntityType="Self.M_VolOperPersNat" />
           <EntitySet Name="O_HistPerfOperac" EntityType="Self.O_HistPerfOperac" />
           <EntitySet Name="O_Observaciones" EntityType="Self.O_Observaciones" />
-          <EntitySet Name="B_Buscados" EntityType="Self.B_Buscados" />
           <EntitySet Name="O_Operfinancieras" EntityType="Self.O_Operfinancieras" />
           <EntitySet Name="O_OperTransaccionales" EntityType="Self.O_OperTransaccionales" />
+          <EntitySet Name="O_RepOperacional" EntityType="Self.O_RepOperacional" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <AssociationSet Name="FK_C_FirBenAcc_C_Clientes" Association="Self.FK_C_FirBenAcc_C_Clientes">
             <End Role="C_Clientes" EntitySet="C_Clientes" />
             <End Role="C_FirBenAcc" EntitySet="C_FirBenAcc" />
@@ -1128,9 +1122,22 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MonitorOperacionesModelStoreContainer" CdmEntityContainer="MonitorOperacionesEntities">
+        <EntityContainerMapping StorageEntityContainer="MonitorOperacionesModeloStoreContainer" CdmEntityContainer="MonitorOperacionesEntities">
+          <EntitySetMapping Name="B_Buscados">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.B_Buscados">
+              <MappingFragment StoreEntitySet="B_Buscados">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Doc_ID" ColumnName="Doc_ID" />
+                <ScalarProperty Name="Ente_Busca" ColumnName="Ente_Busca" />
+                <ScalarProperty Name="Fec_Busqueda" ColumnName="Fec_Busqueda" />
+                <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+                <ScalarProperty Name="Pais_Busca" ColumnName="Pais_Busca" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="C_Clientes">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.C_Clientes">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.C_Clientes">
               <MappingFragment StoreEntitySet="C_Clientes">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -1223,7 +1230,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="C_FirBenAcc">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.C_FirBenAcc">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.C_FirBenAcc">
               <MappingFragment StoreEntitySet="C_FirBenAcc">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Cod_Cliente" ColumnName="Cod_Cliente" />
@@ -1247,7 +1254,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="C_HistActClientes">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.C_HistActClientes">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.C_HistActClientes">
               <MappingFragment StoreEntitySet="C_HistActClientes">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -1257,7 +1264,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="C_ValorItemConsExp">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.C_ValorItemConsExp">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.C_ValorItemConsExp">
               <MappingFragment StoreEntitySet="C_ValorItemConsExp">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="empresa" ColumnName="empresa" />
@@ -1295,7 +1302,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="M_ActivComercial">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_ActivComercial">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.M_ActivComercial">
               <MappingFragment StoreEntitySet="M_ActivComercial">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -1306,7 +1313,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="M_Antiguedad">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_Antiguedad">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.M_Antiguedad">
               <MappingFragment StoreEntitySet="M_Antiguedad">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -1317,7 +1324,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="M_Criptomonedas">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_Criptomonedas">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.M_Criptomonedas">
               <MappingFragment StoreEntitySet="M_Criptomonedas">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -1328,7 +1335,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="M_Edad">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_Edad">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.M_Edad">
               <MappingFragment StoreEntitySet="M_Edad">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -1339,10 +1346,11 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="M_Estados">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_Estados">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.M_Estados">
               <MappingFragment StoreEntitySet="M_Estados">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Cod_Pais" ColumnName="Cod_Pais" />
                 <ScalarProperty Name="Cod_Compuesto" ColumnName="Cod_Compuesto" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
                 <ScalarProperty Name="Valor" ColumnName="Valor" />
@@ -1351,7 +1359,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="M_NivelRiesgo">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_NivelRiesgo">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.M_NivelRiesgo">
               <MappingFragment StoreEntitySet="M_NivelRiesgo">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -1362,7 +1370,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="M_Pais">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_Pais">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.M_Pais">
               <MappingFragment StoreEntitySet="M_Pais">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -1375,7 +1383,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="M_PEP">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_PEP">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.M_PEP">
               <MappingFragment StoreEntitySet="M_PEP">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -1386,7 +1394,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="M_Productos">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_Productos">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.M_Productos">
               <MappingFragment StoreEntitySet="M_Productos">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -1397,7 +1405,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="M_Profesiones">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_Profesiones">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.M_Profesiones">
               <MappingFragment StoreEntitySet="M_Profesiones">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -1408,7 +1416,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="M_Servicios">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_Servicios">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.M_Servicios">
               <MappingFragment StoreEntitySet="M_Servicios">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -1419,7 +1427,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="M_TipoDocID">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_TipoDocID">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.M_TipoDocID">
               <MappingFragment StoreEntitySet="M_TipoDocID">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -1430,7 +1438,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="M_TipoEstructuraEmpresa">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_TipoEstructuraEmpresa">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.M_TipoEstructuraEmpresa">
               <MappingFragment StoreEntitySet="M_TipoEstructuraEmpresa">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -1441,7 +1449,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="M_TipoPersJuridica">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_TipoPersJuridica">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.M_TipoPersJuridica">
               <MappingFragment StoreEntitySet="M_TipoPersJuridica">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -1452,7 +1460,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="M_VolOperPersJur">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_VolOperPersJur">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.M_VolOperPersJur">
               <MappingFragment StoreEntitySet="M_VolOperPersJur">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -1463,7 +1471,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="M_VolOperPersNat">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.M_VolOperPersNat">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.M_VolOperPersNat">
               <MappingFragment StoreEntitySet="M_VolOperPersNat">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -1474,7 +1482,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="O_HistPerfOperac">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.O_HistPerfOperac">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.O_HistPerfOperac">
               <MappingFragment StoreEntitySet="O_HistPerfOperac">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Tipo_Perfil" ColumnName="Tipo_Perfil" />
@@ -1487,7 +1495,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="O_Observaciones">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.O_Observaciones">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.O_Observaciones">
               <MappingFragment StoreEntitySet="O_Observaciones">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Tipo_Perfil" ColumnName="Tipo_Perfil" />
@@ -1497,22 +1505,10 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="B_Buscados">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.B_Buscados">
-              <MappingFragment StoreEntitySet="B_Buscados">
-                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Doc_ID" ColumnName="Doc_ID" />
-                <ScalarProperty Name="Ente_Busca" ColumnName="Ente_Busca" />
-                <ScalarProperty Name="Fec_Busqueda" ColumnName="Fec_Busqueda" />
-                <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
-                <ScalarProperty Name="Pais_Busca" ColumnName="Pais_Busca" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="O_Operfinancieras">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.O_Operfinancieras">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.O_Operfinancieras">
               <MappingFragment StoreEntitySet="O_Operfinancieras">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Tipo_Orden" ColumnName="Tipo_Orden" />
                 <ScalarProperty Name="Fec_Pacto" ColumnName="Fec_Pacto" />
                 <ScalarProperty Name="Doc_ID" ColumnName="Doc_ID" />
@@ -1539,8 +1535,9 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="O_OperTransaccionales">
-            <EntityTypeMapping TypeName="MonitorOperacionesModel.O_OperTransaccionales">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.O_OperTransaccionales">
               <MappingFragment StoreEntitySet="O_OperTransaccionales">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Tipo_Orden" ColumnName="Tipo_Orden" />
                 <ScalarProperty Name="Fec_Pacto" ColumnName="Fec_Pacto" />
                 <ScalarProperty Name="Doc_ID" ColumnName="Doc_ID" />
@@ -1557,15 +1554,42 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="FK_M_Estados_M_Pais" TypeName="MonitorOperacionesModel.FK_M_Estados_M_Pais" StoreEntitySet="M_Estados">
-            <EndProperty Name="M_Pais">
-              <ScalarProperty Name="Codigo" ColumnName="Cod_Pais" />
-            </EndProperty>
-            <EndProperty Name="M_Estados">
-              <ScalarProperty Name="Cod_Compuesto" ColumnName="Cod_Compuesto" />
-            </EndProperty>
-            <Condition IsNull="false" ColumnName="Cod_Pais" />
-          </AssociationSetMapping>
+          <EntitySetMapping Name="O_RepOperacional">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.O_RepOperacional">
+              <MappingFragment StoreEntitySet="O_RepOperacional">
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+                <ScalarProperty Name="Fec_Generacion" ColumnName="Fec_Generacion" />
+                <ScalarProperty Name="Fec_UltOperac" ColumnName="Fec_UltOperac" />
+                <ScalarProperty Name="Cod_Cliente" ColumnName="Cod_Cliente" />
+                <ScalarProperty Name="Nme_cliente" ColumnName="Nme_cliente" />
+                <ScalarProperty Name="Doc_ID" ColumnName="Doc_ID" />
+                <ScalarProperty Name="Niv_Riesgo" ColumnName="Niv_Riesgo" />
+                <ScalarProperty Name="Period_UsoCta" ColumnName="Period_UsoCta" />
+                <ScalarProperty Name="Nro_Transac" ColumnName="Nro_Transac" />
+                <ScalarProperty Name="Perf_NroTransac" ColumnName="Perf_NroTransac" />
+                <ScalarProperty Name="Porc_Transac" ColumnName="Porc_Transac" />
+                <ScalarProperty Name="Mto_Compras" ColumnName="Mto_Compras" />
+                <ScalarProperty Name="Mto_Ventas" ColumnName="Mto_Ventas" />
+                <ScalarProperty Name="Tot_Operaciones" ColumnName="Tot_Operaciones" />
+                <ScalarProperty Name="Perf_Financiero" ColumnName="Perf_Financiero" />
+                <ScalarProperty Name="Porc_Operaciones" ColumnName="Porc_Operaciones" />
+                <ScalarProperty Name="Alarma" ColumnName="Alarma" />
+                <ScalarProperty Name="Ejecutivo" ColumnName="Ejecutivo" />
+                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1581,7 +1605,7 @@ advertencia 6013: La tabla o vista 'MonitorOperaciones.dbo.O_RepOperacional' no 
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
       </DesignerInfoPropertySet>

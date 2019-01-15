@@ -14,6 +14,7 @@ namespace MofinModelo
     
     public partial class O_Operfinancieras
     {
+        public int ID_Sistema { get; set; }
         public string Tipo_Orden { get; set; }
         public System.DateTime Fec_Pacto { get; set; }
         public string Doc_ID { get; set; }

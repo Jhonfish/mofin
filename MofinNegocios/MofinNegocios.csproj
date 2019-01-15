@@ -47,6 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NO_HistPerfOperac.cs" />
+    <Compile Include="NO_Observaciones.cs" />
+    <Compile Include="NO_Operfinancieras.cs" />
+    <Compile Include="NO_OperTransaccionales.cs" />
+    <Compile Include="NO_RepOperacional.cs" />
     <Compile Include="NB_Buscados.cs" />
     <Compile Include="NC_Clientes.cs" />
     <Compile Include="NC_FirBenAcc.cs" />
@@ -85,7 +90,7 @@
       <Name>MofinModeloEntorno</Name>
     </ProjectReference>
     <ProjectReference Include="..\MofinModelo\MofinModelo.csproj">
-      <Project>{e80cc34e-56cf-429a-8a96-89336ae0c024}</Project>
+      <Project>{4d1b31bf-20ca-41f8-bed5-7a740fcc0f68}</Project>
       <Name>MofinModelo</Name>
     </ProjectReference>
   </ItemGroup>

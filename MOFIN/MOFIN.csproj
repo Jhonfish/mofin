@@ -85,6 +85,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EntornoDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Frm_BusqPersonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_BusqPersonas.Designer.cs">
+      <DependentUpon>Frm_BusqPersonas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,12 @@
     </Compile>
     <Compile Include="Frm_Grupos.Designer.cs">
       <DependentUpon>Frm_Grupos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_OpeFinancieras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_OpeFinancieras.Designer.cs">
+      <DependentUpon>Frm_OpeFinancieras.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_TablasMaestras.cs">
       <SubType>Form</SubType>
@@ -137,6 +149,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Frm_BusqPersonas.resx">
+      <DependentUpon>Frm_BusqPersonas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Clientes.resx">
       <DependentUpon>Frm_Clientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Grupos.resx">
       <DependentUpon>Frm_Grupos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_OpeFinancieras.resx">
+      <DependentUpon>Frm_OpeFinancieras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_TablasMaestras.resx">
       <DependentUpon>Frm_TablasMaestras.cs</DependentUpon>
@@ -190,6 +208,7 @@
       <DependentUpon>MonitorOperacionesDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\MofinDatos.DM_Criptomonedas.datasource" />
     <None Include="Properties\DataSources\MofinModelo.B_Buscados.datasource" />
     <None Include="Properties\DataSources\MofinModelo.C_Clientes.datasource" />
     <None Include="Properties\DataSources\MofinModelo.C_FirBenAcc.datasource" />
@@ -288,12 +307,16 @@
       <Name>MofinModeloEntorno</Name>
     </ProjectReference>
     <ProjectReference Include="..\MofinModelo\MofinModelo.csproj">
-      <Project>{e80cc34e-56cf-429a-8a96-89336ae0c024}</Project>
+      <Project>{4d1b31bf-20ca-41f8-bed5-7a740fcc0f68}</Project>
       <Name>MofinModelo</Name>
     </ProjectReference>
     <ProjectReference Include="..\MofinNegocios\MofinNegocios.csproj">
       <Project>{fc87a849-0770-4439-a6c2-5ee0d9f16d0f}</Project>
       <Name>MofinNegocios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MOFIN_Lib\MOFIN_Lib.csproj">
+      <Project>{bd8686af-ad7b-4792-b1dd-cc8f6f41f4dc}</Project>
+      <Name>MOFIN_Lib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

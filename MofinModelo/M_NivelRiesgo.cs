@@ -18,6 +18,6 @@ namespace MofinModelo
         public short Codigo { get; set; }
         public string Descripcion { get; set; }
         public byte valor { get; set; }
-        public bool CondEspSeguridad { get; set; }
+        public Nullable<bool> CondEspSeguridad { get; set; }
     }
 }

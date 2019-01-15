@@ -12,14 +12,12 @@ namespace MofinModelo
     using System;
     using System.Collections.Generic;
     
-    public partial class M_Pais
+    public partial class sysdiagrams
     {
-        public int ID_Sistema { get; set; }
-        public short Codigo { get; set; }
-        public string Cod_AlfaNum2 { get; set; }
-        public string Cod_AlfaNum3 { get; set; }
-        public string Descripcion { get; set; }
-        public byte Valor { get; set; }
-        public Nullable<bool> CondEspSeguridad { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

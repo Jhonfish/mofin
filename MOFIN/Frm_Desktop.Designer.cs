@@ -55,7 +55,6 @@
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Mnu_Clientes = new System.Windows.Forms.ToolStripMenuItem();
             this.monitorDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -310,16 +309,10 @@
             // viewMenu
             // 
             this.viewMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolBarToolStripMenuItem,
             this.statusBarToolStripMenuItem});
             this.viewMenu.Name = "viewMenu";
             this.viewMenu.Size = new System.Drawing.Size(44, 20);
             this.viewMenu.Text = "&Ver";
-            // 
-            // toolBarToolStripMenuItem
-            // 
-            this.toolBarToolStripMenuItem.Name = "toolBarToolStripMenuItem";
-            this.toolBarToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             // 
             // statusBarToolStripMenuItem
             // 
@@ -338,7 +331,7 @@
             this.búsquedaDeClientesToolStripMenuItem});
             this.Mnu_Clientes.Name = "Mnu_Clientes";
             this.Mnu_Clientes.Size = new System.Drawing.Size(84, 20);
-            this.Mnu_Clientes.Text = "Clientes";
+            this.Mnu_Clientes.Text = "&Clientes";
             // 
             // monitorDeClientesToolStripMenuItem
             // 
@@ -352,6 +345,7 @@
             this.búsquedaDeClientesToolStripMenuItem.Name = "búsquedaDeClientesToolStripMenuItem";
             this.búsquedaDeClientesToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
             this.búsquedaDeClientesToolStripMenuItem.Text = "Búsqueda de Clientes";
+            this.búsquedaDeClientesToolStripMenuItem.Click += new System.EventHandler(this.búsquedaDeClientesToolStripMenuItem_Click);
             // 
             // Mnu_Operaciones
             // 
@@ -360,14 +354,14 @@
             this.transaccionalesToolStripMenuItem});
             this.Mnu_Operaciones.Name = "Mnu_Operaciones";
             this.Mnu_Operaciones.Size = new System.Drawing.Size(108, 20);
-            this.Mnu_Operaciones.Text = "Operaciones";
-            this.Mnu_Operaciones.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            this.Mnu_Operaciones.Text = "&Operaciones";
             // 
             // financierasToolStripMenuItem
             // 
             this.financierasToolStripMenuItem.Name = "financierasToolStripMenuItem";
             this.financierasToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.financierasToolStripMenuItem.Text = "Financieras";
+            this.financierasToolStripMenuItem.Click += new System.EventHandler(this.financierasToolStripMenuItem_Click);
             // 
             // transaccionalesToolStripMenuItem
             // 
@@ -381,7 +375,7 @@
             this.tablasMaestrasToolStripMenuItem});
             this.Mnu_TablasMaestras.Name = "Mnu_TablasMaestras";
             this.Mnu_TablasMaestras.Size = new System.Drawing.Size(140, 20);
-            this.Mnu_TablasMaestras.Text = "Tablas Maestras";
+            this.Mnu_TablasMaestras.Text = "Tablas &Maestras";
             // 
             // tablasMaestrasToolStripMenuItem
             // 
@@ -435,7 +429,7 @@
             this.arrangeIconsToolStripMenuItem});
             this.windowsMenu.Name = "windowsMenu";
             this.windowsMenu.Size = new System.Drawing.Size(84, 20);
-            this.windowsMenu.Text = "&Ventanas";
+            this.windowsMenu.Text = "Ven&tanas";
             // 
             // newWindowToolStripMenuItem
             // 
@@ -539,6 +533,7 @@
             // 
             // toolStripStatusLabel
             // 
+            this.toolStripStatusLabel.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
@@ -555,10 +550,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(843, 558);
             this.Controls.Add(this.SS_BarradeEstadoPrincipal);
             this.Controls.Add(this.TS_MenuPrincipal);
             this.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.TS_MenuPrincipal;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -608,7 +605,6 @@
         private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewMenu;
-        private System.Windows.Forms.ToolStripMenuItem toolBarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statusBarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Mnu_Herramientas;
         private System.Windows.Forms.ToolStripMenuItem Her_Usuarios;

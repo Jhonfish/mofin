@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E80CC34E-56CF-429A-8A96-89336AE0C024}</ProjectGuid>
+    <ProjectGuid>{4D1B31BF-20CA-41F8-BED5-7A740FCC0F68}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MofinModelo</RootNamespace>
@@ -140,7 +140,13 @@
     <Compile Include="O_OperTransaccionales.cs">
       <DependentUpon>MofinModelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="O_RepOperacional.cs">
+      <DependentUpon>MofinModelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>MofinModelo.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="MofinModelo.edmx">

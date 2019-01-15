@@ -72,6 +72,11 @@
     <Compile Include="DM_TipoPersJuridica.cs" />
     <Compile Include="DM_VolOperPersJur.cs" />
     <Compile Include="DM_VolOperPersNat.cs" />
+    <Compile Include="DO_HistPerfOperac.cs" />
+    <Compile Include="DO_Observaciones.cs" />
+    <Compile Include="DO_Operfinancieras.cs" />
+    <Compile Include="DO_OperTransaccionales.cs" />
+    <Compile Include="DO_RepOperacional.cs" />
     <Compile Include="DUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -81,7 +86,7 @@
       <Name>MofinModeloEntorno</Name>
     </ProjectReference>
     <ProjectReference Include="..\MofinModelo\MofinModelo.csproj">
-      <Project>{e80cc34e-56cf-429a-8a96-89336ae0c024}</Project>
+      <Project>{4d1b31bf-20ca-41f8-bed5-7a740fcc0f68}</Project>
       <Name>MofinModelo</Name>
     </ProjectReference>
   </ItemGroup>
