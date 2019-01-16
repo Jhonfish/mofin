@@ -14,6 +14,7 @@ namespace MofinModelo
     
     public partial class O_OperTransaccionales
     {
+        public int ID_Sistema { get; set; }
         public string Tipo_Orden { get; set; }
         public System.DateTime Fec_Pacto { get; set; }
         public string Doc_ID { get; set; }
@@ -27,6 +28,5 @@ namespace MofinModelo
         public string Grp_Cliente { get; set; }
         public string Comprobante { get; set; }
         public Nullable<System.DateTime> Hora_Carga { get; set; }
-        public int ID_Sistema { get; set; }
     }
 }

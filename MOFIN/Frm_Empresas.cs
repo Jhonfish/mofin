@@ -68,7 +68,7 @@ namespace MOFIN
         //************
         private void TSB_ActualizaBotonesNavegacion()
         {
-            if (BS_Empresas.Count <= 1)
+            if (BS_Empresas.Count < 1)
             {
                 this.TSB_Primero.Enabled = false;
                 this.TSB_Anterior.Enabled = false;

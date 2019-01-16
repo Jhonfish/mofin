@@ -18,6 +18,7 @@ namespace MOFIN
         public Frm_Desktop()
         {
             InitializeComponent();
+            //TS_MenuPrincipal.ForeColor = Color.White; ;
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -102,16 +103,6 @@ namespace MOFIN
 
         private void Frm_Desktop_Load(object sender, EventArgs e)
         {
-
-        }
-
-        public void Actualiza_Menu(int vl_RegistroGrupo)
-        {
-            this.Mnu_Clientes.Enabled = true;
-            this.Mnu_Operaciones.Enabled = false;
-            this.Mnu_TablasMaestras.Enabled = true;
-            this.Mnu_Herramientas.Enabled = false;
-           
         }
 
 
@@ -156,11 +147,46 @@ namespace MOFIN
             childForm.Show();
         }
 
+        private void búsquedaDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Frm_BusqPersonas();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
         private void financierasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form childForm = new Frm_OpeFinancieras();
             childForm.MdiParent = this;
             childForm.Show();
+        }
+
+        private void CambiaImagen()
+        {
+            Random vl_Rnd = new Random();
+            int aleatorio = vl_Rnd.Next(0, 4);
+            switch (vl_Rnd.ToString())
+            {
+                case "0":
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop0;
+                    break;
+                case "1":
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop1;
+                    break;
+                case "2":
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop2;
+                    break;
+                case "3":
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop3;
+                    break;
+                case "4":
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop4;
+                    break;
+                    /*                case "5":
+                                        this.BackgroundImage = global::MOFIN.Properties.Resources.desktop5;
+                                        break;
+                     */
+            }
+
         }
     }
 }

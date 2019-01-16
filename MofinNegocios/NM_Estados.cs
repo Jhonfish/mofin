@@ -23,6 +23,10 @@ namespace MofinNegocios
             return dmEstados.Listar();
         }
 
+        public static List<M_Estados> ListarPorPais(short codPais)
+        {
+            return dmEstados.ListarPorPais(codPais);
+        }
         public static M_Estados GetById(int id)
         {
             return dmEstados.GetById(id);

@@ -17,8 +17,8 @@ namespace MOFIN
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Frm_Desktop());
-            //Application.Run(new Frm_Usuarios());
-            // Application.Run(new Frm_Edad());
+            //Application.Run(new Pruebas());
+            //Application.Run(new Frm_TablasMaestras());
         }
     }
 }

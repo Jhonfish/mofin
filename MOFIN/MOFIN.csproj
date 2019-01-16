@@ -85,6 +85,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EntornoDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Frm_BusqPersonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_BusqPersonas.Designer.cs">
+      <DependentUpon>Frm_BusqPersonas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pruebas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pruebas.Designer.cs">
+      <DependentUpon>Pruebas.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Frm_BusqPersonas.resx">
+      <DependentUpon>Frm_BusqPersonas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Clientes.resx">
       <DependentUpon>Frm_Clientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,7 +190,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Pruebas.resx">
+      <DependentUpon>Pruebas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="EntornoDataSet.xsc">
       <DependentUpon>EntornoDataSet.xsd</DependentUpon>
     </None>
@@ -296,13 +315,32 @@
       <Name>MofinModeloEntorno</Name>
     </ProjectReference>
     <ProjectReference Include="..\MofinModelo\MofinModelo.csproj">
-      <Project>{e80cc34e-56cf-429a-8a96-89336ae0c024}</Project>
+      <Project>{c44f1e75-75cc-480e-837d-a3a416594497}</Project>
       <Name>MofinModelo</Name>
     </ProjectReference>
     <ProjectReference Include="..\MofinNegocios\MofinNegocios.csproj">
       <Project>{fc87a849-0770-4439-a6c2-5ee0d9f16d0f}</Project>
       <Name>MofinNegocios</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MOFIN_Lib\MOFIN_Lib.csproj">
+      <Project>{bd8686af-ad7b-4792-b1dd-cc8f6f41f4dc}</Project>
+      <Name>MOFIN_Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop4.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

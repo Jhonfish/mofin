@@ -16,9 +16,10 @@ namespace MofinModelo
     {
         public int ID_Sistema { get; set; }
         public short Codigo { get; set; }
+        public short Cod_Pais { get; set; }
         public int Cod_Compuesto { get; set; }
         public string Descripcion { get; set; }
-        public Nullable<byte> Valor { get; set; }
+        public byte Valor { get; set; }
         public Nullable<bool> CondEspSeguridad { get; set; }
     
         public virtual M_Pais M_Pais { get; set; }

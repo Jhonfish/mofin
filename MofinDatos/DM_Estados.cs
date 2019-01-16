@@ -28,6 +28,21 @@ namespace MofinDatos
             }
         }
 
+        public List<M_Estados> ListarPorPais(short codPais)
+        {
+            using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
+            {
+                var lst = from estados in db.M_Estados
+                              where estados.Cod_Pais == codPais
+                              select estados;
+                return lst.ToList();
+
+                               //   var lst = from d in db.categorias
+                               //              select d;
+                               //   return lst.ToList();
+            }
+        }
+
         public M_Estados GetById(int id)
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())

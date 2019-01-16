@@ -14,6 +14,15 @@ namespace MofinModelo
     
     public partial class C_Clientes
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public C_Clientes()
+        {
+            this.C_FirBenAcc = new HashSet<C_FirBenAcc>();
+            this.C_HistActClientes = new HashSet<C_HistActClientes>();
+            this.O_HistPerfOperac = new HashSet<O_HistPerfOperac>();
+            this.O_Observaciones = new HashSet<O_Observaciones>();
+        }
+    
         public int ID_Sistema { get; set; }
         public string Codigo { get; set; }
         public byte TipoPersona { get; set; }
@@ -102,9 +111,13 @@ namespace MofinModelo
         public Nullable<decimal> Trim_MontoOperac { get; set; }
         public string MapaEmpresa { get; set; }
     
-        public virtual C_FirBenAcc C_FirBenAcc { get; set; }
-        public virtual C_HistActClientes C_HistActClientes { get; set; }
-        public virtual O_HistPerfOperac O_HistPerfOperac { get; set; }
-        public virtual O_Observaciones O_Observaciones { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<C_FirBenAcc> C_FirBenAcc { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<C_HistActClientes> C_HistActClientes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<O_HistPerfOperac> O_HistPerfOperac { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<O_Observaciones> O_Observaciones { get; set; }
     }
 }
