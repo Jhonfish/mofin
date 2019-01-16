@@ -111,11 +111,12 @@
             this.Cmb_Profesion = new System.Windows.Forms.ComboBox();
             this.BS_MProfesiones = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_Estado = new System.Windows.Forms.ComboBox();
-            this.BS_MEstados = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_PaisResidencia = new System.Windows.Forms.ComboBox();
-            this.BS_MPais = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_Res = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_PaisNacimiento = new System.Windows.Forms.ComboBox();
+            this.BS_Nac = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_Nacionalidad = new System.Windows.Forms.ComboBox();
+            this.BS_MPais = new System.Windows.Forms.BindingSource(this.components);
             this.DTP_FecVencDocID = new System.Windows.Forms.DateTimePicker();
             this.Pag2 = new System.Windows.Forms.TabPage();
             this.Pan_BenefBtns = new System.Windows.Forms.Panel();
@@ -128,16 +129,23 @@
             this.Lbl_BenefPuntuacion = new System.Windows.Forms.Label();
             this.Pan_Detalles2 = new System.Windows.Forms.Panel();
             this.Cmb_BenefCriptomonedas = new System.Windows.Forms.ComboBox();
+            this.BS_AutCriptomoneda = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_BenefPEP = new System.Windows.Forms.ComboBox();
+            this.BS_AutPEP = new System.Windows.Forms.BindingSource(this.components);
             this.Nud_BenefVincPorcent = new System.Windows.Forms.NumericUpDown();
             this.BS_CFirBenAcc = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_BenefVincEmpresa = new System.Windows.Forms.TextBox();
             this.Cmb_BenefProfesion = new System.Windows.Forms.ComboBox();
+            this.BS_AutProfesion = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_BenefEdad = new System.Windows.Forms.ComboBox();
+            this.BS_AutEdad = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_BenefEstado = new System.Windows.Forms.ComboBox();
             this.Cmb_BenefPaisResid = new System.Windows.Forms.ComboBox();
+            this.BS_AutRes = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_BenefNacionalidad = new System.Windows.Forms.ComboBox();
+            this.BS_AutNac = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_BenefPaisNacim = new System.Windows.Forms.ComboBox();
+            this.BS_AutPaisNac = new System.Windows.Forms.BindingSource(this.components);
             this.Dtp_BenefFec_Venc = new System.Windows.Forms.DateTimePicker();
             this.Txt_BenefDoc_ID = new System.Windows.Forms.TextBox();
             this.Txt_BenefNme = new System.Windows.Forms.TextBox();
@@ -165,7 +173,6 @@
             this.pEPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.puntuacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.condEspSeguridadDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cClientesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pag3 = new System.Windows.Forms.TabPage();
             this.Pan_Detalles3 = new System.Windows.Forms.Panel();
             this.Chk_Opc30 = new System.Windows.Forms.CheckBox();
@@ -221,6 +228,7 @@
             this.Opt_PerUsoCta1 = new System.Windows.Forms.RadioButton();
             this.Pag5 = new System.Windows.Forms.TabPage();
             this.Pic_MapEpresa = new System.Windows.Forms.PictureBox();
+            this.BS_MEstados = new System.Windows.Forms.BindingSource(this.components);
             this.Lbl_Puntuacion = new System.Windows.Forms.Label();
             this.Lbl_Activo = new System.Windows.Forms.Label();
             this.Lbl_EtiqPunt = new System.Windows.Forms.Label();
@@ -320,10 +328,6 @@
             this.trimNroOperacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trimMontoOperacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mapaEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cFirBenAccDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cHistActClientesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oHistPerfOperacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oObservacionesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_CHistActClientes = new System.Windows.Forms.BindingSource(this.components);
             this.BS_MAntiguedad = new System.Windows.Forms.BindingSource(this.components);
             this.BS_MNivelRiesgo = new System.Windows.Forms.BindingSource(this.components);
@@ -386,13 +390,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.BS_MEdad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MActivComercial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MProfesiones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_MEstados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Res)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Nac)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MPais)).BeginInit();
             this.Pag2.SuspendLayout();
             this.Pan_BenefBtns.SuspendLayout();
             this.Pan_Detalles2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_AutCriptomoneda)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_AutPEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nud_BenefVincPorcent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_CFirBenAcc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_AutProfesion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_AutEdad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_AutRes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_AutNac)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_AutPaisNac)).BeginInit();
             this.Grp_BenfTipoVinculacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_CFirBenAcc)).BeginInit();
             this.Pag3.SuspendLayout();
@@ -406,6 +418,7 @@
             this.Grp_PerUsoCta.SuspendLayout();
             this.Pag5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_MapEpresa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MEstados)).BeginInit();
             this.Pan_DetallesEnc.SuspendLayout();
             this.Grp_TipoPersona.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.monitorOperacionesDataSet)).BeginInit();
@@ -1182,41 +1195,41 @@
             // 
             // Cmb_Estado
             // 
-            this.Cmb_Estado.DataSource = this.BS_MEstados;
-            this.Cmb_Estado.DisplayMember = "Descripcion";
             this.Cmb_Estado.FormattingEnabled = true;
             this.Cmb_Estado.Location = new System.Drawing.Point(4, 144);
             this.Cmb_Estado.Name = "Cmb_Estado";
-            this.Cmb_Estado.Size = new System.Drawing.Size(250, 23);
+            this.Cmb_Estado.Size = new System.Drawing.Size(205, 23);
             this.Cmb_Estado.TabIndex = 38;
-            // 
-            // BS_MEstados
-            // 
-            this.BS_MEstados.DataSource = typeof(MofinModelo.M_Estados);
             // 
             // Cmb_PaisResidencia
             // 
-            this.Cmb_PaisResidencia.DataSource = this.BS_MPais;
+            this.Cmb_PaisResidencia.DataSource = this.BS_Res;
             this.Cmb_PaisResidencia.DisplayMember = "Descripcion";
             this.Cmb_PaisResidencia.FormattingEnabled = true;
             this.Cmb_PaisResidencia.Location = new System.Drawing.Point(4, 116);
             this.Cmb_PaisResidencia.Name = "Cmb_PaisResidencia";
             this.Cmb_PaisResidencia.Size = new System.Drawing.Size(250, 23);
             this.Cmb_PaisResidencia.TabIndex = 37;
+            this.Cmb_PaisResidencia.ValueMember = "Codigo";
+            this.Cmb_PaisResidencia.SelectedIndexChanged += new System.EventHandler(this.Cmb_PaisResidencia_SelectedIndexChanged);
             // 
-            // BS_MPais
+            // BS_Res
             // 
-            this.BS_MPais.DataSource = typeof(MofinModelo.M_Pais);
+            this.BS_Res.DataSource = typeof(MofinModelo.M_Pais);
             // 
             // Cmb_PaisNacimiento
             // 
-            this.Cmb_PaisNacimiento.DataSource = this.BS_MPais;
+            this.Cmb_PaisNacimiento.DataSource = this.BS_Nac;
             this.Cmb_PaisNacimiento.DisplayMember = "Descripcion";
             this.Cmb_PaisNacimiento.FormattingEnabled = true;
             this.Cmb_PaisNacimiento.Location = new System.Drawing.Point(4, 88);
             this.Cmb_PaisNacimiento.Name = "Cmb_PaisNacimiento";
             this.Cmb_PaisNacimiento.Size = new System.Drawing.Size(250, 23);
             this.Cmb_PaisNacimiento.TabIndex = 36;
+            // 
+            // BS_Nac
+            // 
+            this.BS_Nac.DataSource = typeof(MofinModelo.M_Pais);
             // 
             // Cmb_Nacionalidad
             // 
@@ -1227,6 +1240,10 @@
             this.Cmb_Nacionalidad.Name = "Cmb_Nacionalidad";
             this.Cmb_Nacionalidad.Size = new System.Drawing.Size(250, 23);
             this.Cmb_Nacionalidad.TabIndex = 35;
+            // 
+            // BS_MPais
+            // 
+            this.BS_MPais.DataSource = typeof(MofinModelo.M_Pais);
             // 
             // DTP_FecVencDocID
             // 
@@ -1414,7 +1431,7 @@
             // 
             // Cmb_BenefCriptomonedas
             // 
-            this.Cmb_BenefCriptomonedas.DataSource = this.BS_MCriptomonedas;
+            this.Cmb_BenefCriptomonedas.DataSource = this.BS_AutCriptomoneda;
             this.Cmb_BenefCriptomonedas.DisplayMember = "Descripcion";
             this.Cmb_BenefCriptomonedas.FormattingEnabled = true;
             this.Cmb_BenefCriptomonedas.Location = new System.Drawing.Point(404, 279);
@@ -1422,15 +1439,23 @@
             this.Cmb_BenefCriptomonedas.Size = new System.Drawing.Size(200, 23);
             this.Cmb_BenefCriptomonedas.TabIndex = 74;
             // 
+            // BS_AutCriptomoneda
+            // 
+            this.BS_AutCriptomoneda.DataSource = typeof(MofinModelo.M_Criptomonedas);
+            // 
             // Cmb_BenefPEP
             // 
-            this.Cmb_BenefPEP.DataSource = this.BS_MPEP;
+            this.Cmb_BenefPEP.DataSource = this.BS_AutPEP;
             this.Cmb_BenefPEP.DisplayMember = "Descripcion";
             this.Cmb_BenefPEP.FormattingEnabled = true;
             this.Cmb_BenefPEP.Location = new System.Drawing.Point(610, 223);
             this.Cmb_BenefPEP.Name = "Cmb_BenefPEP";
             this.Cmb_BenefPEP.Size = new System.Drawing.Size(150, 23);
             this.Cmb_BenefPEP.TabIndex = 73;
+            // 
+            // BS_AutPEP
+            // 
+            this.BS_AutPEP.DataSource = typeof(MofinModelo.M_PEP);
             // 
             // Nud_BenefVincPorcent
             // 
@@ -1454,7 +1479,7 @@
             // 
             // Cmb_BenefProfesion
             // 
-            this.Cmb_BenefProfesion.DataSource = this.BS_MProfesiones;
+            this.Cmb_BenefProfesion.DataSource = this.BS_AutProfesion;
             this.Cmb_BenefProfesion.DisplayMember = "Descripcion";
             this.Cmb_BenefProfesion.FormattingEnabled = true;
             this.Cmb_BenefProfesion.Location = new System.Drawing.Point(404, 251);
@@ -1462,9 +1487,13 @@
             this.Cmb_BenefProfesion.Size = new System.Drawing.Size(356, 23);
             this.Cmb_BenefProfesion.TabIndex = 70;
             // 
+            // BS_AutProfesion
+            // 
+            this.BS_AutProfesion.DataSource = typeof(MofinModelo.M_Profesiones);
+            // 
             // Cmb_BenefEdad
             // 
-            this.Cmb_BenefEdad.DataSource = this.BS_MEdad;
+            this.Cmb_BenefEdad.DataSource = this.BS_AutEdad;
             this.Cmb_BenefEdad.DisplayMember = "Descripcion";
             this.Cmb_BenefEdad.FormattingEnabled = true;
             this.Cmb_BenefEdad.Location = new System.Drawing.Point(610, 167);
@@ -1472,10 +1501,12 @@
             this.Cmb_BenefEdad.Size = new System.Drawing.Size(150, 23);
             this.Cmb_BenefEdad.TabIndex = 69;
             // 
+            // BS_AutEdad
+            // 
+            this.BS_AutEdad.DataSource = typeof(MofinModelo.M_Edad);
+            // 
             // Cmb_BenefEstado
             // 
-            this.Cmb_BenefEstado.DataSource = this.BS_MEstados;
-            this.Cmb_BenefEstado.DisplayMember = "Descripcion";
             this.Cmb_BenefEstado.FormattingEnabled = true;
             this.Cmb_BenefEstado.Location = new System.Drawing.Point(404, 223);
             this.Cmb_BenefEstado.Name = "Cmb_BenefEstado";
@@ -1484,17 +1515,23 @@
             // 
             // Cmb_BenefPaisResid
             // 
-            this.Cmb_BenefPaisResid.DataSource = this.BS_MPais;
+            this.Cmb_BenefPaisResid.DataSource = this.BS_AutRes;
             this.Cmb_BenefPaisResid.DisplayMember = "Descripcion";
             this.Cmb_BenefPaisResid.FormattingEnabled = true;
             this.Cmb_BenefPaisResid.Location = new System.Drawing.Point(404, 195);
             this.Cmb_BenefPaisResid.Name = "Cmb_BenefPaisResid";
             this.Cmb_BenefPaisResid.Size = new System.Drawing.Size(200, 23);
             this.Cmb_BenefPaisResid.TabIndex = 67;
+            this.Cmb_BenefPaisResid.ValueMember = "Codigo";
+            this.Cmb_BenefPaisResid.SelectedIndexChanged += new System.EventHandler(this.Cmb_BenefPaisResid_SelectedIndexChanged);
+            // 
+            // BS_AutRes
+            // 
+            this.BS_AutRes.DataSource = typeof(MofinModelo.M_Pais);
             // 
             // Cmb_BenefNacionalidad
             // 
-            this.Cmb_BenefNacionalidad.DataSource = this.BS_MPais;
+            this.Cmb_BenefNacionalidad.DataSource = this.BS_AutNac;
             this.Cmb_BenefNacionalidad.DisplayMember = "Descripcion";
             this.Cmb_BenefNacionalidad.FormattingEnabled = true;
             this.Cmb_BenefNacionalidad.Location = new System.Drawing.Point(404, 167);
@@ -1502,15 +1539,23 @@
             this.Cmb_BenefNacionalidad.Size = new System.Drawing.Size(200, 23);
             this.Cmb_BenefNacionalidad.TabIndex = 66;
             // 
+            // BS_AutNac
+            // 
+            this.BS_AutNac.DataSource = typeof(MofinModelo.M_Pais);
+            // 
             // Cmb_BenefPaisNacim
             // 
-            this.Cmb_BenefPaisNacim.DataSource = this.BS_MPais;
+            this.Cmb_BenefPaisNacim.DataSource = this.BS_AutPaisNac;
             this.Cmb_BenefPaisNacim.DisplayMember = "Descripcion";
             this.Cmb_BenefPaisNacim.FormattingEnabled = true;
             this.Cmb_BenefPaisNacim.Location = new System.Drawing.Point(404, 139);
             this.Cmb_BenefPaisNacim.Name = "Cmb_BenefPaisNacim";
             this.Cmb_BenefPaisNacim.Size = new System.Drawing.Size(200, 23);
             this.Cmb_BenefPaisNacim.TabIndex = 65;
+            // 
+            // BS_AutPaisNac
+            // 
+            this.BS_AutPaisNac.DataSource = typeof(MofinModelo.M_Pais);
             // 
             // Dtp_BenefFec_Venc
             // 
@@ -1613,8 +1658,7 @@
             this.vincPorcentDataGridViewTextBoxColumn,
             this.pEPDataGridViewTextBoxColumn,
             this.puntuacionDataGridViewTextBoxColumn,
-            this.condEspSeguridadDataGridViewTextBoxColumn1,
-            this.cClientesDataGridViewTextBoxColumn});
+            this.condEspSeguridadDataGridViewTextBoxColumn1});
             this.Grd_CFirBenAcc.DataSource = this.BS_CFirBenAcc;
             this.Grd_CFirBenAcc.Location = new System.Drawing.Point(8, 18);
             this.Grd_CFirBenAcc.MultiSelect = false;
@@ -1755,13 +1799,6 @@
             this.condEspSeguridadDataGridViewTextBoxColumn1.HeaderText = "CondEspSeguridad";
             this.condEspSeguridadDataGridViewTextBoxColumn1.Name = "condEspSeguridadDataGridViewTextBoxColumn1";
             this.condEspSeguridadDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // cClientesDataGridViewTextBoxColumn
-            // 
-            this.cClientesDataGridViewTextBoxColumn.DataPropertyName = "C_Clientes";
-            this.cClientesDataGridViewTextBoxColumn.HeaderText = "C_Clientes";
-            this.cClientesDataGridViewTextBoxColumn.Name = "cClientesDataGridViewTextBoxColumn";
-            this.cClientesDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Pag3
             // 
@@ -2343,12 +2380,16 @@
             // Pic_MapEpresa
             // 
             this.Pic_MapEpresa.Image = ((System.Drawing.Image)(resources.GetObject("Pic_MapEpresa.Image")));
-            this.Pic_MapEpresa.Location = new System.Drawing.Point(31, 25);
+            this.Pic_MapEpresa.Location = new System.Drawing.Point(6, 25);
             this.Pic_MapEpresa.Name = "Pic_MapEpresa";
-            this.Pic_MapEpresa.Size = new System.Drawing.Size(760, 393);
+            this.Pic_MapEpresa.Size = new System.Drawing.Size(785, 393);
             this.Pic_MapEpresa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Pic_MapEpresa.TabIndex = 0;
             this.Pic_MapEpresa.TabStop = false;
+            // 
+            // BS_MEstados
+            // 
+            this.BS_MEstados.DataSource = typeof(MofinModelo.M_Estados);
             // 
             // Lbl_Puntuacion
             // 
@@ -2551,11 +2592,7 @@
             this.trimAnoDataGridViewTextBoxColumn,
             this.trimNroOperacDataGridViewTextBoxColumn,
             this.trimMontoOperacDataGridViewTextBoxColumn,
-            this.mapaEmpresaDataGridViewTextBoxColumn,
-            this.cFirBenAccDataGridViewTextBoxColumn,
-            this.cHistActClientesDataGridViewTextBoxColumn,
-            this.oHistPerfOperacDataGridViewTextBoxColumn,
-            this.oObservacionesDataGridViewTextBoxColumn});
+            this.mapaEmpresaDataGridViewTextBoxColumn});
             this.Grd_Clientes.DataSource = this.BS_CClientes;
             this.Grd_Clientes.Location = new System.Drawing.Point(14, 121);
             this.Grd_Clientes.Name = "Grd_Clientes";
@@ -3092,30 +3129,6 @@
             this.mapaEmpresaDataGridViewTextBoxColumn.HeaderText = "MapaEmpresa";
             this.mapaEmpresaDataGridViewTextBoxColumn.Name = "mapaEmpresaDataGridViewTextBoxColumn";
             // 
-            // cFirBenAccDataGridViewTextBoxColumn
-            // 
-            this.cFirBenAccDataGridViewTextBoxColumn.DataPropertyName = "C_FirBenAcc";
-            this.cFirBenAccDataGridViewTextBoxColumn.HeaderText = "C_FirBenAcc";
-            this.cFirBenAccDataGridViewTextBoxColumn.Name = "cFirBenAccDataGridViewTextBoxColumn";
-            // 
-            // cHistActClientesDataGridViewTextBoxColumn
-            // 
-            this.cHistActClientesDataGridViewTextBoxColumn.DataPropertyName = "C_HistActClientes";
-            this.cHistActClientesDataGridViewTextBoxColumn.HeaderText = "C_HistActClientes";
-            this.cHistActClientesDataGridViewTextBoxColumn.Name = "cHistActClientesDataGridViewTextBoxColumn";
-            // 
-            // oHistPerfOperacDataGridViewTextBoxColumn
-            // 
-            this.oHistPerfOperacDataGridViewTextBoxColumn.DataPropertyName = "O_HistPerfOperac";
-            this.oHistPerfOperacDataGridViewTextBoxColumn.HeaderText = "O_HistPerfOperac";
-            this.oHistPerfOperacDataGridViewTextBoxColumn.Name = "oHistPerfOperacDataGridViewTextBoxColumn";
-            // 
-            // oObservacionesDataGridViewTextBoxColumn
-            // 
-            this.oObservacionesDataGridViewTextBoxColumn.DataPropertyName = "O_Observaciones";
-            this.oObservacionesDataGridViewTextBoxColumn.HeaderText = "O_Observaciones";
-            this.oObservacionesDataGridViewTextBoxColumn.Name = "oObservacionesDataGridViewTextBoxColumn";
-            // 
             // BS_CHistActClientes
             // 
             this.BS_CHistActClientes.DataSource = typeof(MofinModelo.C_HistActClientes);
@@ -3182,15 +3195,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.BS_MEdad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MActivComercial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MProfesiones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_MEstados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Res)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Nac)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MPais)).EndInit();
             this.Pag2.ResumeLayout(false);
             this.Pag2.PerformLayout();
             this.Pan_BenefBtns.ResumeLayout(false);
             this.Pan_Detalles2.ResumeLayout(false);
             this.Pan_Detalles2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_AutCriptomoneda)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_AutPEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nud_BenefVincPorcent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_CFirBenAcc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_AutProfesion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_AutEdad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_AutRes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_AutNac)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_AutPaisNac)).EndInit();
             this.Grp_BenfTipoVinculacion.ResumeLayout(false);
             this.Grp_BenfTipoVinculacion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_CFirBenAcc)).EndInit();
@@ -3208,6 +3229,7 @@
             this.Grp_PerUsoCta.PerformLayout();
             this.Pag5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Pic_MapEpresa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MEstados)).EndInit();
             this.Pan_DetallesEnc.ResumeLayout(false);
             this.Pan_DetallesEnc.PerformLayout();
             this.Grp_TipoPersona.ResumeLayout(false);
@@ -3373,6 +3395,24 @@
         private System.Windows.Forms.BindingSource BS_MProductos;
         private System.Windows.Forms.BindingSource BS_MServicios;
         private System.Windows.Forms.BindingSource BS_MVolOperPersJur;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDSistemaDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codClienteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoVinculoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn docIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecVencimientoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paisNacimDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nacionalidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paisResidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profesionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn criptomonedaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vincEmpresaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vincPorcentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pEPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn puntuacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn condEspSeguridadDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDSistemaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoPersonaDataGridViewTextBoxColumn;
@@ -3460,28 +3500,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn trimNroOperacDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn trimMontoOperacDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mapaEmpresaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cFirBenAccDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cHistActClientesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oHistPerfOperacDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oObservacionesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDSistemaDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codClienteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoVinculoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn docIDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecVencimientoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paisNacimDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nacionalidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paisResidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn profesionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn criptomonedaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vincEmpresaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vincPorcentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pEPDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn puntuacionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn condEspSeguridadDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cClientesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource BS_Res;
+        private System.Windows.Forms.BindingSource BS_Nac;
+        private System.Windows.Forms.BindingSource BS_AutRes;
+        private System.Windows.Forms.BindingSource BS_AutNac;
+        private System.Windows.Forms.BindingSource BS_AutPaisNac;
+        private System.Windows.Forms.BindingSource BS_AutCriptomoneda;
+        private System.Windows.Forms.BindingSource BS_AutPEP;
+        private System.Windows.Forms.BindingSource BS_AutProfesion;
+        private System.Windows.Forms.BindingSource BS_AutEdad;
     }
 }

@@ -20,6 +20,7 @@ namespace MOFIN
         bool vl_EsNuevo = true;
         C_Clientes t_Cliente = new C_Clientes();
         C_FirBenAcc t_FirBenAcc = new C_FirBenAcc();
+        //M_Pais mPais = new M_Pais();
 
         public Frm_Clientes()
         {
@@ -48,6 +49,24 @@ namespace MOFIN
             BS_MTipoPersJuridica.DataSource = NM_TipoPersJuridica.Listar();
             BS_MVolOperPersNat.DataSource = NM_VolOperPersNat.Listar();
             BS_MVolOperPersJur.DataSource = NM_VolOperPersJur.Listar();
+
+            //Cmb_Nacionalidad.DataSource = NM_Pais.Listar();
+            //Cmb_Nacionalidad.DisplayMember = "Descripcion";
+            //Cmb_Nacionalidad.ValueMember = "Cod_Pais";
+            //Cmb_PaisNacimiento.DataSource = NM_Pais.Listar();
+            //Cmb_PaisResidencia.DataSource = NM_Pais.Listar();
+            BS_Nac.DataSource = NM_Pais.Listar();
+            BS_Res.DataSource = NM_Pais.Listar();
+
+            BS_AutPaisNac.DataSource = NM_Pais.Listar();
+            BS_AutNac.DataSource = NM_Pais.Listar();
+            BS_AutRes.DataSource = NM_Pais.Listar();
+
+            BS_AutProfesion.DataSource = NM_Profesiones.Listar();
+            BS_AutPEP.DataSource = NM_PEP.Listar();
+            BS_AutCriptomoneda.DataSource = NM_Criptomonedas.Listar();
+            BS_AutEdad.DataSource = NM_Edad.Listar();
+
 
             this.Modo_Consulta();
         }
@@ -180,5 +199,31 @@ namespace MOFIN
             t_FirBenAcc = BS_CFirBenAcc.Current as C_FirBenAcc;
         }
 
+        private void Cmb_PaisResidencia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(Cmb_PaisResidencia.SelectedIndex != -1)
+            {
+                //Cmb_PaisResidencia.Items.Clear();
+                short pais = (short) Cmb_PaisResidencia.SelectedValue;
+
+                Cmb_Estado.DataSource = NM_Estados.ListarPorPais(pais);
+                Cmb_Estado.DisplayMember = "Descripcion";
+                Cmb_Estado.ValueMember = "Codigo";
+            }
+        }
+
+        private void Cmb_BenefPaisResid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Cmb_BenefPaisResid.SelectedIndex != -1)
+            {
+                //Cmb_BenefPaisResid.Items.Clear();
+                short pais = (short)Cmb_BenefPaisResid.SelectedValue;
+
+                Cmb_BenefEstado.DataSource = NM_Estados.ListarPorPais(pais);
+                Cmb_BenefEstado.DisplayMember = "Descripcion";
+                Cmb_BenefEstado.ValueMember = "Codigo";
+            }
+
+        }
     }
 }

@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MofinNegocios", "MofinNegoc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MofinModeloEntorno", "MofinModeloEntorno\MofinModeloEntorno.csproj", "{4D37C5B6-8F39-4BCE-9547-C89DB8CE242D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MofinModelo", "MofinModelo\MofinModelo.csproj", "{C44F1E75-75CC-480E-837D-A3A416594497}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MofinModelo", "MofinModelo\MofinModelo.csproj", "{4D1B31BF-20CA-41F8-BED5-7A740FCC0F68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{4D37C5B6-8F39-4BCE-9547-C89DB8CE242D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D37C5B6-8F39-4BCE-9547-C89DB8CE242D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D37C5B6-8F39-4BCE-9547-C89DB8CE242D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C44F1E75-75CC-480E-837D-A3A416594497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C44F1E75-75CC-480E-837D-A3A416594497}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C44F1E75-75CC-480E-837D-A3A416594497}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C44F1E75-75CC-480E-837D-A3A416594497}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D1B31BF-20CA-41F8-BED5-7A740FCC0F68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D1B31BF-20CA-41F8-BED5-7A740FCC0F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D1B31BF-20CA-41F8-BED5-7A740FCC0F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D1B31BF-20CA-41F8-BED5-7A740FCC0F68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

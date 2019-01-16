@@ -47,6 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NO_HistPerfOperac.cs" />
+    <Compile Include="NO_Observaciones.cs" />
+    <Compile Include="NO_Operfinancieras.cs" />
+    <Compile Include="NO_OperTransaccionales.cs" />
+    <Compile Include="NO_RepOperacional.cs" />
     <Compile Include="NB_Buscados.cs" />
     <Compile Include="NC_Clientes.cs" />
     <Compile Include="NC_FirBenAcc.cs" />
