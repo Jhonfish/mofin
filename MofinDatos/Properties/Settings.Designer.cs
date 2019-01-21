@@ -26,7 +26,7 @@ namespace MofinDatos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=CARLOS-10;Initial Catalog=Entorno;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SOULHUNTER-PC\MOFIN;Initial Catalog=Entorno;Integrated Security=True")]
         public string EntornoConnectionString {
             get {
                 return ((string)(this["EntornoConnectionString"]));
@@ -36,7 +36,7 @@ namespace MofinDatos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=CARLOS-10;Initial Catalog=MonitorOperaciones;Integrated Sec" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SOULHUNTER-PC\MOFIN;Initial Catalog=MonitorOperaciones;Integrated Sec" +
             "urity=True")]
         public string MonitorOperacionesConnectionString {
             get {

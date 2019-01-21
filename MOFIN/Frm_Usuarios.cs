@@ -11,6 +11,7 @@ using MetroFramework.Forms;
 using MofinNegocios;
 using MofinModelo;
 using MofinModeloEntorno;
+using MOFIN_LIB;
 
 namespace MOFIN
 {
@@ -23,6 +24,7 @@ namespace MOFIN
         public Frm_Usuarios()
         {
             InitializeComponent();
+            this.Asigna_Nombres(null, null);
         }
 
         private void Frm_Usuarios_Load(object sender, EventArgs e)
@@ -173,14 +175,14 @@ namespace MOFIN
         private void TSB_Eliminar_Click(object sender, EventArgs e)
         {
             string vl_RegEliminar = t_Usuarios.Nombre.ToString();
-            DialogResult vl_Resp = MessageBox.Show("Desea Eliminar este Registro? " + "\n\n" + vl_RegEliminar,
-                "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult vl_Resp = MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9010) + "\n\n" + vl_RegEliminar,
+                MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (vl_Resp == DialogResult.Yes)
             {
                 NUsuarios.Elimiar(t_Usuarios);
                 BS_Usuarios.DataSource = NUsuarios.Listar();
                 Grd_Usuarios.Refresh();
-                MessageBox.Show("Se eliminó el registro actual", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9011), MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -206,6 +208,41 @@ namespace MOFIN
         {
             BS_Usuarios.MoveLast();
             TSB_ActualizaBotonesNavegacion();
+        }
+        private void Asigna_Nombres(object sender, EventArgs e)
+        {
+            this.Text = MOFIN_LIB.Funciones._Mens_Idioma(2200);
+            this.Lbl_IDUsuario.Text = MOFIN_LIB.Funciones._Mens_Idioma(2201);
+            this.Lbl_Nombre.Text = MOFIN_LIB.Funciones._Mens_Idioma(1002);
+            this.Lbl_Password.Text = MOFIN_LIB.Funciones._Mens_Idioma(1008);
+            this.Lbl_FondoEscritorio.Text = MOFIN_LIB.Funciones._Mens_Idioma(2202);
+            this.Lbl_Idioma.Text = MOFIN_LIB.Funciones._Mens_Idioma(2203);
+            this.Lbl_PaisUso.Text = MOFIN_LIB.Funciones._Mens_Idioma(2204);
+            this.Lbl_FormatoFecha.Text = MOFIN_LIB.Funciones._Mens_Idioma(2205);
+            this.Chk_Sonido.Text = MOFIN_LIB.Funciones._Mens_Idioma(2206);
+
+            this.Opc_Desktop1.Text = MOFIN_LIB.Funciones._Mens_Idioma(2207);
+            this.Opc_Desktop2.Text = MOFIN_LIB.Funciones._Mens_Idioma(2208);
+            this.Opc_Idioma1.Text = MOFIN_LIB.Funciones._Mens_Idioma(311);
+            this.Opc_Idioma2.Text = MOFIN_LIB.Funciones._Mens_Idioma(312);
+            this.Opc_Pais1.Text = MOFIN_LIB.Funciones._Mens_Idioma(301);
+            this.Opc_Pais2.Text = MOFIN_LIB.Funciones._Mens_Idioma(302);
+
+            this.TSB_Primero.Text = MOFIN_LIB.Funciones._Mens_Idioma(131);
+            this.TSB_Anterior.Text = MOFIN_LIB.Funciones._Mens_Idioma(132);
+            this.TSB_Siguiente.Text = MOFIN_LIB.Funciones._Mens_Idioma(133);
+            this.TSB_Ultimo.Text = MOFIN_LIB.Funciones._Mens_Idioma(134);
+            this.TSB_Agregar.Text = MOFIN_LIB.Funciones._Mens_Idioma(136);
+            this.TSB_Modificar.Text = MOFIN_LIB.Funciones._Mens_Idioma(137);
+            this.TSB_Eliminar.Text = MOFIN_LIB.Funciones._Mens_Idioma(138);
+            this.TSB_Imprimir.Text = MOFIN_LIB.Funciones._Mens_Idioma(139);
+            this.TSB_Salir.Text = MOFIN_LIB.Funciones._Mens_Idioma(140);
+
+            this.Col_ID_Usuario.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(2201);
+            this.Col_Nombre.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1002);
+
+            MOFIN_LIB.Funciones.TTT_Btn(Btn_Aceptar, MOFIN_LIB.Funciones._Mens_Idioma(141));
+            MOFIN_LIB.Funciones.TTT_Btn(Btn_Cancelar, MOFIN_LIB.Funciones._Mens_Idioma(142));
         }
 
     }

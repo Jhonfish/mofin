@@ -22,6 +22,10 @@ namespace MofinNegocios
         {
             return dObservaciones.Listar();
         }
+        public static List<O_Observaciones> ListarPorCodigoTipo(string Codigo, int Tipo)
+        {
+            return dObservaciones.ListarPorCodTipo(Codigo, Tipo);
+        }
 
         public static O_Observaciones GetById(int id)
         {

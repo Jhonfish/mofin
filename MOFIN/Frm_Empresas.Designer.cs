@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label codigoLabel;
-            System.Windows.Forms.Label nombreLabel;
-            System.Windows.Forms.Label siglasLabel;
-            System.Windows.Forms.Label doc_IDLabel;
-            System.Windows.Forms.Label emailLabel;
-            System.Windows.Forms.Label telefono1Label;
-            System.Windows.Forms.Label telefono2Label;
-            System.Windows.Forms.Label direccionLabel;
-            System.Windows.Forms.Label logoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Empresas));
+            this.Lbl_Codigo = new System.Windows.Forms.Label();
+            this.Lbl_Nombre = new System.Windows.Forms.Label();
+            this.Lbl_Siglas = new System.Windows.Forms.Label();
+            this.Lbl_DocID = new System.Windows.Forms.Label();
+            this.Lbl_Email = new System.Windows.Forms.Label();
+            this.Lbl_Telefono1 = new System.Windows.Forms.Label();
+            this.Lbl_Telefono2 = new System.Windows.Forms.Label();
+            this.Lbl_Direccion = new System.Windows.Forms.Label();
+            this.Lbl_Logo = new System.Windows.Forms.Label();
             this.TS_BarraHerramientas = new System.Windows.Forms.ToolStrip();
             this.TSB_Primero = new System.Windows.Forms.ToolStripButton();
             this.TSB_Anterior = new System.Windows.Forms.ToolStripButton();
@@ -65,112 +65,95 @@
             this.Txt_Logo = new System.Windows.Forms.TextBox();
             this.Btn_Cancelar = new System.Windows.Forms.Button();
             this.Btn_Aceptar = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            codigoLabel = new System.Windows.Forms.Label();
-            nombreLabel = new System.Windows.Forms.Label();
-            siglasLabel = new System.Windows.Forms.Label();
-            doc_IDLabel = new System.Windows.Forms.Label();
-            emailLabel = new System.Windows.Forms.Label();
-            telefono1Label = new System.Windows.Forms.Label();
-            telefono2Label = new System.Windows.Forms.Label();
-            direccionLabel = new System.Windows.Forms.Label();
-            logoLabel = new System.Windows.Forms.Label();
+            this.Col_Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Siglas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TS_BarraHerramientas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Empresas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Empresas)).BeginInit();
             this.Pan_Elementos.SuspendLayout();
             this.SuspendLayout();
             // 
-            // codigoLabel
+            // Lbl_Codigo
             // 
-            codigoLabel.AutoSize = true;
-            codigoLabel.Location = new System.Drawing.Point(26, 82);
-            codigoLabel.Name = "codigoLabel";
-            codigoLabel.Size = new System.Drawing.Size(64, 16);
-            codigoLabel.TabIndex = 37;
-            codigoLabel.Text = "Codigo:";
+            this.Lbl_Codigo.AutoSize = true;
+            this.Lbl_Codigo.Location = new System.Drawing.Point(26, 82);
+            this.Lbl_Codigo.Name = "Lbl_Codigo";
+            this.Lbl_Codigo.Size = new System.Drawing.Size(64, 16);
+            this.Lbl_Codigo.TabIndex = 37;
+            this.Lbl_Codigo.Text = "Codigo:";
             // 
-            // nombreLabel
+            // Lbl_Nombre
             // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(26, 110);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(64, 16);
-            nombreLabel.TabIndex = 39;
-            nombreLabel.Text = "Nombre:";
+            this.Lbl_Nombre.AutoSize = true;
+            this.Lbl_Nombre.Location = new System.Drawing.Point(26, 110);
+            this.Lbl_Nombre.Name = "Lbl_Nombre";
+            this.Lbl_Nombre.Size = new System.Drawing.Size(64, 16);
+            this.Lbl_Nombre.TabIndex = 39;
+            this.Lbl_Nombre.Text = "Nombre:";
             // 
-            // siglasLabel
+            // Lbl_Siglas
             // 
-            siglasLabel.AutoSize = true;
-            siglasLabel.Location = new System.Drawing.Point(26, 138);
-            siglasLabel.Name = "siglasLabel";
-            siglasLabel.Size = new System.Drawing.Size(64, 16);
-            siglasLabel.TabIndex = 41;
-            siglasLabel.Text = "Siglas:";
+            this.Lbl_Siglas.AutoSize = true;
+            this.Lbl_Siglas.Location = new System.Drawing.Point(26, 138);
+            this.Lbl_Siglas.Name = "Lbl_Siglas";
+            this.Lbl_Siglas.Size = new System.Drawing.Size(64, 16);
+            this.Lbl_Siglas.TabIndex = 41;
+            this.Lbl_Siglas.Text = "Siglas:";
             // 
-            // doc_IDLabel
+            // Lbl_DocID
             // 
-            doc_IDLabel.AutoSize = true;
-            doc_IDLabel.Location = new System.Drawing.Point(238, 82);
-            doc_IDLabel.Name = "doc_IDLabel";
-            doc_IDLabel.Size = new System.Drawing.Size(64, 16);
-            doc_IDLabel.TabIndex = 45;
-            doc_IDLabel.Text = "Doc ID:";
+            this.Lbl_DocID.AutoSize = true;
+            this.Lbl_DocID.Location = new System.Drawing.Point(238, 82);
+            this.Lbl_DocID.Name = "Lbl_DocID";
+            this.Lbl_DocID.Size = new System.Drawing.Size(64, 16);
+            this.Lbl_DocID.TabIndex = 45;
+            this.Lbl_DocID.Text = "Doc ID:";
             // 
-            // emailLabel
+            // Lbl_Email
             // 
-            emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(26, 222);
-            emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(56, 16);
-            emailLabel.TabIndex = 47;
-            emailLabel.Text = "Email:";
+            this.Lbl_Email.AutoSize = true;
+            this.Lbl_Email.Location = new System.Drawing.Point(26, 222);
+            this.Lbl_Email.Name = "Lbl_Email";
+            this.Lbl_Email.Size = new System.Drawing.Size(56, 16);
+            this.Lbl_Email.TabIndex = 47;
+            this.Lbl_Email.Text = "Email:";
             // 
-            // telefono1Label
+            // Lbl_Telefono1
             // 
-            telefono1Label.AutoSize = true;
-            telefono1Label.Location = new System.Drawing.Point(26, 278);
-            telefono1Label.Name = "telefono1Label";
-            telefono1Label.Size = new System.Drawing.Size(88, 16);
-            telefono1Label.TabIndex = 49;
-            telefono1Label.Text = "Telefono1:";
+            this.Lbl_Telefono1.AutoSize = true;
+            this.Lbl_Telefono1.Location = new System.Drawing.Point(26, 278);
+            this.Lbl_Telefono1.Name = "Lbl_Telefono1";
+            this.Lbl_Telefono1.Size = new System.Drawing.Size(88, 16);
+            this.Lbl_Telefono1.TabIndex = 49;
+            this.Lbl_Telefono1.Text = "Telefono1:";
             // 
-            // telefono2Label
+            // Lbl_Telefono2
             // 
-            telefono2Label.AutoSize = true;
-            telefono2Label.Location = new System.Drawing.Point(26, 306);
-            telefono2Label.Name = "telefono2Label";
-            telefono2Label.Size = new System.Drawing.Size(88, 16);
-            telefono2Label.TabIndex = 51;
-            telefono2Label.Text = "Telefono2:";
+            this.Lbl_Telefono2.AutoSize = true;
+            this.Lbl_Telefono2.Location = new System.Drawing.Point(26, 306);
+            this.Lbl_Telefono2.Name = "Lbl_Telefono2";
+            this.Lbl_Telefono2.Size = new System.Drawing.Size(88, 16);
+            this.Lbl_Telefono2.TabIndex = 51;
+            this.Lbl_Telefono2.Text = "Telefono2:";
             // 
-            // direccionLabel
+            // Lbl_Direccion
             // 
-            direccionLabel.AutoSize = true;
-            direccionLabel.Location = new System.Drawing.Point(26, 166);
-            direccionLabel.Name = "direccionLabel";
-            direccionLabel.Size = new System.Drawing.Size(88, 16);
-            direccionLabel.TabIndex = 53;
-            direccionLabel.Text = "Dirección:";
+            this.Lbl_Direccion.AutoSize = true;
+            this.Lbl_Direccion.Location = new System.Drawing.Point(26, 166);
+            this.Lbl_Direccion.Name = "Lbl_Direccion";
+            this.Lbl_Direccion.Size = new System.Drawing.Size(88, 16);
+            this.Lbl_Direccion.TabIndex = 53;
+            this.Lbl_Direccion.Text = "Dirección:";
             // 
-            // logoLabel
+            // Lbl_Logo
             // 
-            logoLabel.AutoSize = true;
-            logoLabel.Location = new System.Drawing.Point(26, 334);
-            logoLabel.Name = "logoLabel";
-            logoLabel.Size = new System.Drawing.Size(48, 16);
-            logoLabel.TabIndex = 55;
-            logoLabel.Text = "Logo:";
+            this.Lbl_Logo.AutoSize = true;
+            this.Lbl_Logo.Location = new System.Drawing.Point(26, 334);
+            this.Lbl_Logo.Name = "Lbl_Logo";
+            this.Lbl_Logo.Size = new System.Drawing.Size(48, 16);
+            this.Lbl_Logo.TabIndex = 55;
+            this.Lbl_Logo.Text = "Logo:";
             // 
             // TS_BarraHerramientas
             // 
@@ -304,17 +287,9 @@
             this.Grd_Empresas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.Grd_Empresas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grd_Empresas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21});
+            this.Col_Codigo,
+            this.Col_Nombre,
+            this.Col_Siglas});
             this.Grd_Empresas.DataSource = this.BS_Empresas;
             this.Grd_Empresas.Location = new System.Drawing.Point(414, 135);
             this.Grd_Empresas.Name = "Grd_Empresas";
@@ -426,6 +401,7 @@
             this.Txt_Logo.Name = "Txt_Logo";
             this.Txt_Logo.Size = new System.Drawing.Size(280, 50);
             this.Txt_Logo.TabIndex = 65;
+            this.Txt_Logo.DoubleClick += new System.EventHandler(this.Txt_Logo_DoubleClick);
             // 
             // Btn_Cancelar
             // 
@@ -465,73 +441,26 @@
             this.Btn_Aceptar.Visible = false;
             this.Btn_Aceptar.Click += new System.EventHandler(this.Btn_Aceptar_Click);
             // 
-            // dataGridViewTextBoxColumn11
+            // Col_Codigo
             // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "ID_Sistema";
-            this.dataGridViewTextBoxColumn11.HeaderText = "ID_Sistema";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.Col_Codigo.DataPropertyName = "Codigo";
+            this.Col_Codigo.HeaderText = "Codigo";
+            this.Col_Codigo.Name = "Col_Codigo";
+            this.Col_Codigo.Width = 75;
             // 
-            // dataGridViewTextBoxColumn12
+            // Col_Nombre
             // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Codigo";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Codigo";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.Col_Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Col_Nombre.DataPropertyName = "Nombre";
+            this.Col_Nombre.HeaderText = "Nombre";
+            this.Col_Nombre.Name = "Col_Nombre";
+            this.Col_Nombre.Width = 150;
             // 
-            // dataGridViewTextBoxColumn13
+            // Col_Siglas
             // 
-            this.dataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Nombre";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.Width = 81;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Siglas";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Siglas";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "Directorio";
-            this.dataGridViewTextBoxColumn15.HeaderText = "Directorio";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "Doc_ID";
-            this.dataGridViewTextBoxColumn16.HeaderText = "Doc_ID";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "Email";
-            this.dataGridViewTextBoxColumn17.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "Telefono1";
-            this.dataGridViewTextBoxColumn18.HeaderText = "Telefono1";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "Telefono2";
-            this.dataGridViewTextBoxColumn19.HeaderText = "Telefono2";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "Direccion";
-            this.dataGridViewTextBoxColumn20.HeaderText = "Direccion";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "Logo";
-            this.dataGridViewTextBoxColumn21.HeaderText = "Logo";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.Col_Siglas.DataPropertyName = "Siglas";
+            this.Col_Siglas.HeaderText = "Siglas";
+            this.Col_Siglas.Name = "Col_Siglas";
             // 
             // Frm_Empresas
             // 
@@ -542,15 +471,15 @@
             this.Controls.Add(this.Btn_Cancelar);
             this.Controls.Add(this.Btn_Aceptar);
             this.Controls.Add(this.Grd_Empresas);
-            this.Controls.Add(codigoLabel);
-            this.Controls.Add(nombreLabel);
-            this.Controls.Add(siglasLabel);
-            this.Controls.Add(doc_IDLabel);
-            this.Controls.Add(emailLabel);
-            this.Controls.Add(telefono1Label);
-            this.Controls.Add(telefono2Label);
-            this.Controls.Add(direccionLabel);
-            this.Controls.Add(logoLabel);
+            this.Controls.Add(this.Lbl_Codigo);
+            this.Controls.Add(this.Lbl_Nombre);
+            this.Controls.Add(this.Lbl_Siglas);
+            this.Controls.Add(this.Lbl_DocID);
+            this.Controls.Add(this.Lbl_Email);
+            this.Controls.Add(this.Lbl_Telefono1);
+            this.Controls.Add(this.Lbl_Telefono2);
+            this.Controls.Add(this.Lbl_Direccion);
+            this.Controls.Add(this.Lbl_Logo);
             this.Controls.Add(this.TS_BarraHerramientas);
             this.Controls.Add(this.Pan_Elementos);
             this.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -601,16 +530,17 @@
         private System.Windows.Forms.TextBox Txt_Logo;
         private System.Windows.Forms.Button Btn_Cancelar;
         private System.Windows.Forms.Button Btn_Aceptar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.Label Lbl_Codigo;
+        private System.Windows.Forms.Label Lbl_Nombre;
+        private System.Windows.Forms.Label Lbl_Siglas;
+        private System.Windows.Forms.Label Lbl_DocID;
+        private System.Windows.Forms.Label Lbl_Email;
+        private System.Windows.Forms.Label Lbl_Telefono1;
+        private System.Windows.Forms.Label Lbl_Telefono2;
+        private System.Windows.Forms.Label Lbl_Direccion;
+        private System.Windows.Forms.Label Lbl_Logo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Siglas;
     }
 }

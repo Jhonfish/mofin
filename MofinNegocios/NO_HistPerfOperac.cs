@@ -22,7 +22,10 @@ namespace MofinNegocios
         {
             return dHistperfoperac.Listar();
         }
-
+        public static List<O_HistPerfOperac> ListarPorCodigoTipo(string Codigo, int Tipo)
+        {
+            return dHistperfoperac.ListarPorCodTipo(Codigo, Tipo);
+        }
         public static O_HistPerfOperac GetById(int id)
         {
             return dHistperfoperac.GetById(id);

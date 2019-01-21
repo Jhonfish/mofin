@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NIdiomas.cs" />
     <Compile Include="NO_HistPerfOperac.cs" />
     <Compile Include="NO_Observaciones.cs" />
     <Compile Include="NO_Operfinancieras.cs" />

@@ -54,11 +54,6 @@ namespace MOFIN
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_Salir = new System.Windows.Forms.ToolStripButton();
             this.Grd_Detalles = new System.Windows.Forms.DataGridView();
-            this.iDSistemaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.condEspSeguridadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_MActivComercial = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_TablaMaestra = new System.Windows.Forms.ComboBox();
             this.BS_MAntiguedad = new System.Windows.Forms.BindingSource(this.components);
@@ -85,8 +80,9 @@ namespace MOFIN
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
             this.Chk_CES = new System.Windows.Forms.CheckBox();
             this.Cmb_Pais = new System.Windows.Forms.ComboBox();
-            this.Txt_CodPais = new System.Windows.Forms.TextBox();
-            this.Lb_CondEspSeguridad = new System.Windows.Forms.Label();
+            this.Lbl_CondEspSeguridad = new System.Windows.Forms.Label();
+            this.Col_Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TS_BarraHerramientas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Detalles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MActivComercial)).BeginInit();
@@ -122,7 +118,7 @@ namespace MOFIN
             // Lbl_CodAlfa2
             // 
             this.Lbl_CodAlfa2.AutoSize = true;
-            this.Lbl_CodAlfa2.Location = new System.Drawing.Point(174, 139);
+            this.Lbl_CodAlfa2.Location = new System.Drawing.Point(166, 139);
             this.Lbl_CodAlfa2.Name = "Lbl_CodAlfa2";
             this.Lbl_CodAlfa2.Size = new System.Drawing.Size(72, 16);
             this.Lbl_CodAlfa2.TabIndex = 40;
@@ -132,7 +128,7 @@ namespace MOFIN
             // Lbl_CodAlfa3
             // 
             this.Lbl_CodAlfa3.AutoSize = true;
-            this.Lbl_CodAlfa3.Location = new System.Drawing.Point(292, 139);
+            this.Lbl_CodAlfa3.Location = new System.Drawing.Point(284, 139);
             this.Lbl_CodAlfa3.Name = "Lbl_CodAlfa3";
             this.Lbl_CodAlfa3.Size = new System.Drawing.Size(72, 16);
             this.Lbl_CodAlfa3.TabIndex = 42;
@@ -347,11 +343,8 @@ namespace MOFIN
             this.Grd_Detalles.BackgroundColor = System.Drawing.Color.White;
             this.Grd_Detalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grd_Detalles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDSistemaDataGridViewTextBoxColumn,
-            this.codigoDataGridViewTextBoxColumn,
-            this.descripcionDataGridViewTextBoxColumn,
-            this.valorDataGridViewTextBoxColumn,
-            this.condEspSeguridadDataGridViewTextBoxColumn});
+            this.Col_Codigo,
+            this.Col_Nombre});
             this.Grd_Detalles.DataSource = this.BS_MActivComercial;
             this.Grd_Detalles.Location = new System.Drawing.Point(397, 128);
             this.Grd_Detalles.Name = "Grd_Detalles";
@@ -360,50 +353,6 @@ namespace MOFIN
             this.Grd_Detalles.Size = new System.Drawing.Size(365, 288);
             this.Grd_Detalles.TabIndex = 2;
             this.Grd_Detalles.CurrentCellChanged += new System.EventHandler(this.Grd_Detalles_CurrentCellChanged);
-            // 
-            // iDSistemaDataGridViewTextBoxColumn
-            // 
-            this.iDSistemaDataGridViewTextBoxColumn.DataPropertyName = "ID_Sistema";
-            this.iDSistemaDataGridViewTextBoxColumn.HeaderText = "ID_Sistema";
-            this.iDSistemaDataGridViewTextBoxColumn.Name = "iDSistemaDataGridViewTextBoxColumn";
-            this.iDSistemaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDSistemaDataGridViewTextBoxColumn.Visible = false;
-            this.iDSistemaDataGridViewTextBoxColumn.Width = 94;
-            // 
-            // codigoDataGridViewTextBoxColumn
-            // 
-            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
-            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoDataGridViewTextBoxColumn.Width = 81;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.MinimumWidth = 280;
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descripcionDataGridViewTextBoxColumn.Width = 280;
-            // 
-            // valorDataGridViewTextBoxColumn
-            // 
-            this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
-            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
-            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
-            this.valorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.valorDataGridViewTextBoxColumn.Visible = false;
-            this.valorDataGridViewTextBoxColumn.Width = 73;
-            // 
-            // condEspSeguridadDataGridViewTextBoxColumn
-            // 
-            this.condEspSeguridadDataGridViewTextBoxColumn.DataPropertyName = "CondEspSeguridad";
-            this.condEspSeguridadDataGridViewTextBoxColumn.HeaderText = "CondEspSeguridad";
-            this.condEspSeguridadDataGridViewTextBoxColumn.Name = "condEspSeguridadDataGridViewTextBoxColumn";
-            this.condEspSeguridadDataGridViewTextBoxColumn.ReadOnly = true;
-            this.condEspSeguridadDataGridViewTextBoxColumn.Visible = false;
-            this.condEspSeguridadDataGridViewTextBoxColumn.Width = 161;
             // 
             // BS_MActivComercial
             // 
@@ -507,7 +456,7 @@ namespace MOFIN
             this.Pan_Elementos.Controls.Add(this.Txt_CodAlfa3);
             this.Pan_Elementos.Controls.Add(this.Txt_Nombre);
             this.Pan_Elementos.Controls.Add(this.Chk_CES);
-            this.Pan_Elementos.Location = new System.Drawing.Point(14, 124);
+            this.Pan_Elementos.Location = new System.Drawing.Point(19, 123);
             this.Pan_Elementos.Name = "Pan_Elementos";
             this.Pan_Elementos.Size = new System.Drawing.Size(353, 236);
             this.Pan_Elementos.TabIndex = 4;
@@ -537,6 +486,7 @@ namespace MOFIN
             // 
             // Txt_CodAlfa2
             // 
+            this.Txt_CodAlfa2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_TablaMaestra, "Cod_AlfaNum2", true));
             this.Txt_CodAlfa2.Location = new System.Drawing.Point(160, 35);
             this.Txt_CodAlfa2.Name = "Txt_CodAlfa2";
             this.Txt_CodAlfa2.Size = new System.Drawing.Size(57, 22);
@@ -545,7 +495,8 @@ namespace MOFIN
             // 
             // Txt_CodAlfa3
             // 
-            this.Txt_CodAlfa3.Location = new System.Drawing.Point(276, 35);
+            this.Txt_CodAlfa3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_TablaMaestra, "Cod_AlfaNum3", true));
+            this.Txt_CodAlfa3.Location = new System.Drawing.Point(279, 36);
             this.Txt_CodAlfa3.Name = "Txt_CodAlfa3";
             this.Txt_CodAlfa3.Size = new System.Drawing.Size(57, 22);
             this.Txt_CodAlfa3.TabIndex = 2;
@@ -576,7 +527,7 @@ namespace MOFIN
             this.Cmb_Pais.DataSource = this.BS_MPais;
             this.Cmb_Pais.DisplayMember = "Descripcion";
             this.Cmb_Pais.FormattingEnabled = true;
-            this.Cmb_Pais.Location = new System.Drawing.Point(80, 130);
+            this.Cmb_Pais.Location = new System.Drawing.Point(85, 128);
             this.Cmb_Pais.Name = "Cmb_Pais";
             this.Cmb_Pais.Size = new System.Drawing.Size(270, 24);
             this.Cmb_Pais.TabIndex = 3;
@@ -584,23 +535,31 @@ namespace MOFIN
             this.Cmb_Pais.Visible = false;
             this.Cmb_Pais.SelectedIndexChanged += new System.EventHandler(this.Cmb_Pais_SelectedIndexChanged);
             // 
-            // Txt_CodPais
+            // Lbl_CondEspSeguridad
             // 
-            this.Txt_CodPais.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_MPais, "Codigo", true));
-            this.Txt_CodPais.Location = new System.Drawing.Point(317, 105);
-            this.Txt_CodPais.Name = "Txt_CodPais";
-            this.Txt_CodPais.Size = new System.Drawing.Size(33, 22);
-            this.Txt_CodPais.TabIndex = 62;
-            this.Txt_CodPais.TextChanged += new System.EventHandler(this.Txt_CodPais_TextChanged);
+            this.Lbl_CondEspSeguridad.AutoSize = true;
+            this.Lbl_CondEspSeguridad.Location = new System.Drawing.Point(16, 333);
+            this.Lbl_CondEspSeguridad.Name = "Lbl_CondEspSeguridad";
+            this.Lbl_CondEspSeguridad.Size = new System.Drawing.Size(256, 16);
+            this.Lbl_CondEspSeguridad.TabIndex = 63;
+            this.Lbl_CondEspSeguridad.Text = "Condición Especial de Seguridad";
             // 
-            // Lb_CondEspSeguridad
+            // Col_Codigo
             // 
-            this.Lb_CondEspSeguridad.AutoSize = true;
-            this.Lb_CondEspSeguridad.Location = new System.Drawing.Point(16, 333);
-            this.Lb_CondEspSeguridad.Name = "Lb_CondEspSeguridad";
-            this.Lb_CondEspSeguridad.Size = new System.Drawing.Size(256, 16);
-            this.Lb_CondEspSeguridad.TabIndex = 63;
-            this.Lb_CondEspSeguridad.Text = "Condición Especial de Seguridad";
+            this.Col_Codigo.DataPropertyName = "Codigo";
+            this.Col_Codigo.HeaderText = "Codigo";
+            this.Col_Codigo.Name = "Col_Codigo";
+            this.Col_Codigo.ReadOnly = true;
+            this.Col_Codigo.Width = 81;
+            // 
+            // Col_Nombre
+            // 
+            this.Col_Nombre.DataPropertyName = "Descripcion";
+            this.Col_Nombre.HeaderText = "Descripcion";
+            this.Col_Nombre.MinimumWidth = 280;
+            this.Col_Nombre.Name = "Col_Nombre";
+            this.Col_Nombre.ReadOnly = true;
+            this.Col_Nombre.Width = 280;
             // 
             // Frm_TablasMaestras
             // 
@@ -609,8 +568,7 @@ namespace MOFIN
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(775, 430);
-            this.Controls.Add(this.Lb_CondEspSeguridad);
-            this.Controls.Add(this.Txt_CodPais);
+            this.Controls.Add(this.Lbl_CondEspSeguridad);
             this.Controls.Add(this.Cmb_Pais);
             this.Controls.Add(this.Lbl_Pais);
             this.Controls.Add(this.Lbl_tablaMaestra);
@@ -713,12 +671,8 @@ namespace MOFIN
         private System.Windows.Forms.TextBox Txt_Nombre;
         private System.Windows.Forms.CheckBox Chk_CES;
         private System.Windows.Forms.ComboBox Cmb_Pais;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDSistemaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn condEspSeguridadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox Txt_CodPais;
-        private System.Windows.Forms.Label Lb_CondEspSeguridad;
+        private System.Windows.Forms.Label Lbl_CondEspSeguridad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Nombre;
     }
 }

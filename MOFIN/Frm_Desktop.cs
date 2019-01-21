@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using MOFIN_LIB;
 
 namespace MOFIN
 {
@@ -18,6 +19,7 @@ namespace MOFIN
         public Frm_Desktop()
         {
             InitializeComponent();
+            this.Asigna_Nombres(null, null);
             //TS_MenuPrincipal.ForeColor = Color.White; ;
         }
 
@@ -70,7 +72,7 @@ namespace MOFIN
 
          private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SS_BarradeEstadoPrincipal.Visible = statusBarToolStripMenuItem.Checked;
+            SS_BarradeEstadoPrincipal.Visible = Ver_BarraStado.Checked;
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -187,6 +189,57 @@ namespace MOFIN
                      */
             }
 
+        }
+        private void Asigna_Nombres(object sender, EventArgs e)
+        {
+            this.Text = MOFIN_LIB.Funciones._Mens_Idioma(1);
+
+            this.Mnu_Archivo.Text= MOFIN_LIB.Funciones._Mens_Idioma(401);
+                this.Arc_Abrir.Text = MOFIN_LIB.Funciones._Mens_Idioma(402);
+                this.Arc_SelEmpresa.Text = MOFIN_LIB.Funciones._Mens_Idioma(2000);
+                this.Arc_Imprimir.Text = MOFIN_LIB.Funciones._Mens_Idioma(139);
+                this.Arc_VistaPrevia.Text = MOFIN_LIB.Funciones._Mens_Idioma(403);
+                this.Arc_ConfigImpres.Text = MOFIN_LIB.Funciones._Mens_Idioma(404);
+                this.Arc_Salir.Text = MOFIN_LIB.Funciones._Mens_Idioma(140);
+
+            this.Mnu_Editar.Text = MOFIN_LIB.Funciones._Mens_Idioma(411);
+                this.Edi_Deshacer.Text = MOFIN_LIB.Funciones._Mens_Idioma(412);
+                this.Edi_Rehacer.Text = MOFIN_LIB.Funciones._Mens_Idioma(413);
+                this.Edi_Cortar.Text = MOFIN_LIB.Funciones._Mens_Idioma(414);
+                this.Edi_Copiar.Text = MOFIN_LIB.Funciones._Mens_Idioma(415);
+                this.Edi_Pegar.Text = MOFIN_LIB.Funciones._Mens_Idioma(416);
+                this.Edi_SelecTodo.Text = MOFIN_LIB.Funciones._Mens_Idioma(417);
+
+            this.Mnu_Ver.Text = MOFIN_LIB.Funciones._Mens_Idioma(421);
+                this.Ver_BarraStado.Text = MOFIN_LIB.Funciones._Mens_Idioma(422);
+
+            this.Mnu_Clientes.Text = MOFIN_LIB.Funciones._Mens_Idioma(2321);
+                this.Cli_Monitor.Text = MOFIN_LIB.Funciones._Mens_Idioma(11000);
+                this.Cli_Busqueda.Text = MOFIN_LIB.Funciones._Mens_Idioma(12000);
+
+            this.Mnu_Operaciones.Text = MOFIN_LIB.Funciones._Mens_Idioma(2331);
+                this.Ope_Financieras.Text = MOFIN_LIB.Funciones._Mens_Idioma(13000);
+                this.Ope_Transaccionales.Text = MOFIN_LIB.Funciones._Mens_Idioma(2333);
+
+            this.Mnu_TablasMaestras.Text = MOFIN_LIB.Funciones._Mens_Idioma(2341);
+                this.Tab_Maestros.Text = MOFIN_LIB.Funciones._Mens_Idioma(10001);
+
+            this.Mnu_Herramientas.Text = MOFIN_LIB.Funciones._Mens_Idioma(2311);
+                this.Her_Empresas.Text = MOFIN_LIB.Funciones._Mens_Idioma(2100);
+                this.Her_Grupos.Text = MOFIN_LIB.Funciones._Mens_Idioma(2300);
+                this.Her_Usuarios.Text = MOFIN_LIB.Funciones._Mens_Idioma(2200);
+
+            this.Mnu_Ventanas.Text = MOFIN_LIB.Funciones._Mens_Idioma(431);
+                this.Ven_Cascada.Text = MOFIN_LIB.Funciones._Mens_Idioma(432);
+                this.Ven_MosVert.Text = MOFIN_LIB.Funciones._Mens_Idioma(433);
+                this.Ven_MosHor.Text = MOFIN_LIB.Funciones._Mens_Idioma(434);
+                this.Ven_CerrarTodo.Text = MOFIN_LIB.Funciones._Mens_Idioma(435);
+
+            this.Mnu_Ayuda.Text = MOFIN_LIB.Funciones._Mens_Idioma(441);
+                this.Ayu_Acerca.Text = MOFIN_LIB.Funciones._Mens_Idioma(442);
+
+            //            MOFIN_LIB.Funciones.TTT_Btn(Btn_Aceptar, MOFIN_LIB.Funciones._Mens_Idioma(141));
+            //            MOFIN_LIB.Funciones.TTT_Btn(Btn_Cancelar, MOFIN_LIB.Funciones._Mens_Idioma(142));
         }
     }
 }

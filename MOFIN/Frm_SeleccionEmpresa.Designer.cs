@@ -35,24 +35,17 @@
             this.Lbl_Contraseña = new System.Windows.Forms.Label();
             this.Cmb_Empresa = new System.Windows.Forms.ComboBox();
             this.BS_Empresas = new System.Windows.Forms.BindingSource(this.components);
-            this.entornoDataSet = new MOFIN.EntornoDataSet();
             this.Txt_Usuario = new System.Windows.Forms.TextBox();
             this.Txt_Password = new System.Windows.Forms.TextBox();
             this.Btn_Cancelar = new System.Windows.Forms.Button();
             this.Btn_Aceptar = new System.Windows.Forms.Button();
-            this.TA_Empresas = new MOFIN.EntornoDataSetTableAdapters.EmpresasTableAdapter();
-            this.tableAdapterManager = new MOFIN.EntornoDataSetTableAdapters.TableAdapterManager();
-            this.TA_Emp_Accesos = new MOFIN.EntornoDataSetTableAdapters.Emp_AccesosTableAdapter();
-            this.TA_Grupos = new MOFIN.EntornoDataSetTableAdapters.GruposTableAdapter();
-            this.TA_Usuarios = new MOFIN.EntornoDataSetTableAdapters.UsuariosTableAdapter();
+            this.BS_Usuarios = new System.Windows.Forms.BindingSource(this.components);
             this.BS_Emp_Accesos = new System.Windows.Forms.BindingSource(this.components);
             this.BS_Grupos = new System.Windows.Forms.BindingSource(this.components);
-            this.BS_Usuarios = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BS_Empresas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.entornoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Emp_Accesos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_Empresa
@@ -95,13 +88,7 @@
             // 
             // BS_Empresas
             // 
-            this.BS_Empresas.DataMember = "Empresas";
-            this.BS_Empresas.DataSource = this.entornoDataSet;
-            // 
-            // entornoDataSet
-            // 
-            this.entornoDataSet.DataSetName = "EntornoDataSet";
-            this.entornoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.BS_Empresas.DataSource = typeof(MofinModeloEntorno.Empresas);
             // 
             // Txt_Usuario
             // 
@@ -114,7 +101,6 @@
             // 
             // Txt_Password
             // 
-            this.Txt_Password.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.Txt_Password.Location = new System.Drawing.Point(179, 160);
             this.Txt_Password.MaxLength = 32;
             this.Txt_Password.Name = "Txt_Password";
@@ -159,48 +145,17 @@
             this.Btn_Aceptar.UseVisualStyleBackColor = true;
             this.Btn_Aceptar.Click += new System.EventHandler(this.Btn_Aceptar_Click);
             // 
-            // TA_Empresas
+            // BS_Usuarios
             // 
-            this.TA_Empresas.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Emp_AccesosTableAdapter = this.TA_Emp_Accesos;
-            this.tableAdapterManager.EmpresasTableAdapter = this.TA_Empresas;
-            this.tableAdapterManager.Grupo_OpcionesTableAdapter = null;
-            this.tableAdapterManager.GruposTableAdapter = this.TA_Grupos;
-            this.tableAdapterManager.IdiomasTableAdapter = null;
-            this.tableAdapterManager.Opc_SistemaTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = MOFIN.EntornoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UsuariosTableAdapter = this.TA_Usuarios;
-            // 
-            // TA_Emp_Accesos
-            // 
-            this.TA_Emp_Accesos.ClearBeforeFill = true;
-            // 
-            // TA_Grupos
-            // 
-            this.TA_Grupos.ClearBeforeFill = true;
-            // 
-            // TA_Usuarios
-            // 
-            this.TA_Usuarios.ClearBeforeFill = true;
+            this.BS_Usuarios.DataSource = typeof(MofinModeloEntorno.Usuarios);
             // 
             // BS_Emp_Accesos
             // 
-            this.BS_Emp_Accesos.DataMember = "Emp_Accesos";
-            this.BS_Emp_Accesos.DataSource = this.entornoDataSet;
+            this.BS_Emp_Accesos.DataSource = typeof(MofinModeloEntorno.Emp_Accesos);
             // 
             // BS_Grupos
             // 
-            this.BS_Grupos.DataMember = "Grupos";
-            this.BS_Grupos.DataSource = this.entornoDataSet;
-            // 
-            // BS_Usuarios
-            // 
-            this.BS_Usuarios.DataMember = "Usuarios";
-            this.BS_Usuarios.DataSource = this.entornoDataSet;
+            this.BS_Grupos.DataSource = typeof(MofinModeloEntorno.Grupos);
             // 
             // Frm_SeleccionEmpresa
             // 
@@ -211,7 +166,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.CancelButton = this.Btn_Cancelar;
-            this.ClientSize = new System.Drawing.Size(516, 250);
+            this.ClientSize = new System.Drawing.Size(516, 248);
             this.ControlBox = false;
             this.Controls.Add(this.Btn_Cancelar);
             this.Controls.Add(this.Btn_Aceptar);
@@ -229,10 +184,9 @@
             this.Text = "Selección de Empresa";
             this.Load += new System.EventHandler(this.Frm_SeleccionEmpresa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BS_Empresas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.entornoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Emp_Accesos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,15 +202,9 @@
         private System.Windows.Forms.TextBox Txt_Password;
         private System.Windows.Forms.Button Btn_Cancelar;
         private System.Windows.Forms.Button Btn_Aceptar;
-        private EntornoDataSet entornoDataSet;
         private System.Windows.Forms.BindingSource BS_Empresas;
-        private EntornoDataSetTableAdapters.EmpresasTableAdapter TA_Empresas;
-        private EntornoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private EntornoDataSetTableAdapters.Emp_AccesosTableAdapter TA_Emp_Accesos;
-        private System.Windows.Forms.BindingSource BS_Emp_Accesos;
-        private EntornoDataSetTableAdapters.GruposTableAdapter TA_Grupos;
-        private System.Windows.Forms.BindingSource BS_Grupos;
-        private EntornoDataSetTableAdapters.UsuariosTableAdapter TA_Usuarios;
         private System.Windows.Forms.BindingSource BS_Usuarios;
+        private System.Windows.Forms.BindingSource BS_Emp_Accesos;
+        private System.Windows.Forms.BindingSource BS_Grupos;
     }
 }

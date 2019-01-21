@@ -71,5 +71,15 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MofinModeloEntorno\MofinModeloEntorno.csproj">
+      <Project>{4d37c5b6-8f39-4bce-9547-c89db8ce242d}</Project>
+      <Name>MofinModeloEntorno</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MofinNegocios\MofinNegocios.csproj">
+      <Project>{fc87a849-0770-4439-a6c2-5ee0d9f16d0f}</Project>
+      <Name>MofinNegocios</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

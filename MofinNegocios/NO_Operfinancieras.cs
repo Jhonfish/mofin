@@ -22,7 +22,10 @@ namespace MofinNegocios
         {
             return dOperfinancieras.Listar();
         }
-
+        public static List<O_Operfinancieras> ListarPorCodigo(string Codigo, DateTime? FDesde, DateTime? FHasta)
+        {
+            return dOperfinancieras.ListarPorCodigo(Codigo, FDesde, FHasta);
+        }
         public static O_Operfinancieras GetById(int id)
         {
             return dOperfinancieras.GetById(id);
