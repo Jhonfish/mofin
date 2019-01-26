@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label Lbl_IDUsuario;
-            System.Windows.Forms.Label Lbl_Nombre;
-            System.Windows.Forms.Label Lbl_Password;
-            System.Windows.Forms.Label Lbl_FondoEscritorio;
-            System.Windows.Forms.Label Lbl_Idioma;
-            System.Windows.Forms.Label Lbl_PaisUso;
-            System.Windows.Forms.Label Lbl_FormatoFecha;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Usuarios));
+            this.Lbl_IDUsuario = new System.Windows.Forms.Label();
+            this.Lbl_Nombre = new System.Windows.Forms.Label();
+            this.Lbl_Password = new System.Windows.Forms.Label();
+            this.Lbl_FondoEscritorio = new System.Windows.Forms.Label();
+            this.Lbl_Idioma = new System.Windows.Forms.Label();
+            this.Lbl_PaisUso = new System.Windows.Forms.Label();
+            this.Lbl_FormatoFecha = new System.Windows.Forms.Label();
             this.Btn_Cancelar = new System.Windows.Forms.Button();
             this.Btn_Aceptar = new System.Windows.Forms.Button();
             this.TS_BarraHerramientas = new System.Windows.Forms.ToolStrip();
@@ -52,15 +52,6 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_Salir = new System.Windows.Forms.ToolStripButton();
             this.Grd_Usuarios = new System.Windows.Forms.DataGridView();
-            this.ID_Sistema = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cnfg_Desktop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cnfg_Idioma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cnfg_PaisUso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cnfg_FormFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_Usuarios = new System.Windows.Forms.BindingSource(this.components);
             this.Pan_Elementos = new System.Windows.Forms.Panel();
             this.Chk_Sonido = new System.Windows.Forms.CheckBox();
@@ -79,13 +70,8 @@
             this.Txt_IDUsuario = new System.Windows.Forms.TextBox();
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
             this.Txt_Password = new System.Windows.Forms.TextBox();
-            Lbl_IDUsuario = new System.Windows.Forms.Label();
-            Lbl_Nombre = new System.Windows.Forms.Label();
-            Lbl_Password = new System.Windows.Forms.Label();
-            Lbl_FondoEscritorio = new System.Windows.Forms.Label();
-            Lbl_Idioma = new System.Windows.Forms.Label();
-            Lbl_PaisUso = new System.Windows.Forms.Label();
-            Lbl_FormatoFecha = new System.Windows.Forms.Label();
+            this.Col_ID_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TS_BarraHerramientas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Usuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).BeginInit();
@@ -98,73 +84,73 @@
             // 
             // Lbl_IDUsuario
             // 
-            Lbl_IDUsuario.AutoSize = true;
-            Lbl_IDUsuario.Location = new System.Drawing.Point(34, 71);
-            Lbl_IDUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            Lbl_IDUsuario.Name = "Lbl_IDUsuario";
-            Lbl_IDUsuario.Size = new System.Drawing.Size(96, 16);
-            Lbl_IDUsuario.TabIndex = 21;
-            Lbl_IDUsuario.Text = "ID Usuario:";
+            this.Lbl_IDUsuario.AutoSize = true;
+            this.Lbl_IDUsuario.Location = new System.Drawing.Point(34, 71);
+            this.Lbl_IDUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_IDUsuario.Name = "Lbl_IDUsuario";
+            this.Lbl_IDUsuario.Size = new System.Drawing.Size(96, 16);
+            this.Lbl_IDUsuario.TabIndex = 21;
+            this.Lbl_IDUsuario.Text = "ID Usuario:";
             // 
             // Lbl_Nombre
             // 
-            Lbl_Nombre.AutoSize = true;
-            Lbl_Nombre.Location = new System.Drawing.Point(34, 103);
-            Lbl_Nombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            Lbl_Nombre.Name = "Lbl_Nombre";
-            Lbl_Nombre.Size = new System.Drawing.Size(64, 16);
-            Lbl_Nombre.TabIndex = 23;
-            Lbl_Nombre.Text = "Nombre:";
+            this.Lbl_Nombre.AutoSize = true;
+            this.Lbl_Nombre.Location = new System.Drawing.Point(34, 103);
+            this.Lbl_Nombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_Nombre.Name = "Lbl_Nombre";
+            this.Lbl_Nombre.Size = new System.Drawing.Size(64, 16);
+            this.Lbl_Nombre.TabIndex = 23;
+            this.Lbl_Nombre.Text = "Nombre:";
             // 
             // Lbl_Password
             // 
-            Lbl_Password.AutoSize = true;
-            Lbl_Password.Location = new System.Drawing.Point(34, 135);
-            Lbl_Password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            Lbl_Password.Name = "Lbl_Password";
-            Lbl_Password.Size = new System.Drawing.Size(80, 16);
-            Lbl_Password.TabIndex = 25;
-            Lbl_Password.Text = "Password:";
+            this.Lbl_Password.AutoSize = true;
+            this.Lbl_Password.Location = new System.Drawing.Point(34, 135);
+            this.Lbl_Password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_Password.Name = "Lbl_Password";
+            this.Lbl_Password.Size = new System.Drawing.Size(80, 16);
+            this.Lbl_Password.TabIndex = 25;
+            this.Lbl_Password.Text = "Password:";
             // 
             // Lbl_FondoEscritorio
             // 
-            Lbl_FondoEscritorio.AutoSize = true;
-            Lbl_FondoEscritorio.Location = new System.Drawing.Point(34, 173);
-            Lbl_FondoEscritorio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            Lbl_FondoEscritorio.Name = "Lbl_FondoEscritorio";
-            Lbl_FondoEscritorio.Size = new System.Drawing.Size(168, 16);
-            Lbl_FondoEscritorio.TabIndex = 27;
-            Lbl_FondoEscritorio.Text = "Fondo de Escritorio:";
+            this.Lbl_FondoEscritorio.AutoSize = true;
+            this.Lbl_FondoEscritorio.Location = new System.Drawing.Point(34, 173);
+            this.Lbl_FondoEscritorio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_FondoEscritorio.Name = "Lbl_FondoEscritorio";
+            this.Lbl_FondoEscritorio.Size = new System.Drawing.Size(168, 16);
+            this.Lbl_FondoEscritorio.TabIndex = 27;
+            this.Lbl_FondoEscritorio.Text = "Fondo de Escritorio:";
             // 
             // Lbl_Idioma
             // 
-            Lbl_Idioma.AutoSize = true;
-            Lbl_Idioma.Location = new System.Drawing.Point(34, 236);
-            Lbl_Idioma.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            Lbl_Idioma.Name = "Lbl_Idioma";
-            Lbl_Idioma.Size = new System.Drawing.Size(64, 16);
-            Lbl_Idioma.TabIndex = 29;
-            Lbl_Idioma.Text = "Idioma:";
+            this.Lbl_Idioma.AutoSize = true;
+            this.Lbl_Idioma.Location = new System.Drawing.Point(34, 236);
+            this.Lbl_Idioma.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_Idioma.Name = "Lbl_Idioma";
+            this.Lbl_Idioma.Size = new System.Drawing.Size(64, 16);
+            this.Lbl_Idioma.TabIndex = 29;
+            this.Lbl_Idioma.Text = "Idioma:";
             // 
             // Lbl_PaisUso
             // 
-            Lbl_PaisUso.AutoSize = true;
-            Lbl_PaisUso.Location = new System.Drawing.Point(34, 299);
-            Lbl_PaisUso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            Lbl_PaisUso.Name = "Lbl_PaisUso";
-            Lbl_PaisUso.Size = new System.Drawing.Size(80, 16);
-            Lbl_PaisUso.TabIndex = 31;
-            Lbl_PaisUso.Text = "Pais Uso:";
+            this.Lbl_PaisUso.AutoSize = true;
+            this.Lbl_PaisUso.Location = new System.Drawing.Point(34, 299);
+            this.Lbl_PaisUso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_PaisUso.Name = "Lbl_PaisUso";
+            this.Lbl_PaisUso.Size = new System.Drawing.Size(80, 16);
+            this.Lbl_PaisUso.TabIndex = 31;
+            this.Lbl_PaisUso.Text = "Pais Uso:";
             // 
             // Lbl_FormatoFecha
             // 
-            Lbl_FormatoFecha.AutoSize = true;
-            Lbl_FormatoFecha.Location = new System.Drawing.Point(34, 362);
-            Lbl_FormatoFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            Lbl_FormatoFecha.Name = "Lbl_FormatoFecha";
-            Lbl_FormatoFecha.Size = new System.Drawing.Size(144, 16);
-            Lbl_FormatoFecha.TabIndex = 33;
-            Lbl_FormatoFecha.Text = "Formato de Fecha:";
+            this.Lbl_FormatoFecha.AutoSize = true;
+            this.Lbl_FormatoFecha.Location = new System.Drawing.Point(34, 362);
+            this.Lbl_FormatoFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_FormatoFecha.Name = "Lbl_FormatoFecha";
+            this.Lbl_FormatoFecha.Size = new System.Drawing.Size(144, 16);
+            this.Lbl_FormatoFecha.TabIndex = 33;
+            this.Lbl_FormatoFecha.Text = "Formato de Fecha:";
             // 
             // Btn_Cancelar
             // 
@@ -332,20 +318,11 @@
             // 
             this.Grd_Usuarios.AllowUserToAddRows = false;
             this.Grd_Usuarios.AllowUserToDeleteRows = false;
-            this.Grd_Usuarios.AllowUserToResizeRows = false;
             this.Grd_Usuarios.AutoGenerateColumns = false;
-            this.Grd_Usuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.Grd_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grd_Usuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_Sistema,
-            this.ID_Usuario,
-            this.Nombre,
-            this.Password,
-            this.Cnfg_Desktop,
-            this.Cnfg_Idioma,
-            this.Cnfg_PaisUso,
-            this.Cnfg_FormFecha,
-            this.dataGridViewTextBoxColumn9});
+            this.Col_ID_Usuario,
+            this.Col_Nombre});
             this.Grd_Usuarios.DataSource = this.BS_Usuarios;
             this.Grd_Usuarios.Location = new System.Drawing.Point(360, 142);
             this.Grd_Usuarios.Name = "Grd_Usuarios";
@@ -354,83 +331,6 @@
             this.Grd_Usuarios.Size = new System.Drawing.Size(366, 246);
             this.Grd_Usuarios.TabIndex = 8;
             this.Grd_Usuarios.CurrentCellChanged += new System.EventHandler(this.Grd_Usuarios_CurrentCellChanged);
-            // 
-            // ID_Sistema
-            // 
-            this.ID_Sistema.DataPropertyName = "ID_Sistema";
-            this.ID_Sistema.HeaderText = "ID_Sistema";
-            this.ID_Sistema.Name = "ID_Sistema";
-            this.ID_Sistema.ReadOnly = true;
-            this.ID_Sistema.Visible = false;
-            this.ID_Sistema.Width = 67;
-            // 
-            // ID_Usuario
-            // 
-            this.ID_Usuario.DataPropertyName = "ID_Usuario";
-            this.ID_Usuario.HeaderText = "ID_Usuario";
-            this.ID_Usuario.Name = "ID_Usuario";
-            this.ID_Usuario.ReadOnly = true;
-            this.ID_Usuario.Width = 113;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 81;
-            // 
-            // Password
-            // 
-            this.Password.DataPropertyName = "Password";
-            this.Password.HeaderText = "Password";
-            this.Password.Name = "Password";
-            this.Password.ReadOnly = true;
-            this.Password.Width = 97;
-            // 
-            // Cnfg_Desktop
-            // 
-            this.Cnfg_Desktop.DataPropertyName = "Cnfg_Desktop";
-            this.Cnfg_Desktop.HeaderText = "Cnfg_Desktop";
-            this.Cnfg_Desktop.Name = "Cnfg_Desktop";
-            this.Cnfg_Desktop.ReadOnly = true;
-            this.Cnfg_Desktop.Visible = false;
-            // 
-            // Cnfg_Idioma
-            // 
-            this.Cnfg_Idioma.DataPropertyName = "Cnfg_Idioma";
-            this.Cnfg_Idioma.HeaderText = "Cnfg_Idioma";
-            this.Cnfg_Idioma.Name = "Cnfg_Idioma";
-            this.Cnfg_Idioma.ReadOnly = true;
-            this.Cnfg_Idioma.Visible = false;
-            this.Cnfg_Idioma.Width = 91;
-            // 
-            // Cnfg_PaisUso
-            // 
-            this.Cnfg_PaisUso.DataPropertyName = "Cnfg_PaisUso";
-            this.Cnfg_PaisUso.HeaderText = "Cnfg_PaisUso";
-            this.Cnfg_PaisUso.Name = "Cnfg_PaisUso";
-            this.Cnfg_PaisUso.ReadOnly = true;
-            this.Cnfg_PaisUso.Visible = false;
-            this.Cnfg_PaisUso.Width = 99;
-            // 
-            // Cnfg_FormFecha
-            // 
-            this.Cnfg_FormFecha.DataPropertyName = "Cnfg_FormFecha";
-            this.Cnfg_FormFecha.HeaderText = "Cnfg_FormFecha";
-            this.Cnfg_FormFecha.Name = "Cnfg_FormFecha";
-            this.Cnfg_FormFecha.ReadOnly = true;
-            this.Cnfg_FormFecha.Visible = false;
-            this.Cnfg_FormFecha.Width = 113;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Cnfg_SonidoClick";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Cnfg_SonidoClick";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Visible = false;
-            this.dataGridViewTextBoxColumn9.Width = 116;
             // 
             // BS_Usuarios
             // 
@@ -621,6 +521,24 @@
             this.Txt_Password.Size = new System.Drawing.Size(200, 22);
             this.Txt_Password.TabIndex = 45;
             // 
+            // Col_ID_Usuario
+            // 
+            this.Col_ID_Usuario.DataPropertyName = "ID_Usuario";
+            this.Col_ID_Usuario.FillWeight = 120F;
+            this.Col_ID_Usuario.HeaderText = "ID_Usuario";
+            this.Col_ID_Usuario.Name = "Col_ID_Usuario";
+            this.Col_ID_Usuario.ReadOnly = true;
+            this.Col_ID_Usuario.Width = 120;
+            // 
+            // Col_Nombre
+            // 
+            this.Col_Nombre.DataPropertyName = "Nombre";
+            this.Col_Nombre.FillWeight = 280F;
+            this.Col_Nombre.HeaderText = "Nombre";
+            this.Col_Nombre.Name = "Col_Nombre";
+            this.Col_Nombre.ReadOnly = true;
+            this.Col_Nombre.Width = 240;
+            // 
             // Frm_Usuarios
             // 
             this.AcceptButton = this.Btn_Aceptar;
@@ -630,13 +548,13 @@
             this.ClientSize = new System.Drawing.Size(746, 439);
             this.Controls.Add(this.Grd_Usuarios);
             this.Controls.Add(this.TS_BarraHerramientas);
-            this.Controls.Add(Lbl_IDUsuario);
-            this.Controls.Add(Lbl_Nombre);
-            this.Controls.Add(Lbl_Password);
-            this.Controls.Add(Lbl_FondoEscritorio);
-            this.Controls.Add(Lbl_Idioma);
-            this.Controls.Add(Lbl_PaisUso);
-            this.Controls.Add(Lbl_FormatoFecha);
+            this.Controls.Add(this.Lbl_IDUsuario);
+            this.Controls.Add(this.Lbl_Nombre);
+            this.Controls.Add(this.Lbl_Password);
+            this.Controls.Add(this.Lbl_FondoEscritorio);
+            this.Controls.Add(this.Lbl_Idioma);
+            this.Controls.Add(this.Lbl_PaisUso);
+            this.Controls.Add(this.Lbl_FormatoFecha);
             this.Controls.Add(this.Btn_Cancelar);
             this.Controls.Add(this.Btn_Aceptar);
             this.Controls.Add(this.Pan_Elementos);
@@ -704,14 +622,14 @@
         private System.Windows.Forms.TextBox Txt_IDUsuario;
         private System.Windows.Forms.TextBox Txt_Nombre;
         private System.Windows.Forms.TextBox Txt_Password;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Sistema;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cnfg_Desktop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cnfg_Idioma;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cnfg_PaisUso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cnfg_FormFecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.Label Lbl_IDUsuario;
+        private System.Windows.Forms.Label Lbl_Nombre;
+        private System.Windows.Forms.Label Lbl_Password;
+        private System.Windows.Forms.Label Lbl_FondoEscritorio;
+        private System.Windows.Forms.Label Lbl_Idioma;
+        private System.Windows.Forms.Label Lbl_PaisUso;
+        private System.Windows.Forms.Label Lbl_FormatoFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_ID_Usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Nombre;
     }
 }

@@ -27,6 +27,17 @@ namespace MofinDatos
                 return db.O_Observaciones.ToList();
             }
         }
+        public List<O_Observaciones> ListarPorCodTipo(string Codigo, int Tipo)
+        {
+            using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
+            {
+                var lst = from Observaciones in db.O_Observaciones
+                          where Observaciones.Cod_Cliente == Codigo &
+                                Observaciones.Tipo_Perfil == Tipo
+                          select Observaciones;
+                return lst.ToList();
+            }
+        }
 
         public O_Observaciones GetById(int id)
         {

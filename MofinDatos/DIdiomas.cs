@@ -6,51 +6,52 @@ using System.Threading.Tasks;
 using MofinModeloEntorno;
 
 
+
 namespace MofinDatos
 {
-    public class DUsuarios
+    public class DIdiomas
     {
-        public void Eliminar(Usuarios obj)
+        public void Eliminar(Idiomas obj)
         {
             using (MofinEntornoEntidad db = new MofinEntornoEntidad())
             {
-                db.Usuarios.Attach(obj);
-                db.Usuarios.Remove(obj);
+                db.Idiomas.Attach(obj);
+                db.Idiomas.Remove(obj);
                 db.SaveChanges();
             }
         }
 
-        public List<Usuarios> Listar()
+        public List<Idiomas> Listar()
         {
             using (MofinEntornoEntidad db = new MofinEntornoEntidad())
             {
-                return db.Usuarios.ToList();
+                return db.Idiomas.ToList();
             }
         }
 
-        public Usuarios GetById(int id)
+        public Idiomas GetById(int id)
         {
             using (MofinEntornoEntidad db = new MofinEntornoEntidad())
             {
-                return db.Usuarios.Find(id);
+                return db.Idiomas.Find(id);
             }
         }
 
-        public Usuarios Insertar(Usuarios obj)
+        public Idiomas Isertar(Idiomas obj)
         {
             using (MofinEntornoEntidad db = new MofinEntornoEntidad())
             {
-                db.Usuarios.Add(obj);
+                db.Idiomas.Add(obj);
                 db.SaveChanges();
                 return obj;
             }
         }
 
-        public void Actualizar(Usuarios obj)
+        public void Actualizar(Idiomas obj)
         {
             using (MofinEntornoEntidad db = new MofinEntornoEntidad())
             {
-                db.Usuarios.Attach(obj);
+                db.Idiomas.Attach(obj);
                 db.Entry(obj).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
             }

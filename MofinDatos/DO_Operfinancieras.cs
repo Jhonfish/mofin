@@ -27,6 +27,28 @@ namespace MofinDatos
                 return db.O_Operfinancieras.ToList();
             }
         }
+        public List<O_Operfinancieras> ListarPorCodigo(string Codigo, DateTime? FDesde, DateTime? FHasta)
+        {
+            using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
+            {
+                if (FDesde == null)
+                {
+                    var lst = from Operaciones in db.O_Operfinancieras
+                              where Operaciones.Cod_Cliente == Codigo
+                              select Operaciones;
+                    return lst.ToList();
+                }
+                else
+                {
+                    var lst = from Operaciones in db.O_Operfinancieras
+                              where Operaciones.Cod_Cliente == Codigo &
+                                    Operaciones.Fec_Pacto >= FDesde &
+                                    Operaciones.Fec_Pacto <= FHasta
+                              select Operaciones;
+                    return lst.ToList();
+                }
+            }
+        }
 
         public O_Operfinancieras GetById(int id)
         {

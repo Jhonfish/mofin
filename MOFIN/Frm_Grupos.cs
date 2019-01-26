@@ -11,6 +11,7 @@ using MetroFramework.Forms;
 using MofinNegocios;
 using MofinModelo;
 using MofinModeloEntorno;
+using MOFIN_LIB;
 
 namespace MOFIN
 {
@@ -23,6 +24,7 @@ namespace MOFIN
         public Frm_Grupos()
         {
             InitializeComponent();
+            this.Asigna_Nombres(null, null);
         }
 
         private void Frm_Grupos_Load(object sender, EventArgs e)
@@ -37,7 +39,7 @@ namespace MOFIN
         //************
         private void TSB_ActualizaBotonesNavegacion()
         {
-            if (BS_Grupos.Count <= 1)
+            if (BS_Grupos.Count < 1)
             {
                 this.TSB_Primero.Enabled = false;
                 this.TSB_Anterior.Enabled = false;
@@ -114,14 +116,14 @@ namespace MOFIN
         private void TSB_Eliminar_Click(object sender, EventArgs e)
         {
             string vl_RegEliminar = t_Grupos.Nombre.ToString();
-            DialogResult vl_Resp = MessageBox.Show("Desea Eliminar este Registro? " + "\n\n" + vl_RegEliminar,
-                "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult vl_Resp = MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9010) + "\n\n" + vl_RegEliminar,
+                MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (vl_Resp == DialogResult.Yes)
             {
                 NGrupos.Elimiar(BS_Grupos.Current as Grupos);
                 BS_Grupos.DataSource = NGrupos.Listar();
                 Grd_Grupos.Refresh();
-                MessageBox.Show("Se eliminó el registro actual", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9011), MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -266,6 +268,51 @@ namespace MOFIN
                 t_Grupos.Opc_Sistema = true;
                 this.Chk_Herramientas.Checked = true;
             }
+        }
+        private void Asigna_Nombres(object sender, EventArgs e)
+        {
+            this.Text = MOFIN_LIB.Funciones._Mens_Idioma(2300);
+            this.Lbl_Codigo.Text = MOFIN_LIB.Funciones._Mens_Idioma(1001);
+            this.Lbl_Nombre.Text = MOFIN_LIB.Funciones._Mens_Idioma(1002);
+
+            this.Pag_Clientes.Text = MOFIN_LIB.Funciones._Mens_Idioma(2321);
+                this.Chk_Clientes.Text = this.Pag_Clientes.Text;
+                this.Chk_CliMonitor.Text= MOFIN_LIB.Funciones._Mens_Idioma(2322);
+                this.Chk_CliBusqueda.Text= MOFIN_LIB.Funciones._Mens_Idioma(2323);
+
+            this.Pag_Operaciones.Text = MOFIN_LIB.Funciones._Mens_Idioma(2331);
+                this.Chk_MonitorOperaciones.Text = this.Pag_Operaciones.Text;
+                this.Chk_MonFinanciero.Text = MOFIN_LIB.Funciones._Mens_Idioma(2332);
+                this.Chk_MonTransaccional.Text = MOFIN_LIB.Funciones._Mens_Idioma(2333);
+
+            this.Pag_Tablas.Text = MOFIN_LIB.Funciones._Mens_Idioma(2341);
+                this.Chk_TablasMaestras.Text = this.Pag_Tablas.Text;
+                this.Chk_TabMaestras.Text = MOFIN_LIB.Funciones._Mens_Idioma(2342);
+
+            this.Pag_Reportes.Text = MOFIN_LIB.Funciones._Mens_Idioma(2351);
+                this.Chk_Reportes.Text = this.Pag_Reportes.Text;
+
+            this.Pag_OpcSistema.Text = MOFIN_LIB.Funciones._Mens_Idioma(2311);
+                this.Chk_Herramientas.Text = this.Pag_OpcSistema.Text;
+                this.Chk_HerUsuarios.Text = MOFIN_LIB.Funciones._Mens_Idioma(2200);
+                this.Chk_HerGrupos.Text = MOFIN_LIB.Funciones._Mens_Idioma(2300);
+                this.Chk_HerEmpresas.Text = MOFIN_LIB.Funciones._Mens_Idioma(2100);
+
+            this.TSB_Primero.Text = MOFIN_LIB.Funciones._Mens_Idioma(131);
+            this.TSB_Anterior.Text = MOFIN_LIB.Funciones._Mens_Idioma(132);
+            this.TSB_Siguiente.Text = MOFIN_LIB.Funciones._Mens_Idioma(133);
+            this.TSB_Ultimo.Text = MOFIN_LIB.Funciones._Mens_Idioma(134);
+            this.TSB_Agregar.Text = MOFIN_LIB.Funciones._Mens_Idioma(136);
+            this.TSB_Modificar.Text = MOFIN_LIB.Funciones._Mens_Idioma(137);
+            this.TSB_Eliminar.Text = MOFIN_LIB.Funciones._Mens_Idioma(138);
+            this.TSB_Imprimir.Text = MOFIN_LIB.Funciones._Mens_Idioma(139);
+            this.TSB_Salir.Text = MOFIN_LIB.Funciones._Mens_Idioma(140);
+
+            this.Col_Codigo.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1001);
+            this.Col_Nombre.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1002);
+
+            MOFIN_LIB.Funciones.TTT_Btn(Btn_Aceptar, MOFIN_LIB.Funciones._Mens_Idioma(141));
+            MOFIN_LIB.Funciones.TTT_Btn(Btn_Cancelar, MOFIN_LIB.Funciones._Mens_Idioma(142));
         }
     }
 }

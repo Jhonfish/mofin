@@ -1313,7 +1313,7 @@
             this.Pan_BenefBtns.Controls.Add(this.Btn_BenefCancelar);
             this.Pan_BenefBtns.Location = new System.Drawing.Point(61, 367);
             this.Pan_BenefBtns.Name = "Pan_BenefBtns";
-            this.Pan_BenefBtns.Size = new System.Drawing.Size(708, 43);
+            this.Pan_BenefBtns.Size = new System.Drawing.Size(581, 43);
             this.Pan_BenefBtns.TabIndex = 62;
             // 
             // Btn_BenefIncluir
@@ -1688,12 +1688,12 @@
             this.nombreDataGridViewTextBoxColumn1,
             this.edadDataGridViewTextBoxColumn});
             this.Grd_CFirBenAcc.DataSource = this.BS_CFirBenAcc;
-            this.Grd_CFirBenAcc.Location = new System.Drawing.Point(8, 32);
+            this.Grd_CFirBenAcc.Location = new System.Drawing.Point(8, 18);
             this.Grd_CFirBenAcc.MultiSelect = false;
             this.Grd_CFirBenAcc.Name = "Grd_CFirBenAcc";
             this.Grd_CFirBenAcc.ReadOnly = true;
             this.Grd_CFirBenAcc.RowHeadersVisible = false;
-            this.Grd_CFirBenAcc.Size = new System.Drawing.Size(278, 318);
+            this.Grd_CFirBenAcc.Size = new System.Drawing.Size(278, 332);
             this.Grd_CFirBenAcc.TabIndex = 1;
             this.Grd_CFirBenAcc.CurrentCellChanged += new System.EventHandler(this.Grd_CFirBenAcc_CurrentCellChanged);
             // 
@@ -3255,6 +3255,7 @@
             this.MinimizeBox = false;
             this.Name = "Frm_Clientes";
             this.Padding = new System.Windows.Forms.Padding(24, 69, 24, 23);
+            this.Resizable = false;
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.Frm_Clientes_Load);
             this.TS_BarraHerramientas.ResumeLayout(false);

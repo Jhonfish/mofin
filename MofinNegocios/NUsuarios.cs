@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MofinModeloEntorno;
 using MofinDatos;
-
+using MofinModelo;
 
 namespace MofinNegocios
 {
@@ -30,7 +30,7 @@ namespace MofinNegocios
 
         public static Usuarios Insertar(Usuarios obj)
         {
-            return dUsuarios.Isertar(obj);
+            return dUsuarios.Insertar(obj);
         }
 
         public static void Actualizar(Usuarios obj)

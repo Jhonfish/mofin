@@ -11,6 +11,7 @@ using MetroFramework.Forms;
 using MofinNegocios;
 using MofinModelo;
 using MofinModeloEntorno;
+using MOFIN_LIB;
 
 
 namespace MOFIN
@@ -18,29 +19,23 @@ namespace MOFIN
     public partial class Frm_SeleccionEmpresa : MetroForm
     {
         Usuarios r_Usuarios;
+        Grupos r_Grupos;
         Empresas r_Empresas;
+        Emp_Accesos r_EmpAccesos;
         
         public Frm_SeleccionEmpresa()
         {
             InitializeComponent();
+            this.Asigna_Nombres(null, null);
         }
 
         private void Frm_SeleccionEmpresa_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'entornoDataSet.Grupos' Puede moverla o quitarla según sea necesario.
-            this.TA_Grupos.Fill(this.entornoDataSet.Grupos);
-            // TODO: esta línea de código carga datos en la tabla 'entornoDataSet.Emp_Accesos' Puede moverla o quitarla según sea necesario.
-            this.TA_Emp_Accesos.Fill(this.entornoDataSet.Emp_Accesos);
-            // TODO: esta línea de código carga datos en la tabla 'entornoDataSet.Usuarios' Puede moverla o quitarla según sea necesario.
-            this.TA_Usuarios.Fill(this.entornoDataSet.Usuarios);
-            // TODO: esta línea de código carga datos en la tabla 'entornoDataSet.Empresas' Puede moverla o quitarla según sea necesario.
-            this.TA_Empresas.Fill(this.entornoDataSet.Empresas);
-
-            /*  BS_Empresas.DataSource = NEmpresas.Listar();
+              BS_Empresas.DataSource = NEmpresas.Listar();
               BS_Emp_Accesos.DataSource = NEmp_Accesos.Listar();
               BS_Grupos.DataSource = NGrupos.Listar();
               BS_Usuarios.DataSource = NUsuarios.Listar();
-              */
+              
             this.Cmb_Empresa.SelectedIndex = 0;
             this.Cmb_Empresa.Focus();
         }
@@ -52,58 +47,78 @@ namespace MOFIN
 
         private void Btn_Aceptar_Click(object sender, EventArgs e)
         {
-            int foundIndex = BS_Usuarios.Find("ID_Usuario", Txt_Usuario.Text.Trim());
-            if (foundIndex > -1)
+            r_Empresas = BS_Empresas.Current as Empresas;
+            string vl_Usuario = this.Txt_Usuario.Text.Trim();
+            string vl_Clave = this.Txt_Password.Text.Trim();
+            bool vl_Encontrado = false;
+            BS_Usuarios.MoveFirst();
+
+            foreach(object obj in BS_Usuarios)
             {
-                BS_Usuarios.Position = foundIndex;
-                string vl_DataEmpresa = ((DataRowView)this.BS_Empresas.Current).Row["Codigo"].ToString();
-                string vl_DataUsuario = ((DataRowView)this.BS_Usuarios.Current).Row["ID_Usuario"].ToString();
-                string vl_DataClave = ((DataRowView)this.BS_Usuarios.Current).Row["Password"].ToString();
-                string vl_CodGrupo = "";
-
-                vl_DataUsuario = vl_DataUsuario.ToUpper().Trim();
-                vl_DataClave = vl_DataClave.ToUpper().Trim();
-
-                string vl_TxtUsuario = Txt_Usuario.Text.ToUpper().ToString();
-                string vl_TxtClave = Txt_Password.Text.ToUpper().ToString();
-                if ((vl_DataUsuario == vl_TxtUsuario) &
-                    (vl_DataClave == vl_TxtClave))
+                r_Usuarios = BS_Usuarios.Current as Usuarios;
+                //MessageBox.Show(r_Usuarios.ID_Usuario);
+                BS_Usuarios.MoveNext();
+                if (r_Usuarios.ID_Usuario.ToUpper() == vl_Usuario.ToUpper() & r_Usuarios.Password == vl_Clave)
                 {
-                    int vl_nroregs = BS_Emp_Accesos.Count;
-                    int vl_Contador = 0;
-                    for (vl_Contador = 0; vl_Contador < vl_nroregs; vl_Contador++)
+                    vl_Encontrado = true;
+                    break;
+                }
+
+            }
+            if (vl_Encontrado == true)
+            {
+                vl_Encontrado = false;
+                foreach (object obj in BS_Emp_Accesos)
+                {
+                    r_EmpAccesos = BS_Emp_Accesos.Current as Emp_Accesos;
+                    // MessageBox.Show(r_Usuarios.Nombre);
+                    BS_Emp_Accesos.MoveNext();
+                    if (r_EmpAccesos.ID_Usuario == vl_Usuario & r_EmpAccesos.Cod_Empresa == r_Empresas.Codigo)
                     {
-                        BS_Emp_Accesos.Position = vl_Contador;
-                        if(((DataRowView)this.BS_Emp_Accesos.Current).Row["ID_Usuario"].ToString() == vl_TxtUsuario &
-                           ((DataRowView)this.BS_Emp_Accesos.Current).Row["Cod_Empresa"].ToString() == vl_DataEmpresa)
+                        vl_Encontrado = true;
+                        break;
+                    }
+
+                }
+                if (vl_Encontrado==true)
+                {
+                    foreach (object obj in BS_Grupos)
+                    {
+                        r_Grupos = BS_Grupos.Current as Grupos;
+                        BS_Grupos.MoveNext();
+                        if (r_Grupos.Codigo == r_EmpAccesos.Cod_Grupo)
                         {
-                            vl_CodGrupo = ((DataRowView)this.BS_Emp_Accesos.Current).Row["Cod_Grupo"].ToString();
-                            break; 
+                            break;
                         }
                     }
-                    if (vl_Contador == vl_nroregs)
-                        MessageBox.Show("Este Usuario no tiene permisos para operar en la empresa Seleccionada",
-                                        "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    else
-                    {
-                        MessageBox.Show("Usuario Aceptado" + "\n\n" + "Grupo: " + vl_CodGrupo,
-                                        "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
-                    }
+
+                    MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9004) + "\n\n" + "Grupo: " + r_Grupos.Nombre,
+                                    MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+/*                  Frm_Desktop FondoEscritorio = new Frm_Desktop();
+                    //((TextBox)formularioPadre.Controls["nombreDelControl"]).Text = “Texto en un TextBox de otro formulario”;
+                    ((Label)FondoEscritorio.Controls["Lbl_Detalle1"]).Text = r_Empresas.Nombre + " / " + r_Grupos.Nombre + " / " + r_Usuarios.Nombre;
+
+                    //Desktop.Lbl_Detalle1.Text = r_Empresas.Nombre + " / " + r_Grupos.Nombre + " / " + r_Usuarios.Nombre;
+                    */
+                    this.Close();
+
                 }
                 else
-                MessageBox.Show("Usuario y Clave Erradas", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9003),
+                                    MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
-                MessageBox.Show("Usuario NO Encontrado", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9002), MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
-        private void empresasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void Asigna_Nombres(object sender, EventArgs e)
         {
-            this.Validate();
-            this.BS_Empresas.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.entornoDataSet);
-
+            this.Text = MOFIN_LIB.Funciones._Mens_Idioma(2000);
+            this.Lbl_Empresa.Text = MOFIN_LIB.Funciones._Mens_Idioma(1006);
+            this.Lbl_Usuario.Text = MOFIN_LIB.Funciones._Mens_Idioma(1007);
+            this.Lbl_Contraseña.Text = MOFIN_LIB.Funciones._Mens_Idioma(1008);
+            MOFIN_LIB.Funciones.TTT_Btn(Btn_Aceptar, MOFIN_LIB.Funciones._Mens_Idioma(141));
+            MOFIN_LIB.Funciones.TTT_Btn(Btn_Cancelar, MOFIN_LIB.Funciones._Mens_Idioma(142));
         }
     }
 }

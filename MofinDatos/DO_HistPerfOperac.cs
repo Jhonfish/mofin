@@ -27,7 +27,17 @@ namespace MofinDatos
                 return db.O_HistPerfOperac.ToList();
             }
         }
-
+        public List<O_HistPerfOperac> ListarPorCodTipo(string Codigo, int Tipo)
+        {
+            using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
+            {
+                var lst = from HistPerfOperac in db.O_HistPerfOperac
+                          where HistPerfOperac.Cod_Cliente == Codigo &
+                                HistPerfOperac.Tipo_Perfil == Tipo
+                          select HistPerfOperac;
+                return lst.ToList();
+            }
+        }
         public O_HistPerfOperac GetById(int id)
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
