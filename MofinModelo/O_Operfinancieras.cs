@@ -37,6 +37,5 @@ namespace MofinModelo
         public string Cta_USD { get; set; }
         public string Comprobante { get; set; }
         public Nullable<System.DateTime> Hora_carga { get; set; }
-        public int ID_Sistema { get; set; }
     }
 }

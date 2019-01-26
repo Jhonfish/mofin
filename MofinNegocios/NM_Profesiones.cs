@@ -7,7 +7,7 @@ using MofinModelo;
 using MofinDatos;
 
 
-namespace MofinModelo
+namespace MofinNegocios
 {
     public static class NM_Profesiones
     {

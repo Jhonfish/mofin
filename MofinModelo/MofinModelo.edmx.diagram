@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0f157589d4f8407db023ae134de8e6b4" Name="Diagram1" ZoomLevel="100">
+      <Diagram DiagramId="0f157589d4f8407db023ae134de8e6b4" Name="Diagram1" ZoomLevel="38">
         <EntityTypeShape EntityType="MonitorOperacionesModelo.B_Buscados" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModelo.C_Clientes" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModelo.C_FirBenAcc" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
@@ -32,11 +32,11 @@
         <EntityTypeShape EntityType="MonitorOperacionesModelo.O_OperTransaccionales" Width="1.5" PointX="7.75" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModelo.O_RepOperacional" Width="1.5" PointX="13.75" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModelo.sysdiagrams" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="MonitorOperacionesModelo.FK_C_FirBenAcc_C_Clientes" ManuallyRouted="false" />
         <AssociationConnector Association="MonitorOperacionesModelo.FK_C_HistActClientes_C_Clientes" ManuallyRouted="false" />
         <AssociationConnector Association="MonitorOperacionesModelo.FK_O_HistPerfOperac_C_Clientes" ManuallyRouted="false" />
         <AssociationConnector Association="MonitorOperacionesModelo.FK_O_Observaciones_C_Clientes" ManuallyRouted="false" />
         <AssociationConnector Association="MonitorOperacionesModelo.FK_M_Estados_M_Pais" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitorOperacionesModelo.FK_C_FirBenAcc_C_Clientes" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

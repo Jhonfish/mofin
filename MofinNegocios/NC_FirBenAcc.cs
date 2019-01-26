@@ -23,9 +23,9 @@ namespace MofinNegocios
             return dC_FirBenAcc.Listar();
         }
 
-        public static C_FirBenAcc GetById(int id)
+        public static List<C_FirBenAcc> ListarPorCliente(string cliente)
         {
-            return dC_FirBenAcc.GetById(id);
+            return dC_FirBenAcc.ListarPorCliente(cliente);
         }
 
         public static C_FirBenAcc Insertar(C_FirBenAcc obj)

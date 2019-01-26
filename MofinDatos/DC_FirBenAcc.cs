@@ -29,11 +29,15 @@ namespace MofinDatos
             }
         }
 
-        public C_FirBenAcc GetById(int id)
+
+        public List<C_FirBenAcc> ListarPorCliente(string cliente)
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
             {
-                return db.C_FirBenAcc.Find(id);
+                var beneficiarios = from datos in db.C_FirBenAcc
+                                    where datos.Cod_Cliente == cliente
+                                    select datos;
+                return beneficiarios.ToList();
             }
         }
 
