@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MonitorOperacionesModelo.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MonitorOperacionesModelo.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="B_Buscados">
           <Key>
             <PropertyRef Name="ID_Sistema" />
@@ -435,6 +435,16 @@
           <Property Name="Ejecutivo" Type="varchar" MaxLength="50" />
           <Property Name="Comentario" Type="varchar" MaxLength="200" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <Association Name="FK_C_FirBenAcc_C_Clientes">
           <End Role="C_Clientes" Type="Self.C_Clientes" Multiplicity="1" />
           <End Role="C_FirBenAcc" Type="Self.C_FirBenAcc" Multiplicity="*" />
@@ -522,6 +532,7 @@
           <EntitySet Name="O_Operfinancieras" EntityType="Self.O_Operfinancieras" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="O_OperTransaccionales" EntityType="Self.O_OperTransaccionales" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="O_RepOperacional" EntityType="Self.O_RepOperacional" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_C_FirBenAcc_C_Clientes" Association="Self.FK_C_FirBenAcc_C_Clientes">
             <End Role="C_Clientes" EntitySet="C_Clientes" />
             <End Role="C_FirBenAcc" EntitySet="C_FirBenAcc" />
@@ -543,8 +554,7 @@
             <End Role="O_Observaciones" EntitySet="O_Observaciones" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MonitorOperacionesModelo" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -651,10 +661,10 @@
           <Property Name="Trim_NroOperac" Type="Int16" />
           <Property Name="Trim_MontoOperac" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="MapaEmpresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="C_FirBenAcc" Relationship="Self.FK_C_FirBenAcc_C_Clientes" FromRole="C_Clientes" ToRole="C_FirBenAcc" />
           <NavigationProperty Name="C_HistActClientes" Relationship="Self.FK_C_HistActClientes_C_Clientes" FromRole="C_Clientes" ToRole="C_HistActClientes" />
           <NavigationProperty Name="O_HistPerfOperac" Relationship="Self.FK_O_HistPerfOperac_C_Clientes" FromRole="C_Clientes" ToRole="O_HistPerfOperac" />
           <NavigationProperty Name="O_Observaciones" Relationship="Self.FK_O_Observaciones_C_Clientes" FromRole="C_Clientes" ToRole="O_Observaciones" />
+          <NavigationProperty Name="C_FirBenAcc" Relationship="MonitorOperacionesModelo.FK_C_FirBenAcc_C_Clientes" FromRole="C_Clientes" ToRole="C_FirBenAcc" />
         </EntityType>
         <EntityType Name="C_FirBenAcc">
           <Key>
@@ -678,7 +688,7 @@
           <Property Name="PEP" Type="Int16" />
           <Property Name="Puntuacion" Type="Int16" />
           <Property Name="CondEspSeguridad" Type="Boolean" />
-          <NavigationProperty Name="C_Clientes" Relationship="Self.FK_C_FirBenAcc_C_Clientes" FromRole="C_FirBenAcc" ToRole="C_Clientes" />
+          <NavigationProperty Name="C_Clientes" Relationship="MonitorOperacionesModelo.FK_C_FirBenAcc_C_Clientes" FromRole="C_FirBenAcc" ToRole="C_Clientes" />
         </EntityType>
         <EntityType Name="C_HistActClientes">
           <Key>
@@ -987,18 +997,16 @@
           <Property Name="Ejecutivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Comentario" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
-        <Association Name="FK_C_FirBenAcc_C_Clientes">
-          <End Role="C_Clientes" Type="Self.C_Clientes" Multiplicity="1" />
-          <End Role="C_FirBenAcc" Type="Self.C_FirBenAcc" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="C_Clientes">
-              <PropertyRef Name="Codigo" />
-            </Principal>
-            <Dependent Role="C_FirBenAcc">
-              <PropertyRef Name="Cod_Cliente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <Association Name="FK_C_HistActClientes_C_Clientes">
           <End Role="C_Clientes" Type="Self.C_Clientes" Multiplicity="1" />
           <End Role="C_HistActClientes" Type="Self.C_HistActClientes" Multiplicity="*" />
@@ -1074,10 +1082,7 @@
           <EntitySet Name="O_Operfinancieras" EntityType="Self.O_Operfinancieras" />
           <EntitySet Name="O_OperTransaccionales" EntityType="Self.O_OperTransaccionales" />
           <EntitySet Name="O_RepOperacional" EntityType="Self.O_RepOperacional" />
-          <AssociationSet Name="FK_C_FirBenAcc_C_Clientes" Association="Self.FK_C_FirBenAcc_C_Clientes">
-            <End Role="C_Clientes" EntitySet="C_Clientes" />
-            <End Role="C_FirBenAcc" EntitySet="C_FirBenAcc" />
-          </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <AssociationSet Name="FK_C_HistActClientes_C_Clientes" Association="Self.FK_C_HistActClientes_C_Clientes">
             <End Role="C_Clientes" EntitySet="C_Clientes" />
             <End Role="C_HistActClientes" EntitySet="C_HistActClientes" />
@@ -1094,7 +1099,23 @@
             <End Role="M_Pais" EntitySet="M_Pais" />
             <End Role="M_Estados" EntitySet="M_Estados" />
           </AssociationSet>
+          <AssociationSet Name="FK_C_FirBenAcc_C_Clientes" Association="MonitorOperacionesModelo.FK_C_FirBenAcc_C_Clientes">
+            <End Role="C_Clientes" EntitySet="C_Clientes" />
+            <End Role="C_FirBenAcc" EntitySet="C_FirBenAcc" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_C_FirBenAcc_C_Clientes">
+          <End Type="MonitorOperacionesModelo.C_Clientes" Role="C_Clientes" Multiplicity="1" />
+          <End Type="MonitorOperacionesModelo.C_FirBenAcc" Role="C_FirBenAcc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="C_Clientes">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="C_FirBenAcc">
+              <PropertyRef Name="Cod_Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1554,6 +1575,17 @@
                 <ScalarProperty Name="Alarma" ColumnName="Alarma" />
                 <ScalarProperty Name="Ejecutivo" ColumnName="Ejecutivo" />
                 <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="MonitorOperacionesModelo.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

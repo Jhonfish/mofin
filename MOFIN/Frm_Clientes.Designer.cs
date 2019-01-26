@@ -91,6 +91,7 @@
             this.Pag1 = new System.Windows.Forms.TabPage();
             this.Pan_Detalles1 = new System.Windows.Forms.Panel();
             this.Cmb_TipDocID = new System.Windows.Forms.ComboBox();
+            this.BS_CClientes = new System.Windows.Forms.BindingSource(this.components);
             this.BS_MTipoDocID = new System.Windows.Forms.BindingSource(this.components);
             this.Lst_Productos = new System.Windows.Forms.ListBox();
             this.Cmb_Criptomonedas = new System.Windows.Forms.ComboBox();
@@ -111,6 +112,7 @@
             this.Cmb_Profesion = new System.Windows.Forms.ComboBox();
             this.BS_MProfesiones = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_Estado = new System.Windows.Forms.ComboBox();
+            this.BS_MEstados = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_PaisResidencia = new System.Windows.Forms.ComboBox();
             this.BS_Res = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_PaisNacimiento = new System.Windows.Forms.ComboBox();
@@ -129,11 +131,11 @@
             this.Lbl_BenefPuntuacion = new System.Windows.Forms.Label();
             this.Pan_Detalles2 = new System.Windows.Forms.Panel();
             this.Cmb_BenefCriptomonedas = new System.Windows.Forms.ComboBox();
+            this.BS_CFirBenAcc = new System.Windows.Forms.BindingSource(this.components);
             this.BS_AutCriptomoneda = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_BenefPEP = new System.Windows.Forms.ComboBox();
             this.BS_AutPEP = new System.Windows.Forms.BindingSource(this.components);
             this.Nud_BenefVincPorcent = new System.Windows.Forms.NumericUpDown();
-            this.BS_CFirBenAcc = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_BenefVincEmpresa = new System.Windows.Forms.TextBox();
             this.Cmb_BenefProfesion = new System.Windows.Forms.ComboBox();
             this.BS_AutProfesion = new System.Windows.Forms.BindingSource(this.components);
@@ -155,28 +157,11 @@
             this.Opc_TipVinc1 = new System.Windows.Forms.RadioButton();
             this.tipoVinculoTextBox = new System.Windows.Forms.TextBox();
             this.Grd_CFirBenAcc = new System.Windows.Forms.DataGridView();
-            this.iDSistemaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoVinculoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.docIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecVencimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paisNacimDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nacionalidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paisResidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.profesionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.criptomonedaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vincEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vincPorcentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pEPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.puntuacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.condEspSeguridadDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pag3 = new System.Windows.Forms.TabPage();
             this.Pan_Detalles3 = new System.Windows.Forms.Panel();
             this.Chk_Opc30 = new System.Windows.Forms.CheckBox();
-            this.BS_CClientes = new System.Windows.Forms.BindingSource(this.components);
             this.Chk_Opc29 = new System.Windows.Forms.CheckBox();
             this.Chk_Opc28 = new System.Windows.Forms.CheckBox();
             this.Chk_Opc27 = new System.Windows.Forms.CheckBox();
@@ -228,7 +213,6 @@
             this.Opt_PerUsoCta1 = new System.Windows.Forms.RadioButton();
             this.Pag5 = new System.Windows.Forms.TabPage();
             this.Pic_MapEpresa = new System.Windows.Forms.PictureBox();
-            this.BS_MEstados = new System.Windows.Forms.BindingSource(this.components);
             this.Lbl_Puntuacion = new System.Windows.Forms.Label();
             this.Lbl_Activo = new System.Windows.Forms.Label();
             this.Lbl_EtiqPunt = new System.Windows.Forms.Label();
@@ -381,6 +365,7 @@
             this.Tab_Clientes.SuspendLayout();
             this.Pag1.SuspendLayout();
             this.Pan_Detalles1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_CClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MTipoDocID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MCriptomonedas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MVolOperPersNat)).BeginInit();
@@ -390,16 +375,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.BS_MEdad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MActivComercial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MProfesiones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MEstados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Res)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Nac)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MPais)).BeginInit();
             this.Pag2.SuspendLayout();
             this.Pan_BenefBtns.SuspendLayout();
             this.Pan_Detalles2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_CFirBenAcc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutCriptomoneda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutPEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nud_BenefVincPorcent)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_CFirBenAcc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutProfesion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutEdad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutRes)).BeginInit();
@@ -409,7 +395,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Grd_CFirBenAcc)).BeginInit();
             this.Pag3.SuspendLayout();
             this.Pan_Detalles3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_CClientes)).BeginInit();
             this.Pag4.SuspendLayout();
             this.Pan_Detalles4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_NroTransacciones)).BeginInit();
@@ -418,7 +403,6 @@
             this.Grp_PerUsoCta.SuspendLayout();
             this.Pag5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_MapEpresa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_MEstados)).BeginInit();
             this.Pan_DetallesEnc.SuspendLayout();
             this.Grp_TipoPersona.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.monitorOperacionesDataSet)).BeginInit();
@@ -1051,6 +1035,7 @@
             // 
             // Cmb_TipDocID
             // 
+            this.Cmb_TipDocID.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CClientes, "IG_TipDocID", true));
             this.Cmb_TipDocID.DataSource = this.BS_MTipoDocID;
             this.Cmb_TipDocID.DisplayMember = "Descripcion";
             this.Cmb_TipDocID.FormattingEnabled = true;
@@ -1058,6 +1043,11 @@
             this.Cmb_TipDocID.Name = "Cmb_TipDocID";
             this.Cmb_TipDocID.Size = new System.Drawing.Size(250, 23);
             this.Cmb_TipDocID.TabIndex = 49;
+            this.Cmb_TipDocID.ValueMember = "Codigo";
+            // 
+            // BS_CClientes
+            // 
+            this.BS_CClientes.DataSource = typeof(MofinModelo.C_Clientes);
             // 
             // BS_MTipoDocID
             // 
@@ -1074,6 +1064,7 @@
             // 
             // Cmb_Criptomonedas
             // 
+            this.Cmb_Criptomonedas.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CClientes, "IG_Criptomoneda", true));
             this.Cmb_Criptomonedas.DataSource = this.BS_MCriptomonedas;
             this.Cmb_Criptomonedas.DisplayMember = "Descripcion";
             this.Cmb_Criptomonedas.FormattingEnabled = true;
@@ -1081,6 +1072,7 @@
             this.Cmb_Criptomonedas.Name = "Cmb_Criptomonedas";
             this.Cmb_Criptomonedas.Size = new System.Drawing.Size(250, 23);
             this.Cmb_Criptomonedas.TabIndex = 47;
+            this.Cmb_Criptomonedas.ValueMember = "Codigo";
             // 
             // BS_MCriptomonedas
             // 
@@ -1088,6 +1080,7 @@
             // 
             // Cmb_VolOperNat
             // 
+            this.Cmb_VolOperNat.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CClientes, "IG_VolumOperac", true));
             this.Cmb_VolOperNat.DataSource = this.BS_MVolOperPersNat;
             this.Cmb_VolOperNat.DisplayMember = "Descripcion";
             this.Cmb_VolOperNat.FormattingEnabled = true;
@@ -1095,6 +1088,7 @@
             this.Cmb_VolOperNat.Name = "Cmb_VolOperNat";
             this.Cmb_VolOperNat.Size = new System.Drawing.Size(250, 23);
             this.Cmb_VolOperNat.TabIndex = 46;
+            this.Cmb_VolOperNat.ValueMember = "Codigo";
             // 
             // BS_MVolOperPersNat
             // 
@@ -1102,6 +1096,7 @@
             // 
             // Cmb_PEP
             // 
+            this.Cmb_PEP.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CClientes, "IG_PEP", true));
             this.Cmb_PEP.DataSource = this.BS_MPEP;
             this.Cmb_PEP.DisplayMember = "Descripcion";
             this.Cmb_PEP.FormattingEnabled = true;
@@ -1109,6 +1104,7 @@
             this.Cmb_PEP.Name = "Cmb_PEP";
             this.Cmb_PEP.Size = new System.Drawing.Size(250, 23);
             this.Cmb_PEP.TabIndex = 45;
+            this.Cmb_PEP.ValueMember = "Codigo";
             // 
             // BS_MPEP
             // 
@@ -1116,6 +1112,7 @@
             // 
             // Cmb_TipoEstructura
             // 
+            this.Cmb_TipoEstructura.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CClientes, "IG_TipoEstructura", true));
             this.Cmb_TipoEstructura.DataSource = this.BS_MTipoEstructuraEmpresa;
             this.Cmb_TipoEstructura.DisplayMember = "Descripcion";
             this.Cmb_TipoEstructura.FormattingEnabled = true;
@@ -1123,6 +1120,7 @@
             this.Cmb_TipoEstructura.Name = "Cmb_TipoEstructura";
             this.Cmb_TipoEstructura.Size = new System.Drawing.Size(250, 23);
             this.Cmb_TipoEstructura.TabIndex = 44;
+            this.Cmb_TipoEstructura.ValueMember = "Codigo";
             // 
             // BS_MTipoEstructuraEmpresa
             // 
@@ -1130,6 +1128,7 @@
             // 
             // Cmb_TipoPersJuridica
             // 
+            this.Cmb_TipoPersJuridica.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CClientes, "IG_TipoPersJur", true));
             this.Cmb_TipoPersJuridica.DataSource = this.BS_MTipoPersJuridica;
             this.Cmb_TipoPersJuridica.DisplayMember = "Descripcion";
             this.Cmb_TipoPersJuridica.FormattingEnabled = true;
@@ -1137,6 +1136,7 @@
             this.Cmb_TipoPersJuridica.Name = "Cmb_TipoPersJuridica";
             this.Cmb_TipoPersJuridica.Size = new System.Drawing.Size(250, 23);
             this.Cmb_TipoPersJuridica.TabIndex = 43;
+            this.Cmb_TipoPersJuridica.ValueMember = "Codigo";
             // 
             // BS_MTipoPersJuridica
             // 
@@ -1144,6 +1144,7 @@
             // 
             // Cmb_Edad
             // 
+            this.Cmb_Edad.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CClientes, "IG_Edad", true));
             this.Cmb_Edad.DataSource = this.BS_MEdad;
             this.Cmb_Edad.DisplayMember = "Descripcion";
             this.Cmb_Edad.FormattingEnabled = true;
@@ -1151,6 +1152,7 @@
             this.Cmb_Edad.Name = "Cmb_Edad";
             this.Cmb_Edad.Size = new System.Drawing.Size(250, 23);
             this.Cmb_Edad.TabIndex = 42;
+            this.Cmb_Edad.ValueMember = "Codigo";
             // 
             // BS_MEdad
             // 
@@ -1167,6 +1169,7 @@
             // 
             // Cmb_ActivComercial
             // 
+            this.Cmb_ActivComercial.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CClientes, "IG_ActivComer", true));
             this.Cmb_ActivComercial.DataSource = this.BS_MActivComercial;
             this.Cmb_ActivComercial.DisplayMember = "Descripcion";
             this.Cmb_ActivComercial.FormattingEnabled = true;
@@ -1174,6 +1177,7 @@
             this.Cmb_ActivComercial.Name = "Cmb_ActivComercial";
             this.Cmb_ActivComercial.Size = new System.Drawing.Size(650, 23);
             this.Cmb_ActivComercial.TabIndex = 40;
+            this.Cmb_ActivComercial.ValueMember = "Codigo";
             // 
             // BS_MActivComercial
             // 
@@ -1181,6 +1185,7 @@
             // 
             // Cmb_Profesion
             // 
+            this.Cmb_Profesion.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CClientes, "IG_Profesion", true));
             this.Cmb_Profesion.DataSource = this.BS_MProfesiones;
             this.Cmb_Profesion.DisplayMember = "Descripcion";
             this.Cmb_Profesion.FormattingEnabled = true;
@@ -1188,6 +1193,7 @@
             this.Cmb_Profesion.Name = "Cmb_Profesion";
             this.Cmb_Profesion.Size = new System.Drawing.Size(650, 23);
             this.Cmb_Profesion.TabIndex = 39;
+            this.Cmb_Profesion.ValueMember = "Codigo";
             // 
             // BS_MProfesiones
             // 
@@ -1195,14 +1201,23 @@
             // 
             // Cmb_Estado
             // 
+            this.Cmb_Estado.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CClientes, "IG_Estado", true));
+            this.Cmb_Estado.DataSource = this.BS_MEstados;
+            this.Cmb_Estado.DisplayMember = "Descripcion";
             this.Cmb_Estado.FormattingEnabled = true;
             this.Cmb_Estado.Location = new System.Drawing.Point(4, 144);
             this.Cmb_Estado.Name = "Cmb_Estado";
             this.Cmb_Estado.Size = new System.Drawing.Size(205, 23);
             this.Cmb_Estado.TabIndex = 38;
+            this.Cmb_Estado.ValueMember = "Codigo";
+            // 
+            // BS_MEstados
+            // 
+            this.BS_MEstados.DataSource = typeof(MofinModelo.M_Estados);
             // 
             // Cmb_PaisResidencia
             // 
+            this.Cmb_PaisResidencia.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CClientes, "IG_PaisResid", true));
             this.Cmb_PaisResidencia.DataSource = this.BS_Res;
             this.Cmb_PaisResidencia.DisplayMember = "Descripcion";
             this.Cmb_PaisResidencia.FormattingEnabled = true;
@@ -1219,6 +1234,7 @@
             // 
             // Cmb_PaisNacimiento
             // 
+            this.Cmb_PaisNacimiento.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CClientes, "IG_PaisNacim", true));
             this.Cmb_PaisNacimiento.DataSource = this.BS_Nac;
             this.Cmb_PaisNacimiento.DisplayMember = "Descripcion";
             this.Cmb_PaisNacimiento.FormattingEnabled = true;
@@ -1226,6 +1242,7 @@
             this.Cmb_PaisNacimiento.Name = "Cmb_PaisNacimiento";
             this.Cmb_PaisNacimiento.Size = new System.Drawing.Size(250, 23);
             this.Cmb_PaisNacimiento.TabIndex = 36;
+            this.Cmb_PaisNacimiento.ValueMember = "Codigo";
             // 
             // BS_Nac
             // 
@@ -1233,6 +1250,7 @@
             // 
             // Cmb_Nacionalidad
             // 
+            this.Cmb_Nacionalidad.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CClientes, "IG_Nacionalidad", true));
             this.Cmb_Nacionalidad.DataSource = this.BS_MPais;
             this.Cmb_Nacionalidad.DisplayMember = "Descripcion";
             this.Cmb_Nacionalidad.FormattingEnabled = true;
@@ -1240,6 +1258,7 @@
             this.Cmb_Nacionalidad.Name = "Cmb_Nacionalidad";
             this.Cmb_Nacionalidad.Size = new System.Drawing.Size(250, 23);
             this.Cmb_Nacionalidad.TabIndex = 35;
+            this.Cmb_Nacionalidad.ValueMember = "Codigo";
             // 
             // BS_MPais
             // 
@@ -1247,6 +1266,7 @@
             // 
             // DTP_FecVencDocID
             // 
+            this.DTP_FecVencDocID.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BS_CClientes, "IG_FecVencDocID", true));
             this.DTP_FecVencDocID.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTP_FecVencDocID.Location = new System.Drawing.Point(47, 33);
             this.DTP_FecVencDocID.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
@@ -1295,7 +1315,6 @@
             this.Pan_BenefBtns.Name = "Pan_BenefBtns";
             this.Pan_BenefBtns.Size = new System.Drawing.Size(581, 43);
             this.Pan_BenefBtns.TabIndex = 62;
-            this.Pan_BenefBtns.Visible = false;
             // 
             // Btn_BenefIncluir
             // 
@@ -1313,6 +1332,7 @@
             this.Btn_BenefIncluir.TabIndex = 59;
             this.Btn_BenefIncluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_BenefIncluir.UseVisualStyleBackColor = true;
+            this.Btn_BenefIncluir.Click += new System.EventHandler(this.Btn_BenefIncluir_Click);
             // 
             // Btn_BenefEliminar
             // 
@@ -1330,6 +1350,7 @@
             this.Btn_BenefEliminar.TabIndex = 61;
             this.Btn_BenefEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_BenefEliminar.UseVisualStyleBackColor = true;
+            this.Btn_BenefEliminar.Click += new System.EventHandler(this.Btn_BenefEliminar_Click);
             // 
             // Btn_BenefModificar
             // 
@@ -1347,6 +1368,7 @@
             this.Btn_BenefModificar.TabIndex = 60;
             this.Btn_BenefModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_BenefModificar.UseVisualStyleBackColor = true;
+            this.Btn_BenefModificar.Click += new System.EventHandler(this.Btn_BenefModificar_Click);
             // 
             // Btn_BenefAceptar
             // 
@@ -1364,6 +1386,7 @@
             this.Btn_BenefAceptar.TabIndex = 57;
             this.Btn_BenefAceptar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_BenefAceptar.UseVisualStyleBackColor = true;
+            this.Btn_BenefAceptar.Click += new System.EventHandler(this.Btn_BenefAceptar_Click);
             // 
             // Btn_BenefCancelar
             // 
@@ -1381,6 +1404,7 @@
             this.Btn_BenefCancelar.TabIndex = 58;
             this.Btn_BenefCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_BenefCancelar.UseVisualStyleBackColor = true;
+            this.Btn_BenefCancelar.Click += new System.EventHandler(this.Btn_BenefCancelar_Click);
             // 
             // Lbl_BenefEtiqPuntuacion
             // 
@@ -1431,6 +1455,7 @@
             // 
             // Cmb_BenefCriptomonedas
             // 
+            this.Cmb_BenefCriptomonedas.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CFirBenAcc, "Criptomoneda", true));
             this.Cmb_BenefCriptomonedas.DataSource = this.BS_AutCriptomoneda;
             this.Cmb_BenefCriptomonedas.DisplayMember = "Descripcion";
             this.Cmb_BenefCriptomonedas.FormattingEnabled = true;
@@ -1438,6 +1463,11 @@
             this.Cmb_BenefCriptomonedas.Name = "Cmb_BenefCriptomonedas";
             this.Cmb_BenefCriptomonedas.Size = new System.Drawing.Size(200, 23);
             this.Cmb_BenefCriptomonedas.TabIndex = 74;
+            this.Cmb_BenefCriptomonedas.ValueMember = "Codigo";
+            // 
+            // BS_CFirBenAcc
+            // 
+            this.BS_CFirBenAcc.DataSource = typeof(MofinModelo.C_FirBenAcc);
             // 
             // BS_AutCriptomoneda
             // 
@@ -1445,6 +1475,7 @@
             // 
             // Cmb_BenefPEP
             // 
+            this.Cmb_BenefPEP.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CFirBenAcc, "PEP", true));
             this.Cmb_BenefPEP.DataSource = this.BS_AutPEP;
             this.Cmb_BenefPEP.DisplayMember = "Descripcion";
             this.Cmb_BenefPEP.FormattingEnabled = true;
@@ -1452,6 +1483,7 @@
             this.Cmb_BenefPEP.Name = "Cmb_BenefPEP";
             this.Cmb_BenefPEP.Size = new System.Drawing.Size(150, 23);
             this.Cmb_BenefPEP.TabIndex = 73;
+            this.Cmb_BenefPEP.ValueMember = "Codigo";
             // 
             // BS_AutPEP
             // 
@@ -1465,10 +1497,6 @@
             this.Nud_BenefVincPorcent.Size = new System.Drawing.Size(65, 22);
             this.Nud_BenefVincPorcent.TabIndex = 72;
             // 
-            // BS_CFirBenAcc
-            // 
-            this.BS_CFirBenAcc.DataSource = typeof(MofinModelo.C_FirBenAcc);
-            // 
             // Cmb_BenefVincEmpresa
             // 
             this.Cmb_BenefVincEmpresa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_CFirBenAcc, "VincEmpresa", true));
@@ -1479,6 +1507,7 @@
             // 
             // Cmb_BenefProfesion
             // 
+            this.Cmb_BenefProfesion.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CFirBenAcc, "Profesion", true));
             this.Cmb_BenefProfesion.DataSource = this.BS_AutProfesion;
             this.Cmb_BenefProfesion.DisplayMember = "Descripcion";
             this.Cmb_BenefProfesion.FormattingEnabled = true;
@@ -1486,6 +1515,7 @@
             this.Cmb_BenefProfesion.Name = "Cmb_BenefProfesion";
             this.Cmb_BenefProfesion.Size = new System.Drawing.Size(356, 23);
             this.Cmb_BenefProfesion.TabIndex = 70;
+            this.Cmb_BenefProfesion.ValueMember = "Codigo";
             // 
             // BS_AutProfesion
             // 
@@ -1493,6 +1523,7 @@
             // 
             // Cmb_BenefEdad
             // 
+            this.Cmb_BenefEdad.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CFirBenAcc, "Edad", true));
             this.Cmb_BenefEdad.DataSource = this.BS_AutEdad;
             this.Cmb_BenefEdad.DisplayMember = "Descripcion";
             this.Cmb_BenefEdad.FormattingEnabled = true;
@@ -1500,6 +1531,7 @@
             this.Cmb_BenefEdad.Name = "Cmb_BenefEdad";
             this.Cmb_BenefEdad.Size = new System.Drawing.Size(150, 23);
             this.Cmb_BenefEdad.TabIndex = 69;
+            this.Cmb_BenefEdad.ValueMember = "Codigo";
             // 
             // BS_AutEdad
             // 
@@ -1507,14 +1539,19 @@
             // 
             // Cmb_BenefEstado
             // 
+            this.Cmb_BenefEstado.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CFirBenAcc, "Estado", true));
+            this.Cmb_BenefEstado.DataSource = this.BS_MEstados;
+            this.Cmb_BenefEstado.DisplayMember = "Descripcion";
             this.Cmb_BenefEstado.FormattingEnabled = true;
             this.Cmb_BenefEstado.Location = new System.Drawing.Point(404, 223);
             this.Cmb_BenefEstado.Name = "Cmb_BenefEstado";
             this.Cmb_BenefEstado.Size = new System.Drawing.Size(200, 23);
             this.Cmb_BenefEstado.TabIndex = 68;
+            this.Cmb_BenefEstado.ValueMember = "Codigo";
             // 
             // Cmb_BenefPaisResid
             // 
+            this.Cmb_BenefPaisResid.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CFirBenAcc, "PaisResid", true));
             this.Cmb_BenefPaisResid.DataSource = this.BS_AutRes;
             this.Cmb_BenefPaisResid.DisplayMember = "Descripcion";
             this.Cmb_BenefPaisResid.FormattingEnabled = true;
@@ -1531,6 +1568,7 @@
             // 
             // Cmb_BenefNacionalidad
             // 
+            this.Cmb_BenefNacionalidad.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CFirBenAcc, "Nacionalidad", true));
             this.Cmb_BenefNacionalidad.DataSource = this.BS_AutNac;
             this.Cmb_BenefNacionalidad.DisplayMember = "Descripcion";
             this.Cmb_BenefNacionalidad.FormattingEnabled = true;
@@ -1538,6 +1576,7 @@
             this.Cmb_BenefNacionalidad.Name = "Cmb_BenefNacionalidad";
             this.Cmb_BenefNacionalidad.Size = new System.Drawing.Size(200, 23);
             this.Cmb_BenefNacionalidad.TabIndex = 66;
+            this.Cmb_BenefNacionalidad.ValueMember = "Codigo";
             // 
             // BS_AutNac
             // 
@@ -1545,6 +1584,7 @@
             // 
             // Cmb_BenefPaisNacim
             // 
+            this.Cmb_BenefPaisNacim.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CFirBenAcc, "PaisNacim", true));
             this.Cmb_BenefPaisNacim.DataSource = this.BS_AutPaisNac;
             this.Cmb_BenefPaisNacim.DisplayMember = "Descripcion";
             this.Cmb_BenefPaisNacim.FormattingEnabled = true;
@@ -1552,6 +1592,7 @@
             this.Cmb_BenefPaisNacim.Name = "Cmb_BenefPaisNacim";
             this.Cmb_BenefPaisNacim.Size = new System.Drawing.Size(200, 23);
             this.Cmb_BenefPaisNacim.TabIndex = 65;
+            this.Cmb_BenefPaisNacim.ValueMember = "Codigo";
             // 
             // BS_AutPaisNac
             // 
@@ -1559,6 +1600,7 @@
             // 
             // Dtp_BenefFec_Venc
             // 
+            this.Dtp_BenefFec_Venc.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BS_CFirBenAcc, "Fec_Vencimiento", true));
             this.Dtp_BenefFec_Venc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.Dtp_BenefFec_Venc.Location = new System.Drawing.Point(610, 112);
             this.Dtp_BenefFec_Venc.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
@@ -1601,9 +1643,9 @@
             this.Opc_TipVinc3.Name = "Opc_TipVinc3";
             this.Opc_TipVinc3.Size = new System.Drawing.Size(81, 19);
             this.Opc_TipVinc3.TabIndex = 2;
-            this.Opc_TipVinc3.TabStop = true;
             this.Opc_TipVinc3.Text = "Cónyugue";
             this.Opc_TipVinc3.UseVisualStyleBackColor = true;
+            this.Opc_TipVinc3.CheckedChanged += new System.EventHandler(this.Opc_TipVinc1_CheckedChanged);
             // 
             // Opc_TipVinc2
             // 
@@ -1612,13 +1654,14 @@
             this.Opc_TipVinc2.Name = "Opc_TipVinc2";
             this.Opc_TipVinc2.Size = new System.Drawing.Size(71, 19);
             this.Opc_TipVinc2.TabIndex = 1;
-            this.Opc_TipVinc2.TabStop = true;
             this.Opc_TipVinc2.Text = "Firmante";
             this.Opc_TipVinc2.UseVisualStyleBackColor = true;
+            this.Opc_TipVinc2.CheckedChanged += new System.EventHandler(this.Opc_TipVinc1_CheckedChanged);
             // 
             // Opc_TipVinc1
             // 
             this.Opc_TipVinc1.AutoSize = true;
+            this.Opc_TipVinc1.Checked = true;
             this.Opc_TipVinc1.Location = new System.Drawing.Point(6, 10);
             this.Opc_TipVinc1.Name = "Opc_TipVinc1";
             this.Opc_TipVinc1.Size = new System.Drawing.Size(117, 19);
@@ -1626,6 +1669,7 @@
             this.Opc_TipVinc1.TabStop = true;
             this.Opc_TipVinc1.Text = "Beneficiario Final";
             this.Opc_TipVinc1.UseVisualStyleBackColor = true;
+            this.Opc_TipVinc1.CheckedChanged += new System.EventHandler(this.Opc_TipVinc1_CheckedChanged);
             // 
             // tipoVinculoTextBox
             // 
@@ -1641,24 +1685,8 @@
             this.Grd_CFirBenAcc.AutoGenerateColumns = false;
             this.Grd_CFirBenAcc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grd_CFirBenAcc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDSistemaDataGridViewTextBoxColumn1,
-            this.codClienteDataGridViewTextBoxColumn,
-            this.tipoVinculoDataGridViewTextBoxColumn,
-            this.docIDDataGridViewTextBoxColumn1,
-            this.fecVencimientoDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn1,
-            this.edadDataGridViewTextBoxColumn,
-            this.paisNacimDataGridViewTextBoxColumn,
-            this.nacionalidadDataGridViewTextBoxColumn,
-            this.paisResidDataGridViewTextBoxColumn,
-            this.estadoDataGridViewTextBoxColumn,
-            this.profesionDataGridViewTextBoxColumn,
-            this.criptomonedaDataGridViewTextBoxColumn,
-            this.vincEmpresaDataGridViewTextBoxColumn,
-            this.vincPorcentDataGridViewTextBoxColumn,
-            this.pEPDataGridViewTextBoxColumn,
-            this.puntuacionDataGridViewTextBoxColumn,
-            this.condEspSeguridadDataGridViewTextBoxColumn1});
+            this.edadDataGridViewTextBoxColumn});
             this.Grd_CFirBenAcc.DataSource = this.BS_CFirBenAcc;
             this.Grd_CFirBenAcc.Location = new System.Drawing.Point(8, 18);
             this.Grd_CFirBenAcc.MultiSelect = false;
@@ -1667,46 +1695,7 @@
             this.Grd_CFirBenAcc.RowHeadersVisible = false;
             this.Grd_CFirBenAcc.Size = new System.Drawing.Size(278, 332);
             this.Grd_CFirBenAcc.TabIndex = 1;
-            // 
-            // iDSistemaDataGridViewTextBoxColumn1
-            // 
-            this.iDSistemaDataGridViewTextBoxColumn1.DataPropertyName = "ID_Sistema";
-            this.iDSistemaDataGridViewTextBoxColumn1.HeaderText = "ID_Sistema";
-            this.iDSistemaDataGridViewTextBoxColumn1.Name = "iDSistemaDataGridViewTextBoxColumn1";
-            this.iDSistemaDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.iDSistemaDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // codClienteDataGridViewTextBoxColumn
-            // 
-            this.codClienteDataGridViewTextBoxColumn.DataPropertyName = "Cod_Cliente";
-            this.codClienteDataGridViewTextBoxColumn.HeaderText = "Cod_Cliente";
-            this.codClienteDataGridViewTextBoxColumn.Name = "codClienteDataGridViewTextBoxColumn";
-            this.codClienteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codClienteDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // tipoVinculoDataGridViewTextBoxColumn
-            // 
-            this.tipoVinculoDataGridViewTextBoxColumn.DataPropertyName = "TipoVinculo";
-            this.tipoVinculoDataGridViewTextBoxColumn.HeaderText = "TipoVinculo";
-            this.tipoVinculoDataGridViewTextBoxColumn.Name = "tipoVinculoDataGridViewTextBoxColumn";
-            this.tipoVinculoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tipoVinculoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // docIDDataGridViewTextBoxColumn1
-            // 
-            this.docIDDataGridViewTextBoxColumn1.DataPropertyName = "Doc_ID";
-            this.docIDDataGridViewTextBoxColumn1.HeaderText = "Doc_ID";
-            this.docIDDataGridViewTextBoxColumn1.Name = "docIDDataGridViewTextBoxColumn1";
-            this.docIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.docIDDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // fecVencimientoDataGridViewTextBoxColumn
-            // 
-            this.fecVencimientoDataGridViewTextBoxColumn.DataPropertyName = "Fec_Vencimiento";
-            this.fecVencimientoDataGridViewTextBoxColumn.HeaderText = "Fec_Vencimiento";
-            this.fecVencimientoDataGridViewTextBoxColumn.Name = "fecVencimientoDataGridViewTextBoxColumn";
-            this.fecVencimientoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fecVencimientoDataGridViewTextBoxColumn.Visible = false;
+            this.Grd_CFirBenAcc.CurrentCellChanged += new System.EventHandler(this.Grd_CFirBenAcc_CurrentCellChanged);
             // 
             // nombreDataGridViewTextBoxColumn1
             // 
@@ -1722,83 +1711,6 @@
             this.edadDataGridViewTextBoxColumn.HeaderText = "Edad";
             this.edadDataGridViewTextBoxColumn.Name = "edadDataGridViewTextBoxColumn";
             this.edadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // paisNacimDataGridViewTextBoxColumn
-            // 
-            this.paisNacimDataGridViewTextBoxColumn.DataPropertyName = "PaisNacim";
-            this.paisNacimDataGridViewTextBoxColumn.HeaderText = "PaisNacim";
-            this.paisNacimDataGridViewTextBoxColumn.Name = "paisNacimDataGridViewTextBoxColumn";
-            this.paisNacimDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nacionalidadDataGridViewTextBoxColumn
-            // 
-            this.nacionalidadDataGridViewTextBoxColumn.DataPropertyName = "Nacionalidad";
-            this.nacionalidadDataGridViewTextBoxColumn.HeaderText = "Nacionalidad";
-            this.nacionalidadDataGridViewTextBoxColumn.Name = "nacionalidadDataGridViewTextBoxColumn";
-            this.nacionalidadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // paisResidDataGridViewTextBoxColumn
-            // 
-            this.paisResidDataGridViewTextBoxColumn.DataPropertyName = "PaisResid";
-            this.paisResidDataGridViewTextBoxColumn.HeaderText = "PaisResid";
-            this.paisResidDataGridViewTextBoxColumn.Name = "paisResidDataGridViewTextBoxColumn";
-            this.paisResidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // profesionDataGridViewTextBoxColumn
-            // 
-            this.profesionDataGridViewTextBoxColumn.DataPropertyName = "Profesion";
-            this.profesionDataGridViewTextBoxColumn.HeaderText = "Profesion";
-            this.profesionDataGridViewTextBoxColumn.Name = "profesionDataGridViewTextBoxColumn";
-            this.profesionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // criptomonedaDataGridViewTextBoxColumn
-            // 
-            this.criptomonedaDataGridViewTextBoxColumn.DataPropertyName = "Criptomoneda";
-            this.criptomonedaDataGridViewTextBoxColumn.HeaderText = "Criptomoneda";
-            this.criptomonedaDataGridViewTextBoxColumn.Name = "criptomonedaDataGridViewTextBoxColumn";
-            this.criptomonedaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // vincEmpresaDataGridViewTextBoxColumn
-            // 
-            this.vincEmpresaDataGridViewTextBoxColumn.DataPropertyName = "VincEmpresa";
-            this.vincEmpresaDataGridViewTextBoxColumn.HeaderText = "VincEmpresa";
-            this.vincEmpresaDataGridViewTextBoxColumn.Name = "vincEmpresaDataGridViewTextBoxColumn";
-            this.vincEmpresaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // vincPorcentDataGridViewTextBoxColumn
-            // 
-            this.vincPorcentDataGridViewTextBoxColumn.DataPropertyName = "VincPorcent";
-            this.vincPorcentDataGridViewTextBoxColumn.HeaderText = "VincPorcent";
-            this.vincPorcentDataGridViewTextBoxColumn.Name = "vincPorcentDataGridViewTextBoxColumn";
-            this.vincPorcentDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pEPDataGridViewTextBoxColumn
-            // 
-            this.pEPDataGridViewTextBoxColumn.DataPropertyName = "PEP";
-            this.pEPDataGridViewTextBoxColumn.HeaderText = "PEP";
-            this.pEPDataGridViewTextBoxColumn.Name = "pEPDataGridViewTextBoxColumn";
-            this.pEPDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // puntuacionDataGridViewTextBoxColumn
-            // 
-            this.puntuacionDataGridViewTextBoxColumn.DataPropertyName = "Puntuacion";
-            this.puntuacionDataGridViewTextBoxColumn.HeaderText = "Puntuacion";
-            this.puntuacionDataGridViewTextBoxColumn.Name = "puntuacionDataGridViewTextBoxColumn";
-            this.puntuacionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // condEspSeguridadDataGridViewTextBoxColumn1
-            // 
-            this.condEspSeguridadDataGridViewTextBoxColumn1.DataPropertyName = "CondEspSeguridad";
-            this.condEspSeguridadDataGridViewTextBoxColumn1.HeaderText = "CondEspSeguridad";
-            this.condEspSeguridadDataGridViewTextBoxColumn1.Name = "condEspSeguridadDataGridViewTextBoxColumn1";
-            this.condEspSeguridadDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // Pag3
             // 
@@ -1859,10 +1771,6 @@
             this.Chk_Opc30.Text = "OPC30";
             this.Chk_Opc30.UseVisualStyleBackColor = true;
             this.Chk_Opc30.Visible = false;
-            // 
-            // BS_CClientes
-            // 
-            this.BS_CClientes.DataSource = typeof(MofinModelo.C_Clientes);
             // 
             // Chk_Opc29
             // 
@@ -2233,6 +2141,7 @@
             // 
             // Txt_TriNroOperaciones
             // 
+            this.Txt_TriNroOperaciones.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_CClientes, "NroTransacciones", true));
             this.Txt_TriNroOperaciones.Enabled = false;
             this.Txt_TriNroOperaciones.Location = new System.Drawing.Point(541, 332);
             this.Txt_TriNroOperaciones.Name = "Txt_TriNroOperaciones";
@@ -2249,6 +2158,7 @@
             // 
             // DTP_FecUltAct
             // 
+            this.DTP_FecUltAct.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BS_CClientes, "Fec_UltimAct", true));
             this.DTP_FecUltAct.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTP_FecUltAct.Location = new System.Drawing.Point(5, 364);
             this.DTP_FecUltAct.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
@@ -2318,9 +2228,9 @@
             this.Opt_PerUsoCta5.Name = "Opt_PerUsoCta5";
             this.Opt_PerUsoCta5.Size = new System.Drawing.Size(58, 19);
             this.Opt_PerUsoCta5.TabIndex = 4;
-            this.Opt_PerUsoCta5.TabStop = true;
             this.Opt_PerUsoCta5.Text = "Anual";
             this.Opt_PerUsoCta5.UseVisualStyleBackColor = true;
+            this.Opt_PerUsoCta5.CheckedChanged += new System.EventHandler(this.Opt_PerUsoCta1_CheckedChanged);
             // 
             // Opt_PerUsoCta4
             // 
@@ -2329,9 +2239,9 @@
             this.Opt_PerUsoCta4.Name = "Opt_PerUsoCta4";
             this.Opt_PerUsoCta4.Size = new System.Drawing.Size(76, 19);
             this.Opt_PerUsoCta4.TabIndex = 3;
-            this.Opt_PerUsoCta4.TabStop = true;
             this.Opt_PerUsoCta4.Text = "Semestral";
             this.Opt_PerUsoCta4.UseVisualStyleBackColor = true;
+            this.Opt_PerUsoCta4.CheckedChanged += new System.EventHandler(this.Opt_PerUsoCta1_CheckedChanged);
             // 
             // Opt_PerUsoCta3
             // 
@@ -2340,9 +2250,9 @@
             this.Opt_PerUsoCta3.Name = "Opt_PerUsoCta3";
             this.Opt_PerUsoCta3.Size = new System.Drawing.Size(78, 19);
             this.Opt_PerUsoCta3.TabIndex = 2;
-            this.Opt_PerUsoCta3.TabStop = true;
             this.Opt_PerUsoCta3.Text = "Trimestral";
             this.Opt_PerUsoCta3.UseVisualStyleBackColor = true;
+            this.Opt_PerUsoCta3.CheckedChanged += new System.EventHandler(this.Opt_PerUsoCta1_CheckedChanged);
             // 
             // Opt_PerUsoCta2
             // 
@@ -2351,13 +2261,14 @@
             this.Opt_PerUsoCta2.Name = "Opt_PerUsoCta2";
             this.Opt_PerUsoCta2.Size = new System.Drawing.Size(72, 19);
             this.Opt_PerUsoCta2.TabIndex = 1;
-            this.Opt_PerUsoCta2.TabStop = true;
             this.Opt_PerUsoCta2.Text = "Mensual";
             this.Opt_PerUsoCta2.UseVisualStyleBackColor = true;
+            this.Opt_PerUsoCta2.CheckedChanged += new System.EventHandler(this.Opt_PerUsoCta1_CheckedChanged);
             // 
             // Opt_PerUsoCta1
             // 
             this.Opt_PerUsoCta1.AutoSize = true;
+            this.Opt_PerUsoCta1.Checked = true;
             this.Opt_PerUsoCta1.Location = new System.Drawing.Point(5, 10);
             this.Opt_PerUsoCta1.Name = "Opt_PerUsoCta1";
             this.Opt_PerUsoCta1.Size = new System.Drawing.Size(69, 19);
@@ -2365,6 +2276,7 @@
             this.Opt_PerUsoCta1.TabStop = true;
             this.Opt_PerUsoCta1.Text = "Semanal";
             this.Opt_PerUsoCta1.UseVisualStyleBackColor = true;
+            this.Opt_PerUsoCta1.CheckedChanged += new System.EventHandler(this.Opt_PerUsoCta1_CheckedChanged);
             // 
             // Pag5
             // 
@@ -2386,10 +2298,6 @@
             this.Pic_MapEpresa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Pic_MapEpresa.TabIndex = 0;
             this.Pic_MapEpresa.TabStop = false;
-            // 
-            // BS_MEstados
-            // 
-            this.BS_MEstados.DataSource = typeof(MofinModelo.M_Estados);
             // 
             // Lbl_Puntuacion
             // 
@@ -2452,7 +2360,6 @@
             this.Opc_TipPers2.Name = "Opc_TipPers2";
             this.Opc_TipPers2.Size = new System.Drawing.Size(112, 19);
             this.Opc_TipPers2.TabIndex = 1;
-            this.Opc_TipPers2.TabStop = true;
             this.Opc_TipPers2.Text = "Persona Jurídica";
             this.Opc_TipPers2.UseVisualStyleBackColor = true;
             this.Opc_TipPers2.CheckedChanged += new System.EventHandler(this.Opc_TipPers1_CheckedChanged);
@@ -2460,6 +2367,7 @@
             // Opc_TipPers1
             // 
             this.Opc_TipPers1.AutoSize = true;
+            this.Opc_TipPers1.Checked = true;
             this.Opc_TipPers1.Location = new System.Drawing.Point(8, 11);
             this.Opc_TipPers1.Name = "Opc_TipPers1";
             this.Opc_TipPers1.Size = new System.Drawing.Size(110, 19);
@@ -2598,6 +2506,7 @@
             this.Grd_Clientes.DataSource = this.BS_CClientes;
             this.Grd_Clientes.Location = new System.Drawing.Point(14, 121);
             this.Grd_Clientes.Name = "Grd_Clientes";
+            this.Grd_Clientes.ReadOnly = true;
             this.Grd_Clientes.RowHeadersVisible = false;
             this.Grd_Clientes.Size = new System.Drawing.Size(225, 412);
             this.Grd_Clientes.TabIndex = 54;
@@ -2608,6 +2517,7 @@
             this.iDSistemaDataGridViewTextBoxColumn.DataPropertyName = "ID_Sistema";
             this.iDSistemaDataGridViewTextBoxColumn.HeaderText = "ID_Sistema";
             this.iDSistemaDataGridViewTextBoxColumn.Name = "iDSistemaDataGridViewTextBoxColumn";
+            this.iDSistemaDataGridViewTextBoxColumn.ReadOnly = true;
             this.iDSistemaDataGridViewTextBoxColumn.Visible = false;
             // 
             // codigoDataGridViewTextBoxColumn
@@ -2615,13 +2525,14 @@
             this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
             this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
             this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
-            this.codigoDataGridViewTextBoxColumn.Width = 75;
+            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tipoPersonaDataGridViewTextBoxColumn
             // 
             this.tipoPersonaDataGridViewTextBoxColumn.DataPropertyName = "TipoPersona";
             this.tipoPersonaDataGridViewTextBoxColumn.HeaderText = "TipoPersona";
             this.tipoPersonaDataGridViewTextBoxColumn.Name = "tipoPersonaDataGridViewTextBoxColumn";
+            this.tipoPersonaDataGridViewTextBoxColumn.ReadOnly = true;
             this.tipoPersonaDataGridViewTextBoxColumn.Visible = false;
             // 
             // activoDataGridViewTextBoxColumn
@@ -2629,6 +2540,7 @@
             this.activoDataGridViewTextBoxColumn.DataPropertyName = "Activo";
             this.activoDataGridViewTextBoxColumn.HeaderText = "Activo";
             this.activoDataGridViewTextBoxColumn.Name = "activoDataGridViewTextBoxColumn";
+            this.activoDataGridViewTextBoxColumn.ReadOnly = true;
             this.activoDataGridViewTextBoxColumn.Visible = false;
             // 
             // docIDDataGridViewTextBoxColumn
@@ -2636,6 +2548,7 @@
             this.docIDDataGridViewTextBoxColumn.DataPropertyName = "Doc_ID";
             this.docIDDataGridViewTextBoxColumn.HeaderText = "Doc_ID";
             this.docIDDataGridViewTextBoxColumn.Name = "docIDDataGridViewTextBoxColumn";
+            this.docIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.docIDDataGridViewTextBoxColumn.Visible = false;
             // 
             // nombreDataGridViewTextBoxColumn
@@ -2643,493 +2556,656 @@
             this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
             this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.Width = 150;
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.Width = 130;
             // 
             // clientePuntDataGridViewTextBoxColumn
             // 
             this.clientePuntDataGridViewTextBoxColumn.DataPropertyName = "Cliente_Punt";
             this.clientePuntDataGridViewTextBoxColumn.HeaderText = "Cliente_Punt";
             this.clientePuntDataGridViewTextBoxColumn.Name = "clientePuntDataGridViewTextBoxColumn";
+            this.clientePuntDataGridViewTextBoxColumn.ReadOnly = true;
+            this.clientePuntDataGridViewTextBoxColumn.Visible = false;
             // 
             // benefPuntDataGridViewTextBoxColumn
             // 
             this.benefPuntDataGridViewTextBoxColumn.DataPropertyName = "Benef_Punt";
             this.benefPuntDataGridViewTextBoxColumn.HeaderText = "Benef_Punt";
             this.benefPuntDataGridViewTextBoxColumn.Name = "benefPuntDataGridViewTextBoxColumn";
+            this.benefPuntDataGridViewTextBoxColumn.ReadOnly = true;
+            this.benefPuntDataGridViewTextBoxColumn.Visible = false;
             // 
             // infGenPuntDataGridViewTextBoxColumn
             // 
             this.infGenPuntDataGridViewTextBoxColumn.DataPropertyName = "InfGen_Punt";
             this.infGenPuntDataGridViewTextBoxColumn.HeaderText = "InfGen_Punt";
             this.infGenPuntDataGridViewTextBoxColumn.Name = "infGenPuntDataGridViewTextBoxColumn";
+            this.infGenPuntDataGridViewTextBoxColumn.ReadOnly = true;
+            this.infGenPuntDataGridViewTextBoxColumn.Visible = false;
             // 
             // constExpedPuntDataGridViewTextBoxColumn
             // 
             this.constExpedPuntDataGridViewTextBoxColumn.DataPropertyName = "ConstExped_Punt";
             this.constExpedPuntDataGridViewTextBoxColumn.HeaderText = "ConstExped_Punt";
             this.constExpedPuntDataGridViewTextBoxColumn.Name = "constExpedPuntDataGridViewTextBoxColumn";
+            this.constExpedPuntDataGridViewTextBoxColumn.ReadOnly = true;
+            this.constExpedPuntDataGridViewTextBoxColumn.Visible = false;
             // 
             // condEspSeguridadDataGridViewTextBoxColumn
             // 
             this.condEspSeguridadDataGridViewTextBoxColumn.DataPropertyName = "CondEspSeguridad";
             this.condEspSeguridadDataGridViewTextBoxColumn.HeaderText = "CondEspSeguridad";
             this.condEspSeguridadDataGridViewTextBoxColumn.Name = "condEspSeguridadDataGridViewTextBoxColumn";
+            this.condEspSeguridadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.condEspSeguridadDataGridViewTextBoxColumn.Visible = false;
             // 
             // iGPaisNacimDataGridViewTextBoxColumn
             // 
             this.iGPaisNacimDataGridViewTextBoxColumn.DataPropertyName = "IG_PaisNacim";
             this.iGPaisNacimDataGridViewTextBoxColumn.HeaderText = "IG_PaisNacim";
             this.iGPaisNacimDataGridViewTextBoxColumn.Name = "iGPaisNacimDataGridViewTextBoxColumn";
+            this.iGPaisNacimDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGPaisNacimDataGridViewTextBoxColumn.Visible = false;
             // 
             // iGNacionalidadDataGridViewTextBoxColumn
             // 
             this.iGNacionalidadDataGridViewTextBoxColumn.DataPropertyName = "IG_Nacionalidad";
             this.iGNacionalidadDataGridViewTextBoxColumn.HeaderText = "IG_Nacionalidad";
             this.iGNacionalidadDataGridViewTextBoxColumn.Name = "iGNacionalidadDataGridViewTextBoxColumn";
+            this.iGNacionalidadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGNacionalidadDataGridViewTextBoxColumn.Visible = false;
             // 
             // iGPaisResidDataGridViewTextBoxColumn
             // 
             this.iGPaisResidDataGridViewTextBoxColumn.DataPropertyName = "IG_PaisResid";
             this.iGPaisResidDataGridViewTextBoxColumn.HeaderText = "IG_PaisResid";
             this.iGPaisResidDataGridViewTextBoxColumn.Name = "iGPaisResidDataGridViewTextBoxColumn";
+            this.iGPaisResidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGPaisResidDataGridViewTextBoxColumn.Visible = false;
             // 
             // iGEstadoDataGridViewTextBoxColumn
             // 
             this.iGEstadoDataGridViewTextBoxColumn.DataPropertyName = "IG_Estado";
             this.iGEstadoDataGridViewTextBoxColumn.HeaderText = "IG_Estado";
             this.iGEstadoDataGridViewTextBoxColumn.Name = "iGEstadoDataGridViewTextBoxColumn";
+            this.iGEstadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGEstadoDataGridViewTextBoxColumn.Visible = false;
             // 
             // iGPEPDataGridViewTextBoxColumn
             // 
             this.iGPEPDataGridViewTextBoxColumn.DataPropertyName = "IG_PEP";
             this.iGPEPDataGridViewTextBoxColumn.HeaderText = "IG_PEP";
             this.iGPEPDataGridViewTextBoxColumn.Name = "iGPEPDataGridViewTextBoxColumn";
+            this.iGPEPDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGPEPDataGridViewTextBoxColumn.Visible = false;
             // 
             // iGProfesionDataGridViewTextBoxColumn
             // 
             this.iGProfesionDataGridViewTextBoxColumn.DataPropertyName = "IG_Profesion";
             this.iGProfesionDataGridViewTextBoxColumn.HeaderText = "IG_Profesion";
             this.iGProfesionDataGridViewTextBoxColumn.Name = "iGProfesionDataGridViewTextBoxColumn";
+            this.iGProfesionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGProfesionDataGridViewTextBoxColumn.Visible = false;
             // 
             // iGTipDocIDDataGridViewTextBoxColumn
             // 
             this.iGTipDocIDDataGridViewTextBoxColumn.DataPropertyName = "IG_TipDocID";
             this.iGTipDocIDDataGridViewTextBoxColumn.HeaderText = "IG_TipDocID";
             this.iGTipDocIDDataGridViewTextBoxColumn.Name = "iGTipDocIDDataGridViewTextBoxColumn";
+            this.iGTipDocIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGTipDocIDDataGridViewTextBoxColumn.Visible = false;
             // 
             // iGFecVencDocIDDataGridViewTextBoxColumn
             // 
             this.iGFecVencDocIDDataGridViewTextBoxColumn.DataPropertyName = "IG_FecVencDocID";
             this.iGFecVencDocIDDataGridViewTextBoxColumn.HeaderText = "IG_FecVencDocID";
             this.iGFecVencDocIDDataGridViewTextBoxColumn.Name = "iGFecVencDocIDDataGridViewTextBoxColumn";
+            this.iGFecVencDocIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGFecVencDocIDDataGridViewTextBoxColumn.Visible = false;
             // 
             // iGTipoPersJurDataGridViewTextBoxColumn
             // 
             this.iGTipoPersJurDataGridViewTextBoxColumn.DataPropertyName = "IG_TipoPersJur";
             this.iGTipoPersJurDataGridViewTextBoxColumn.HeaderText = "IG_TipoPersJur";
             this.iGTipoPersJurDataGridViewTextBoxColumn.Name = "iGTipoPersJurDataGridViewTextBoxColumn";
+            this.iGTipoPersJurDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGTipoPersJurDataGridViewTextBoxColumn.Visible = false;
             // 
             // iGEdadDataGridViewTextBoxColumn
             // 
             this.iGEdadDataGridViewTextBoxColumn.DataPropertyName = "IG_Edad";
             this.iGEdadDataGridViewTextBoxColumn.HeaderText = "IG_Edad";
             this.iGEdadDataGridViewTextBoxColumn.Name = "iGEdadDataGridViewTextBoxColumn";
+            this.iGEdadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGEdadDataGridViewTextBoxColumn.Visible = false;
             // 
             // iGActivComerDataGridViewTextBoxColumn
             // 
             this.iGActivComerDataGridViewTextBoxColumn.DataPropertyName = "IG_ActivComer";
             this.iGActivComerDataGridViewTextBoxColumn.HeaderText = "IG_ActivComer";
             this.iGActivComerDataGridViewTextBoxColumn.Name = "iGActivComerDataGridViewTextBoxColumn";
+            this.iGActivComerDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGActivComerDataGridViewTextBoxColumn.Visible = false;
             // 
             // iGVolumOperacDataGridViewTextBoxColumn
             // 
             this.iGVolumOperacDataGridViewTextBoxColumn.DataPropertyName = "IG_VolumOperac";
             this.iGVolumOperacDataGridViewTextBoxColumn.HeaderText = "IG_VolumOperac";
             this.iGVolumOperacDataGridViewTextBoxColumn.Name = "iGVolumOperacDataGridViewTextBoxColumn";
+            this.iGVolumOperacDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGVolumOperacDataGridViewTextBoxColumn.Visible = false;
             // 
             // iGCriptomonedaDataGridViewTextBoxColumn
             // 
             this.iGCriptomonedaDataGridViewTextBoxColumn.DataPropertyName = "IG_Criptomoneda";
             this.iGCriptomonedaDataGridViewTextBoxColumn.HeaderText = "IG_Criptomoneda";
             this.iGCriptomonedaDataGridViewTextBoxColumn.Name = "iGCriptomonedaDataGridViewTextBoxColumn";
+            this.iGCriptomonedaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGCriptomonedaDataGridViewTextBoxColumn.Visible = false;
             // 
             // iGTipoEstructuraDataGridViewTextBoxColumn
             // 
             this.iGTipoEstructuraDataGridViewTextBoxColumn.DataPropertyName = "IG_TipoEstructura";
             this.iGTipoEstructuraDataGridViewTextBoxColumn.HeaderText = "IG_TipoEstructura";
             this.iGTipoEstructuraDataGridViewTextBoxColumn.Name = "iGTipoEstructuraDataGridViewTextBoxColumn";
+            this.iGTipoEstructuraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGTipoEstructuraDataGridViewTextBoxColumn.Visible = false;
             // 
             // iGServicio1DataGridViewTextBoxColumn
             // 
             this.iGServicio1DataGridViewTextBoxColumn.DataPropertyName = "IG_Servicio1";
             this.iGServicio1DataGridViewTextBoxColumn.HeaderText = "IG_Servicio1";
             this.iGServicio1DataGridViewTextBoxColumn.Name = "iGServicio1DataGridViewTextBoxColumn";
+            this.iGServicio1DataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGServicio1DataGridViewTextBoxColumn.Visible = false;
             // 
             // iGServicio2DataGridViewTextBoxColumn
             // 
             this.iGServicio2DataGridViewTextBoxColumn.DataPropertyName = "IG_Servicio2";
             this.iGServicio2DataGridViewTextBoxColumn.HeaderText = "IG_Servicio2";
             this.iGServicio2DataGridViewTextBoxColumn.Name = "iGServicio2DataGridViewTextBoxColumn";
+            this.iGServicio2DataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGServicio2DataGridViewTextBoxColumn.Visible = false;
             // 
             // iGServicio3DataGridViewTextBoxColumn
             // 
             this.iGServicio3DataGridViewTextBoxColumn.DataPropertyName = "IG_Servicio3";
             this.iGServicio3DataGridViewTextBoxColumn.HeaderText = "IG_Servicio3";
             this.iGServicio3DataGridViewTextBoxColumn.Name = "iGServicio3DataGridViewTextBoxColumn";
+            this.iGServicio3DataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGServicio3DataGridViewTextBoxColumn.Visible = false;
             // 
             // iGServicio4DataGridViewTextBoxColumn
             // 
             this.iGServicio4DataGridViewTextBoxColumn.DataPropertyName = "IG_Servicio4";
             this.iGServicio4DataGridViewTextBoxColumn.HeaderText = "IG_Servicio4";
             this.iGServicio4DataGridViewTextBoxColumn.Name = "iGServicio4DataGridViewTextBoxColumn";
+            this.iGServicio4DataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGServicio4DataGridViewTextBoxColumn.Visible = false;
             // 
             // iGServicio5DataGridViewTextBoxColumn
             // 
             this.iGServicio5DataGridViewTextBoxColumn.DataPropertyName = "IG_Servicio5";
             this.iGServicio5DataGridViewTextBoxColumn.HeaderText = "IG_Servicio5";
             this.iGServicio5DataGridViewTextBoxColumn.Name = "iGServicio5DataGridViewTextBoxColumn";
+            this.iGServicio5DataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGServicio5DataGridViewTextBoxColumn.Visible = false;
             // 
             // iGServicio6DataGridViewTextBoxColumn
             // 
             this.iGServicio6DataGridViewTextBoxColumn.DataPropertyName = "IG_Servicio6";
             this.iGServicio6DataGridViewTextBoxColumn.HeaderText = "IG_Servicio6";
             this.iGServicio6DataGridViewTextBoxColumn.Name = "iGServicio6DataGridViewTextBoxColumn";
+            this.iGServicio6DataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGServicio6DataGridViewTextBoxColumn.Visible = false;
             // 
             // iGServicio7DataGridViewTextBoxColumn
             // 
             this.iGServicio7DataGridViewTextBoxColumn.DataPropertyName = "IG_Servicio7";
             this.iGServicio7DataGridViewTextBoxColumn.HeaderText = "IG_Servicio7";
             this.iGServicio7DataGridViewTextBoxColumn.Name = "iGServicio7DataGridViewTextBoxColumn";
+            this.iGServicio7DataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGServicio7DataGridViewTextBoxColumn.Visible = false;
             // 
             // iGServicio8DataGridViewTextBoxColumn
             // 
             this.iGServicio8DataGridViewTextBoxColumn.DataPropertyName = "IG_Servicio8";
             this.iGServicio8DataGridViewTextBoxColumn.HeaderText = "IG_Servicio8";
             this.iGServicio8DataGridViewTextBoxColumn.Name = "iGServicio8DataGridViewTextBoxColumn";
+            this.iGServicio8DataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGServicio8DataGridViewTextBoxColumn.Visible = false;
             // 
             // iGServicio9DataGridViewTextBoxColumn
             // 
             this.iGServicio9DataGridViewTextBoxColumn.DataPropertyName = "IG_Servicio9";
             this.iGServicio9DataGridViewTextBoxColumn.HeaderText = "IG_Servicio9";
             this.iGServicio9DataGridViewTextBoxColumn.Name = "iGServicio9DataGridViewTextBoxColumn";
+            this.iGServicio9DataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGServicio9DataGridViewTextBoxColumn.Visible = false;
             // 
             // iGServicio10DataGridViewTextBoxColumn
             // 
             this.iGServicio10DataGridViewTextBoxColumn.DataPropertyName = "IG_Servicio10";
             this.iGServicio10DataGridViewTextBoxColumn.HeaderText = "IG_Servicio10";
             this.iGServicio10DataGridViewTextBoxColumn.Name = "iGServicio10DataGridViewTextBoxColumn";
+            this.iGServicio10DataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGServicio10DataGridViewTextBoxColumn.Visible = false;
             // 
             // iGProducto1DataGridViewTextBoxColumn
             // 
             this.iGProducto1DataGridViewTextBoxColumn.DataPropertyName = "IG_Producto1";
             this.iGProducto1DataGridViewTextBoxColumn.HeaderText = "IG_Producto1";
             this.iGProducto1DataGridViewTextBoxColumn.Name = "iGProducto1DataGridViewTextBoxColumn";
+            this.iGProducto1DataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGProducto1DataGridViewTextBoxColumn.Visible = false;
             // 
             // iGProducto2DataGridViewTextBoxColumn
             // 
             this.iGProducto2DataGridViewTextBoxColumn.DataPropertyName = "IG_Producto2";
             this.iGProducto2DataGridViewTextBoxColumn.HeaderText = "IG_Producto2";
             this.iGProducto2DataGridViewTextBoxColumn.Name = "iGProducto2DataGridViewTextBoxColumn";
+            this.iGProducto2DataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGProducto2DataGridViewTextBoxColumn.Visible = false;
             // 
             // iGProducto3DataGridViewTextBoxColumn
             // 
             this.iGProducto3DataGridViewTextBoxColumn.DataPropertyName = "IG_Producto3";
             this.iGProducto3DataGridViewTextBoxColumn.HeaderText = "IG_Producto3";
             this.iGProducto3DataGridViewTextBoxColumn.Name = "iGProducto3DataGridViewTextBoxColumn";
+            this.iGProducto3DataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGProducto3DataGridViewTextBoxColumn.Visible = false;
             // 
             // iGProducto4DataGridViewTextBoxColumn
             // 
             this.iGProducto4DataGridViewTextBoxColumn.DataPropertyName = "IG_Producto4";
             this.iGProducto4DataGridViewTextBoxColumn.HeaderText = "IG_Producto4";
             this.iGProducto4DataGridViewTextBoxColumn.Name = "iGProducto4DataGridViewTextBoxColumn";
+            this.iGProducto4DataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGProducto4DataGridViewTextBoxColumn.Visible = false;
             // 
             // iGProducto5DataGridViewTextBoxColumn
             // 
             this.iGProducto5DataGridViewTextBoxColumn.DataPropertyName = "IG_Producto5";
             this.iGProducto5DataGridViewTextBoxColumn.HeaderText = "IG_Producto5";
             this.iGProducto5DataGridViewTextBoxColumn.Name = "iGProducto5DataGridViewTextBoxColumn";
+            this.iGProducto5DataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGProducto5DataGridViewTextBoxColumn.Visible = false;
             // 
             // iGProducto6DataGridViewTextBoxColumn
             // 
             this.iGProducto6DataGridViewTextBoxColumn.DataPropertyName = "IG_Producto6";
             this.iGProducto6DataGridViewTextBoxColumn.HeaderText = "IG_Producto6";
             this.iGProducto6DataGridViewTextBoxColumn.Name = "iGProducto6DataGridViewTextBoxColumn";
+            this.iGProducto6DataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGProducto6DataGridViewTextBoxColumn.Visible = false;
             // 
             // iGProducto7DataGridViewTextBoxColumn
             // 
             this.iGProducto7DataGridViewTextBoxColumn.DataPropertyName = "IG_Producto7";
             this.iGProducto7DataGridViewTextBoxColumn.HeaderText = "IG_Producto7";
             this.iGProducto7DataGridViewTextBoxColumn.Name = "iGProducto7DataGridViewTextBoxColumn";
+            this.iGProducto7DataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGProducto7DataGridViewTextBoxColumn.Visible = false;
             // 
             // iGProducto8DataGridViewTextBoxColumn
             // 
             this.iGProducto8DataGridViewTextBoxColumn.DataPropertyName = "IG_Producto8";
             this.iGProducto8DataGridViewTextBoxColumn.HeaderText = "IG_Producto8";
             this.iGProducto8DataGridViewTextBoxColumn.Name = "iGProducto8DataGridViewTextBoxColumn";
+            this.iGProducto8DataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGProducto8DataGridViewTextBoxColumn.Visible = false;
             // 
             // iGProducto9DataGridViewTextBoxColumn
             // 
             this.iGProducto9DataGridViewTextBoxColumn.DataPropertyName = "IG_Producto9";
             this.iGProducto9DataGridViewTextBoxColumn.HeaderText = "IG_Producto9";
             this.iGProducto9DataGridViewTextBoxColumn.Name = "iGProducto9DataGridViewTextBoxColumn";
+            this.iGProducto9DataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGProducto9DataGridViewTextBoxColumn.Visible = false;
             // 
             // iGProducto10DataGridViewTextBoxColumn
             // 
             this.iGProducto10DataGridViewTextBoxColumn.DataPropertyName = "IG_Producto10";
             this.iGProducto10DataGridViewTextBoxColumn.HeaderText = "IG_Producto10";
             this.iGProducto10DataGridViewTextBoxColumn.Name = "iGProducto10DataGridViewTextBoxColumn";
+            this.iGProducto10DataGridViewTextBoxColumn.ReadOnly = true;
+            this.iGProducto10DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc1DataGridViewTextBoxColumn
             // 
             this.cEOpc1DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc1";
             this.cEOpc1DataGridViewTextBoxColumn.HeaderText = "CE_Opc1";
             this.cEOpc1DataGridViewTextBoxColumn.Name = "cEOpc1DataGridViewTextBoxColumn";
+            this.cEOpc1DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc1DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc2DataGridViewTextBoxColumn
             // 
             this.cEOpc2DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc2";
             this.cEOpc2DataGridViewTextBoxColumn.HeaderText = "CE_Opc2";
             this.cEOpc2DataGridViewTextBoxColumn.Name = "cEOpc2DataGridViewTextBoxColumn";
+            this.cEOpc2DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc2DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc3DataGridViewTextBoxColumn
             // 
             this.cEOpc3DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc3";
             this.cEOpc3DataGridViewTextBoxColumn.HeaderText = "CE_Opc3";
             this.cEOpc3DataGridViewTextBoxColumn.Name = "cEOpc3DataGridViewTextBoxColumn";
+            this.cEOpc3DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc3DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc4DataGridViewTextBoxColumn
             // 
             this.cEOpc4DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc4";
             this.cEOpc4DataGridViewTextBoxColumn.HeaderText = "CE_Opc4";
             this.cEOpc4DataGridViewTextBoxColumn.Name = "cEOpc4DataGridViewTextBoxColumn";
+            this.cEOpc4DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc4DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc5DataGridViewTextBoxColumn
             // 
             this.cEOpc5DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc5";
             this.cEOpc5DataGridViewTextBoxColumn.HeaderText = "CE_Opc5";
             this.cEOpc5DataGridViewTextBoxColumn.Name = "cEOpc5DataGridViewTextBoxColumn";
+            this.cEOpc5DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc5DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc6DataGridViewTextBoxColumn
             // 
             this.cEOpc6DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc6";
             this.cEOpc6DataGridViewTextBoxColumn.HeaderText = "CE_Opc6";
             this.cEOpc6DataGridViewTextBoxColumn.Name = "cEOpc6DataGridViewTextBoxColumn";
+            this.cEOpc6DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc6DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc7DataGridViewTextBoxColumn
             // 
             this.cEOpc7DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc7";
             this.cEOpc7DataGridViewTextBoxColumn.HeaderText = "CE_Opc7";
             this.cEOpc7DataGridViewTextBoxColumn.Name = "cEOpc7DataGridViewTextBoxColumn";
+            this.cEOpc7DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc7DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc8DataGridViewTextBoxColumn
             // 
             this.cEOpc8DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc8";
             this.cEOpc8DataGridViewTextBoxColumn.HeaderText = "CE_Opc8";
             this.cEOpc8DataGridViewTextBoxColumn.Name = "cEOpc8DataGridViewTextBoxColumn";
+            this.cEOpc8DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc8DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc9DataGridViewTextBoxColumn
             // 
             this.cEOpc9DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc9";
             this.cEOpc9DataGridViewTextBoxColumn.HeaderText = "CE_Opc9";
             this.cEOpc9DataGridViewTextBoxColumn.Name = "cEOpc9DataGridViewTextBoxColumn";
+            this.cEOpc9DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc9DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc10DataGridViewTextBoxColumn
             // 
             this.cEOpc10DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc10";
             this.cEOpc10DataGridViewTextBoxColumn.HeaderText = "CE_Opc10";
             this.cEOpc10DataGridViewTextBoxColumn.Name = "cEOpc10DataGridViewTextBoxColumn";
+            this.cEOpc10DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc10DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc11DataGridViewTextBoxColumn
             // 
             this.cEOpc11DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc11";
             this.cEOpc11DataGridViewTextBoxColumn.HeaderText = "CE_Opc11";
             this.cEOpc11DataGridViewTextBoxColumn.Name = "cEOpc11DataGridViewTextBoxColumn";
+            this.cEOpc11DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc11DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc12DataGridViewTextBoxColumn
             // 
             this.cEOpc12DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc12";
             this.cEOpc12DataGridViewTextBoxColumn.HeaderText = "CE_Opc12";
             this.cEOpc12DataGridViewTextBoxColumn.Name = "cEOpc12DataGridViewTextBoxColumn";
+            this.cEOpc12DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc12DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc13DataGridViewTextBoxColumn
             // 
             this.cEOpc13DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc13";
             this.cEOpc13DataGridViewTextBoxColumn.HeaderText = "CE_Opc13";
             this.cEOpc13DataGridViewTextBoxColumn.Name = "cEOpc13DataGridViewTextBoxColumn";
+            this.cEOpc13DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc13DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc14DataGridViewTextBoxColumn
             // 
             this.cEOpc14DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc14";
             this.cEOpc14DataGridViewTextBoxColumn.HeaderText = "CE_Opc14";
             this.cEOpc14DataGridViewTextBoxColumn.Name = "cEOpc14DataGridViewTextBoxColumn";
+            this.cEOpc14DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc14DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc15DataGridViewTextBoxColumn
             // 
             this.cEOpc15DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc15";
             this.cEOpc15DataGridViewTextBoxColumn.HeaderText = "CE_Opc15";
             this.cEOpc15DataGridViewTextBoxColumn.Name = "cEOpc15DataGridViewTextBoxColumn";
+            this.cEOpc15DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc15DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc16DataGridViewTextBoxColumn
             // 
             this.cEOpc16DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc16";
             this.cEOpc16DataGridViewTextBoxColumn.HeaderText = "CE_Opc16";
             this.cEOpc16DataGridViewTextBoxColumn.Name = "cEOpc16DataGridViewTextBoxColumn";
+            this.cEOpc16DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc16DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc17DataGridViewTextBoxColumn
             // 
             this.cEOpc17DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc17";
             this.cEOpc17DataGridViewTextBoxColumn.HeaderText = "CE_Opc17";
             this.cEOpc17DataGridViewTextBoxColumn.Name = "cEOpc17DataGridViewTextBoxColumn";
+            this.cEOpc17DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc17DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc18DataGridViewTextBoxColumn
             // 
             this.cEOpc18DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc18";
             this.cEOpc18DataGridViewTextBoxColumn.HeaderText = "CE_Opc18";
             this.cEOpc18DataGridViewTextBoxColumn.Name = "cEOpc18DataGridViewTextBoxColumn";
+            this.cEOpc18DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc18DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc19DataGridViewTextBoxColumn
             // 
             this.cEOpc19DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc19";
             this.cEOpc19DataGridViewTextBoxColumn.HeaderText = "CE_Opc19";
             this.cEOpc19DataGridViewTextBoxColumn.Name = "cEOpc19DataGridViewTextBoxColumn";
+            this.cEOpc19DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc19DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc20DataGridViewTextBoxColumn
             // 
             this.cEOpc20DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc20";
             this.cEOpc20DataGridViewTextBoxColumn.HeaderText = "CE_Opc20";
             this.cEOpc20DataGridViewTextBoxColumn.Name = "cEOpc20DataGridViewTextBoxColumn";
+            this.cEOpc20DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc20DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc21DataGridViewTextBoxColumn
             // 
             this.cEOpc21DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc21";
             this.cEOpc21DataGridViewTextBoxColumn.HeaderText = "CE_Opc21";
             this.cEOpc21DataGridViewTextBoxColumn.Name = "cEOpc21DataGridViewTextBoxColumn";
+            this.cEOpc21DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc21DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc22DataGridViewTextBoxColumn
             // 
             this.cEOpc22DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc22";
             this.cEOpc22DataGridViewTextBoxColumn.HeaderText = "CE_Opc22";
             this.cEOpc22DataGridViewTextBoxColumn.Name = "cEOpc22DataGridViewTextBoxColumn";
+            this.cEOpc22DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc22DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc23DataGridViewTextBoxColumn
             // 
             this.cEOpc23DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc23";
             this.cEOpc23DataGridViewTextBoxColumn.HeaderText = "CE_Opc23";
             this.cEOpc23DataGridViewTextBoxColumn.Name = "cEOpc23DataGridViewTextBoxColumn";
+            this.cEOpc23DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc23DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc24DataGridViewTextBoxColumn
             // 
             this.cEOpc24DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc24";
             this.cEOpc24DataGridViewTextBoxColumn.HeaderText = "CE_Opc24";
             this.cEOpc24DataGridViewTextBoxColumn.Name = "cEOpc24DataGridViewTextBoxColumn";
+            this.cEOpc24DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc24DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc25DataGridViewTextBoxColumn
             // 
             this.cEOpc25DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc25";
             this.cEOpc25DataGridViewTextBoxColumn.HeaderText = "CE_Opc25";
             this.cEOpc25DataGridViewTextBoxColumn.Name = "cEOpc25DataGridViewTextBoxColumn";
+            this.cEOpc25DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc25DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc26DataGridViewTextBoxColumn
             // 
             this.cEOpc26DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc26";
             this.cEOpc26DataGridViewTextBoxColumn.HeaderText = "CE_Opc26";
             this.cEOpc26DataGridViewTextBoxColumn.Name = "cEOpc26DataGridViewTextBoxColumn";
+            this.cEOpc26DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc26DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc27DataGridViewTextBoxColumn
             // 
             this.cEOpc27DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc27";
             this.cEOpc27DataGridViewTextBoxColumn.HeaderText = "CE_Opc27";
             this.cEOpc27DataGridViewTextBoxColumn.Name = "cEOpc27DataGridViewTextBoxColumn";
+            this.cEOpc27DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc27DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc28DataGridViewTextBoxColumn
             // 
             this.cEOpc28DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc28";
             this.cEOpc28DataGridViewTextBoxColumn.HeaderText = "CE_Opc28";
             this.cEOpc28DataGridViewTextBoxColumn.Name = "cEOpc28DataGridViewTextBoxColumn";
+            this.cEOpc28DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc28DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc29DataGridViewTextBoxColumn
             // 
             this.cEOpc29DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc29";
             this.cEOpc29DataGridViewTextBoxColumn.HeaderText = "CE_Opc29";
             this.cEOpc29DataGridViewTextBoxColumn.Name = "cEOpc29DataGridViewTextBoxColumn";
+            this.cEOpc29DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc29DataGridViewTextBoxColumn.Visible = false;
             // 
             // cEOpc30DataGridViewTextBoxColumn
             // 
             this.cEOpc30DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc30";
             this.cEOpc30DataGridViewTextBoxColumn.HeaderText = "CE_Opc30";
             this.cEOpc30DataGridViewTextBoxColumn.Name = "cEOpc30DataGridViewTextBoxColumn";
+            this.cEOpc30DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cEOpc30DataGridViewTextBoxColumn.Visible = false;
             // 
             // observacionDataGridViewTextBoxColumn
             // 
             this.observacionDataGridViewTextBoxColumn.DataPropertyName = "Observacion";
             this.observacionDataGridViewTextBoxColumn.HeaderText = "Observacion";
             this.observacionDataGridViewTextBoxColumn.Name = "observacionDataGridViewTextBoxColumn";
+            this.observacionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.observacionDataGridViewTextBoxColumn.Visible = false;
             // 
             // ejecutivoDataGridViewTextBoxColumn
             // 
             this.ejecutivoDataGridViewTextBoxColumn.DataPropertyName = "Ejecutivo";
             this.ejecutivoDataGridViewTextBoxColumn.HeaderText = "Ejecutivo";
             this.ejecutivoDataGridViewTextBoxColumn.Name = "ejecutivoDataGridViewTextBoxColumn";
+            this.ejecutivoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ejecutivoDataGridViewTextBoxColumn.Visible = false;
             // 
             // nivelRiesgoDataGridViewTextBoxColumn
             // 
             this.nivelRiesgoDataGridViewTextBoxColumn.DataPropertyName = "NivelRiesgo";
             this.nivelRiesgoDataGridViewTextBoxColumn.HeaderText = "NivelRiesgo";
             this.nivelRiesgoDataGridViewTextBoxColumn.Name = "nivelRiesgoDataGridViewTextBoxColumn";
+            this.nivelRiesgoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nivelRiesgoDataGridViewTextBoxColumn.Visible = false;
             // 
             // perfilFinancieroDataGridViewTextBoxColumn
             // 
             this.perfilFinancieroDataGridViewTextBoxColumn.DataPropertyName = "PerfilFinanciero";
             this.perfilFinancieroDataGridViewTextBoxColumn.HeaderText = "PerfilFinanciero";
             this.perfilFinancieroDataGridViewTextBoxColumn.Name = "perfilFinancieroDataGridViewTextBoxColumn";
+            this.perfilFinancieroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.perfilFinancieroDataGridViewTextBoxColumn.Visible = false;
             // 
             // periodUsoCtaDataGridViewTextBoxColumn
             // 
             this.periodUsoCtaDataGridViewTextBoxColumn.DataPropertyName = "PeriodUsoCta";
             this.periodUsoCtaDataGridViewTextBoxColumn.HeaderText = "PeriodUsoCta";
             this.periodUsoCtaDataGridViewTextBoxColumn.Name = "periodUsoCtaDataGridViewTextBoxColumn";
+            this.periodUsoCtaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.periodUsoCtaDataGridViewTextBoxColumn.Visible = false;
             // 
             // nroTransaccionesDataGridViewTextBoxColumn
             // 
             this.nroTransaccionesDataGridViewTextBoxColumn.DataPropertyName = "NroTransacciones";
             this.nroTransaccionesDataGridViewTextBoxColumn.HeaderText = "NroTransacciones";
             this.nroTransaccionesDataGridViewTextBoxColumn.Name = "nroTransaccionesDataGridViewTextBoxColumn";
+            this.nroTransaccionesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nroTransaccionesDataGridViewTextBoxColumn.Visible = false;
             // 
             // fecUltimActDataGridViewTextBoxColumn
             // 
             this.fecUltimActDataGridViewTextBoxColumn.DataPropertyName = "Fec_UltimAct";
             this.fecUltimActDataGridViewTextBoxColumn.HeaderText = "Fec_UltimAct";
             this.fecUltimActDataGridViewTextBoxColumn.Name = "fecUltimActDataGridViewTextBoxColumn";
+            this.fecUltimActDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fecUltimActDataGridViewTextBoxColumn.Visible = false;
             // 
             // trimMesDataGridViewTextBoxColumn
             // 
             this.trimMesDataGridViewTextBoxColumn.DataPropertyName = "Trim_Mes";
             this.trimMesDataGridViewTextBoxColumn.HeaderText = "Trim_Mes";
             this.trimMesDataGridViewTextBoxColumn.Name = "trimMesDataGridViewTextBoxColumn";
+            this.trimMesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.trimMesDataGridViewTextBoxColumn.Visible = false;
             // 
             // trimAnoDataGridViewTextBoxColumn
             // 
             this.trimAnoDataGridViewTextBoxColumn.DataPropertyName = "Trim_Ano";
             this.trimAnoDataGridViewTextBoxColumn.HeaderText = "Trim_Ano";
             this.trimAnoDataGridViewTextBoxColumn.Name = "trimAnoDataGridViewTextBoxColumn";
+            this.trimAnoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.trimAnoDataGridViewTextBoxColumn.Visible = false;
             // 
             // trimNroOperacDataGridViewTextBoxColumn
             // 
             this.trimNroOperacDataGridViewTextBoxColumn.DataPropertyName = "Trim_NroOperac";
             this.trimNroOperacDataGridViewTextBoxColumn.HeaderText = "Trim_NroOperac";
             this.trimNroOperacDataGridViewTextBoxColumn.Name = "trimNroOperacDataGridViewTextBoxColumn";
+            this.trimNroOperacDataGridViewTextBoxColumn.ReadOnly = true;
+            this.trimNroOperacDataGridViewTextBoxColumn.Visible = false;
             // 
             // trimMontoOperacDataGridViewTextBoxColumn
             // 
             this.trimMontoOperacDataGridViewTextBoxColumn.DataPropertyName = "Trim_MontoOperac";
             this.trimMontoOperacDataGridViewTextBoxColumn.HeaderText = "Trim_MontoOperac";
             this.trimMontoOperacDataGridViewTextBoxColumn.Name = "trimMontoOperacDataGridViewTextBoxColumn";
+            this.trimMontoOperacDataGridViewTextBoxColumn.ReadOnly = true;
+            this.trimMontoOperacDataGridViewTextBoxColumn.Visible = false;
             // 
             // mapaEmpresaDataGridViewTextBoxColumn
             // 
             this.mapaEmpresaDataGridViewTextBoxColumn.DataPropertyName = "MapaEmpresa";
             this.mapaEmpresaDataGridViewTextBoxColumn.HeaderText = "MapaEmpresa";
             this.mapaEmpresaDataGridViewTextBoxColumn.Name = "mapaEmpresaDataGridViewTextBoxColumn";
+            this.mapaEmpresaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mapaEmpresaDataGridViewTextBoxColumn.Visible = false;
             // 
             // BS_CHistActClientes
             // 
@@ -3188,6 +3264,7 @@
             this.Pag1.ResumeLayout(false);
             this.Pag1.PerformLayout();
             this.Pan_Detalles1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BS_CClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MTipoDocID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MCriptomonedas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MVolOperPersNat)).EndInit();
@@ -3197,6 +3274,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BS_MEdad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MActivComercial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MProfesiones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MEstados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Res)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Nac)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MPais)).EndInit();
@@ -3205,10 +3283,10 @@
             this.Pan_BenefBtns.ResumeLayout(false);
             this.Pan_Detalles2.ResumeLayout(false);
             this.Pan_Detalles2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_CFirBenAcc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutCriptomoneda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutPEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nud_BenefVincPorcent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_CFirBenAcc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutProfesion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutEdad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutRes)).EndInit();
@@ -3219,7 +3297,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Grd_CFirBenAcc)).EndInit();
             this.Pag3.ResumeLayout(false);
             this.Pan_Detalles3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.BS_CClientes)).EndInit();
             this.Pag4.ResumeLayout(false);
             this.Pag4.PerformLayout();
             this.Pan_Detalles4.ResumeLayout(false);
@@ -3231,7 +3308,6 @@
             this.Grp_PerUsoCta.PerformLayout();
             this.Pag5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Pic_MapEpresa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_MEstados)).EndInit();
             this.Pan_DetallesEnc.ResumeLayout(false);
             this.Pan_DetallesEnc.PerformLayout();
             this.Grp_TipoPersona.ResumeLayout(false);
@@ -3397,24 +3473,17 @@
         private System.Windows.Forms.BindingSource BS_MProductos;
         private System.Windows.Forms.BindingSource BS_MServicios;
         private System.Windows.Forms.BindingSource BS_MVolOperPersJur;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDSistemaDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codClienteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoVinculoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn docIDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecVencimientoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource BS_Res;
+        private System.Windows.Forms.BindingSource BS_Nac;
+        private System.Windows.Forms.BindingSource BS_AutRes;
+        private System.Windows.Forms.BindingSource BS_AutNac;
+        private System.Windows.Forms.BindingSource BS_AutPaisNac;
+        private System.Windows.Forms.BindingSource BS_AutCriptomoneda;
+        private System.Windows.Forms.BindingSource BS_AutPEP;
+        private System.Windows.Forms.BindingSource BS_AutProfesion;
+        private System.Windows.Forms.BindingSource BS_AutEdad;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paisNacimDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nacionalidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paisResidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn profesionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn criptomonedaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vincEmpresaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vincPorcentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pEPDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn puntuacionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn condEspSeguridadDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDSistemaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoPersonaDataGridViewTextBoxColumn;
@@ -3502,14 +3571,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn trimNroOperacDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn trimMontoOperacDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mapaEmpresaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource BS_Res;
-        private System.Windows.Forms.BindingSource BS_Nac;
-        private System.Windows.Forms.BindingSource BS_AutRes;
-        private System.Windows.Forms.BindingSource BS_AutNac;
-        private System.Windows.Forms.BindingSource BS_AutPaisNac;
-        private System.Windows.Forms.BindingSource BS_AutCriptomoneda;
-        private System.Windows.Forms.BindingSource BS_AutPEP;
-        private System.Windows.Forms.BindingSource BS_AutProfesion;
-        private System.Windows.Forms.BindingSource BS_AutEdad;
     }
 }
