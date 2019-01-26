@@ -34,6 +34,7 @@ namespace MofinDatos
                 var lst = from HistPerfOperac in db.O_HistPerfOperac
                           where HistPerfOperac.Cod_Cliente == Codigo &
                                 HistPerfOperac.Tipo_Perfil == Tipo
+                                orderby HistPerfOperac.Fecha ascending
                           select HistPerfOperac;
                 return lst.ToList();
             }

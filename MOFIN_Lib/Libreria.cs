@@ -11,15 +11,13 @@ using MofinNegocios;
 
 namespace MOFIN_LIB
 {
-    class Libreria
+    public struct Entorno
     {
+        public static string vs_Idiomas = "espanol";
+        public static bool vs_Maestro = false;
     }
     public static class Funciones
     {
-        /*public partial void C_DeclarVar(int Nivel)
-        {
-            public string vs_Idioma = "Ingles";
-        }*/
         public static void TTT_Pic(PictureBox objeto, string vl_Mensaje)
         {
             ToolTip PictureTooltip = new ToolTip();
@@ -46,6 +44,8 @@ namespace MOFIN_LIB
         }
         public static string _Mens_Idioma(int Codigo)
         {
+            string idiomas = MOFIN_Lib.Properties.Settings.Default.vs_Idioma;
+            MOFIN_Lib.Properties.Settings.Default.vs_Idioma = "espanol";
             Idiomas r_Idiomas = new Idiomas();
             r_Idiomas = NIdiomas.GetById(Codigo);
             if (r_Idiomas != null)

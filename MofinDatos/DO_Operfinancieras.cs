@@ -35,6 +35,7 @@ namespace MofinDatos
                 {
                     var lst = from Operaciones in db.O_Operfinancieras
                               where Operaciones.Cod_Cliente == Codigo
+                              orderby Operaciones.Fec_Pacto
                               select Operaciones;
                     return lst.ToList();
                 }
@@ -44,6 +45,7 @@ namespace MofinDatos
                               where Operaciones.Cod_Cliente == Codigo &
                                     Operaciones.Fec_Pacto >= FDesde &
                                     Operaciones.Fec_Pacto <= FHasta
+                                    orderby Operaciones.Fec_Pacto
                               select Operaciones;
                     return lst.ToList();
                 }

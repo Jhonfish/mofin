@@ -42,6 +42,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.Txt_Resultado = new System.Windows.Forms.TextBox();
             this.DTP_Fecha = new System.Windows.Forms.DateTimePicker();
+            //this.Opc_Prueba = new MOFIN_Lib.Grupo_Opciones();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Idiomas)).BeginInit();
             this.Pan_Prueba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Valor)).BeginInit();
@@ -60,7 +61,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label1
             // 
@@ -78,7 +79,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(73, 20);
             this.textBox1.TabIndex = 4;
-            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.textBox1.Enter += new System.EventHandler(this.TextBox1_Enter);
             // 
             // Pan_Prueba
             // 
@@ -142,7 +143,7 @@
             // 
             // NUD_Ano
             // 
-            this.NUD_Ano.Location = new System.Drawing.Point(409, 189);
+            this.NUD_Ano.Location = new System.Drawing.Point(287, 163);
             this.NUD_Ano.Maximum = new decimal(new int[] {
             3000,
             0,
@@ -159,33 +160,41 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(486, 189);
+            this.button2.Location = new System.Drawing.Point(364, 163);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 8;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // Txt_Resultado
             // 
-            this.Txt_Resultado.Location = new System.Drawing.Point(585, 193);
+            this.Txt_Resultado.Location = new System.Drawing.Point(463, 167);
             this.Txt_Resultado.Name = "Txt_Resultado";
             this.Txt_Resultado.Size = new System.Drawing.Size(100, 20);
             this.Txt_Resultado.TabIndex = 9;
             // 
             // DTP_Fecha
             // 
-            this.DTP_Fecha.Location = new System.Drawing.Point(361, 150);
+            this.DTP_Fecha.Location = new System.Drawing.Point(316, 130);
             this.DTP_Fecha.Name = "DTP_Fecha";
             this.DTP_Fecha.Size = new System.Drawing.Size(200, 20);
             this.DTP_Fecha.TabIndex = 10;
+            // 
+            // Opc_Prueba
+            // 
+            this.Opc_Prueba.Location = new System.Drawing.Point(263, 12);
+            this.Opc_Prueba.Name = "Opc_Prueba";
+            this.Opc_Prueba.Size = new System.Drawing.Size(115, 78);
+            this.Opc_Prueba.TabIndex = 11;
             // 
             // Prueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Opc_Prueba);
             this.Controls.Add(this.DTP_Fecha);
             this.Controls.Add(this.Txt_Resultado);
             this.Controls.Add(this.button2);
@@ -207,7 +216,6 @@
             this.PerformLayout();
 
         }
-
         #endregion
 
         private System.Windows.Forms.BindingSource BS_Idiomas;
@@ -223,5 +231,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox Txt_Resultado;
         private System.Windows.Forms.DateTimePicker DTP_Fecha;
+        private MOFIN_Lib.Grupo_Opciones Opc_Prueba;
     }
 }

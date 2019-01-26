@@ -2455,6 +2455,7 @@
             this.Opc_TipPers2.TabStop = true;
             this.Opc_TipPers2.Text = "Persona Jurídica";
             this.Opc_TipPers2.UseVisualStyleBackColor = true;
+            this.Opc_TipPers2.CheckedChanged += new System.EventHandler(this.Opc_TipPers1_CheckedChanged);
             // 
             // Opc_TipPers1
             // 
@@ -2466,6 +2467,7 @@
             this.Opc_TipPers1.TabStop = true;
             this.Opc_TipPers1.Text = "Persona Natural";
             this.Opc_TipPers1.UseVisualStyleBackColor = true;
+            this.Opc_TipPers1.CheckedChanged += new System.EventHandler(this.Opc_TipPers1_CheckedChanged);
             // 
             // Txt_Nombre
             // 

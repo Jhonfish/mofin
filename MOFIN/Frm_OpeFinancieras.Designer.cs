@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_OpeFinancieras));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Tab_MonOperaciones = new System.Windows.Forms.TabControl();
             this.Pag1 = new System.Windows.Forms.TabPage();
             this.Pan_Pag1 = new System.Windows.Forms.Panel();
@@ -46,6 +47,26 @@
             this.Lbl_ListClientes1 = new System.Windows.Forms.Label();
             this.Lbl_ListOperAfec = new System.Windows.Forms.Label();
             this.Grd_MonitorFinanciero = new System.Windows.Forms.DataGridView();
+            this.iDSistemaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecGeneracionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecUltOperacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nmeclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.docIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nivRiesgoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.periodUsoCtaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nroTransacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.perfNroTransacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.porcTransacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mtoComprasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mtoVentasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totOperacionesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.perfFinancieroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.porcOperacionesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alarmaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ejecutivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comentarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BS_RepOperacional = new System.Windows.Forms.BindingSource(this.components);
             this.Pag2 = new System.Windows.Forms.TabPage();
             this.Grd_Observaciones = new System.Windows.Forms.DataGridView();
             this.Col_ObsFec = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +79,10 @@
             this.Col_PerRiesgo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_OHistPerfOperac = new System.Windows.Forms.BindingSource(this.components);
             this.Grd_ClieInfInversor = new System.Windows.Forms.DataGridView();
+            this.Col_CliCod2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CliDocID2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CliNme2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lbl_Obsvaciones = new System.Windows.Forms.Label();
             this.Lbl_Perfil = new System.Windows.Forms.Label();
             this.Btn_Cancelar = new System.Windows.Forms.Button();
@@ -73,6 +98,8 @@
             this.Btn_ObsEli = new System.Windows.Forms.Button();
             this.Pag3 = new System.Windows.Forms.TabPage();
             this.Pan_Pag3 = new System.Windows.Forms.Panel();
+            this.Btn_Ocultar = new System.Windows.Forms.Button();
+            this.Grd_Reporte = new System.Windows.Forms.DataGridView();
             this.Chk_ElimOper = new System.Windows.Forms.CheckBox();
             this.Grd_DetOperaciones = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn106 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,6 +127,10 @@
             this.dataGridViewTextBoxColumn219 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_OOperFinancieras = new System.Windows.Forms.BindingSource(this.components);
             this.Grd_ClieDetOper = new System.Windows.Forms.DataGridView();
+            this.Col_CliCod3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CliDocID3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CliNme3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Chk_Reporte = new System.Windows.Forms.CheckBox();
             this.Pan_Reporte = new System.Windows.Forms.Panel();
             this.Btn_ProcReporte = new System.Windows.Forms.Button();
@@ -117,24 +148,22 @@
             this.Lbl_ArcExpTip = new System.Windows.Forms.Label();
             this.Btn_Exportar = new System.Windows.Forms.Button();
             this.DS_MonitorOperaciones = new MOFIN.MonitorOperacionesDataSet();
-            this.Col_CliCod1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CliDocID1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CliNme1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Doc_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PeriodUsoCta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CliCod2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CliDocID2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CliNme2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CliCod3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CliDocID3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CliNme3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ejecutivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NivelRiesgo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PerfilFinanciero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroTransacciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tab_MonOperaciones.SuspendLayout();
             this.Pag1.SuspendLayout();
             this.Pan_Pag1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Clientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_CClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_MonitorFinanciero)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_RepOperacional)).BeginInit();
             this.Pag2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Observaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_OObservaciones)).BeginInit();
@@ -145,6 +174,7 @@
             this.Pan_BtnsObserv.SuspendLayout();
             this.Pag3.SuspendLayout();
             this.Pan_Pag3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grd_Reporte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_DetOperaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_OOperFinancieras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_ClieDetOper)).BeginInit();
@@ -204,15 +234,21 @@
             this.Grd_Clientes.AutoGenerateColumns = false;
             this.Grd_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grd_Clientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Col_CliCod1,
-            this.Col_CliDocID1,
-            this.Col_CliNme1,
-            this.PeriodUsoCta});
+            this.Codigo,
+            this.Doc_ID,
+            this.Nombre,
+            this.PeriodUsoCta,
+            this.Activo,
+            this.Ejecutivo,
+            this.NivelRiesgo,
+            this.PerfilFinanciero,
+            this.NroTransacciones});
             this.Grd_Clientes.DataSource = this.BS_CClientes;
             this.Grd_Clientes.Location = new System.Drawing.Point(16, 27);
             this.Grd_Clientes.Name = "Grd_Clientes";
             this.Grd_Clientes.ReadOnly = true;
             this.Grd_Clientes.RowHeadersVisible = false;
+            this.Grd_Clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grd_Clientes.Size = new System.Drawing.Size(350, 301);
             this.Grd_Clientes.TabIndex = 17;
             // 
@@ -290,6 +326,7 @@
             this.Btn_Procesar.TabIndex = 12;
             this.Btn_Procesar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_Procesar.UseVisualStyleBackColor = true;
+            this.Btn_Procesar.Click += new System.EventHandler(this.Btn_Procesar_Click);
             // 
             // Chk_IncSoloExcep
             // 
@@ -335,12 +372,175 @@
             // 
             // Grd_MonitorFinanciero
             // 
+            this.Grd_MonitorFinanciero.AllowUserToAddRows = false;
+            this.Grd_MonitorFinanciero.AllowUserToDeleteRows = false;
             this.Grd_MonitorFinanciero.AllowUserToOrderColumns = true;
+            this.Grd_MonitorFinanciero.AutoGenerateColumns = false;
             this.Grd_MonitorFinanciero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grd_MonitorFinanciero.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDSistemaDataGridViewTextBoxColumn,
+            this.fecGeneracionDataGridViewTextBoxColumn,
+            this.fecUltOperacDataGridViewTextBoxColumn,
+            this.codClienteDataGridViewTextBoxColumn,
+            this.nmeclienteDataGridViewTextBoxColumn,
+            this.docIDDataGridViewTextBoxColumn,
+            this.nivRiesgoDataGridViewTextBoxColumn,
+            this.periodUsoCtaDataGridViewTextBoxColumn,
+            this.nroTransacDataGridViewTextBoxColumn,
+            this.perfNroTransacDataGridViewTextBoxColumn,
+            this.porcTransacDataGridViewTextBoxColumn,
+            this.mtoComprasDataGridViewTextBoxColumn,
+            this.mtoVentasDataGridViewTextBoxColumn,
+            this.totOperacionesDataGridViewTextBoxColumn,
+            this.perfFinancieroDataGridViewTextBoxColumn,
+            this.porcOperacionesDataGridViewTextBoxColumn,
+            this.alarmaDataGridViewTextBoxColumn,
+            this.ejecutivoDataGridViewTextBoxColumn,
+            this.comentarioDataGridViewTextBoxColumn});
+            this.Grd_MonitorFinanciero.DataSource = this.BS_RepOperacional;
             this.Grd_MonitorFinanciero.Location = new System.Drawing.Point(381, 27);
             this.Grd_MonitorFinanciero.Name = "Grd_MonitorFinanciero";
+            this.Grd_MonitorFinanciero.ReadOnly = true;
+            this.Grd_MonitorFinanciero.RowHeadersVisible = false;
             this.Grd_MonitorFinanciero.Size = new System.Drawing.Size(577, 455);
             this.Grd_MonitorFinanciero.TabIndex = 0;
+            // 
+            // iDSistemaDataGridViewTextBoxColumn
+            // 
+            this.iDSistemaDataGridViewTextBoxColumn.DataPropertyName = "ID_Sistema";
+            this.iDSistemaDataGridViewTextBoxColumn.HeaderText = "ID_Sistema";
+            this.iDSistemaDataGridViewTextBoxColumn.Name = "iDSistemaDataGridViewTextBoxColumn";
+            this.iDSistemaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fecGeneracionDataGridViewTextBoxColumn
+            // 
+            this.fecGeneracionDataGridViewTextBoxColumn.DataPropertyName = "Fec_Generacion";
+            this.fecGeneracionDataGridViewTextBoxColumn.HeaderText = "Fec_Generacion";
+            this.fecGeneracionDataGridViewTextBoxColumn.Name = "fecGeneracionDataGridViewTextBoxColumn";
+            this.fecGeneracionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fecUltOperacDataGridViewTextBoxColumn
+            // 
+            this.fecUltOperacDataGridViewTextBoxColumn.DataPropertyName = "Fec_UltOperac";
+            this.fecUltOperacDataGridViewTextBoxColumn.HeaderText = "Fec_UltOperac";
+            this.fecUltOperacDataGridViewTextBoxColumn.Name = "fecUltOperacDataGridViewTextBoxColumn";
+            this.fecUltOperacDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // codClienteDataGridViewTextBoxColumn
+            // 
+            this.codClienteDataGridViewTextBoxColumn.DataPropertyName = "Cod_Cliente";
+            this.codClienteDataGridViewTextBoxColumn.HeaderText = "Cod_Cliente";
+            this.codClienteDataGridViewTextBoxColumn.Name = "codClienteDataGridViewTextBoxColumn";
+            this.codClienteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nmeclienteDataGridViewTextBoxColumn
+            // 
+            this.nmeclienteDataGridViewTextBoxColumn.DataPropertyName = "Nme_cliente";
+            this.nmeclienteDataGridViewTextBoxColumn.HeaderText = "Nme_cliente";
+            this.nmeclienteDataGridViewTextBoxColumn.Name = "nmeclienteDataGridViewTextBoxColumn";
+            this.nmeclienteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // docIDDataGridViewTextBoxColumn
+            // 
+            this.docIDDataGridViewTextBoxColumn.DataPropertyName = "Doc_ID";
+            this.docIDDataGridViewTextBoxColumn.HeaderText = "Doc_ID";
+            this.docIDDataGridViewTextBoxColumn.Name = "docIDDataGridViewTextBoxColumn";
+            this.docIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nivRiesgoDataGridViewTextBoxColumn
+            // 
+            this.nivRiesgoDataGridViewTextBoxColumn.DataPropertyName = "Niv_Riesgo";
+            this.nivRiesgoDataGridViewTextBoxColumn.HeaderText = "Niv_Riesgo";
+            this.nivRiesgoDataGridViewTextBoxColumn.Name = "nivRiesgoDataGridViewTextBoxColumn";
+            this.nivRiesgoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // periodUsoCtaDataGridViewTextBoxColumn
+            // 
+            this.periodUsoCtaDataGridViewTextBoxColumn.DataPropertyName = "Period_UsoCta";
+            this.periodUsoCtaDataGridViewTextBoxColumn.HeaderText = "Period_UsoCta";
+            this.periodUsoCtaDataGridViewTextBoxColumn.Name = "periodUsoCtaDataGridViewTextBoxColumn";
+            this.periodUsoCtaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nroTransacDataGridViewTextBoxColumn
+            // 
+            this.nroTransacDataGridViewTextBoxColumn.DataPropertyName = "Nro_Transac";
+            this.nroTransacDataGridViewTextBoxColumn.HeaderText = "Nro_Transac";
+            this.nroTransacDataGridViewTextBoxColumn.Name = "nroTransacDataGridViewTextBoxColumn";
+            this.nroTransacDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // perfNroTransacDataGridViewTextBoxColumn
+            // 
+            this.perfNroTransacDataGridViewTextBoxColumn.DataPropertyName = "Perf_NroTransac";
+            this.perfNroTransacDataGridViewTextBoxColumn.HeaderText = "Perf_NroTransac";
+            this.perfNroTransacDataGridViewTextBoxColumn.Name = "perfNroTransacDataGridViewTextBoxColumn";
+            this.perfNroTransacDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // porcTransacDataGridViewTextBoxColumn
+            // 
+            this.porcTransacDataGridViewTextBoxColumn.DataPropertyName = "Porc_Transac";
+            this.porcTransacDataGridViewTextBoxColumn.HeaderText = "Porc_Transac";
+            this.porcTransacDataGridViewTextBoxColumn.Name = "porcTransacDataGridViewTextBoxColumn";
+            this.porcTransacDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mtoComprasDataGridViewTextBoxColumn
+            // 
+            this.mtoComprasDataGridViewTextBoxColumn.DataPropertyName = "Mto_Compras";
+            this.mtoComprasDataGridViewTextBoxColumn.HeaderText = "Mto_Compras";
+            this.mtoComprasDataGridViewTextBoxColumn.Name = "mtoComprasDataGridViewTextBoxColumn";
+            this.mtoComprasDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mtoVentasDataGridViewTextBoxColumn
+            // 
+            this.mtoVentasDataGridViewTextBoxColumn.DataPropertyName = "Mto_Ventas";
+            this.mtoVentasDataGridViewTextBoxColumn.HeaderText = "Mto_Ventas";
+            this.mtoVentasDataGridViewTextBoxColumn.Name = "mtoVentasDataGridViewTextBoxColumn";
+            this.mtoVentasDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // totOperacionesDataGridViewTextBoxColumn
+            // 
+            this.totOperacionesDataGridViewTextBoxColumn.DataPropertyName = "Tot_Operaciones";
+            this.totOperacionesDataGridViewTextBoxColumn.HeaderText = "Tot_Operaciones";
+            this.totOperacionesDataGridViewTextBoxColumn.Name = "totOperacionesDataGridViewTextBoxColumn";
+            this.totOperacionesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // perfFinancieroDataGridViewTextBoxColumn
+            // 
+            this.perfFinancieroDataGridViewTextBoxColumn.DataPropertyName = "Perf_Financiero";
+            this.perfFinancieroDataGridViewTextBoxColumn.HeaderText = "Perf_Financiero";
+            this.perfFinancieroDataGridViewTextBoxColumn.Name = "perfFinancieroDataGridViewTextBoxColumn";
+            this.perfFinancieroDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // porcOperacionesDataGridViewTextBoxColumn
+            // 
+            this.porcOperacionesDataGridViewTextBoxColumn.DataPropertyName = "Porc_Operaciones";
+            this.porcOperacionesDataGridViewTextBoxColumn.HeaderText = "Porc_Operaciones";
+            this.porcOperacionesDataGridViewTextBoxColumn.Name = "porcOperacionesDataGridViewTextBoxColumn";
+            this.porcOperacionesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // alarmaDataGridViewTextBoxColumn
+            // 
+            this.alarmaDataGridViewTextBoxColumn.DataPropertyName = "Alarma";
+            this.alarmaDataGridViewTextBoxColumn.HeaderText = "Alarma";
+            this.alarmaDataGridViewTextBoxColumn.Name = "alarmaDataGridViewTextBoxColumn";
+            this.alarmaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ejecutivoDataGridViewTextBoxColumn
+            // 
+            this.ejecutivoDataGridViewTextBoxColumn.DataPropertyName = "Ejecutivo";
+            this.ejecutivoDataGridViewTextBoxColumn.HeaderText = "Ejecutivo";
+            this.ejecutivoDataGridViewTextBoxColumn.Name = "ejecutivoDataGridViewTextBoxColumn";
+            this.ejecutivoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // comentarioDataGridViewTextBoxColumn
+            // 
+            this.comentarioDataGridViewTextBoxColumn.DataPropertyName = "Comentario";
+            this.comentarioDataGridViewTextBoxColumn.HeaderText = "Comentario";
+            this.comentarioDataGridViewTextBoxColumn.Name = "comentarioDataGridViewTextBoxColumn";
+            this.comentarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // BS_RepOperacional
+            // 
+            this.BS_RepOperacional.DataSource = typeof(MofinModelo.O_RepOperacional);
             // 
             // Pag2
             // 
@@ -432,6 +632,10 @@
             // Col_PerMto
             // 
             this.Col_PerMto.DataPropertyName = "Mto_Perfil";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.Col_PerMto.DefaultCellStyle = dataGridViewCellStyle8;
             this.Col_PerMto.HeaderText = "Mto_Perfil";
             this.Col_PerMto.Name = "Col_PerMto";
             this.Col_PerMto.ReadOnly = true;
@@ -475,6 +679,40 @@
             this.Grd_ClieInfInversor.Size = new System.Drawing.Size(350, 475);
             this.Grd_ClieInfInversor.TabIndex = 24;
             this.Grd_ClieInfInversor.CurrentCellChanged += new System.EventHandler(this.Grd_ClieInfInversor_CurrentCellChanged);
+            // 
+            // Col_CliCod2
+            // 
+            this.Col_CliCod2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Col_CliCod2.DataPropertyName = "Codigo";
+            this.Col_CliCod2.HeaderText = "Codigo";
+            this.Col_CliCod2.Name = "Col_CliCod2";
+            this.Col_CliCod2.ReadOnly = true;
+            this.Col_CliCod2.Width = 74;
+            // 
+            // Col_CliDocID2
+            // 
+            this.Col_CliDocID2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Col_CliDocID2.DataPropertyName = "Doc_ID";
+            this.Col_CliDocID2.HeaderText = "Doc_ID";
+            this.Col_CliDocID2.Name = "Col_CliDocID2";
+            this.Col_CliDocID2.ReadOnly = true;
+            this.Col_CliDocID2.Width = 74;
+            // 
+            // Col_CliNme2
+            // 
+            this.Col_CliNme2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Col_CliNme2.DataPropertyName = "Nombre";
+            this.Col_CliNme2.HeaderText = "Nombre";
+            this.Col_CliNme2.Name = "Col_CliNme2";
+            this.Col_CliNme2.ReadOnly = true;
+            this.Col_CliNme2.Width = 74;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "PeriodUsoCta";
+            this.dataGridViewTextBoxColumn1.HeaderText = "PeriodUsoCta";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // Lbl_Obsvaciones
             // 
@@ -685,6 +923,8 @@
             // 
             // Pan_Pag3
             // 
+            this.Pan_Pag3.Controls.Add(this.Btn_Ocultar);
+            this.Pan_Pag3.Controls.Add(this.Grd_Reporte);
             this.Pan_Pag3.Controls.Add(this.Chk_ElimOper);
             this.Pan_Pag3.Controls.Add(this.Grd_DetOperaciones);
             this.Pan_Pag3.Controls.Add(this.Grd_ClieDetOper);
@@ -698,6 +938,31 @@
             this.Pan_Pag3.Name = "Pan_Pag3";
             this.Pan_Pag3.Size = new System.Drawing.Size(963, 489);
             this.Pan_Pag3.TabIndex = 35;
+            // 
+            // Btn_Ocultar
+            // 
+            this.Btn_Ocultar.Location = new System.Drawing.Point(557, 460);
+            this.Btn_Ocultar.Name = "Btn_Ocultar";
+            this.Btn_Ocultar.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Ocultar.TabIndex = 37;
+            this.Btn_Ocultar.Text = "Ocultar";
+            this.Btn_Ocultar.UseVisualStyleBackColor = true;
+            this.Btn_Ocultar.Visible = false;
+            this.Btn_Ocultar.Click += new System.EventHandler(this.Btn_Ocultar_Click);
+            // 
+            // Grd_Reporte
+            // 
+            this.Grd_Reporte.AllowUserToAddRows = false;
+            this.Grd_Reporte.AllowUserToDeleteRows = false;
+            this.Grd_Reporte.AllowUserToOrderColumns = true;
+            this.Grd_Reporte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.Grd_Reporte.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.Grd_Reporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grd_Reporte.Location = new System.Drawing.Point(195, 3);
+            this.Grd_Reporte.Name = "Grd_Reporte";
+            this.Grd_Reporte.Size = new System.Drawing.Size(595, 442);
+            this.Grd_Reporte.TabIndex = 36;
+            this.Grd_Reporte.Visible = false;
             // 
             // Chk_ElimOper
             // 
@@ -965,6 +1230,40 @@
             this.Grd_ClieDetOper.TabIndex = 34;
             this.Grd_ClieDetOper.CurrentCellChanged += new System.EventHandler(this.Grd_ClieDetOper_CurrentCellChanged);
             // 
+            // Col_CliCod3
+            // 
+            this.Col_CliCod3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Col_CliCod3.DataPropertyName = "Codigo";
+            this.Col_CliCod3.HeaderText = "Codigo";
+            this.Col_CliCod3.Name = "Col_CliCod3";
+            this.Col_CliCod3.ReadOnly = true;
+            this.Col_CliCod3.Width = 74;
+            // 
+            // Col_CliDocID3
+            // 
+            this.Col_CliDocID3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Col_CliDocID3.DataPropertyName = "Doc_ID";
+            this.Col_CliDocID3.HeaderText = "Doc_ID";
+            this.Col_CliDocID3.Name = "Col_CliDocID3";
+            this.Col_CliDocID3.ReadOnly = true;
+            this.Col_CliDocID3.Width = 74;
+            // 
+            // Col_CliNme3
+            // 
+            this.Col_CliNme3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Col_CliNme3.DataPropertyName = "Nombre";
+            this.Col_CliNme3.HeaderText = "Nombre";
+            this.Col_CliNme3.Name = "Col_CliNme3";
+            this.Col_CliNme3.ReadOnly = true;
+            this.Col_CliNme3.Width = 74;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "PeriodUsoCta";
+            this.dataGridViewTextBoxColumn2.HeaderText = "PeriodUsoCta";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
             // Chk_Reporte
             // 
             this.Chk_Reporte.Appearance = System.Windows.Forms.Appearance.Button;
@@ -1164,32 +1463,32 @@
             this.DS_MonitorOperaciones.DataSetName = "MonitorOperacionesDataSet";
             this.DS_MonitorOperaciones.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Col_CliCod1
+            // Codigo
             // 
-            this.Col_CliCod1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Col_CliCod1.DataPropertyName = "Codigo";
-            this.Col_CliCod1.HeaderText = "Codigo";
-            this.Col_CliCod1.Name = "Col_CliCod1";
-            this.Col_CliCod1.ReadOnly = true;
-            this.Col_CliCod1.Width = 74;
+            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Codigo.DataPropertyName = "Codigo";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 74;
             // 
-            // Col_CliDocID1
+            // Doc_ID
             // 
-            this.Col_CliDocID1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Col_CliDocID1.DataPropertyName = "Doc_ID";
-            this.Col_CliDocID1.HeaderText = "Doc_ID";
-            this.Col_CliDocID1.Name = "Col_CliDocID1";
-            this.Col_CliDocID1.ReadOnly = true;
-            this.Col_CliDocID1.Width = 74;
+            this.Doc_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Doc_ID.DataPropertyName = "Doc_ID";
+            this.Doc_ID.HeaderText = "Doc_ID";
+            this.Doc_ID.Name = "Doc_ID";
+            this.Doc_ID.ReadOnly = true;
+            this.Doc_ID.Width = 74;
             // 
-            // Col_CliNme1
+            // Nombre
             // 
-            this.Col_CliNme1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Col_CliNme1.DataPropertyName = "Nombre";
-            this.Col_CliNme1.HeaderText = "Nombre";
-            this.Col_CliNme1.Name = "Col_CliNme1";
-            this.Col_CliNme1.ReadOnly = true;
-            this.Col_CliNme1.Width = 74;
+            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 74;
             // 
             // PeriodUsoCta
             // 
@@ -1198,73 +1497,45 @@
             this.PeriodUsoCta.Name = "PeriodUsoCta";
             this.PeriodUsoCta.ReadOnly = true;
             // 
-            // Col_CliCod2
+            // Activo
             // 
-            this.Col_CliCod2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Col_CliCod2.DataPropertyName = "Codigo";
-            this.Col_CliCod2.HeaderText = "Codigo";
-            this.Col_CliCod2.Name = "Col_CliCod2";
-            this.Col_CliCod2.ReadOnly = true;
-            this.Col_CliCod2.Width = 74;
+            this.Activo.DataPropertyName = "Activo";
+            this.Activo.HeaderText = "Activo";
+            this.Activo.Name = "Activo";
+            this.Activo.ReadOnly = true;
+            this.Activo.Visible = false;
             // 
-            // Col_CliDocID2
+            // Ejecutivo
             // 
-            this.Col_CliDocID2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Col_CliDocID2.DataPropertyName = "Doc_ID";
-            this.Col_CliDocID2.HeaderText = "Doc_ID";
-            this.Col_CliDocID2.Name = "Col_CliDocID2";
-            this.Col_CliDocID2.ReadOnly = true;
-            this.Col_CliDocID2.Width = 74;
+            this.Ejecutivo.DataPropertyName = "Ejecutivo";
+            this.Ejecutivo.HeaderText = "Ejecutivo";
+            this.Ejecutivo.Name = "Ejecutivo";
+            this.Ejecutivo.ReadOnly = true;
+            this.Ejecutivo.Visible = false;
             // 
-            // Col_CliNme2
+            // NivelRiesgo
             // 
-            this.Col_CliNme2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Col_CliNme2.DataPropertyName = "Nombre";
-            this.Col_CliNme2.HeaderText = "Nombre";
-            this.Col_CliNme2.Name = "Col_CliNme2";
-            this.Col_CliNme2.ReadOnly = true;
-            this.Col_CliNme2.Width = 74;
+            this.NivelRiesgo.DataPropertyName = "NivelRiesgo";
+            this.NivelRiesgo.HeaderText = "NivelRiesgo";
+            this.NivelRiesgo.Name = "NivelRiesgo";
+            this.NivelRiesgo.ReadOnly = true;
+            this.NivelRiesgo.Visible = false;
             // 
-            // dataGridViewTextBoxColumn1
+            // PerfilFinanciero
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "PeriodUsoCta";
-            this.dataGridViewTextBoxColumn1.HeaderText = "PeriodUsoCta";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.PerfilFinanciero.DataPropertyName = "PerfilFinanciero";
+            this.PerfilFinanciero.HeaderText = "PerfilFinanciero";
+            this.PerfilFinanciero.Name = "PerfilFinanciero";
+            this.PerfilFinanciero.ReadOnly = true;
+            this.PerfilFinanciero.Visible = false;
             // 
-            // Col_CliCod3
+            // NroTransacciones
             // 
-            this.Col_CliCod3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Col_CliCod3.DataPropertyName = "Codigo";
-            this.Col_CliCod3.HeaderText = "Codigo";
-            this.Col_CliCod3.Name = "Col_CliCod3";
-            this.Col_CliCod3.ReadOnly = true;
-            this.Col_CliCod3.Width = 74;
-            // 
-            // Col_CliDocID3
-            // 
-            this.Col_CliDocID3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Col_CliDocID3.DataPropertyName = "Doc_ID";
-            this.Col_CliDocID3.HeaderText = "Doc_ID";
-            this.Col_CliDocID3.Name = "Col_CliDocID3";
-            this.Col_CliDocID3.ReadOnly = true;
-            this.Col_CliDocID3.Width = 74;
-            // 
-            // Col_CliNme3
-            // 
-            this.Col_CliNme3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Col_CliNme3.DataPropertyName = "Nombre";
-            this.Col_CliNme3.HeaderText = "Nombre";
-            this.Col_CliNme3.Name = "Col_CliNme3";
-            this.Col_CliNme3.ReadOnly = true;
-            this.Col_CliNme3.Width = 74;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "PeriodUsoCta";
-            this.dataGridViewTextBoxColumn2.HeaderText = "PeriodUsoCta";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.NroTransacciones.DataPropertyName = "NroTransacciones";
+            this.NroTransacciones.HeaderText = "NroTransacciones";
+            this.NroTransacciones.Name = "NroTransacciones";
+            this.NroTransacciones.ReadOnly = true;
+            this.NroTransacciones.Visible = false;
             // 
             // Frm_OpeFinancieras
             // 
@@ -1293,6 +1564,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Clientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_CClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_MonitorFinanciero)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_RepOperacional)).EndInit();
             this.Pag2.ResumeLayout(false);
             this.Pag2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Observaciones)).EndInit();
@@ -1305,6 +1577,7 @@
             this.Pag3.ResumeLayout(false);
             this.Pan_Pag3.ResumeLayout(false);
             this.Pan_Pag3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grd_Reporte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_DetOperaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_OOperFinancieras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_ClieDetOper)).EndInit();
@@ -1401,14 +1674,6 @@
         private System.Windows.Forms.CheckBox Chk_ElimOper;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_ObsFec;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_ObsObserv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_PerFec;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_PerMto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_PerNroTra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_PerRiesgo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_CliCod1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_CliDocID1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_CliNme1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PeriodUsoCta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_CliCod2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_CliDocID2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_CliNme2;
@@ -1417,5 +1682,40 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_CliDocID3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_CliNme3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Button Btn_Ocultar;
+        private System.Windows.Forms.DataGridView Grd_Reporte;
+        private System.Windows.Forms.BindingSource BS_RepOperacional;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_PerFec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_PerMto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_PerNroTra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_PerRiesgo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDSistemaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecGeneracionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecUltOperacDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codClienteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nmeclienteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn docIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nivRiesgoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn periodUsoCtaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nroTransacDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn perfNroTransacDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn porcTransacDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mtoComprasDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mtoVentasDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totOperacionesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn perfFinancieroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn porcOperacionesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn alarmaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ejecutivoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn comentarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Doc_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PeriodUsoCta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Activo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ejecutivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NivelRiesgo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PerfilFinanciero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NroTransacciones;
     }
 }

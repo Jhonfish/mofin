@@ -95,12 +95,14 @@ namespace MOFIN
                     MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9004) + "\n\n" + "Grupo: " + r_Grupos.Nombre,
                                     MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-/*                  Frm_Desktop FondoEscritorio = new Frm_Desktop();
-                    //((TextBox)formularioPadre.Controls["nombreDelControl"]).Text = “Texto en un TextBox de otro formulario”;
-                    ((Label)FondoEscritorio.Controls["Lbl_Detalle1"]).Text = r_Empresas.Nombre + " / " + r_Grupos.Nombre + " / " + r_Usuarios.Nombre;
+                    /*                  Frm_Desktop FondoEscritorio = new Frm_Desktop();
+                                        //((TextBox)formularioPadre.Controls["nombreDelControl"]).Text = “Texto en un TextBox de otro formulario”;
+                                        ((Label)FondoEscritorio.Controls["Lbl_Detalle1"]).Text = r_Empresas.Nombre + " / " + r_Grupos.Nombre + " / " + r_Usuarios.Nombre;
 
-                    //Desktop.Lbl_Detalle1.Text = r_Empresas.Nombre + " / " + r_Grupos.Nombre + " / " + r_Usuarios.Nombre;
-                    */
+                                        //Desktop.Lbl_Detalle1.Text = r_Empresas.Nombre + " / " + r_Grupos.Nombre + " / " + r_Usuarios.Nombre;
+
+                                        */
+                    Entorno.vs_Maestro = true;
                     this.Close();
 
                 }

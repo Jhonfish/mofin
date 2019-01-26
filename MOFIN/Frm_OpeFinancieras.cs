@@ -21,7 +21,6 @@ namespace MOFIN
         C_Clientes r_Cliente = new C_Clientes();
         O_Observaciones r_Observaciones = new O_Observaciones();
         O_HistPerfOperac r_HistPerfOperac = new O_HistPerfOperac();
-        
 
         public Frm_OpeFinancieras()
         {
@@ -282,15 +281,15 @@ namespace MOFIN
             MOFIN_LIB.Funciones.TTT_Btn(Btn_MostrarTodos, MOFIN_LIB.Funciones._Mens_Idioma(143));
             MOFIN_LIB.Funciones.TTT_Btn(Btn_Importar, MOFIN_LIB.Funciones._Mens_Idioma(1021));
 
-            this.Col_CliCod1.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1001);
-            this.Col_CliNme1.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1002);
-            this.Col_CliDocID1.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1004);
-            this.Col_CliCod2.HeaderText = this.Col_CliCod1.HeaderText;
-            this.Col_CliNme2.HeaderText = this.Col_CliNme1.HeaderText;
-            this.Col_CliDocID2.HeaderText = this.Col_CliDocID1.HeaderText;
-            this.Col_CliCod3.HeaderText = this.Col_CliCod1.HeaderText;
-            this.Col_CliNme3.HeaderText = this.Col_CliNme1.HeaderText;
-            this.Col_CliDocID3.HeaderText = this.Col_CliDocID1.HeaderText;
+            this.Codigo.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1001);
+            this.Nombre.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1002);
+            this.Doc_ID.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1004);
+            this.Col_CliCod2.HeaderText = this.Codigo.HeaderText;
+            this.Col_CliNme2.HeaderText = this.Nombre.HeaderText;
+            this.Col_CliDocID2.HeaderText = this.Doc_ID.HeaderText;
+            this.Col_CliCod3.HeaderText = this.Codigo.HeaderText;
+            this.Col_CliNme3.HeaderText = this.Nombre.HeaderText;
+            this.Col_CliDocID3.HeaderText = this.Doc_ID.HeaderText;
 
             this.Col_PerFec.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1005);
             this.Col_PerMto.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13022);
@@ -314,19 +313,24 @@ namespace MOFIN
         }
         private void Btn_ProcReporte_Click(object sender, EventArgs e)
         {
+            //BS_CClientes.DataSource = NC_Clientes.Listar();
             r_Cliente = BS_CClientes.Current as C_Clientes;
             List<ListaReporte> Lst_Reporte = new List<ListaReporte>();
             
             // Período de uso de Cuenta:    1: Semanal  2: Mensual  3: Trimestral   4: Semestral    5: Anual
             var vl_PerUso = r_Cliente.PeriodUsoCta;
-            DateTime vl_FDesde = this.Dtp_RepDesde.Value;
-            DateTime vl_FHasta = this.Dtp_RepHasta.Value;
+            DateTime vl_FDesde = (DateTime)this.Dtp_RepDesde.Value.Date;
+            DateTime vl_FHasta = (DateTime)this.Dtp_RepHasta.Value.Date;
             DateTime vl_GrupoFDesde = vl_FDesde;
             DateTime vl_GrupoFHasta = DateTime.Today;
+            Decimal vl_Abonos = 0;
+            Decimal vl_Retiros = 0;
+            int vl_NroOper = 0;
             int vl_Ciclo = 0;
-            //decimal vl_Abonos = 0;
-            //decimal vl_retiros = 0;
-            
+            string vl_Obsers = "";
+            Decimal vl_PerFinMonto = (r_Cliente.PerfilFinanciero != null) ? decimal.Parse(r_Cliente.PerfilFinanciero.ToString()) : 0 ;
+            int vl_PerFinNrOper = (r_Cliente.NroTransacciones != null) ? int.Parse(r_Cliente.NroTransacciones.ToString()) : 0;
+                       
             List<O_Operfinancieras> Lst_Operaciones;
             Lst_Operaciones = NO_Operfinancieras.ListarPorCodigo(r_Cliente.Codigo, vl_FDesde, vl_FHasta).ToList<O_Operfinancieras>();
             do
@@ -334,6 +338,21 @@ namespace MOFIN
                 switch (vl_PerUso)
                 {
                     case 1:     // Semanal
+                        if (vl_Ciclo == 0)
+                        {
+                            vl_GrupoFDesde = vl_FDesde;
+                            var vl_DiasSemana = (int)vl_GrupoFDesde.DayOfWeek;
+                            vl_GrupoFHasta = vl_GrupoFDesde.AddDays(6-vl_DiasSemana);
+                            vl_Ciclo = 1;
+                        }
+                        else
+                        {
+                            vl_GrupoFDesde = vl_GrupoFHasta.AddDays(1);
+                            vl_GrupoFHasta = vl_GrupoFDesde.AddDays(6);
+                        }
+
+                        if (vl_GrupoFHasta.Date >= vl_FHasta.Date)
+                            vl_GrupoFHasta = vl_FHasta;
                         break;
 
                     case 2:     // Mensual
@@ -433,17 +452,109 @@ namespace MOFIN
                 var Lst_GrupoOperaciones = Lst_Operaciones.FindAll(x => x.Fec_Pacto >= vl_GrupoFDesde & x.Fec_Pacto <= vl_GrupoFHasta);
                 if (Lst_GrupoOperaciones != null)
                 {
-                    var vl_Abonos = Lst_GrupoOperaciones.Where(item => item.Tipo_Orden.Trim() == "ABO")
-                                                        .Sum(item => item.Efectivo);
-                    var vl_retiros = Lst_GrupoOperaciones.Where(item => item.Tipo_Orden.Trim() == "RET")
-                                                        .Sum(item => item.Efectivo);
+                    vl_Abonos = decimal.Parse(Lst_GrupoOperaciones.Where(item => item.Tipo_Orden.Trim() == "ABO")
+                                                        .Sum(item => item.Efectivo).ToString());
+                    vl_Retiros = decimal.Parse(Lst_GrupoOperaciones.Where(item => item.Tipo_Orden.Trim() == "RET")
+                                                        .Sum(item => item.Efectivo).ToString());
+                    vl_NroOper = Lst_GrupoOperaciones.Count;
                 }
+                if (vl_NroOper > 0)
+                {
+                    // Procedimiento para el Calculo de las Observaciones a Incluir
+                    vl_Obsers = "";
+                    BS_OObservaciones.DataSource = NO_Observaciones.ListarPorCodigoTipo(r_Cliente.Codigo, 1);
+                    BS_OObservaciones.MoveFirst();
+                    foreach (object obj in BS_OObservaciones)
+                    {
+                        r_Observaciones = BS_OObservaciones.Current as O_Observaciones;
+                        if (r_Observaciones.Tipo_Perfil == 1 & r_Observaciones.Cod_Cliente == r_Cliente.Codigo &
+                            r_Observaciones.fecha.Date >= vl_GrupoFDesde.Date & r_Observaciones.fecha.Date <= vl_GrupoFHasta)
+                            vl_Obsers = vl_Obsers + r_Observaciones.fecha.ToShortDateString() + ": " + r_Observaciones.Observacion.Trim() + " \n";
+                        BS_OObservaciones.MoveNext();
+                    }
+                }
+                    // Procedimiento para el calculo de los datos el perfil financiero
+                    List<O_HistPerfOperac> Lst_PerfFinanciero = new List<O_HistPerfOperac>();
+
+                    Lst_PerfFinanciero = NO_HistPerfOperac.ListarPorCodigoTipo(r_Cliente.Codigo, 1);
+                    Lst_PerfFinanciero = Lst_PerfFinanciero.OrderBy(Item => Item.Fecha).ToList();
+                    BS_OHistPerfOperac.DataSource = Lst_PerfFinanciero.OrderBy(item => item.Fecha).ToList();
+                    BS_OHistPerfOperac.MoveFirst();
+                    foreach (object obj in BS_OHistPerfOperac)
+                    {
+                        r_HistPerfOperac = BS_OHistPerfOperac.Current as O_HistPerfOperac;
+                        if (r_HistPerfOperac.Tipo_Perfil == 1 & r_HistPerfOperac.Cod_Cliente == r_Cliente.Codigo &
+                            r_HistPerfOperac.Fecha.Date >= vl_GrupoFDesde.Date & r_HistPerfOperac.Fecha.Date <= vl_GrupoFHasta)
+                        {
+                            vl_PerFinMonto = r_HistPerfOperac.Mto_Perfil;
+                            vl_PerFinNrOper = r_HistPerfOperac.Nro_Transacciones;
+                        }
+                        BS_OHistPerfOperac.MoveNext();
+                    }
+                
+
+                // Agrega los datos al List
+                Lst_Reporte.Add(new ListaReporte()
+                {
+                    Cod_Cliente = r_Cliente.Codigo,
+                    Fecha = vl_GrupoFHasta,
+                    PerfTrans_Mto = vl_PerFinMonto,
+                    Aportes = vl_Abonos,
+                    Retiros = vl_Retiros,
+                    PerfTrans_Nro = vl_PerFinNrOper,
+                    NroOperac = vl_NroOper,
+                    Observ= vl_Obsers
+                });
             } while (vl_GrupoFHasta.Date < vl_FHasta.Date);
+
+            
+            BS_OObservaciones.DataSource = NO_Observaciones.Listar();
+            BS_OHistPerfOperac.DataSource = NO_HistPerfOperac.ListarPorCodigoTipo(r_Cliente.Codigo, 1);
+            Grd_Reporte.DataSource = Lst_Reporte;
+            Grd_Reporte.Visible = true;
+            Btn_Ocultar.Visible = true;
         }
 
         private void Pag3_Enter(object sender, EventArgs e)
         {
             this.Btn_MostrarTodos_Click(null,null);
+        }
+
+        private void Btn_Ocultar_Click(object sender, EventArgs e)
+        {
+            this.Grd_Reporte.Visible = false;
+            this.Btn_Ocultar.Visible = false;
+        }
+        public class ListaClientes
+        {
+            public string Codigo { get; set; }
+            public bool Activo { get; set; }
+            public string Nombre { get; set; }
+            public string Ejecutivo { get; set; }
+            public int NivelRiesgo { get; set; }
+            public decimal PerfTrans_Mto { get; set; }
+            public int PerfTrans_Nro { get; set; }
+            public int PeriodoUsoCta{ get; set; }
+        }
+
+        private void Btn_Procesar_Click(object sender, EventArgs e)
+        {
+            List<ListaClientes> Lst_ClientesSelct = new List<ListaClientes>();
+            foreach(DataGridViewRow Registro in Grd_Clientes.SelectedRows)
+            {
+                Lst_ClientesSelct.Add(new ListaClientes()
+                {
+                    Codigo = Registro.Cells["Codigo"].Value.ToString(),
+                    Activo = bool.Parse(Registro.Cells["Activo"].Value.ToString()),
+                    Nombre = Registro.Cells["Nombre"].Value.ToString(),
+                    Ejecutivo = Registro.Cells["Ejecutivo"].Value == null ? "SIN EJECUTIVO" : Registro.Cells["Ejecutivo"].Value.ToString(),
+                    NivelRiesgo = Registro.Cells["NivelRiesgo"].Value == null ? 0: int.Parse(Registro.Cells["NivelRiesgo"].Value.ToString()),
+                    PerfTrans_Mto = Registro.Cells["PerfilFinanciero"].Value == null? 0: decimal.Parse(Registro.Cells["PerfilFinanciero"].Value.ToString()),
+                    PerfTrans_Nro = Registro.Cells["NroTransacciones"].Value == null? 0: int.Parse(Registro.Cells["NroTransacciones"].Value.ToString()),
+                    PeriodoUsoCta = Registro.Cells["PeriodUsoCta"].Value == null? 2: int.Parse(Registro.Cells["PeriodUsoCta"].Value.ToString())
+                });
+            }
+
         }
     }
 }

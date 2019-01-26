@@ -31,7 +31,6 @@
         <EntityTypeShape EntityType="MonitorOperacionesModelo.O_Operfinancieras" Width="1.5" PointX="13.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModelo.O_OperTransaccionales" Width="1.5" PointX="7.75" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModelo.O_RepOperacional" Width="1.5" PointX="13.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.sysdiagrams" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="MonitorOperacionesModelo.FK_C_FirBenAcc_C_Clientes" ManuallyRouted="false" />
         <AssociationConnector Association="MonitorOperacionesModelo.FK_C_HistActClientes_C_Clientes" ManuallyRouted="false" />
         <AssociationConnector Association="MonitorOperacionesModelo.FK_O_HistPerfOperac_C_Clientes" ManuallyRouted="false" />

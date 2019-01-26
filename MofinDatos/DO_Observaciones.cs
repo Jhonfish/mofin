@@ -34,6 +34,7 @@ namespace MofinDatos
                 var lst = from Observaciones in db.O_Observaciones
                           where Observaciones.Cod_Cliente == Codigo &
                                 Observaciones.Tipo_Perfil == Tipo
+                          orderby Observaciones.fecha ascending
                           select Observaciones;
                 return lst.ToList();
             }

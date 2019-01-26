@@ -18,5 +18,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=SOULHUNTER-PC\MOFIN;Initial Catalog=MonitorOperaciones;Integrated Security=True</Value>
     </Setting>
+    <Setting Name="vs_Idioma" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ingles</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -15,8 +15,16 @@ using MofinModeloEntorno;
 
 namespace MOFIN
 {
+    enum TipoPersona
+    {
+        personaNatural = 1,
+        personaJuridica = 2
+    }
+
     public partial class Frm_Clientes : MetroForm
     {
+        string idioma = Properties.Settings.Default.vs_Idioma;
+        
         bool vl_EsNuevo = true;
         C_Clientes t_Cliente = new C_Clientes();
         C_FirBenAcc t_FirBenAcc = new C_FirBenAcc();
@@ -32,7 +40,7 @@ namespace MOFIN
             BS_CClientes.DataSource = NC_Clientes.Listar();
             BS_CFirBenAcc.DataSource = NC_FirBenAcc.Listar();
             BS_CHistActClientes.DataSource = NC_FirBenAcc.Listar();
-
+            
             BS_MActivComercial.DataSource = NM_ActivComercial.Listar();
             BS_MAntiguedad.DataSource = NM_Antiguedad.Listar();
             BS_MCriptomonedas.DataSource = NM_Criptomonedas.Listar();
@@ -224,6 +232,14 @@ namespace MOFIN
                 Cmb_BenefEstado.ValueMember = "Codigo";
             }
 
+        }
+
+        private void Opc_TipPers1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Opc_TipPers1.Checked)
+                t_Cliente.TipoPersona = (byte)TipoPersona.personaNatural;
+            else
+                t_Cliente.TipoPersona = (byte)TipoPersona.personaJuridica;
         }
     }
 }

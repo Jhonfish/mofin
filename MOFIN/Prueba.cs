@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using MofinNegocios;
 using MofinModelo;
 using MofinModeloEntorno;
+using MOFIN_Lib;
+using MOFIN_LIB;
 
 
 
@@ -27,7 +29,7 @@ namespace MOFIN
             BS_Idiomas.DataSource = NIdiomas.Listar();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             this.Pan_Prueba_Paint(null, null);
         }
@@ -56,16 +58,15 @@ namespace MOFIN
 
         private void NUD_Valor_ValueChanged(object sender, EventArgs e)
         {
-            this.Pan_Prueba.Tag = this.NUD_Valor.Value.ToString();
-            this.Pan_Prueba_Paint(null,null);
+            this.Opc_Prueba.Tag = this.NUD_Valor.Value.ToString();
         }
 
-        private void textBox1_Enter(object sender, EventArgs e)
+        private void TextBox1_Enter(object sender, EventArgs e)
         {
-            this.textBox1.Text = this.Pan_Prueba.Tag.ToString();
+            this.textBox1.Text = this.Opc_Prueba.Tag.ToString();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             this.Txt_Resultado.Text = MOFIN_LIB.Funciones.UltimoDiaMes(this.DTP_Fecha.Value.Date).ToString();
         }
