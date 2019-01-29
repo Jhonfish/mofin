@@ -51,6 +51,7 @@
     <Compile Include="DC_FirBenAcc.cs" />
     <Compile Include="DC_Clientes.cs" />
     <Compile Include="DC_HistActClientes.cs" />
+    <Compile Include="DC_ProdServ.cs" />
     <Compile Include="DC_ValorItemConsExp.cs" />
     <Compile Include="DIdiomas.cs" />
     <Compile Include="DEmpresas.cs" />

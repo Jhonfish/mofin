@@ -51,5 +51,6 @@ namespace MofinModelo
         public virtual DbSet<O_Operfinancieras> O_Operfinancieras { get; set; }
         public virtual DbSet<O_OperTransaccionales> O_OperTransaccionales { get; set; }
         public virtual DbSet<O_RepOperacional> O_RepOperacional { get; set; }
+        public virtual DbSet<C_ProdServ> C_ProdServ { get; set; }
     }
 }

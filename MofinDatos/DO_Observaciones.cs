@@ -48,6 +48,17 @@ namespace MofinDatos
             }
         }
 
+        public List<O_Observaciones> ListarPorCliente(string codigo)
+        {
+            using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
+            {
+                var registros = from datos in db.O_Observaciones
+                                where datos.Cod_Cliente == codigo
+                                select datos;
+                return registros.ToList();
+            }
+        }
+
         public O_Observaciones Isertar(O_Observaciones obj)
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())

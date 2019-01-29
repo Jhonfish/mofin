@@ -28,6 +28,11 @@ namespace MofinNegocios
             return dmActividadComercial.GetById(id);
         }
 
+        public static List<M_ActivComercial> ListarPorCodigo(short codigo)
+        {
+            return dmActividadComercial.ListarPorCodigo(codigo);
+        }
+
         public static M_ActivComercial Insertar(M_ActivComercial obj)
         {
             return dmActividadComercial.Isertar(obj);

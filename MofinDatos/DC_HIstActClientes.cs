@@ -29,11 +29,14 @@ namespace MofinDatos
             }
         }
 
-        public C_HistActClientes GetById(int id)
+        public List<C_HistActClientes> ListarPorCliente(string cliente)
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
             {
-                return db.C_HistActClientes.Find(id);
+                var clientes = from datos in db.C_HistActClientes
+                                    where datos.Codigo == cliente
+                                    select datos;
+                return clientes.ToList();
             }
         }
 

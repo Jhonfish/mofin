@@ -36,6 +36,17 @@ namespace MofinDatos
             }
         }
 
+        public List<M_NivelRiesgo> ListarPorCodigo(short codigo)
+        {
+            using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
+            {
+                var registros = from datos in db.M_NivelRiesgo
+                                where datos.Codigo == codigo
+                                select datos;
+                return registros.ToList();
+            }
+        }
+
         public M_NivelRiesgo Isertar(M_NivelRiesgo obj)
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())

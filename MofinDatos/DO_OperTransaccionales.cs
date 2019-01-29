@@ -36,6 +36,39 @@ namespace MofinDatos
             }
         }
 
+        public List<O_OperTransaccionales> ListarPorCliente(string cliente)
+        {
+            using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
+            {
+                var registros = from datos in db.O_OperTransaccionales
+                                where datos.Cod_Cliente == cliente
+                                select datos;
+                return registros.ToList();
+            }
+        }
+
+        public List<O_OperTransaccionales> ListarPorTipoOrden(string orden)
+        {
+            using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
+            {
+                var registros = from datos in db.O_OperTransaccionales
+                                where datos.Tipo_Orden == orden
+                                select datos;
+                return registros.ToList();
+            }
+        }
+
+        public List<O_OperTransaccionales> ListarPorTiporDocId(string id)
+        {
+            using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
+            {
+                var registros = from datos in db.O_OperTransaccionales
+                                where datos.Doc_ID == id
+                                select datos;
+                return registros.ToList();
+            }
+        }
+
         public O_OperTransaccionales Isertar(O_OperTransaccionales obj)
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())

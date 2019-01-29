@@ -29,9 +29,23 @@ namespace MofinNegocios
             return dOperTransaccionales.GetById(id);
         }
 
+        public static List<O_OperTransaccionales> ListarPorCliente(string cliente)
+        {
+            return dOperTransaccionales.ListarPorCliente(cliente);
+        }
+
+        public static List<O_OperTransaccionales> ListarPorTipoOrden(string orden)
+        {
+            return dOperTransaccionales.ListarPorTipoOrden(orden);
+        }
+
+        public static List<O_OperTransaccionales> ListarPorTiporDocId(string id)
+        {
+            return dOperTransaccionales.ListarPorTiporDocId(id);
+        }
+
         public static O_OperTransaccionales Insertar(O_OperTransaccionales obj)
         {
-            //obj.Directorio = "No tiene";
             return dOperTransaccionales.Isertar(obj);
         }
 

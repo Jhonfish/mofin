@@ -28,6 +28,11 @@ namespace MofinNegocios
             return dmNivelRiesgo.GetById(id);
         }
 
+        public static List<M_NivelRiesgo> ListarPorCodigo(short codigo)
+        {
+            return dmNivelRiesgo.ListarPorCodigo(codigo);
+        }
+
         public static M_NivelRiesgo Insertar(M_NivelRiesgo obj)
         {
             return dmNivelRiesgo.Isertar(obj);

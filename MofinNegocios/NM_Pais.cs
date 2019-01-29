@@ -28,6 +28,11 @@ namespace MofinNegocios
             return dmPais.GetById(id);
         }
 
+        public static List<M_Pais> ListarPorCodigo(short codigo)
+        {
+            return dmPais.ListarPorCodigo(codigo);
+        }
+
         public static M_Pais Insertar(M_Pais obj)
         {
             return dmPais.Isertar(obj);

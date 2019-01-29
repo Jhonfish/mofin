@@ -28,6 +28,11 @@ namespace MofinNegocios
             return dmProfesiones.GetById(id);
         }
 
+        public static List<M_Profesiones> ListarPorCodigo(short codigo)
+        {
+            return dmProfesiones.ListarPorCodigo(codigo);
+        }
+
         public static M_Profesiones Insertar(M_Profesiones obj)
         {
             return dmProfesiones.Isertar(obj);

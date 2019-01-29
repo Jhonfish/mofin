@@ -36,10 +36,6 @@ namespace MofinDatos
                               where estados.Cod_Pais == codPais
                               select estados;
                 return lst.ToList();
-
-                               //   var lst = from d in db.categorias
-                               //              select d;
-                               //   return lst.ToList();
             }
         }
 

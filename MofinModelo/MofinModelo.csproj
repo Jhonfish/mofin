@@ -62,6 +62,9 @@
     <Compile Include="C_HistActClientes.cs">
       <DependentUpon>MofinModelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="C_ProdServ.cs">
+      <DependentUpon>MofinModelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="C_ValorItemConsExp.cs">
       <DependentUpon>MofinModelo.tt</DependentUpon>
     </Compile>

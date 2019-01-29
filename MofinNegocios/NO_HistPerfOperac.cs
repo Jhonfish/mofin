@@ -31,9 +31,13 @@ namespace MofinNegocios
             return dHistperfoperac.GetById(id);
         }
 
+        public static List<O_HistPerfOperac> ListarPorCliente(string codigo)
+        {
+            return dHistperfoperac.ListarPorCliente(codigo);
+        }
+
         public static O_HistPerfOperac Insertar(O_HistPerfOperac obj)
         {
-            //obj.Directorio = "No tiene";
             return dHistperfoperac.Isertar(obj);
         }
 

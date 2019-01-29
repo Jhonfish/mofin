@@ -8,60 +8,52 @@ using MofinModelo;
 
 namespace MofinDatos
 {
-    public class DM_Profesiones
+    public class DC_ProdServ
     {
-        public void Eliminar(M_Profesiones obj)
+        public void Eliminar(C_ProdServ obj)
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
             {
-                db.M_Profesiones.Attach(obj);
-                db.M_Profesiones.Remove(obj);
+                db.C_ProdServ.Attach(obj);
+                db.C_ProdServ.Remove(obj);
                 db.SaveChanges();
             }
         }
 
-        public List<M_Profesiones> Listar()
+        public List<C_ProdServ> Listar()
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
             {
-                return db.M_Profesiones.ToList();
+                return db.C_ProdServ.ToList();
             }
         }
 
-        public M_Profesiones GetById(int id)
+        public List<C_ProdServ> ListarPorCliente(string cliente)
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
             {
-                return db.M_Profesiones.Find(id);
-            }
-        }
-
-        public List<M_Profesiones> ListarPorCodigo(short codigo)
-        {
-            using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
-            {
-                var registros = from datos in db.M_Profesiones
-                                where datos.Codigo == codigo
-                                select datos;
+                var registros = from datos in db.C_ProdServ
+                                    where datos.Cod_Cliente == cliente
+                                    select datos;
                 return registros.ToList();
             }
         }
 
-        public M_Profesiones Isertar(M_Profesiones obj)
+        public C_ProdServ Isertar(C_ProdServ obj)
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
             {
-                db.M_Profesiones.Add(obj);
+                db.C_ProdServ.Add(obj);
                 db.SaveChanges();
                 return obj;
             }
         }
 
-        public void Actualizar(M_Profesiones obj)
+        public void Actualizar(C_ProdServ obj)
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
             {
-                db.M_Profesiones.Attach(obj);
+                db.C_ProdServ.Attach(obj);
                 db.Entry(obj).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
             }

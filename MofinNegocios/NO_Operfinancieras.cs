@@ -33,7 +33,6 @@ namespace MofinNegocios
 
         public static O_Operfinancieras Insertar(O_Operfinancieras obj)
         {
-            //obj.Directorio = "No tiene";
             return dOperfinancieras.Isertar(obj);
         }
 

@@ -21,6 +21,7 @@ namespace MofinModelo
             this.O_HistPerfOperac = new HashSet<O_HistPerfOperac>();
             this.O_Observaciones = new HashSet<O_Observaciones>();
             this.C_FirBenAcc = new HashSet<C_FirBenAcc>();
+            this.C_ProdServ = new HashSet<C_ProdServ>();
         }
     
         public int ID_Sistema { get; set; }
@@ -119,5 +120,7 @@ namespace MofinModelo
         public virtual ICollection<O_Observaciones> O_Observaciones { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<C_FirBenAcc> C_FirBenAcc { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<C_ProdServ> C_ProdServ { get; set; }
     }
 }
