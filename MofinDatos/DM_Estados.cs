@@ -50,7 +50,16 @@ namespace MofinDatos
                 return db.M_Estados.Find(id);
             }
         }
-
+        public List<M_Estados> ListarPorCodigo(int Codigo)
+        {
+            using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
+            {
+                var lst = from M_Estados in db.M_Estados
+                          where M_Estados.Cod_Compuesto == Codigo
+                          select M_Estados;
+                return lst.ToList();
+            }
+        }
         public M_Estados Isertar(M_Estados obj)
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())

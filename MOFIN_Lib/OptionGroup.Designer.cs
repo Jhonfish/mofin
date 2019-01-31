@@ -1,6 +1,6 @@
 ﻿namespace MOFIN_Lib
 {
-    partial class Grupo_Opciones
+    partial class OptionGroup
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -54,7 +54,6 @@
             this.Opc_Opcion2.TabIndex = 1;
             this.Opc_Opcion2.Text = "Opcion2";
             this.Opc_Opcion2.UseVisualStyleBackColor = true;
-            this.Opc_Opcion2.CheckedChanged += new System.EventHandler(this.Opc_Opcion1_CheckedChanged);
             // 
             // Opc_Opcion1
             // 
@@ -67,14 +66,13 @@
             this.Opc_Opcion1.TabStop = true;
             this.Opc_Opcion1.Text = "Opcion1";
             this.Opc_Opcion1.UseVisualStyleBackColor = true;
-            this.Opc_Opcion1.CheckedChanged += new System.EventHandler(this.Opc_Opcion1_CheckedChanged);
             // 
-            // Grupo_Opciones
+            // OptionGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.Pan_Opciones);
-            this.Name = "Grupo_Opciones";
+            this.Name = "OptionGroup";
             this.Size = new System.Drawing.Size(115, 78);
             this.Pan_Opciones.ResumeLayout(false);
             this.Pan_Opciones.PerformLayout();
@@ -83,9 +81,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel Pan_Opciones;
         private System.Windows.Forms.RadioButton Opc_Opcion2;
         private System.Windows.Forms.RadioButton Opc_Opcion1;
+        public System.Windows.Forms.Panel Pan_Opciones;
     }
 }

@@ -12,6 +12,8 @@ using MofinNegocios;
 using MofinModelo;
 using MofinModeloEntorno;
 using MOFIN_LIB;
+using CrystalDecisions.CrystalReports.Engine;
+
 
 namespace MOFIN
 {
@@ -21,6 +23,7 @@ namespace MOFIN
         C_Clientes r_Cliente = new C_Clientes();
         O_Observaciones r_Observaciones = new O_Observaciones();
         O_HistPerfOperac r_HistPerfOperac = new O_HistPerfOperac();
+        M_NivelRiesgo r_NiveldeRiesgo = new M_NivelRiesgo();
 
         public Frm_OpeFinancieras()
         {
@@ -36,7 +39,21 @@ namespace MOFIN
             BS_OObservaciones.DataSource = NO_Observaciones.Listar();
             BS_OHistPerfOperac.DataSource = NO_HistPerfOperac.Listar();
             BS_OOperFinancieras.DataSource = NO_Operfinancieras.Listar();
-            
+            BS_MNivelRiesgo.DataSource = NM_NivelRiesgo.Listar();
+
+            foreach (Control Controles in  Tab_MonOperaciones.Controls)
+            {
+                if (Controles is DataGridView)
+                {
+ /*                   Controles.DefaultCellStyle.BackColor = Color.Black;
+                    Controles.DefaultCellStyle.ForeColor = Color.White;
+                    Controles.BackgroundColor = Color.Black;
+                    Controles.GridColor = Color.Gray;*/
+                    Controles.ForeColor = Color.White;
+                }
+            }
+
+
         }
         private void Modo_Consulta()
         {
@@ -281,6 +298,9 @@ namespace MOFIN
             MOFIN_LIB.Funciones.TTT_Btn(Btn_MostrarTodos, MOFIN_LIB.Funciones._Mens_Idioma(143));
             MOFIN_LIB.Funciones.TTT_Btn(Btn_Importar, MOFIN_LIB.Funciones._Mens_Idioma(1021));
 
+            ///
+            /// Grid Clientes Tab1
+            /// 
             this.Codigo.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1001);
             this.Nombre.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1002);
             this.Doc_ID.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1004);
@@ -291,6 +311,31 @@ namespace MOFIN
             this.Col_CliNme3.HeaderText = this.Nombre.HeaderText;
             this.Col_CliDocID3.HeaderText = this.Doc_ID.HeaderText;
 
+            ///
+            /// Grid Monitor Operaciones Tab1
+            /// 
+            this.Col_Alarma.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13062);
+            this.Col_FecGenera.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13051);
+            this.Col_FecUltOper.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13052);
+            this.Col_Codigo.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1001);
+            this.Col_Nombre.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1002);
+            this.Col_DocID.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1004);
+            this.Col_Nivriesgo.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10016);
+            this.Col_PerUsoCta.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13054);
+            this.Col_NroTrans.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13056);
+            this.Col_PerfNroTrans.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13055);
+            this.Col_PorcNroTrans.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13057);
+            this.Col_MtoCompras.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13058);
+            this.Col_MtoVentas.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13059);
+            this.Col_TotalOperac.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13060);
+            this.Col_PerfFinanciero.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13061);
+            this.Col_PorcOperaciones.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13057);
+            this.Col_Ejecutivo.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13063);
+            this.Col_Comentarios.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1016);
+
+            ///
+            /// Grid Perfil Operacional y Observaciones Tab2
+            /// 
             this.Col_PerFec.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1005);
             this.Col_PerMto.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13022);
             this.Col_PerNroTra.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13023);
@@ -298,6 +343,21 @@ namespace MOFIN
             this.Col_ObsFec.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1005);
             this.Col_ObsObserv.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1015);
 
+            ///
+            /// Grid Detalle de Operaciones Tab3
+            /// 
+            this.Col3_TipOrden.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10033);
+            this.Col3_FecPacto.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10034);
+            this.Col3_DocID.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1004);
+            this.Col3_CodCliente.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1001);
+            this.Col3_Nombre.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1002);
+            this.Col3_FecCierre.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10035);
+            this.Col3_FecValor.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10036);
+            this.Col3_MtoSolic.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10037);
+            this.Col3_MtoPactado.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10038);
+            this.Col3_Efectivo.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10039);
+            this.Col3_HoraCarga.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10040);
+            this.Col3_Comprobante.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10041);
         }
 
         public class ListaReporte
@@ -491,9 +551,8 @@ namespace MOFIN
                         }
                         BS_OHistPerfOperac.MoveNext();
                     }
-                
 
-                // Agrega los datos al List
+                    // Agrega los datos al List
                 Lst_Reporte.Add(new ListaReporte()
                 {
                     Cod_Cliente = r_Cliente.Codigo,
@@ -507,12 +566,20 @@ namespace MOFIN
                 });
             } while (vl_GrupoFHasta.Date < vl_FHasta.Date);
 
-            
             BS_OObservaciones.DataSource = NO_Observaciones.Listar();
             BS_OHistPerfOperac.DataSource = NO_HistPerfOperac.ListarPorCodigoTipo(r_Cliente.Codigo, 1);
             Grd_Reporte.DataSource = Lst_Reporte;
             Grd_Reporte.Visible = true;
             Btn_Ocultar.Visible = true;
+
+            ///
+            /// Pruebas con el Crysta report
+            /// 
+            /*BS_opeFinanc_Clientes.DataSource = Lst_Reporte;
+            ReportDocument cryRpt = new ReportDocument();
+            cryRpt.Load("PUT CRYSTAL REPORT PATHHERE\\CrystalReport1.rpt");
+                crystalReportViewer1.ReportSource = cryRpt;
+                crystalReportViewer1.Refresh();*/
         }
 
         private void Pag3_Enter(object sender, EventArgs e)
@@ -525,36 +592,285 @@ namespace MOFIN
             this.Grd_Reporte.Visible = false;
             this.Btn_Ocultar.Visible = false;
         }
-        public class ListaClientes
-        {
-            public string Codigo { get; set; }
-            public bool Activo { get; set; }
-            public string Nombre { get; set; }
-            public string Ejecutivo { get; set; }
-            public int NivelRiesgo { get; set; }
-            public decimal PerfTrans_Mto { get; set; }
-            public int PerfTrans_Nro { get; set; }
-            public int PeriodoUsoCta{ get; set; }
-        }
-
         private void Btn_Procesar_Click(object sender, EventArgs e)
         {
-            List<ListaClientes> Lst_ClientesSelct = new List<ListaClientes>();
+            /// 
+            /// Creación de la lista con los usuarios involucrados en el reporte
+            /// 
+            List<O_RepOperacional> Lst_OperFinancieras = new List<O_RepOperacional>();
+
             foreach(DataGridViewRow Registro in Grd_Clientes.SelectedRows)
             {
-                Lst_ClientesSelct.Add(new ListaClientes()
-                {
-                    Codigo = Registro.Cells["Codigo"].Value.ToString(),
-                    Activo = bool.Parse(Registro.Cells["Activo"].Value.ToString()),
-                    Nombre = Registro.Cells["Nombre"].Value.ToString(),
-                    Ejecutivo = Registro.Cells["Ejecutivo"].Value == null ? "SIN EJECUTIVO" : Registro.Cells["Ejecutivo"].Value.ToString(),
-                    NivelRiesgo = Registro.Cells["NivelRiesgo"].Value == null ? 0: int.Parse(Registro.Cells["NivelRiesgo"].Value.ToString()),
-                    PerfTrans_Mto = Registro.Cells["PerfilFinanciero"].Value == null? 0: decimal.Parse(Registro.Cells["PerfilFinanciero"].Value.ToString()),
-                    PerfTrans_Nro = Registro.Cells["NroTransacciones"].Value == null? 0: int.Parse(Registro.Cells["NroTransacciones"].Value.ToString()),
-                    PeriodoUsoCta = Registro.Cells["PeriodUsoCta"].Value == null? 2: int.Parse(Registro.Cells["PeriodUsoCta"].Value.ToString())
-                });
-            }
 
+                ///
+                /// Captura de la data de la tabla de operaciones segun los parámetros del reporte
+                /// 
+                string vl_Codigo = Registro.Cells["Codigo"].Value.ToString();
+                bool vl_Activo = bool.Parse(Registro.Cells["Activo"].Value.ToString());
+                string vl_Nombre = Registro.Cells["Nombre"].Value.ToString();
+                string vl_Doc_ID = Registro.Cells["Doc_ID"].Value.ToString();
+                string vl_Ejecutivo = Registro.Cells["Ejecutivo"].Value == null ? "SIN EJECUTIVO" : Registro.Cells["Ejecutivo"].Value.ToString();
+                int vl_NivelRiesgo = Registro.Cells["NivelRiesgo"].Value == null ? 0 : int.Parse(Registro.Cells["NivelRiesgo"].Value.ToString());
+                DateTime vl_FecGeneracion = DateTime.Today;
+                DateTime vl_FecUltOperac = DateTime.Today;
+
+                var vl_PerUso = int.Parse(Registro.Cells["PeriodUsoCta"].Value.ToString()); // Período de uso de Cuenta:    1: Semanal  2: Mensual  3: Trimestral   4: Semestral    5: Anual
+                DateTime vl_FDesde = (DateTime)this.Dtp_Desde.Value.Date;
+                DateTime vl_FHasta = (DateTime)this.Dtp_Hasta.Value.Date;
+                DateTime vl_GrupoFDesde = vl_FDesde;
+                DateTime vl_GrupoFHasta = DateTime.Today;
+                Decimal vl_Compras = 0;
+                Decimal vl_Ventas = 0;
+                int vl_NroOper = 0;
+                int vl_Ciclo = 0;
+                string vl_Obsers = "";
+                Decimal vl_PerFinMonto = Registro.Cells["PerfilFinanciero"].Value == null ? 0 : decimal.Parse(Registro.Cells["PerfilFinanciero"].Value.ToString());
+                Decimal vl_PerFinNrOper = Registro.Cells["NroTransacciones"].Value == null ? 0 : decimal.Parse(Registro.Cells["NroTransacciones"].Value.ToString());
+
+                List<O_Operfinancieras> Lst_Operaciones;
+                Lst_Operaciones = NO_Operfinancieras.ListarPorCodigo(vl_Codigo, vl_FDesde, vl_FHasta).ToList<O_Operfinancieras>();
+                do
+                {
+                    switch (vl_PerUso)
+                    {
+                        case 1:     // Semanal
+                            if (vl_Ciclo == 0)
+                            {
+                                vl_GrupoFDesde = vl_FDesde;
+                                var vl_DiasSemana = (int)vl_GrupoFDesde.DayOfWeek;
+                                vl_GrupoFHasta = vl_GrupoFDesde.AddDays(6 - vl_DiasSemana);
+                                vl_Ciclo = 1;
+                            }
+                            else
+                            {
+                                vl_GrupoFDesde = vl_GrupoFHasta.AddDays(1);
+                                vl_GrupoFHasta = vl_GrupoFDesde.AddDays(6);
+                            }
+
+                            if (vl_GrupoFHasta.Date >= vl_FHasta.Date)
+                                vl_GrupoFHasta = vl_FHasta;
+                            break;
+
+                        case 2:     // Mensual
+                            if (vl_Ciclo == 0)
+                            {
+                                vl_GrupoFDesde = vl_FDesde;
+                                vl_Ciclo = 1;
+                            }
+                            else
+                            {
+                                vl_GrupoFDesde = vl_GrupoFHasta.AddDays(1);
+                            }
+                            vl_GrupoFHasta = DateTime.Parse(MOFIN_LIB.Funciones.UltimoDiaMes(vl_GrupoFDesde).ToString() + "/" +
+                                                            vl_GrupoFDesde.Month.ToString() + "/" + vl_GrupoFDesde.Year.ToString());
+                            if (vl_GrupoFHasta.Date >= vl_FHasta.Date)
+                                vl_GrupoFHasta = vl_FHasta;
+                            break;
+
+                        case 3:     // Trimestral
+                            if (vl_Ciclo == 0)
+                            {
+                                vl_GrupoFDesde = vl_FDesde;
+                                vl_Ciclo = 1;
+                            }
+                            else
+                            {
+                                vl_GrupoFDesde = vl_GrupoFHasta.AddDays(1);
+                            }
+                            switch (vl_GrupoFDesde.Month)
+                            {
+                                case 1:
+                                case 2:
+                                case 3:
+                                    vl_GrupoFHasta = DateTime.Parse("31/03/" + vl_GrupoFDesde.Year.ToString());
+                                    break;
+                                case 4:
+                                case 5:
+                                case 6:
+                                    vl_GrupoFHasta = DateTime.Parse("30/06/" + vl_GrupoFDesde.Year.ToString());
+                                    break;
+                                case 7:
+                                case 8:
+                                case 9:
+                                    vl_GrupoFHasta = DateTime.Parse("30/09/" + vl_GrupoFDesde.Year.ToString());
+                                    break;
+                                default:
+                                    vl_GrupoFHasta = DateTime.Parse("31/12/" + vl_GrupoFDesde.Year.ToString());
+                                    break;
+                            }
+                            if (vl_GrupoFHasta.Date >= vl_FHasta.Date)
+                                vl_GrupoFHasta = vl_FHasta;
+                            break;
+
+                        case 4:     // Semestral
+                            if (vl_Ciclo == 0)
+                            {
+                                vl_GrupoFDesde = vl_FDesde;
+                                vl_Ciclo = 1;
+                            }
+                            else
+                            {
+                                vl_GrupoFDesde = vl_GrupoFHasta.AddDays(1);
+                            }
+                            switch (vl_GrupoFDesde.Month)
+                            {
+                                case 1:
+                                case 2:
+                                case 3:
+                                case 4:
+                                case 5:
+                                case 6:
+                                    vl_GrupoFHasta = DateTime.Parse("30/06/" + vl_GrupoFDesde.Year.ToString());
+                                    break;
+                                default:
+                                    vl_GrupoFHasta = DateTime.Parse("31/12/" + vl_GrupoFDesde.Year.ToString());
+                                    break;
+                            }
+                            if (vl_GrupoFHasta.Date >= vl_FHasta.Date)
+                                vl_GrupoFHasta = vl_FHasta;
+                            break;
+
+                        case 5:     // Anual
+                            if (vl_Ciclo == 0)
+                            {
+                                vl_GrupoFDesde = vl_FDesde;
+                                vl_Ciclo = 1;
+                            }
+                            else
+                            {
+                                vl_GrupoFDesde = vl_GrupoFHasta.AddDays(1);
+                            }
+                            vl_GrupoFHasta = DateTime.Parse("31/12/" + vl_GrupoFDesde.Year.ToString());
+                            if (vl_GrupoFHasta.Date >= vl_FHasta.Date)
+                                vl_GrupoFHasta = vl_FHasta;
+                            break;
+                    }
+
+                    ///
+                    /// Procedimiento para el calculo de los datos el perfil financiero
+                    /// 
+                    List<O_HistPerfOperac> Lst_PerfFinanciero = new List<O_HistPerfOperac>();
+                    Lst_PerfFinanciero = NO_HistPerfOperac.ListarPorCodigoTipo(vl_Codigo, 1);
+                    Lst_PerfFinanciero = Lst_PerfFinanciero.OrderBy(Item => Item.Fecha).ToList();
+                    BS_OHistPerfOperac.DataSource = Lst_PerfFinanciero.OrderBy(item => item.Fecha).ToList();
+                    BS_OHistPerfOperac.MoveFirst();
+                    foreach (object obj in BS_OHistPerfOperac)
+                    {
+                        r_HistPerfOperac = BS_OHistPerfOperac.Current as O_HistPerfOperac;
+                        if (r_HistPerfOperac.Tipo_Perfil == 1 & r_HistPerfOperac.Cod_Cliente == vl_Codigo &
+                            r_HistPerfOperac.Fecha.Date >= vl_GrupoFDesde.Date & r_HistPerfOperac.Fecha.Date <= vl_GrupoFHasta)
+                        {
+                            vl_PerFinMonto = r_HistPerfOperac.Mto_Perfil;
+                            vl_PerFinNrOper = r_HistPerfOperac.Nro_Transacciones;
+                            vl_NivelRiesgo = 1; // r_HistPerfOperac.Nivel_Riesgo;  se debe cambiar el campo en o_HistPerFinancier
+                        }
+                        BS_OHistPerfOperac.MoveNext();
+                    }
+
+                    ///
+                    /// Procedimiento para el calculo de las excepciones / Alertas
+                    /// 
+                    var Lst_GrupoOperaciones = Lst_Operaciones.FindAll(x => x.Fec_Pacto >= vl_GrupoFDesde & x.Fec_Pacto <= vl_GrupoFHasta).ToList();
+                    if (Lst_GrupoOperaciones != null)
+                    {
+                        /// calculos por Resumen, pero no me dan las fechas de Excepcion y Ultima operacion
+                        /*vl_Compras = decimal.Parse(Lst_GrupoOperaciones.Where(item => item.Tipo_Orden.Trim() == "ABO")
+                                                            .Sum(item => item.Efectivo).ToString());
+                        vl_Ventas = decimal.Parse(Lst_GrupoOperaciones.Where(item => item.Tipo_Orden.Trim() == "RET")
+                                                            .Sum(item => item.Efectivo).ToString());
+                        vl_NroOper = Lst_GrupoOperaciones.Count; */
+
+                        vl_FecGeneracion = DateTime.Today;
+                        vl_NroOper = 0;
+                        vl_Compras = 0;
+                        vl_Ventas = 0;
+                        foreach (var r_Operacion in Lst_GrupoOperaciones)
+                        {
+                            if (r_Operacion.Tipo_Orden.Trim() == "ABO")
+                                vl_Compras = vl_Compras + (decimal)r_Operacion.Efectivo;
+                            else
+                                vl_Ventas = vl_Ventas + (decimal)r_Operacion.Efectivo;
+                            vl_NroOper = vl_NroOper + 1;
+                            vl_FecUltOperac = r_Operacion.Fec_Pacto.Date;
+
+                            if (((vl_Compras + vl_Ventas) > vl_PerFinMonto |
+                                 (vl_NroOper > vl_PerFinNrOper)) &
+                                 (vl_FecGeneracion == DateTime.Today))
+                                vl_FecGeneracion = r_Operacion.Fec_Pacto;
+                        }
+                    }
+
+                    if (vl_NroOper > 0)
+                    {
+                        // Procedimiento para el Calculo de las Observaciones a Incluir
+                        vl_Obsers = "";
+                        BS_OObservaciones.DataSource = NO_Observaciones.ListarPorCodigoTipo(vl_Codigo, 1);
+                        BS_OObservaciones.MoveFirst();
+                        foreach (object obj in BS_OObservaciones)
+                        {
+                            r_Observaciones = BS_OObservaciones.Current as O_Observaciones;
+                            if (r_Observaciones.Tipo_Perfil == 1 & r_Observaciones.Cod_Cliente == vl_Codigo &
+                                r_Observaciones.fecha.Date >= vl_GrupoFDesde.Date & r_Observaciones.fecha.Date <= vl_GrupoFHasta)
+                                vl_Obsers = vl_Obsers + r_Observaciones.fecha.ToShortDateString() + ": " + r_Observaciones.Observacion.Trim() + " \n";
+                            BS_OObservaciones.MoveNext();
+                        }
+                    }
+
+                    ///
+                    /// procdimiento para llenar el list con la información del período
+                    /// 
+                    decimal vl_Porctrans = vl_NroOper > 0 ? (((vl_NroOper - vl_PerFinNrOper) / vl_PerFinNrOper) * 100) : 0;
+                    decimal vl_PorcOperac = vl_NroOper > 0 ? ((((vl_Compras + vl_Ventas) - vl_PerFinMonto) / vl_PerFinMonto) * 100) : 0;
+                    bool vl_Alarma = (vl_Porctrans > 0 | vl_PorcOperac > 0) ? true : false;
+
+                    if ((this.Chk_ExcMeses.Checked == false |
+                       (this.Chk_ExcMeses.Checked == true & vl_NroOper > 0)) &
+                        (this.Chk_IncSoloExcep.Checked == false |
+                       (this.Chk_IncSoloExcep.Checked == true & vl_Alarma == true)))
+
+                            BS_MNivelRiesgo.DataSource = NM_NivelRiesgo.GetById(vl_NivelRiesgo);
+                            r_NiveldeRiesgo = BS_MNivelRiesgo.Current as M_NivelRiesgo;
+
+                            Lst_OperFinancieras.Add(new O_RepOperacional()
+                            {
+                                Alarma = vl_Alarma,
+                                Fec_Generacion = vl_FecGeneracion,
+                                Fec_UltOperac = vl_FecUltOperac,
+                                Cod_Cliente = vl_Codigo,
+                                Nme_cliente = vl_Nombre,
+                                Doc_ID = vl_Doc_ID,
+                                Ejecutivo = vl_Ejecutivo,
+                                Niv_Riesgo = r_NiveldeRiesgo == null? MOFIN_LIB.Funciones._Mens_Idioma(9012) : r_NiveldeRiesgo.Descripcion.Trim(),
+                                Perf_Financiero = vl_PerFinMonto,
+                                Perf_NroTransac = (byte)vl_PerFinNrOper,
+                                Period_UsoCta = MOFIN_LIB.Funciones._Mens_Idioma(190 + vl_PerUso),
+                                Porc_Transac = vl_Porctrans,
+                                Mto_Compras = vl_Compras,
+                                Mto_Ventas = vl_Ventas,
+                                Tot_Operaciones = vl_Compras+vl_Ventas,
+                                Porc_Operaciones = vl_PorcOperac,
+                                Nro_Transac = (short)vl_NroOper,
+                                Comentario = vl_Obsers
+                            });
+
+                } while (vl_GrupoFHasta.Date < vl_FHasta.Date);
+            }
+            Grd_MonitorFinanciero.DataSource = Lst_OperFinancieras;
+
+            ///
+            /// Procdimiento de coloreado de las celdas del grid de Reporte Financiero
+            /// 
+            foreach (DataGridViewRow row in Grd_MonitorFinanciero.Rows)
+            {
+                if ((bool)row.Cells["Col_Alarma"].Value == true)
+                    row.DefaultCellStyle.ForeColor = Color.Yellow;
+                if ((bool)row.Cells["Col_Alarma"].Value == true & (string)row.Cells["Col_Comentarios"].Value == "")
+                    row.DefaultCellStyle.ForeColor = Color.Red;
+            }
+        }
+
+        private void Btn_Exportar_Click(object sender, EventArgs e)
+        {
         }
     }
 }

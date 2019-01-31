@@ -107,8 +107,9 @@ namespace MOFIN
                             vl_RegEliminar = t_TablaMaestra3.Descripcion.Trim();
                         break;
                     case 4:  // "Estados"
-                        BS_MEstados.Position = BS_TablaMaestra.Position;
-                        t_TablaMaestra4 = BS_MEstados.Current as M_Estados;
+                        t_TablaMaestra4 = BS_TablaMaestra.Current as M_Estados;
+                        // BS_MEstados.Position = BS_TablaMaestra.Position;
+                        // t_TablaMaestra4 = BS_MEstados.Current as M_Estados;
                         if (t_TablaMaestra4.Descripcion != null)
                             vl_RegEliminar = t_TablaMaestra4.Descripcion.Trim();
                         break;
@@ -513,64 +514,69 @@ namespace MOFIN
 
         private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
+            BS_TablaMaestra.CancelEdit();
+            this.Cmb_TablaMaestra_SelectedIndexChanged(null,null);
             this.Modo_Consulta();
+
         }
 
         private void TSB_Agregar_Click(object sender, EventArgs e)
         {
             vl_EsNuevo = true;
             this.Modo_Edicion();
-            switch (Cmb_TablaMaestra.SelectedIndex)
-            {
-                case 0:  // "Actividad Comercial"
-                    BS_TablaMaestra.Add(new M_ActivComercial());
-                    break;
-                case 1:  // "Antigüedad"
-                    BS_TablaMaestra.Add(new M_Antiguedad());
-                    break;
-                case 2:  // "Criptomonedas"
-                    BS_TablaMaestra.Add(new M_Criptomonedas());
-                    break;
-                case 3:  // "Edad"
-                    BS_TablaMaestra.Add(new M_Edad());
-                    break;
-                case 4:  // "Estados"
-                    BS_TablaMaestra.Add(new M_Estados());
-                    break;
-                case 5: // Nivel de Riesgo
-                    BS_TablaMaestra.Add(new M_NivelRiesgo());
-                    break;
-                case 6:  // "Pais"
-                    BS_TablaMaestra.Add(new M_Pais());
-                    break;
-                case 7:  // "P.E.P."
-                    BS_TablaMaestra.Add(new M_PEP());
-                    break;
-                case 8:  // "Productos"
-                    BS_TablaMaestra.Add(new M_Productos());
-                    break;
-                case 9:  // "Profesión"
-                    BS_TablaMaestra.Add(new M_Profesiones());
-                    break;
-                case 10:  // "Servicios"
-                    BS_TablaMaestra.Add(new M_Servicios());
-                    break;
-                case 11:  // "Tipo de Documento Identidad"
-                    BS_TablaMaestra.Add(new M_TipoDocID());
-                    break;
-                case 12:  // "Tipo de Estructura"
-                    BS_TablaMaestra.Add(new M_TipoEstructuraEmpresa());
-                    break;
-                case 13:  // "Tipo de Persona Jurídica"
-                    BS_TablaMaestra.Add(new M_TipoPersJuridica());
-                    break;
-                case 14:  // "Vol. Oper. Pers. Natural"
-                    BS_TablaMaestra.Add(new M_VolOperPersNat());
-                    break;
-                case 15:  // "Vol. Oper. Pers. Jurídica"
-                    BS_TablaMaestra.Add(new M_VolOperPersJur());
-                    break;
-            }
+            /*           switch (Cmb_TablaMaestra.SelectedIndex)
+                       {
+                           case 0:  // "Actividad Comercial"
+                               BS_TablaMaestra.Add(new M_ActivComercial());
+                               break;
+                           case 1:  // "Antigüedad"
+                               BS_TablaMaestra.Add(new M_Antiguedad());
+                               break;
+                           case 2:  // "Criptomonedas"
+                               BS_TablaMaestra.Add(new M_Criptomonedas());
+                               break;
+                           case 3:  // "Edad"
+                               BS_TablaMaestra.Add(new M_Edad());
+                               break;
+                           case 4:  // "Estados"
+                               BS_TablaMaestra.Add(new M_Estados());
+                               break;
+                           case 5: // Nivel de Riesgo
+                               BS_TablaMaestra.Add(new M_NivelRiesgo());
+                               break;
+                           case 6:  // "Pais"
+                               BS_TablaMaestra.Add(new M_Pais());
+                               break;
+                           case 7:  // "P.E.P."
+                               BS_TablaMaestra.Add(new M_PEP());
+                               break;
+                           case 8:  // "Productos"
+                               BS_TablaMaestra.Add(new M_Productos());
+                               break;
+                           case 9:  // "Profesión"
+                               BS_TablaMaestra.Add(new M_Profesiones());
+                               break;
+                           case 10:  // "Servicios"
+                               BS_TablaMaestra.Add(new M_Servicios());
+                               break;
+                           case 11:  // "Tipo de Documento Identidad"
+                               BS_TablaMaestra.Add(new M_TipoDocID());
+                               break;
+                           case 12:  // "Tipo de Estructura"
+                               BS_TablaMaestra.Add(new M_TipoEstructuraEmpresa());
+                               break;
+                           case 13:  // "Tipo de Persona Jurídica"
+                               BS_TablaMaestra.Add(new M_TipoPersJuridica());
+                               break;
+                           case 14:  // "Vol. Oper. Pers. Natural"
+                               BS_TablaMaestra.Add(new M_VolOperPersNat());
+                               break;
+                           case 15:  // "Vol. Oper. Pers. Jurídica"
+                               BS_TablaMaestra.Add(new M_VolOperPersJur());
+                               break;
+                       }*/
+            BS_TablaMaestra.AddNew();
+
             BS_TablaMaestra.MoveLast();
         }
 
@@ -612,8 +618,11 @@ namespace MOFIN
                         BS_MEdad.DataSource = NM_Edad.Listar();
                         break;
                     case 4:  // "Estados"
-                        NM_Estados.Elimiar(BS_MEstados.Current as M_Estados);
+
+//                        NM_Estados.Elimiar(BS_MEstados.Current as M_Estados);
+                        NM_Estados.Elimiar(t_TablaMaestra4 as M_Estados);
                         BS_MEstados.DataSource = NM_Estados.Listar();
+                        this.Cmb_Pais_SelectedIndexChanged(null, null);
                         break;
                     case 5: // Nivel de Riesgo
                         NM_NivelRiesgo.Elimiar(BS_MNivelRiesgo.Current as M_NivelRiesgo);

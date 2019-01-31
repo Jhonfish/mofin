@@ -13,8 +13,11 @@ namespace MOFIN_LIB
 {
     public struct Entorno
     {
-        public static string vs_Idiomas = "espanol";
+        public static int vs_Idiomas = 1;   // 1: Espanol, 2: Ingles
         public static bool vs_Maestro = false;
+        public static string vs_Empresa = "001";
+        public static string vs_Grupo = "001";
+        public static string vs_Usuario = "JMARIN";
     }
     public static class Funciones
     {
@@ -44,12 +47,13 @@ namespace MOFIN_LIB
         }
         public static string _Mens_Idioma(int Codigo)
         {
-            string idiomas = MOFIN_Lib.Properties.Settings.Default.vs_Idioma;
-            MOFIN_Lib.Properties.Settings.Default.vs_Idioma = "espanol";
             Idiomas r_Idiomas = new Idiomas();
             r_Idiomas = NIdiomas.GetById(Codigo);
             if (r_Idiomas != null)
-                return (r_Idiomas.ingles);
+                if(MOFIN_LIB.Entorno.vs_Idiomas==1)
+                    return (r_Idiomas.espanol);
+                else
+                    return (r_Idiomas.ingles);
             else
                 return ("Indice Inexistente");
         }

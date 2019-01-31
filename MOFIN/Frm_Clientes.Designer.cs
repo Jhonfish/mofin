@@ -155,7 +155,6 @@
             this.Opc_TipVinc3 = new System.Windows.Forms.RadioButton();
             this.Opc_TipVinc2 = new System.Windows.Forms.RadioButton();
             this.Opc_TipVinc1 = new System.Windows.Forms.RadioButton();
-            this.tipoVinculoTextBox = new System.Windows.Forms.TextBox();
             this.Grd_CFirBenAcc = new System.Windows.Forms.DataGridView();
             this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -202,7 +201,6 @@
             this.DTP_FecUltAct = new System.Windows.Forms.DateTimePicker();
             this.periodUsoCtaTextBox = new System.Windows.Forms.TextBox();
             this.Txt_PerFinanciero = new System.Windows.Forms.TextBox();
-            this.Txt_NivRiesgo = new System.Windows.Forms.TextBox();
             this.Txt_Ejecutivo = new System.Windows.Forms.TextBox();
             this.Txt_Observacion = new System.Windows.Forms.TextBox();
             this.Grp_PerUsoCta = new System.Windows.Forms.GroupBox();
@@ -318,6 +316,9 @@
             this.BS_MProductos = new System.Windows.Forms.BindingSource(this.components);
             this.BS_MServicios = new System.Windows.Forms.BindingSource(this.components);
             this.BS_MVolOperPersJur = new System.Windows.Forms.BindingSource(this.components);
+            this.Cmb_Antiguedad = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Cmb_NivelRiesgo = new System.Windows.Forms.ComboBox();
             Lbl_Codigo = new System.Windows.Forms.Label();
             Lbl_DocID = new System.Windows.Forms.Label();
             Lbl_Nombre = new System.Windows.Forms.Label();
@@ -1012,6 +1013,8 @@
             // 
             // Pan_Detalles1
             // 
+            this.Pan_Detalles1.Controls.Add(this.comboBox1);
+            this.Pan_Detalles1.Controls.Add(this.Cmb_Antiguedad);
             this.Pan_Detalles1.Controls.Add(this.Cmb_TipDocID);
             this.Pan_Detalles1.Controls.Add(this.Lst_Productos);
             this.Pan_Detalles1.Controls.Add(this.Cmb_Criptomonedas);
@@ -1446,7 +1449,6 @@
             this.Pan_Detalles2.Controls.Add(this.Txt_BenefDoc_ID);
             this.Pan_Detalles2.Controls.Add(this.Txt_BenefNme);
             this.Pan_Detalles2.Controls.Add(this.Grp_BenfTipoVinculacion);
-            this.Pan_Detalles2.Controls.Add(this.tipoVinculoTextBox);
             this.Pan_Detalles2.Controls.Add(this.Grd_CFirBenAcc);
             this.Pan_Detalles2.Location = new System.Drawing.Point(9, 6);
             this.Pan_Detalles2.Name = "Pan_Detalles2";
@@ -1670,13 +1672,6 @@
             this.Opc_TipVinc1.Text = "Beneficiario Final";
             this.Opc_TipVinc1.UseVisualStyleBackColor = true;
             this.Opc_TipVinc1.CheckedChanged += new System.EventHandler(this.Opc_TipVinc1_CheckedChanged);
-            // 
-            // tipoVinculoTextBox
-            // 
-            this.tipoVinculoTextBox.Location = new System.Drawing.Point(350, 39);
-            this.tipoVinculoTextBox.Name = "tipoVinculoTextBox";
-            this.tipoVinculoTextBox.Size = new System.Drawing.Size(41, 22);
-            this.tipoVinculoTextBox.TabIndex = 60;
             // 
             // Grd_CFirBenAcc
             // 
@@ -2100,6 +2095,7 @@
             // 
             // Pan_Detalles4
             // 
+            this.Pan_Detalles4.Controls.Add(this.Cmb_NivelRiesgo);
             this.Pan_Detalles4.Controls.Add(this.NUD_NroTransacciones);
             this.Pan_Detalles4.Controls.Add(this.NUD_TriAno);
             this.Pan_Detalles4.Controls.Add(this.NUD_TriMes);
@@ -2108,7 +2104,6 @@
             this.Pan_Detalles4.Controls.Add(this.DTP_FecUltAct);
             this.Pan_Detalles4.Controls.Add(this.periodUsoCtaTextBox);
             this.Pan_Detalles4.Controls.Add(this.Txt_PerFinanciero);
-            this.Pan_Detalles4.Controls.Add(this.Txt_NivRiesgo);
             this.Pan_Detalles4.Controls.Add(this.Txt_Ejecutivo);
             this.Pan_Detalles4.Controls.Add(this.Txt_Observacion);
             this.Pan_Detalles4.Controls.Add(this.Grp_PerUsoCta);
@@ -2182,14 +2177,6 @@
             this.Txt_PerFinanciero.Name = "Txt_PerFinanciero";
             this.Txt_PerFinanciero.Size = new System.Drawing.Size(176, 22);
             this.Txt_PerFinanciero.TabIndex = 30;
-            // 
-            // Txt_NivRiesgo
-            // 
-            this.Txt_NivRiesgo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_CClientes, "NivelRiesgo", true));
-            this.Txt_NivRiesgo.Location = new System.Drawing.Point(5, 250);
-            this.Txt_NivRiesgo.Name = "Txt_NivRiesgo";
-            this.Txt_NivRiesgo.Size = new System.Drawing.Size(176, 22);
-            this.Txt_NivRiesgo.TabIndex = 29;
             // 
             // Txt_Ejecutivo
             // 
@@ -3231,6 +3218,30 @@
             // 
             this.BS_MVolOperPersJur.DataSource = typeof(MofinModelo.M_VolOperPersJur);
             // 
+            // Cmb_Antiguedad
+            // 
+            this.Cmb_Antiguedad.FormattingEnabled = true;
+            this.Cmb_Antiguedad.Location = new System.Drawing.Point(404, 4);
+            this.Cmb_Antiguedad.Name = "Cmb_Antiguedad";
+            this.Cmb_Antiguedad.Size = new System.Drawing.Size(250, 23);
+            this.Cmb_Antiguedad.TabIndex = 50;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(404, 117);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(250, 23);
+            this.comboBox1.TabIndex = 51;
+            // 
+            // Cmb_NivelRiesgo
+            // 
+            this.Cmb_NivelRiesgo.FormattingEnabled = true;
+            this.Cmb_NivelRiesgo.Location = new System.Drawing.Point(5, 250);
+            this.Cmb_NivelRiesgo.Name = "Cmb_NivelRiesgo";
+            this.Cmb_NivelRiesgo.Size = new System.Drawing.Size(176, 23);
+            this.Cmb_NivelRiesgo.TabIndex = 38;
+            // 
             // Frm_Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -3394,7 +3405,6 @@
         private System.Windows.Forms.RadioButton Opc_TipVinc3;
         private System.Windows.Forms.RadioButton Opc_TipVinc2;
         private System.Windows.Forms.RadioButton Opc_TipVinc1;
-        private System.Windows.Forms.TextBox tipoVinculoTextBox;
         private System.Windows.Forms.DataGridView Grd_CFirBenAcc;
         private System.Windows.Forms.Panel Pan_Detalles3;
         private System.Windows.Forms.CheckBox Chk_Opc30;
@@ -3435,7 +3445,6 @@
         private System.Windows.Forms.DateTimePicker DTP_FecUltAct;
         private System.Windows.Forms.TextBox periodUsoCtaTextBox;
         private System.Windows.Forms.TextBox Txt_PerFinanciero;
-        private System.Windows.Forms.TextBox Txt_NivRiesgo;
         private System.Windows.Forms.TextBox Txt_Ejecutivo;
         private System.Windows.Forms.TextBox Txt_Observacion;
         private System.Windows.Forms.GroupBox Grp_PerUsoCta;
@@ -3571,5 +3580,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn trimNroOperacDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn trimMontoOperacDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mapaEmpresaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox Cmb_Antiguedad;
+        private System.Windows.Forms.ComboBox Cmb_NivelRiesgo;
     }
 }

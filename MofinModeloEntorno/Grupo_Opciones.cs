@@ -32,5 +32,21 @@ namespace MofinModeloEntorno
         public Nullable<bool> TabMaestras_M { get; set; }
         public Nullable<bool> TabMaestras_E { get; set; }
         public Nullable<bool> TabMaestras_P { get; set; }
+        public Nullable<bool> Clientes_I { get; set; }
+        public Nullable<bool> Clientes_M { get; set; }
+        public Nullable<bool> Clientes_E { get; set; }
+        public Nullable<bool> Clientes_P { get; set; }
+        public Nullable<bool> BusqPers_I { get; set; }
+        public Nullable<bool> BusqPers_M { get; set; }
+        public Nullable<bool> BusqPers_E { get; set; }
+        public Nullable<bool> BusqPers_P { get; set; }
+        public Nullable<bool> OperFinanc_I { get; set; }
+        public Nullable<bool> OperFinanc_M { get; set; }
+        public Nullable<bool> OperFinanc_E { get; set; }
+        public Nullable<bool> OperFinanc_P { get; set; }
+        public Nullable<bool> OperTransac_I { get; set; }
+        public Nullable<bool> OperTransac_M { get; set; }
+        public Nullable<bool> OperTransac_E { get; set; }
+        public Nullable<bool> OperTransac_P { get; set; }
     }
 }

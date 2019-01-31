@@ -16,14 +16,14 @@ namespace MOFIN.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Rpt_OperClientes_Financieras : ReportClass {
+    public class Rpt_OpeFinanc_Clientes : ReportClass {
         
-        public Rpt_OperClientes_Financieras() {
+        public Rpt_OpeFinanc_Clientes() {
         }
         
         public override string ResourceName {
             get {
-                return "Rpt_OperClientes_Financieras.rpt";
+                return "Rpt_OpeFinanc_Clientes.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace MOFIN.Reportes {
         
         public override string FullResourceName {
             get {
-                return "MOFIN.Reportes.Rpt_OperClientes_Financieras.rpt";
+                return "MOFIN.Reportes.Rpt_OpeFinanc_Clientes.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace MOFIN.Reportes {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedRpt_OperClientes_Financieras : Component, ICachedReport {
+    public class CachedRpt_OpeFinanc_Clientes : Component, ICachedReport {
         
-        public CachedRpt_OperClientes_Financieras() {
+        public CachedRpt_OpeFinanc_Clientes() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace MOFIN.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Rpt_OperClientes_Financieras rpt = new Rpt_OperClientes_Financieras();
+            Rpt_OpeFinanc_Clientes rpt = new Rpt_OpeFinanc_Clientes();
             rpt.Site = this.Site;
             return rpt;
         }

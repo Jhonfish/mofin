@@ -42,7 +42,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.Txt_Resultado = new System.Windows.Forms.TextBox();
             this.DTP_Fecha = new System.Windows.Forms.DateTimePicker();
-            //this.Opc_Prueba = new MOFIN_Lib.Grupo_Opciones();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Idiomas)).BeginInit();
             this.Pan_Prueba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Valor)).BeginInit();
@@ -182,19 +181,11 @@
             this.DTP_Fecha.Size = new System.Drawing.Size(200, 20);
             this.DTP_Fecha.TabIndex = 10;
             // 
-            // Opc_Prueba
-            // 
-            this.Opc_Prueba.Location = new System.Drawing.Point(263, 12);
-            this.Opc_Prueba.Name = "Opc_Prueba";
-            this.Opc_Prueba.Size = new System.Drawing.Size(115, 78);
-            this.Opc_Prueba.TabIndex = 11;
-            // 
             // Prueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Opc_Prueba);
             this.Controls.Add(this.DTP_Fecha);
             this.Controls.Add(this.Txt_Resultado);
             this.Controls.Add(this.button2);
@@ -231,6 +222,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox Txt_Resultado;
         private System.Windows.Forms.DateTimePicker DTP_Fecha;
-        private MOFIN_Lib.Grupo_Opciones Opc_Prueba;
+        private MOFIN_Lib.OptionGroup Opc_Prueba;
     }
 }

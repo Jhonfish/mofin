@@ -333,6 +333,7 @@
             this.Mnu_TablasMaestras.Name = "Mnu_TablasMaestras";
             this.Mnu_TablasMaestras.Size = new System.Drawing.Size(140, 20);
             this.Mnu_TablasMaestras.Text = "Tablas &Maestras";
+            this.Mnu_TablasMaestras.Visible = MOFIN_LIB.Entorno.vs_Maestro;
             // 
             // Tab_Maestros
             // 

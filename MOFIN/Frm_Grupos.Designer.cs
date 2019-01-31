@@ -105,6 +105,8 @@
             this.Chk_HerGrupos = new System.Windows.Forms.CheckBox();
             this.Chk_HerUsuarios = new System.Windows.Forms.CheckBox();
             this.Grd_Grupos = new System.Windows.Forms.DataGridView();
+            this.Col_Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pan_Elementos = new System.Windows.Forms.Panel();
             this.Txt_Codigo = new System.Windows.Forms.TextBox();
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
@@ -113,8 +115,7 @@
             this.Pic_Eliminar = new System.Windows.Forms.PictureBox();
             this.Pic_Modificar = new System.Windows.Forms.PictureBox();
             this.Pic_Incluir = new System.Windows.Forms.PictureBox();
-            this.Col_Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cod_GrupoTextBox = new System.Windows.Forms.TextBox();
             this.TS_BarraHerramientas.SuspendLayout();
             this.Tab_Opciones.SuspendLayout();
             this.Pag_Clientes.SuspendLayout();
@@ -365,6 +366,7 @@
             // 
             // Chk_CliBus_P
             // 
+            this.Chk_CliBus_P.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Grupo_Opciones, "BusqPers_P", true));
             this.Chk_CliBus_P.Location = new System.Drawing.Point(306, 62);
             this.Chk_CliBus_P.Name = "Chk_CliBus_P";
             this.Chk_CliBus_P.Size = new System.Drawing.Size(17, 24);
@@ -373,6 +375,7 @@
             // 
             // Chk_CliBus_E
             // 
+            this.Chk_CliBus_E.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Grupo_Opciones, "BusqPers_E", true));
             this.Chk_CliBus_E.Location = new System.Drawing.Point(284, 62);
             this.Chk_CliBus_E.Name = "Chk_CliBus_E";
             this.Chk_CliBus_E.Size = new System.Drawing.Size(16, 24);
@@ -381,6 +384,7 @@
             // 
             // Chk_CliBus_M
             // 
+            this.Chk_CliBus_M.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Grupo_Opciones, "BusqPers_M", true));
             this.Chk_CliBus_M.Location = new System.Drawing.Point(262, 62);
             this.Chk_CliBus_M.Name = "Chk_CliBus_M";
             this.Chk_CliBus_M.Size = new System.Drawing.Size(17, 24);
@@ -389,6 +393,7 @@
             // 
             // Chk_CliBus_I
             // 
+            this.Chk_CliBus_I.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Grupo_Opciones, "BusqPers_I", true));
             this.Chk_CliBus_I.Location = new System.Drawing.Point(242, 62);
             this.Chk_CliBus_I.Name = "Chk_CliBus_I";
             this.Chk_CliBus_I.Size = new System.Drawing.Size(13, 24);
@@ -397,6 +402,7 @@
             // 
             // Chk_CliMon_P
             // 
+            this.Chk_CliMon_P.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Grupo_Opciones, "Clientes_P", true));
             this.Chk_CliMon_P.Location = new System.Drawing.Point(306, 34);
             this.Chk_CliMon_P.Name = "Chk_CliMon_P";
             this.Chk_CliMon_P.Size = new System.Drawing.Size(17, 24);
@@ -405,6 +411,7 @@
             // 
             // Chk_CliMon_E
             // 
+            this.Chk_CliMon_E.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Grupo_Opciones, "Clientes_E", true));
             this.Chk_CliMon_E.Location = new System.Drawing.Point(284, 34);
             this.Chk_CliMon_E.Name = "Chk_CliMon_E";
             this.Chk_CliMon_E.Size = new System.Drawing.Size(16, 24);
@@ -413,6 +420,7 @@
             // 
             // Chk_CliMon_M
             // 
+            this.Chk_CliMon_M.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Grupo_Opciones, "Clientes_M", true));
             this.Chk_CliMon_M.Location = new System.Drawing.Point(262, 34);
             this.Chk_CliMon_M.Name = "Chk_CliMon_M";
             this.Chk_CliMon_M.Size = new System.Drawing.Size(17, 24);
@@ -421,6 +429,7 @@
             // 
             // Chk_CliMon_I
             // 
+            this.Chk_CliMon_I.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Grupo_Opciones, "Clientes_I", true));
             this.Chk_CliMon_I.Location = new System.Drawing.Point(242, 34);
             this.Chk_CliMon_I.Name = "Chk_CliMon_I";
             this.Chk_CliMon_I.Size = new System.Drawing.Size(13, 24);
@@ -498,6 +507,7 @@
             // 
             // Chk_OpTrans_P
             // 
+            this.Chk_OpTrans_P.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Grupo_Opciones, "OperTransac_P", true));
             this.Chk_OpTrans_P.Location = new System.Drawing.Point(306, 60);
             this.Chk_OpTrans_P.Name = "Chk_OpTrans_P";
             this.Chk_OpTrans_P.Size = new System.Drawing.Size(17, 24);
@@ -506,6 +516,7 @@
             // 
             // Chk_OpTrans_E
             // 
+            this.Chk_OpTrans_E.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Grupo_Opciones, "OperTransac_E", true));
             this.Chk_OpTrans_E.Location = new System.Drawing.Point(284, 60);
             this.Chk_OpTrans_E.Name = "Chk_OpTrans_E";
             this.Chk_OpTrans_E.Size = new System.Drawing.Size(16, 24);
@@ -514,6 +525,7 @@
             // 
             // Chk_OpTrans_M
             // 
+            this.Chk_OpTrans_M.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Grupo_Opciones, "OperTransac_M", true));
             this.Chk_OpTrans_M.Location = new System.Drawing.Point(262, 60);
             this.Chk_OpTrans_M.Name = "Chk_OpTrans_M";
             this.Chk_OpTrans_M.Size = new System.Drawing.Size(17, 24);
@@ -522,6 +534,7 @@
             // 
             // Chk_OpTrans_I
             // 
+            this.Chk_OpTrans_I.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Grupo_Opciones, "OperTransac_I", true));
             this.Chk_OpTrans_I.Location = new System.Drawing.Point(242, 60);
             this.Chk_OpTrans_I.Name = "Chk_OpTrans_I";
             this.Chk_OpTrans_I.Size = new System.Drawing.Size(13, 24);
@@ -530,6 +543,7 @@
             // 
             // Chk_OpFinan_P
             // 
+            this.Chk_OpFinan_P.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Grupo_Opciones, "OperFinanc_P", true));
             this.Chk_OpFinan_P.Location = new System.Drawing.Point(306, 32);
             this.Chk_OpFinan_P.Name = "Chk_OpFinan_P";
             this.Chk_OpFinan_P.Size = new System.Drawing.Size(17, 24);
@@ -538,6 +552,7 @@
             // 
             // Chk_OpFinan_E
             // 
+            this.Chk_OpFinan_E.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Grupo_Opciones, "OperFinanc_E", true));
             this.Chk_OpFinan_E.Location = new System.Drawing.Point(284, 32);
             this.Chk_OpFinan_E.Name = "Chk_OpFinan_E";
             this.Chk_OpFinan_E.Size = new System.Drawing.Size(16, 24);
@@ -546,6 +561,7 @@
             // 
             // Chk_OpFinan_M
             // 
+            this.Chk_OpFinan_M.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Grupo_Opciones, "OperFinanc_M", true));
             this.Chk_OpFinan_M.Location = new System.Drawing.Point(262, 32);
             this.Chk_OpFinan_M.Name = "Chk_OpFinan_M";
             this.Chk_OpFinan_M.Size = new System.Drawing.Size(17, 24);
@@ -554,6 +570,7 @@
             // 
             // Chk_OpFinan_I
             // 
+            this.Chk_OpFinan_I.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Grupo_Opciones, "OperFinanc_I", true));
             this.Chk_OpFinan_I.Location = new System.Drawing.Point(242, 32);
             this.Chk_OpFinan_I.Name = "Chk_OpFinan_I";
             this.Chk_OpFinan_I.Size = new System.Drawing.Size(13, 24);
@@ -923,6 +940,22 @@
             this.Grd_Grupos.TabIndex = 70;
             this.Grd_Grupos.CurrentCellChanged += new System.EventHandler(this.Grd_Grupos_CurrentCellChanged);
             // 
+            // Col_Codigo
+            // 
+            this.Col_Codigo.DataPropertyName = "Codigo";
+            this.Col_Codigo.HeaderText = "Codigo";
+            this.Col_Codigo.Name = "Col_Codigo";
+            this.Col_Codigo.ReadOnly = true;
+            this.Col_Codigo.Width = 75;
+            // 
+            // Col_Nombre
+            // 
+            this.Col_Nombre.DataPropertyName = "Nombre";
+            this.Col_Nombre.HeaderText = "Nombre";
+            this.Col_Nombre.Name = "Col_Nombre";
+            this.Col_Nombre.ReadOnly = true;
+            this.Col_Nombre.Width = 250;
+            // 
             // Pan_Elementos
             // 
             this.Pan_Elementos.Controls.Add(this.Txt_Codigo);
@@ -1000,21 +1033,13 @@
             this.Pic_Incluir.TabIndex = 76;
             this.Pic_Incluir.TabStop = false;
             // 
-            // Col_Codigo
+            // cod_GrupoTextBox
             // 
-            this.Col_Codigo.DataPropertyName = "Codigo";
-            this.Col_Codigo.HeaderText = "Codigo";
-            this.Col_Codigo.Name = "Col_Codigo";
-            this.Col_Codigo.ReadOnly = true;
-            this.Col_Codigo.Width = 75;
-            // 
-            // Col_Nombre
-            // 
-            this.Col_Nombre.DataPropertyName = "Nombre";
-            this.Col_Nombre.HeaderText = "Nombre";
-            this.Col_Nombre.Name = "Col_Nombre";
-            this.Col_Nombre.ReadOnly = true;
-            this.Col_Nombre.Width = 250;
+            this.cod_GrupoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Grupo_Opciones, "Cod_Grupo", true));
+            this.cod_GrupoTextBox.Location = new System.Drawing.Point(226, 47);
+            this.cod_GrupoTextBox.Name = "cod_GrupoTextBox";
+            this.cod_GrupoTextBox.Size = new System.Drawing.Size(100, 22);
+            this.cod_GrupoTextBox.TabIndex = 73;
             // 
             // Frm_Grupos
             // 
@@ -1022,7 +1047,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(786, 404);
+            this.ClientSize = new System.Drawing.Size(789, 414);
+            this.Controls.Add(this.cod_GrupoTextBox);
             this.Controls.Add(this.Pan_IMEPPics);
             this.Controls.Add(this.Grd_Grupos);
             this.Controls.Add(this.Tab_Opciones);
@@ -1158,5 +1184,6 @@
         private System.Windows.Forms.Label Lbl_Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Nombre;
+        private System.Windows.Forms.TextBox cod_GrupoTextBox;
     }
 }

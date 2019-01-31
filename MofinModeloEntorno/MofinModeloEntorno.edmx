@@ -52,6 +52,22 @@
           <Property Name="TabMaestras_M" Type="bit" />
           <Property Name="TabMaestras_E" Type="bit" />
           <Property Name="TabMaestras_P" Type="bit" />
+          <Property Name="Clientes_I" Type="bit" />
+          <Property Name="Clientes_M" Type="bit" />
+          <Property Name="Clientes_E" Type="bit" />
+          <Property Name="Clientes_P" Type="bit" />
+          <Property Name="BusqPers_I" Type="bit" />
+          <Property Name="BusqPers_M" Type="bit" />
+          <Property Name="BusqPers_E" Type="bit" />
+          <Property Name="BusqPers_P" Type="bit" />
+          <Property Name="OperFinanc_I" Type="bit" />
+          <Property Name="OperFinanc_M" Type="bit" />
+          <Property Name="OperFinanc_E" Type="bit" />
+          <Property Name="OperFinanc_P" Type="bit" />
+          <Property Name="OperTransac_I" Type="bit" />
+          <Property Name="OperTransac_M" Type="bit" />
+          <Property Name="OperTransac_E" Type="bit" />
+          <Property Name="OperTransac_P" Type="bit" />
         </EntityType>
         <EntityType Name="Grupos">
           <Key>
@@ -91,6 +107,16 @@
           <Property Name="FuenteLetra" Type="varchar" MaxLength="30" />
           <Property Name="Desktop_NroImgs" Type="tinyint" />
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
@@ -137,6 +163,7 @@
           <EntitySet Name="Grupos" EntityType="Self.Grupos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Idiomas" EntityType="Self.Idiomas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Opc_Sistema" EntityType="Self.Opc_Sistema" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Emp_Accesos_Empresas" Association="Self.FK_Emp_Accesos_Empresas">
             <End Role="Empresas" EntitySet="Empresas" />
@@ -198,6 +225,22 @@
           <Property Name="TabMaestras_M" Type="Boolean" />
           <Property Name="TabMaestras_E" Type="Boolean" />
           <Property Name="TabMaestras_P" Type="Boolean" />
+          <Property Name="Clientes_I" Type="Boolean" />
+          <Property Name="Clientes_M" Type="Boolean" />
+          <Property Name="Clientes_E" Type="Boolean" />
+          <Property Name="Clientes_P" Type="Boolean" />
+          <Property Name="BusqPers_I" Type="Boolean" />
+          <Property Name="BusqPers_M" Type="Boolean" />
+          <Property Name="BusqPers_E" Type="Boolean" />
+          <Property Name="BusqPers_P" Type="Boolean" />
+          <Property Name="OperFinanc_I" Type="Boolean" />
+          <Property Name="OperFinanc_M" Type="Boolean" />
+          <Property Name="OperFinanc_E" Type="Boolean" />
+          <Property Name="OperFinanc_P" Type="Boolean" />
+          <Property Name="OperTransac_I" Type="Boolean" />
+          <Property Name="OperTransac_M" Type="Boolean" />
+          <Property Name="OperTransac_E" Type="Boolean" />
+          <Property Name="OperTransac_P" Type="Boolean" />
         </EntityType>
         <EntityType Name="Grupos">
           <Key>
@@ -284,6 +327,7 @@
             <End Role="Grupo_Opciones" EntitySet="Grupo_Opciones" />
           </AssociationSet>
           <EntitySet Name="Opc_Sistema" EntityType="EntornoModel.Opc_Sistema" />
+          <EntitySet Name="sysdiagrams" EntityType="EntornoModel.sysdiagrams" />
         </EntityContainer>
         <EntityType Name="Opc_Sistema">
           <Key>
@@ -292,6 +336,16 @@
           <Property Name="FuenteLetra" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Desktop_NroImgs" Type="Byte" />
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -329,6 +383,22 @@
           <EntitySetMapping Name="Grupo_Opciones">
             <EntityTypeMapping TypeName="EntornoModel.Grupo_Opciones">
               <MappingFragment StoreEntitySet="Grupo_Opciones">
+                <ScalarProperty Name="OperTransac_P" ColumnName="OperTransac_P" />
+                <ScalarProperty Name="OperTransac_E" ColumnName="OperTransac_E" />
+                <ScalarProperty Name="OperTransac_M" ColumnName="OperTransac_M" />
+                <ScalarProperty Name="OperTransac_I" ColumnName="OperTransac_I" />
+                <ScalarProperty Name="OperFinanc_P" ColumnName="OperFinanc_P" />
+                <ScalarProperty Name="OperFinanc_E" ColumnName="OperFinanc_E" />
+                <ScalarProperty Name="OperFinanc_M" ColumnName="OperFinanc_M" />
+                <ScalarProperty Name="OperFinanc_I" ColumnName="OperFinanc_I" />
+                <ScalarProperty Name="BusqPers_P" ColumnName="BusqPers_P" />
+                <ScalarProperty Name="BusqPers_E" ColumnName="BusqPers_E" />
+                <ScalarProperty Name="BusqPers_M" ColumnName="BusqPers_M" />
+                <ScalarProperty Name="BusqPers_I" ColumnName="BusqPers_I" />
+                <ScalarProperty Name="Clientes_P" ColumnName="Clientes_P" />
+                <ScalarProperty Name="Clientes_E" ColumnName="Clientes_E" />
+                <ScalarProperty Name="Clientes_M" ColumnName="Clientes_M" />
+                <ScalarProperty Name="Clientes_I" ColumnName="Clientes_I" />
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Cod_Grupo" ColumnName="Cod_Grupo" />
                 <ScalarProperty Name="Empresas_I" ColumnName="Empresas_I" />
@@ -404,6 +474,17 @@
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Desktop_NroImgs" ColumnName="Desktop_NroImgs" />
                 <ScalarProperty Name="FuenteLetra" ColumnName="FuenteLetra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="EntornoModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

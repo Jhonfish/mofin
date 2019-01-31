@@ -200,6 +200,7 @@ namespace MOFIN
         private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
             Modo_Consulta();
+            BS_CClientes.CancelEdit();
         }
 
         private void TSB_Primero_Click(object sender, EventArgs e)

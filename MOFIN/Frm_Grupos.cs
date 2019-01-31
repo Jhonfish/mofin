@@ -18,8 +18,8 @@ namespace MOFIN
     public partial class Frm_Grupos : MetroForm
     {
         bool vl_EsNuevo = true;
-        Grupos t_Grupos = new Grupos();
-        Grupo_Opciones t_GruposOpciones = new Grupo_Opciones();
+        Grupos r_Grupos = new Grupos();
+        Grupo_Opciones r_GruposOpciones = new Grupo_Opciones();
 
         public Frm_Grupos()
         {
@@ -65,14 +65,14 @@ namespace MOFIN
         {
             if (vl_EsNuevo)
             {
-                t_GruposOpciones.Cod_Grupo = t_Grupos.Codigo;
-                NGrupos.Insertar(t_Grupos);
-                NGrupo_Opciones.Insertar(t_GruposOpciones);
+                r_GruposOpciones.Cod_Grupo = r_Grupos.Codigo;
+                NGrupos.Insertar(r_Grupos);
+                NGrupo_Opciones.Insertar(r_GruposOpciones);
             }
             else
             {
-                NGrupos.Actualizar(t_Grupos);
-                NGrupo_Opciones.Actualizar(t_GruposOpciones);
+                NGrupos.Actualizar(r_Grupos);
+                NGrupo_Opciones.Actualizar(r_GruposOpciones);
             }
             this.Modo_Consulta();
             BS_Grupos.DataSource = NGrupos.Listar();
@@ -86,13 +86,13 @@ namespace MOFIN
         private void TSB_Agregar_Click(object sender, EventArgs e)
         {
             vl_EsNuevo = true;
-            BS_Grupos.Add(t_Grupos);
+            BS_Grupos.Add(r_Grupos);
             BS_Grupos.MoveLast();
-            BS_Grupo_Opciones.Add(t_GruposOpciones);
+            BS_Grupo_Opciones.Add(r_GruposOpciones);
             BS_Grupo_Opciones.MoveLast();
 
-            t_Grupos = BS_Grupos.Current as Grupos;
-            t_GruposOpciones = BS_Grupo_Opciones.AddNew() as Grupo_Opciones;
+            r_Grupos = BS_Grupos.Current as Grupos;
+            r_GruposOpciones = BS_Grupo_Opciones.AddNew() as Grupo_Opciones;
 
             this.Modo_Edicion();
         }
@@ -102,8 +102,8 @@ namespace MOFIN
             if (BS_Grupos.Current == null)
                 return;
             vl_EsNuevo = false;
-            t_Grupos = BS_Grupos.Current as Grupos;
-            t_GruposOpciones = BS_Grupo_Opciones.Current as Grupo_Opciones;
+            r_Grupos = BS_Grupos.Current as Grupos;
+            r_GruposOpciones = BS_Grupo_Opciones.Current as Grupo_Opciones;
 
             this.Modo_Edicion();
         }
@@ -115,13 +115,16 @@ namespace MOFIN
 
         private void TSB_Eliminar_Click(object sender, EventArgs e)
         {
-            string vl_RegEliminar = t_Grupos.Nombre.ToString();
+            string vl_RegEliminar = r_Grupos.Nombre.ToString();
             DialogResult vl_Resp = MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9010) + "\n\n" + vl_RegEliminar,
                 MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (vl_Resp == DialogResult.Yes)
             {
+                NGrupo_Opciones.Elimiar(BS_Grupo_Opciones.Current as Grupo_Opciones);
                 NGrupos.Elimiar(BS_Grupos.Current as Grupos);
                 BS_Grupos.DataSource = NGrupos.Listar();
+                r_Grupos = BS_Grupos.Current as Grupos;
+                BS_Grupo_Opciones.DataSource = NGrupo_Opciones.ListarPorCodigo(r_Grupos.Codigo);
                 Grd_Grupos.Refresh();
                 MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9011), MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -157,8 +160,9 @@ namespace MOFIN
 
         private void Grd_Grupos_CurrentCellChanged(object sender, EventArgs e)
         {
-            t_Grupos = BS_Grupos.Current as Grupos;
-            t_GruposOpciones = BS_Grupo_Opciones.Current as Grupo_Opciones;
+            r_Grupos = BS_Grupos.Current as Grupos;
+            BS_Grupo_Opciones.DataSource = NGrupo_Opciones.ListarPorCodigo(r_Grupos.Codigo);
+            r_GruposOpciones = BS_Grupo_Opciones.Current as Grupo_Opciones;
             TSB_ActualizaBotonesNavegacion();
         }
 
@@ -202,7 +206,7 @@ namespace MOFIN
         {
             if (this.Chk_CliMonitor.Checked == true & this.Chk_Clientes.Checked == false)
             {
-                t_Grupos.Clientes = true;
+                r_Grupos.Clientes = true;
                 this.Chk_Clientes.Checked = true;
             }
         }
@@ -211,7 +215,7 @@ namespace MOFIN
         {
             if (this.Chk_CliBusqueda.Checked == true & this.Chk_Clientes.Checked == false)
             {
-                t_Grupos.Clientes = true;
+                r_Grupos.Clientes = true;
                 this.Chk_Clientes.Checked = true;
             }
         }
@@ -220,7 +224,7 @@ namespace MOFIN
         {
             if (this.Chk_MonFinanciero.Checked == true & this.Chk_MonitorOperaciones.Checked == false)
             {
-                t_Grupos.Mon_Operaciones = true;
+                r_Grupos.Mon_Operaciones = true;
                 this.Chk_MonitorOperaciones.Checked = true;
             }
         }
@@ -229,7 +233,7 @@ namespace MOFIN
         {
             if (this.Chk_MonTransaccional.Checked == true & this.Chk_MonitorOperaciones.Checked == false)
             {
-                t_Grupos.Mon_Operaciones = true;
+                r_Grupos.Mon_Operaciones = true;
                 this.Chk_MonitorOperaciones.Checked = true;
             }
         }
@@ -238,7 +242,7 @@ namespace MOFIN
         {
             if (this.Chk_TabMaestras.Checked == true & this.Chk_TablasMaestras.Checked == false)
             {
-                t_Grupos.Tablas_Maestras = true;
+                r_Grupos.Tablas_Maestras = true;
                 this.Chk_TablasMaestras.Checked = true;
             }
         }
@@ -247,7 +251,7 @@ namespace MOFIN
         {
             if (this.Chk_HerUsuarios.Checked == true & this.Chk_Herramientas.Checked == false)
             {
-                t_Grupos.Opc_Sistema = true;
+                r_Grupos.Opc_Sistema = true;
                 this.Chk_Herramientas.Checked = true;
             }
         }
@@ -256,7 +260,7 @@ namespace MOFIN
         {
             if (this.Chk_HerGrupos.Checked == true & this.Chk_Herramientas.Checked == false)
             {
-                t_Grupos.Opc_Sistema = true;
+                r_Grupos.Opc_Sistema = true;
                 this.Chk_Herramientas.Checked = true;
             }
         }
@@ -265,7 +269,7 @@ namespace MOFIN
         {
             if (this.Chk_HerEmpresas.Checked == true & this.Chk_Herramientas.Checked == false)
             {
-                t_Grupos.Opc_Sistema = true;
+                r_Grupos.Opc_Sistema = true;
                 this.Chk_Herramientas.Checked = true;
             }
         }

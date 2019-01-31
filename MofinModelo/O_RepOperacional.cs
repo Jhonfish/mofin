@@ -24,12 +24,12 @@ namespace MofinModelo
         public string Period_UsoCta { get; set; }
         public Nullable<short> Nro_Transac { get; set; }
         public Nullable<byte> Perf_NroTransac { get; set; }
-        public Nullable<short> Porc_Transac { get; set; }
+        public Nullable<decimal> Porc_Transac { get; set; }
         public Nullable<decimal> Mto_Compras { get; set; }
         public Nullable<decimal> Mto_Ventas { get; set; }
         public Nullable<decimal> Tot_Operaciones { get; set; }
         public Nullable<decimal> Perf_Financiero { get; set; }
-        public Nullable<short> Porc_Operaciones { get; set; }
+        public Nullable<decimal> Porc_Operaciones { get; set; }
         public Nullable<bool> Alarma { get; set; }
         public string Ejecutivo { get; set; }
         public string Comentario { get; set; }
