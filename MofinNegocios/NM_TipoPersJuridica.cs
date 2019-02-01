@@ -23,6 +23,11 @@ namespace MofinNegocios
             return dmTipoPersJuridica.Listar();
         }
 
+        public static List<M_TipoPersJuridica> ListarPorCodigo(short codigo)
+        {
+            return dmTipoPersJuridica.ListarPorCodigo(codigo);
+        }
+
         public static M_TipoPersJuridica GetById(int id)
         {
             return dmTipoPersJuridica.GetById(id);

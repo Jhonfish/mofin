@@ -23,9 +23,9 @@ namespace MofinNegocios
             return dC_HistActClientes.Listar();
         }
 
-        public static C_HistActClientes GetById(int id)
+        public static List<C_HistActClientes> ListarPorCliente(string cliente)
         {
-            return dC_HistActClientes.GetById(id);
+            return dC_HistActClientes.ListarPorCliente(cliente);
         }
 
         public static C_HistActClientes Insertar(C_HistActClientes obj)

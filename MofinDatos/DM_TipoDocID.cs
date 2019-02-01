@@ -36,6 +36,17 @@ namespace MofinDatos
             }
         }
 
+        public List<M_TipoDocID> ListarPorCodigo(short codigo)
+        {
+            using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
+            {
+                var registros = from datos in db.M_TipoDocID
+                                where datos.Codigo == codigo
+                                select datos;
+                return registros.ToList();
+            }
+        }
+
         public M_TipoDocID Isertar(M_TipoDocID obj)
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())

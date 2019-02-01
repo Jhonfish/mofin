@@ -47,6 +47,17 @@ namespace MofinDatos
             }
         }
 
+        public List<O_HistPerfOperac> ListarPorCliente(string codigo)
+        {
+            using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
+            {
+                var registros = from datos in db.O_HistPerfOperac
+                                where datos.Cod_Cliente == codigo
+                                select datos;
+                return registros.ToList();
+            }
+        }
+
         public O_HistPerfOperac Isertar(O_HistPerfOperac obj)
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())

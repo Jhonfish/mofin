@@ -36,6 +36,17 @@ namespace MofinDatos
             }
         }
 
+        public List<M_Edad> ListarPorCodigo(short codigo)
+        {
+            using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
+            {
+                var registros = from datos in db.M_Edad
+                                where datos.Codigo == codigo
+                                select datos;
+                return registros.ToList();
+            }
+        }
+
         public M_Edad Isertar(M_Edad obj)
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())

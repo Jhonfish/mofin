@@ -28,6 +28,11 @@ namespace MofinNegocios
             return dmAntiguedad.GetById(id);
         }
 
+        public static List<M_Antiguedad> ListarPorCodigo(short codigo)
+        {
+            return dmAntiguedad.ListarPorCodigo(codigo);
+        }
+
         public static M_Antiguedad Insertar(M_Antiguedad obj)
         {
             return dmAntiguedad.Isertar(obj);

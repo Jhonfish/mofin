@@ -28,6 +28,11 @@ namespace MofinNegocios
             return dmTipoEstructuraEmpresa.GetById(id);
         }
 
+        public static List<M_TipoEstructuraEmpresa> ListarPorCodigo(short codigo)
+        {
+            return dmTipoEstructuraEmpresa.ListarPorCodigo(codigo);
+        }
+
         public static M_TipoEstructuraEmpresa Insertar(M_TipoEstructuraEmpresa obj)
         {
             return dmTipoEstructuraEmpresa.Isertar(obj);

@@ -30,7 +30,6 @@ namespace MofinNegocios
 
         public static O_RepOperacional Insertar(O_RepOperacional obj)
         {
-            //obj.Directorio = "No tiene";
             return dRepOperacional.Isertar(obj);
         }
 

@@ -32,9 +32,13 @@ namespace MofinNegocios
             return dObservaciones.GetById(id);
         }
 
+        public static List<O_Observaciones> ListarPorCliente(string codigo)
+        {
+            return dObservaciones.ListarPorCliente(codigo);
+        }
+
         public static O_Observaciones Insertar(O_Observaciones obj)
         {
-            //obj.Directorio = "No tiene";
             return dObservaciones.Isertar(obj);
         }
 

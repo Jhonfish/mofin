@@ -33,6 +33,11 @@ namespace MofinNegocios
             return dmCriptomonedas.Isertar(obj);
         }
 
+        public static List<M_Criptomonedas> ListarPorCodigo(short codigo)
+        {
+            return dmCriptomonedas.ListarPorCodigo(codigo);
+        }
+
         public static void Actualizar(M_Criptomonedas obj)
         {
             dmCriptomonedas.Actualizar(obj);

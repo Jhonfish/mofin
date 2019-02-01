@@ -36,6 +36,17 @@ namespace MofinDatos
             }
         }
 
+        public List<M_VolOperPersJur> ListarPorCodigo(short codigo)
+        {
+            using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
+            {
+                var registros = from datos in db.M_VolOperPersJur
+                                where datos.Codigo == codigo
+                                select datos;
+                return registros.ToList();
+            }
+        }
+
         public M_VolOperPersJur Isertar(M_VolOperPersJur obj)
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())

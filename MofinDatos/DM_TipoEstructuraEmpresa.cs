@@ -36,6 +36,17 @@ namespace MofinDatos
             }
         }
 
+        public List<M_TipoEstructuraEmpresa> ListarPorCodigo(short codigo)
+        {
+            using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
+            {
+                var registros = from datos in db.M_TipoEstructuraEmpresa
+                                where datos.Codigo == codigo
+                                select datos;
+                return registros.ToList();
+            }
+        }
+
         public M_TipoEstructuraEmpresa Isertar(M_TipoEstructuraEmpresa obj)
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())

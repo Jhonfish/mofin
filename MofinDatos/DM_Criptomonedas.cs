@@ -35,6 +35,17 @@ namespace MofinDatos
             }
         }
 
+        public List<M_Criptomonedas> ListarPorCodigo(short codigo)
+        {
+            using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
+            {
+                var registros = from datos in db.M_Criptomonedas
+                                where datos.Codigo == codigo
+                                select datos;
+                return registros.ToList();
+            }
+        }
+
         public M_Criptomonedas Isertar(M_Criptomonedas obj)
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())

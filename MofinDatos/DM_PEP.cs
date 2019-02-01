@@ -36,6 +36,17 @@ namespace MofinDatos
             }
         }
 
+        public List<M_PEP> ListarPorCodigo(short codigo)
+        {
+            using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
+            {
+                var registros = from datos in db.M_PEP
+                                where datos.Codigo == codigo
+                                select datos;
+                return registros.ToList();
+            }
+        }
+
         public M_PEP Isertar(M_PEP obj)
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())

@@ -28,6 +28,11 @@ namespace MofinNegocios
             return dmPEP.GetById(id);
         }
 
+        public static List<M_PEP> ListarPorCodigo(short codigo)
+        {
+            return dmPEP.ListarPorCodigo(codigo);
+        }
+
         public static M_PEP Insertar(M_PEP obj)
         {
             return dmPEP.Isertar(obj);

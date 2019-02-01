@@ -27,6 +27,11 @@ namespace MofinNegocios
             return dmServicios.GetById(id);
         }
 
+        public static List<M_Servicios> ListarPorCodigo(short codigo)
+        {
+            return dmServicios.ListarPorCodigo(codigo);
+        }
+
         public static M_Servicios Insertar(M_Servicios obj)
         {
             return dmServicios.Isertar(obj);

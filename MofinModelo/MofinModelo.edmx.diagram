@@ -36,7 +36,7 @@
         <AssociationConnector Association="MonitorOperacionesModelo.FK_O_Observaciones_C_Clientes" ManuallyRouted="false" />
         <AssociationConnector Association="MonitorOperacionesModelo.FK_M_Estados_M_Pais" ManuallyRouted="false" />
         <AssociationConnector Association="MonitorOperacionesModelo.FK_C_FirBenAcc_C_Clientes" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.C_ProdServ" Width="1.5" PointX="3" PointY="18.375" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.C_ProdServ" Width="1.5" PointX="3" PointY="19" />
         <AssociationConnector Association="MonitorOperacionesModelo.FK_C_ProdServ_C_Clientes" />
       </Diagram>
     </edmx:Diagrams>

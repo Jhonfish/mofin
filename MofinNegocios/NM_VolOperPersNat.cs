@@ -28,6 +28,11 @@ namespace MofinNegocios
             return dmVolOperPersNat.GetById(id);
         }
 
+        public static List<M_VolOperPersNat> ListarPorCodigo(short codigo)
+        {
+            return dmVolOperPersNat.ListarPorCodigo(codigo);
+        }
+
         public static M_VolOperPersNat Insertar(M_VolOperPersNat obj)
         {
             return dmVolOperPersNat.Isertar(obj);
