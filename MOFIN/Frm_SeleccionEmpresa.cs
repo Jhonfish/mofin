@@ -102,6 +102,9 @@ namespace MOFIN
                                         //Desktop.Lbl_Detalle1.Text = r_Empresas.Nombre + " / " + r_Grupos.Nombre + " / " + r_Usuarios.Nombre;
 
                                         */
+                    Entorno.vs_Empresa = r_Empresas.Codigo;
+                    Entorno.vs_Grupo = r_Grupos.Codigo;
+                    Entorno.vs_Usuario = r_Usuarios.ID_Usuario;
                     Entorno.vs_Maestro = true;
                     this.Close();
 

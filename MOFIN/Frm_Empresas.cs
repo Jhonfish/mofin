@@ -18,7 +18,10 @@ namespace MOFIN
     public partial class Frm_Empresas: MetroForm
     {
         bool vl_EsNuevo = true;
-        Empresas t_Empresas = new Empresas();
+        Empresas r_Empresas = new Empresas();
+
+        Grupo_Opciones r_GrupoOpciones = new Grupo_Opciones();
+
 
         public Frm_Empresas()
         {
@@ -29,6 +32,9 @@ namespace MOFIN
         private void Frm_Empresas_Load(object sender, EventArgs e)
         {
             BS_Empresas.DataSource = NEmpresas.Listar();
+            BS_Grupo_Opciones.DataSource = NGrupo_Opciones.ListarPorCodigo(MOFIN_LIB.Entorno.vs_Grupo);
+            r_GrupoOpciones = BS_Grupo_Opciones.Current as Grupo_Opciones;
+
             this.Modo_Consulta();
             this.Grd_Empresas.Focus();
         }
@@ -39,7 +45,7 @@ namespace MOFIN
 
         private void Grd_Empresas_CurrentCellChanged(object sender, EventArgs e)
         {
-            t_Empresas = BS_Empresas.Current as Empresas;
+            r_Empresas = BS_Empresas.Current as Empresas;
             TSB_ActualizaBotonesNavegacion();
         }
 
@@ -77,6 +83,7 @@ namespace MOFIN
                 this.TSB_Anterior.Enabled = false;
                 this.TSB_Siguiente.Enabled = false;
                 this.TSB_Ultimo.Enabled = false;
+                this.TSB_Agregar.Enabled = r_GrupoOpciones.Empresas_I == null ? false : (bool)r_GrupoOpciones.Empresas_I; 
                 this.TSB_Modificar.Enabled = false;
                 this.TSB_Eliminar.Enabled = false;
                 this.TSB_Imprimir.Enabled = false;
@@ -87,19 +94,20 @@ namespace MOFIN
                 this.TSB_Anterior.Enabled = (BS_Empresas.Position == 0) ? false : true;
                 this.TSB_Siguiente.Enabled = (BS_Empresas.Position == BS_Empresas.Count - 1) ? false : true;
                 this.TSB_Ultimo.Enabled = (BS_Empresas.Position == BS_Empresas.Count - 1) ? false : true;
-                this.TSB_Modificar.Enabled = true;
-                this.TSB_Eliminar.Enabled = true;
-                this.TSB_Imprimir.Enabled = true;
+                this.TSB_Agregar.Enabled = r_GrupoOpciones.Empresas_I == null ? false : (bool)r_GrupoOpciones.Empresas_I;
+                this.TSB_Modificar.Enabled = r_GrupoOpciones.Empresas_M == null ? false : (bool)r_GrupoOpciones.Empresas_M;
+                this.TSB_Eliminar.Enabled = r_GrupoOpciones.Empresas_E == null ? false : (bool)r_GrupoOpciones.Empresas_E;
+                this.TSB_Imprimir.Enabled = r_GrupoOpciones.Empresas_P == null ? false : (bool)r_GrupoOpciones.Empresas_P;
             }
         }
 
         private void Btn_Aceptar_Click(object sender, EventArgs e)
         {
             if (vl_EsNuevo)
-                //NEmpresas.Insertar(t_Empresas);
+                //NEmpresas.Insertar(r_Empresas);
                 NEmpresas.Insertar(BS_Empresas.Current as Empresas);
             else
-                //NEmpresas.Actualizar(t_Empresas);
+                //NEmpresas.Actualizar(r_Empresas);
                 NEmpresas.Actualizar(BS_Empresas.Current as Empresas);
             this.Modo_Consulta();
             BS_Empresas.DataSource = NEmpresas.Listar();
@@ -115,7 +123,7 @@ namespace MOFIN
         {
             vl_EsNuevo = true;
             BS_Empresas.AddNew();
-            //BS_Empresas.Add(t_Empresas);
+            //BS_Empresas.Add(r_Empresas);
             BS_Empresas.MoveLast();
             this.Modo_Edicion();
         }
@@ -136,7 +144,7 @@ namespace MOFIN
 
         private void TSB_Eliminar_Click(object sender, EventArgs e)
         {
-           string vl_RegEliminar = t_Empresas.Nombre.ToString();
+           string vl_RegEliminar = r_Empresas.Nombre.ToString();
             DialogResult vl_Resp = MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9010)+ "\n\n" + vl_RegEliminar,
                 MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (vl_Resp == DialogResult.Yes)

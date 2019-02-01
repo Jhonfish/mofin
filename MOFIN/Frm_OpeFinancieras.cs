@@ -41,18 +41,17 @@ namespace MOFIN
             BS_OOperFinancieras.DataSource = NO_Operfinancieras.Listar();
             BS_MNivelRiesgo.DataSource = NM_NivelRiesgo.Listar();
 
-            foreach (Control Controles in  Tab_MonOperaciones.Controls)
+ /*           foreach (DataGridView Controles in  Tab_MonOperaciones.Controls)
             {
                 if (Controles is DataGridView)
                 {
- /*                   Controles.DefaultCellStyle.BackColor = Color.Black;
+                    Controles.DefaultCellStyle.BackColor = Color.Black;
                     Controles.DefaultCellStyle.ForeColor = Color.White;
                     Controles.BackgroundColor = Color.Black;
-                    Controles.GridColor = Color.Gray;*/
+                    Controles.GridColor = Color.Gray;
                     Controles.ForeColor = Color.White;
                 }
-            }
-
+            }            */
 
         }
         private void Modo_Consulta()

@@ -43,14 +43,5 @@ namespace MOFIN.Properties {
                 return ((string)(this["MonitorOperacionesConnectionString"]));
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("ingles")]
-        public string vs_Idioma {
-            get {
-                return ((string)(this["vs_Idioma"]));
-            }
-        }
     }
 }

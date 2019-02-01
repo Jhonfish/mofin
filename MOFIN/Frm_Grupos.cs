@@ -20,6 +20,7 @@ namespace MOFIN
         bool vl_EsNuevo = true;
         Grupos r_Grupos = new Grupos();
         Grupo_Opciones r_GruposOpciones = new Grupo_Opciones();
+        Grupo_Opciones r_CtrlAccGruposOpciones = new Grupo_Opciones();
 
         public Frm_Grupos()
         {
@@ -29,8 +30,12 @@ namespace MOFIN
 
         private void Frm_Grupos_Load(object sender, EventArgs e)
         {
+            BS_Grupo_Opciones.DataSource = NGrupo_Opciones.ListarPorCodigo(MOFIN_LIB.Entorno.vs_Grupo);
+            r_CtrlAccGruposOpciones = BS_Grupo_Opciones.Current as Grupo_Opciones;
+
             BS_Grupos.DataSource = NGrupos.Listar();
             BS_Grupo_Opciones.DataSource = NGrupo_Opciones.Listar();
+
             this.Modo_Consulta();
             this.Grd_Grupos.Focus();
         }
@@ -45,6 +50,7 @@ namespace MOFIN
                 this.TSB_Anterior.Enabled = false;
                 this.TSB_Siguiente.Enabled = false;
                 this.TSB_Ultimo.Enabled = false;
+                this.TSB_Agregar.Enabled = r_CtrlAccGruposOpciones.Grupos_I == null ? false : (bool)r_CtrlAccGruposOpciones.Grupos_I; 
                 this.TSB_Modificar.Enabled = false;
                 this.TSB_Eliminar.Enabled = false;
                 this.TSB_Imprimir.Enabled = false;
@@ -55,9 +61,10 @@ namespace MOFIN
                 this.TSB_Anterior.Enabled = (BS_Grupos.Position == 0) ? false : true;
                 this.TSB_Siguiente.Enabled = (BS_Grupos.Position == BS_Grupos.Count - 1) ? false : true;
                 this.TSB_Ultimo.Enabled = (BS_Grupos.Position == BS_Grupos.Count - 1) ? false : true;
-                this.TSB_Modificar.Enabled = true;
-                this.TSB_Eliminar.Enabled = true;
-                this.TSB_Imprimir.Enabled = true;
+                this.TSB_Agregar.Enabled = r_CtrlAccGruposOpciones.Grupos_I == null ? false : (bool)r_CtrlAccGruposOpciones.Grupos_I;
+                this.TSB_Modificar.Enabled = r_CtrlAccGruposOpciones.Grupos_M == null ? false : (bool)r_CtrlAccGruposOpciones.Grupos_M;
+                this.TSB_Eliminar.Enabled = r_CtrlAccGruposOpciones.Grupos_E == null ? false : (bool)r_CtrlAccGruposOpciones.Grupos_E;
+                this.TSB_Imprimir.Enabled = r_CtrlAccGruposOpciones.Grupos_P == null ? false : (bool)r_CtrlAccGruposOpciones.Grupos_P;
             }
         }
 

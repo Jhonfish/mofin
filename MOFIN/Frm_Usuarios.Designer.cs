@@ -52,9 +52,15 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_Salir = new System.Windows.Forms.ToolStripButton();
             this.Grd_Usuarios = new System.Windows.Forms.DataGridView();
+            this.Col_ID_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_Usuarios = new System.Windows.Forms.BindingSource(this.components);
             this.Pan_Elementos = new System.Windows.Forms.Panel();
-            this.Chk_Sonido = new System.Windows.Forms.CheckBox();
+            this.Grd_EmpAccesos = new System.Windows.Forms.DataGridView();
+            this.iDUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codGrupoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BS_Emp_Accesos = new System.Windows.Forms.BindingSource(this.components);
             this.Grp_FormatoFecha = new System.Windows.Forms.GroupBox();
             this.Opc_FormFec2 = new System.Windows.Forms.RadioButton();
             this.Opc_FormFec1 = new System.Windows.Forms.RadioButton();
@@ -70,22 +76,24 @@
             this.Txt_IDUsuario = new System.Windows.Forms.TextBox();
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
             this.Txt_Password = new System.Windows.Forms.TextBox();
-            this.Col_ID_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BS_Grupo_Opciones = new System.Windows.Forms.BindingSource(this.components);
             this.TS_BarraHerramientas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Usuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).BeginInit();
             this.Pan_Elementos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grd_EmpAccesos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Emp_Accesos)).BeginInit();
             this.Grp_FormatoFecha.SuspendLayout();
             this.Grp_Pais.SuspendLayout();
             this.Grp_Idioma.SuspendLayout();
             this.Grp_Desktop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_IDUsuario
             // 
             this.Lbl_IDUsuario.AutoSize = true;
-            this.Lbl_IDUsuario.Location = new System.Drawing.Point(34, 71);
+            this.Lbl_IDUsuario.Location = new System.Drawing.Point(338, 78);
             this.Lbl_IDUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_IDUsuario.Name = "Lbl_IDUsuario";
             this.Lbl_IDUsuario.Size = new System.Drawing.Size(96, 16);
@@ -95,7 +103,7 @@
             // Lbl_Nombre
             // 
             this.Lbl_Nombre.AutoSize = true;
-            this.Lbl_Nombre.Location = new System.Drawing.Point(34, 103);
+            this.Lbl_Nombre.Location = new System.Drawing.Point(338, 110);
             this.Lbl_Nombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_Nombre.Name = "Lbl_Nombre";
             this.Lbl_Nombre.Size = new System.Drawing.Size(64, 16);
@@ -105,7 +113,7 @@
             // Lbl_Password
             // 
             this.Lbl_Password.AutoSize = true;
-            this.Lbl_Password.Location = new System.Drawing.Point(34, 135);
+            this.Lbl_Password.Location = new System.Drawing.Point(338, 142);
             this.Lbl_Password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_Password.Name = "Lbl_Password";
             this.Lbl_Password.Size = new System.Drawing.Size(80, 16);
@@ -115,7 +123,7 @@
             // Lbl_FondoEscritorio
             // 
             this.Lbl_FondoEscritorio.AutoSize = true;
-            this.Lbl_FondoEscritorio.Location = new System.Drawing.Point(34, 173);
+            this.Lbl_FondoEscritorio.Location = new System.Drawing.Point(87, 105);
             this.Lbl_FondoEscritorio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_FondoEscritorio.Name = "Lbl_FondoEscritorio";
             this.Lbl_FondoEscritorio.Size = new System.Drawing.Size(168, 16);
@@ -125,7 +133,7 @@
             // Lbl_Idioma
             // 
             this.Lbl_Idioma.AutoSize = true;
-            this.Lbl_Idioma.Location = new System.Drawing.Point(34, 236);
+            this.Lbl_Idioma.Location = new System.Drawing.Point(335, 105);
             this.Lbl_Idioma.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_Idioma.Name = "Lbl_Idioma";
             this.Lbl_Idioma.Size = new System.Drawing.Size(64, 16);
@@ -135,7 +143,7 @@
             // Lbl_PaisUso
             // 
             this.Lbl_PaisUso.AutoSize = true;
-            this.Lbl_PaisUso.Location = new System.Drawing.Point(34, 299);
+            this.Lbl_PaisUso.Location = new System.Drawing.Point(136, 190);
             this.Lbl_PaisUso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_PaisUso.Name = "Lbl_PaisUso";
             this.Lbl_PaisUso.Size = new System.Drawing.Size(80, 16);
@@ -145,7 +153,7 @@
             // Lbl_FormatoFecha
             // 
             this.Lbl_FormatoFecha.AutoSize = true;
-            this.Lbl_FormatoFecha.Location = new System.Drawing.Point(34, 362);
+            this.Lbl_FormatoFecha.Location = new System.Drawing.Point(303, 190);
             this.Lbl_FormatoFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_FormatoFecha.Name = "Lbl_FormatoFecha";
             this.Lbl_FormatoFecha.Size = new System.Drawing.Size(144, 16);
@@ -161,7 +169,7 @@
             this.Btn_Cancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Btn_Cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Cancelar.Location = new System.Drawing.Point(605, 395);
+            this.Btn_Cancelar.Location = new System.Drawing.Point(186, 478);
             this.Btn_Cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Cancelar.Name = "Btn_Cancelar";
             this.Btn_Cancelar.Size = new System.Drawing.Size(38, 38);
@@ -180,7 +188,7 @@
             this.Btn_Aceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Btn_Aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Btn_Aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Aceptar.Location = new System.Drawing.Point(523, 395);
+            this.Btn_Aceptar.Location = new System.Drawing.Point(104, 478);
             this.Btn_Aceptar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Aceptar.Name = "Btn_Aceptar";
             this.Btn_Aceptar.Size = new System.Drawing.Size(38, 38);
@@ -209,7 +217,7 @@
             this.toolStripSeparator3,
             this.TSB_Salir});
             this.TS_BarraHerramientas.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.TS_BarraHerramientas.Location = new System.Drawing.Point(311, 13);
+            this.TS_BarraHerramientas.Location = new System.Drawing.Point(385, 17);
             this.TS_BarraHerramientas.Name = "TS_BarraHerramientas";
             this.TS_BarraHerramientas.Size = new System.Drawing.Size(384, 43);
             this.TS_BarraHerramientas.TabIndex = 9;
@@ -324,13 +332,33 @@
             this.Col_ID_Usuario,
             this.Col_Nombre});
             this.Grd_Usuarios.DataSource = this.BS_Usuarios;
-            this.Grd_Usuarios.Location = new System.Drawing.Point(360, 142);
+            this.Grd_Usuarios.Location = new System.Drawing.Point(14, 77);
             this.Grd_Usuarios.Name = "Grd_Usuarios";
             this.Grd_Usuarios.ReadOnly = true;
             this.Grd_Usuarios.RowHeadersVisible = false;
-            this.Grd_Usuarios.Size = new System.Drawing.Size(366, 246);
+            this.Grd_Usuarios.Size = new System.Drawing.Size(298, 394);
             this.Grd_Usuarios.TabIndex = 8;
             this.Grd_Usuarios.CurrentCellChanged += new System.EventHandler(this.Grd_Usuarios_CurrentCellChanged);
+            // 
+            // Col_ID_Usuario
+            // 
+            this.Col_ID_Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Col_ID_Usuario.DataPropertyName = "ID_Usuario";
+            this.Col_ID_Usuario.FillWeight = 120F;
+            this.Col_ID_Usuario.HeaderText = "ID_Usuario";
+            this.Col_ID_Usuario.Name = "Col_ID_Usuario";
+            this.Col_ID_Usuario.ReadOnly = true;
+            this.Col_ID_Usuario.Width = 113;
+            // 
+            // Col_Nombre
+            // 
+            this.Col_Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Col_Nombre.DataPropertyName = "Nombre";
+            this.Col_Nombre.FillWeight = 280F;
+            this.Col_Nombre.HeaderText = "Nombre";
+            this.Col_Nombre.Name = "Col_Nombre";
+            this.Col_Nombre.ReadOnly = true;
+            this.Col_Nombre.Width = 81;
             // 
             // BS_Usuarios
             // 
@@ -338,36 +366,71 @@
             // 
             // Pan_Elementos
             // 
-            this.Pan_Elementos.Controls.Add(this.Chk_Sonido);
+            this.Pan_Elementos.Controls.Add(this.Grd_EmpAccesos);
             this.Pan_Elementos.Controls.Add(this.Grp_FormatoFecha);
             this.Pan_Elementos.Controls.Add(this.Grp_Pais);
             this.Pan_Elementos.Controls.Add(this.Grp_Idioma);
             this.Pan_Elementos.Controls.Add(this.Grp_Desktop);
+            this.Pan_Elementos.Controls.Add(this.Lbl_PaisUso);
+            this.Pan_Elementos.Controls.Add(this.Lbl_Idioma);
+            this.Pan_Elementos.Controls.Add(this.Lbl_FormatoFecha);
+            this.Pan_Elementos.Controls.Add(this.Lbl_FondoEscritorio);
             this.Pan_Elementos.Controls.Add(this.Txt_IDUsuario);
             this.Pan_Elementos.Controls.Add(this.Txt_Nombre);
             this.Pan_Elementos.Controls.Add(this.Txt_Password);
-            this.Pan_Elementos.Location = new System.Drawing.Point(26, 68);
+            this.Pan_Elementos.Location = new System.Drawing.Point(330, 75);
             this.Pan_Elementos.Name = "Pan_Elementos";
-            this.Pan_Elementos.Size = new System.Drawing.Size(477, 365);
+            this.Pan_Elementos.Size = new System.Drawing.Size(477, 446);
             this.Pan_Elementos.TabIndex = 34;
             // 
-            // Chk_Sonido
+            // Grd_EmpAccesos
             // 
-            this.Chk_Sonido.AutoSize = true;
-            this.Chk_Sonido.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Chk_Sonido.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Usuarios, "Cnfg_SonidoClick", true));
-            this.Chk_Sonido.Location = new System.Drawing.Point(6, 344);
-            this.Chk_Sonido.Name = "Chk_Sonido";
-            this.Chk_Sonido.Size = new System.Drawing.Size(187, 20);
-            this.Chk_Sonido.TabIndex = 50;
-            this.Chk_Sonido.Text = "Sonido de Click:    ";
-            this.Chk_Sonido.UseVisualStyleBackColor = true;
+            this.Grd_EmpAccesos.AllowUserToAddRows = false;
+            this.Grd_EmpAccesos.AllowUserToDeleteRows = false;
+            this.Grd_EmpAccesos.AutoGenerateColumns = false;
+            this.Grd_EmpAccesos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grd_EmpAccesos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDUsuarioDataGridViewTextBoxColumn,
+            this.codEmpresaDataGridViewTextBoxColumn,
+            this.codGrupoDataGridViewTextBoxColumn});
+            this.Grd_EmpAccesos.DataSource = this.BS_Emp_Accesos;
+            this.Grd_EmpAccesos.Location = new System.Drawing.Point(31, 281);
+            this.Grd_EmpAccesos.Name = "Grd_EmpAccesos";
+            this.Grd_EmpAccesos.ReadOnly = true;
+            this.Grd_EmpAccesos.RowHeadersVisible = false;
+            this.Grd_EmpAccesos.Size = new System.Drawing.Size(416, 150);
+            this.Grd_EmpAccesos.TabIndex = 50;
+            // 
+            // iDUsuarioDataGridViewTextBoxColumn
+            // 
+            this.iDUsuarioDataGridViewTextBoxColumn.DataPropertyName = "ID_Usuario";
+            this.iDUsuarioDataGridViewTextBoxColumn.HeaderText = "ID_Usuario";
+            this.iDUsuarioDataGridViewTextBoxColumn.Name = "iDUsuarioDataGridViewTextBoxColumn";
+            this.iDUsuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // codEmpresaDataGridViewTextBoxColumn
+            // 
+            this.codEmpresaDataGridViewTextBoxColumn.DataPropertyName = "Cod_Empresa";
+            this.codEmpresaDataGridViewTextBoxColumn.HeaderText = "Cod_Empresa";
+            this.codEmpresaDataGridViewTextBoxColumn.Name = "codEmpresaDataGridViewTextBoxColumn";
+            this.codEmpresaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // codGrupoDataGridViewTextBoxColumn
+            // 
+            this.codGrupoDataGridViewTextBoxColumn.DataPropertyName = "Cod_Grupo";
+            this.codGrupoDataGridViewTextBoxColumn.HeaderText = "Cod_Grupo";
+            this.codGrupoDataGridViewTextBoxColumn.Name = "codGrupoDataGridViewTextBoxColumn";
+            this.codGrupoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // BS_Emp_Accesos
+            // 
+            this.BS_Emp_Accesos.DataSource = typeof(MofinModeloEntorno.Emp_Accesos);
             // 
             // Grp_FormatoFecha
             // 
             this.Grp_FormatoFecha.Controls.Add(this.Opc_FormFec2);
             this.Grp_FormatoFecha.Controls.Add(this.Opc_FormFec1);
-            this.Grp_FormatoFecha.Location = new System.Drawing.Point(178, 281);
+            this.Grp_FormatoFecha.Location = new System.Drawing.Point(315, 209);
             this.Grp_FormatoFecha.Name = "Grp_FormatoFecha";
             this.Grp_FormatoFecha.Size = new System.Drawing.Size(132, 57);
             this.Grp_FormatoFecha.TabIndex = 49;
@@ -399,7 +462,7 @@
             // 
             this.Grp_Pais.Controls.Add(this.Opc_Pais2);
             this.Grp_Pais.Controls.Add(this.Opc_Pais1);
-            this.Grp_Pais.Location = new System.Drawing.Point(178, 218);
+            this.Grp_Pais.Location = new System.Drawing.Point(108, 207);
             this.Grp_Pais.Name = "Grp_Pais";
             this.Grp_Pais.Size = new System.Drawing.Size(132, 57);
             this.Grp_Pais.TabIndex = 48;
@@ -431,7 +494,7 @@
             // 
             this.Grp_Idioma.Controls.Add(this.Opc_Idioma2);
             this.Grp_Idioma.Controls.Add(this.Opc_Idioma1);
-            this.Grp_Idioma.Location = new System.Drawing.Point(178, 155);
+            this.Grp_Idioma.Location = new System.Drawing.Point(315, 120);
             this.Grp_Idioma.Name = "Grp_Idioma";
             this.Grp_Idioma.Size = new System.Drawing.Size(132, 57);
             this.Grp_Idioma.TabIndex = 47;
@@ -463,7 +526,7 @@
             // 
             this.Grp_Desktop.Controls.Add(this.Opc_Desktop2);
             this.Grp_Desktop.Controls.Add(this.Opc_Desktop1);
-            this.Grp_Desktop.Location = new System.Drawing.Point(178, 92);
+            this.Grp_Desktop.Location = new System.Drawing.Point(108, 124);
             this.Grp_Desktop.Name = "Grp_Desktop";
             this.Grp_Desktop.Size = new System.Drawing.Size(132, 57);
             this.Grp_Desktop.TabIndex = 46;
@@ -521,23 +584,9 @@
             this.Txt_Password.Size = new System.Drawing.Size(200, 22);
             this.Txt_Password.TabIndex = 45;
             // 
-            // Col_ID_Usuario
+            // BS_Grupo_Opciones
             // 
-            this.Col_ID_Usuario.DataPropertyName = "ID_Usuario";
-            this.Col_ID_Usuario.FillWeight = 120F;
-            this.Col_ID_Usuario.HeaderText = "ID_Usuario";
-            this.Col_ID_Usuario.Name = "Col_ID_Usuario";
-            this.Col_ID_Usuario.ReadOnly = true;
-            this.Col_ID_Usuario.Width = 120;
-            // 
-            // Col_Nombre
-            // 
-            this.Col_Nombre.DataPropertyName = "Nombre";
-            this.Col_Nombre.FillWeight = 280F;
-            this.Col_Nombre.HeaderText = "Nombre";
-            this.Col_Nombre.Name = "Col_Nombre";
-            this.Col_Nombre.ReadOnly = true;
-            this.Col_Nombre.Width = 240;
+            this.BS_Grupo_Opciones.DataSource = typeof(MofinModeloEntorno.Grupo_Opciones);
             // 
             // Frm_Usuarios
             // 
@@ -545,16 +594,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(746, 439);
+            this.ClientSize = new System.Drawing.Size(827, 545);
             this.Controls.Add(this.Grd_Usuarios);
             this.Controls.Add(this.TS_BarraHerramientas);
             this.Controls.Add(this.Lbl_IDUsuario);
             this.Controls.Add(this.Lbl_Nombre);
             this.Controls.Add(this.Lbl_Password);
-            this.Controls.Add(this.Lbl_FondoEscritorio);
-            this.Controls.Add(this.Lbl_Idioma);
-            this.Controls.Add(this.Lbl_PaisUso);
-            this.Controls.Add(this.Lbl_FormatoFecha);
             this.Controls.Add(this.Btn_Cancelar);
             this.Controls.Add(this.Btn_Aceptar);
             this.Controls.Add(this.Pan_Elementos);
@@ -574,6 +619,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).EndInit();
             this.Pan_Elementos.ResumeLayout(false);
             this.Pan_Elementos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grd_EmpAccesos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Emp_Accesos)).EndInit();
             this.Grp_FormatoFecha.ResumeLayout(false);
             this.Grp_FormatoFecha.PerformLayout();
             this.Grp_Pais.ResumeLayout(false);
@@ -582,6 +629,7 @@
             this.Grp_Idioma.PerformLayout();
             this.Grp_Desktop.ResumeLayout(false);
             this.Grp_Desktop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -606,7 +654,6 @@
         private System.Windows.Forms.BindingSource BS_Usuarios;
         private System.Windows.Forms.DataGridView Grd_Usuarios;
         private System.Windows.Forms.Panel Pan_Elementos;
-        private System.Windows.Forms.CheckBox Chk_Sonido;
         private System.Windows.Forms.GroupBox Grp_FormatoFecha;
         private System.Windows.Forms.RadioButton Opc_FormFec2;
         private System.Windows.Forms.RadioButton Opc_FormFec1;
@@ -629,7 +676,13 @@
         private System.Windows.Forms.Label Lbl_Idioma;
         private System.Windows.Forms.Label Lbl_PaisUso;
         private System.Windows.Forms.Label Lbl_FormatoFecha;
+        private System.Windows.Forms.BindingSource BS_Grupo_Opciones;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_ID_Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Nombre;
+        private System.Windows.Forms.DataGridView Grd_EmpAccesos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDUsuarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codEmpresaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codGrupoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource BS_Emp_Accesos;
     }
 }

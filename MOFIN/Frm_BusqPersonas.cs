@@ -18,10 +18,13 @@ namespace MOFIN
 {
     public partial class Frm_BusqPersonas : MetroForm
     {
+        Grupo_Opciones r_GrupoOpciones = new Grupo_Opciones();
+
         public Frm_BusqPersonas()
         {
             InitializeComponent();
             this.Asigna_Nombres(null, null);
+
         }
 
         private void Frm_BusqPersonas_Load(object sender, EventArgs e)
@@ -29,6 +32,9 @@ namespace MOFIN
             BS_CClientes.DataSource = NC_Clientes.Listar();
             BS_CFirBenAcc.DataSource = NC_FirBenAcc.Listar();
             BS_BBuscados.DataSource = NB_Buscados.Listar();
+            BS_Grupo_Opciones.DataSource = NGrupo_Opciones.ListarPorCodigo(MOFIN_LIB.Entorno.vs_Grupo);
+            r_GrupoOpciones = BS_Grupo_Opciones.Current as Grupo_Opciones;
+
 
         }
 

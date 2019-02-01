@@ -83,6 +83,7 @@ namespace MOFIN
             this.Chk_CES = new System.Windows.Forms.CheckBox();
             this.Cmb_Pais = new System.Windows.Forms.ComboBox();
             this.Lbl_CondEspSeguridad = new System.Windows.Forms.Label();
+            this.BS_Grupo_Opciones = new System.Windows.Forms.BindingSource(this.components);
             this.TS_BarraHerramientas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Detalles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MActivComercial)).BeginInit();
@@ -104,6 +105,7 @@ namespace MOFIN
             ((System.ComponentModel.ISupportInitialize)(this.BS_TablaMaestra)).BeginInit();
             this.Pan_Elementos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Valor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_Codigo
@@ -565,13 +567,17 @@ namespace MOFIN
             this.Lbl_CondEspSeguridad.TabIndex = 63;
             this.Lbl_CondEspSeguridad.Text = "Condición Especial de Seguridad";
             // 
+            // BS_Grupo_Opciones
+            // 
+            this.BS_Grupo_Opciones.DataSource = typeof(MofinModeloEntorno.Grupo_Opciones);
+            // 
             // Frm_TablasMaestras
             // 
             this.AcceptButton = this.Btn_Aceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(775, 430);
+            this.ClientSize = new System.Drawing.Size(782, 436);
             this.Controls.Add(this.Lbl_CondEspSeguridad);
             this.Controls.Add(this.Cmb_Pais);
             this.Controls.Add(this.Lbl_Pais);
@@ -620,6 +626,7 @@ namespace MOFIN
             this.Pan_Elementos.ResumeLayout(false);
             this.Pan_Elementos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Valor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -678,5 +685,6 @@ namespace MOFIN
         private System.Windows.Forms.Label Lbl_CondEspSeguridad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Nombre;
+        private System.Windows.Forms.BindingSource BS_Grupo_Opciones;
     }
 }

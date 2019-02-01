@@ -27,7 +27,10 @@ namespace MofinNegocios
         {
             return dEmp_Accesos.GetById(id);
         }
-
+        public static List<Emp_Accesos> ListarPorUsuario(string Cod_Usuario)
+        {
+            return dEmp_Accesos.ListarPorUsuario(Cod_Usuario);
+        }
         public static Emp_Accesos Insertar(Emp_Accesos obj)
         {
             return dEmp_Accesos.Isertar(obj);

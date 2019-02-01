@@ -18,8 +18,8 @@ namespace MOFIN
     public partial class Frm_Usuarios : MetroForm
     {
         bool vl_EsNuevo = true;
-        //Usuarios t_Usuarios = new Usuarios();
-        Usuarios t_Usuarios;
+        Usuarios r_Usuarios = new Usuarios();
+        Grupo_Opciones r_GrupoOpciones = new Grupo_Opciones();
 
         public Frm_Usuarios()
         {
@@ -30,6 +30,9 @@ namespace MOFIN
         private void Frm_Usuarios_Load(object sender, EventArgs e)
         {
             BS_Usuarios.DataSource = NUsuarios.Listar();
+            BS_Grupo_Opciones.DataSource = NGrupo_Opciones.ListarPorCodigo(MOFIN_LIB.Entorno.vs_Grupo);
+            r_GrupoOpciones = BS_Grupo_Opciones.Current as Grupo_Opciones;
+
             this.Modo_Consulta();
             this.Grd_Usuarios.Focus();
         }
@@ -40,18 +43,19 @@ namespace MOFIN
 
         private void Grd_Usuarios_CurrentCellChanged(object sender, EventArgs e)
         {
-            t_Usuarios = BS_Usuarios.Current as Usuarios;
+            r_Usuarios = BS_Usuarios.Current as Usuarios;
             if (Grd_Usuarios.CurrentRow != null)
             {
-                Opc_Desktop1.Checked = t_Usuarios.Cnfg_Desktop.ToString() == "1" ? true : false;    // Fijo
-                Opc_Desktop2.Checked = t_Usuarios.Cnfg_Desktop.ToString() == "2" ? true : false;    // Aleatorio
-                Opc_Idioma1.Checked = t_Usuarios.Cnfg_Idioma.ToString() == "1" ? true : false;      // Español
-                Opc_Idioma2.Checked = t_Usuarios.Cnfg_Idioma.ToString() == "2" ? true : false;      // Inglés
-                Opc_Pais1.Checked = t_Usuarios.Cnfg_PaisUso.ToString() == "1" ? true : false;      // Venezuela
-                Opc_Pais2.Checked = t_Usuarios.Cnfg_PaisUso.ToString() == "2" ? true : false;      // Panamá
-                Opc_FormFec1.Checked = t_Usuarios.Cnfg_FormFecha.ToString() == "1" ? true : false; // DD/MM/AAAA
-                Opc_FormFec2.Checked = t_Usuarios.Cnfg_FormFecha.ToString() == "2" ? true : false; // MM/DD/AAAA
+                Opc_Desktop1.Checked = r_Usuarios.Cnfg_Desktop.ToString() == "1" ? true : false;    // Fijo
+                Opc_Desktop2.Checked = r_Usuarios.Cnfg_Desktop.ToString() == "2" ? true : false;    // Aleatorio
+                Opc_Idioma1.Checked = r_Usuarios.Cnfg_Idioma.ToString() == "1" ? true : false;      // Español
+                Opc_Idioma2.Checked = r_Usuarios.Cnfg_Idioma.ToString() == "2" ? true : false;      // Inglés
+                Opc_Pais1.Checked = r_Usuarios.Cnfg_PaisUso.ToString() == "1" ? true : false;      // Venezuela
+                Opc_Pais2.Checked = r_Usuarios.Cnfg_PaisUso.ToString() == "2" ? true : false;      // Panamá
+                Opc_FormFec1.Checked = r_Usuarios.Cnfg_FormFecha.ToString() == "1" ? true : false; // DD/MM/AAAA
+                Opc_FormFec2.Checked = r_Usuarios.Cnfg_FormFecha.ToString() == "2" ? true : false; // MM/DD/AAAA
             }
+            Grd_EmpAccesos.DataSource = NEmp_Accesos.ListarPorUsuario(r_Usuarios.ID_Usuario.Trim());
             TSB_ActualizaBotonesNavegacion();
         }
 
@@ -87,6 +91,7 @@ namespace MOFIN
                 this.TSB_Anterior.Enabled = false;
                 this.TSB_Siguiente.Enabled = false;
                 this.TSB_Ultimo.Enabled = false;
+                this.TSB_Agregar.Enabled = r_GrupoOpciones.Usuarios_I == null ? false : (bool)r_GrupoOpciones.Usuarios_I; 
                 this.TSB_Modificar.Enabled = false;
                 this.TSB_Eliminar.Enabled = false;
                 this.TSB_Imprimir.Enabled = false;
@@ -97,9 +102,10 @@ namespace MOFIN
                 this.TSB_Anterior.Enabled = (BS_Usuarios.Position == 0) ? false : true;
                 this.TSB_Siguiente.Enabled = (BS_Usuarios.Position == BS_Usuarios.Count - 1) ? false : true;
                 this.TSB_Ultimo.Enabled = (BS_Usuarios.Position == BS_Usuarios.Count - 1) ? false : true;
-                this.TSB_Modificar.Enabled = true;
-                this.TSB_Eliminar.Enabled = true;
-                this.TSB_Imprimir.Enabled = true;
+                this.TSB_Agregar.Enabled = r_GrupoOpciones.Usuarios_I == null ? false : (bool)r_GrupoOpciones.Usuarios_I;
+                this.TSB_Modificar.Enabled = r_GrupoOpciones.Usuarios_M == null ? false : (bool)r_GrupoOpciones.Usuarios_M;
+                this.TSB_Eliminar.Enabled = r_GrupoOpciones.Usuarios_E == null ? false : (bool)r_GrupoOpciones.Usuarios_E;
+                this.TSB_Imprimir.Enabled = r_GrupoOpciones.Usuarios_P == null ? false : (bool)r_GrupoOpciones.Usuarios_P;
             }
         }
 
@@ -112,16 +118,16 @@ namespace MOFIN
 
             byte vl_Uno = 1;
             byte vl_Dos = 2;
-            t_Usuarios.Cnfg_Desktop = Opc_Desktop2.Checked == true ? vl_Dos : vl_Uno;
-            t_Usuarios.Cnfg_Idioma  = Opc_Idioma2.Checked == true ? vl_Dos : vl_Uno;
-            t_Usuarios.Cnfg_PaisUso = Opc_Pais2.Checked == true ? vl_Dos : vl_Uno;
-            t_Usuarios.Cnfg_FormFecha = Opc_FormFec2.Checked == true ? vl_Dos : vl_Uno;
+            r_Usuarios.Cnfg_Desktop = Opc_Desktop2.Checked == true ? vl_Dos : vl_Uno;
+            r_Usuarios.Cnfg_Idioma  = Opc_Idioma2.Checked == true ? vl_Dos : vl_Uno;
+            r_Usuarios.Cnfg_PaisUso = Opc_Pais2.Checked == true ? vl_Dos : vl_Uno;
+            r_Usuarios.Cnfg_FormFecha = Opc_FormFec2.Checked == true ? vl_Dos : vl_Uno;
 
             if (vl_EsNuevo)
-                NUsuarios.Insertar(t_Usuarios);
+                NUsuarios.Insertar(r_Usuarios);
                 //NUsuarios.Insertar(BS_Usuarios.Current as Usuarios);
             else
-                NUsuarios.Actualizar(t_Usuarios);
+                NUsuarios.Actualizar(r_Usuarios);
                // NUsuarios.Actualizar(BS_Usuarios.Current as Usuarios);
                 this.Modo_Consulta();
             BS_Usuarios.DataSource = NUsuarios.Listar();
@@ -155,12 +161,12 @@ namespace MOFIN
 
         private void TSB_Eliminar_Click(object sender, EventArgs e)
         {
-            string vl_RegEliminar = t_Usuarios.Nombre.ToString();
+            string vl_RegEliminar = r_Usuarios.Nombre.ToString();
             DialogResult vl_Resp = MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9010) + "\n\n" + vl_RegEliminar,
                 MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (vl_Resp == DialogResult.Yes)
             {
-                NUsuarios.Elimiar(t_Usuarios);
+                NUsuarios.Elimiar(r_Usuarios);
                 BS_Usuarios.DataSource = NUsuarios.Listar();
                 Grd_Usuarios.Refresh();
                 MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9011), MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -200,7 +206,7 @@ namespace MOFIN
             this.Lbl_Idioma.Text = MOFIN_LIB.Funciones._Mens_Idioma(2203);
             this.Lbl_PaisUso.Text = MOFIN_LIB.Funciones._Mens_Idioma(2204);
             this.Lbl_FormatoFecha.Text = MOFIN_LIB.Funciones._Mens_Idioma(2205);
-            this.Chk_Sonido.Text = MOFIN_LIB.Funciones._Mens_Idioma(2206);
+            //this.Chk_Sonido.Text = MOFIN_LIB.Funciones._Mens_Idioma(2206);
 
             this.Opc_Desktop1.Text = MOFIN_LIB.Funciones._Mens_Idioma(2207);
             this.Opc_Desktop2.Text = MOFIN_LIB.Funciones._Mens_Idioma(2208);

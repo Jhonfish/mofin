@@ -36,6 +36,16 @@ namespace MofinDatos
                 return db.Emp_Accesos.Find(id);
             }
         }
+        public List<Emp_Accesos> ListarPorUsuario(string Cod_Usuario)
+        {
+            using (MofinEntornoEntidad db = new MofinEntornoEntidad())
+            {
+                var lst = from Emp_Accesos in db.Emp_Accesos
+                          where Emp_Accesos.ID_Usuario == Cod_Usuario
+                          select Emp_Accesos;
+                return lst.ToList();
+            }
+        }
 
         public Emp_Accesos Isertar(Emp_Accesos obj)
         {

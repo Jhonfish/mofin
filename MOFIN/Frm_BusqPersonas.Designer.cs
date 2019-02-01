@@ -52,6 +52,9 @@
             this.Lbl_ListFirBenAcc = new System.Windows.Forms.Label();
             this.BS_CClientes = new System.Windows.Forms.BindingSource(this.components);
             this.Grd_Clientes = new System.Windows.Forms.DataGridView();
+            this.Col_CliCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CliDocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CliNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_BBuscados = new System.Windows.Forms.BindingSource(this.components);
             this.Grd_Buscados = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn92 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,9 +69,7 @@
             this.Col_FBACodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_FBADocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_FBANombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CliCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CliDocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CliNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BS_Grupo_Opciones = new System.Windows.Forms.BindingSource(this.components);
             this.Grp_CritBusqueda.SuspendLayout();
             this.Grp_DocId.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Nud_NroCar)).BeginInit();
@@ -78,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Buscados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_CFirBenAcc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_FirBenAcc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_BuscarTodos
@@ -338,6 +340,30 @@
             this.Grd_Clientes.Size = new System.Drawing.Size(431, 250);
             this.Grd_Clientes.TabIndex = 37;
             // 
+            // Col_CliCodigo
+            // 
+            this.Col_CliCodigo.DataPropertyName = "Codigo";
+            this.Col_CliCodigo.HeaderText = "Codigo";
+            this.Col_CliCodigo.Name = "Col_CliCodigo";
+            this.Col_CliCodigo.ReadOnly = true;
+            this.Col_CliCodigo.Width = 75;
+            // 
+            // Col_CliDocID
+            // 
+            this.Col_CliDocID.DataPropertyName = "Doc_ID";
+            this.Col_CliDocID.HeaderText = "Doc_ID";
+            this.Col_CliDocID.Name = "Col_CliDocID";
+            this.Col_CliDocID.ReadOnly = true;
+            this.Col_CliDocID.Width = 110;
+            // 
+            // Col_CliNombre
+            // 
+            this.Col_CliNombre.DataPropertyName = "Nombre";
+            this.Col_CliNombre.HeaderText = "Nombre";
+            this.Col_CliNombre.Name = "Col_CliNombre";
+            this.Col_CliNombre.ReadOnly = true;
+            this.Col_CliNombre.Width = 250;
+            // 
             // BS_BBuscados
             // 
             this.BS_BBuscados.DataSource = typeof(MofinModelo.B_Buscados);
@@ -457,35 +483,15 @@
             this.Col_FBANombre.ReadOnly = true;
             this.Col_FBANombre.Width = 200;
             // 
-            // Col_CliCodigo
+            // BS_Grupo_Opciones
             // 
-            this.Col_CliCodigo.DataPropertyName = "Codigo";
-            this.Col_CliCodigo.HeaderText = "Codigo";
-            this.Col_CliCodigo.Name = "Col_CliCodigo";
-            this.Col_CliCodigo.ReadOnly = true;
-            this.Col_CliCodigo.Width = 75;
-            // 
-            // Col_CliDocID
-            // 
-            this.Col_CliDocID.DataPropertyName = "Doc_ID";
-            this.Col_CliDocID.HeaderText = "Doc_ID";
-            this.Col_CliDocID.Name = "Col_CliDocID";
-            this.Col_CliDocID.ReadOnly = true;
-            this.Col_CliDocID.Width = 110;
-            // 
-            // Col_CliNombre
-            // 
-            this.Col_CliNombre.DataPropertyName = "Nombre";
-            this.Col_CliNombre.HeaderText = "Nombre";
-            this.Col_CliNombre.Name = "Col_CliNombre";
-            this.Col_CliNombre.ReadOnly = true;
-            this.Col_CliNombre.Width = 250;
+            this.BS_Grupo_Opciones.DataSource = typeof(MofinModeloEntorno.Grupo_Opciones);
             // 
             // Frm_BusqPersonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 750);
+            this.ClientSize = new System.Drawing.Size(872, 755);
             this.Controls.Add(this.Grd_FirBenAcc);
             this.Controls.Add(this.Grd_Buscados);
             this.Controls.Add(this.Grd_Clientes);
@@ -523,6 +529,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Buscados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_CFirBenAcc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_FirBenAcc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -569,5 +576,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_CliCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_CliDocID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_CliNombre;
+        private System.Windows.Forms.BindingSource BS_Grupo_Opciones;
     }
 }
