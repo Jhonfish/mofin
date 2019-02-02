@@ -27,6 +27,10 @@ namespace MofinNegocios
         {
             return dGrupos.GetById(id);
         }
+        public static List<Grupos> ListarPorCodigo(string Codigo)
+        {
+            return dGrupos.ListarPorCodigo(Codigo);
+        }
 
         public static Grupos Insertar(Grupos obj)
         {

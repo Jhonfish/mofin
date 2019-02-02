@@ -35,6 +35,8 @@ namespace MOFIN
 
             this.Modo_Consulta();
             this.Grd_Usuarios.Focus();
+            BS_Empresas.DataSource = NEmpresas.Listar();
+            BS_Grupos.DataSource = NGrupos.Listar();
         }
 
         //**************
@@ -124,10 +126,13 @@ namespace MOFIN
             r_Usuarios.Cnfg_FormFecha = Opc_FormFec2.Checked == true ? vl_Dos : vl_Uno;
 
             if (vl_EsNuevo)
+                
                 NUsuarios.Insertar(r_Usuarios);
                 //NUsuarios.Insertar(BS_Usuarios.Current as Usuarios);
             else
+
                 NUsuarios.Actualizar(r_Usuarios);
+                NEmp_Accesos.Actualizar(BS_Emp_Accesos.Current as Emp_Accesos);
                // NUsuarios.Actualizar(BS_Usuarios.Current as Usuarios);
                 this.Modo_Consulta();
             BS_Usuarios.DataSource = NUsuarios.Listar();

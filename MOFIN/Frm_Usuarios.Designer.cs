@@ -57,9 +57,6 @@
             this.BS_Usuarios = new System.Windows.Forms.BindingSource(this.components);
             this.Pan_Elementos = new System.Windows.Forms.Panel();
             this.Grd_EmpAccesos = new System.Windows.Forms.DataGridView();
-            this.iDUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codGrupoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_Emp_Accesos = new System.Windows.Forms.BindingSource(this.components);
             this.Grp_FormatoFecha = new System.Windows.Forms.GroupBox();
             this.Opc_FormFec2 = new System.Windows.Forms.RadioButton();
@@ -77,6 +74,11 @@
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
             this.Txt_Password = new System.Windows.Forms.TextBox();
             this.BS_Grupo_Opciones = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_Empresas = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_Grupos = new System.Windows.Forms.BindingSource(this.components);
+            this.iDUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Empresa = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Col_Grupo = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.TS_BarraHerramientas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Usuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).BeginInit();
@@ -88,6 +90,8 @@
             this.Grp_Idioma.SuspendLayout();
             this.Grp_Desktop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Empresas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupos)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_IDUsuario
@@ -385,42 +389,20 @@
             // 
             // Grd_EmpAccesos
             // 
-            this.Grd_EmpAccesos.AllowUserToAddRows = false;
             this.Grd_EmpAccesos.AllowUserToDeleteRows = false;
             this.Grd_EmpAccesos.AutoGenerateColumns = false;
             this.Grd_EmpAccesos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grd_EmpAccesos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDUsuarioDataGridViewTextBoxColumn,
-            this.codEmpresaDataGridViewTextBoxColumn,
-            this.codGrupoDataGridViewTextBoxColumn});
+            this.Col_Empresa,
+            this.Col_Grupo});
             this.Grd_EmpAccesos.DataSource = this.BS_Emp_Accesos;
             this.Grd_EmpAccesos.Location = new System.Drawing.Point(31, 281);
+            this.Grd_EmpAccesos.MultiSelect = false;
             this.Grd_EmpAccesos.Name = "Grd_EmpAccesos";
-            this.Grd_EmpAccesos.ReadOnly = true;
             this.Grd_EmpAccesos.RowHeadersVisible = false;
             this.Grd_EmpAccesos.Size = new System.Drawing.Size(416, 150);
             this.Grd_EmpAccesos.TabIndex = 50;
-            // 
-            // iDUsuarioDataGridViewTextBoxColumn
-            // 
-            this.iDUsuarioDataGridViewTextBoxColumn.DataPropertyName = "ID_Usuario";
-            this.iDUsuarioDataGridViewTextBoxColumn.HeaderText = "ID_Usuario";
-            this.iDUsuarioDataGridViewTextBoxColumn.Name = "iDUsuarioDataGridViewTextBoxColumn";
-            this.iDUsuarioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // codEmpresaDataGridViewTextBoxColumn
-            // 
-            this.codEmpresaDataGridViewTextBoxColumn.DataPropertyName = "Cod_Empresa";
-            this.codEmpresaDataGridViewTextBoxColumn.HeaderText = "Cod_Empresa";
-            this.codEmpresaDataGridViewTextBoxColumn.Name = "codEmpresaDataGridViewTextBoxColumn";
-            this.codEmpresaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // codGrupoDataGridViewTextBoxColumn
-            // 
-            this.codGrupoDataGridViewTextBoxColumn.DataPropertyName = "Cod_Grupo";
-            this.codGrupoDataGridViewTextBoxColumn.HeaderText = "Cod_Grupo";
-            this.codGrupoDataGridViewTextBoxColumn.Name = "codGrupoDataGridViewTextBoxColumn";
-            this.codGrupoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // BS_Emp_Accesos
             // 
@@ -588,6 +570,46 @@
             // 
             this.BS_Grupo_Opciones.DataSource = typeof(MofinModeloEntorno.Grupo_Opciones);
             // 
+            // BS_Empresas
+            // 
+            this.BS_Empresas.DataSource = typeof(MofinModeloEntorno.Empresas);
+            // 
+            // BS_Grupos
+            // 
+            this.BS_Grupos.DataSource = typeof(MofinModeloEntorno.Grupos);
+            // 
+            // iDUsuarioDataGridViewTextBoxColumn
+            // 
+            this.iDUsuarioDataGridViewTextBoxColumn.DataPropertyName = "ID_Usuario";
+            this.iDUsuarioDataGridViewTextBoxColumn.HeaderText = "ID_Usuario";
+            this.iDUsuarioDataGridViewTextBoxColumn.Name = "iDUsuarioDataGridViewTextBoxColumn";
+            // 
+            // Col_Empresa
+            // 
+            this.Col_Empresa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Col_Empresa.DataPropertyName = "Cod_Empresa";
+            this.Col_Empresa.DataSource = this.BS_Empresas;
+            this.Col_Empresa.DisplayMember = "Nombre";
+            this.Col_Empresa.HeaderText = "Empresa";
+            this.Col_Empresa.Name = "Col_Empresa";
+            this.Col_Empresa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Col_Empresa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Col_Empresa.ValueMember = "Codigo";
+            this.Col_Empresa.Width = 89;
+            // 
+            // Col_Grupo
+            // 
+            this.Col_Grupo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Col_Grupo.DataPropertyName = "Cod_Grupo";
+            this.Col_Grupo.DataSource = this.BS_Grupos;
+            this.Col_Grupo.DisplayMember = "Nombre";
+            this.Col_Grupo.HeaderText = "Grupo";
+            this.Col_Grupo.Name = "Col_Grupo";
+            this.Col_Grupo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Col_Grupo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Col_Grupo.ValueMember = "Codigo";
+            this.Col_Grupo.Width = 73;
+            // 
             // Frm_Usuarios
             // 
             this.AcceptButton = this.Btn_Aceptar;
@@ -630,6 +652,8 @@
             this.Grp_Desktop.ResumeLayout(false);
             this.Grp_Desktop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Empresas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -680,9 +704,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_ID_Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Nombre;
         private System.Windows.Forms.DataGridView Grd_EmpAccesos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDUsuarioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codEmpresaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codGrupoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource BS_Emp_Accesos;
+        private System.Windows.Forms.BindingSource BS_Empresas;
+        private System.Windows.Forms.BindingSource BS_Grupos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDUsuarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Col_Empresa;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Col_Grupo;
     }
 }

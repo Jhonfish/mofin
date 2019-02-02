@@ -25,5 +25,8 @@ namespace MofinModeloEntorno
         public string Telefono2 { get; set; }
         public string Direccion { get; set; }
         public string Logo { get; set; }
+        public string Cad_Conexion { get; set; }
+        public string Proveedor { get; set; }
+        public string Metadata { get; set; }
     }
 }

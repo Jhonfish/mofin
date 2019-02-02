@@ -48,5 +48,7 @@ namespace MofinModeloEntorno
         public Nullable<bool> OperTransac_M { get; set; }
         public Nullable<bool> OperTransac_E { get; set; }
         public Nullable<bool> OperTransac_P { get; set; }
+        public Nullable<bool> OperFinanc_R { get; set; }
+        public Nullable<bool> OperTransac_R { get; set; }
     }
 }

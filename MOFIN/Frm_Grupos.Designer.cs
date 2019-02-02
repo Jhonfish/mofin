@@ -50,6 +50,7 @@
             this.Pag_Clientes = new System.Windows.Forms.TabPage();
             this.Pan_Elementos1 = new System.Windows.Forms.Panel();
             this.Chk_CliBus_P = new System.Windows.Forms.CheckBox();
+            this.BS_Grupo_Opciones = new System.Windows.Forms.BindingSource(this.components);
             this.Chk_CliBus_E = new System.Windows.Forms.CheckBox();
             this.Chk_CliBus_M = new System.Windows.Forms.CheckBox();
             this.Chk_CliBus_I = new System.Windows.Forms.CheckBox();
@@ -63,6 +64,9 @@
             this.Chk_Clientes = new System.Windows.Forms.CheckBox();
             this.Pag_Operaciones = new System.Windows.Forms.TabPage();
             this.Pan_Elementos2 = new System.Windows.Forms.Panel();
+            this.Chk_OpeTra_ImpExp = new System.Windows.Forms.CheckBox();
+            this.Chk_OpeFin_ImpExp = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Chk_OpTrans_P = new System.Windows.Forms.CheckBox();
             this.Chk_OpTrans_E = new System.Windows.Forms.CheckBox();
             this.Chk_OpTrans_M = new System.Windows.Forms.CheckBox();
@@ -77,7 +81,6 @@
             this.Pag_Tablas = new System.Windows.Forms.TabPage();
             this.Pan_Elementos3 = new System.Windows.Forms.Panel();
             this.Chk_TabMaest_P = new System.Windows.Forms.CheckBox();
-            this.BS_Grupo_Opciones = new System.Windows.Forms.BindingSource(this.components);
             this.Chk_TabMaest_E = new System.Windows.Forms.CheckBox();
             this.Chk_TabMaest_M = new System.Windows.Forms.CheckBox();
             this.Chk_TabMaest_I = new System.Windows.Forms.CheckBox();
@@ -115,17 +118,17 @@
             this.Pic_Eliminar = new System.Windows.Forms.PictureBox();
             this.Pic_Modificar = new System.Windows.Forms.PictureBox();
             this.Pic_Incluir = new System.Windows.Forms.PictureBox();
-            this.cod_GrupoTextBox = new System.Windows.Forms.TextBox();
             this.TS_BarraHerramientas.SuspendLayout();
             this.Tab_Opciones.SuspendLayout();
             this.Pag_Clientes.SuspendLayout();
             this.Pan_Elementos1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupos)).BeginInit();
             this.Pag_Operaciones.SuspendLayout();
             this.Pan_Elementos2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Pag_Tablas.SuspendLayout();
             this.Pan_Elementos3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).BeginInit();
             this.Pag_Reportes.SuspendLayout();
             this.Pan_Elementos4.SuspendLayout();
             this.Pag_OpcSistema.SuspendLayout();
@@ -373,6 +376,10 @@
             this.Chk_CliBus_P.TabIndex = 97;
             this.Chk_CliBus_P.UseVisualStyleBackColor = true;
             // 
+            // BS_Grupo_Opciones
+            // 
+            this.BS_Grupo_Opciones.DataSource = typeof(MofinModeloEntorno.Grupo_Opciones);
+            // 
             // Chk_CliBus_E
             // 
             this.Chk_CliBus_E.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Grupo_Opciones, "BusqPers_E", true));
@@ -489,6 +496,9 @@
             // 
             // Pan_Elementos2
             // 
+            this.Pan_Elementos2.Controls.Add(this.Chk_OpeTra_ImpExp);
+            this.Pan_Elementos2.Controls.Add(this.Chk_OpeFin_ImpExp);
+            this.Pan_Elementos2.Controls.Add(this.pictureBox1);
             this.Pan_Elementos2.Controls.Add(this.Chk_OpTrans_P);
             this.Pan_Elementos2.Controls.Add(this.Chk_OpTrans_E);
             this.Pan_Elementos2.Controls.Add(this.Chk_OpTrans_M);
@@ -504,6 +514,34 @@
             this.Pan_Elementos2.Name = "Pan_Elementos2";
             this.Pan_Elementos2.Size = new System.Drawing.Size(360, 105);
             this.Pan_Elementos2.TabIndex = 70;
+            // 
+            // Chk_OpeTra_ImpExp
+            // 
+            this.Chk_OpeTra_ImpExp.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Grupo_Opciones, "OperTransac_R", true));
+            this.Chk_OpeTra_ImpExp.Location = new System.Drawing.Point(328, 60);
+            this.Chk_OpeTra_ImpExp.Name = "Chk_OpeTra_ImpExp";
+            this.Chk_OpeTra_ImpExp.Size = new System.Drawing.Size(17, 24);
+            this.Chk_OpeTra_ImpExp.TabIndex = 91;
+            this.Chk_OpeTra_ImpExp.UseVisualStyleBackColor = true;
+            // 
+            // Chk_OpeFin_ImpExp
+            // 
+            this.Chk_OpeFin_ImpExp.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Grupo_Opciones, "OperFinanc_R", true));
+            this.Chk_OpeFin_ImpExp.Location = new System.Drawing.Point(328, 32);
+            this.Chk_OpeFin_ImpExp.Name = "Chk_OpeFin_ImpExp";
+            this.Chk_OpeFin_ImpExp.Size = new System.Drawing.Size(17, 24);
+            this.Chk_OpeFin_ImpExp.TabIndex = 90;
+            this.Chk_OpeFin_ImpExp.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(329, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox1.TabIndex = 80;
+            this.pictureBox1.TabStop = false;
             // 
             // Chk_OpTrans_P
             // 
@@ -645,10 +683,6 @@
             this.Chk_TabMaest_P.Size = new System.Drawing.Size(17, 24);
             this.Chk_TabMaest_P.TabIndex = 81;
             this.Chk_TabMaest_P.UseVisualStyleBackColor = true;
-            // 
-            // BS_Grupo_Opciones
-            // 
-            this.BS_Grupo_Opciones.DataSource = typeof(MofinModeloEntorno.Grupo_Opciones);
             // 
             // Chk_TabMaest_E
             // 
@@ -936,7 +970,7 @@
             this.Grd_Grupos.Name = "Grd_Grupos";
             this.Grd_Grupos.ReadOnly = true;
             this.Grd_Grupos.RowHeadersVisible = false;
-            this.Grd_Grupos.Size = new System.Drawing.Size(330, 209);
+            this.Grd_Grupos.Size = new System.Drawing.Size(330, 254);
             this.Grd_Grupos.TabIndex = 70;
             this.Grd_Grupos.CurrentCellChanged += new System.EventHandler(this.Grd_Grupos_CurrentCellChanged);
             // 
@@ -990,7 +1024,7 @@
             this.Pan_IMEPPics.Controls.Add(this.Pic_Incluir);
             this.Pan_IMEPPics.Location = new System.Drawing.Point(639, 142);
             this.Pan_IMEPPics.Name = "Pan_IMEPPics";
-            this.Pan_IMEPPics.Size = new System.Drawing.Size(120, 24);
+            this.Pan_IMEPPics.Size = new System.Drawing.Size(86, 24);
             this.Pan_IMEPPics.TabIndex = 72;
             // 
             // Pic_Imprimir
@@ -1033,14 +1067,6 @@
             this.Pic_Incluir.TabIndex = 76;
             this.Pic_Incluir.TabStop = false;
             // 
-            // cod_GrupoTextBox
-            // 
-            this.cod_GrupoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_Grupo_Opciones, "Cod_Grupo", true));
-            this.cod_GrupoTextBox.Location = new System.Drawing.Point(226, 47);
-            this.cod_GrupoTextBox.Name = "cod_GrupoTextBox";
-            this.cod_GrupoTextBox.Size = new System.Drawing.Size(100, 22);
-            this.cod_GrupoTextBox.TabIndex = 73;
-            // 
             // Frm_Grupos
             // 
             this.AcceptButton = this.Btn_Aceptar;
@@ -1048,7 +1074,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(789, 414);
-            this.Controls.Add(this.cod_GrupoTextBox);
             this.Controls.Add(this.Pan_IMEPPics);
             this.Controls.Add(this.Grd_Grupos);
             this.Controls.Add(this.Tab_Opciones);
@@ -1073,12 +1098,13 @@
             this.Tab_Opciones.ResumeLayout(false);
             this.Pag_Clientes.ResumeLayout(false);
             this.Pan_Elementos1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupos)).EndInit();
             this.Pag_Operaciones.ResumeLayout(false);
             this.Pan_Elementos2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Pag_Tablas.ResumeLayout(false);
             this.Pan_Elementos3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).EndInit();
             this.Pag_Reportes.ResumeLayout(false);
             this.Pan_Elementos4.ResumeLayout(false);
             this.Pag_OpcSistema.ResumeLayout(false);
@@ -1184,6 +1210,8 @@
         private System.Windows.Forms.Label Lbl_Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Nombre;
-        private System.Windows.Forms.TextBox cod_GrupoTextBox;
+        private System.Windows.Forms.CheckBox Chk_OpeTra_ImpExp;
+        private System.Windows.Forms.CheckBox Chk_OpeFin_ImpExp;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

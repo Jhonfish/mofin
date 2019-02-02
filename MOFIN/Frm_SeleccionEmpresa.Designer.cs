@@ -132,6 +132,7 @@
             this.Btn_Aceptar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_Aceptar.BackgroundImage")));
             this.Btn_Aceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Btn_Aceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_Aceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Btn_Aceptar.FlatAppearance.BorderSize = 0;
             this.Btn_Aceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Btn_Aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;

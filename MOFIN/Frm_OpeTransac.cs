@@ -17,7 +17,7 @@ using CrystalDecisions.CrystalReports.Engine;
 
 namespace MOFIN
 {
-    public partial class Frm_OpeFinancieras : MetroForm
+    public partial class Frm_OpeTransac : MetroForm
     {
         bool vl_EsNuevo = false;
         C_Clientes r_Cliente = new C_Clientes();
@@ -26,20 +26,20 @@ namespace MOFIN
         M_NivelRiesgo r_NiveldeRiesgo = new M_NivelRiesgo();
         Grupo_Opciones r_GrupoOpciones = new Grupo_Opciones();
 
-        public Frm_OpeFinancieras()
+        public Frm_OpeTransac()
         {
             InitializeComponent();
             this.Asigna_Nombres(null, null);
         }
 
-        private void Frm_OpeFinancieras_Load(object sender, EventArgs e)
+        private void Frm_OpeTransaccionales_Load(object sender, EventArgs e)
         {
             this.Cmb_TipArchExport.SelectedIndex = 0;
             this.Height = 610;
             BS_CClientes.DataSource = NC_Clientes.Listar();
             BS_OObservaciones.DataSource = NO_Observaciones.Listar();
             BS_OHistPerfOperac.DataSource = NO_HistPerfOperac.Listar();
-            BS_OOperFinancieras.DataSource = NO_Operfinancieras.Listar();
+            BS_OOperTransaccionales.DataSource = NO_OperTransaccionales.Listar();
             BS_MNivelRiesgo.DataSource = NM_NivelRiesgo.Listar();
 
             BS_Grupo_Opciones.DataSource = NGrupo_Opciones.ListarPorCodigo(MOFIN_LIB.Entorno.vs_Grupo);
@@ -69,15 +69,15 @@ namespace MOFIN
             this.Grd_Observaciones.RowHeadersVisible = false;
             this.Grd_Observaciones.AllowUserToAddRows = false;
 
-            this.Btn_PerfInc.Enabled = (bool)r_GrupoOpciones.OperFinanc_I;
-            this.Btn_PerfMod.Enabled = (bool)r_GrupoOpciones.OperFinanc_M;
-            this.Btn_PerfEli.Enabled = (bool)r_GrupoOpciones.OperFinanc_E;
-            this.Btn_ObsInc.Enabled = (bool)r_GrupoOpciones.OperFinanc_I;
-            this.Btn_ObsMod.Enabled = (bool)r_GrupoOpciones.OperFinanc_M;
-            this.Btn_ObsEli.Enabled = (bool)r_GrupoOpciones.OperFinanc_E;
-            this.Chk_ElimOper.Enabled = (bool)r_GrupoOpciones.OperFinanc_E;
-            this.Chk_Exportar.Enabled = (bool)r_GrupoOpciones.OperFinanc_R;
-            this.Btn_Importar.Enabled = (bool)r_GrupoOpciones.OperFinanc_R;
+            this.Btn_PerfInc.Enabled = r_GrupoOpciones.OperFinanc_I == null ? false : (bool)r_GrupoOpciones.OperFinanc_I;
+            this.Btn_PerfMod.Enabled = r_GrupoOpciones.OperFinanc_M == null ? false : (bool)r_GrupoOpciones.OperFinanc_M;
+            this.Btn_PerfEli.Enabled = r_GrupoOpciones.OperFinanc_E == null ? false : (bool)r_GrupoOpciones.OperFinanc_E;
+            this.Btn_ObsInc.Enabled = r_GrupoOpciones.OperFinanc_I == null ? false : (bool)r_GrupoOpciones.OperFinanc_I;
+            this.Btn_ObsMod.Enabled = r_GrupoOpciones.OperFinanc_M == null ? false : (bool)r_GrupoOpciones.OperFinanc_M;
+            this.Btn_ObsEli.Enabled = r_GrupoOpciones.OperFinanc_E == null ? false : (bool)r_GrupoOpciones.OperFinanc_E;
+            this.Chk_ElimOper.Enabled = r_GrupoOpciones.OperFinanc_E == null ? false : (bool)r_GrupoOpciones.OperFinanc_E;
+            this.Chk_Exportar.Enabled = r_GrupoOpciones.OperFinanc_E == null ? false : (bool)r_GrupoOpciones.OperFinanc_R;
+            this.Btn_Importar.Enabled = r_GrupoOpciones.OperFinanc_E == null ? false : (bool)r_GrupoOpciones.OperFinanc_R;
 
             this.Pan_BtnsPerfil.Enabled = true;
             this.Pan_BtnsObserv.Enabled = true;
@@ -135,7 +135,7 @@ namespace MOFIN
             {
                 BS_OHistPerfOperac.MoveLast();
                 r_HistPerfOperac = BS_OHistPerfOperac.Current as O_HistPerfOperac;
-                r_HistPerfOperac.Tipo_Perfil = 1;
+                r_HistPerfOperac.Tipo_Perfil = 2;
                 r_HistPerfOperac.Cod_Cliente = r_Cliente.Codigo;
                 if (vl_EsNuevo)
                     NO_HistPerfOperac.Insertar(r_HistPerfOperac);
@@ -146,7 +146,7 @@ namespace MOFIN
             {
                 BS_OObservaciones.MoveLast();
                 r_Observaciones = BS_OObservaciones.Current as O_Observaciones;
-                r_Observaciones.Tipo_Perfil = 1;
+                r_Observaciones.Tipo_Perfil = 2;
                 r_Observaciones.Cod_Cliente = r_Cliente.Codigo;
                 if (vl_EsNuevo)
                     NO_Observaciones.Insertar(r_Observaciones);
@@ -269,23 +269,23 @@ namespace MOFIN
         private void Grd_ClieInfInversor_CurrentCellChanged(object sender, EventArgs e)
         {
             r_Cliente = BS_CClientes.Current as C_Clientes;
-            BS_OHistPerfOperac.DataSource = NO_HistPerfOperac.ListarPorCodigoTipo(r_Cliente.Codigo, 1);
-            BS_OObservaciones.DataSource = NO_Observaciones.ListarPorCodigoTipo(r_Cliente.Codigo, 1);
+            BS_OHistPerfOperac.DataSource = NO_HistPerfOperac.ListarPorCodigoTipo(r_Cliente.Codigo, 2);
+            BS_OObservaciones.DataSource = NO_Observaciones.ListarPorCodigoTipo(r_Cliente.Codigo, 2);
         }
 
         private void Grd_ClieDetOper_CurrentCellChanged(object sender, EventArgs e)
         {
             r_Cliente = BS_CClientes.Current as C_Clientes;
-            BS_OOperFinancieras.DataSource = NO_Operfinancieras.ListarPorCodigo(r_Cliente.Codigo, null, null);
+            BS_OOperTransaccionales.DataSource = NO_OperTransaccionales.ListarPorCodigo(r_Cliente.Codigo, null, null);
         }
 
         private void Btn_MostrarTodos_Click(object sender, EventArgs e)
         {
-            BS_OOperFinancieras.DataSource = NO_Operfinancieras.Listar();
+            BS_OOperTransaccionales.DataSource = NO_OperTransaccionales.Listar();
         }
         private void Asigna_Nombres(object sender, EventArgs e)
         {
-            this.Text = MOFIN_LIB.Funciones._Mens_Idioma(13000);
+            this.Text = MOFIN_LIB.Funciones._Mens_Idioma(14000);
             this.Pag1.Text = MOFIN_LIB.Funciones._Mens_Idioma(13010);
             this.Pag2.Text = MOFIN_LIB.Funciones._Mens_Idioma(13020);
             this.Pag3.Text = MOFIN_LIB.Funciones._Mens_Idioma(13030);
@@ -377,7 +377,7 @@ namespace MOFIN
             this.Col3_Nombre.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1002);
             this.Col3_FecCierre.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10035);
             this.Col3_FecValor.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10036);
-            this.Col3_MtoSolic.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10037);
+//            this.Col3_MtoSolic.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10037);
             this.Col3_MtoPactado.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10038);
             this.Col3_Efectivo.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10039);
             this.Col3_HoraCarga.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10040);
@@ -415,8 +415,8 @@ namespace MOFIN
             Decimal vl_PerFinMonto = (r_Cliente.PerfilFinanciero != null) ? decimal.Parse(r_Cliente.PerfilFinanciero.ToString()) : 0 ;
             int vl_PerFinNrOper = (r_Cliente.NroTransacciones != null) ? int.Parse(r_Cliente.NroTransacciones.ToString()) : 0;
                        
-            List<O_Operfinancieras> Lst_Operaciones;
-            Lst_Operaciones = NO_Operfinancieras.ListarPorCodigo(r_Cliente.Codigo, vl_FDesde, vl_FHasta).ToList<O_Operfinancieras>();
+            List<O_OperTransaccionales> Lst_Operaciones;
+            Lst_Operaciones = NO_OperTransaccionales.ListarPorCodigo(r_Cliente.Codigo, vl_FDesde, vl_FHasta).ToList<O_OperTransaccionales>();
             do
             {
                 switch (vl_PerUso)
@@ -537,9 +537,9 @@ namespace MOFIN
                 if (Lst_GrupoOperaciones != null)
                 {
                     vl_Abonos = decimal.Parse(Lst_GrupoOperaciones.Where(item => item.Tipo_Orden.Trim() == "ABO")
-                                                        .Sum(item => item.Efectivo).ToString());
+                                                        .Sum(item => item.Valor_Efectivo).ToString());
                     vl_Retiros = decimal.Parse(Lst_GrupoOperaciones.Where(item => item.Tipo_Orden.Trim() == "RET")
-                                                        .Sum(item => item.Efectivo).ToString());
+                                                        .Sum(item => item.Valor_Efectivo).ToString());
                     vl_NroOper = Lst_GrupoOperaciones.Count;
                 }
                 if (vl_NroOper > 0)
@@ -567,7 +567,7 @@ namespace MOFIN
                     foreach (object obj in BS_OHistPerfOperac)
                     {
                         r_HistPerfOperac = BS_OHistPerfOperac.Current as O_HistPerfOperac;
-                        if (r_HistPerfOperac.Tipo_Perfil == 1 & r_HistPerfOperac.Cod_Cliente == r_Cliente.Codigo &
+                        if (r_HistPerfOperac.Tipo_Perfil == 2 & r_HistPerfOperac.Cod_Cliente == r_Cliente.Codigo &
                             r_HistPerfOperac.Fecha.Date >= vl_GrupoFDesde.Date & r_HistPerfOperac.Fecha.Date <= vl_GrupoFHasta)
                         {
                             vl_PerFinMonto = r_HistPerfOperac.Mto_Perfil;
@@ -621,7 +621,7 @@ namespace MOFIN
             /// 
             /// Creación de la lista con los usuarios involucrados en el reporte
             /// 
-            List<O_RepOperacional> Lst_OperFinancieras = new List<O_RepOperacional>();
+            List<O_RepOperacional> Lst_OperTransaccionales = new List<O_RepOperacional>();
 
             foreach(DataGridViewRow Registro in Grd_Clientes.SelectedRows)
             {
@@ -651,8 +651,8 @@ namespace MOFIN
                 Decimal vl_PerFinMonto = Registro.Cells["PerfilFinanciero"].Value == null ? 0 : decimal.Parse(Registro.Cells["PerfilFinanciero"].Value.ToString());
                 Decimal vl_PerFinNrOper = Registro.Cells["NroTransacciones"].Value == null ? 0 : decimal.Parse(Registro.Cells["NroTransacciones"].Value.ToString());
 
-                List<O_Operfinancieras> Lst_Operaciones;
-                Lst_Operaciones = NO_Operfinancieras.ListarPorCodigo(vl_Codigo, vl_FDesde, vl_FHasta).ToList<O_Operfinancieras>();
+                List<O_OperTransaccionales> Lst_Operaciones;
+                Lst_Operaciones = NO_OperTransaccionales.ListarPorCodigo(vl_Codigo, vl_FDesde, vl_FHasta).ToList<O_OperTransaccionales>();
                 do
                 {
                     switch (vl_PerUso)
@@ -781,7 +781,7 @@ namespace MOFIN
                     foreach (object obj in BS_OHistPerfOperac)
                     {
                         r_HistPerfOperac = BS_OHistPerfOperac.Current as O_HistPerfOperac;
-                        if (r_HistPerfOperac.Tipo_Perfil == 1 & r_HistPerfOperac.Cod_Cliente == vl_Codigo &
+                        if (r_HistPerfOperac.Tipo_Perfil == 2 & r_HistPerfOperac.Cod_Cliente == vl_Codigo &
                             r_HistPerfOperac.Fecha.Date >= vl_GrupoFDesde.Date & r_HistPerfOperac.Fecha.Date <= vl_GrupoFHasta)
                         {
                             vl_PerFinMonto = r_HistPerfOperac.Mto_Perfil;
@@ -811,9 +811,9 @@ namespace MOFIN
                         foreach (var r_Operacion in Lst_GrupoOperaciones)
                         {
                             if (r_Operacion.Tipo_Orden.Trim() == "ABO")
-                                vl_Compras = vl_Compras + (decimal)r_Operacion.Efectivo;
+                                vl_Compras = vl_Compras + (decimal)r_Operacion.Valor_Efectivo;
                             else
-                                vl_Ventas = vl_Ventas + (decimal)r_Operacion.Efectivo;
+                                vl_Ventas = vl_Ventas + (decimal)r_Operacion.Valor_Efectivo;
                             vl_NroOper = vl_NroOper + 1;
                             vl_FecUltOperac = r_Operacion.Fec_Pacto.Date;
 
@@ -833,7 +833,7 @@ namespace MOFIN
                         foreach (object obj in BS_OObservaciones)
                         {
                             r_Observaciones = BS_OObservaciones.Current as O_Observaciones;
-                            if (r_Observaciones.Tipo_Perfil == 1 & r_Observaciones.Cod_Cliente == vl_Codigo &
+                            if (r_Observaciones.Tipo_Perfil == 2 & r_Observaciones.Cod_Cliente == vl_Codigo &
                                 r_Observaciones.fecha.Date >= vl_GrupoFDesde.Date & r_Observaciones.fecha.Date <= vl_GrupoFHasta)
                                 vl_Obsers = vl_Obsers + r_Observaciones.fecha.ToShortDateString() + ": " + r_Observaciones.Observacion.Trim() + " \n";
                             BS_OObservaciones.MoveNext();
@@ -855,7 +855,7 @@ namespace MOFIN
                             BS_MNivelRiesgo.DataSource = NM_NivelRiesgo.GetById(vl_NivelRiesgo);
                             r_NiveldeRiesgo = BS_MNivelRiesgo.Current as M_NivelRiesgo;
 
-                            Lst_OperFinancieras.Add(new O_RepOperacional()
+                            Lst_OperTransaccionales.Add(new O_RepOperacional()
                             {
                                 Alarma = vl_Alarma,
                                 Fec_Generacion = vl_FecGeneracion,
@@ -879,7 +879,7 @@ namespace MOFIN
 
                 } while (vl_GrupoFHasta.Date < vl_FHasta.Date);
             }
-            Grd_MonitorFinanciero.DataSource = Lst_OperFinancieras;
+            Grd_MonitorFinanciero.DataSource = Lst_OperTransaccionales;
 
             ///
             /// Procdimiento de coloreado de las celdas del grid de Reporte Financiero

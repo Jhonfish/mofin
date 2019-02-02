@@ -6,15 +6,15 @@
     <edmx:Diagrams>
       <Diagram DiagramId="54e3dcb7c3124385addc422b81b21f20" Name="Diagram1">
         <EntityTypeShape EntityType="EntornoModel.Emp_Accesos" Width="1.5" PointX="8.5" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EntornoModel.Empresas" Width="1.5" PointX="6.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EntornoModel.Empresas" Width="1.5" PointX="6.375" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="EntornoModel.Grupo_Opciones" Width="1.5" PointX="2.625" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="EntornoModel.Grupos" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="EntornoModel.Idiomas" Width="1.5" PointX="6.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="EntornoModel.Idiomas" Width="1.5" PointX="0.5" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="EntornoModel.Usuarios" Width="1.5" PointX="4.5" PointY="0.5" IsExpanded="true" />
         <AssociationConnector Association="EntornoModel.FK_Emp_Accesos_Empresas" ManuallyRouted="false" />
         <AssociationConnector Association="EntornoModel.FK_Grupo_Opciones_Grupos" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="EntornoModel.Opc_Sistema" Width="1.5" PointX="8.5" PointY="3.625" />
-        <EntityTypeShape EntityType="EntornoModel.sysdiagrams" Width="1.5" PointX="5.375" PointY="6.75" />
+        <EntityTypeShape EntityType="EntornoModel.Opc_Sistema" Width="1.5" PointX="8.5" PointY="2.875" />
+        <EntityTypeShape EntityType="EntornoModel.sysdiagrams" Width="1.5" PointX="4.5" PointY="3.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -29,6 +29,9 @@
           <Property Name="Telefono2" Type="varchar" MaxLength="20" />
           <Property Name="Direccion" Type="varchar" MaxLength="60" />
           <Property Name="Logo" Type="varchar" MaxLength="254" />
+          <Property Name="Cad_Conexion" Type="varchar" MaxLength="255" />
+          <Property Name="Proveedor" Type="varchar" MaxLength="100" />
+          <Property Name="Metadata" Type="varchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="Grupo_Opciones">
           <Key>
@@ -64,10 +67,12 @@
           <Property Name="OperFinanc_M" Type="bit" />
           <Property Name="OperFinanc_E" Type="bit" />
           <Property Name="OperFinanc_P" Type="bit" />
+          <Property Name="OperFinanc_R" Type="bit" />
           <Property Name="OperTransac_I" Type="bit" />
           <Property Name="OperTransac_M" Type="bit" />
           <Property Name="OperTransac_E" Type="bit" />
           <Property Name="OperTransac_P" Type="bit" />
+          <Property Name="OperTransac_R" Type="bit" />
         </EntityType>
         <EntityType Name="Grupos">
           <Key>
@@ -202,6 +207,9 @@
           <Property Name="Telefono2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Direccion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
           <Property Name="Logo" Type="String" MaxLength="254" FixedLength="false" Unicode="false" />
+          <Property Name="Cad_Conexion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Proveedor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Metadata" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Grupo_Opciones">
           <Key>
@@ -241,6 +249,8 @@
           <Property Name="OperTransac_M" Type="Boolean" />
           <Property Name="OperTransac_E" Type="Boolean" />
           <Property Name="OperTransac_P" Type="Boolean" />
+          <Property Name="OperFinanc_R" Type="Boolean" />
+          <Property Name="OperTransac_R" Type="Boolean" />
         </EntityType>
         <EntityType Name="Grupos">
           <Key>
@@ -366,6 +376,9 @@
           <EntitySetMapping Name="Empresas">
             <EntityTypeMapping TypeName="EntornoModel.Empresas">
               <MappingFragment StoreEntitySet="Empresas">
+                <ScalarProperty Name="Metadata" ColumnName="Metadata" />
+                <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+                <ScalarProperty Name="Cad_Conexion" ColumnName="Cad_Conexion" />
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -383,6 +396,8 @@
           <EntitySetMapping Name="Grupo_Opciones">
             <EntityTypeMapping TypeName="EntornoModel.Grupo_Opciones">
               <MappingFragment StoreEntitySet="Grupo_Opciones">
+                <ScalarProperty Name="OperTransac_R" ColumnName="OperTransac_R" />
+                <ScalarProperty Name="OperFinanc_R" ColumnName="OperFinanc_R" />
                 <ScalarProperty Name="OperTransac_P" ColumnName="OperTransac_P" />
                 <ScalarProperty Name="OperTransac_E" ColumnName="OperTransac_E" />
                 <ScalarProperty Name="OperTransac_M" ColumnName="OperTransac_M" />

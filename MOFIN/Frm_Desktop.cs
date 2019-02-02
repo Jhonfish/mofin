@@ -9,15 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using MOFIN_LIB;
+using MofinNegocios;
+using MofinModelo;
+using MofinModeloEntorno;
+
 
 namespace MOFIN
 {
     public partial class Frm_Desktop : MetroForm
     {
         private int childFormNumber = 0;
+        Grupos r_GrupoOpciones = new Grupos();
 
         public Frm_Desktop()
         {
+
             InitializeComponent();
             this.Asigna_Nombres(null, null);
             //TS_MenuPrincipal.ForeColor = Color.White; ;
@@ -105,6 +111,15 @@ namespace MOFIN
 
         private void Frm_Desktop_Load(object sender, EventArgs e)
         {
+            this.ActualizaMenu();
+            TS_MenuPrincipal.Visible = false;
+            var sesion = new Frm_SeleccionEmpresa();
+            sesion.ShowDialog();
+            if (sesion.DialogResult != DialogResult.OK)
+            {
+                this.Close();
+            }
+            TS_MenuPrincipal.Visible = true;
         }
 
 
@@ -160,6 +175,32 @@ namespace MOFIN
             Form childForm = new Frm_OpeFinancieras();
             childForm.MdiParent = this;
             childForm.Show();
+        }
+        private void Ope_Transaccionales_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Frm_OpeTransac();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
+        public void ActualizaMenu()
+        {
+            BS_Grupos.DataSource = NGrupos.ListarPorCodigo(MOFIN_LIB.Entorno.vs_Grupo);
+            r_GrupoOpciones = BS_Grupos.Current as Grupos;
+
+            Mnu_Clientes.Enabled = r_GrupoOpciones.Clientes == null ? false : (bool)r_GrupoOpciones.Clientes;
+                Cli_Monitor.Enabled = r_GrupoOpciones.Cli_Monitor == null ? false : (bool)r_GrupoOpciones.Cli_Monitor;
+                Cli_Busqueda.Enabled = r_GrupoOpciones.Cli_Busqueda == null ? false : (bool)r_GrupoOpciones.Cli_Busqueda;
+            Mnu_Operaciones.Enabled = r_GrupoOpciones.Mon_Operaciones == null ? false : (bool)r_GrupoOpciones.Mon_Operaciones;
+                Ope_Financieras.Enabled = r_GrupoOpciones.Mon_Financiero == null ? false : (bool)r_GrupoOpciones.Mon_Financiero;
+                Ope_Transaccionales.Enabled = r_GrupoOpciones.Mon_Operacional == null ? false : (bool)r_GrupoOpciones.Mon_Operacional;
+            Mnu_TablasMaestras.Enabled = r_GrupoOpciones.Tablas_Maestras == null ? false : (bool)r_GrupoOpciones.Tablas_Maestras;
+                Mnu_TablasMaestras.Visible = MOFIN_LIB.Entorno.vs_Maestro;
+                Tab_Maestros.Enabled = r_GrupoOpciones.Tab_Maestras == null ? false : (bool)r_GrupoOpciones.Tab_Maestras;
+            Mnu_Herramientas.Enabled = r_GrupoOpciones.Opc_Sistema == null ? false : (bool)r_GrupoOpciones.Opc_Sistema;
+                Her_Empresas.Enabled = r_GrupoOpciones.Ops_Empresas == null ? false : (bool)r_GrupoOpciones.Ops_Empresas;
+                Her_Grupos.Enabled = r_GrupoOpciones.Ops_Grupos == null ? false : (bool)r_GrupoOpciones.Ops_Grupos;
+                Her_Usuarios.Enabled = r_GrupoOpciones.Ops_Usuarios == null ? false : (bool)r_GrupoOpciones.Ops_Usuarios;
         }
 
         private void CambiaImagen()
@@ -241,5 +282,6 @@ namespace MOFIN
             //            MOFIN_LIB.Funciones.TTT_Btn(Btn_Aceptar, MOFIN_LIB.Funciones._Mens_Idioma(141));
             //            MOFIN_LIB.Funciones.TTT_Btn(Btn_Cancelar, MOFIN_LIB.Funciones._Mens_Idioma(142));
         }
+
     }
 }

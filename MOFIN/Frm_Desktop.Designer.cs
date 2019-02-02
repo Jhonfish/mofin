@@ -77,8 +77,10 @@
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.Lbl_Detalle1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.BS_Grupos = new System.Windows.Forms.BindingSource(this.components);
             this.TS_MenuPrincipal.SuspendLayout();
             this.SS_BarradeEstadoPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupos)).BeginInit();
             this.SuspendLayout();
             // 
             // TS_MenuPrincipal
@@ -325,6 +327,7 @@
             this.Ope_Transaccionales.Name = "Ope_Transaccionales";
             this.Ope_Transaccionales.Size = new System.Drawing.Size(196, 22);
             this.Ope_Transaccionales.Text = "Transaccionales";
+            this.Ope_Transaccionales.Click += new System.EventHandler(this.Ope_Transaccionales_Click);
             // 
             // Mnu_TablasMaestras
             // 
@@ -333,7 +336,6 @@
             this.Mnu_TablasMaestras.Name = "Mnu_TablasMaestras";
             this.Mnu_TablasMaestras.Size = new System.Drawing.Size(140, 20);
             this.Mnu_TablasMaestras.Text = "Tablas &Maestras";
-            this.Mnu_TablasMaestras.Visible = MOFIN_LIB.Entorno.vs_Maestro;
             // 
             // Tab_Maestros
             // 
@@ -470,6 +472,10 @@
             this.Lbl_Detalle1.Size = new System.Drawing.Size(208, 17);
             this.Lbl_Detalle1.Text = "Empresa / Usuario / Grupo";
             // 
+            // BS_Grupos
+            // 
+            this.BS_Grupos.DataSource = typeof(MofinModeloEntorno.Grupos);
+            // 
             // Frm_Desktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -495,6 +501,7 @@
             this.TS_MenuPrincipal.PerformLayout();
             this.SS_BarradeEstadoPrincipal.ResumeLayout(false);
             this.SS_BarradeEstadoPrincipal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -549,6 +556,7 @@
         private System.Windows.Forms.ToolStripMenuItem Cli_Monitor;
         private System.Windows.Forms.ToolStripMenuItem Cli_Busqueda;
         public System.Windows.Forms.ToolStripStatusLabel Lbl_Detalle1;
+        private System.Windows.Forms.BindingSource BS_Grupos;
     }
 }
 

@@ -131,6 +131,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -177,6 +178,12 @@
     <Compile Include="Frm_Grupos.Designer.cs">
       <DependentUpon>Frm_Grupos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_OpeTransac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_OpeTransac.Designer.cs">
+      <DependentUpon>Frm_OpeTransac.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_OpeFinancieras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +224,12 @@
     <Compile Include="Prueba.Designer.cs">
       <DependentUpon>Prueba.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\Reportes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -227,6 +240,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Rpt_OpeFinanc_Clientes.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Vistaprevia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistaprevia.Designer.cs">
+      <DependentUpon>Vistaprevia.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Frm_BusqPersonas.resx">
       <DependentUpon>Frm_BusqPersonas.cs</DependentUpon>
@@ -242,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Grupos.resx">
       <DependentUpon>Frm_Grupos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_OpeTransac.resx">
+      <DependentUpon>Frm_OpeTransac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_OpeFinancieras.resx">
       <DependentUpon>Frm_OpeFinancieras.cs</DependentUpon>
@@ -267,9 +289,16 @@
     <EmbeddedResource Include="Prueba.resx">
       <DependentUpon>Prueba.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Rpt_OpeFinanc_Clientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Rpt_OpeFinanc_Clientes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistaprevia.resx">
+      <DependentUpon>Vistaprevia.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="EntornoDataSet.xsc">
       <DependentUpon>EntornoDataSet.xsd</DependentUpon>

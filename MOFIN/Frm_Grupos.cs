@@ -83,6 +83,7 @@ namespace MOFIN
             }
             this.Modo_Consulta();
             BS_Grupos.DataSource = NGrupos.Listar();
+            
         }
 
         private void Btn_Cancelar_Click(object sender, EventArgs e)
