@@ -25,6 +25,7 @@ namespace MOFIN
         {
 
             InitializeComponent();
+            this.CambiaImagen();
             this.Asigna_Nombres(null, null);
             //TS_MenuPrincipal.ForeColor = Color.White; ;
         }
@@ -120,6 +121,7 @@ namespace MOFIN
                 this.Close();
             }
             TS_MenuPrincipal.Visible = true;
+            this.Lbl_Detalle1.Text = Entorno.vs_Empresa+ " / "+ Entorno.vs_Usuario+ " / "+ Entorno.vs_Grupo;
         }
 
 
@@ -206,28 +208,54 @@ namespace MOFIN
         private void CambiaImagen()
         {
             Random vl_Rnd = new Random();
-            int aleatorio = vl_Rnd.Next(0, 4);
-            switch (vl_Rnd.ToString())
+            int aleatorio = vl_Rnd.Next(0, 14);
+            switch (aleatorio)
             {
-                case "0":
+                case 0:
                     this.BackgroundImage = global::MOFIN.Properties.Resources.desktop0;
                     break;
-                case "1":
+                case 1:
                     this.BackgroundImage = global::MOFIN.Properties.Resources.desktop1;
                     break;
-                case "2":
+                case 2:
                     this.BackgroundImage = global::MOFIN.Properties.Resources.desktop2;
                     break;
-                case "3":
+                case 3:
                     this.BackgroundImage = global::MOFIN.Properties.Resources.desktop3;
                     break;
-                case "4":
+                case 4:
                     this.BackgroundImage = global::MOFIN.Properties.Resources.desktop4;
                     break;
-                    /*                case "5":
-                                        this.BackgroundImage = global::MOFIN.Properties.Resources.desktop5;
-                                        break;
-                     */
+                case 5:
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop5;
+                    break;
+                case 6:
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop6;
+                    break;
+                case 7:
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop7;
+                    break;
+                case 8:
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop8;
+                    break;
+                case 9:
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop9;
+                    break;
+                case 10:
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop10;
+                    break;
+                case 11:
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop11;
+                    break;
+                case 12:
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop12;
+                    break;
+                case 13:
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop13;
+                    break;
+                case 14:
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop14;
+                    break;
             }
 
         }
@@ -260,7 +288,7 @@ namespace MOFIN
 
             this.Mnu_Operaciones.Text = MOFIN_LIB.Funciones._Mens_Idioma(2331);
                 this.Ope_Financieras.Text = MOFIN_LIB.Funciones._Mens_Idioma(13000);
-                this.Ope_Transaccionales.Text = MOFIN_LIB.Funciones._Mens_Idioma(2333);
+                this.Ope_Transaccionales.Text = MOFIN_LIB.Funciones._Mens_Idioma(14000);
 
             this.Mnu_TablasMaestras.Text = MOFIN_LIB.Funciones._Mens_Idioma(2341);
                 this.Tab_Maestros.Text = MOFIN_LIB.Funciones._Mens_Idioma(10001);
@@ -283,5 +311,9 @@ namespace MOFIN
             //            MOFIN_LIB.Funciones.TTT_Btn(Btn_Cancelar, MOFIN_LIB.Funciones._Mens_Idioma(142));
         }
 
+        private void cambiaFondoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.CambiaImagen();
+        }
     }
 }

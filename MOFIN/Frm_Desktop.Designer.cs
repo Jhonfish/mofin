@@ -78,6 +78,7 @@
             this.Lbl_Detalle1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.BS_Grupos = new System.Windows.Forms.BindingSource(this.components);
+            this.cambiaFondoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TS_MenuPrincipal.SuspendLayout();
             this.SS_BarradeEstadoPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupos)).BeginInit();
@@ -429,7 +430,8 @@
             // 
             this.Mnu_Ayuda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator8,
-            this.Ayu_Acerca});
+            this.Ayu_Acerca,
+            this.cambiaFondoToolStripMenuItem});
             this.Mnu_Ayuda.Name = "Mnu_Ayuda";
             this.Mnu_Ayuda.Size = new System.Drawing.Size(60, 20);
             this.Mnu_Ayuda.Text = "Ay&uda";
@@ -476,11 +478,18 @@
             // 
             this.BS_Grupos.DataSource = typeof(MofinModeloEntorno.Grupos);
             // 
+            // cambiaFondoToolStripMenuItem
+            // 
+            this.cambiaFondoToolStripMenuItem.Name = "cambiaFondoToolStripMenuItem";
+            this.cambiaFondoToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.cambiaFondoToolStripMenuItem.Text = "Cambia Fondo";
+            this.cambiaFondoToolStripMenuItem.Click += new System.EventHandler(this.cambiaFondoToolStripMenuItem_Click);
+            // 
             // Frm_Desktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::MOFIN.Properties.Resources.desktop0;
+            this.BackgroundImage = global::MOFIN.Properties.Resources.desktop14;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(843, 558);
             this.Controls.Add(this.SS_BarradeEstadoPrincipal);
@@ -557,6 +566,7 @@
         private System.Windows.Forms.ToolStripMenuItem Cli_Busqueda;
         public System.Windows.Forms.ToolStripStatusLabel Lbl_Detalle1;
         private System.Windows.Forms.BindingSource BS_Grupos;
+        private System.Windows.Forms.ToolStripMenuItem cambiaFondoToolStripMenuItem;
     }
 }
 

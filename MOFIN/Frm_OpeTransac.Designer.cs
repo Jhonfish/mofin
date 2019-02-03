@@ -30,25 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_OpeTransac));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Tab_MonOperaciones = new System.Windows.Forms.TabControl();
             this.Pag1 = new System.Windows.Forms.TabPage();
             this.Pan_Pag1 = new System.Windows.Forms.Panel();
@@ -128,6 +130,19 @@
             this.Grd_Reporte = new System.Windows.Forms.DataGridView();
             this.Chk_ElimOper = new System.Windows.Forms.CheckBox();
             this.Grd_DetOperaciones = new System.Windows.Forms.DataGridView();
+            this.Col3_TipOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_FecPacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_DocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_TipOperacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_CodCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_FecCierre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_FecValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_Efectivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_MtoPactado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_GrpCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_Comprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_HoraCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_OOperTransaccionales = new System.Windows.Forms.BindingSource(this.components);
             this.Grd_ClieDetOper = new System.Windows.Forms.DataGridView();
             this.Col_CliCod3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -155,19 +170,6 @@
             this.reportes = new MOFIN.Reportes.Reportes();
             this.BS_opeFinanc_Clientes = new System.Windows.Forms.BindingSource(this.components);
             this.BS_Grupo_Opciones = new System.Windows.Forms.BindingSource(this.components);
-            this.Col3_TipOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_FecPacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_DocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_TipOperacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_CodCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_FecCierre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_FecValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_Efectivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_Comprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_MtoPactado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_GrpCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_HoraCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tab_MonOperaciones.SuspendLayout();
             this.Pag1.SuspendLayout();
             this.Pan_Pag1.SuspendLayout();
@@ -372,7 +374,7 @@
             this.Dtp_Hasta.Name = "Dtp_Hasta";
             this.Dtp_Hasta.Size = new System.Drawing.Size(115, 20);
             this.Dtp_Hasta.TabIndex = 15;
-            this.Dtp_Hasta.Value = new System.DateTime(2016, 12, 31, 0, 0, 0, 0);
+            this.Dtp_Hasta.Value = new System.DateTime(2019, 2, 3, 0, 0, 0, 0);
             // 
             // Dtp_Desde
             // 
@@ -381,7 +383,7 @@
             this.Dtp_Desde.Name = "Dtp_Desde";
             this.Dtp_Desde.Size = new System.Drawing.Size(115, 20);
             this.Dtp_Desde.TabIndex = 14;
-            this.Dtp_Desde.Value = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
+            this.Dtp_Desde.Value = new System.DateTime(2019, 2, 3, 0, 0, 0, 0);
             // 
             // Chk_Exportar
             // 
@@ -468,14 +470,14 @@
             this.Grd_MonitorFinanciero.AllowUserToOrderColumns = true;
             this.Grd_MonitorFinanciero.AutoGenerateColumns = false;
             this.Grd_MonitorFinanciero.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grd_MonitorFinanciero.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grd_MonitorFinanciero.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Grd_MonitorFinanciero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grd_MonitorFinanciero.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_Alarma,
@@ -497,14 +499,14 @@
             this.Col_Ejecutivo,
             this.Col_Comentarios});
             this.Grd_MonitorFinanciero.DataSource = this.BS_RepOperacional;
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Grd_MonitorFinanciero.DefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Grd_MonitorFinanciero.DefaultCellStyle = dataGridViewCellStyle17;
             this.Grd_MonitorFinanciero.Location = new System.Drawing.Point(381, 27);
             this.Grd_MonitorFinanciero.Name = "Grd_MonitorFinanciero";
             this.Grd_MonitorFinanciero.ReadOnly = true;
@@ -515,8 +517,8 @@
             // Col_Alarma
             // 
             this.Col_Alarma.DataPropertyName = "Alarma";
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Col_Alarma.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Col_Alarma.DefaultCellStyle = dataGridViewCellStyle2;
             this.Col_Alarma.FillWeight = 75F;
             this.Col_Alarma.HeaderText = "Alarma";
             this.Col_Alarma.Name = "Col_Alarma";
@@ -526,8 +528,8 @@
             // Col_FecGenera
             // 
             this.Col_FecGenera.DataPropertyName = "Fec_Generacion";
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Col_FecGenera.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Col_FecGenera.DefaultCellStyle = dataGridViewCellStyle3;
             this.Col_FecGenera.HeaderText = "Fec_Generacion";
             this.Col_FecGenera.Name = "Col_FecGenera";
             this.Col_FecGenera.ReadOnly = true;
@@ -535,8 +537,8 @@
             // Col_FecUltOper
             // 
             this.Col_FecUltOper.DataPropertyName = "Fec_UltOperac";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Col_FecUltOper.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Col_FecUltOper.DefaultCellStyle = dataGridViewCellStyle4;
             this.Col_FecUltOper.HeaderText = "Fec_UltOperac";
             this.Col_FecUltOper.Name = "Col_FecUltOper";
             this.Col_FecUltOper.ReadOnly = true;
@@ -544,8 +546,8 @@
             // Col_Codigo
             // 
             this.Col_Codigo.DataPropertyName = "Cod_Cliente";
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Col_Codigo.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Col_Codigo.DefaultCellStyle = dataGridViewCellStyle5;
             this.Col_Codigo.HeaderText = "Cod_Cliente";
             this.Col_Codigo.Name = "Col_Codigo";
             this.Col_Codigo.ReadOnly = true;
@@ -562,8 +564,8 @@
             // Col_DocID
             // 
             this.Col_DocID.DataPropertyName = "Doc_ID";
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Col_DocID.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Col_DocID.DefaultCellStyle = dataGridViewCellStyle6;
             this.Col_DocID.HeaderText = "Doc_ID";
             this.Col_DocID.Name = "Col_DocID";
             this.Col_DocID.ReadOnly = true;
@@ -571,8 +573,8 @@
             // Col_Nivriesgo
             // 
             this.Col_Nivriesgo.DataPropertyName = "Niv_Riesgo";
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Col_Nivriesgo.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Col_Nivriesgo.DefaultCellStyle = dataGridViewCellStyle7;
             this.Col_Nivriesgo.HeaderText = "Niv_Riesgo";
             this.Col_Nivriesgo.Name = "Col_Nivriesgo";
             this.Col_Nivriesgo.ReadOnly = true;
@@ -580,8 +582,8 @@
             // Col_PerUsoCta
             // 
             this.Col_PerUsoCta.DataPropertyName = "Period_UsoCta";
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Col_PerUsoCta.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Col_PerUsoCta.DefaultCellStyle = dataGridViewCellStyle8;
             this.Col_PerUsoCta.HeaderText = "Period_UsoCta";
             this.Col_PerUsoCta.Name = "Col_PerUsoCta";
             this.Col_PerUsoCta.ReadOnly = true;
@@ -589,8 +591,8 @@
             // Col_NroTrans
             // 
             this.Col_NroTrans.DataPropertyName = "Nro_Transac";
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Col_NroTrans.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Col_NroTrans.DefaultCellStyle = dataGridViewCellStyle9;
             this.Col_NroTrans.HeaderText = "Nro_Transac";
             this.Col_NroTrans.Name = "Col_NroTrans";
             this.Col_NroTrans.ReadOnly = true;
@@ -598,8 +600,8 @@
             // Col_PerfNroTrans
             // 
             this.Col_PerfNroTrans.DataPropertyName = "Perf_NroTransac";
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Col_PerfNroTrans.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Col_PerfNroTrans.DefaultCellStyle = dataGridViewCellStyle10;
             this.Col_PerfNroTrans.HeaderText = "Perf_NroTransac";
             this.Col_PerfNroTrans.Name = "Col_PerfNroTrans";
             this.Col_PerfNroTrans.ReadOnly = true;
@@ -607,10 +609,10 @@
             // Col_PorcNroTrans
             // 
             this.Col_PorcNroTrans.DataPropertyName = "Porc_Transac";
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle31.Format = "N2";
-            dataGridViewCellStyle31.NullValue = null;
-            this.Col_PorcNroTrans.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Format = "N2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.Col_PorcNroTrans.DefaultCellStyle = dataGridViewCellStyle11;
             this.Col_PorcNroTrans.HeaderText = "Porc_Transac";
             this.Col_PorcNroTrans.Name = "Col_PorcNroTrans";
             this.Col_PorcNroTrans.ReadOnly = true;
@@ -618,10 +620,10 @@
             // Col_MtoCompras
             // 
             this.Col_MtoCompras.DataPropertyName = "Mto_Compras";
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle32.Format = "N2";
-            dataGridViewCellStyle32.NullValue = null;
-            this.Col_MtoCompras.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.Format = "N2";
+            dataGridViewCellStyle12.NullValue = null;
+            this.Col_MtoCompras.DefaultCellStyle = dataGridViewCellStyle12;
             this.Col_MtoCompras.HeaderText = "Mto_Compras";
             this.Col_MtoCompras.Name = "Col_MtoCompras";
             this.Col_MtoCompras.ReadOnly = true;
@@ -629,10 +631,10 @@
             // Col_MtoVentas
             // 
             this.Col_MtoVentas.DataPropertyName = "Mto_Ventas";
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle33.Format = "N2";
-            dataGridViewCellStyle33.NullValue = null;
-            this.Col_MtoVentas.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle13.Format = "N2";
+            dataGridViewCellStyle13.NullValue = null;
+            this.Col_MtoVentas.DefaultCellStyle = dataGridViewCellStyle13;
             this.Col_MtoVentas.HeaderText = "Mto_Ventas";
             this.Col_MtoVentas.Name = "Col_MtoVentas";
             this.Col_MtoVentas.ReadOnly = true;
@@ -640,10 +642,10 @@
             // Col_TotalOperac
             // 
             this.Col_TotalOperac.DataPropertyName = "Tot_Operaciones";
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle34.Format = "N2";
-            dataGridViewCellStyle34.NullValue = null;
-            this.Col_TotalOperac.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.Format = "N2";
+            dataGridViewCellStyle14.NullValue = null;
+            this.Col_TotalOperac.DefaultCellStyle = dataGridViewCellStyle14;
             this.Col_TotalOperac.HeaderText = "Tot_Operaciones";
             this.Col_TotalOperac.Name = "Col_TotalOperac";
             this.Col_TotalOperac.ReadOnly = true;
@@ -651,10 +653,10 @@
             // Col_PerfFinanciero
             // 
             this.Col_PerfFinanciero.DataPropertyName = "Perf_Financiero";
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle35.Format = "N2";
-            dataGridViewCellStyle35.NullValue = null;
-            this.Col_PerfFinanciero.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle15.Format = "N2";
+            dataGridViewCellStyle15.NullValue = null;
+            this.Col_PerfFinanciero.DefaultCellStyle = dataGridViewCellStyle15;
             this.Col_PerfFinanciero.HeaderText = "Perf_Financiero";
             this.Col_PerfFinanciero.Name = "Col_PerfFinanciero";
             this.Col_PerfFinanciero.ReadOnly = true;
@@ -662,10 +664,10 @@
             // Col_PorcOperaciones
             // 
             this.Col_PorcOperaciones.DataPropertyName = "Porc_Operaciones";
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle36.Format = "N2";
-            dataGridViewCellStyle36.NullValue = null;
-            this.Col_PorcOperaciones.DefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.Format = "N2";
+            dataGridViewCellStyle16.NullValue = null;
+            this.Col_PorcOperaciones.DefaultCellStyle = dataGridViewCellStyle16;
             this.Col_PorcOperaciones.HeaderText = "Porc_Operaciones";
             this.Col_PorcOperaciones.Name = "Col_PorcOperaciones";
             this.Col_PorcOperaciones.ReadOnly = true;
@@ -782,10 +784,10 @@
             // Col_PerMto
             // 
             this.Col_PerMto.DataPropertyName = "Mto_Perfil";
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle38.Format = "N2";
-            dataGridViewCellStyle38.NullValue = null;
-            this.Col_PerMto.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle18.Format = "N2";
+            dataGridViewCellStyle18.NullValue = null;
+            this.Col_PerMto.DefaultCellStyle = dataGridViewCellStyle18;
             this.Col_PerMto.HeaderText = "Mto_Perfil";
             this.Col_PerMto.Name = "Col_PerMto";
             this.Col_PerMto.ReadOnly = true;
@@ -802,6 +804,7 @@
             // 
             this.Col_PerRiesgo.DataPropertyName = "Nivel_Riesgo";
             this.Col_PerRiesgo.HeaderText = "Nivel_Riesgo";
+            this.Col_PerRiesgo.MaxInputLength = 20;
             this.Col_PerRiesgo.Name = "Col_PerRiesgo";
             this.Col_PerRiesgo.ReadOnly = true;
             this.Col_PerRiesgo.Width = 249;
@@ -1140,14 +1143,14 @@
             this.Grd_DetOperaciones.AllowUserToOrderColumns = true;
             this.Grd_DetOperaciones.AutoGenerateColumns = false;
             this.Grd_DetOperaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grd_DetOperaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grd_DetOperaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.Grd_DetOperaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grd_DetOperaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col3_TipOrden,
@@ -1159,9 +1162,9 @@
             this.Col3_FecCierre,
             this.Col3_FecValor,
             this.Col3_Efectivo,
-            this.Col3_Comprobante,
             this.Col3_MtoPactado,
             this.Col3_GrpCliente,
+            this.Col3_Comprobante,
             this.Col3_HoraCarga});
             this.Grd_DetOperaciones.DataSource = this.BS_OOperTransaccionales;
             this.Grd_DetOperaciones.Location = new System.Drawing.Point(376, 21);
@@ -1170,6 +1173,118 @@
             this.Grd_DetOperaciones.RowHeadersVisible = false;
             this.Grd_DetOperaciones.Size = new System.Drawing.Size(577, 405);
             this.Grd_DetOperaciones.TabIndex = 34;
+            // 
+            // Col3_TipOrden
+            // 
+            this.Col3_TipOrden.DataPropertyName = "Tipo_Orden";
+            this.Col3_TipOrden.HeaderText = "Tipo_Orden";
+            this.Col3_TipOrden.Name = "Col3_TipOrden";
+            this.Col3_TipOrden.ReadOnly = true;
+            this.Col3_TipOrden.Width = 102;
+            // 
+            // Col3_FecPacto
+            // 
+            this.Col3_FecPacto.DataPropertyName = "Fec_Pacto";
+            this.Col3_FecPacto.HeaderText = "Fec_Pacto";
+            this.Col3_FecPacto.Name = "Col3_FecPacto";
+            this.Col3_FecPacto.ReadOnly = true;
+            this.Col3_FecPacto.Width = 95;
+            // 
+            // Col3_DocID
+            // 
+            this.Col3_DocID.DataPropertyName = "Doc_ID";
+            this.Col3_DocID.HeaderText = "Doc_ID";
+            this.Col3_DocID.Name = "Col3_DocID";
+            this.Col3_DocID.ReadOnly = true;
+            this.Col3_DocID.Width = 74;
+            // 
+            // Col3_TipOperacion
+            // 
+            this.Col3_TipOperacion.DataPropertyName = "Tipo_Operacion";
+            this.Col3_TipOperacion.HeaderText = "Tipo_Operacion";
+            this.Col3_TipOperacion.Name = "Col3_TipOperacion";
+            this.Col3_TipOperacion.ReadOnly = true;
+            this.Col3_TipOperacion.Width = 130;
+            // 
+            // Col3_CodCliente
+            // 
+            this.Col3_CodCliente.DataPropertyName = "Cod_Cliente";
+            this.Col3_CodCliente.HeaderText = "Cod_Cliente";
+            this.Col3_CodCliente.Name = "Col3_CodCliente";
+            this.Col3_CodCliente.ReadOnly = true;
+            this.Col3_CodCliente.Width = 109;
+            // 
+            // Col3_Nombre
+            // 
+            this.Col3_Nombre.DataPropertyName = "Nme_Cliente";
+            this.Col3_Nombre.HeaderText = "Nme_Cliente";
+            this.Col3_Nombre.Name = "Col3_Nombre";
+            this.Col3_Nombre.ReadOnly = true;
+            this.Col3_Nombre.Width = 109;
+            // 
+            // Col3_FecCierre
+            // 
+            this.Col3_FecCierre.DataPropertyName = "Fec_Cierre";
+            this.Col3_FecCierre.HeaderText = "Fec_Cierre";
+            this.Col3_FecCierre.Name = "Col3_FecCierre";
+            this.Col3_FecCierre.ReadOnly = true;
+            this.Col3_FecCierre.Width = 102;
+            // 
+            // Col3_FecValor
+            // 
+            this.Col3_FecValor.DataPropertyName = "Fec_Valor";
+            this.Col3_FecValor.HeaderText = "Fec_Valor";
+            this.Col3_FecValor.Name = "Col3_FecValor";
+            this.Col3_FecValor.ReadOnly = true;
+            this.Col3_FecValor.Width = 95;
+            // 
+            // Col3_Efectivo
+            // 
+            this.Col3_Efectivo.DataPropertyName = "Valor_Efectivo";
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle20.Format = "N2";
+            dataGridViewCellStyle20.NullValue = null;
+            this.Col3_Efectivo.DefaultCellStyle = dataGridViewCellStyle20;
+            this.Col3_Efectivo.HeaderText = "Valor_Efectivo";
+            this.Col3_Efectivo.Name = "Col3_Efectivo";
+            this.Col3_Efectivo.ReadOnly = true;
+            this.Col3_Efectivo.Width = 130;
+            // 
+            // Col3_MtoPactado
+            // 
+            this.Col3_MtoPactado.DataPropertyName = "Monto_Pactado";
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle21.Format = "N2";
+            dataGridViewCellStyle21.NullValue = null;
+            this.Col3_MtoPactado.DefaultCellStyle = dataGridViewCellStyle21;
+            this.Col3_MtoPactado.HeaderText = "Monto_Pactado";
+            this.Col3_MtoPactado.Name = "Col3_MtoPactado";
+            this.Col3_MtoPactado.ReadOnly = true;
+            this.Col3_MtoPactado.Width = 123;
+            // 
+            // Col3_GrpCliente
+            // 
+            this.Col3_GrpCliente.DataPropertyName = "Grp_Cliente";
+            this.Col3_GrpCliente.HeaderText = "Grp_Cliente";
+            this.Col3_GrpCliente.Name = "Col3_GrpCliente";
+            this.Col3_GrpCliente.ReadOnly = true;
+            this.Col3_GrpCliente.Width = 109;
+            // 
+            // Col3_Comprobante
+            // 
+            this.Col3_Comprobante.DataPropertyName = "Comprobante";
+            this.Col3_Comprobante.HeaderText = "Comprobante";
+            this.Col3_Comprobante.Name = "Col3_Comprobante";
+            this.Col3_Comprobante.ReadOnly = true;
+            this.Col3_Comprobante.Width = 109;
+            // 
+            // Col3_HoraCarga
+            // 
+            this.Col3_HoraCarga.DataPropertyName = "Hora_Carga";
+            this.Col3_HoraCarga.HeaderText = "Hora_Carga";
+            this.Col3_HoraCarga.Name = "Col3_HoraCarga";
+            this.Col3_HoraCarga.ReadOnly = true;
+            this.Col3_HoraCarga.Width = 102;
             // 
             // BS_OOperTransaccionales
             // 
@@ -1448,110 +1563,6 @@
             // 
             this.BS_Grupo_Opciones.DataSource = typeof(MofinModeloEntorno.Grupo_Opciones);
             // 
-            // Col3_TipOrden
-            // 
-            this.Col3_TipOrden.DataPropertyName = "Tipo_Orden";
-            this.Col3_TipOrden.HeaderText = "Tipo_Orden";
-            this.Col3_TipOrden.Name = "Col3_TipOrden";
-            this.Col3_TipOrden.ReadOnly = true;
-            this.Col3_TipOrden.Width = 102;
-            // 
-            // Col3_FecPacto
-            // 
-            this.Col3_FecPacto.DataPropertyName = "Fec_Pacto";
-            this.Col3_FecPacto.HeaderText = "Fec_Pacto";
-            this.Col3_FecPacto.Name = "Col3_FecPacto";
-            this.Col3_FecPacto.ReadOnly = true;
-            this.Col3_FecPacto.Width = 95;
-            // 
-            // Col3_DocID
-            // 
-            this.Col3_DocID.DataPropertyName = "Doc_ID";
-            this.Col3_DocID.HeaderText = "Doc_ID";
-            this.Col3_DocID.Name = "Col3_DocID";
-            this.Col3_DocID.ReadOnly = true;
-            this.Col3_DocID.Width = 74;
-            // 
-            // Col3_TipOperacion
-            // 
-            this.Col3_TipOperacion.DataPropertyName = "Tipo_Operacion";
-            this.Col3_TipOperacion.HeaderText = "Tipo_Operacion";
-            this.Col3_TipOperacion.Name = "Col3_TipOperacion";
-            this.Col3_TipOperacion.ReadOnly = true;
-            this.Col3_TipOperacion.Width = 130;
-            // 
-            // Col3_CodCliente
-            // 
-            this.Col3_CodCliente.DataPropertyName = "Cod_Cliente";
-            this.Col3_CodCliente.HeaderText = "Cod_Cliente";
-            this.Col3_CodCliente.Name = "Col3_CodCliente";
-            this.Col3_CodCliente.ReadOnly = true;
-            this.Col3_CodCliente.Width = 109;
-            // 
-            // Col3_Nombre
-            // 
-            this.Col3_Nombre.DataPropertyName = "Nme_Cliente";
-            this.Col3_Nombre.HeaderText = "Nme_Cliente";
-            this.Col3_Nombre.Name = "Col3_Nombre";
-            this.Col3_Nombre.ReadOnly = true;
-            this.Col3_Nombre.Width = 109;
-            // 
-            // Col3_FecCierre
-            // 
-            this.Col3_FecCierre.DataPropertyName = "Fec_Cierre";
-            this.Col3_FecCierre.HeaderText = "Fec_Cierre";
-            this.Col3_FecCierre.Name = "Col3_FecCierre";
-            this.Col3_FecCierre.ReadOnly = true;
-            this.Col3_FecCierre.Width = 102;
-            // 
-            // Col3_FecValor
-            // 
-            this.Col3_FecValor.DataPropertyName = "Fec_Valor";
-            this.Col3_FecValor.HeaderText = "Fec_Valor";
-            this.Col3_FecValor.Name = "Col3_FecValor";
-            this.Col3_FecValor.ReadOnly = true;
-            this.Col3_FecValor.Width = 95;
-            // 
-            // Col3_Efectivo
-            // 
-            this.Col3_Efectivo.DataPropertyName = "Valor_Efectivo";
-            this.Col3_Efectivo.HeaderText = "Valor_Efectivo";
-            this.Col3_Efectivo.Name = "Col3_Efectivo";
-            this.Col3_Efectivo.ReadOnly = true;
-            this.Col3_Efectivo.Width = 130;
-            // 
-            // Col3_Comprobante
-            // 
-            this.Col3_Comprobante.DataPropertyName = "Comprobante";
-            this.Col3_Comprobante.HeaderText = "Comprobante";
-            this.Col3_Comprobante.Name = "Col3_Comprobante";
-            this.Col3_Comprobante.ReadOnly = true;
-            this.Col3_Comprobante.Width = 109;
-            // 
-            // Col3_MtoPactado
-            // 
-            this.Col3_MtoPactado.DataPropertyName = "Monto_Pactado";
-            this.Col3_MtoPactado.HeaderText = "Monto_Pactado";
-            this.Col3_MtoPactado.Name = "Col3_MtoPactado";
-            this.Col3_MtoPactado.ReadOnly = true;
-            this.Col3_MtoPactado.Width = 123;
-            // 
-            // Col3_GrpCliente
-            // 
-            this.Col3_GrpCliente.DataPropertyName = "Grp_Cliente";
-            this.Col3_GrpCliente.HeaderText = "Grp_Cliente";
-            this.Col3_GrpCliente.Name = "Col3_GrpCliente";
-            this.Col3_GrpCliente.ReadOnly = true;
-            this.Col3_GrpCliente.Width = 109;
-            // 
-            // Col3_HoraCarga
-            // 
-            this.Col3_HoraCarga.DataPropertyName = "Hora_Carga";
-            this.Col3_HoraCarga.HeaderText = "Hora_Carga";
-            this.Col3_HoraCarga.Name = "Col3_HoraCarga";
-            this.Col3_HoraCarga.ReadOnly = true;
-            this.Col3_HoraCarga.Width = 102;
-            // 
             // Frm_OpeTransac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -1680,10 +1691,6 @@
         private System.Windows.Forms.Button Btn_Ocultar;
         private System.Windows.Forms.DataGridView Grd_Reporte;
         private System.Windows.Forms.BindingSource BS_RepOperacional;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_PerFec;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_PerMto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_PerNroTra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_PerRiesgo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Doc_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
@@ -1716,6 +1723,10 @@
         private System.Windows.Forms.BindingSource BS_opeFinanc_Clientes;
         private System.Windows.Forms.BindingSource BS_Grupo_Opciones;
         private System.Windows.Forms.BindingSource BS_OOperTransaccionales;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_PerFec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_PerMto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_PerNroTra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_PerRiesgo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col3_TipOrden;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col3_FecPacto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col3_DocID;
@@ -1725,9 +1736,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col3_FecCierre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col3_FecValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col3_Efectivo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_Comprobante;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col3_MtoPactado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col3_GrpCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_Comprobante;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col3_HoraCarga;
     }
 }

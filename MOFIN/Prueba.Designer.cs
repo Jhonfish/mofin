@@ -222,6 +222,5 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox Txt_Resultado;
         private System.Windows.Forms.DateTimePicker DTP_Fecha;
-        private MOFIN_Lib.OptionGroup Opc_Prueba;
     }
 }

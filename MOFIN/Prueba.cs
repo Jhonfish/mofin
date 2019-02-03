@@ -58,12 +58,12 @@ namespace MOFIN
 
         private void NUD_Valor_ValueChanged(object sender, EventArgs e)
         {
-            this.Opc_Prueba.Tag = this.NUD_Valor.Value.ToString();
+            //this.Opc_Prueba.Tag = this.NUD_Valor.Value.ToString();
         }
 
         private void TextBox1_Enter(object sender, EventArgs e)
         {
-            this.textBox1.Text = this.Opc_Prueba.Tag.ToString();
+            //this.textBox1.Text = this.Opc_Prueba.Tag.ToString();
         }
 
         private void Button2_Click(object sender, EventArgs e)

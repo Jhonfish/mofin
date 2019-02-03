@@ -57,6 +57,8 @@
             this.BS_Usuarios = new System.Windows.Forms.BindingSource(this.components);
             this.Pan_Elementos = new System.Windows.Forms.Panel();
             this.Grd_EmpAccesos = new System.Windows.Forms.DataGridView();
+            this.BS_Empresas = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_Grupos = new System.Windows.Forms.BindingSource(this.components);
             this.BS_Emp_Accesos = new System.Windows.Forms.BindingSource(this.components);
             this.Grp_FormatoFecha = new System.Windows.Forms.GroupBox();
             this.Opc_FormFec2 = new System.Windows.Forms.RadioButton();
@@ -74,24 +76,31 @@
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
             this.Txt_Password = new System.Windows.Forms.TextBox();
             this.BS_Grupo_Opciones = new System.Windows.Forms.BindingSource(this.components);
-            this.BS_Empresas = new System.Windows.Forms.BindingSource(this.components);
-            this.BS_Grupos = new System.Windows.Forms.BindingSource(this.components);
+            this.Pan_BtnsEmpAccesos = new System.Windows.Forms.Panel();
+            this.Btn_EmpAcc_Inc = new System.Windows.Forms.Button();
+            this.Btn_EmpAcc_Eli = new System.Windows.Forms.Button();
+            this.Btn_EmpAcc_Mod = new System.Windows.Forms.Button();
             this.iDUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_Empresa = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Col_Grupo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Pan_BotAcpcan_EmpAcc = new System.Windows.Forms.Panel();
+            this.Btn_EmpAcc_Cancelar = new System.Windows.Forms.Button();
+            this.Btn_EmpAcc_Aceptar = new System.Windows.Forms.Button();
             this.TS_BarraHerramientas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Usuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).BeginInit();
             this.Pan_Elementos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_EmpAccesos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Empresas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Emp_Accesos)).BeginInit();
             this.Grp_FormatoFecha.SuspendLayout();
             this.Grp_Pais.SuspendLayout();
             this.Grp_Idioma.SuspendLayout();
             this.Grp_Desktop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_Empresas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupos)).BeginInit();
+            this.Pan_BtnsEmpAccesos.SuspendLayout();
+            this.Pan_BotAcpcan_EmpAcc.SuspendLayout();
             this.SuspendLayout();
             // 
             // Lbl_IDUsuario
@@ -127,7 +136,7 @@
             // Lbl_FondoEscritorio
             // 
             this.Lbl_FondoEscritorio.AutoSize = true;
-            this.Lbl_FondoEscritorio.Location = new System.Drawing.Point(87, 105);
+            this.Lbl_FondoEscritorio.Location = new System.Drawing.Point(85, 105);
             this.Lbl_FondoEscritorio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_FondoEscritorio.Name = "Lbl_FondoEscritorio";
             this.Lbl_FondoEscritorio.Size = new System.Drawing.Size(168, 16);
@@ -137,7 +146,7 @@
             // Lbl_Idioma
             // 
             this.Lbl_Idioma.AutoSize = true;
-            this.Lbl_Idioma.Location = new System.Drawing.Point(335, 105);
+            this.Lbl_Idioma.Location = new System.Drawing.Point(304, 105);
             this.Lbl_Idioma.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_Idioma.Name = "Lbl_Idioma";
             this.Lbl_Idioma.Size = new System.Drawing.Size(64, 16);
@@ -147,7 +156,7 @@
             // Lbl_PaisUso
             // 
             this.Lbl_PaisUso.AutoSize = true;
-            this.Lbl_PaisUso.Location = new System.Drawing.Point(136, 190);
+            this.Lbl_PaisUso.Location = new System.Drawing.Point(85, 190);
             this.Lbl_PaisUso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_PaisUso.Name = "Lbl_PaisUso";
             this.Lbl_PaisUso.Size = new System.Drawing.Size(80, 16);
@@ -157,7 +166,7 @@
             // Lbl_FormatoFecha
             // 
             this.Lbl_FormatoFecha.AutoSize = true;
-            this.Lbl_FormatoFecha.Location = new System.Drawing.Point(303, 190);
+            this.Lbl_FormatoFecha.Location = new System.Drawing.Point(304, 190);
             this.Lbl_FormatoFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_FormatoFecha.Name = "Lbl_FormatoFecha";
             this.Lbl_FormatoFecha.Size = new System.Drawing.Size(144, 16);
@@ -173,7 +182,7 @@
             this.Btn_Cancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Btn_Cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Cancelar.Location = new System.Drawing.Point(186, 478);
+            this.Btn_Cancelar.Location = new System.Drawing.Point(183, 496);
             this.Btn_Cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Cancelar.Name = "Btn_Cancelar";
             this.Btn_Cancelar.Size = new System.Drawing.Size(38, 38);
@@ -192,7 +201,7 @@
             this.Btn_Aceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Btn_Aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Btn_Aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Aceptar.Location = new System.Drawing.Point(104, 478);
+            this.Btn_Aceptar.Location = new System.Drawing.Point(101, 496);
             this.Btn_Aceptar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Aceptar.Name = "Btn_Aceptar";
             this.Btn_Aceptar.Size = new System.Drawing.Size(38, 38);
@@ -340,7 +349,7 @@
             this.Grd_Usuarios.Name = "Grd_Usuarios";
             this.Grd_Usuarios.ReadOnly = true;
             this.Grd_Usuarios.RowHeadersVisible = false;
-            this.Grd_Usuarios.Size = new System.Drawing.Size(298, 394);
+            this.Grd_Usuarios.Size = new System.Drawing.Size(298, 412);
             this.Grd_Usuarios.TabIndex = 8;
             this.Grd_Usuarios.CurrentCellChanged += new System.EventHandler(this.Grd_Usuarios_CurrentCellChanged);
             // 
@@ -370,6 +379,7 @@
             // 
             // Pan_Elementos
             // 
+            this.Pan_Elementos.Controls.Add(this.Pan_BotAcpcan_EmpAcc);
             this.Pan_Elementos.Controls.Add(this.Grd_EmpAccesos);
             this.Pan_Elementos.Controls.Add(this.Grp_FormatoFecha);
             this.Pan_Elementos.Controls.Add(this.Grp_Pais);
@@ -382,6 +392,7 @@
             this.Pan_Elementos.Controls.Add(this.Txt_IDUsuario);
             this.Pan_Elementos.Controls.Add(this.Txt_Nombre);
             this.Pan_Elementos.Controls.Add(this.Txt_Password);
+            this.Pan_Elementos.Controls.Add(this.Pan_BtnsEmpAccesos);
             this.Pan_Elementos.Location = new System.Drawing.Point(330, 75);
             this.Pan_Elementos.Name = "Pan_Elementos";
             this.Pan_Elementos.Size = new System.Drawing.Size(477, 446);
@@ -389,6 +400,7 @@
             // 
             // Grd_EmpAccesos
             // 
+            this.Grd_EmpAccesos.AllowUserToAddRows = false;
             this.Grd_EmpAccesos.AllowUserToDeleteRows = false;
             this.Grd_EmpAccesos.AutoGenerateColumns = false;
             this.Grd_EmpAccesos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -397,12 +409,21 @@
             this.Col_Empresa,
             this.Col_Grupo});
             this.Grd_EmpAccesos.DataSource = this.BS_Emp_Accesos;
-            this.Grd_EmpAccesos.Location = new System.Drawing.Point(31, 281);
+            this.Grd_EmpAccesos.Location = new System.Drawing.Point(11, 277);
             this.Grd_EmpAccesos.MultiSelect = false;
             this.Grd_EmpAccesos.Name = "Grd_EmpAccesos";
+            this.Grd_EmpAccesos.ReadOnly = true;
             this.Grd_EmpAccesos.RowHeadersVisible = false;
-            this.Grd_EmpAccesos.Size = new System.Drawing.Size(416, 150);
+            this.Grd_EmpAccesos.Size = new System.Drawing.Size(459, 137);
             this.Grd_EmpAccesos.TabIndex = 50;
+            // 
+            // BS_Empresas
+            // 
+            this.BS_Empresas.DataSource = typeof(MofinModeloEntorno.Empresas);
+            // 
+            // BS_Grupos
+            // 
+            this.BS_Grupos.DataSource = typeof(MofinModeloEntorno.Grupos);
             // 
             // BS_Emp_Accesos
             // 
@@ -570,45 +591,149 @@
             // 
             this.BS_Grupo_Opciones.DataSource = typeof(MofinModeloEntorno.Grupo_Opciones);
             // 
-            // BS_Empresas
+            // Pan_BtnsEmpAccesos
             // 
-            this.BS_Empresas.DataSource = typeof(MofinModeloEntorno.Empresas);
+            this.Pan_BtnsEmpAccesos.Controls.Add(this.Btn_EmpAcc_Inc);
+            this.Pan_BtnsEmpAccesos.Controls.Add(this.Btn_EmpAcc_Eli);
+            this.Pan_BtnsEmpAccesos.Controls.Add(this.Btn_EmpAcc_Mod);
+            this.Pan_BtnsEmpAccesos.Location = new System.Drawing.Point(197, 413);
+            this.Pan_BtnsEmpAccesos.Name = "Pan_BtnsEmpAccesos";
+            this.Pan_BtnsEmpAccesos.Size = new System.Drawing.Size(99, 34);
+            this.Pan_BtnsEmpAccesos.TabIndex = 51;
+            this.Pan_BtnsEmpAccesos.Visible = false;
             // 
-            // BS_Grupos
+            // Btn_EmpAcc_Inc
             // 
-            this.BS_Grupos.DataSource = typeof(MofinModeloEntorno.Grupos);
+            this.Btn_EmpAcc_Inc.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_EmpAcc_Inc.BackgroundImage")));
+            this.Btn_EmpAcc_Inc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_EmpAcc_Inc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_EmpAcc_Inc.FlatAppearance.BorderSize = 0;
+            this.Btn_EmpAcc_Inc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Btn_EmpAcc_Inc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Btn_EmpAcc_Inc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_EmpAcc_Inc.Location = new System.Drawing.Point(4, 4);
+            this.Btn_EmpAcc_Inc.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_EmpAcc_Inc.Name = "Btn_EmpAcc_Inc";
+            this.Btn_EmpAcc_Inc.Size = new System.Drawing.Size(24, 24);
+            this.Btn_EmpAcc_Inc.TabIndex = 15;
+            this.Btn_EmpAcc_Inc.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_EmpAcc_Inc.UseVisualStyleBackColor = true;
+            this.Btn_EmpAcc_Inc.Click += new System.EventHandler(this.Btn_EmpAcc_Inc_Click);
+            // 
+            // Btn_EmpAcc_Eli
+            // 
+            this.Btn_EmpAcc_Eli.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_EmpAcc_Eli.BackgroundImage")));
+            this.Btn_EmpAcc_Eli.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_EmpAcc_Eli.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_EmpAcc_Eli.FlatAppearance.BorderSize = 0;
+            this.Btn_EmpAcc_Eli.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Btn_EmpAcc_Eli.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Btn_EmpAcc_Eli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_EmpAcc_Eli.Location = new System.Drawing.Point(68, 4);
+            this.Btn_EmpAcc_Eli.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_EmpAcc_Eli.Name = "Btn_EmpAcc_Eli";
+            this.Btn_EmpAcc_Eli.Size = new System.Drawing.Size(24, 24);
+            this.Btn_EmpAcc_Eli.TabIndex = 17;
+            this.Btn_EmpAcc_Eli.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_EmpAcc_Eli.UseVisualStyleBackColor = true;
+            this.Btn_EmpAcc_Eli.Click += new System.EventHandler(this.Btn_EmpAcc_Eli_Click);
+            // 
+            // Btn_EmpAcc_Mod
+            // 
+            this.Btn_EmpAcc_Mod.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_EmpAcc_Mod.BackgroundImage")));
+            this.Btn_EmpAcc_Mod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_EmpAcc_Mod.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_EmpAcc_Mod.FlatAppearance.BorderSize = 0;
+            this.Btn_EmpAcc_Mod.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Btn_EmpAcc_Mod.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Btn_EmpAcc_Mod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_EmpAcc_Mod.Location = new System.Drawing.Point(36, 4);
+            this.Btn_EmpAcc_Mod.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_EmpAcc_Mod.Name = "Btn_EmpAcc_Mod";
+            this.Btn_EmpAcc_Mod.Size = new System.Drawing.Size(24, 24);
+            this.Btn_EmpAcc_Mod.TabIndex = 16;
+            this.Btn_EmpAcc_Mod.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_EmpAcc_Mod.UseVisualStyleBackColor = true;
+            this.Btn_EmpAcc_Mod.Click += new System.EventHandler(this.Btn_EmpAcc_Mod_Click);
             // 
             // iDUsuarioDataGridViewTextBoxColumn
             // 
             this.iDUsuarioDataGridViewTextBoxColumn.DataPropertyName = "ID_Usuario";
             this.iDUsuarioDataGridViewTextBoxColumn.HeaderText = "ID_Usuario";
             this.iDUsuarioDataGridViewTextBoxColumn.Name = "iDUsuarioDataGridViewTextBoxColumn";
+            this.iDUsuarioDataGridViewTextBoxColumn.Visible = false;
             // 
             // Col_Empresa
             // 
-            this.Col_Empresa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Col_Empresa.DataPropertyName = "Cod_Empresa";
             this.Col_Empresa.DataSource = this.BS_Empresas;
             this.Col_Empresa.DisplayMember = "Nombre";
+            this.Col_Empresa.FillWeight = 150F;
             this.Col_Empresa.HeaderText = "Empresa";
             this.Col_Empresa.Name = "Col_Empresa";
             this.Col_Empresa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Col_Empresa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Col_Empresa.ValueMember = "Codigo";
-            this.Col_Empresa.Width = 89;
+            this.Col_Empresa.Width = 179;
             // 
             // Col_Grupo
             // 
-            this.Col_Grupo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Col_Grupo.DataPropertyName = "Cod_Grupo";
             this.Col_Grupo.DataSource = this.BS_Grupos;
             this.Col_Grupo.DisplayMember = "Nombre";
+            this.Col_Grupo.FillWeight = 200F;
             this.Col_Grupo.HeaderText = "Grupo";
             this.Col_Grupo.Name = "Col_Grupo";
             this.Col_Grupo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Col_Grupo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Col_Grupo.ValueMember = "Codigo";
-            this.Col_Grupo.Width = 73;
+            this.Col_Grupo.Width = 275;
+            // 
+            // Pan_BotAcpcan_EmpAcc
+            // 
+            this.Pan_BotAcpcan_EmpAcc.Controls.Add(this.Btn_EmpAcc_Cancelar);
+            this.Pan_BotAcpcan_EmpAcc.Controls.Add(this.Btn_EmpAcc_Aceptar);
+            this.Pan_BotAcpcan_EmpAcc.Location = new System.Drawing.Point(367, 414);
+            this.Pan_BotAcpcan_EmpAcc.Name = "Pan_BotAcpcan_EmpAcc";
+            this.Pan_BotAcpcan_EmpAcc.Size = new System.Drawing.Size(72, 30);
+            this.Pan_BotAcpcan_EmpAcc.TabIndex = 52;
+            this.Pan_BotAcpcan_EmpAcc.Visible = false;
+            // 
+            // Btn_EmpAcc_Cancelar
+            // 
+            this.Btn_EmpAcc_Cancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_EmpAcc_Cancelar.BackgroundImage")));
+            this.Btn_EmpAcc_Cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_EmpAcc_Cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_EmpAcc_Cancelar.FlatAppearance.BorderSize = 0;
+            this.Btn_EmpAcc_Cancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Btn_EmpAcc_Cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Btn_EmpAcc_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_EmpAcc_Cancelar.Location = new System.Drawing.Point(36, 2);
+            this.Btn_EmpAcc_Cancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_EmpAcc_Cancelar.Name = "Btn_EmpAcc_Cancelar";
+            this.Btn_EmpAcc_Cancelar.Size = new System.Drawing.Size(24, 24);
+            this.Btn_EmpAcc_Cancelar.TabIndex = 13;
+            this.Btn_EmpAcc_Cancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_EmpAcc_Cancelar.UseVisualStyleBackColor = true;
+            this.Btn_EmpAcc_Cancelar.Click += new System.EventHandler(this.Btn_EmpAcc_Cancelar_Click);
+            // 
+            // Btn_EmpAcc_Aceptar
+            // 
+            this.Btn_EmpAcc_Aceptar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_EmpAcc_Aceptar.BackgroundImage")));
+            this.Btn_EmpAcc_Aceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_EmpAcc_Aceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_EmpAcc_Aceptar.FlatAppearance.BorderSize = 0;
+            this.Btn_EmpAcc_Aceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Btn_EmpAcc_Aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Btn_EmpAcc_Aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_EmpAcc_Aceptar.Location = new System.Drawing.Point(4, 2);
+            this.Btn_EmpAcc_Aceptar.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_EmpAcc_Aceptar.Name = "Btn_EmpAcc_Aceptar";
+            this.Btn_EmpAcc_Aceptar.Size = new System.Drawing.Size(24, 24);
+            this.Btn_EmpAcc_Aceptar.TabIndex = 12;
+            this.Btn_EmpAcc_Aceptar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_EmpAcc_Aceptar.UseVisualStyleBackColor = true;
+            this.Btn_EmpAcc_Aceptar.Click += new System.EventHandler(this.Btn_EmpAcc_Aceptar_Click);
             // 
             // Frm_Usuarios
             // 
@@ -642,6 +767,8 @@
             this.Pan_Elementos.ResumeLayout(false);
             this.Pan_Elementos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_EmpAccesos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Empresas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Emp_Accesos)).EndInit();
             this.Grp_FormatoFecha.ResumeLayout(false);
             this.Grp_FormatoFecha.PerformLayout();
@@ -652,8 +779,8 @@
             this.Grp_Desktop.ResumeLayout(false);
             this.Grp_Desktop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_Empresas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupos)).EndInit();
+            this.Pan_BtnsEmpAccesos.ResumeLayout(false);
+            this.Pan_BotAcpcan_EmpAcc.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -707,6 +834,13 @@
         private System.Windows.Forms.BindingSource BS_Emp_Accesos;
         private System.Windows.Forms.BindingSource BS_Empresas;
         private System.Windows.Forms.BindingSource BS_Grupos;
+        private System.Windows.Forms.Panel Pan_BtnsEmpAccesos;
+        private System.Windows.Forms.Button Btn_EmpAcc_Inc;
+        private System.Windows.Forms.Button Btn_EmpAcc_Eli;
+        private System.Windows.Forms.Button Btn_EmpAcc_Mod;
+        private System.Windows.Forms.Panel Pan_BotAcpcan_EmpAcc;
+        private System.Windows.Forms.Button Btn_EmpAcc_Cancelar;
+        private System.Windows.Forms.Button Btn_EmpAcc_Aceptar;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDUsuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn Col_Empresa;
         private System.Windows.Forms.DataGridViewComboBoxColumn Col_Grupo;

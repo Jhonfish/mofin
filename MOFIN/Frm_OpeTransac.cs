@@ -69,15 +69,15 @@ namespace MOFIN
             this.Grd_Observaciones.RowHeadersVisible = false;
             this.Grd_Observaciones.AllowUserToAddRows = false;
 
-            this.Btn_PerfInc.Enabled = r_GrupoOpciones.OperFinanc_I == null ? false : (bool)r_GrupoOpciones.OperFinanc_I;
-            this.Btn_PerfMod.Enabled = r_GrupoOpciones.OperFinanc_M == null ? false : (bool)r_GrupoOpciones.OperFinanc_M;
-            this.Btn_PerfEli.Enabled = r_GrupoOpciones.OperFinanc_E == null ? false : (bool)r_GrupoOpciones.OperFinanc_E;
-            this.Btn_ObsInc.Enabled = r_GrupoOpciones.OperFinanc_I == null ? false : (bool)r_GrupoOpciones.OperFinanc_I;
-            this.Btn_ObsMod.Enabled = r_GrupoOpciones.OperFinanc_M == null ? false : (bool)r_GrupoOpciones.OperFinanc_M;
-            this.Btn_ObsEli.Enabled = r_GrupoOpciones.OperFinanc_E == null ? false : (bool)r_GrupoOpciones.OperFinanc_E;
-            this.Chk_ElimOper.Enabled = r_GrupoOpciones.OperFinanc_E == null ? false : (bool)r_GrupoOpciones.OperFinanc_E;
-            this.Chk_Exportar.Enabled = r_GrupoOpciones.OperFinanc_E == null ? false : (bool)r_GrupoOpciones.OperFinanc_R;
-            this.Btn_Importar.Enabled = r_GrupoOpciones.OperFinanc_E == null ? false : (bool)r_GrupoOpciones.OperFinanc_R;
+            this.Btn_PerfInc.Enabled = r_GrupoOpciones.OperTransac_I == null ? false : (bool)r_GrupoOpciones.OperTransac_I;
+            this.Btn_PerfMod.Enabled = r_GrupoOpciones.OperTransac_M == null ? false : (bool)r_GrupoOpciones.OperTransac_M;
+            this.Btn_PerfEli.Enabled = r_GrupoOpciones.OperTransac_E == null ? false : (bool)r_GrupoOpciones.OperTransac_E;
+            this.Btn_ObsInc.Enabled = r_GrupoOpciones.OperTransac_I == null ? false : (bool)r_GrupoOpciones.OperTransac_I;
+            this.Btn_ObsMod.Enabled = r_GrupoOpciones.OperTransac_M == null ? false : (bool)r_GrupoOpciones.OperTransac_M;
+            this.Btn_ObsEli.Enabled = r_GrupoOpciones.OperTransac_E == null ? false : (bool)r_GrupoOpciones.OperTransac_E;
+            this.Chk_ElimOper.Enabled = r_GrupoOpciones.OperTransac_E == null ? false : (bool)r_GrupoOpciones.OperTransac_E;
+            this.Chk_Exportar.Enabled = r_GrupoOpciones.OperTransac_R == null ? false : (bool)r_GrupoOpciones.OperTransac_R;
+            this.Btn_Importar.Enabled = r_GrupoOpciones.OperTransac_R == null ? false : (bool)r_GrupoOpciones.OperTransac_R;
 
             this.Pan_BtnsPerfil.Enabled = true;
             this.Pan_BtnsObserv.Enabled = true;
@@ -184,8 +184,6 @@ namespace MOFIN
         {
             vl_EsNuevo = true;
             this.Grd_HistPerfOperac.ReadOnly = false;
-            //            this.Grd_HistPerfOperac.RowHeadersVisible = true;
-            //            this.Grd_HistPerfOperac.AllowUserToAddRows = true;
             BS_OHistPerfOperac.AddNew();
             this.Modo_Edicion(1);
         }
@@ -194,8 +192,6 @@ namespace MOFIN
         {
             vl_EsNuevo = true;
             this.Grd_Observaciones.ReadOnly = false;
-            //            this.Grd_Observaciones.RowHeadersVisible = true;
-            //            this.Grd_Observaciones.AllowUserToAddRows = true;
             BS_OObservaciones.AddNew();
             this.Modo_Edicion(2);
         }
@@ -388,222 +384,145 @@ namespace MOFIN
         {
             public string Cod_Cliente { get; set; }
             public DateTime Fecha { get; set; }
-            public decimal PerfTrans_Mto { get; set; }
-            public decimal Aportes { get; set; }
-            public decimal Retiros { get; set; }
-            public int PerfTrans_Nro { get; set; }
-            public int NroOperac { get; set; }
+            public string Producto { get; set; }
+            public decimal Compra { get; set; }
+            public decimal Venta { get; set; }
             public string Observ { get; set; }
         }
         private void Btn_ProcReporte_Click(object sender, EventArgs e)
         {
             //BS_CClientes.DataSource = NC_Clientes.Listar();
             r_Cliente = BS_CClientes.Current as C_Clientes;
+            string vl_Codigo = r_Cliente.Codigo.Trim();
             List<ListaReporte> Lst_Reporte = new List<ListaReporte>();
             
-            // Período de uso de Cuenta:    1: Semanal  2: Mensual  3: Trimestral   4: Semestral    5: Anual
-            var vl_PerUso = r_Cliente.PeriodUsoCta;
             DateTime vl_FDesde = (DateTime)this.Dtp_RepDesde.Value.Date;
             DateTime vl_FHasta = (DateTime)this.Dtp_RepHasta.Value.Date;
-            DateTime vl_GrupoFDesde = vl_FDesde;
-            DateTime vl_GrupoFHasta = DateTime.Today;
-            Decimal vl_Abonos = 0;
-            Decimal vl_Retiros = 0;
-            int vl_NroOper = 0;
-            int vl_Ciclo = 0;
+            Decimal vl_Compra = 0;
+            Decimal vl_Venta = 0;
+
+            //int vl_Ciclo = 0;
             string vl_Obsers = "";
-            Decimal vl_PerFinMonto = (r_Cliente.PerfilFinanciero != null) ? decimal.Parse(r_Cliente.PerfilFinanciero.ToString()) : 0 ;
-            int vl_PerFinNrOper = (r_Cliente.NroTransacciones != null) ? int.Parse(r_Cliente.NroTransacciones.ToString()) : 0;
+
+            //Decimal vl_PerFinMonto = (r_Cliente.PerfilFinanciero != null) ? decimal.Parse(r_Cliente.PerfilFinanciero.ToString()) : 0 ;
+            //int vl_PerFinNrOper = (r_Cliente.NroTransacciones != null) ? int.Parse(r_Cliente.NroTransacciones.ToString()) : 0;
                        
             List<O_OperTransaccionales> Lst_Operaciones;
             Lst_Operaciones = NO_OperTransaccionales.ListarPorCodigo(r_Cliente.Codigo, vl_FDesde, vl_FHasta).ToList<O_OperTransaccionales>();
-            do
-            {
-                switch (vl_PerUso)
+            foreach (var r_registro in Lst_Operaciones)
+            {   /********
+                **Procedimiento para el calculo de los datos mensual del reporte
+                *******
+                * Tipo de Operacion         SUMA +      Valor       RESTA -     Valor
+                * Renta Variable            Venta       Columna1    Compra      Columna1
+                * Renta Fija                Compra      Columna1    Venta       Columna1
+                * Renta Fija                Venta       Columna1    Compra      Columna1 
+                * Margen                    Abono       Columna1    Retiro      Columna1
+                *                           Apertura    Columna1    Cierre      Columna1
+                * Mutuo                     Cierre      Columna2    Apertura    Columna1
+                *******
+                * Campos: rg_detopet
+                * Tip_Orden, Cod_Clie, mto_Pactad, Val_Efect, Grp_Clie
+                *
+                * Campos: ReporteTransacional
+                * Client_Cod C(8), Producto C(20), Fecha D, PerfTran N(15, 2), Compras N(15,2), Ventas N(15,2), PeTr_Ope N(2), NroOper N(3), Observ M
+                *******/
+                switch (r_registro.Tipo_Operacion.Trim())
                 {
-                    case 1:     // Semanal
-                        if (vl_Ciclo == 0)
+                    case "MARGEN":     // 0 : MARGEN
+                        if(r_registro.Tipo_Orden.ToUpper() == "ABONO" | r_registro.Tipo_Orden.ToUpper() == "APERT")
                         {
-                            vl_GrupoFDesde = vl_FDesde;
-                            var vl_DiasSemana = (int)vl_GrupoFDesde.DayOfWeek;
-                            vl_GrupoFHasta = vl_GrupoFDesde.AddDays(6-vl_DiasSemana);
-                            vl_Ciclo = 1;
+                            vl_Compra = (Decimal)r_registro.Monto_Pactado;
+                            vl_Venta = 0;
                         }
                         else
                         {
-                            vl_GrupoFDesde = vl_GrupoFHasta.AddDays(1);
-                            vl_GrupoFHasta = vl_GrupoFDesde.AddDays(6);
+                            vl_Compra = 0;
+                            vl_Venta = (Decimal)r_registro.Monto_Pactado;
                         }
-
-                        if (vl_GrupoFHasta.Date >= vl_FHasta.Date)
-                            vl_GrupoFHasta = vl_FHasta;
                         break;
 
-                    case 2:     // Mensual
-                        if (vl_Ciclo == 0)
+                    case "RENTA FIJA":     // 1 : RENTA FIJA
+                        if (r_registro.Tipo_Orden.ToUpper() == "VENTA")
                         {
-                            vl_GrupoFDesde = vl_FDesde;
-                            vl_Ciclo = 1;
+                            vl_Compra = 0;
+                            vl_Venta = (Decimal)r_registro.Monto_Pactado;
                         }
                         else
                         {
-                            vl_GrupoFDesde = vl_GrupoFHasta.AddDays(1);
+                            vl_Compra = (Decimal)r_registro.Monto_Pactado;
+                            vl_Venta = 0;
                         }
-                        vl_GrupoFHasta = DateTime.Parse(MOFIN_LIB.Funciones.UltimoDiaMes(vl_GrupoFDesde).ToString() + "/" +
-                                                        vl_GrupoFDesde.Month.ToString() + "/" + vl_GrupoFDesde.Year.ToString());
-                        if (vl_GrupoFHasta.Date >= vl_FHasta.Date)
-                            vl_GrupoFHasta = vl_FHasta;
                         break;
 
-                    case 3:     // Trimestral
-                        if (vl_Ciclo == 0)
+                    case "RENTA VARIABLE":     // 2 : RENTA VARIABLE
+                        if (r_registro.Tipo_Orden.ToUpper() == "VENTA")
                         {
-                            vl_GrupoFDesde = vl_FDesde;
-                            vl_Ciclo = 1;
+                            vl_Compra = 0;
+                            vl_Venta = (Decimal)r_registro.Monto_Pactado;
                         }
                         else
                         {
-                            vl_GrupoFDesde = vl_GrupoFHasta.AddDays(1);
+                            vl_Compra = (Decimal)r_registro.Monto_Pactado;
+                            vl_Venta = 0;
                         }
-                        switch (vl_GrupoFDesde.Month)
-                        {
-                            case 1:
-                            case 2:
-                            case 3:
-                                vl_GrupoFHasta = DateTime.Parse("31/03/" + vl_GrupoFDesde.Year.ToString());
-                                break;
-                            case 4:
-                            case 5:
-                            case 6:
-                                vl_GrupoFHasta = DateTime.Parse("30/06/" + vl_GrupoFDesde.Year.ToString());
-                                break;
-                            case 7:
-                            case 8:
-                            case 9:
-                                vl_GrupoFHasta = DateTime.Parse("30/09/" + vl_GrupoFDesde.Year.ToString());
-                                break;
-                            default:
-                                vl_GrupoFHasta = DateTime.Parse("31/12/" + vl_GrupoFDesde.Year.ToString());
-                                break;
-                        }
-                        if (vl_GrupoFHasta.Date >= vl_FHasta.Date)
-                            vl_GrupoFHasta = vl_FHasta;
                         break;
 
-                    case 4:     // Semestral
-                        if (vl_Ciclo == 0)
+                    case "FURUTOS":     // 3 : FUTUROS
+                        vl_Compra = 0;
+                        vl_Venta = 0;
+                        break;
+
+                    case "OPCIONES":     // 4 : OPCIONES
+                        vl_Compra = 0;
+                        vl_Venta = 0;
+                        break;
+
+                    case "MUTUO":     // 0 :MUTUO
+                        if (r_registro.Tipo_Orden.ToUpper() == "CIERR")
                         {
-                            vl_GrupoFDesde = vl_FDesde;
-                            vl_Ciclo = 1;
+                            vl_Compra = 0;
+                            vl_Venta = (Decimal)r_registro.Valor_Efectivo;
                         }
                         else
                         {
-                            vl_GrupoFDesde = vl_GrupoFHasta.AddDays(1);
+                            vl_Compra = (Decimal)r_registro.Monto_Pactado;
+                            vl_Venta = 0;
                         }
-                        switch (vl_GrupoFDesde.Month)
-                        {
-                            case 1:
-                            case 2:
-                            case 3:
-                            case 4:
-                            case 5:
-                            case 6:
-                                vl_GrupoFHasta = DateTime.Parse("30/06/" + vl_GrupoFDesde.Year.ToString());
-                                break;
-                            default:
-                                vl_GrupoFHasta = DateTime.Parse("31/12/" + vl_GrupoFDesde.Year.ToString());
-                                break;
-                        }
-                        if (vl_GrupoFHasta.Date >= vl_FHasta.Date)
-                            vl_GrupoFHasta = vl_FHasta;
                         break;
 
-                    case 5:     // Anual
-                        if (vl_Ciclo == 0)
-                        {
-                            vl_GrupoFDesde = vl_FDesde;
-                            vl_Ciclo = 1;
-                        }
-                        else
-                        {
-                            vl_GrupoFDesde = vl_GrupoFHasta.AddDays(1);
-                        }
-                        vl_GrupoFHasta = DateTime.Parse("31/12/" + vl_GrupoFDesde.Year.ToString());
-                        if (vl_GrupoFHasta.Date >= vl_FHasta.Date)
-                            vl_GrupoFHasta = vl_FHasta;
-                        break;
                 }
-                var Lst_GrupoOperaciones = Lst_Operaciones.FindAll(x => x.Fec_Pacto >= vl_GrupoFDesde & x.Fec_Pacto <= vl_GrupoFHasta);
-                if (Lst_GrupoOperaciones != null)
-                {
-                    vl_Abonos = decimal.Parse(Lst_GrupoOperaciones.Where(item => item.Tipo_Orden.Trim() == "ABO")
-                                                        .Sum(item => item.Valor_Efectivo).ToString());
-                    vl_Retiros = decimal.Parse(Lst_GrupoOperaciones.Where(item => item.Tipo_Orden.Trim() == "RET")
-                                                        .Sum(item => item.Valor_Efectivo).ToString());
-                    vl_NroOper = Lst_GrupoOperaciones.Count;
-                }
-                if (vl_NroOper > 0)
-                {
-                    // Procedimiento para el Calculo de las Observaciones a Incluir
-                    vl_Obsers = "";
-                    BS_OObservaciones.DataSource = NO_Observaciones.ListarPorCodigoTipo(r_Cliente.Codigo, 1);
-                    BS_OObservaciones.MoveFirst();
-                    foreach (object obj in BS_OObservaciones)
-                    {
-                        r_Observaciones = BS_OObservaciones.Current as O_Observaciones;
-                        if (r_Observaciones.Tipo_Perfil == 1 & r_Observaciones.Cod_Cliente == r_Cliente.Codigo &
-                            r_Observaciones.fecha.Date >= vl_GrupoFDesde.Date & r_Observaciones.fecha.Date <= vl_GrupoFHasta)
-                            vl_Obsers = vl_Obsers + r_Observaciones.fecha.ToShortDateString() + ": " + r_Observaciones.Observacion.Trim() + " \n";
-                        BS_OObservaciones.MoveNext();
-                    }
-                }
-                    // Procedimiento para el calculo de los datos el perfil financiero
-                    List<O_HistPerfOperac> Lst_PerfFinanciero = new List<O_HistPerfOperac>();
-
-                    Lst_PerfFinanciero = NO_HistPerfOperac.ListarPorCodigoTipo(r_Cliente.Codigo, 1);
-                    Lst_PerfFinanciero = Lst_PerfFinanciero.OrderBy(Item => Item.Fecha).ToList();
-                    BS_OHistPerfOperac.DataSource = Lst_PerfFinanciero.OrderBy(item => item.Fecha).ToList();
-                    BS_OHistPerfOperac.MoveFirst();
-                    foreach (object obj in BS_OHistPerfOperac)
-                    {
-                        r_HistPerfOperac = BS_OHistPerfOperac.Current as O_HistPerfOperac;
-                        if (r_HistPerfOperac.Tipo_Perfil == 2 & r_HistPerfOperac.Cod_Cliente == r_Cliente.Codigo &
-                            r_HistPerfOperac.Fecha.Date >= vl_GrupoFDesde.Date & r_HistPerfOperac.Fecha.Date <= vl_GrupoFHasta)
-                        {
-                            vl_PerFinMonto = r_HistPerfOperac.Mto_Perfil;
-                            vl_PerFinNrOper = r_HistPerfOperac.Nro_Transacciones;
-                        }
-                        BS_OHistPerfOperac.MoveNext();
-                    }
-
-                    // Agrega los datos al List
+                // Agrega los datos al List
                 Lst_Reporte.Add(new ListaReporte()
                 {
                     Cod_Cliente = r_Cliente.Codigo,
-                    Fecha = vl_GrupoFHasta,
-                    PerfTrans_Mto = vl_PerFinMonto,
-                    Aportes = vl_Abonos,
-                    Retiros = vl_Retiros,
-                    PerfTrans_Nro = vl_PerFinNrOper,
-                    NroOperac = vl_NroOper,
-                    Observ= vl_Obsers
+                    Fecha = r_registro.Fec_Pacto,
+                    Producto =r_registro.Tipo_Operacion,
+                    Compra = vl_Compra,
+                    Venta = vl_Venta
                 });
-            } while (vl_GrupoFHasta.Date < vl_FHasta.Date);
+            }
 
-            BS_OObservaciones.DataSource = NO_Observaciones.Listar();
-            BS_OHistPerfOperac.DataSource = NO_HistPerfOperac.ListarPorCodigoTipo(r_Cliente.Codigo, 1);
+            // Procedimiento para el Calculo de las Observaciones a Incluir
+            vl_Obsers = "";
+            BS_OObservaciones.DataSource = NO_Observaciones.ListarPorCodigoTipo(vl_Codigo, 2);    // Tipo 2: Transaccionales
+            BS_OObservaciones.MoveFirst();
+            foreach (object obj in BS_OObservaciones)
+            {
+                r_Observaciones = BS_OObservaciones.Current as O_Observaciones;
+                if (r_Observaciones.Tipo_Perfil == 2 & r_Observaciones.Cod_Cliente.Trim() == vl_Codigo &
+                    r_Observaciones.fecha.Date >= vl_FDesde.Date & r_Observaciones.fecha.Date <= vl_FHasta)
+                    vl_Obsers = vl_Obsers + r_Observaciones.fecha.ToShortDateString() + ": " + r_Observaciones.Observacion.Trim() + " \n";
+                BS_OObservaciones.MoveNext();
+            }
+ 
+            BS_OHistPerfOperac.DataSource = NO_HistPerfOperac.ListarPorCodigoTipo(r_Cliente.Codigo, 2);
+            BS_OObservaciones.DataSource = NO_Observaciones.ListarPorCodigoTipo(r_Cliente.Codigo, 2);
+
             Grd_Reporte.DataSource = Lst_Reporte;
             Grd_Reporte.Visible = true;
             Btn_Ocultar.Visible = true;
 
-            ///
-            /// Pruebas con el Crysta report
-            /// 
-            /*BS_opeFinanc_Clientes.DataSource = Lst_Reporte;
-            ReportDocument cryRpt = new ReportDocument();
-            cryRpt.Load("PUT CRYSTAL REPORT PATHHERE\\CrystalReport1.rpt");
-                crystalReportViewer1.ReportSource = cryRpt;
-                crystalReportViewer1.Refresh();*/
         }
 
         private void Pag3_Enter(object sender, EventArgs e)
@@ -650,6 +569,7 @@ namespace MOFIN
                 string vl_Obsers = "";
                 Decimal vl_PerFinMonto = Registro.Cells["PerfilFinanciero"].Value == null ? 0 : decimal.Parse(Registro.Cells["PerfilFinanciero"].Value.ToString());
                 Decimal vl_PerFinNrOper = Registro.Cells["NroTransacciones"].Value == null ? 0 : decimal.Parse(Registro.Cells["NroTransacciones"].Value.ToString());
+
 
                 List<O_OperTransaccionales> Lst_Operaciones;
                 Lst_Operaciones = NO_OperTransaccionales.ListarPorCodigo(vl_Codigo, vl_FDesde, vl_FHasta).ToList<O_OperTransaccionales>();
@@ -774,7 +694,7 @@ namespace MOFIN
                     /// Procedimiento para el calculo de los datos el perfil financiero
                     /// 
                     List<O_HistPerfOperac> Lst_PerfFinanciero = new List<O_HistPerfOperac>();
-                    Lst_PerfFinanciero = NO_HistPerfOperac.ListarPorCodigoTipo(vl_Codigo, 1);
+                    Lst_PerfFinanciero = NO_HistPerfOperac.ListarPorCodigoTipo(vl_Codigo, 2);  // Tipo 2: Transaccionales
                     Lst_PerfFinanciero = Lst_PerfFinanciero.OrderBy(Item => Item.Fecha).ToList();
                     BS_OHistPerfOperac.DataSource = Lst_PerfFinanciero.OrderBy(item => item.Fecha).ToList();
                     BS_OHistPerfOperac.MoveFirst();
@@ -792,43 +712,94 @@ namespace MOFIN
                     }
 
                     ///
-                    /// Procedimiento para el calculo de las excepciones / Alertas
+                    /// Procedimiento para el calculo de las excepciones / Alertas y los montos a prsentar en el reporte
                     /// 
                     var Lst_GrupoOperaciones = Lst_Operaciones.FindAll(x => x.Fec_Pacto >= vl_GrupoFDesde & x.Fec_Pacto <= vl_GrupoFHasta).ToList();
                     if (Lst_GrupoOperaciones != null)
                     {
-                        /// calculos por Resumen, pero no me dan las fechas de Excepcion y Ultima operacion
-                        /*vl_Compras = decimal.Parse(Lst_GrupoOperaciones.Where(item => item.Tipo_Orden.Trim() == "ABO")
-                                                            .Sum(item => item.Efectivo).ToString());
-                        vl_Ventas = decimal.Parse(Lst_GrupoOperaciones.Where(item => item.Tipo_Orden.Trim() == "RET")
-                                                            .Sum(item => item.Efectivo).ToString());
-                        vl_NroOper = Lst_GrupoOperaciones.Count; */
-
                         vl_FecGeneracion = DateTime.Today;
                         vl_NroOper = 0;
                         vl_Compras = 0;
                         vl_Ventas = 0;
+
                         foreach (var r_Operacion in Lst_GrupoOperaciones)
                         {
-                            if (r_Operacion.Tipo_Orden.Trim() == "ABO")
+                            Decimal vl_Margen_Compra = 0;
+                            Decimal vl_Margen_Venta = 0;
+                            Decimal vl_RtaFija_Compra = 0;
+                            Decimal vl_RtaFija_Venta = 0;
+                            Decimal vl_RtaVar_Compra = 0;
+                            Decimal vl_RtaVar_Venta = 0;
+                            Decimal vl_Futuro_Compra = 0;
+                            Decimal vl_Futuro_Venta = 0;
+                            Decimal vl_Opcion_Compra = 0;
+                            Decimal vl_Opcion_Venta = 0;
+                            Decimal vl_Mutuo_Compra = 0;
+                            Decimal vl_Mutuo_Venta = 0;
+                            ///
+                            /// Calculo de Montos, segun el tipo de operacion
+                            /// 
+                            /*if (r_Operacion.Tipo_Orden.Trim() == "ABO")
                                 vl_Compras = vl_Compras + (decimal)r_Operacion.Valor_Efectivo;
                             else
-                                vl_Ventas = vl_Ventas + (decimal)r_Operacion.Valor_Efectivo;
+                                vl_Ventas = vl_Ventas + (decimal)r_Operacion.Valor_Efectivo;*/
+                            switch (r_Operacion.Tipo_Operacion.Trim())
+                            {
+                                case "MARGEN" :
+                                    if (r_Operacion.Tipo_Orden.Trim() == "ABONO" | r_Operacion.Tipo_Orden.Trim() == "APERT")
+                                        vl_Margen_Compra = (Decimal)r_Operacion.Monto_Pactado;
+                                    else
+                                        vl_Margen_Venta = (Decimal)r_Operacion.Monto_Pactado;
+                                    break;
+                                case "RENTA FIJA":
+                                    if (r_Operacion.Tipo_Orden.Trim() == "COMPR")
+                                        vl_RtaFija_Compra = (Decimal)r_Operacion.Monto_Pactado;
+                                    else
+                                        vl_RtaFija_Venta = (Decimal)r_Operacion.Monto_Pactado;
+                                    break;
+                                case "RENTA VARIABLE":
+                                    if (r_Operacion.Tipo_Orden.Trim() == "COMPR")
+                                        vl_RtaVar_Compra = (Decimal)r_Operacion.Monto_Pactado;
+                                    else
+                                        vl_RtaVar_Venta = (Decimal)r_Operacion.Monto_Pactado;
+                                    break;
+                                case "FUTUROS":
+                                    if (r_Operacion.Tipo_Orden.Trim() == "COMPR")
+                                        vl_Futuro_Compra = (Decimal)r_Operacion.Monto_Pactado;
+                                    else
+                                        vl_Futuro_Venta = (Decimal)r_Operacion.Monto_Pactado;
+                                    break;
+                                case "OPCIONES":
+                                    if (r_Operacion.Tipo_Orden.Trim() == "COMPR")
+                                        vl_Opcion_Compra = (Decimal)r_Operacion.Monto_Pactado;
+                                    else
+                                        vl_Opcion_Venta = (Decimal)r_Operacion.Monto_Pactado;
+                                    break;
+                                case "MUTUO":
+                                    if (r_Operacion.Tipo_Orden.Trim() == "APERT")
+                                        vl_Mutuo_Compra = (Decimal)r_Operacion.Monto_Pactado;
+                                    else
+                                        vl_Mutuo_Venta = (Decimal)r_Operacion.Valor_Efectivo;
+                                    break;
+                            }
+
+                            vl_Compras = vl_Compras + vl_Margen_Compra + vl_RtaFija_Compra + vl_RtaVar_Compra + vl_Futuro_Compra + vl_Opcion_Compra + vl_Mutuo_Compra;
+                            vl_Ventas = vl_Ventas + vl_Margen_Venta + vl_RtaFija_Venta + vl_RtaVar_Venta + vl_Futuro_Venta + vl_Opcion_Venta + vl_Mutuo_Venta;
+
                             vl_NroOper = vl_NroOper + 1;
                             vl_FecUltOperac = r_Operacion.Fec_Pacto.Date;
 
-                            if (((vl_Compras + vl_Ventas) > vl_PerFinMonto |
-                                 (vl_NroOper > vl_PerFinNrOper)) &
+                            if (((vl_Compras + vl_Ventas) > vl_PerFinMonto | (vl_NroOper > vl_PerFinNrOper)) &
                                  (vl_FecGeneracion == DateTime.Today))
                                 vl_FecGeneracion = r_Operacion.Fec_Pacto;
                         }
                     }
 
+                    vl_Obsers = "";
                     if (vl_NroOper > 0)
                     {
                         // Procedimiento para el Calculo de las Observaciones a Incluir
-                        vl_Obsers = "";
-                        BS_OObservaciones.DataSource = NO_Observaciones.ListarPorCodigoTipo(vl_Codigo, 1);
+                        BS_OObservaciones.DataSource = NO_Observaciones.ListarPorCodigoTipo(vl_Codigo, 2);  // Tipo 2: Transaccionales
                         BS_OObservaciones.MoveFirst();
                         foreach (object obj in BS_OObservaciones)
                         {
@@ -839,6 +810,8 @@ namespace MOFIN
                             BS_OObservaciones.MoveNext();
                         }
                     }
+                    else
+                        vl_FecUltOperac = vl_GrupoFHasta.Date;
 
                     ///
                     /// procdimiento para llenar el list con la información del período
@@ -851,32 +824,32 @@ namespace MOFIN
                        (this.Chk_ExcMeses.Checked == true & vl_NroOper > 0)) &
                         (this.Chk_IncSoloExcep.Checked == false |
                        (this.Chk_IncSoloExcep.Checked == true & vl_Alarma == true)))
+                    {
+                        BS_MNivelRiesgo.DataSource = NM_NivelRiesgo.GetById(vl_NivelRiesgo);
+                        r_NiveldeRiesgo = BS_MNivelRiesgo.Current as M_NivelRiesgo;
 
-                            BS_MNivelRiesgo.DataSource = NM_NivelRiesgo.GetById(vl_NivelRiesgo);
-                            r_NiveldeRiesgo = BS_MNivelRiesgo.Current as M_NivelRiesgo;
-
-                            Lst_OperTransaccionales.Add(new O_RepOperacional()
-                            {
-                                Alarma = vl_Alarma,
-                                Fec_Generacion = vl_FecGeneracion,
-                                Fec_UltOperac = vl_FecUltOperac,
-                                Cod_Cliente = vl_Codigo,
-                                Nme_cliente = vl_Nombre,
-                                Doc_ID = vl_Doc_ID,
-                                Ejecutivo = vl_Ejecutivo,
-                                Niv_Riesgo = r_NiveldeRiesgo == null? MOFIN_LIB.Funciones._Mens_Idioma(9012) : r_NiveldeRiesgo.Descripcion.Trim(),
-                                Perf_Financiero = vl_PerFinMonto,
-                                Perf_NroTransac = (byte)vl_PerFinNrOper,
-                                Period_UsoCta = MOFIN_LIB.Funciones._Mens_Idioma(190 + vl_PerUso),
-                                Porc_Transac = vl_Porctrans,
-                                Mto_Compras = vl_Compras,
-                                Mto_Ventas = vl_Ventas,
-                                Tot_Operaciones = vl_Compras+vl_Ventas,
-                                Porc_Operaciones = vl_PorcOperac,
-                                Nro_Transac = (short)vl_NroOper,
-                                Comentario = vl_Obsers
-                            });
-
+                        Lst_OperTransaccionales.Add(new O_RepOperacional()
+                        {
+                            Alarma = vl_Alarma,
+                            Fec_Generacion = vl_FecGeneracion,
+                            Fec_UltOperac = vl_FecUltOperac,
+                            Cod_Cliente = vl_Codigo,
+                            Nme_cliente = vl_Nombre,
+                            Doc_ID = vl_Doc_ID,
+                            Ejecutivo = vl_Ejecutivo,
+                            Niv_Riesgo = r_NiveldeRiesgo == null ? MOFIN_LIB.Funciones._Mens_Idioma(9012) : r_NiveldeRiesgo.Descripcion.Trim(),
+                            Perf_Financiero = vl_PerFinMonto,
+                            Perf_NroTransac = (byte)vl_PerFinNrOper,
+                            Period_UsoCta = MOFIN_LIB.Funciones._Mens_Idioma(190 + vl_PerUso),
+                            Porc_Transac = vl_Porctrans,
+                            Mto_Compras = vl_Compras,
+                            Mto_Ventas = vl_Ventas,
+                            Tot_Operaciones = vl_Compras + vl_Ventas,
+                            Porc_Operaciones = vl_PorcOperac,
+                            Nro_Transac = (short)vl_NroOper,
+                            Comentario = vl_Obsers
+                        });
+                    }
                 } while (vl_GrupoFHasta.Date < vl_FHasta.Date);
             }
             Grd_MonitorFinanciero.DataSource = Lst_OperTransaccionales;

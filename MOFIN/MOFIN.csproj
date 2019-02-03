@@ -285,6 +285,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Prueba.resx">
       <DependentUpon>Prueba.cs</DependentUpon>
@@ -444,9 +445,38 @@
       <Name>MOFIN_Lib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop14.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

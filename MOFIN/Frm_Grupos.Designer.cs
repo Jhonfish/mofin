@@ -1167,7 +1167,7 @@
         private System.Windows.Forms.Panel Pan_Elementos;
         private System.Windows.Forms.TextBox Txt_Codigo;
         private System.Windows.Forms.TextBox Txt_Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+//        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.CheckBox Chk_Empre_P;
         private System.Windows.Forms.BindingSource BS_Grupo_Opciones;
         private System.Windows.Forms.CheckBox Chk_Empre_E;

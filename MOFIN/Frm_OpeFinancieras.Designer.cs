@@ -386,7 +386,7 @@
             this.Dtp_Hasta.Name = "Dtp_Hasta";
             this.Dtp_Hasta.Size = new System.Drawing.Size(115, 20);
             this.Dtp_Hasta.TabIndex = 15;
-            this.Dtp_Hasta.Value = new System.DateTime(2016, 12, 31, 0, 0, 0, 0);
+            this.Dtp_Hasta.Value = new System.DateTime(2019, 2, 3, 0, 0, 0, 0);
             // 
             // Dtp_Desde
             // 
@@ -395,7 +395,7 @@
             this.Dtp_Desde.Name = "Dtp_Desde";
             this.Dtp_Desde.Size = new System.Drawing.Size(115, 20);
             this.Dtp_Desde.TabIndex = 14;
-            this.Dtp_Desde.Value = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
+            this.Dtp_Desde.Value = new System.DateTime(2019, 2, 3, 0, 0, 0, 0);
             // 
             // Chk_Exportar
             // 

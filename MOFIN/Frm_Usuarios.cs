@@ -20,6 +20,7 @@ namespace MOFIN
         bool vl_EsNuevo = true;
         Usuarios r_Usuarios = new Usuarios();
         Grupo_Opciones r_GrupoOpciones = new Grupo_Opciones();
+        Emp_Accesos r_EmpAccesos = new Emp_Accesos();
 
         public Frm_Usuarios()
         {
@@ -32,6 +33,7 @@ namespace MOFIN
             BS_Usuarios.DataSource = NUsuarios.Listar();
             BS_Grupo_Opciones.DataSource = NGrupo_Opciones.ListarPorCodigo(MOFIN_LIB.Entorno.vs_Grupo);
             r_GrupoOpciones = BS_Grupo_Opciones.Current as Grupo_Opciones;
+            r_EmpAccesos = BS_Emp_Accesos.Current as Emp_Accesos;
 
             this.Modo_Consulta();
             this.Grd_Usuarios.Focus();
@@ -57,13 +59,17 @@ namespace MOFIN
                 Opc_FormFec1.Checked = r_Usuarios.Cnfg_FormFecha.ToString() == "1" ? true : false; // DD/MM/AAAA
                 Opc_FormFec2.Checked = r_Usuarios.Cnfg_FormFecha.ToString() == "2" ? true : false; // MM/DD/AAAA
             }
-            Grd_EmpAccesos.DataSource = NEmp_Accesos.ListarPorUsuario(r_Usuarios.ID_Usuario.Trim());
+            BS_Emp_Accesos.DataSource = NEmp_Accesos.ListarPorUsuario(r_Usuarios.ID_Usuario.Trim());
+            Grd_EmpAccesos.DataSource = BS_Emp_Accesos;
+            r_EmpAccesos = BS_Emp_Accesos.Current as Emp_Accesos;
+
             TSB_ActualizaBotonesNavegacion();
         }
 
         private void Modo_Consulta()
         {
             this.Pan_Elementos.Enabled = false;
+            this.Pan_BtnsEmpAccesos.Visible = false;
 
             this.TS_BarraHerramientas.Enabled = true;
             this.Grd_Usuarios.Enabled = true;
@@ -76,6 +82,7 @@ namespace MOFIN
         private void Modo_Edicion()
         {
             this.Pan_Elementos.Enabled = true;
+            this.Pan_BtnsEmpAccesos.Visible = true;
 
             this.TS_BarraHerramientas.Enabled = false;
             this.Grd_Usuarios.Enabled = false;
@@ -126,15 +133,11 @@ namespace MOFIN
             r_Usuarios.Cnfg_FormFecha = Opc_FormFec2.Checked == true ? vl_Dos : vl_Uno;
 
             if (vl_EsNuevo)
-                
                 NUsuarios.Insertar(r_Usuarios);
-                //NUsuarios.Insertar(BS_Usuarios.Current as Usuarios);
             else
-
                 NUsuarios.Actualizar(r_Usuarios);
-                NEmp_Accesos.Actualizar(BS_Emp_Accesos.Current as Emp_Accesos);
-               // NUsuarios.Actualizar(BS_Usuarios.Current as Usuarios);
-                this.Modo_Consulta();
+//                NEmp_Accesos.Actualizar(BS_Emp_Accesos.Current as Emp_Accesos);
+            this.Modo_Consulta();
             BS_Usuarios.DataSource = NUsuarios.Listar();
         }
 
@@ -235,6 +238,70 @@ namespace MOFIN
 
             MOFIN_LIB.Funciones.TTT_Btn(Btn_Aceptar, MOFIN_LIB.Funciones._Mens_Idioma(141));
             MOFIN_LIB.Funciones.TTT_Btn(Btn_Cancelar, MOFIN_LIB.Funciones._Mens_Idioma(142));
+        }
+
+        private void Btn_EmpAcc_Inc_Click(object sender, EventArgs e)
+        {
+            vl_EsNuevo = true;
+            this.Grd_EmpAccesos.ReadOnly = false;
+            BS_Emp_Accesos.AddNew();
+            this.Grd_EmpAccesos.Focus();
+
+            Pan_BtnsEmpAccesos.Enabled = false;
+            Pan_BotAcpcan_EmpAcc.Visible = true;
+        }
+        private void Btn_EmpAcc_Mod_Click(object sender, EventArgs e)
+        {
+            vl_EsNuevo = false;
+            this.Grd_EmpAccesos.ReadOnly = false;
+            this.Grd_EmpAccesos.Focus();
+
+            Pan_BtnsEmpAccesos.Enabled = false;
+            Pan_BotAcpcan_EmpAcc.Visible = true;
+        }
+        private void Btn_EmpAcc_Eli_Click(object sender, EventArgs e)
+        {
+            r_EmpAccesos = BS_Emp_Accesos.Current as Emp_Accesos;
+
+            string vl_RegEliminar = r_EmpAccesos.Cod_Empresa + " / " + r_EmpAccesos.Cod_Grupo;
+            DialogResult vl_Resp = MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9010) + "\n\n" + vl_RegEliminar,
+                MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (vl_Resp == DialogResult.Yes)
+            {
+                NEmp_Accesos.Elimiar(r_EmpAccesos);
+                BS_Emp_Accesos.DataSource = NEmp_Accesos.Listar();
+                Grd_EmpAccesos.DataSource = NEmp_Accesos.ListarPorUsuario(r_Usuarios.ID_Usuario.Trim());
+                MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9011), MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
+
+        private void Btn_EmpAcc_Aceptar_Click(object sender, EventArgs e)
+        {
+            BS_Emp_Accesos.MoveLast();
+            r_EmpAccesos = BS_Emp_Accesos.Current as Emp_Accesos;
+            r_EmpAccesos.ID_Usuario = r_Usuarios.ID_Usuario;
+            if (vl_EsNuevo)
+                NEmp_Accesos.Insertar(r_EmpAccesos);
+            else
+                NEmp_Accesos.Actualizar(r_EmpAccesos);
+            //            BS_Emp_Accesos.DataSource = NEmp_Accesos.ListarPorUsuario(r_Usuarios.ID_Usuario);
+            //            Grd_EmpAccesos.DataSource = NEmp_Accesos.ListarPorUsuario(r_Usuarios.ID_Usuario.Trim());
+
+            Grd_EmpAccesos.ReadOnly = true;
+            Pan_BtnsEmpAccesos.Enabled = true;
+            Pan_BotAcpcan_EmpAcc.Visible = false;
+            this.Grd_Usuarios_CurrentCellChanged(null,null);
+        }
+
+        private void Btn_EmpAcc_Cancelar_Click(object sender, EventArgs e)
+        {
+            BS_Emp_Accesos.CancelEdit();
+            BS_Emp_Accesos.MoveFirst();
+            Grd_EmpAccesos.ReadOnly = true;
+
+            Pan_BtnsEmpAccesos.Enabled = true;
+            Pan_BotAcpcan_EmpAcc.Visible = false;
         }
 
     }
