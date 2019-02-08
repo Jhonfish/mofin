@@ -13,7 +13,6 @@ using MofinModelo;
 using MofinModeloEntorno;
 using MOFIN_LIB;
 
-
 namespace MOFIN
 {
     public partial class Frm_SeleccionEmpresa : MetroForm
@@ -68,17 +67,17 @@ namespace MOFIN
             if (vl_Encontrado == true)
             {
                 vl_Encontrado = false;
+                BS_Emp_Accesos.MoveFirst();
                 foreach (object obj in BS_Emp_Accesos)
                 {
                     r_EmpAccesos = BS_Emp_Accesos.Current as Emp_Accesos;
                     // MessageBox.Show(r_Usuarios.Nombre);
-                    BS_Emp_Accesos.MoveNext();
                     if (r_EmpAccesos.ID_Usuario == vl_Usuario & r_EmpAccesos.Cod_Empresa == r_Empresas.Codigo)
                     {
                         vl_Encontrado = true;
                         break;
                     }
-
+                    BS_Emp_Accesos.MoveNext();
                 }
                 if (vl_Encontrado==true)
                 {
@@ -94,18 +93,12 @@ namespace MOFIN
 
                     MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9004) + "\n\n" + "Grupo: " + r_Grupos.Nombre,
                                     MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    /*                  Frm_Desktop FondoEscritorio = new Frm_Desktop();
-                                        //((TextBox)formularioPadre.Controls["nombreDelControl"]).Text = “Texto en un TextBox de otro formulario”;
-                                        ((Label)FondoEscritorio.Controls["Lbl_Detalle1"]).Text = r_Empresas.Nombre + " / " + r_Grupos.Nombre + " / " + r_Usuarios.Nombre;
-
-                                        //Desktop.Lbl_Detalle1.Text = r_Empresas.Nombre + " / " + r_Grupos.Nombre + " / " + r_Usuarios.Nombre;
-
-                                        */
                     Entorno.vs_Empresa = r_Empresas.Codigo;
                     Entorno.vs_Grupo = r_Grupos.Codigo;
                     Entorno.vs_Usuario = r_Usuarios.ID_Usuario;
                     Entorno.vs_Maestro = true;
+
+                    this.Btn_Aceptar.DialogResult = DialogResult.OK;
                     this.Close();
 
                 }

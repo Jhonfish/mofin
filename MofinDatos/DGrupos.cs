@@ -36,6 +36,16 @@ namespace MofinDatos
                 return db.Grupos.Find(id);
             }
         }
+        public string GetNombre(string Codigo)
+        {
+            using (MofinEntornoEntidad db = new MofinEntornoEntidad())
+            {
+                var Grp_Nme = from Grupos in db.Grupos
+                          where Grupos.Codigo == Codigo
+                          select Grupos.Nombre;
+                return Grp_Nme.First();
+            }
+        }
         public List<Grupos> ListarPorCodigo(string Codigo)
         {
             using (MofinEntornoEntidad db = new MofinEntornoEntidad())

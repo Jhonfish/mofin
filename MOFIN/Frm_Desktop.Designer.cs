@@ -73,12 +73,12 @@
             this.Mnu_Ayuda = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.Ayu_Acerca = new System.Windows.Forms.ToolStripMenuItem();
+            this.cambiaFondoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SS_BarradeEstadoPrincipal = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.Lbl_Detalle1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.BS_Grupos = new System.Windows.Forms.BindingSource(this.components);
-            this.cambiaFondoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TS_MenuPrincipal.SuspendLayout();
             this.SS_BarradeEstadoPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupos)).BeginInit();
@@ -302,6 +302,7 @@
             // 
             // Cli_Busqueda
             // 
+            this.Cli_Busqueda.Image = ((System.Drawing.Image)(resources.GetObject("Cli_Busqueda.Image")));
             this.Cli_Busqueda.Name = "Cli_Busqueda";
             this.Cli_Busqueda.Size = new System.Drawing.Size(236, 22);
             this.Cli_Busqueda.Text = "Búsqueda de Clientes";
@@ -447,6 +448,13 @@
             this.Ayu_Acerca.Size = new System.Drawing.Size(204, 22);
             this.Ayu_Acerca.Text = "&Acerca de... ...";
             // 
+            // cambiaFondoToolStripMenuItem
+            // 
+            this.cambiaFondoToolStripMenuItem.Name = "cambiaFondoToolStripMenuItem";
+            this.cambiaFondoToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.cambiaFondoToolStripMenuItem.Text = "Cambia Fondo";
+            this.cambiaFondoToolStripMenuItem.Click += new System.EventHandler(this.cambiaFondoToolStripMenuItem_Click);
+            // 
             // SS_BarradeEstadoPrincipal
             // 
             this.SS_BarradeEstadoPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -477,13 +485,6 @@
             // BS_Grupos
             // 
             this.BS_Grupos.DataSource = typeof(MofinModeloEntorno.Grupos);
-            // 
-            // cambiaFondoToolStripMenuItem
-            // 
-            this.cambiaFondoToolStripMenuItem.Name = "cambiaFondoToolStripMenuItem";
-            this.cambiaFondoToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.cambiaFondoToolStripMenuItem.Text = "Cambia Fondo";
-            this.cambiaFondoToolStripMenuItem.Click += new System.EventHandler(this.cambiaFondoToolStripMenuItem_Click);
             // 
             // Frm_Desktop
             // 

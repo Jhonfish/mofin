@@ -23,7 +23,7 @@ namespace MOFIN
             Application.SetCompatibleTextRenderingDefault(false);
 
             Application.Run(new Frm_Desktop());
-            //Application.Run(new Frm_OpeTransac());
+            //Application.Run(new Frm_BusqPersonas());
         }
     }
 }

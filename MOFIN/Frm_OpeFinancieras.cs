@@ -46,17 +46,17 @@ namespace MOFIN
             r_GrupoOpciones = BS_Grupo_Opciones.Current as Grupo_Opciones;
 
             this.Modo_Consulta();
-            /*           foreach (DataGridView Controles in  Tab_MonOperaciones.Controls)
-                       {
-                           if (Controles is DataGridView)
-                           {
-                               Controles.DefaultCellStyle.BackColor = Color.Black;
-                               Controles.DefaultCellStyle.ForeColor = Color.White;
-                               Controles.BackgroundColor = Color.Black;
-                               Controles.GridColor = Color.Gray;
-                               Controles.ForeColor = Color.White;
-                           }
-                       }            */
+/*            foreach (Control Controles in  Tab_MonOperaciones.Controls)
+            {
+                var dgv_Control = if (this.GetNextControl(Grd_Clientes, true) = DataGridView);
+                {
+                    dgv_Control.DefaultCellStyle.BackColor = Color.Black;
+                    dgv_Control.DefaultCellStyle.ForeColor = Color.White;
+                    Controles.BackgroundColor = Color.Black;
+                    Controles.GridColor = Color.Gray;
+                    Controles.ForeColor = Color.White;
+                }
+            }    */
 
         }
         private void Modo_Consulta()

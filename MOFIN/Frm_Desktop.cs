@@ -112,18 +112,23 @@ namespace MOFIN
 
         private void Frm_Desktop_Load(object sender, EventArgs e)
         {
+            //this.Inicio();
+        }
+        private void Inicio()
+        {
             this.ActualizaMenu();
             TS_MenuPrincipal.Visible = false;
             var sesion = new Frm_SeleccionEmpresa();
             sesion.ShowDialog();
-            if (sesion.DialogResult != DialogResult.OK)
+            if (sesion.DialogResult == DialogResult.Cancel)
             {
-                this.Close();
+                //this.Close();
+                this.ExitToolsStripMenuItem_Click(null, null);
             }
             TS_MenuPrincipal.Visible = true;
-            this.Lbl_Detalle1.Text = Entorno.vs_Empresa+ " / "+ Entorno.vs_Usuario+ " / "+ Entorno.vs_Grupo;
-        }
+            this.Lbl_Detalle1.Text = NEmpresas.GetNombre(Entorno.vs_Empresa) + " / " + Entorno.vs_Usuario + " / " + NGrupos.GetNombre(Entorno.vs_Grupo);
 
+        }
 
         private void Her_Usuarios_Click(object sender, EventArgs e)
         {
@@ -150,6 +155,7 @@ namespace MOFIN
             Form childForm = new Frm_SeleccionEmpresa();
             childForm.MdiParent = this;
             childForm.Show();
+            childForm.Activate();
         }
 
         private void tablasMaestrasToolStripMenuItem_Click(object sender, EventArgs e)
