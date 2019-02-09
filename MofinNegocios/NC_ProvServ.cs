@@ -28,6 +28,11 @@ namespace MofinNegocios
             return dC_ProdServ.ListarPorCliente(cliente);
         }
 
+        public static List<C_ProdServ> ListarPorClienyTipProdServ(string cliente, byte TipoProdServ)
+        {
+            return dC_ProdServ.ListarPorClienyTipProdServ(cliente, TipoProdServ);
+        }
+
         public static C_ProdServ Insertar(C_ProdServ obj)
         {
             return dC_ProdServ.Isertar(obj);

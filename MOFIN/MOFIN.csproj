@@ -289,6 +289,7 @@
       <DependentUpon>MonitorOperacionesDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\MofinDatos.DM_Antiguedad.datasource" />
     <None Include="Properties\DataSources\MofinDatos.DM_Criptomonedas.datasource" />
     <None Include="Properties\DataSources\MofinModelo.B_Buscados.datasource" />
     <None Include="Properties\DataSources\MofinModelo.C_Clientes.datasource" />

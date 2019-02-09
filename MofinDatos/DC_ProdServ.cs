@@ -39,6 +39,18 @@ namespace MofinDatos
             }
         }
 
+        public List<C_ProdServ> ListarPorClienyTipProdServ(string cliente,byte TipoProdServ)
+        {
+            using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
+            {
+                var registros = from datos in db.C_ProdServ
+                                where datos.Cod_Cliente == cliente & 
+                                datos.Tipo_ProdServ == TipoProdServ
+                                select datos;
+                return registros.ToList();
+            }
+        }
+
         public C_ProdServ Isertar(C_ProdServ obj)
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())

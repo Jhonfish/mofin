@@ -19,5 +19,10 @@ namespace MofinModelo
         public string Descripcion { get; set; }
         public byte Valor { get; set; }
         public Nullable<bool> CondEspSeguridad { get; set; }
+
+        public override string ToString()
+        {
+            return Descripcion;
+        }
     }
 }

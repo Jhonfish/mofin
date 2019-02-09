@@ -66,13 +66,13 @@
             System.Windows.Forms.Label Lbl_PEP;
             System.Windows.Forms.Label Lbl_TipoEstructura;
             System.Windows.Forms.Label iG_TipoPersJurLabel;
-            System.Windows.Forms.Label Lbl_Edad;
             System.Windows.Forms.Label Lbl_BenefPEP;
             System.Windows.Forms.Label Lbl_BenefEdad;
             System.Windows.Forms.Label Lbl_BenefFecVenc;
             System.Windows.Forms.Label Lbl_ToTrimestre;
             System.Windows.Forms.Label Lbl_NroOperaciones;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Clientes));
+            this.Lbl_Edad = new System.Windows.Forms.Label();
             this.Btn_Cancelar = new System.Windows.Forms.Button();
             this.Btn_Aceptar = new System.Windows.Forms.Button();
             this.TSB_Siguiente = new System.Windows.Forms.ToolStripButton();
@@ -90,10 +90,15 @@
             this.Tab_Clientes = new System.Windows.Forms.TabControl();
             this.Pag1 = new System.Windows.Forms.TabPage();
             this.Pan_Detalles1 = new System.Windows.Forms.Panel();
-            this.Cmb_TipDocID = new System.Windows.Forms.ComboBox();
+            this.Chlst_Productos = new System.Windows.Forms.CheckedListBox();
+            this.Chlst_Servicios = new System.Windows.Forms.CheckedListBox();
+            this.Cmb_VolOperJur = new System.Windows.Forms.ComboBox();
             this.BS_CClientes = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_MVolOperPersJur = new System.Windows.Forms.BindingSource(this.components);
+            this.Cmb_Antiguedad = new System.Windows.Forms.ComboBox();
+            this.BS_MAntiguedad = new System.Windows.Forms.BindingSource(this.components);
+            this.Cmb_TipDocID = new System.Windows.Forms.ComboBox();
             this.BS_MTipoDocID = new System.Windows.Forms.BindingSource(this.components);
-            this.Lst_Productos = new System.Windows.Forms.ListBox();
             this.Cmb_Criptomonedas = new System.Windows.Forms.ComboBox();
             this.BS_MCriptomonedas = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_VolOperNat = new System.Windows.Forms.ComboBox();
@@ -106,7 +111,6 @@
             this.BS_MTipoPersJuridica = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_Edad = new System.Windows.Forms.ComboBox();
             this.BS_MEdad = new System.Windows.Forms.BindingSource(this.components);
-            this.Lst_Servicios = new System.Windows.Forms.ListBox();
             this.Cmb_ActivComercial = new System.Windows.Forms.ComboBox();
             this.BS_MActivComercial = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_Profesion = new System.Windows.Forms.ComboBox();
@@ -129,9 +133,9 @@
             this.Btn_BenefCancelar = new System.Windows.Forms.Button();
             this.Lbl_BenefEtiqPuntuacion = new System.Windows.Forms.Label();
             this.Lbl_BenefPuntuacion = new System.Windows.Forms.Label();
+            this.BS_CFirBenAcc = new System.Windows.Forms.BindingSource(this.components);
             this.Pan_Detalles2 = new System.Windows.Forms.Panel();
             this.Cmb_BenefCriptomonedas = new System.Windows.Forms.ComboBox();
-            this.BS_CFirBenAcc = new System.Windows.Forms.BindingSource(this.components);
             this.BS_AutCriptomoneda = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_BenefPEP = new System.Windows.Forms.ComboBox();
             this.BS_AutPEP = new System.Windows.Forms.BindingSource(this.components);
@@ -155,7 +159,6 @@
             this.Opc_TipVinc3 = new System.Windows.Forms.RadioButton();
             this.Opc_TipVinc2 = new System.Windows.Forms.RadioButton();
             this.Opc_TipVinc1 = new System.Windows.Forms.RadioButton();
-            this.tipoVinculoTextBox = new System.Windows.Forms.TextBox();
             this.Grd_CFirBenAcc = new System.Windows.Forms.DataGridView();
             this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -213,6 +216,8 @@
             this.Opt_PerUsoCta1 = new System.Windows.Forms.RadioButton();
             this.Pag5 = new System.Windows.Forms.TabPage();
             this.Pic_MapEpresa = new System.Windows.Forms.PictureBox();
+            this.BS_MProductos = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_MServicios = new System.Windows.Forms.BindingSource(this.components);
             this.Lbl_Puntuacion = new System.Windows.Forms.Label();
             this.Lbl_Activo = new System.Windows.Forms.Label();
             this.Lbl_EtiqPunt = new System.Windows.Forms.Label();
@@ -313,11 +318,7 @@
             this.trimMontoOperacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mapaEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_CHistActClientes = new System.Windows.Forms.BindingSource(this.components);
-            this.BS_MAntiguedad = new System.Windows.Forms.BindingSource(this.components);
             this.BS_MNivelRiesgo = new System.Windows.Forms.BindingSource(this.components);
-            this.BS_MProductos = new System.Windows.Forms.BindingSource(this.components);
-            this.BS_MServicios = new System.Windows.Forms.BindingSource(this.components);
-            this.BS_MVolOperPersJur = new System.Windows.Forms.BindingSource(this.components);
             Lbl_Codigo = new System.Windows.Forms.Label();
             Lbl_DocID = new System.Windows.Forms.Label();
             Lbl_Nombre = new System.Windows.Forms.Label();
@@ -355,7 +356,6 @@
             Lbl_PEP = new System.Windows.Forms.Label();
             Lbl_TipoEstructura = new System.Windows.Forms.Label();
             iG_TipoPersJurLabel = new System.Windows.Forms.Label();
-            Lbl_Edad = new System.Windows.Forms.Label();
             Lbl_BenefPEP = new System.Windows.Forms.Label();
             Lbl_BenefEdad = new System.Windows.Forms.Label();
             Lbl_BenefFecVenc = new System.Windows.Forms.Label();
@@ -366,6 +366,8 @@
             this.Pag1.SuspendLayout();
             this.Pan_Detalles1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BS_CClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MVolOperPersJur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MAntiguedad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MTipoDocID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MCriptomonedas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MVolOperPersNat)).BeginInit();
@@ -381,8 +383,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.BS_MPais)).BeginInit();
             this.Pag2.SuspendLayout();
             this.Pan_BenefBtns.SuspendLayout();
-            this.Pan_Detalles2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BS_CFirBenAcc)).BeginInit();
+            this.Pan_Detalles2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutCriptomoneda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutPEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nud_BenefVincPorcent)).BeginInit();
@@ -403,16 +405,14 @@
             this.Grp_PerUsoCta.SuspendLayout();
             this.Pag5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_MapEpresa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MServicios)).BeginInit();
             this.Pan_DetallesEnc.SuspendLayout();
             this.Grp_TipoPersona.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.monitorOperacionesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Clientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_CHistActClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_MAntiguedad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MNivelRiesgo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_MProductos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_MServicios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_MVolOperPersJur)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_Codigo
@@ -529,7 +529,7 @@
             // Lbl_FecVencDocID
             // 
             Lbl_FecVencDocID.AutoSize = true;
-            Lbl_FecVencDocID.Location = new System.Drawing.Point(46, 44);
+            Lbl_FecVencDocID.Location = new System.Drawing.Point(8, 44);
             Lbl_FecVencDocID.Name = "Lbl_FecVencDocID";
             Lbl_FecVencDocID.Size = new System.Drawing.Size(108, 15);
             Lbl_FecVencDocID.TabIndex = 3;
@@ -751,15 +751,6 @@
             iG_TipoPersJurLabel.TabIndex = 35;
             iG_TipoPersJurLabel.Text = "Tipo Pers. Jurídica:";
             // 
-            // Lbl_Edad
-            // 
-            Lbl_Edad.AutoSize = true;
-            Lbl_Edad.Location = new System.Drawing.Point(488, 14);
-            Lbl_Edad.Name = "Lbl_Edad";
-            Lbl_Edad.Size = new System.Drawing.Size(37, 15);
-            Lbl_Edad.TabIndex = 34;
-            Lbl_Edad.Text = "Edad:";
-            // 
             // Lbl_BenefPEP
             // 
             Lbl_BenefPEP.AutoSize = true;
@@ -804,6 +795,16 @@
             Lbl_NroOperaciones.Size = new System.Drawing.Size(103, 15);
             Lbl_NroOperaciones.TabIndex = 31;
             Lbl_NroOperaciones.Text = "Nro. Operaciones:";
+            // 
+            // Lbl_Edad
+            // 
+            this.Lbl_Edad.AutoSize = true;
+            this.Lbl_Edad.Location = new System.Drawing.Point(327, 6);
+            this.Lbl_Edad.Name = "Lbl_Edad";
+            this.Lbl_Edad.Size = new System.Drawing.Size(37, 15);
+            this.Lbl_Edad.TabIndex = 34;
+            this.Lbl_Edad.Text = "Edad:";
+            this.Lbl_Edad.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // Btn_Cancelar
             // 
@@ -992,7 +993,6 @@
             this.Pag1.Controls.Add(Lbl_PEP);
             this.Pag1.Controls.Add(Lbl_TipoEstructura);
             this.Pag1.Controls.Add(iG_TipoPersJurLabel);
-            this.Pag1.Controls.Add(Lbl_Edad);
             this.Pag1.Controls.Add(Lbl_ActivComercial);
             this.Pag1.Controls.Add(Lbl_Profesion);
             this.Pag1.Controls.Add(Lbl_Estado);
@@ -1012,15 +1012,19 @@
             // 
             // Pan_Detalles1
             // 
+            this.Pan_Detalles1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Pan_Detalles1.Controls.Add(this.Chlst_Productos);
+            this.Pan_Detalles1.Controls.Add(this.Chlst_Servicios);
+            this.Pan_Detalles1.Controls.Add(this.Cmb_VolOperJur);
+            this.Pan_Detalles1.Controls.Add(this.Cmb_Antiguedad);
             this.Pan_Detalles1.Controls.Add(this.Cmb_TipDocID);
-            this.Pan_Detalles1.Controls.Add(this.Lst_Productos);
             this.Pan_Detalles1.Controls.Add(this.Cmb_Criptomonedas);
             this.Pan_Detalles1.Controls.Add(this.Cmb_VolOperNat);
             this.Pan_Detalles1.Controls.Add(this.Cmb_PEP);
+            this.Pan_Detalles1.Controls.Add(this.Lbl_Edad);
             this.Pan_Detalles1.Controls.Add(this.Cmb_TipoEstructura);
             this.Pan_Detalles1.Controls.Add(this.Cmb_TipoPersJuridica);
             this.Pan_Detalles1.Controls.Add(this.Cmb_Edad);
-            this.Pan_Detalles1.Controls.Add(this.Lst_Servicios);
             this.Pan_Detalles1.Controls.Add(this.Cmb_ActivComercial);
             this.Pan_Detalles1.Controls.Add(this.Cmb_Profesion);
             this.Pan_Detalles1.Controls.Add(this.Cmb_Estado);
@@ -1032,6 +1036,57 @@
             this.Pan_Detalles1.Name = "Pan_Detalles1";
             this.Pan_Detalles1.Size = new System.Drawing.Size(674, 415);
             this.Pan_Detalles1.TabIndex = 33;
+            // 
+            // Chlst_Productos
+            // 
+            this.Chlst_Productos.FormattingEnabled = true;
+            this.Chlst_Productos.Location = new System.Drawing.Point(330, 253);
+            this.Chlst_Productos.Name = "Chlst_Productos";
+            this.Chlst_Productos.Size = new System.Drawing.Size(324, 157);
+            this.Chlst_Productos.TabIndex = 53;
+            // 
+            // Chlst_Servicios
+            // 
+            this.Chlst_Servicios.FormattingEnabled = true;
+            this.Chlst_Servicios.Location = new System.Drawing.Point(0, 253);
+            this.Chlst_Servicios.Name = "Chlst_Servicios";
+            this.Chlst_Servicios.Size = new System.Drawing.Size(324, 157);
+            this.Chlst_Servicios.TabIndex = 52;
+            // 
+            // Cmb_VolOperJur
+            // 
+            this.Cmb_VolOperJur.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CClientes, "IG_VolumOperac", true));
+            this.Cmb_VolOperJur.DataSource = this.BS_MVolOperPersJur;
+            this.Cmb_VolOperJur.DisplayMember = "Descripcion";
+            this.Cmb_VolOperJur.FormattingEnabled = true;
+            this.Cmb_VolOperJur.Location = new System.Drawing.Point(404, 117);
+            this.Cmb_VolOperJur.Name = "Cmb_VolOperJur";
+            this.Cmb_VolOperJur.Size = new System.Drawing.Size(250, 23);
+            this.Cmb_VolOperJur.TabIndex = 51;
+            this.Cmb_VolOperJur.ValueMember = "Codigo";
+            // 
+            // BS_CClientes
+            // 
+            this.BS_CClientes.DataSource = typeof(MofinModelo.C_Clientes);
+            // 
+            // BS_MVolOperPersJur
+            // 
+            this.BS_MVolOperPersJur.DataSource = typeof(MofinModelo.M_VolOperPersJur);
+            // 
+            // Cmb_Antiguedad
+            // 
+            this.Cmb_Antiguedad.DataSource = this.BS_MAntiguedad;
+            this.Cmb_Antiguedad.DisplayMember = "Descripcion";
+            this.Cmb_Antiguedad.FormattingEnabled = true;
+            this.Cmb_Antiguedad.Location = new System.Drawing.Point(404, 3);
+            this.Cmb_Antiguedad.Name = "Cmb_Antiguedad";
+            this.Cmb_Antiguedad.Size = new System.Drawing.Size(250, 23);
+            this.Cmb_Antiguedad.TabIndex = 50;
+            this.Cmb_Antiguedad.ValueMember = "Codigo";
+            // 
+            // BS_MAntiguedad
+            // 
+            this.BS_MAntiguedad.DataSource = typeof(MofinModelo.M_Antiguedad);
             // 
             // Cmb_TipDocID
             // 
@@ -1045,22 +1100,9 @@
             this.Cmb_TipDocID.TabIndex = 49;
             this.Cmb_TipDocID.ValueMember = "Codigo";
             // 
-            // BS_CClientes
-            // 
-            this.BS_CClientes.DataSource = typeof(MofinModelo.C_Clientes);
-            // 
             // BS_MTipoDocID
             // 
             this.BS_MTipoDocID.DataSource = typeof(MofinModelo.M_TipoDocID);
-            // 
-            // Lst_Productos
-            // 
-            this.Lst_Productos.FormattingEnabled = true;
-            this.Lst_Productos.ItemHeight = 15;
-            this.Lst_Productos.Location = new System.Drawing.Point(330, 256);
-            this.Lst_Productos.Name = "Lst_Productos";
-            this.Lst_Productos.Size = new System.Drawing.Size(320, 154);
-            this.Lst_Productos.TabIndex = 48;
             // 
             // Cmb_Criptomonedas
             // 
@@ -1073,6 +1115,7 @@
             this.Cmb_Criptomonedas.Size = new System.Drawing.Size(250, 23);
             this.Cmb_Criptomonedas.TabIndex = 47;
             this.Cmb_Criptomonedas.ValueMember = "Codigo";
+            this.Cmb_Criptomonedas.SelectedIndexChanged += new System.EventHandler(this.Cmb_Criptomonedas_SelectedIndexChanged);
             // 
             // BS_MCriptomonedas
             // 
@@ -1089,6 +1132,7 @@
             this.Cmb_VolOperNat.Size = new System.Drawing.Size(250, 23);
             this.Cmb_VolOperNat.TabIndex = 46;
             this.Cmb_VolOperNat.ValueMember = "Codigo";
+            this.Cmb_VolOperNat.SelectedIndexChanged += new System.EventHandler(this.Cmb_VolOperNat_SelectedIndexChanged);
             // 
             // BS_MVolOperPersNat
             // 
@@ -1105,6 +1149,7 @@
             this.Cmb_PEP.Size = new System.Drawing.Size(250, 23);
             this.Cmb_PEP.TabIndex = 45;
             this.Cmb_PEP.ValueMember = "Codigo";
+            this.Cmb_PEP.SelectedIndexChanged += new System.EventHandler(this.Cmb_PEP_SelectedIndexChanged);
             // 
             // BS_MPEP
             // 
@@ -1121,6 +1166,7 @@
             this.Cmb_TipoEstructura.Size = new System.Drawing.Size(250, 23);
             this.Cmb_TipoEstructura.TabIndex = 44;
             this.Cmb_TipoEstructura.ValueMember = "Codigo";
+            this.Cmb_TipoEstructura.SelectedIndexChanged += new System.EventHandler(this.Cmb_TipoEstructura_SelectedIndexChanged);
             // 
             // BS_MTipoEstructuraEmpresa
             // 
@@ -1132,11 +1178,12 @@
             this.Cmb_TipoPersJuridica.DataSource = this.BS_MTipoPersJuridica;
             this.Cmb_TipoPersJuridica.DisplayMember = "Descripcion";
             this.Cmb_TipoPersJuridica.FormattingEnabled = true;
-            this.Cmb_TipoPersJuridica.Location = new System.Drawing.Point(404, 33);
+            this.Cmb_TipoPersJuridica.Location = new System.Drawing.Point(406, 32);
             this.Cmb_TipoPersJuridica.Name = "Cmb_TipoPersJuridica";
             this.Cmb_TipoPersJuridica.Size = new System.Drawing.Size(250, 23);
             this.Cmb_TipoPersJuridica.TabIndex = 43;
             this.Cmb_TipoPersJuridica.ValueMember = "Codigo";
+            this.Cmb_TipoPersJuridica.SelectedIndexChanged += new System.EventHandler(this.Cmb_TipoPersJuridica_SelectedIndexChanged);
             // 
             // BS_MTipoPersJuridica
             // 
@@ -1153,19 +1200,11 @@
             this.Cmb_Edad.Size = new System.Drawing.Size(250, 23);
             this.Cmb_Edad.TabIndex = 42;
             this.Cmb_Edad.ValueMember = "Codigo";
+            this.Cmb_Edad.SelectedIndexChanged += new System.EventHandler(this.Cmb_Edad_SelectedIndexChanged);
             // 
             // BS_MEdad
             // 
             this.BS_MEdad.DataSource = typeof(MofinModelo.M_Edad);
-            // 
-            // Lst_Servicios
-            // 
-            this.Lst_Servicios.FormattingEnabled = true;
-            this.Lst_Servicios.ItemHeight = 15;
-            this.Lst_Servicios.Location = new System.Drawing.Point(4, 256);
-            this.Lst_Servicios.Name = "Lst_Servicios";
-            this.Lst_Servicios.Size = new System.Drawing.Size(320, 154);
-            this.Lst_Servicios.TabIndex = 41;
             // 
             // Cmb_ActivComercial
             // 
@@ -1178,6 +1217,7 @@
             this.Cmb_ActivComercial.Size = new System.Drawing.Size(650, 23);
             this.Cmb_ActivComercial.TabIndex = 40;
             this.Cmb_ActivComercial.ValueMember = "Codigo";
+            this.Cmb_ActivComercial.SelectedIndexChanged += new System.EventHandler(this.Cmb_ActivComercial_SelectedIndexChanged);
             // 
             // BS_MActivComercial
             // 
@@ -1194,6 +1234,7 @@
             this.Cmb_Profesion.Size = new System.Drawing.Size(650, 23);
             this.Cmb_Profesion.TabIndex = 39;
             this.Cmb_Profesion.ValueMember = "Codigo";
+            this.Cmb_Profesion.SelectedIndexChanged += new System.EventHandler(this.Cmb_Profesion_SelectedIndexChanged);
             // 
             // BS_MProfesiones
             // 
@@ -1210,6 +1251,7 @@
             this.Cmb_Estado.Size = new System.Drawing.Size(205, 23);
             this.Cmb_Estado.TabIndex = 38;
             this.Cmb_Estado.ValueMember = "Codigo";
+            this.Cmb_Estado.SelectedIndexChanged += new System.EventHandler(this.Cmb_Estado_SelectedIndexChanged);
             // 
             // BS_MEstados
             // 
@@ -1243,6 +1285,7 @@
             this.Cmb_PaisNacimiento.Size = new System.Drawing.Size(250, 23);
             this.Cmb_PaisNacimiento.TabIndex = 36;
             this.Cmb_PaisNacimiento.ValueMember = "Codigo";
+            this.Cmb_PaisNacimiento.SelectedIndexChanged += new System.EventHandler(this.Cmb_PaisNacimiento_SelectedIndexChanged);
             // 
             // BS_Nac
             // 
@@ -1259,6 +1302,7 @@
             this.Cmb_Nacionalidad.Size = new System.Drawing.Size(250, 23);
             this.Cmb_Nacionalidad.TabIndex = 35;
             this.Cmb_Nacionalidad.ValueMember = "Codigo";
+            this.Cmb_Nacionalidad.SelectedIndexChanged += new System.EventHandler(this.Cmb_Nacionalidad_SelectedIndexChanged);
             // 
             // BS_MPais
             // 
@@ -1268,7 +1312,7 @@
             // 
             this.DTP_FecVencDocID.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BS_CClientes, "IG_FecVencDocID", true));
             this.DTP_FecVencDocID.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTP_FecVencDocID.Location = new System.Drawing.Point(47, 33);
+            this.DTP_FecVencDocID.Location = new System.Drawing.Point(4, 33);
             this.DTP_FecVencDocID.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
             this.DTP_FecVencDocID.Name = "DTP_FecVencDocID";
             this.DTP_FecVencDocID.Size = new System.Drawing.Size(105, 22);
@@ -1420,6 +1464,7 @@
             // 
             this.Lbl_BenefPuntuacion.BackColor = System.Drawing.Color.Black;
             this.Lbl_BenefPuntuacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Lbl_BenefPuntuacion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_CFirBenAcc, "Puntuacion", true));
             this.Lbl_BenefPuntuacion.Font = new System.Drawing.Font("Courier New", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_BenefPuntuacion.ForeColor = System.Drawing.Color.Yellow;
             this.Lbl_BenefPuntuacion.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1429,6 +1474,10 @@
             this.Lbl_BenefPuntuacion.TabIndex = 53;
             this.Lbl_BenefPuntuacion.Text = "2";
             this.Lbl_BenefPuntuacion.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // BS_CFirBenAcc
+            // 
+            this.BS_CFirBenAcc.DataSource = typeof(MofinModelo.C_FirBenAcc);
             // 
             // Pan_Detalles2
             // 
@@ -1446,7 +1495,6 @@
             this.Pan_Detalles2.Controls.Add(this.Txt_BenefDoc_ID);
             this.Pan_Detalles2.Controls.Add(this.Txt_BenefNme);
             this.Pan_Detalles2.Controls.Add(this.Grp_BenfTipoVinculacion);
-            this.Pan_Detalles2.Controls.Add(this.tipoVinculoTextBox);
             this.Pan_Detalles2.Controls.Add(this.Grd_CFirBenAcc);
             this.Pan_Detalles2.Location = new System.Drawing.Point(9, 6);
             this.Pan_Detalles2.Name = "Pan_Detalles2";
@@ -1464,10 +1512,6 @@
             this.Cmb_BenefCriptomonedas.Size = new System.Drawing.Size(200, 23);
             this.Cmb_BenefCriptomonedas.TabIndex = 74;
             this.Cmb_BenefCriptomonedas.ValueMember = "Codigo";
-            // 
-            // BS_CFirBenAcc
-            // 
-            this.BS_CFirBenAcc.DataSource = typeof(MofinModelo.C_FirBenAcc);
             // 
             // BS_AutCriptomoneda
             // 
@@ -1670,13 +1714,6 @@
             this.Opc_TipVinc1.Text = "Beneficiario Final";
             this.Opc_TipVinc1.UseVisualStyleBackColor = true;
             this.Opc_TipVinc1.CheckedChanged += new System.EventHandler(this.Opc_TipVinc1_CheckedChanged);
-            // 
-            // tipoVinculoTextBox
-            // 
-            this.tipoVinculoTextBox.Location = new System.Drawing.Point(350, 39);
-            this.tipoVinculoTextBox.Name = "tipoVinculoTextBox";
-            this.tipoVinculoTextBox.Size = new System.Drawing.Size(41, 22);
-            this.tipoVinculoTextBox.TabIndex = 60;
             // 
             // Grd_CFirBenAcc
             // 
@@ -2299,10 +2336,19 @@
             this.Pic_MapEpresa.TabIndex = 0;
             this.Pic_MapEpresa.TabStop = false;
             // 
+            // BS_MProductos
+            // 
+            this.BS_MProductos.DataSource = typeof(MofinModelo.M_Productos);
+            // 
+            // BS_MServicios
+            // 
+            this.BS_MServicios.DataSource = typeof(MofinModelo.M_Servicios);
+            // 
             // Lbl_Puntuacion
             // 
             this.Lbl_Puntuacion.BackColor = System.Drawing.Color.Black;
             this.Lbl_Puntuacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Lbl_Puntuacion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_CClientes, "Cliente_Punt", true));
             this.Lbl_Puntuacion.Font = new System.Drawing.Font("Courier New", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Puntuacion.ForeColor = System.Drawing.Color.Yellow;
             this.Lbl_Puntuacion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3211,25 +3257,9 @@
             // 
             this.BS_CHistActClientes.DataSource = typeof(MofinModelo.C_HistActClientes);
             // 
-            // BS_MAntiguedad
-            // 
-            this.BS_MAntiguedad.DataSource = typeof(MofinModelo.M_Antiguedad);
-            // 
             // BS_MNivelRiesgo
             // 
             this.BS_MNivelRiesgo.DataSource = typeof(MofinModelo.M_NivelRiesgo);
-            // 
-            // BS_MProductos
-            // 
-            this.BS_MProductos.DataSource = typeof(MofinModelo.M_Productos);
-            // 
-            // BS_MServicios
-            // 
-            this.BS_MServicios.DataSource = typeof(MofinModelo.M_Servicios);
-            // 
-            // BS_MVolOperPersJur
-            // 
-            this.BS_MVolOperPersJur.DataSource = typeof(MofinModelo.M_VolOperPersJur);
             // 
             // Frm_Clientes
             // 
@@ -3264,7 +3294,10 @@
             this.Pag1.ResumeLayout(false);
             this.Pag1.PerformLayout();
             this.Pan_Detalles1.ResumeLayout(false);
+            this.Pan_Detalles1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BS_CClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MVolOperPersJur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MAntiguedad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MTipoDocID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MCriptomonedas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MVolOperPersNat)).EndInit();
@@ -3281,9 +3314,9 @@
             this.Pag2.ResumeLayout(false);
             this.Pag2.PerformLayout();
             this.Pan_BenefBtns.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BS_CFirBenAcc)).EndInit();
             this.Pan_Detalles2.ResumeLayout(false);
             this.Pan_Detalles2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_CFirBenAcc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutCriptomoneda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutPEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nud_BenefVincPorcent)).EndInit();
@@ -3308,6 +3341,8 @@
             this.Grp_PerUsoCta.PerformLayout();
             this.Pag5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Pic_MapEpresa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MServicios)).EndInit();
             this.Pan_DetallesEnc.ResumeLayout(false);
             this.Pan_DetallesEnc.PerformLayout();
             this.Grp_TipoPersona.ResumeLayout(false);
@@ -3315,11 +3350,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.monitorOperacionesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Clientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_CHistActClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_MAntiguedad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MNivelRiesgo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_MProductos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_MServicios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_MVolOperPersJur)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3361,14 +3392,12 @@
         private System.Windows.Forms.Button Btn_BenefCancelar;
         private System.Windows.Forms.Panel Pan_BenefBtns;
         private System.Windows.Forms.Panel Pan_Detalles1;
-        private System.Windows.Forms.ListBox Lst_Productos;
         private System.Windows.Forms.ComboBox Cmb_Criptomonedas;
         private System.Windows.Forms.ComboBox Cmb_VolOperNat;
         private System.Windows.Forms.ComboBox Cmb_PEP;
         private System.Windows.Forms.ComboBox Cmb_TipoEstructura;
         private System.Windows.Forms.ComboBox Cmb_TipoPersJuridica;
         private System.Windows.Forms.ComboBox Cmb_Edad;
-        private System.Windows.Forms.ListBox Lst_Servicios;
         private System.Windows.Forms.ComboBox Cmb_ActivComercial;
         private System.Windows.Forms.ComboBox Cmb_Profesion;
         private System.Windows.Forms.ComboBox Cmb_Estado;
@@ -3394,7 +3423,6 @@
         private System.Windows.Forms.RadioButton Opc_TipVinc3;
         private System.Windows.Forms.RadioButton Opc_TipVinc2;
         private System.Windows.Forms.RadioButton Opc_TipVinc1;
-        private System.Windows.Forms.TextBox tipoVinculoTextBox;
         private System.Windows.Forms.DataGridView Grd_CFirBenAcc;
         private System.Windows.Forms.Panel Pan_Detalles3;
         private System.Windows.Forms.CheckBox Chk_Opc30;
@@ -3571,5 +3599,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn trimNroOperacDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn trimMontoOperacDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mapaEmpresaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox Cmb_VolOperJur;
+        private System.Windows.Forms.ComboBox Cmb_Antiguedad;
+        private System.Windows.Forms.Label Lbl_Edad;
+        private System.Windows.Forms.CheckedListBox Chlst_Servicios;
+        private System.Windows.Forms.CheckedListBox Chlst_Productos;
     }
 }
