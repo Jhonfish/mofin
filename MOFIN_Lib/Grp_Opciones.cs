@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace MOFIN_Lib
 {
-    public partial class Grupo_Opciones : UserControl
+    public partial class Grp_Opciones : UserControl
     {
-        RadioButton[] radio;
-        public Grupo_Opciones(int numero)
+        public Grp_Opciones()
         {
-            for (int i = 0;i< numero; i++)
-            {
-                radio[i] = new RadioButton();
-                radio[i].CheckedChanged += Opc_Opcion1_CheckedChanged;
-            }
             InitializeComponent();
-            
         }
         public void Pan_Opciones_Paint(object sender, PaintEventArgs e)
         {
@@ -42,11 +35,6 @@ namespace MOFIN_Lib
                     break;
                 }
             }
-        }
-
-        private void Opc_Opcion1_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

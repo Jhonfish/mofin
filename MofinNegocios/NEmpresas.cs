@@ -27,7 +27,10 @@ namespace MofinNegocios
         {
             return dEmpresas.GetById(id);
         }
-
+        public static string GetNombre(string Codigo)
+        {
+            return dEmpresas.GetNombre(Codigo);
+        }
         public static Empresas Insertar(Empresas obj)
         {
             //obj.Directorio = "No tiene";

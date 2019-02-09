@@ -28,6 +28,11 @@ namespace MofinNegocios
             return dGrupo_Opciones.GetById(id);
         }
 
+        public static List<Grupo_Opciones> ListarPorCodigo(string Codigo)
+        {
+            return dGrupo_Opciones.ListarPorCodigo(Codigo);
+        }
+
         public static Grupo_Opciones Insertar(Grupo_Opciones obj)
         {
             return dGrupo_Opciones.Isertar(obj);
@@ -42,5 +47,7 @@ namespace MofinNegocios
         {
             dGrupo_Opciones.Eliminar(obj);
         }
+
+
     }
 }

@@ -9,18 +9,75 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using MOFIN_LIB;
+using MofinNegocios;
+using MofinModelo;
+using MofinModeloEntorno;
+
 
 namespace MOFIN
 {
-    public partial class Frm_Desktop : MetroForm
+    //public interface IForm { }
+
+    public partial class Frm_Desktop : MetroForm, IForm
     {
         private int childFormNumber = 0;
+        Grupos r_GrupoOpciones = new Grupos();
 
         public Frm_Desktop()
         {
+
             InitializeComponent();
+            this.CambiaImagen();
             this.Asigna_Nombres(null, null);
             //TS_MenuPrincipal.ForeColor = Color.White; ;
+            //this.Inicio();
+            this.Lbl_Detalle1.Text = NEmpresas.GetNombre(Entorno.vs_Empresa) + " | " + Entorno.vs_Usuario + " | " + NGrupos.GetNombre(Entorno.vs_Grupo);
+        }
+
+        #region IForm Members
+        public void ActualizaLabeldesktop(string Text)
+        {
+            this.Lbl_Detalle1.Text = Text;
+        }
+        public void ActualizaMenu()
+        {
+            BS_Grupos.DataSource = NGrupos.ListarPorCodigo(MOFIN_LIB.Entorno.vs_Grupo);
+            r_GrupoOpciones = BS_Grupos.Current as Grupos;
+
+            Mnu_Clientes.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Clientes == null ? false : (bool)r_GrupoOpciones.Clientes;
+            Cli_Monitor.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Cli_Monitor == null ? false : (bool)r_GrupoOpciones.Cli_Monitor;
+            Cli_Busqueda.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Cli_Busqueda == null ? false : (bool)r_GrupoOpciones.Cli_Busqueda;
+            Mnu_Operaciones.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Mon_Operaciones == null ? false : (bool)r_GrupoOpciones.Mon_Operaciones;
+            Ope_Financieras.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Mon_Financiero == null ? false : (bool)r_GrupoOpciones.Mon_Financiero;
+            Ope_Transaccionales.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Mon_Operacional == null ? false : (bool)r_GrupoOpciones.Mon_Operacional;
+            Mnu_TablasMaestras.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Tablas_Maestras == null ? false : (bool)r_GrupoOpciones.Tablas_Maestras;
+            Mnu_TablasMaestras.Visible = MOFIN_LIB.Entorno.vs_Maestro;
+            Tab_Maestros.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Tab_Maestras == null ? false : (bool)r_GrupoOpciones.Tab_Maestras;
+            Mnu_Herramientas.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Opc_Sistema == null ? false : (bool)r_GrupoOpciones.Opc_Sistema;
+            Her_Empresas.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Ops_Empresas == null ? false : (bool)r_GrupoOpciones.Ops_Empresas;
+            Her_Grupos.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Ops_Grupos == null ? false : (bool)r_GrupoOpciones.Ops_Grupos;
+            Her_Usuarios.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Ops_Usuarios == null ? false : (bool)r_GrupoOpciones.Ops_Usuarios;
+        }
+
+        #endregion
+
+        private void Frm_Desktop_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void Inicio()
+        {
+            this.ActualizaMenu();
+            TS_MenuPrincipal.Visible = false;
+            var sesion = new Frm_SeleccionEmpresa();
+            sesion.ShowDialog();
+            if (sesion.DialogResult == DialogResult.Cancel)
+            {
+                //this.Close();
+                this.ExitToolsStripMenuItem_Click(null, null);
+            }
+            TS_MenuPrincipal.Visible = true;
+
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -103,11 +160,6 @@ namespace MOFIN
             }
         }
 
-        private void Frm_Desktop_Load(object sender, EventArgs e)
-        {
-        }
-
-
         private void Her_Usuarios_Click(object sender, EventArgs e)
         {
             Form childForm = new Frm_Usuarios();
@@ -133,6 +185,8 @@ namespace MOFIN
             Form childForm = new Frm_SeleccionEmpresa();
             childForm.MdiParent = this;
             childForm.Show();
+//            childForm.Activate();
+
         }
 
         private void tablasMaestrasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -161,32 +215,65 @@ namespace MOFIN
             childForm.MdiParent = this;
             childForm.Show();
         }
+        private void Ope_Transaccionales_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Frm_OpeTransac();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
 
         private void CambiaImagen()
         {
             Random vl_Rnd = new Random();
-            int aleatorio = vl_Rnd.Next(0, 4);
-            switch (vl_Rnd.ToString())
+            int aleatorio = vl_Rnd.Next(0, 7);
+            switch (aleatorio)
             {
-                case "0":
+                case 0:
                     this.BackgroundImage = global::MOFIN.Properties.Resources.desktop0;
                     break;
-                case "1":
+                case 1:
                     this.BackgroundImage = global::MOFIN.Properties.Resources.desktop1;
                     break;
-                case "2":
+                case 2:
                     this.BackgroundImage = global::MOFIN.Properties.Resources.desktop2;
                     break;
-                case "3":
+                case 3:
                     this.BackgroundImage = global::MOFIN.Properties.Resources.desktop3;
                     break;
-                case "4":
+                case 4:
                     this.BackgroundImage = global::MOFIN.Properties.Resources.desktop4;
                     break;
-                    /*                case "5":
-                                        this.BackgroundImage = global::MOFIN.Properties.Resources.desktop5;
-                                        break;
-                     */
+                case 5:
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop5;
+                    break;
+                case 6:
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop6;
+                    break;
+                case 7:
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop7;
+                    break;
+/*                case 8:
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop8;
+                    break;
+                case 9:
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop9;
+                    break;
+                case 10:
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop10;
+                    break;
+                case 11:
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop11;
+                    break;
+                case 12:
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop12;
+                    break;
+                case 13:
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop13;
+                    break;
+                case 14:
+                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop14;
+                    break;*/
             }
 
         }
@@ -219,7 +306,7 @@ namespace MOFIN
 
             this.Mnu_Operaciones.Text = MOFIN_LIB.Funciones._Mens_Idioma(2331);
                 this.Ope_Financieras.Text = MOFIN_LIB.Funciones._Mens_Idioma(13000);
-                this.Ope_Transaccionales.Text = MOFIN_LIB.Funciones._Mens_Idioma(2333);
+                this.Ope_Transaccionales.Text = MOFIN_LIB.Funciones._Mens_Idioma(14000);
 
             this.Mnu_TablasMaestras.Text = MOFIN_LIB.Funciones._Mens_Idioma(2341);
                 this.Tab_Maestros.Text = MOFIN_LIB.Funciones._Mens_Idioma(10001);
@@ -240,6 +327,17 @@ namespace MOFIN
 
             //            MOFIN_LIB.Funciones.TTT_Btn(Btn_Aceptar, MOFIN_LIB.Funciones._Mens_Idioma(141));
             //            MOFIN_LIB.Funciones.TTT_Btn(Btn_Cancelar, MOFIN_LIB.Funciones._Mens_Idioma(142));
+        }
+
+        private void cambiaFondoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.CambiaImagen();
+        }
+
+        private void Frm_Desktop_Activated(object sender, EventArgs e)
+        {
+            this.Lbl_Detalle1.Text = NEmpresas.GetNombre(Entorno.vs_Empresa) + " / " + Entorno.vs_Usuario + " / " + NGrupos.GetNombre(Entorno.vs_Grupo);
+
         }
     }
 }

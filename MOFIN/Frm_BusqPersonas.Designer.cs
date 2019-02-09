@@ -52,23 +52,26 @@
             this.Lbl_ListFirBenAcc = new System.Windows.Forms.Label();
             this.BS_CClientes = new System.Windows.Forms.BindingSource(this.components);
             this.Grd_Clientes = new System.Windows.Forms.DataGridView();
+            this.Col_CliCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CliDocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CliNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_BBuscados = new System.Windows.Forms.BindingSource(this.components);
             this.Grd_Buscados = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn92 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn93 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn94 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn95 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn96 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn97 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn98 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_DocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_EnteBusca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_FecBusqueda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_FecRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_PaisBusca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_CFirBenAcc = new System.Windows.Forms.BindingSource(this.components);
             this.Grd_FirBenAcc = new System.Windows.Forms.DataGridView();
             this.Col_FBACodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_FBADocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_FBANombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CliCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CliDocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CliNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BS_Grupo_Opciones = new System.Windows.Forms.BindingSource(this.components);
+            this.Grd_BuscaTodos = new System.Windows.Forms.DataGridView();
+            this.Btn_Mostrar = new System.Windows.Forms.Button();
+            this.Lbl_Proceso = new System.Windows.Forms.Label();
             this.Grp_CritBusqueda.SuspendLayout();
             this.Grp_DocId.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Nud_NroCar)).BeginInit();
@@ -78,6 +81,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Buscados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_CFirBenAcc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_FirBenAcc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grd_BuscaTodos)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_BuscarTodos
@@ -96,6 +101,7 @@
             this.Btn_BuscarTodos.TabIndex = 24;
             this.Btn_BuscarTodos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_BuscarTodos.UseVisualStyleBackColor = true;
+            this.Btn_BuscarTodos.Click += new System.EventHandler(this.Btn_BuscarTodos_Click);
             // 
             // Btn_Buscar1
             // 
@@ -113,6 +119,7 @@
             this.Btn_Buscar1.TabIndex = 23;
             this.Btn_Buscar1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_Buscar1.UseVisualStyleBackColor = true;
+            this.Btn_Buscar1.Click += new System.EventHandler(this.Btn_Buscar1_Click);
             // 
             // Txt_Nombre
             // 
@@ -271,6 +278,7 @@
             this.Btn_MostrarTodos.TabIndex = 33;
             this.Btn_MostrarTodos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_MostrarTodos.UseVisualStyleBackColor = true;
+            this.Btn_MostrarTodos.Click += new System.EventHandler(this.Btn_MostrarTodos_Click);
             // 
             // Btn_Imprimir
             // 
@@ -335,127 +343,9 @@
             this.Grd_Clientes.Name = "Grd_Clientes";
             this.Grd_Clientes.ReadOnly = true;
             this.Grd_Clientes.RowHeadersVisible = false;
+            this.Grd_Clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grd_Clientes.Size = new System.Drawing.Size(431, 250);
             this.Grd_Clientes.TabIndex = 37;
-            // 
-            // BS_BBuscados
-            // 
-            this.BS_BBuscados.DataSource = typeof(MofinModelo.B_Buscados);
-            // 
-            // Grd_Buscados
-            // 
-            this.Grd_Buscados.AllowUserToAddRows = false;
-            this.Grd_Buscados.AllowUserToDeleteRows = false;
-            this.Grd_Buscados.AutoGenerateColumns = false;
-            this.Grd_Buscados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grd_Buscados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn92,
-            this.dataGridViewTextBoxColumn93,
-            this.dataGridViewTextBoxColumn94,
-            this.dataGridViewTextBoxColumn95,
-            this.dataGridViewTextBoxColumn96,
-            this.dataGridViewTextBoxColumn97,
-            this.dataGridViewTextBoxColumn98});
-            this.Grd_Buscados.DataSource = this.BS_BBuscados;
-            this.Grd_Buscados.Location = new System.Drawing.Point(18, 213);
-            this.Grd_Buscados.Name = "Grd_Buscados";
-            this.Grd_Buscados.ReadOnly = true;
-            this.Grd_Buscados.RowHeadersVisible = false;
-            this.Grd_Buscados.Size = new System.Drawing.Size(832, 250);
-            this.Grd_Buscados.TabIndex = 37;
-            // 
-            // dataGridViewTextBoxColumn92
-            // 
-            this.dataGridViewTextBoxColumn92.DataPropertyName = "ID_Sistema";
-            this.dataGridViewTextBoxColumn92.HeaderText = "ID_Sistema";
-            this.dataGridViewTextBoxColumn92.Name = "dataGridViewTextBoxColumn92";
-            this.dataGridViewTextBoxColumn92.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn93
-            // 
-            this.dataGridViewTextBoxColumn93.DataPropertyName = "Nombre";
-            this.dataGridViewTextBoxColumn93.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn93.Name = "dataGridViewTextBoxColumn93";
-            this.dataGridViewTextBoxColumn93.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn94
-            // 
-            this.dataGridViewTextBoxColumn94.DataPropertyName = "Doc_ID";
-            this.dataGridViewTextBoxColumn94.HeaderText = "Doc_ID";
-            this.dataGridViewTextBoxColumn94.Name = "dataGridViewTextBoxColumn94";
-            this.dataGridViewTextBoxColumn94.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn95
-            // 
-            this.dataGridViewTextBoxColumn95.DataPropertyName = "Ente_Busca";
-            this.dataGridViewTextBoxColumn95.HeaderText = "Ente_Busca";
-            this.dataGridViewTextBoxColumn95.Name = "dataGridViewTextBoxColumn95";
-            this.dataGridViewTextBoxColumn95.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn96
-            // 
-            this.dataGridViewTextBoxColumn96.DataPropertyName = "Fec_Busqueda";
-            this.dataGridViewTextBoxColumn96.HeaderText = "Fec_Busqueda";
-            this.dataGridViewTextBoxColumn96.Name = "dataGridViewTextBoxColumn96";
-            this.dataGridViewTextBoxColumn96.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn97
-            // 
-            this.dataGridViewTextBoxColumn97.DataPropertyName = "Fec_Registro";
-            this.dataGridViewTextBoxColumn97.HeaderText = "Fec_Registro";
-            this.dataGridViewTextBoxColumn97.Name = "dataGridViewTextBoxColumn97";
-            this.dataGridViewTextBoxColumn97.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn98
-            // 
-            this.dataGridViewTextBoxColumn98.DataPropertyName = "Pais_Busca";
-            this.dataGridViewTextBoxColumn98.HeaderText = "Pais_Busca";
-            this.dataGridViewTextBoxColumn98.Name = "dataGridViewTextBoxColumn98";
-            this.dataGridViewTextBoxColumn98.ReadOnly = true;
-            // 
-            // BS_CFirBenAcc
-            // 
-            this.BS_CFirBenAcc.DataSource = typeof(MofinModelo.C_FirBenAcc);
-            // 
-            // Grd_FirBenAcc
-            // 
-            this.Grd_FirBenAcc.AllowUserToAddRows = false;
-            this.Grd_FirBenAcc.AllowUserToDeleteRows = false;
-            this.Grd_FirBenAcc.AutoGenerateColumns = false;
-            this.Grd_FirBenAcc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grd_FirBenAcc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Col_FBACodigo,
-            this.Col_FBADocID,
-            this.Col_FBANombre});
-            this.Grd_FirBenAcc.DataSource = this.BS_CFirBenAcc;
-            this.Grd_FirBenAcc.Location = new System.Drawing.Point(455, 485);
-            this.Grd_FirBenAcc.Name = "Grd_FirBenAcc";
-            this.Grd_FirBenAcc.ReadOnly = true;
-            this.Grd_FirBenAcc.RowHeadersVisible = false;
-            this.Grd_FirBenAcc.Size = new System.Drawing.Size(395, 250);
-            this.Grd_FirBenAcc.TabIndex = 37;
-            // 
-            // Col_FBACodigo
-            // 
-            this.Col_FBACodigo.DataPropertyName = "Cod_Cliente";
-            this.Col_FBACodigo.HeaderText = "Cod_Cliente";
-            this.Col_FBACodigo.Name = "Col_FBACodigo";
-            this.Col_FBACodigo.ReadOnly = true;
-            // 
-            // Col_FBADocID
-            // 
-            this.Col_FBADocID.DataPropertyName = "Doc_ID";
-            this.Col_FBADocID.HeaderText = "Doc_ID";
-            this.Col_FBADocID.Name = "Col_FBADocID";
-            this.Col_FBADocID.ReadOnly = true;
-            // 
-            // Col_FBANombre
-            // 
-            this.Col_FBANombre.DataPropertyName = "Nombre";
-            this.Col_FBANombre.HeaderText = "Nombre";
-            this.Col_FBANombre.Name = "Col_FBANombre";
-            this.Col_FBANombre.ReadOnly = true;
-            this.Col_FBANombre.Width = 200;
             // 
             // Col_CliCodigo
             // 
@@ -481,11 +371,170 @@
             this.Col_CliNombre.ReadOnly = true;
             this.Col_CliNombre.Width = 250;
             // 
+            // BS_BBuscados
+            // 
+            this.BS_BBuscados.DataSource = typeof(MofinModelo.B_Buscados);
+            // 
+            // Grd_Buscados
+            // 
+            this.Grd_Buscados.AllowUserToAddRows = false;
+            this.Grd_Buscados.AllowUserToDeleteRows = false;
+            this.Grd_Buscados.AutoGenerateColumns = false;
+            this.Grd_Buscados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grd_Buscados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Col_Nombre,
+            this.Col_DocID,
+            this.Col_EnteBusca,
+            this.Col_FecBusqueda,
+            this.Col_FecRegistro,
+            this.Col_PaisBusca});
+            this.Grd_Buscados.DataSource = this.BS_BBuscados;
+            this.Grd_Buscados.Location = new System.Drawing.Point(18, 213);
+            this.Grd_Buscados.Name = "Grd_Buscados";
+            this.Grd_Buscados.ReadOnly = true;
+            this.Grd_Buscados.RowHeadersVisible = false;
+            this.Grd_Buscados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Grd_Buscados.Size = new System.Drawing.Size(832, 250);
+            this.Grd_Buscados.TabIndex = 37;
+            // 
+            // Col_Nombre
+            // 
+            this.Col_Nombre.DataPropertyName = "Nombre";
+            this.Col_Nombre.FillWeight = 300F;
+            this.Col_Nombre.HeaderText = "Nombre";
+            this.Col_Nombre.Name = "Col_Nombre";
+            this.Col_Nombre.ReadOnly = true;
+            this.Col_Nombre.Width = 300;
+            // 
+            // Col_DocID
+            // 
+            this.Col_DocID.DataPropertyName = "Doc_ID";
+            this.Col_DocID.HeaderText = "Doc_ID";
+            this.Col_DocID.Name = "Col_DocID";
+            this.Col_DocID.ReadOnly = true;
+            this.Col_DocID.Width = 138;
+            // 
+            // Col_EnteBusca
+            // 
+            this.Col_EnteBusca.DataPropertyName = "Ente_Busca";
+            this.Col_EnteBusca.HeaderText = "Ente_Busca";
+            this.Col_EnteBusca.Name = "Col_EnteBusca";
+            this.Col_EnteBusca.ReadOnly = true;
+            this.Col_EnteBusca.Width = 139;
+            // 
+            // Col_FecBusqueda
+            // 
+            this.Col_FecBusqueda.DataPropertyName = "Fec_Busqueda";
+            this.Col_FecBusqueda.HeaderText = "Fec_Busqueda";
+            this.Col_FecBusqueda.Name = "Col_FecBusqueda";
+            this.Col_FecBusqueda.ReadOnly = true;
+            this.Col_FecBusqueda.Width = 138;
+            // 
+            // Col_FecRegistro
+            // 
+            this.Col_FecRegistro.DataPropertyName = "Fec_Registro";
+            this.Col_FecRegistro.HeaderText = "Fec_Registro";
+            this.Col_FecRegistro.Name = "Col_FecRegistro";
+            this.Col_FecRegistro.ReadOnly = true;
+            this.Col_FecRegistro.Width = 138;
+            // 
+            // Col_PaisBusca
+            // 
+            this.Col_PaisBusca.DataPropertyName = "Pais_Busca";
+            this.Col_PaisBusca.HeaderText = "Pais_Busca";
+            this.Col_PaisBusca.Name = "Col_PaisBusca";
+            this.Col_PaisBusca.ReadOnly = true;
+            this.Col_PaisBusca.Width = 138;
+            // 
+            // BS_CFirBenAcc
+            // 
+            this.BS_CFirBenAcc.DataSource = typeof(MofinModelo.C_FirBenAcc);
+            // 
+            // Grd_FirBenAcc
+            // 
+            this.Grd_FirBenAcc.AllowUserToAddRows = false;
+            this.Grd_FirBenAcc.AllowUserToDeleteRows = false;
+            this.Grd_FirBenAcc.AutoGenerateColumns = false;
+            this.Grd_FirBenAcc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grd_FirBenAcc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Col_FBACodigo,
+            this.Col_FBADocID,
+            this.Col_FBANombre});
+            this.Grd_FirBenAcc.DataSource = this.BS_CFirBenAcc;
+            this.Grd_FirBenAcc.Location = new System.Drawing.Point(455, 485);
+            this.Grd_FirBenAcc.Name = "Grd_FirBenAcc";
+            this.Grd_FirBenAcc.ReadOnly = true;
+            this.Grd_FirBenAcc.RowHeadersVisible = false;
+            this.Grd_FirBenAcc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Grd_FirBenAcc.Size = new System.Drawing.Size(395, 250);
+            this.Grd_FirBenAcc.TabIndex = 37;
+            // 
+            // Col_FBACodigo
+            // 
+            this.Col_FBACodigo.DataPropertyName = "Cod_Cliente";
+            this.Col_FBACodigo.HeaderText = "Cod_Cliente";
+            this.Col_FBACodigo.Name = "Col_FBACodigo";
+            this.Col_FBACodigo.ReadOnly = true;
+            // 
+            // Col_FBADocID
+            // 
+            this.Col_FBADocID.DataPropertyName = "Doc_ID";
+            this.Col_FBADocID.HeaderText = "Doc_ID";
+            this.Col_FBADocID.Name = "Col_FBADocID";
+            this.Col_FBADocID.ReadOnly = true;
+            // 
+            // Col_FBANombre
+            // 
+            this.Col_FBANombre.DataPropertyName = "Nombre";
+            this.Col_FBANombre.HeaderText = "Nombre";
+            this.Col_FBANombre.Name = "Col_FBANombre";
+            this.Col_FBANombre.ReadOnly = true;
+            this.Col_FBANombre.Width = 200;
+            // 
+            // BS_Grupo_Opciones
+            // 
+            this.BS_Grupo_Opciones.DataSource = typeof(MofinModeloEntorno.Grupo_Opciones);
+            // 
+            // Grd_BuscaTodos
+            // 
+            this.Grd_BuscaTodos.AllowUserToAddRows = false;
+            this.Grd_BuscaTodos.AllowUserToDeleteRows = false;
+            this.Grd_BuscaTodos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grd_BuscaTodos.Location = new System.Drawing.Point(150, 107);
+            this.Grd_BuscaTodos.Name = "Grd_BuscaTodos";
+            this.Grd_BuscaTodos.RowHeadersVisible = false;
+            this.Grd_BuscaTodos.Size = new System.Drawing.Size(552, 437);
+            this.Grd_BuscaTodos.TabIndex = 38;
+            this.Grd_BuscaTodos.Visible = false;
+            // 
+            // Btn_Mostrar
+            // 
+            this.Btn_Mostrar.Location = new System.Drawing.Point(523, 86);
+            this.Btn_Mostrar.Name = "Btn_Mostrar";
+            this.Btn_Mostrar.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Mostrar.TabIndex = 39;
+            this.Btn_Mostrar.Text = "Ocultar";
+            this.Btn_Mostrar.UseVisualStyleBackColor = true;
+            this.Btn_Mostrar.Visible = false;
+            this.Btn_Mostrar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Lbl_Proceso
+            // 
+            this.Lbl_Proceso.Location = new System.Drawing.Point(281, 37);
+            this.Lbl_Proceso.Name = "Lbl_Proceso";
+            this.Lbl_Proceso.Size = new System.Drawing.Size(450, 16);
+            this.Lbl_Proceso.TabIndex = 40;
+            this.Lbl_Proceso.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Frm_BusqPersonas
             // 
+            this.AcceptButton = this.Btn_Buscar1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 750);
+            this.ClientSize = new System.Drawing.Size(872, 755);
+            this.Controls.Add(this.Lbl_Proceso);
+            this.Controls.Add(this.Btn_Mostrar);
+            this.Controls.Add(this.Grd_BuscaTodos);
             this.Controls.Add(this.Grd_FirBenAcc);
             this.Controls.Add(this.Grd_Buscados);
             this.Controls.Add(this.Grd_Clientes);
@@ -504,6 +553,7 @@
             this.Controls.Add(this.Btn_BuscarTodos);
             this.Controls.Add(this.Btn_Buscar1);
             this.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Frm_BusqPersonas";
@@ -523,6 +573,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Buscados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_CFirBenAcc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_FirBenAcc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grd_BuscaTodos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -554,13 +606,6 @@
         private System.Windows.Forms.DataGridView Grd_Clientes;
         private System.Windows.Forms.BindingSource BS_BBuscados;
         private System.Windows.Forms.DataGridView Grd_Buscados;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn92;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn93;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn94;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn95;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn96;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn97;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn98;
         private System.Windows.Forms.BindingSource BS_CFirBenAcc;
         private System.Windows.Forms.DataGridView Grd_FirBenAcc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_FBACodigo;
@@ -569,5 +614,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_CliCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_CliDocID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_CliNombre;
+        private System.Windows.Forms.BindingSource BS_Grupo_Opciones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_DocID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_EnteBusca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_FecBusqueda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_FecRegistro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_PaisBusca;
+        private System.Windows.Forms.DataGridView Grd_BuscaTodos;
+        private System.Windows.Forms.Button Btn_Mostrar;
+        private System.Windows.Forms.Label Lbl_Proceso;
     }
 }

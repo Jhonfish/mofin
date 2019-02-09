@@ -84,6 +84,9 @@
       <DependentUpon>MofinModeloEntorno.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>MofinModeloEntorno.tt</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios.cs">
       <DependentUpon>MofinModeloEntorno.tt</DependentUpon>
     </Compile>

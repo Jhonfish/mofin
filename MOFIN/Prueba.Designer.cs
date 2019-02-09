@@ -42,7 +42,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.Txt_Resultado = new System.Windows.Forms.TextBox();
             this.DTP_Fecha = new System.Windows.Forms.DateTimePicker();
-            //this.Opc_Prueba = new MOFIN_Lib.Grupo_Opciones();
+            this.txt_dondesebuscara = new System.Windows.Forms.TextBox();
+            this.txt_quesebusca = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Idiomas)).BeginInit();
             this.Pan_Prueba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Valor)).BeginInit();
@@ -55,7 +58,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(79, 181);
+            this.button1.Location = new System.Drawing.Point(88, 163);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -143,9 +146,9 @@
             // 
             // NUD_Ano
             // 
-            this.NUD_Ano.Location = new System.Drawing.Point(287, 163);
+            this.NUD_Ano.Location = new System.Drawing.Point(331, 67);
             this.NUD_Ano.Maximum = new decimal(new int[] {
-            3000,
+            10000000,
             0,
             0,
             0});
@@ -160,7 +163,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(364, 163);
+            this.button2.Location = new System.Drawing.Point(408, 67);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 8;
@@ -170,31 +173,61 @@
             // 
             // Txt_Resultado
             // 
-            this.Txt_Resultado.Location = new System.Drawing.Point(463, 167);
+            this.Txt_Resultado.Location = new System.Drawing.Point(507, 71);
             this.Txt_Resultado.Name = "Txt_Resultado";
             this.Txt_Resultado.Size = new System.Drawing.Size(100, 20);
             this.Txt_Resultado.TabIndex = 9;
             // 
             // DTP_Fecha
             // 
-            this.DTP_Fecha.Location = new System.Drawing.Point(316, 130);
+            this.DTP_Fecha.Location = new System.Drawing.Point(360, 34);
             this.DTP_Fecha.Name = "DTP_Fecha";
             this.DTP_Fecha.Size = new System.Drawing.Size(200, 20);
             this.DTP_Fecha.TabIndex = 10;
             // 
-            // Opc_Prueba
+            // txt_dondesebuscara
             // 
-            this.Opc_Prueba.Location = new System.Drawing.Point(263, 12);
-            this.Opc_Prueba.Name = "Opc_Prueba";
-            this.Opc_Prueba.Size = new System.Drawing.Size(115, 78);
-            this.Opc_Prueba.TabIndex = 11;
+            this.txt_dondesebuscara.Location = new System.Drawing.Point(404, 187);
+            this.txt_dondesebuscara.Name = "txt_dondesebuscara";
+            this.txt_dondesebuscara.Size = new System.Drawing.Size(235, 20);
+            this.txt_dondesebuscara.TabIndex = 11;
+            // 
+            // txt_quesebusca
+            // 
+            this.txt_quesebusca.Location = new System.Drawing.Point(403, 217);
+            this.txt_quesebusca.Name = "txt_quesebusca";
+            this.txt_quesebusca.Size = new System.Drawing.Size(100, 20);
+            this.txt_quesebusca.TabIndex = 12;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(541, 217);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(204, 299);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "MK";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Prueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Opc_Prueba);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.txt_quesebusca);
+            this.Controls.Add(this.txt_dondesebuscara);
             this.Controls.Add(this.DTP_Fecha);
             this.Controls.Add(this.Txt_Resultado);
             this.Controls.Add(this.button2);
@@ -231,6 +264,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox Txt_Resultado;
         private System.Windows.Forms.DateTimePicker DTP_Fecha;
-        private MOFIN_Lib.Grupo_Opciones Opc_Prueba;
+        private System.Windows.Forms.TextBox txt_dondesebuscara;
+        private System.Windows.Forms.TextBox txt_quesebusca;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

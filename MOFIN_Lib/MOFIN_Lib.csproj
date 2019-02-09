@@ -49,6 +49,12 @@
     <Compile Include="FormaOpciones.Designer.cs">
       <DependentUpon>FormaOpciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grp_Opciones.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grp_Opciones.Designer.cs">
+      <DependentUpon>Grp_Opciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Libreria.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -63,11 +69,11 @@
     </Compile>
     <Compile Include="System\ComponentModel\Design\ComponentDesigner.cs" />
     <Compile Include="System\Windows\Forms\Design\ControlDesigner.cs" />
-    <Compile Include="Grupo_Opciones.cs">
+    <Compile Include="OptionGroup.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Grupo_Opciones.Designer.cs">
-      <DependentUpon>Grupo_Opciones.cs</DependentUpon>
+    <Compile Include="OptionGroup.Designer.cs">
+      <DependentUpon>OptionGroup.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -81,12 +87,15 @@
     <EmbeddedResource Include="FormaOpciones.resx">
       <DependentUpon>FormaOpciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grp_Opciones.resx">
+      <DependentUpon>Grp_Opciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grupo_Opciones.resx">
-      <DependentUpon>Grupo_Opciones.cs</DependentUpon>
+    <EmbeddedResource Include="OptionGroup.resx">
+      <DependentUpon>OptionGroup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

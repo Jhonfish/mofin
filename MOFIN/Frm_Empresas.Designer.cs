@@ -52,6 +52,9 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_Salir = new System.Windows.Forms.ToolStripButton();
             this.Grd_Empresas = new System.Windows.Forms.DataGridView();
+            this.Col_Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Siglas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_Empresas = new System.Windows.Forms.BindingSource(this.components);
             this.Pan_Elementos = new System.Windows.Forms.Panel();
             this.Txt_Codigo = new System.Windows.Forms.TextBox();
@@ -65,13 +68,12 @@
             this.Txt_Logo = new System.Windows.Forms.TextBox();
             this.Btn_Cancelar = new System.Windows.Forms.Button();
             this.Btn_Aceptar = new System.Windows.Forms.Button();
-            this.Col_Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Siglas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BS_Grupo_Opciones = new System.Windows.Forms.BindingSource(this.components);
             this.TS_BarraHerramientas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Empresas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Empresas)).BeginInit();
             this.Pan_Elementos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_Codigo
@@ -298,6 +300,27 @@
             this.Grd_Empresas.TabIndex = 56;
             this.Grd_Empresas.CurrentCellChanged += new System.EventHandler(this.Grd_Empresas_CurrentCellChanged);
             // 
+            // Col_Codigo
+            // 
+            this.Col_Codigo.DataPropertyName = "Codigo";
+            this.Col_Codigo.HeaderText = "Codigo";
+            this.Col_Codigo.Name = "Col_Codigo";
+            this.Col_Codigo.Width = 75;
+            // 
+            // Col_Nombre
+            // 
+            this.Col_Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Col_Nombre.DataPropertyName = "Nombre";
+            this.Col_Nombre.HeaderText = "Nombre";
+            this.Col_Nombre.Name = "Col_Nombre";
+            this.Col_Nombre.Width = 150;
+            // 
+            // Col_Siglas
+            // 
+            this.Col_Siglas.DataPropertyName = "Siglas";
+            this.Col_Siglas.HeaderText = "Siglas";
+            this.Col_Siglas.Name = "Col_Siglas";
+            // 
             // BS_Empresas
             // 
             this.BS_Empresas.DataSource = typeof(MofinModeloEntorno.Empresas);
@@ -441,33 +464,16 @@
             this.Btn_Aceptar.Visible = false;
             this.Btn_Aceptar.Click += new System.EventHandler(this.Btn_Aceptar_Click);
             // 
-            // Col_Codigo
+            // BS_Grupo_Opciones
             // 
-            this.Col_Codigo.DataPropertyName = "Codigo";
-            this.Col_Codigo.HeaderText = "Codigo";
-            this.Col_Codigo.Name = "Col_Codigo";
-            this.Col_Codigo.Width = 75;
-            // 
-            // Col_Nombre
-            // 
-            this.Col_Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Col_Nombre.DataPropertyName = "Nombre";
-            this.Col_Nombre.HeaderText = "Nombre";
-            this.Col_Nombre.Name = "Col_Nombre";
-            this.Col_Nombre.Width = 150;
-            // 
-            // Col_Siglas
-            // 
-            this.Col_Siglas.DataPropertyName = "Siglas";
-            this.Col_Siglas.HeaderText = "Siglas";
-            this.Col_Siglas.Name = "Col_Siglas";
+            this.BS_Grupo_Opciones.DataSource = typeof(MofinModeloEntorno.Grupo_Opciones);
             // 
             // Frm_Empresas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(776, 400);
+            this.ClientSize = new System.Drawing.Size(776, 414);
             this.Controls.Add(this.Btn_Cancelar);
             this.Controls.Add(this.Btn_Aceptar);
             this.Controls.Add(this.Grd_Empresas);
@@ -483,6 +489,7 @@
             this.Controls.Add(this.TS_BarraHerramientas);
             this.Controls.Add(this.Pan_Elementos);
             this.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -498,6 +505,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BS_Empresas)).EndInit();
             this.Pan_Elementos.ResumeLayout(false);
             this.Pan_Elementos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -542,5 +550,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Siglas;
+        private System.Windows.Forms.BindingSource BS_Grupo_Opciones;
     }
 }

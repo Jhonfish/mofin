@@ -27,11 +27,17 @@ namespace MOFIN
         private void Prueba_Load(object sender, EventArgs e)
         {
             BS_Idiomas.DataSource = NIdiomas.Listar();
+            //this.LayoutMdi(System.Windows.Forms.MdiLayout.Cascade);
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            this.Pan_Prueba_Paint(null, null);
+            for (int i = 0; i < NUD_Ano.Value; i+=100)
+            {
+                this.label1.Text = i.ToString();
+                this.label1.ForeColor = System.Drawing.Color.FromArgb(i);
+                this.label1.Refresh();
+            }
         }
 
         private void Pan_Prueba_Leave(object sender, EventArgs e)
@@ -58,17 +64,34 @@ namespace MOFIN
 
         private void NUD_Valor_ValueChanged(object sender, EventArgs e)
         {
-            this.Opc_Prueba.Tag = this.NUD_Valor.Value.ToString();
+            //this.Opc_Prueba.Tag = this.NUD_Valor.Value.ToString();
         }
 
         private void TextBox1_Enter(object sender, EventArgs e)
         {
-            this.textBox1.Text = this.Opc_Prueba.Tag.ToString();
+            //this.textBox1.Text = this.Opc_Prueba.Tag.ToString();
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
             this.Txt_Resultado.Text = MOFIN_LIB.Funciones.UltimoDiaMes(this.DTP_Fecha.Value.Date).ToString();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string vl_Dondesebusca = txt_dondesebuscara.Text;
+            string vl_quesebusca = txt_quesebusca.Text;
+
+                if (vl_Dondesebusca.ToUpper().Contains(vl_quesebusca.ToUpper().Trim()) == true)
+                {
+                    MessageBox.Show("Encontrado");
+                }
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(MOFIN_LIB.Funciones.MasterKey(""));
         }
     }
 }

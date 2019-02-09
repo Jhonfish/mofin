@@ -54,6 +54,8 @@ namespace MOFIN
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_Salir = new System.Windows.Forms.ToolStripButton();
             this.Grd_Detalles = new System.Windows.Forms.DataGridView();
+            this.Col_Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_MActivComercial = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_TablaMaestra = new System.Windows.Forms.ComboBox();
             this.BS_MAntiguedad = new System.Windows.Forms.BindingSource(this.components);
@@ -81,8 +83,7 @@ namespace MOFIN
             this.Chk_CES = new System.Windows.Forms.CheckBox();
             this.Cmb_Pais = new System.Windows.Forms.ComboBox();
             this.Lbl_CondEspSeguridad = new System.Windows.Forms.Label();
-            this.Col_Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BS_Grupo_Opciones = new System.Windows.Forms.BindingSource(this.components);
             this.TS_BarraHerramientas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Detalles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MActivComercial)).BeginInit();
@@ -104,12 +105,13 @@ namespace MOFIN
             ((System.ComponentModel.ISupportInitialize)(this.BS_TablaMaestra)).BeginInit();
             this.Pan_Elementos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Valor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_Codigo
             // 
             this.Lbl_Codigo.AutoSize = true;
-            this.Lbl_Codigo.Location = new System.Drawing.Point(16, 160);
+            this.Lbl_Codigo.Location = new System.Drawing.Point(16, 161);
             this.Lbl_Codigo.Name = "Lbl_Codigo";
             this.Lbl_Codigo.Size = new System.Drawing.Size(64, 16);
             this.Lbl_Codigo.TabIndex = 38;
@@ -118,7 +120,7 @@ namespace MOFIN
             // Lbl_CodAlfa2
             // 
             this.Lbl_CodAlfa2.AutoSize = true;
-            this.Lbl_CodAlfa2.Location = new System.Drawing.Point(166, 139);
+            this.Lbl_CodAlfa2.Location = new System.Drawing.Point(166, 140);
             this.Lbl_CodAlfa2.Name = "Lbl_CodAlfa2";
             this.Lbl_CodAlfa2.Size = new System.Drawing.Size(72, 16);
             this.Lbl_CodAlfa2.TabIndex = 40;
@@ -128,7 +130,7 @@ namespace MOFIN
             // Lbl_CodAlfa3
             // 
             this.Lbl_CodAlfa3.AutoSize = true;
-            this.Lbl_CodAlfa3.Location = new System.Drawing.Point(284, 139);
+            this.Lbl_CodAlfa3.Location = new System.Drawing.Point(284, 140);
             this.Lbl_CodAlfa3.Name = "Lbl_CodAlfa3";
             this.Lbl_CodAlfa3.Size = new System.Drawing.Size(72, 16);
             this.Lbl_CodAlfa3.TabIndex = 42;
@@ -138,7 +140,7 @@ namespace MOFIN
             // Lbl_Nombre
             // 
             this.Lbl_Nombre.AutoSize = true;
-            this.Lbl_Nombre.Location = new System.Drawing.Point(16, 189);
+            this.Lbl_Nombre.Location = new System.Drawing.Point(16, 190);
             this.Lbl_Nombre.Name = "Lbl_Nombre";
             this.Lbl_Nombre.Size = new System.Drawing.Size(64, 16);
             this.Lbl_Nombre.TabIndex = 44;
@@ -147,7 +149,7 @@ namespace MOFIN
             // Lbl_Valor
             // 
             this.Lbl_Valor.AutoSize = true;
-            this.Lbl_Valor.Location = new System.Drawing.Point(16, 304);
+            this.Lbl_Valor.Location = new System.Drawing.Point(16, 305);
             this.Lbl_Valor.Name = "Lbl_Valor";
             this.Lbl_Valor.Size = new System.Drawing.Size(56, 16);
             this.Lbl_Valor.TabIndex = 49;
@@ -165,7 +167,7 @@ namespace MOFIN
             // Lbl_Pais
             // 
             this.Lbl_Pais.AutoSize = true;
-            this.Lbl_Pais.Location = new System.Drawing.Point(16, 131);
+            this.Lbl_Pais.Location = new System.Drawing.Point(16, 132);
             this.Lbl_Pais.Name = "Lbl_Pais";
             this.Lbl_Pais.Size = new System.Drawing.Size(48, 16);
             this.Lbl_Pais.TabIndex = 54;
@@ -354,6 +356,23 @@ namespace MOFIN
             this.Grd_Detalles.TabIndex = 2;
             this.Grd_Detalles.CurrentCellChanged += new System.EventHandler(this.Grd_Detalles_CurrentCellChanged);
             // 
+            // Col_Codigo
+            // 
+            this.Col_Codigo.DataPropertyName = "Codigo";
+            this.Col_Codigo.HeaderText = "Codigo";
+            this.Col_Codigo.Name = "Col_Codigo";
+            this.Col_Codigo.ReadOnly = true;
+            this.Col_Codigo.Width = 81;
+            // 
+            // Col_Nombre
+            // 
+            this.Col_Nombre.DataPropertyName = "Descripcion";
+            this.Col_Nombre.HeaderText = "Descripcion";
+            this.Col_Nombre.MinimumWidth = 280;
+            this.Col_Nombre.Name = "Col_Nombre";
+            this.Col_Nombre.ReadOnly = true;
+            this.Col_Nombre.Width = 280;
+            // 
             // BS_MActivComercial
             // 
             this.BS_MActivComercial.DataSource = typeof(MofinModelo.M_ActivComercial);
@@ -456,15 +475,15 @@ namespace MOFIN
             this.Pan_Elementos.Controls.Add(this.Txt_CodAlfa3);
             this.Pan_Elementos.Controls.Add(this.Txt_Nombre);
             this.Pan_Elementos.Controls.Add(this.Chk_CES);
-            this.Pan_Elementos.Location = new System.Drawing.Point(19, 123);
+            this.Pan_Elementos.Location = new System.Drawing.Point(19, 155);
             this.Pan_Elementos.Name = "Pan_Elementos";
-            this.Pan_Elementos.Size = new System.Drawing.Size(353, 236);
+            this.Pan_Elementos.Size = new System.Drawing.Size(353, 201);
             this.Pan_Elementos.TabIndex = 4;
             // 
             // NUD_Valor
             // 
             this.NUD_Valor.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BS_TablaMaestra, "Valor", true));
-            this.NUD_Valor.Location = new System.Drawing.Point(66, 179);
+            this.NUD_Valor.Location = new System.Drawing.Point(66, 148);
             this.NUD_Valor.Maximum = new decimal(new int[] {
             3,
             0,
@@ -479,15 +498,17 @@ namespace MOFIN
             // Txt_Codigo
             // 
             this.Txt_Codigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_TablaMaestra, "Codigo", true));
-            this.Txt_Codigo.Location = new System.Drawing.Point(66, 35);
+            this.Txt_Codigo.Location = new System.Drawing.Point(66, 4);
             this.Txt_Codigo.Name = "Txt_Codigo";
             this.Txt_Codigo.Size = new System.Drawing.Size(57, 22);
             this.Txt_Codigo.TabIndex = 0;
             // 
             // Txt_CodAlfa2
             // 
+            this.Txt_CodAlfa2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.Txt_CodAlfa2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_TablaMaestra, "Cod_AlfaNum2", true));
-            this.Txt_CodAlfa2.Location = new System.Drawing.Point(160, 35);
+            this.Txt_CodAlfa2.Location = new System.Drawing.Point(160, 4);
+            this.Txt_CodAlfa2.MaxLength = 2;
             this.Txt_CodAlfa2.Name = "Txt_CodAlfa2";
             this.Txt_CodAlfa2.Size = new System.Drawing.Size(57, 22);
             this.Txt_CodAlfa2.TabIndex = 1;
@@ -495,8 +516,10 @@ namespace MOFIN
             // 
             // Txt_CodAlfa3
             // 
+            this.Txt_CodAlfa3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.Txt_CodAlfa3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_TablaMaestra, "Cod_AlfaNum3", true));
-            this.Txt_CodAlfa3.Location = new System.Drawing.Point(279, 36);
+            this.Txt_CodAlfa3.Location = new System.Drawing.Point(279, 5);
+            this.Txt_CodAlfa3.MaxLength = 3;
             this.Txt_CodAlfa3.Name = "Txt_CodAlfa3";
             this.Txt_CodAlfa3.Size = new System.Drawing.Size(57, 22);
             this.Txt_CodAlfa3.TabIndex = 2;
@@ -505,7 +528,7 @@ namespace MOFIN
             // Txt_Nombre
             // 
             this.Txt_Nombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_TablaMaestra, "Descripcion", true));
-            this.Txt_Nombre.Location = new System.Drawing.Point(66, 63);
+            this.Txt_Nombre.Location = new System.Drawing.Point(66, 32);
             this.Txt_Nombre.Multiline = true;
             this.Txt_Nombre.Name = "Txt_Nombre";
             this.Txt_Nombre.Size = new System.Drawing.Size(270, 110);
@@ -515,7 +538,7 @@ namespace MOFIN
             // 
             this.Chk_CES.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Chk_CES.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_TablaMaestra, "CondEspSeguridad", true));
-            this.Chk_CES.Location = new System.Drawing.Point(259, 205);
+            this.Chk_CES.Location = new System.Drawing.Point(259, 174);
             this.Chk_CES.Name = "Chk_CES";
             this.Chk_CES.Size = new System.Drawing.Size(26, 24);
             this.Chk_CES.TabIndex = 5;
@@ -527,7 +550,7 @@ namespace MOFIN
             this.Cmb_Pais.DataSource = this.BS_MPais;
             this.Cmb_Pais.DisplayMember = "Descripcion";
             this.Cmb_Pais.FormattingEnabled = true;
-            this.Cmb_Pais.Location = new System.Drawing.Point(85, 128);
+            this.Cmb_Pais.Location = new System.Drawing.Point(85, 129);
             this.Cmb_Pais.Name = "Cmb_Pais";
             this.Cmb_Pais.Size = new System.Drawing.Size(270, 24);
             this.Cmb_Pais.TabIndex = 3;
@@ -538,28 +561,15 @@ namespace MOFIN
             // Lbl_CondEspSeguridad
             // 
             this.Lbl_CondEspSeguridad.AutoSize = true;
-            this.Lbl_CondEspSeguridad.Location = new System.Drawing.Point(16, 333);
+            this.Lbl_CondEspSeguridad.Location = new System.Drawing.Point(16, 334);
             this.Lbl_CondEspSeguridad.Name = "Lbl_CondEspSeguridad";
             this.Lbl_CondEspSeguridad.Size = new System.Drawing.Size(256, 16);
             this.Lbl_CondEspSeguridad.TabIndex = 63;
             this.Lbl_CondEspSeguridad.Text = "Condición Especial de Seguridad";
             // 
-            // Col_Codigo
+            // BS_Grupo_Opciones
             // 
-            this.Col_Codigo.DataPropertyName = "Codigo";
-            this.Col_Codigo.HeaderText = "Codigo";
-            this.Col_Codigo.Name = "Col_Codigo";
-            this.Col_Codigo.ReadOnly = true;
-            this.Col_Codigo.Width = 81;
-            // 
-            // Col_Nombre
-            // 
-            this.Col_Nombre.DataPropertyName = "Descripcion";
-            this.Col_Nombre.HeaderText = "Descripcion";
-            this.Col_Nombre.MinimumWidth = 280;
-            this.Col_Nombre.Name = "Col_Nombre";
-            this.Col_Nombre.ReadOnly = true;
-            this.Col_Nombre.Width = 280;
+            this.BS_Grupo_Opciones.DataSource = typeof(MofinModeloEntorno.Grupo_Opciones);
             // 
             // Frm_TablasMaestras
             // 
@@ -567,7 +577,7 @@ namespace MOFIN
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(775, 430);
+            this.ClientSize = new System.Drawing.Size(782, 436);
             this.Controls.Add(this.Lbl_CondEspSeguridad);
             this.Controls.Add(this.Cmb_Pais);
             this.Controls.Add(this.Lbl_Pais);
@@ -584,6 +594,7 @@ namespace MOFIN
             this.Controls.Add(this.Btn_Aceptar);
             this.Controls.Add(this.Pan_Elementos);
             this.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -616,6 +627,7 @@ namespace MOFIN
             this.Pan_Elementos.ResumeLayout(false);
             this.Pan_Elementos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Valor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -674,5 +686,6 @@ namespace MOFIN
         private System.Windows.Forms.Label Lbl_CondEspSeguridad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Nombre;
+        private System.Windows.Forms.BindingSource BS_Grupo_Opciones;
     }
 }

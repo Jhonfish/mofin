@@ -131,6 +131,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -177,6 +178,12 @@
     <Compile Include="Frm_Grupos.Designer.cs">
       <DependentUpon>Frm_Grupos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_OpeTransac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_OpeTransac.Designer.cs">
+      <DependentUpon>Frm_OpeTransac.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_OpeFinancieras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +208,7 @@
     <Compile Include="Frm_SeleccionEmpresa.Designer.cs">
       <DependentUpon>Frm_SeleccionEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="IForm.cs" />
     <Compile Include="MonitorOperacionesDataSet.cs">
       <DependentUpon>MonitorOperacionesDataSet.xsd</DependentUpon>
     </Compile>
@@ -211,17 +219,39 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Prueba.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Prueba.Designer.cs">
       <DependentUpon>Prueba.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\Rpt_OperClientes_Financieras.cs">
+    <Compile Include="Reportes\CrystalReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Rpt_OperClientes_Financieras.rpt</DependentUpon>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Reportes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reportes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Rpt_OpeFinanc_Clientes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_OpeFinanc_Clientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Vistaprevia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistaprevia.Designer.cs">
+      <DependentUpon>Vistaprevia.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Frm_BusqPersonas.resx">
       <DependentUpon>Frm_BusqPersonas.cs</DependentUpon>
@@ -238,6 +268,9 @@
     <EmbeddedResource Include="Frm_Grupos.resx">
       <DependentUpon>Frm_Grupos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_OpeTransac.resx">
+      <DependentUpon>Frm_OpeTransac.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_OpeFinancieras.resx">
       <DependentUpon>Frm_OpeFinancieras.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,19 +285,22 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Prueba.resx">
       <DependentUpon>Prueba.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Rpt_OperClientes_Financieras.rpt">
+    <EmbeddedResource Include="Reportes\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt_OperClientes_Financieras.cs</LastGenOutput>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Rpt_OpeFinanc_Clientes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_OpeFinanc_Clientes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistaprevia.resx">
+      <DependentUpon>Vistaprevia.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="EntornoDataSet.xsc">
       <DependentUpon>EntornoDataSet.xsd</DependentUpon>
@@ -359,6 +395,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Reportes\Reportes.xsc">
+      <DependentUpon>Reportes.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Reportes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Reportes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Reportes.xss">
+      <DependentUpon>Reportes.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -400,9 +447,29 @@
       <Name>MOFIN_Lib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MonitorFinanciero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MonitorOperacional.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\desktop0.jpg" />
+    <Content Include="Resources\desktop1.jpg" />
+    <Content Include="Resources\desktop2.jpg" />
+    <Content Include="Resources\desktop3.jpg" />
+    <Content Include="Resources\desktop4.jpg" />
+    <Content Include="Resources\Desktop5.jpg" />
+    <Content Include="Resources\Desktop6.jpg" />
+    <Content Include="Resources\Desktop7.jpg" />
+    <None Include="Resources\Empresas.png" />
+    <None Include="Resources\Grupos.png" />
+    <None Include="Resources\Usuario.png" />
+    <None Include="Resources\MonitorClientes.png" />
+    <Content Include="Resources\TablasMaestras.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

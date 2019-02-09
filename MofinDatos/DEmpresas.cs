@@ -36,6 +36,16 @@ namespace MofinDatos
                 return db.Empresas.Find(id);
             }
         }
+        public string GetNombre(string Codigo)
+        {
+            using (MofinEntornoEntidad db = new MofinEntornoEntidad())
+            {
+                var Emp_Nme = from Empresas in db.Empresas
+                              where Empresas.Codigo == Codigo
+                              select Empresas.Nombre;
+                return Emp_Nme.First();
+            }
+        }
 
         public Empresas Isertar(Empresas obj)
         {
