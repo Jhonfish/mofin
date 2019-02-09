@@ -51,7 +51,7 @@
             // Lbl_Empresa
             // 
             this.Lbl_Empresa.AutoSize = true;
-            this.Lbl_Empresa.Location = new System.Drawing.Point(69, 84);
+            this.Lbl_Empresa.Location = new System.Drawing.Point(51, 84);
             this.Lbl_Empresa.Name = "Lbl_Empresa";
             this.Lbl_Empresa.Size = new System.Drawing.Size(64, 16);
             this.Lbl_Empresa.TabIndex = 0;
@@ -60,7 +60,7 @@
             // Lbl_Usuario
             // 
             this.Lbl_Usuario.AutoSize = true;
-            this.Lbl_Usuario.Location = new System.Drawing.Point(69, 124);
+            this.Lbl_Usuario.Location = new System.Drawing.Point(51, 124);
             this.Lbl_Usuario.Name = "Lbl_Usuario";
             this.Lbl_Usuario.Size = new System.Drawing.Size(64, 16);
             this.Lbl_Usuario.TabIndex = 1;
@@ -69,7 +69,7 @@
             // Lbl_Contraseña
             // 
             this.Lbl_Contraseña.AutoSize = true;
-            this.Lbl_Contraseña.Location = new System.Drawing.Point(69, 163);
+            this.Lbl_Contraseña.Location = new System.Drawing.Point(51, 163);
             this.Lbl_Contraseña.Name = "Lbl_Contraseña";
             this.Lbl_Contraseña.Size = new System.Drawing.Size(88, 16);
             this.Lbl_Contraseña.TabIndex = 2;
@@ -80,7 +80,7 @@
             this.Cmb_Empresa.DataSource = this.BS_Empresas;
             this.Cmb_Empresa.DisplayMember = "Nombre";
             this.Cmb_Empresa.FormattingEnabled = true;
-            this.Cmb_Empresa.Location = new System.Drawing.Point(179, 81);
+            this.Cmb_Empresa.Location = new System.Drawing.Point(161, 81);
             this.Cmb_Empresa.Name = "Cmb_Empresa";
             this.Cmb_Empresa.Size = new System.Drawing.Size(300, 24);
             this.Cmb_Empresa.TabIndex = 3;
@@ -93,7 +93,7 @@
             // Txt_Usuario
             // 
             this.Txt_Usuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.Txt_Usuario.Location = new System.Drawing.Point(179, 121);
+            this.Txt_Usuario.Location = new System.Drawing.Point(161, 121);
             this.Txt_Usuario.MaxLength = 32;
             this.Txt_Usuario.Name = "Txt_Usuario";
             this.Txt_Usuario.Size = new System.Drawing.Size(150, 22);
@@ -101,7 +101,7 @@
             // 
             // Txt_Password
             // 
-            this.Txt_Password.Location = new System.Drawing.Point(179, 160);
+            this.Txt_Password.Location = new System.Drawing.Point(161, 160);
             this.Txt_Password.MaxLength = 32;
             this.Txt_Password.Name = "Txt_Password";
             this.Txt_Password.Size = new System.Drawing.Size(150, 22);
@@ -113,11 +113,12 @@
             this.Btn_Cancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_Cancelar.BackgroundImage")));
             this.Btn_Cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Btn_Cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_Cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Btn_Cancelar.FlatAppearance.BorderSize = 0;
             this.Btn_Cancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Btn_Cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Cancelar.Location = new System.Drawing.Point(456, 188);
+            this.Btn_Cancelar.Location = new System.Drawing.Point(436, 188);
             this.Btn_Cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Cancelar.Name = "Btn_Cancelar";
             this.Btn_Cancelar.Size = new System.Drawing.Size(38, 38);
@@ -131,6 +132,7 @@
             this.Btn_Aceptar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_Aceptar.BackgroundImage")));
             this.Btn_Aceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Btn_Aceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_Aceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Btn_Aceptar.FlatAppearance.BorderSize = 0;
             this.Btn_Aceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Btn_Aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -165,7 +167,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.CancelButton = this.Btn_Cancelar;
-            this.ClientSize = new System.Drawing.Size(516, 248);
+            this.ClientSize = new System.Drawing.Size(500, 250);
             this.ControlBox = false;
             this.Controls.Add(this.Btn_Cancelar);
             this.Controls.Add(this.Btn_Aceptar);

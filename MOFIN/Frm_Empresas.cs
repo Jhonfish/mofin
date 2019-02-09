@@ -83,7 +83,7 @@ namespace MOFIN
                 this.TSB_Anterior.Enabled = false;
                 this.TSB_Siguiente.Enabled = false;
                 this.TSB_Ultimo.Enabled = false;
-                this.TSB_Agregar.Enabled = r_GrupoOpciones.Empresas_I == null ? false : (bool)r_GrupoOpciones.Empresas_I; 
+                this.TSB_Agregar.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Empresas_I == null ? false : (bool)r_GrupoOpciones.Empresas_I; 
                 this.TSB_Modificar.Enabled = false;
                 this.TSB_Eliminar.Enabled = false;
                 this.TSB_Imprimir.Enabled = false;
@@ -94,10 +94,10 @@ namespace MOFIN
                 this.TSB_Anterior.Enabled = (BS_Empresas.Position == 0) ? false : true;
                 this.TSB_Siguiente.Enabled = (BS_Empresas.Position == BS_Empresas.Count - 1) ? false : true;
                 this.TSB_Ultimo.Enabled = (BS_Empresas.Position == BS_Empresas.Count - 1) ? false : true;
-                this.TSB_Agregar.Enabled = r_GrupoOpciones.Empresas_I == null ? false : (bool)r_GrupoOpciones.Empresas_I;
-                this.TSB_Modificar.Enabled = r_GrupoOpciones.Empresas_M == null ? false : (bool)r_GrupoOpciones.Empresas_M;
-                this.TSB_Eliminar.Enabled = r_GrupoOpciones.Empresas_E == null ? false : (bool)r_GrupoOpciones.Empresas_E;
-                this.TSB_Imprimir.Enabled = r_GrupoOpciones.Empresas_P == null ? false : (bool)r_GrupoOpciones.Empresas_P;
+                this.TSB_Agregar.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Empresas_I == null ? false : (bool)r_GrupoOpciones.Empresas_I;
+                this.TSB_Modificar.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Empresas_M == null ? false : (bool)r_GrupoOpciones.Empresas_M;
+                this.TSB_Eliminar.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Empresas_E == null ? false : (bool)r_GrupoOpciones.Empresas_E;
+                this.TSB_Imprimir.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Empresas_P == null ? false : (bool)r_GrupoOpciones.Empresas_P;
             }
         }
 

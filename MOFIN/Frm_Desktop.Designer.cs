@@ -71,7 +71,6 @@
             this.Ven_MosHor = new System.Windows.Forms.ToolStripMenuItem();
             this.Ven_CerrarTodo = new System.Windows.Forms.ToolStripMenuItem();
             this.Mnu_Ayuda = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.Ayu_Acerca = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiaFondoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SS_BarradeEstadoPrincipal = new System.Windows.Forms.StatusStrip();
@@ -295,6 +294,7 @@
             // 
             // Cli_Monitor
             // 
+            this.Cli_Monitor.Image = global::MOFIN.Properties.Resources.MonitorClientes;
             this.Cli_Monitor.Name = "Cli_Monitor";
             this.Cli_Monitor.Size = new System.Drawing.Size(236, 22);
             this.Cli_Monitor.Text = "Monitor de Clientes";
@@ -319,6 +319,7 @@
             // 
             // Ope_Financieras
             // 
+            this.Ope_Financieras.Image = global::MOFIN.Properties.Resources.MonitorFinanciero;
             this.Ope_Financieras.Name = "Ope_Financieras";
             this.Ope_Financieras.Size = new System.Drawing.Size(196, 22);
             this.Ope_Financieras.Text = "Financieras";
@@ -326,6 +327,7 @@
             // 
             // Ope_Transaccionales
             // 
+            this.Ope_Transaccionales.Image = global::MOFIN.Properties.Resources.MonitorOperacional;
             this.Ope_Transaccionales.Name = "Ope_Transaccionales";
             this.Ope_Transaccionales.Size = new System.Drawing.Size(196, 22);
             this.Ope_Transaccionales.Text = "Transaccionales";
@@ -341,6 +343,7 @@
             // 
             // Tab_Maestros
             // 
+            this.Tab_Maestros.Image = global::MOFIN.Properties.Resources.TablasMaestras;
             this.Tab_Maestros.Name = "Tab_Maestros";
             this.Tab_Maestros.Size = new System.Drawing.Size(196, 22);
             this.Tab_Maestros.Text = "Tablas Maestras";
@@ -358,7 +361,7 @@
             // 
             // Her_Usuarios
             // 
-            this.Her_Usuarios.Image = ((System.Drawing.Image)(resources.GetObject("Her_Usuarios.Image")));
+            this.Her_Usuarios.Image = global::MOFIN.Properties.Resources.Usuario;
             this.Her_Usuarios.Name = "Her_Usuarios";
             this.Her_Usuarios.Size = new System.Drawing.Size(188, 22);
             this.Her_Usuarios.Text = "Usuarios";
@@ -366,7 +369,7 @@
             // 
             // Her_Grupos
             // 
-            this.Her_Grupos.Image = ((System.Drawing.Image)(resources.GetObject("Her_Grupos.Image")));
+            this.Her_Grupos.Image = global::MOFIN.Properties.Resources.Grupos;
             this.Her_Grupos.Name = "Her_Grupos";
             this.Her_Grupos.Size = new System.Drawing.Size(188, 22);
             this.Her_Grupos.Text = "Gupos/Perfiles";
@@ -374,7 +377,7 @@
             // 
             // Her_Empresas
             // 
-            this.Her_Empresas.Image = ((System.Drawing.Image)(resources.GetObject("Her_Empresas.Image")));
+            this.Her_Empresas.Image = global::MOFIN.Properties.Resources.Empresas;
             this.Her_Empresas.Name = "Her_Empresas";
             this.Her_Empresas.Size = new System.Drawing.Size(188, 22);
             this.Her_Empresas.Text = "Empresas";
@@ -430,17 +433,11 @@
             // Mnu_Ayuda
             // 
             this.Mnu_Ayuda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSeparator8,
             this.Ayu_Acerca,
             this.cambiaFondoToolStripMenuItem});
             this.Mnu_Ayuda.Name = "Mnu_Ayuda";
             this.Mnu_Ayuda.Size = new System.Drawing.Size(60, 20);
             this.Mnu_Ayuda.Text = "Ay&uda";
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(201, 6);
             // 
             // Ayu_Acerca
             // 
@@ -490,7 +487,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::MOFIN.Properties.Resources.desktop14;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(843, 558);
             this.Controls.Add(this.SS_BarradeEstadoPrincipal);
@@ -527,7 +523,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem Arc_ConfigImpres;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolStripMenuItem Ayu_Acerca;
         private System.Windows.Forms.ToolStripMenuItem Ven_MosHor;

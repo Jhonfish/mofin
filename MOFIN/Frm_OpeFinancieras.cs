@@ -46,18 +46,23 @@ namespace MOFIN
             r_GrupoOpciones = BS_Grupo_Opciones.Current as Grupo_Opciones;
 
             this.Modo_Consulta();
-/*            foreach (Control Controles in  Tab_MonOperaciones.Controls)
-            {
-                var dgv_Control = if (this.GetNextControl(Grd_Clientes, true) = DataGridView);
-                {
-                    dgv_Control.DefaultCellStyle.BackColor = Color.Black;
-                    dgv_Control.DefaultCellStyle.ForeColor = Color.White;
-                    Controles.BackgroundColor = Color.Black;
-                    Controles.GridColor = Color.Gray;
-                    Controles.ForeColor = Color.White;
-                }
-            }    */
 
+            var vl_Controles = this.Tab_MonOperaciones.Controls;
+            int vl_Cuantos = this.Tab_MonOperaciones.Controls.Count;
+            foreach (Control Objeto in this.Pan_Pag1.Controls)
+            {
+                if (Objeto.GetType().Name == "DataGridView")
+                {
+                    DataGridView  DGV_Control = Objeto as DataGridView;
+
+                    DGV_Control.DefaultCellStyle.BackColor = Color.Black;
+                    DGV_Control.DefaultCellStyle.ForeColor = Color.White;
+                    DGV_Control.BackgroundColor = Color.Black;
+                    DGV_Control.GridColor = Color.Gray;
+                    DGV_Control.ForeColor = Color.White;
+                    
+                }
+            }    
         }
         private void Modo_Consulta()
         {
@@ -69,15 +74,15 @@ namespace MOFIN
             this.Grd_Observaciones.RowHeadersVisible = false;
             this.Grd_Observaciones.AllowUserToAddRows = false;
 
-            this.Btn_PerfInc.Enabled = r_GrupoOpciones.OperFinanc_I == null ? false : (bool)r_GrupoOpciones.OperFinanc_I;
-            this.Btn_PerfMod.Enabled = r_GrupoOpciones.OperFinanc_M == null ? false : (bool)r_GrupoOpciones.OperFinanc_M;
-            this.Btn_PerfEli.Enabled = r_GrupoOpciones.OperFinanc_E == null ? false : (bool)r_GrupoOpciones.OperFinanc_E;
-            this.Btn_ObsInc.Enabled = r_GrupoOpciones.OperFinanc_I == null ? false : (bool)r_GrupoOpciones.OperFinanc_I;
-            this.Btn_ObsMod.Enabled = r_GrupoOpciones.OperFinanc_M == null ? false : (bool)r_GrupoOpciones.OperFinanc_M;
-            this.Btn_ObsEli.Enabled = r_GrupoOpciones.OperFinanc_E == null ? false : (bool)r_GrupoOpciones.OperFinanc_E;
-            this.Chk_ElimOper.Enabled = r_GrupoOpciones.OperFinanc_E == null ? false : (bool)r_GrupoOpciones.OperFinanc_E;
-            this.Chk_Exportar.Enabled = r_GrupoOpciones.OperFinanc_R == null ? false : (bool)r_GrupoOpciones.OperFinanc_R;
-            this.Btn_Importar.Enabled = r_GrupoOpciones.OperFinanc_R == null ? false : (bool)r_GrupoOpciones.OperFinanc_R;
+            this.Btn_PerfInc.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperFinanc_I == null ? false : (bool)r_GrupoOpciones.OperFinanc_I;
+            this.Btn_PerfMod.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperFinanc_M == null ? false : (bool)r_GrupoOpciones.OperFinanc_M;
+            this.Btn_PerfEli.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperFinanc_E == null ? false : (bool)r_GrupoOpciones.OperFinanc_E;
+            this.Btn_ObsInc.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperFinanc_I == null ? false : (bool)r_GrupoOpciones.OperFinanc_I;
+            this.Btn_ObsMod.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperFinanc_M == null ? false : (bool)r_GrupoOpciones.OperFinanc_M;
+            this.Btn_ObsEli.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperFinanc_E == null ? false : (bool)r_GrupoOpciones.OperFinanc_E;
+            this.Chk_ElimOper.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperFinanc_E == null ? false : (bool)r_GrupoOpciones.OperFinanc_E;
+            this.Chk_Exportar.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperFinanc_R == null ? false : (bool)r_GrupoOpciones.OperFinanc_R;
+            this.Btn_Importar.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperFinanc_R == null ? false : (bool)r_GrupoOpciones.OperFinanc_R;
 
             this.Pan_BtnsPerfil.Enabled = true;
             this.Pan_BtnsObserv.Enabled = true;

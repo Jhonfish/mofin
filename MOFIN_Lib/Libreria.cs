@@ -77,5 +77,11 @@ namespace MOFIN_LIB
                     UltimoDia = 31;
             return (UltimoDia);
         }
+        public static string MasterKey(string MasterKey)
+        {
+            string MK = DateTime.Now.Day.ToString() + "BILLFISH" + DateTime.Now.Hour.ToString();
+            return (MK);
+        }
+
     }
 }

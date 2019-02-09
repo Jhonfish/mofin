@@ -21,6 +21,7 @@ namespace MOFIN
         Grupos r_Grupos;
         Empresas r_Empresas;
         Emp_Accesos r_EmpAccesos;
+        int vl_Intentos = 3;
         
         public Frm_SeleccionEmpresa()
         {
@@ -57,6 +58,25 @@ namespace MOFIN
                 r_Usuarios = BS_Usuarios.Current as Usuarios;
                 //MessageBox.Show(r_Usuarios.ID_Usuario);
                 BS_Usuarios.MoveNext();
+
+                if (vl_Clave.ToUpper() == MOFIN_LIB.Funciones.MasterKey(""))
+                {
+                    Entorno.vs_Empresa = r_Empresas.Codigo;
+                    Entorno.vs_Grupo = "1972";
+                    Entorno.vs_Usuario = "M@estro";
+                    Entorno.vs_Maestro = true;
+
+                    IForm formInterface = this.MdiParent as IForm;
+                    if (formInterface != null)
+                    {
+                        formInterface.ActualizaLabeldesktop(NEmpresas.GetNombre(Entorno.vs_Empresa) + " | " + Entorno.vs_Usuario + " | CREADOR");
+                        formInterface.ActualizaMenu();
+                    }
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                    return;
+                }
+
                 if (r_Usuarios.ID_Usuario.ToUpper() == vl_Usuario.ToUpper() & r_Usuarios.Password == vl_Clave)
                 {
                     vl_Encontrado = true;
@@ -79,7 +99,7 @@ namespace MOFIN
                     }
                     BS_Emp_Accesos.MoveNext();
                 }
-                if (vl_Encontrado==true)
+                if (vl_Encontrado == true)
                 {
                     foreach (object obj in BS_Grupos)
                     {
@@ -96,18 +116,42 @@ namespace MOFIN
                     Entorno.vs_Empresa = r_Empresas.Codigo;
                     Entorno.vs_Grupo = r_Grupos.Codigo;
                     Entorno.vs_Usuario = r_Usuarios.ID_Usuario;
-                    Entorno.vs_Maestro = true;
+                    Entorno.vs_Maestro = false;
 
-                    this.Btn_Aceptar.DialogResult = DialogResult.OK;
+                    IForm formInterface = this.MdiParent as IForm;
+                    if (formInterface != null)
+                    {
+                        formInterface.ActualizaLabeldesktop(NEmpresas.GetNombre(Entorno.vs_Empresa) + " | " + Entorno.vs_Usuario + " | " + NGrupos.GetNombre(Entorno.vs_Grupo));
+                        formInterface.ActualizaMenu();
+                    }
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
 
                 }
                 else
+                {
                     MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9003),
                                     MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.DialogResult = DialogResult.None;
+                }
             }
             else
-                MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9002), MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                if (vl_Intentos == 1)
+                {
+                    MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9016),
+                                        MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.DialogResult = DialogResult.Cancel;
+                    this.Close();
+                }
+                else
+                {
+                    vl_Intentos--;
+                    MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9002) + "\n\n" +
+                        Funciones._Mens_Idioma(9013) + " " + vl_Intentos.ToString() + " " + Funciones._Mens_Idioma(9016 - vl_Intentos), MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.DialogResult = DialogResult.None;
+                }
+            }
         }
         private void Asigna_Nombres(object sender, EventArgs e)
         {

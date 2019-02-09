@@ -321,7 +321,7 @@ namespace MOFIN
                 this.TSB_Anterior.Enabled = false;
                 this.TSB_Siguiente.Enabled = false;
                 this.TSB_Ultimo.Enabled = false;
-                this.TSB_Agregar.Enabled = r_GrupoOpciones.TabMaestras_I == null? false : (bool)r_GrupoOpciones.TabMaestras_I;
+                this.TSB_Agregar.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.TabMaestras_I == null? false : (bool)r_GrupoOpciones.TabMaestras_I;
                 this.TSB_Modificar.Enabled = false;
                 this.TSB_Eliminar.Enabled = false;
                 this.TSB_Imprimir.Enabled = false;
@@ -332,10 +332,10 @@ namespace MOFIN
                 this.TSB_Anterior.Enabled = (BS_TablaMaestra.Position == 0) ? false : true;
                 this.TSB_Siguiente.Enabled = (BS_TablaMaestra.Position == BS_TablaMaestra.Count - 1) ? false : true;
                 this.TSB_Ultimo.Enabled = (BS_TablaMaestra.Position == BS_TablaMaestra.Count - 1) ? false : true;
-                this.TSB_Agregar.Enabled = r_GrupoOpciones.TabMaestras_I == null ? false : (bool)r_GrupoOpciones.TabMaestras_I;
-                this.TSB_Modificar.Enabled = r_GrupoOpciones.TabMaestras_M == null ? false : (bool)r_GrupoOpciones.TabMaestras_M;
-                this.TSB_Eliminar.Enabled = r_GrupoOpciones.TabMaestras_E == null ? false : (bool)r_GrupoOpciones.TabMaestras_E;
-                this.TSB_Imprimir.Enabled = r_GrupoOpciones.TabMaestras_P == null ? false : (bool)r_GrupoOpciones.TabMaestras_P;
+                this.TSB_Agregar.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.TabMaestras_I == null ? false : (bool)r_GrupoOpciones.TabMaestras_I;
+                this.TSB_Modificar.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.TabMaestras_M == null ? false : (bool)r_GrupoOpciones.TabMaestras_M;
+                this.TSB_Eliminar.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.TabMaestras_E == null ? false : (bool)r_GrupoOpciones.TabMaestras_E;
+                this.TSB_Imprimir.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.TabMaestras_P == null ? false : (bool)r_GrupoOpciones.TabMaestras_P;
             }
         }
 

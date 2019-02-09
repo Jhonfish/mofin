@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace MOFIN
 {
+    //public interface IForm { }
     static class Program
     {
         /// <summary>
@@ -22,8 +23,12 @@ namespace MOFIN
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new Frm_Desktop());
-            //Application.Run(new Frm_BusqPersonas());
+            var Acceso = new Frm_SeleccionEmpresa();
+            if (Acceso.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new Frm_Desktop());
+            }
+            //Application.Run(new Frm_OpeFinancieras());
         }
     }
 }

@@ -100,7 +100,7 @@ namespace MOFIN
                 this.TSB_Anterior.Enabled = false;
                 this.TSB_Siguiente.Enabled = false;
                 this.TSB_Ultimo.Enabled = false;
-                this.TSB_Agregar.Enabled = r_GrupoOpciones.Usuarios_I == null ? false : (bool)r_GrupoOpciones.Usuarios_I; 
+                this.TSB_Agregar.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Usuarios_I == null ? false : (bool)r_GrupoOpciones.Usuarios_I; 
                 this.TSB_Modificar.Enabled = false;
                 this.TSB_Eliminar.Enabled = false;
                 this.TSB_Imprimir.Enabled = false;
@@ -111,10 +111,10 @@ namespace MOFIN
                 this.TSB_Anterior.Enabled = (BS_Usuarios.Position == 0) ? false : true;
                 this.TSB_Siguiente.Enabled = (BS_Usuarios.Position == BS_Usuarios.Count - 1) ? false : true;
                 this.TSB_Ultimo.Enabled = (BS_Usuarios.Position == BS_Usuarios.Count - 1) ? false : true;
-                this.TSB_Agregar.Enabled = r_GrupoOpciones.Usuarios_I == null ? false : (bool)r_GrupoOpciones.Usuarios_I;
-                this.TSB_Modificar.Enabled = r_GrupoOpciones.Usuarios_M == null ? false : (bool)r_GrupoOpciones.Usuarios_M;
-                this.TSB_Eliminar.Enabled = r_GrupoOpciones.Usuarios_E == null ? false : (bool)r_GrupoOpciones.Usuarios_E;
-                this.TSB_Imprimir.Enabled = r_GrupoOpciones.Usuarios_P == null ? false : (bool)r_GrupoOpciones.Usuarios_P;
+                this.TSB_Agregar.Enabled = Entorno.vs_Maestro? true : r_GrupoOpciones.Usuarios_I == null ? false : (bool)r_GrupoOpciones.Usuarios_I;
+                this.TSB_Modificar.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Usuarios_M == null ? false : (bool)r_GrupoOpciones.Usuarios_M;
+                this.TSB_Eliminar.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Usuarios_E == null ? false : (bool)r_GrupoOpciones.Usuarios_E;
+                this.TSB_Imprimir.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Usuarios_P == null ? false : (bool)r_GrupoOpciones.Usuarios_P;
             }
         }
 

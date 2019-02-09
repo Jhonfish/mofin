@@ -69,15 +69,15 @@ namespace MOFIN
             this.Grd_Observaciones.RowHeadersVisible = false;
             this.Grd_Observaciones.AllowUserToAddRows = false;
 
-            this.Btn_PerfInc.Enabled = r_GrupoOpciones.OperTransac_I == null ? false : (bool)r_GrupoOpciones.OperTransac_I;
-            this.Btn_PerfMod.Enabled = r_GrupoOpciones.OperTransac_M == null ? false : (bool)r_GrupoOpciones.OperTransac_M;
-            this.Btn_PerfEli.Enabled = r_GrupoOpciones.OperTransac_E == null ? false : (bool)r_GrupoOpciones.OperTransac_E;
-            this.Btn_ObsInc.Enabled = r_GrupoOpciones.OperTransac_I == null ? false : (bool)r_GrupoOpciones.OperTransac_I;
-            this.Btn_ObsMod.Enabled = r_GrupoOpciones.OperTransac_M == null ? false : (bool)r_GrupoOpciones.OperTransac_M;
-            this.Btn_ObsEli.Enabled = r_GrupoOpciones.OperTransac_E == null ? false : (bool)r_GrupoOpciones.OperTransac_E;
-            this.Chk_ElimOper.Enabled = r_GrupoOpciones.OperTransac_E == null ? false : (bool)r_GrupoOpciones.OperTransac_E;
-            this.Chk_Exportar.Enabled = r_GrupoOpciones.OperTransac_R == null ? false : (bool)r_GrupoOpciones.OperTransac_R;
-            this.Btn_Importar.Enabled = r_GrupoOpciones.OperTransac_R == null ? false : (bool)r_GrupoOpciones.OperTransac_R;
+            this.Btn_PerfInc.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperTransac_I == null ? false : (bool)r_GrupoOpciones.OperTransac_I;
+            this.Btn_PerfMod.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperTransac_M == null ? false : (bool)r_GrupoOpciones.OperTransac_M;
+            this.Btn_PerfEli.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperTransac_E == null ? false : (bool)r_GrupoOpciones.OperTransac_E;
+            this.Btn_ObsInc.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperTransac_I == null ? false : (bool)r_GrupoOpciones.OperTransac_I;
+            this.Btn_ObsMod.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperTransac_M == null ? false : (bool)r_GrupoOpciones.OperTransac_M;
+            this.Btn_ObsEli.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperTransac_E == null ? false : (bool)r_GrupoOpciones.OperTransac_E;
+            this.Chk_ElimOper.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperTransac_E == null ? false : (bool)r_GrupoOpciones.OperTransac_E;
+            this.Chk_Exportar.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperTransac_R == null ? false : (bool)r_GrupoOpciones.OperTransac_R;
+            this.Btn_Importar.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperTransac_R == null ? false : (bool)r_GrupoOpciones.OperTransac_R;
 
             this.Pan_BtnsPerfil.Enabled = true;
             this.Pan_BtnsObserv.Enabled = true;

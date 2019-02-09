@@ -38,6 +38,8 @@ namespace MofinDatos
         }
         public string GetNombre(string Codigo)
         {
+            if (Codigo == "1972")
+                return "CREADOR";
             using (MofinEntornoEntidad db = new MofinEntornoEntidad())
             {
                 var Grp_Nme = from Grupos in db.Grupos

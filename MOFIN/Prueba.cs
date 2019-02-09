@@ -27,7 +27,7 @@ namespace MOFIN
         private void Prueba_Load(object sender, EventArgs e)
         {
             BS_Idiomas.DataSource = NIdiomas.Listar();
-            this.LayoutMdi(System.Windows.Forms.MdiLayout.Cascade);
+            //this.LayoutMdi(System.Windows.Forms.MdiLayout.Cascade);
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -87,6 +87,11 @@ namespace MOFIN
                     MessageBox.Show("Encontrado");
                 }
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(MOFIN_LIB.Funciones.MasterKey(""));
         }
     }
 }

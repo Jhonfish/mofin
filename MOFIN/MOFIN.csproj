@@ -208,6 +208,7 @@
     <Compile Include="Frm_SeleccionEmpresa.Designer.cs">
       <DependentUpon>Frm_SeleccionEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="IForm.cs" />
     <Compile Include="MonitorOperacionesDataSet.cs">
       <DependentUpon>MonitorOperacionesDataSet.xsd</DependentUpon>
     </Compile>
@@ -218,6 +219,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Prueba.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,14 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Prueba.resx">
       <DependentUpon>Prueba.cs</DependentUpon>
     </EmbeddedResource>
@@ -449,34 +450,25 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\desktop5.jpg" />
+    <None Include="Resources\MonitorFinanciero.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\desktop6.jpg" />
+    <None Include="Resources\MonitorOperacional.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\desktop7.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\desktop8.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\desktop9.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\desktop10.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\desktop11.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\desktop12.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\desktop13.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\desktop14.jpg" />
+    <Content Include="Resources\desktop0.jpg" />
+    <Content Include="Resources\desktop1.jpg" />
+    <Content Include="Resources\desktop2.jpg" />
+    <Content Include="Resources\desktop3.jpg" />
+    <Content Include="Resources\desktop4.jpg" />
+    <Content Include="Resources\Desktop5.jpg" />
+    <Content Include="Resources\Desktop6.jpg" />
+    <Content Include="Resources\Desktop7.jpg" />
+    <None Include="Resources\Empresas.png" />
+    <None Include="Resources\Grupos.png" />
+    <None Include="Resources\Usuario.png" />
+    <None Include="Resources\MonitorClientes.png" />
+    <Content Include="Resources\TablasMaestras.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
