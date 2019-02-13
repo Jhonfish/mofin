@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4D37C5B6-8F39-4BCE-9547-C89DB8CE242D}</ProjectGuid>
+    <ProjectGuid>{F8E7AB6C-52A3-4ABB-A127-BB8FCE4BBE8C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MofinModeloEntorno</RootNamespace>

@@ -18,7 +18,7 @@ namespace MofinModelo
         public string Cod_Cliente { get; set; }
         public byte Tipo_ProdServ { get; set; }
         public byte Cod_Tipo { get; set; }
-        public bool valor { get; set; }
+        public byte Valor { get; set; }
     
         public virtual C_Clientes C_Clientes { get; set; }
     }

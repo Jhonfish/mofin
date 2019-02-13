@@ -431,7 +431,7 @@
       <Name>MofinDatos</Name>
     </ProjectReference>
     <ProjectReference Include="..\MofinModeloEntorno\MofinModeloEntorno.csproj">
-      <Project>{4d37c5b6-8f39-4bce-9547-c89db8ce242d}</Project>
+      <Project>{f8e7ab6c-52a3-4abb-a127-bb8fce4bbe8c}</Project>
       <Name>MofinModeloEntorno</Name>
     </ProjectReference>
     <ProjectReference Include="..\MofinModelo\MofinModelo.csproj">
@@ -457,6 +457,8 @@
     <None Include="Resources\MonitorOperacional.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Ultimo.png" />
+    <None Include="Resources\Anterior.png" />
     <Content Include="Resources\desktop0.jpg" />
     <Content Include="Resources\desktop1.jpg" />
     <Content Include="Resources\desktop2.jpg" />
@@ -469,6 +471,14 @@
     <None Include="Resources\Grupos.png" />
     <None Include="Resources\Usuario.png" />
     <None Include="Resources\MonitorClientes.png" />
+    <None Include="Resources\Eliminar1.png" />
+    <None Include="Resources\Incluir.png" />
+    <None Include="Resources\Modificar1.png" />
+    <None Include="Resources\Primero.png" />
+    <None Include="Resources\Print.png" />
+    <None Include="Resources\Salir.png" />
+    <None Include="Resources\Siguiente.png" />
+    <None Include="Resources\Procesar.png" />
     <Content Include="Resources\TablasMaestras.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

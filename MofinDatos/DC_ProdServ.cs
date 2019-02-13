@@ -19,6 +19,17 @@ namespace MofinDatos
                 db.SaveChanges();
             }
         }
+        public void EliminarxCodigo(string Codigo)
+        {
+            using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
+            {
+                var registros = from datos in db.C_ProdServ
+                                where datos.Cod_Cliente == Codigo
+                                select datos;
+                db.C_ProdServ.RemoveRange(registros);
+                db.SaveChanges();
+            }
+        }
 
         public List<C_ProdServ> Listar()
         {

@@ -27,7 +27,6 @@ namespace MofinNegocios
         {
             return dmTipoDocId.GetById(id);
         }
-
         public static List<M_TipoDocID> ListarPorCodigo(short codigo)
         {
             return dmTipoDocId.ListarPorCodigo(codigo);

@@ -50,10 +50,10 @@ namespace MofinDatos
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())
             {
-                var lst = from M_Estados in db.M_Estados
-                          where M_Estados.Cod_Compuesto == Codigo
-                          select M_Estados;
-                return lst.ToList();
+                var registro = from datos in db.M_Estados
+                          where datos.Cod_Compuesto == Codigo
+                          select datos;
+                return registro.ToList();
             }
         }
         public M_Estados Isertar(M_Estados obj)

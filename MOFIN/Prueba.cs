@@ -93,5 +93,12 @@ namespace MOFIN
         {
             MessageBox.Show(MOFIN_LIB.Funciones.MasterKey(""));
         }
+
+        private void Prueba_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 27 | e.KeyValue == 33 | e.KeyValue == 34 | e.KeyValue == 35 | e.KeyValue == 36 | e.KeyValue == 36 |
+                    e.KeyValue == 46 | e.KeyValue == 116 | e.KeyValue == 117 | e.KeyValue == 118 | e.KeyValue == 119)
+                MessageBox.Show(e.KeyCode + " | " + e.KeyData +" | "+ e.KeyValue);
+        }
     }
 }

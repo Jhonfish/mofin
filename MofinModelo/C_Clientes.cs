@@ -38,7 +38,7 @@ namespace MofinModelo
         public Nullable<short> IG_PaisNacim { get; set; }
         public Nullable<short> IG_Nacionalidad { get; set; }
         public Nullable<short> IG_PaisResid { get; set; }
-        public Nullable<short> IG_Estado { get; set; }
+        public Nullable<int> IG_Estado { get; set; }
         public Nullable<short> IG_PEP { get; set; }
         public Nullable<short> IG_Profesion { get; set; }
         public Nullable<short> IG_TipDocID { get; set; }

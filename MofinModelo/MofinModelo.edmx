@@ -35,7 +35,7 @@
           <Property Name="IG_PaisNacim" Type="smallint" />
           <Property Name="IG_Nacionalidad" Type="smallint" />
           <Property Name="IG_PaisResid" Type="smallint" />
-          <Property Name="IG_Estado" Type="smallint" />
+          <Property Name="IG_Estado" Type="int" />
           <Property Name="IG_PEP" Type="smallint" />
           <Property Name="IG_Profesion" Type="smallint" />
           <Property Name="IG_TipDocID" Type="smallint" />
@@ -123,7 +123,7 @@
           <Property Name="PaisNacim" Type="smallint" />
           <Property Name="Nacionalidad" Type="smallint" />
           <Property Name="PaisResid" Type="smallint" />
-          <Property Name="Estado" Type="smallint" />
+          <Property Name="Estado" Type="int" />
           <Property Name="Profesion" Type="smallint" />
           <Property Name="Criptomoneda" Type="smallint" />
           <Property Name="VincEmpresa" Type="varchar" MaxLength="50" />
@@ -149,7 +149,7 @@
           <Property Name="Cod_Cliente" Type="char" MaxLength="8" Nullable="false" />
           <Property Name="Tipo_ProdServ" Type="tinyint" Nullable="false" />
           <Property Name="Cod_Tipo" Type="tinyint" Nullable="false" />
-          <Property Name="valor" Type="bit" Nullable="false" />
+          <Property Name="Valor" Type="tinyint" Nullable="false" />
         </EntityType>
         <EntityType Name="C_ValorItemConsExp">
           <Key>
@@ -604,7 +604,7 @@
           <Property Name="IG_PaisNacim" Type="Int16" />
           <Property Name="IG_Nacionalidad" Type="Int16" />
           <Property Name="IG_PaisResid" Type="Int16" />
-          <Property Name="IG_Estado" Type="Int16" />
+          <Property Name="IG_Estado" Type="Int32" />
           <Property Name="IG_PEP" Type="Int16" />
           <Property Name="IG_Profesion" Type="Int16" />
           <Property Name="IG_TipDocID" Type="Int16" />
@@ -697,7 +697,7 @@
           <Property Name="PaisNacim" Type="Int16" />
           <Property Name="Nacionalidad" Type="Int16" />
           <Property Name="PaisResid" Type="Int16" />
-          <Property Name="Estado" Type="Int16" />
+          <Property Name="Estado" Type="Int32" />
           <Property Name="Profesion" Type="Int16" />
           <Property Name="Criptomoneda" Type="Int16" />
           <Property Name="VincEmpresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -1004,12 +1004,12 @@
           <Property Name="Period_UsoCta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Nro_Transac" Type="Int16" />
           <Property Name="Perf_NroTransac" Type="Byte" />
-          <Property Name="Porc_Transac" Type="Decimal" />
+          <Property Name="Porc_Transac" Type="Decimal" Precision="3" Scale="2" />
           <Property Name="Mto_Compras" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Mto_Ventas" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Tot_Operaciones" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Perf_Financiero" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="Porc_Operaciones" Type="Decimal" />
+          <Property Name="Porc_Operaciones" Type="Decimal" Precision="3" Scale="2" />
           <Property Name="Alarma" Type="Boolean" />
           <Property Name="Ejecutivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Comentario" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
@@ -1135,8 +1135,8 @@
           <Property Name="Cod_Cliente" Type="String" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
           <Property Name="Tipo_ProdServ" Type="Byte" Nullable="false" />
           <Property Name="Cod_Tipo" Type="Byte" Nullable="false" />
-          <Property Name="valor" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="C_Clientes" Relationship="MonitorOperacionesModelo.FK_C_ProdServ_C_Clientes" FromRole="C_ProdServ" ToRole="C_Clientes" />
+          <Property Name="Valor" Type="Byte" Nullable="false" />
         </EntityType>
         <Association Name="FK_C_ProdServ_C_Clientes">
           <End Type="MonitorOperacionesModelo.C_Clientes" Role="C_Clientes" Multiplicity="1" />
@@ -1615,7 +1615,7 @@
           <EntitySetMapping Name="C_ProdServ">
             <EntityTypeMapping TypeName="MonitorOperacionesModelo.C_ProdServ">
               <MappingFragment StoreEntitySet="C_ProdServ">
-                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
                 <ScalarProperty Name="Cod_Tipo" ColumnName="Cod_Tipo" />
                 <ScalarProperty Name="Tipo_ProdServ" ColumnName="Tipo_ProdServ" />
                 <ScalarProperty Name="Cod_Cliente" ColumnName="Cod_Cliente" />

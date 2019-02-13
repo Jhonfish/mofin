@@ -19660,7 +19660,7 @@ namespace MOFIN.MonitorOperacionesDataSetTableAdapters {
                     global::System.Nullable<short> IG_PaisNacim, 
                     global::System.Nullable<short> IG_Nacionalidad, 
                     global::System.Nullable<short> IG_PaisResid, 
-                    global::System.Nullable<short> IG_Estado, 
+                    global::System.Nullable<int> IG_Estado, 
                     global::System.Nullable<short> IG_PEP, 
                     global::System.Nullable<short> IG_Profesion, 
                     global::System.Nullable<short> IG_TipDocID, 
@@ -19807,7 +19807,7 @@ namespace MOFIN.MonitorOperacionesDataSetTableAdapters {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             if ((IG_Estado.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((short)(IG_Estado.Value));
+                this.Adapter.InsertCommand.Parameters[13].Value = ((int)(IG_Estado.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;

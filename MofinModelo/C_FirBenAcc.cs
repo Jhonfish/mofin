@@ -24,7 +24,7 @@ namespace MofinModelo
         public Nullable<short> PaisNacim { get; set; }
         public Nullable<short> Nacionalidad { get; set; }
         public Nullable<short> PaisResid { get; set; }
-        public Nullable<short> Estado { get; set; }
+        public Nullable<int> Estado { get; set; }
         public Nullable<short> Profesion { get; set; }
         public Nullable<short> Criptomoneda { get; set; }
         public string VincEmpresa { get; set; }

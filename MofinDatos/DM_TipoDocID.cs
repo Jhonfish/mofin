@@ -35,7 +35,6 @@ namespace MofinDatos
                 return db.M_TipoDocID.Find(id);
             }
         }
-
         public List<M_TipoDocID> ListarPorCodigo(short codigo)
         {
             using (MonitorOperacionesEntities db = new MonitorOperacionesEntities())

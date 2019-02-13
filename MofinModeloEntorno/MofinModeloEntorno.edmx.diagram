@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="54e3dcb7c3124385addc422b81b21f20" Name="Diagram1">
-        <EntityTypeShape EntityType="EntornoModel.Emp_Accesos" Width="1.5" PointX="8.5" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EntornoModel.Empresas" Width="1.5" PointX="6.375" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="EntornoModel.Grupo_Opciones" Width="1.5" PointX="2.625" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="EntornoModel.Grupos" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="EntornoModel.Idiomas" Width="1.5" PointX="0.5" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="EntornoModel.Usuarios" Width="1.5" PointX="4.5" PointY="0.5" IsExpanded="true" />
-        <AssociationConnector Association="EntornoModel.FK_Emp_Accesos_Empresas" ManuallyRouted="false" />
-        <AssociationConnector Association="EntornoModel.FK_Grupo_Opciones_Grupos" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="EntornoModel.Opc_Sistema" Width="1.5" PointX="8.5" PointY="2.875" />
-        <EntityTypeShape EntityType="EntornoModel.sysdiagrams" Width="1.5" PointX="4.5" PointY="3.875" />
+      <Diagram DiagramId="7942fdade448445894e485b57a178ae6" Name="Diagram1">
+        <EntityTypeShape EntityType="MofinModeloEntorno.Emp_Accesos" Width="1.5" PointX="8" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="MofinModeloEntorno.Empresas" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MofinModeloEntorno.Grupo_Opciones" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MofinModeloEntorno.Grupos" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="MofinModeloEntorno.Idiomas" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MofinModeloEntorno.Opc_Sistema" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MofinModeloEntorno.sysdiagrams" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MofinModeloEntorno.Usuarios" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="MofinModeloEntorno.FK_Emp_Accesos_Empresas1" ManuallyRouted="false" />
+        <AssociationConnector Association="MofinModeloEntorno.FK_Grupo_Opciones_Grupos" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

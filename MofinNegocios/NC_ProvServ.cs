@@ -47,5 +47,9 @@ namespace MofinNegocios
         {
             dC_ProdServ.Eliminar(obj);
         }
+        public static void EliminarxCodigo(string Codigo)
+        {
+            dC_ProdServ.EliminarxCodigo(Codigo);
+        }
     }
 }

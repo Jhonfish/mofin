@@ -84,7 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MofinModeloEntorno\MofinModeloEntorno.csproj">
-      <Project>{4d37c5b6-8f39-4bce-9547-c89db8ce242d}</Project>
+      <Project>{f8e7ab6c-52a3-4abb-a127-bb8fce4bbe8c}</Project>
       <Name>MofinModeloEntorno</Name>
     </ProjectReference>
     <ProjectReference Include="..\MofinModelo\MofinModelo.csproj">

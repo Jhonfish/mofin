@@ -99,9 +99,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MofinDatos\MofinDatos.csproj">
+      <Project>{ec2d3e5d-8fc9-4c15-860c-1d83fd6e962b}</Project>
+      <Name>MofinDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MofinModeloEntorno\MofinModeloEntorno.csproj">
-      <Project>{4d37c5b6-8f39-4bce-9547-c89db8ce242d}</Project>
+      <Project>{f8e7ab6c-52a3-4abb-a127-bb8fce4bbe8c}</Project>
       <Name>MofinModeloEntorno</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MofinModelo\MofinModelo.csproj">
+      <Project>{4d1b31bf-20ca-41f8-bed5-7a740fcc0f68}</Project>
+      <Name>MofinModelo</Name>
     </ProjectReference>
     <ProjectReference Include="..\MofinNegocios\MofinNegocios.csproj">
       <Project>{fc87a849-0770-4439-a6c2-5ee0d9f16d0f}</Project>

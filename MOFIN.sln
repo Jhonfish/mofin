@@ -9,11 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MofinNegocios", "MofinNegoc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MofinModelo", "MofinModelo\MofinModelo.csproj", "{4D1B31BF-20CA-41F8-BED5-7A740FCC0F68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MofinModeloEntorno", "MofinModeloEntorno\MofinModeloEntorno.csproj", "{4D37C5B6-8F39-4BCE-9547-C89DB8CE242D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MofinDatos", "MofinDatos\MofinDatos.csproj", "{EC2D3E5D-8FC9-4C15-860C-1D83FD6E962B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOFIN_Lib", "MOFIN_Lib\MOFIN_Lib.csproj", "{BD8686AF-AD7B-4792-B1DD-CC8F6F41F4DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MofinModeloEntorno", "MofinModeloEntorno\MofinModeloEntorno.csproj", "{F8E7AB6C-52A3-4ABB-A127-BB8FCE4BBE8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +33,6 @@ Global
 		{4D1B31BF-20CA-41F8-BED5-7A740FCC0F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D1B31BF-20CA-41F8-BED5-7A740FCC0F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D1B31BF-20CA-41F8-BED5-7A740FCC0F68}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4D37C5B6-8F39-4BCE-9547-C89DB8CE242D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D37C5B6-8F39-4BCE-9547-C89DB8CE242D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D37C5B6-8F39-4BCE-9547-C89DB8CE242D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D37C5B6-8F39-4BCE-9547-C89DB8CE242D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EC2D3E5D-8FC9-4C15-860C-1D83FD6E962B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EC2D3E5D-8FC9-4C15-860C-1D83FD6E962B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC2D3E5D-8FC9-4C15-860C-1D83FD6E962B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{BD8686AF-AD7B-4792-B1DD-CC8F6F41F4DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD8686AF-AD7B-4792-B1DD-CC8F6F41F4DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD8686AF-AD7B-4792-B1DD-CC8F6F41F4DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8E7AB6C-52A3-4ABB-A127-BB8FCE4BBE8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8E7AB6C-52A3-4ABB-A127-BB8FCE4BBE8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8E7AB6C-52A3-4ABB-A127-BB8FCE4BBE8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8E7AB6C-52A3-4ABB-A127-BB8FCE4BBE8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

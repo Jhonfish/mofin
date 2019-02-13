@@ -237,9 +237,11 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
+            this.KeyPreview = true;
             this.Name = "Prueba";
             this.Text = "Prueba";
             this.Load += new System.EventHandler(this.Prueba_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Prueba_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.BS_Idiomas)).EndInit();
             this.Pan_Prueba.ResumeLayout(false);
             this.Pan_Prueba.PerformLayout();

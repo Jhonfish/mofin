@@ -31,9 +31,9 @@ namespace MofinNegocios
         {
             return dmEstados.GetById(id);
         }
-        public static M_Estados ListarPorCodigo(int Codigo)
+        public static List<M_Estados> ListarPorCodigo(int Codigo)
         {
-            return dmEstados.GetById(Codigo);
+            return dmEstados.ListarPorCodigo(Codigo);
         }
         public static M_Estados Insertar(M_Estados obj)
         {

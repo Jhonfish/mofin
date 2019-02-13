@@ -18,5 +18,7 @@ namespace MofinModeloEntorno
         public string ID_Usuario { get; set; }
         public string Cod_Empresa { get; set; }
         public string Cod_Grupo { get; set; }
+    
+        public virtual Empresas Empresas { get; set; }
     }
 }

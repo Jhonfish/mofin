@@ -44,11 +44,13 @@ namespace MofinModeloEntorno
         public Nullable<bool> OperFinanc_M { get; set; }
         public Nullable<bool> OperFinanc_E { get; set; }
         public Nullable<bool> OperFinanc_P { get; set; }
+        public Nullable<bool> OperFinanc_R { get; set; }
         public Nullable<bool> OperTransac_I { get; set; }
         public Nullable<bool> OperTransac_M { get; set; }
         public Nullable<bool> OperTransac_E { get; set; }
         public Nullable<bool> OperTransac_P { get; set; }
-        public Nullable<bool> OperFinanc_R { get; set; }
         public Nullable<bool> OperTransac_R { get; set; }
+    
+        public virtual Grupos Grupos { get; set; }
     }
 }

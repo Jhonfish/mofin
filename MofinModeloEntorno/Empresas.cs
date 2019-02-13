@@ -14,6 +14,12 @@ namespace MofinModeloEntorno
     
     public partial class Empresas
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Empresas()
+        {
+            this.Emp_Accesos = new HashSet<Emp_Accesos>();
+        }
+    
         public int ID_Sistema { get; set; }
         public string Codigo { get; set; }
         public string Nombre { get; set; }
@@ -28,5 +34,8 @@ namespace MofinModeloEntorno
         public string Cad_Conexion { get; set; }
         public string Proveedor { get; set; }
         public string Metadata { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Emp_Accesos> Emp_Accesos { get; set; }
     }
 }

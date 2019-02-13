@@ -4,10 +4,10 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="EntornoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="MofinModeloEntorno.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Emp_Accesos">
           <Key>
-            <PropertyRef Name="Cod_Empresa" />
+            <PropertyRef Name="ID_Sistema" />
           </Key>
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ID_Usuario" Type="varchar" MaxLength="16" Nullable="false" />
@@ -137,9 +137,9 @@
           <Property Name="Cnfg_FormFecha" Type="tinyint" />
           <Property Name="Cnfg_SonidoClick" Type="bit" />
         </EntityType>
-        <Association Name="FK_Emp_Accesos_Empresas">
+        <Association Name="FK_Emp_Accesos_Empresas1">
           <End Role="Empresas" Type="Self.Empresas" Multiplicity="1" />
-          <End Role="Emp_Accesos" Type="Self.Emp_Accesos" Multiplicity="0..1" />
+          <End Role="Emp_Accesos" Type="Self.Emp_Accesos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Empresas">
               <PropertyRef Name="Codigo" />
@@ -161,7 +161,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="EntornoModelStoreContainer">
+        <EntityContainer Name="MofinModeloEntornoStoreContainer">
           <EntitySet Name="Emp_Accesos" EntityType="Self.Emp_Accesos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Empresas" EntityType="Self.Empresas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Grupo_Opciones" EntityType="Self.Grupo_Opciones" Schema="dbo" store:Type="Tables" />
@@ -170,7 +170,7 @@
           <EntitySet Name="Opc_Sistema" EntityType="Self.Opc_Sistema" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Emp_Accesos_Empresas" Association="Self.FK_Emp_Accesos_Empresas">
+          <AssociationSet Name="FK_Emp_Accesos_Empresas1" Association="Self.FK_Emp_Accesos_Empresas1">
             <End Role="Empresas" EntitySet="Empresas" />
             <End Role="Emp_Accesos" EntitySet="Emp_Accesos" />
           </AssociationSet>
@@ -179,18 +179,20 @@
             <End Role="Grupo_Opciones" EntitySet="Grupo_Opciones" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="EntornoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="MofinModeloEntorno" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Emp_Accesos">
           <Key>
-            <PropertyRef Name="Cod_Empresa" />
+            <PropertyRef Name="ID_Sistema" />
           </Key>
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ID_Usuario" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Cod_Empresa" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Cod_Grupo" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Empresas" Relationship="Self.FK_Emp_Accesos_Empresas1" FromRole="Emp_Accesos" ToRole="Empresas" />
         </EntityType>
         <EntityType Name="Empresas">
           <Key>
@@ -210,6 +212,7 @@
           <Property Name="Cad_Conexion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Proveedor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Metadata" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Emp_Accesos" Relationship="Self.FK_Emp_Accesos_Empresas1" FromRole="Empresas" ToRole="Emp_Accesos" />
         </EntityType>
         <EntityType Name="Grupo_Opciones">
           <Key>
@@ -245,12 +248,13 @@
           <Property Name="OperFinanc_M" Type="Boolean" />
           <Property Name="OperFinanc_E" Type="Boolean" />
           <Property Name="OperFinanc_P" Type="Boolean" />
+          <Property Name="OperFinanc_R" Type="Boolean" />
           <Property Name="OperTransac_I" Type="Boolean" />
           <Property Name="OperTransac_M" Type="Boolean" />
           <Property Name="OperTransac_E" Type="Boolean" />
           <Property Name="OperTransac_P" Type="Boolean" />
-          <Property Name="OperFinanc_R" Type="Boolean" />
           <Property Name="OperTransac_R" Type="Boolean" />
+          <NavigationProperty Name="Grupos" Relationship="Self.FK_Grupo_Opciones_Grupos" FromRole="Grupo_Opciones" ToRole="Grupos" />
         </EntityType>
         <EntityType Name="Grupos">
           <Key>
@@ -273,6 +277,7 @@
           <Property Name="Reportes" Type="Boolean" />
           <Property Name="Tablas_Maestras" Type="Boolean" />
           <Property Name="Tab_Maestras" Type="Boolean" />
+          <NavigationProperty Name="Grupo_Opciones" Relationship="Self.FK_Grupo_Opciones_Grupos" FromRole="Grupos" ToRole="Grupo_Opciones" />
         </EntityType>
         <EntityType Name="Idiomas">
           <Key>
@@ -282,6 +287,24 @@
           <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="espanol" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ingles" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Opc_Sistema">
+          <Key>
+            <PropertyRef Name="ID_Sistema" />
+          </Key>
+          <Property Name="FuenteLetra" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Desktop_NroImgs" Type="Byte" />
+          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
@@ -297,9 +320,9 @@
           <Property Name="Cnfg_FormFecha" Type="Byte" />
           <Property Name="Cnfg_SonidoClick" Type="Boolean" />
         </EntityType>
-        <Association Name="FK_Emp_Accesos_Empresas">
+        <Association Name="FK_Emp_Accesos_Empresas1">
           <End Role="Empresas" Type="Self.Empresas" Multiplicity="1" />
-          <End Role="Emp_Accesos" Type="Self.Emp_Accesos" Multiplicity="0..1" />
+          <End Role="Emp_Accesos" Type="Self.Emp_Accesos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Empresas">
               <PropertyRef Name="Codigo" />
@@ -327,8 +350,10 @@
           <EntitySet Name="Grupo_Opciones" EntityType="Self.Grupo_Opciones" />
           <EntitySet Name="Grupos" EntityType="Self.Grupos" />
           <EntitySet Name="Idiomas" EntityType="Self.Idiomas" />
+          <EntitySet Name="Opc_Sistema" EntityType="Self.Opc_Sistema" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
-          <AssociationSet Name="FK_Emp_Accesos_Empresas" Association="Self.FK_Emp_Accesos_Empresas">
+          <AssociationSet Name="FK_Emp_Accesos_Empresas1" Association="Self.FK_Emp_Accesos_Empresas1">
             <End Role="Empresas" EntitySet="Empresas" />
             <End Role="Emp_Accesos" EntitySet="Emp_Accesos" />
           </AssociationSet>
@@ -336,35 +361,15 @@
             <End Role="Grupos" EntitySet="Grupos" />
             <End Role="Grupo_Opciones" EntitySet="Grupo_Opciones" />
           </AssociationSet>
-          <EntitySet Name="Opc_Sistema" EntityType="EntornoModel.Opc_Sistema" />
-          <EntitySet Name="sysdiagrams" EntityType="EntornoModel.sysdiagrams" />
         </EntityContainer>
-        <EntityType Name="Opc_Sistema">
-          <Key>
-            <PropertyRef Name="ID_Sistema" />
-          </Key>
-          <Property Name="FuenteLetra" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="Desktop_NroImgs" Type="Byte" />
-          <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="EntornoModelStoreContainer" CdmEntityContainer="MofinEntornoEntidad">
+        <EntityContainerMapping StorageEntityContainer="MofinModeloEntornoStoreContainer" CdmEntityContainer="MofinEntornoEntidad">
           <EntitySetMapping Name="Emp_Accesos">
-            <EntityTypeMapping TypeName="EntornoModel.Emp_Accesos">
+            <EntityTypeMapping TypeName="MofinModeloEntorno.Emp_Accesos">
               <MappingFragment StoreEntitySet="Emp_Accesos">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
@@ -374,11 +379,8 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Empresas">
-            <EntityTypeMapping TypeName="EntornoModel.Empresas">
+            <EntityTypeMapping TypeName="MofinModeloEntorno.Empresas">
               <MappingFragment StoreEntitySet="Empresas">
-                <ScalarProperty Name="Metadata" ColumnName="Metadata" />
-                <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
-                <ScalarProperty Name="Cad_Conexion" ColumnName="Cad_Conexion" />
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -390,30 +392,15 @@
                 <ScalarProperty Name="Telefono2" ColumnName="Telefono2" />
                 <ScalarProperty Name="Direccion" ColumnName="Direccion" />
                 <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Cad_Conexion" ColumnName="Cad_Conexion" />
+                <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+                <ScalarProperty Name="Metadata" ColumnName="Metadata" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Grupo_Opciones">
-            <EntityTypeMapping TypeName="EntornoModel.Grupo_Opciones">
+            <EntityTypeMapping TypeName="MofinModeloEntorno.Grupo_Opciones">
               <MappingFragment StoreEntitySet="Grupo_Opciones">
-                <ScalarProperty Name="OperTransac_R" ColumnName="OperTransac_R" />
-                <ScalarProperty Name="OperFinanc_R" ColumnName="OperFinanc_R" />
-                <ScalarProperty Name="OperTransac_P" ColumnName="OperTransac_P" />
-                <ScalarProperty Name="OperTransac_E" ColumnName="OperTransac_E" />
-                <ScalarProperty Name="OperTransac_M" ColumnName="OperTransac_M" />
-                <ScalarProperty Name="OperTransac_I" ColumnName="OperTransac_I" />
-                <ScalarProperty Name="OperFinanc_P" ColumnName="OperFinanc_P" />
-                <ScalarProperty Name="OperFinanc_E" ColumnName="OperFinanc_E" />
-                <ScalarProperty Name="OperFinanc_M" ColumnName="OperFinanc_M" />
-                <ScalarProperty Name="OperFinanc_I" ColumnName="OperFinanc_I" />
-                <ScalarProperty Name="BusqPers_P" ColumnName="BusqPers_P" />
-                <ScalarProperty Name="BusqPers_E" ColumnName="BusqPers_E" />
-                <ScalarProperty Name="BusqPers_M" ColumnName="BusqPers_M" />
-                <ScalarProperty Name="BusqPers_I" ColumnName="BusqPers_I" />
-                <ScalarProperty Name="Clientes_P" ColumnName="Clientes_P" />
-                <ScalarProperty Name="Clientes_E" ColumnName="Clientes_E" />
-                <ScalarProperty Name="Clientes_M" ColumnName="Clientes_M" />
-                <ScalarProperty Name="Clientes_I" ColumnName="Clientes_I" />
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Cod_Grupo" ColumnName="Cod_Grupo" />
                 <ScalarProperty Name="Empresas_I" ColumnName="Empresas_I" />
@@ -432,11 +419,29 @@
                 <ScalarProperty Name="TabMaestras_M" ColumnName="TabMaestras_M" />
                 <ScalarProperty Name="TabMaestras_E" ColumnName="TabMaestras_E" />
                 <ScalarProperty Name="TabMaestras_P" ColumnName="TabMaestras_P" />
+                <ScalarProperty Name="Clientes_I" ColumnName="Clientes_I" />
+                <ScalarProperty Name="Clientes_M" ColumnName="Clientes_M" />
+                <ScalarProperty Name="Clientes_E" ColumnName="Clientes_E" />
+                <ScalarProperty Name="Clientes_P" ColumnName="Clientes_P" />
+                <ScalarProperty Name="BusqPers_I" ColumnName="BusqPers_I" />
+                <ScalarProperty Name="BusqPers_M" ColumnName="BusqPers_M" />
+                <ScalarProperty Name="BusqPers_E" ColumnName="BusqPers_E" />
+                <ScalarProperty Name="BusqPers_P" ColumnName="BusqPers_P" />
+                <ScalarProperty Name="OperFinanc_I" ColumnName="OperFinanc_I" />
+                <ScalarProperty Name="OperFinanc_M" ColumnName="OperFinanc_M" />
+                <ScalarProperty Name="OperFinanc_E" ColumnName="OperFinanc_E" />
+                <ScalarProperty Name="OperFinanc_P" ColumnName="OperFinanc_P" />
+                <ScalarProperty Name="OperFinanc_R" ColumnName="OperFinanc_R" />
+                <ScalarProperty Name="OperTransac_I" ColumnName="OperTransac_I" />
+                <ScalarProperty Name="OperTransac_M" ColumnName="OperTransac_M" />
+                <ScalarProperty Name="OperTransac_E" ColumnName="OperTransac_E" />
+                <ScalarProperty Name="OperTransac_P" ColumnName="OperTransac_P" />
+                <ScalarProperty Name="OperTransac_R" ColumnName="OperTransac_R" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Grupos">
-            <EntityTypeMapping TypeName="EntornoModel.Grupos">
+            <EntityTypeMapping TypeName="MofinModeloEntorno.Grupos">
               <MappingFragment StoreEntitySet="Grupos">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -459,7 +464,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Idiomas">
-            <EntityTypeMapping TypeName="EntornoModel.Idiomas">
+            <EntityTypeMapping TypeName="MofinModeloEntorno.Idiomas">
               <MappingFragment StoreEntitySet="Idiomas">
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -468,8 +473,28 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Opc_Sistema">
+            <EntityTypeMapping TypeName="MofinModeloEntorno.Opc_Sistema">
+              <MappingFragment StoreEntitySet="Opc_Sistema">
+                <ScalarProperty Name="FuenteLetra" ColumnName="FuenteLetra" />
+                <ScalarProperty Name="Desktop_NroImgs" ColumnName="Desktop_NroImgs" />
+                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="MofinModeloEntorno.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Usuarios">
-            <EntityTypeMapping TypeName="EntornoModel.Usuarios">
+            <EntityTypeMapping TypeName="MofinModeloEntorno.Usuarios">
               <MappingFragment StoreEntitySet="Usuarios">
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
@@ -480,26 +505,6 @@
                 <ScalarProperty Name="Cnfg_PaisUso" ColumnName="Cnfg_PaisUso" />
                 <ScalarProperty Name="Cnfg_FormFecha" ColumnName="Cnfg_FormFecha" />
                 <ScalarProperty Name="Cnfg_SonidoClick" ColumnName="Cnfg_SonidoClick" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Opc_Sistema">
-            <EntityTypeMapping TypeName="EntornoModel.Opc_Sistema">
-              <MappingFragment StoreEntitySet="Opc_Sistema">
-                <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
-                <ScalarProperty Name="Desktop_NroImgs" ColumnName="Desktop_NroImgs" />
-                <ScalarProperty Name="FuenteLetra" ColumnName="FuenteLetra" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="EntornoModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -518,7 +523,7 @@
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
       </DesignerInfoPropertySet>

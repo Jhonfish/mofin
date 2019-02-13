@@ -180,6 +180,7 @@
             // 
             // Arc_Salir
             // 
+            this.Arc_Salir.Image = global::MOFIN.Properties.Resources.Salir;
             this.Arc_Salir.Name = "Arc_Salir";
             this.Arc_Salir.Size = new System.Drawing.Size(276, 22);
             this.Arc_Salir.Text = "&Salir";
