@@ -321,6 +321,7 @@
             this.mapaEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_CHistActClientes = new System.Windows.Forms.BindingSource(this.components);
             this.BS_Grupo_Opciones = new System.Windows.Forms.BindingSource(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             this.TS_BarraHerramientas.SuspendLayout();
             this.Tab_Clientes.SuspendLayout();
             this.Pag1.SuspendLayout();
@@ -375,6 +376,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Clientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_CHistActClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Lbl_Codigo
@@ -472,7 +474,7 @@
             // 
             // Lbl_TrimMonto
             // 
-            this.Lbl_TrimMonto.Location = new System.Drawing.Point(577, 366);
+            this.Lbl_TrimMonto.Location = new System.Drawing.Point(575, 367);
             this.Lbl_TrimMonto.Name = "Lbl_TrimMonto";
             this.Lbl_TrimMonto.Size = new System.Drawing.Size(75, 15);
             this.Lbl_TrimMonto.TabIndex = 20;
@@ -735,7 +737,7 @@
             // 
             // Lbl_TrimPeriodo
             // 
-            this.Lbl_TrimPeriodo.Location = new System.Drawing.Point(587, 259);
+            this.Lbl_TrimPeriodo.Location = new System.Drawing.Point(589, 257);
             this.Lbl_TrimPeriodo.Name = "Lbl_TrimPeriodo";
             this.Lbl_TrimPeriodo.Size = new System.Drawing.Size(169, 15);
             this.Lbl_TrimPeriodo.TabIndex = 30;
@@ -743,7 +745,7 @@
             // 
             // Lbl_TrimNroOper
             // 
-            this.Lbl_TrimNroOper.Location = new System.Drawing.Point(577, 342);
+            this.Lbl_TrimNroOper.Location = new System.Drawing.Point(575, 341);
             this.Lbl_TrimNroOper.Name = "Lbl_TrimNroOper";
             this.Lbl_TrimNroOper.Size = new System.Drawing.Size(120, 15);
             this.Lbl_TrimNroOper.TabIndex = 31;
@@ -994,6 +996,7 @@
             // 
             // Chlst_Productos
             // 
+            this.Chlst_Productos.CheckOnClick = true;
             this.Chlst_Productos.FormattingEnabled = true;
             this.Chlst_Productos.Location = new System.Drawing.Point(404, 253);
             this.Chlst_Productos.Name = "Chlst_Productos";
@@ -1002,6 +1005,7 @@
             // 
             // Chlst_Servicios
             // 
+            this.Chlst_Servicios.CheckOnClick = true;
             this.Chlst_Servicios.FormattingEnabled = true;
             this.Chlst_Servicios.Location = new System.Drawing.Point(4, 253);
             this.Chlst_Servicios.Name = "Chlst_Servicios";
@@ -1313,7 +1317,7 @@
             this.Grd_CFirBenAcc.RowHeadersVisible = false;
             this.Grd_CFirBenAcc.Size = new System.Drawing.Size(278, 332);
             this.Grd_CFirBenAcc.TabIndex = 55;
-            this.Grd_CFirBenAcc.CurrentCellChanged += new System.EventHandler(this.Grd_CFirBenAcc_CurrentCellChanged_1);
+            this.Grd_CFirBenAcc.CurrentCellChanged += new System.EventHandler(this.Grd_CFirBenAcc_CurrentCellChanged);
             // 
             // Col_BFANme
             // 
@@ -1346,9 +1350,9 @@
             // 
             this.Pan_BenefAcepCanc.Controls.Add(this.Btn_BenefAceptar);
             this.Pan_BenefAcepCanc.Controls.Add(this.Btn_BenefCancelar);
-            this.Pan_BenefAcepCanc.Location = new System.Drawing.Point(517, 378);
+            this.Pan_BenefAcepCanc.Location = new System.Drawing.Point(551, 378);
             this.Pan_BenefAcepCanc.Name = "Pan_BenefAcepCanc";
-            this.Pan_BenefAcepCanc.Size = new System.Drawing.Size(162, 44);
+            this.Pan_BenefAcepCanc.Size = new System.Drawing.Size(116, 44);
             this.Pan_BenefAcepCanc.TabIndex = 67;
             // 
             // Btn_BenefAceptar
@@ -1360,7 +1364,7 @@
             this.Btn_BenefAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Btn_BenefAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Btn_BenefAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_BenefAceptar.Location = new System.Drawing.Point(30, 5);
+            this.Btn_BenefAceptar.Location = new System.Drawing.Point(4, 5);
             this.Btn_BenefAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_BenefAceptar.Name = "Btn_BenefAceptar";
             this.Btn_BenefAceptar.Size = new System.Drawing.Size(33, 36);
@@ -1378,7 +1382,7 @@
             this.Btn_BenefCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Btn_BenefCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Btn_BenefCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_BenefCancelar.Location = new System.Drawing.Point(99, 5);
+            this.Btn_BenefCancelar.Location = new System.Drawing.Point(73, 5);
             this.Btn_BenefCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_BenefCancelar.Name = "Btn_BenefCancelar";
             this.Btn_BenefCancelar.Size = new System.Drawing.Size(33, 36);
@@ -1475,6 +1479,7 @@
             this.Lbl_BenefPuntuacion.TabIndex = 53;
             this.Lbl_BenefPuntuacion.Text = "2";
             this.Lbl_BenefPuntuacion.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.Lbl_BenefPuntuacion.TextChanged += new System.EventHandler(this.Lbl_BenefPuntuacion_TextChanged);
             // 
             // Pan_Detalles2
             // 
@@ -1494,7 +1499,7 @@
             this.Pan_Detalles2.Controls.Add(this.Grp_BenfTipoVinculacion);
             this.Pan_Detalles2.Location = new System.Drawing.Point(430, 14);
             this.Pan_Detalles2.Name = "Pan_Detalles2";
-            this.Pan_Detalles2.Size = new System.Drawing.Size(367, 365);
+            this.Pan_Detalles2.Size = new System.Drawing.Size(367, 358);
             this.Pan_Detalles2.TabIndex = 63;
             // 
             // Cmb_BenefProfesion
@@ -2068,12 +2073,11 @@
             // 
             this.Pag4.AutoScroll = true;
             this.Pag4.Controls.Add(this.Lbl_TrimPeriodo);
-            this.Pag4.Controls.Add(this.Lbl_TrimNroOper);
-            this.Pag4.Controls.Add(this.Btn_Trimestre);
-            this.Pag4.Controls.Add(this.Lbl_TrimMonto);
             this.Pag4.Controls.Add(this.Lbl_FecUltAct);
+            this.Pag4.Controls.Add(this.Lbl_TrimNroOper);
             this.Pag4.Controls.Add(this.Lbl_NroTransacciones);
             this.Pag4.Controls.Add(this.Lbl_PerUsoCta);
+            this.Pag4.Controls.Add(this.Lbl_TrimMonto);
             this.Pag4.Controls.Add(this.Lbl_PerFinanciero);
             this.Pag4.Controls.Add(this.Lbl_NivRiesgo);
             this.Pag4.Controls.Add(this.Lbl_Ejecutivo);
@@ -2091,7 +2095,7 @@
             // 
             this.Btn_Trimestre.BackgroundImage = global::MOFIN.Properties.Resources.Procesar;
             this.Btn_Trimestre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Btn_Trimestre.Location = new System.Drawing.Point(711, 278);
+            this.Btn_Trimestre.Location = new System.Drawing.Point(146, 31);
             this.Btn_Trimestre.Name = "Btn_Trimestre";
             this.Btn_Trimestre.Size = new System.Drawing.Size(48, 48);
             this.Btn_Trimestre.TabIndex = 25;
@@ -2099,12 +2103,9 @@
             // 
             // Pan_Detalles4
             // 
+            this.Pan_Detalles4.Controls.Add(this.panel1);
             this.Pan_Detalles4.Controls.Add(this.Cmb_NivelRiesgo);
             this.Pan_Detalles4.Controls.Add(this.NUD_NroTransacciones);
-            this.Pan_Detalles4.Controls.Add(this.NUD_TriAno);
-            this.Pan_Detalles4.Controls.Add(this.NUD_TriMes);
-            this.Pan_Detalles4.Controls.Add(this.Txt_TriNroOperaciones);
-            this.Pan_Detalles4.Controls.Add(this.Txt_TriMntOperaciones);
             this.Pan_Detalles4.Controls.Add(this.DTP_FecUltAct);
             this.Pan_Detalles4.Controls.Add(this.Txt_PerFinanciero);
             this.Pan_Detalles4.Controls.Add(this.Txt_Ejecutivo);
@@ -2123,7 +2124,7 @@
             this.Cmb_NivelRiesgo.FormattingEnabled = true;
             this.Cmb_NivelRiesgo.Location = new System.Drawing.Point(5, 250);
             this.Cmb_NivelRiesgo.Name = "Cmb_NivelRiesgo";
-            this.Cmb_NivelRiesgo.Size = new System.Drawing.Size(362, 23);
+            this.Cmb_NivelRiesgo.Size = new System.Drawing.Size(375, 23);
             this.Cmb_NivelRiesgo.TabIndex = 38;
             this.Cmb_NivelRiesgo.ValueMember = "Codigo";
             // 
@@ -2142,7 +2143,7 @@
             // NUD_TriAno
             // 
             this.NUD_TriAno.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BS_CClientes, "Trim_Ano", true));
-            this.NUD_TriAno.Location = new System.Drawing.Point(477, 274);
+            this.NUD_TriAno.Location = new System.Drawing.Point(71, 35);
             this.NUD_TriAno.Name = "NUD_TriAno";
             this.NUD_TriAno.Size = new System.Drawing.Size(66, 22);
             this.NUD_TriAno.TabIndex = 36;
@@ -2150,7 +2151,7 @@
             // NUD_TriMes
             // 
             this.NUD_TriMes.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BS_CClientes, "Trim_Mes", true));
-            this.NUD_TriMes.Location = new System.Drawing.Point(426, 274);
+            this.NUD_TriMes.Location = new System.Drawing.Point(20, 35);
             this.NUD_TriMes.Name = "NUD_TriMes";
             this.NUD_TriMes.Size = new System.Drawing.Size(44, 22);
             this.NUD_TriMes.TabIndex = 35;
@@ -2159,7 +2160,7 @@
             // 
             this.Txt_TriNroOperaciones.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_CClientes, "Trim_NroOperac", true));
             this.Txt_TriNroOperaciones.Enabled = false;
-            this.Txt_TriNroOperaciones.Location = new System.Drawing.Point(541, 332);
+            this.Txt_TriNroOperaciones.Location = new System.Drawing.Point(135, 93);
             this.Txt_TriNroOperaciones.Name = "Txt_TriNroOperaciones";
             this.Txt_TriNroOperaciones.Size = new System.Drawing.Size(40, 22);
             this.Txt_TriNroOperaciones.TabIndex = 19;
@@ -2168,7 +2169,7 @@
             // 
             this.Txt_TriMntOperaciones.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_CClientes, "Trim_MontoOperac", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
             this.Txt_TriMntOperaciones.Enabled = false;
-            this.Txt_TriMntOperaciones.Location = new System.Drawing.Point(498, 359);
+            this.Txt_TriMntOperaciones.Location = new System.Drawing.Point(85, 117);
             this.Txt_TriMntOperaciones.Name = "Txt_TriMntOperaciones";
             this.Txt_TriMntOperaciones.Size = new System.Drawing.Size(118, 22);
             this.Txt_TriMntOperaciones.TabIndex = 33;
@@ -2218,14 +2219,14 @@
             this.Grp_PerUsoCta.Controls.Add(this.Opt_PerUsoCta1);
             this.Grp_PerUsoCta.Location = new System.Drawing.Point(5, 295);
             this.Grp_PerUsoCta.Name = "Grp_PerUsoCta";
-            this.Grp_PerUsoCta.Size = new System.Drawing.Size(362, 35);
+            this.Grp_PerUsoCta.Size = new System.Drawing.Size(375, 35);
             this.Grp_PerUsoCta.TabIndex = 34;
             this.Grp_PerUsoCta.TabStop = false;
             // 
             // Opt_PerUsoCta5
             // 
             this.Opt_PerUsoCta5.AutoSize = true;
-            this.Opt_PerUsoCta5.Location = new System.Drawing.Point(299, 10);
+            this.Opt_PerUsoCta5.Location = new System.Drawing.Point(302, 10);
             this.Opt_PerUsoCta5.Name = "Opt_PerUsoCta5";
             this.Opt_PerUsoCta5.Size = new System.Drawing.Size(58, 19);
             this.Opt_PerUsoCta5.TabIndex = 4;
@@ -2321,6 +2322,7 @@
             this.Lbl_Puntuacion.Size = new System.Drawing.Size(88, 94);
             this.Lbl_Puntuacion.TabIndex = 0;
             this.Lbl_Puntuacion.Text = "2";
+            this.Lbl_Puntuacion.TextChanged += new System.EventHandler(this.Lbl_Puntuacion_TextChanged);
             // 
             // Lbl_Activo
             // 
@@ -3229,6 +3231,19 @@
             // 
             this.BS_Grupo_Opciones.DataSource = typeof(MofinModeloEntorno.Grupo_Opciones);
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.NUD_TriAno);
+            this.panel1.Controls.Add(this.NUD_TriMes);
+            this.panel1.Controls.Add(this.Btn_Trimestre);
+            this.panel1.Controls.Add(this.Txt_TriMntOperaciones);
+            this.panel1.Controls.Add(this.Txt_TriNroOperaciones);
+            this.panel1.Location = new System.Drawing.Point(407, 237);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(209, 154);
+            this.panel1.TabIndex = 39;
+            // 
             // Frm_Clientes
             // 
             this.AcceptButton = this.Btn_Aceptar;
@@ -3321,6 +3336,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Clientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_CHistActClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3618,5 +3635,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_BFADocID;
         private System.Windows.Forms.DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
         private System.Windows.Forms.ComboBox Cmb_NivelRiesgo;
+        private System.Windows.Forms.Panel panel1;
     }
 }

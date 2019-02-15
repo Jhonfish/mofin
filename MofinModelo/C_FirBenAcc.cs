@@ -30,7 +30,7 @@ namespace MofinModelo
         public string VincEmpresa { get; set; }
         public Nullable<byte> VincPorcent { get; set; }
         public Nullable<short> PEP { get; set; }
-        public Nullable<short> Puntuacion { get; set; }
+        public Nullable<byte> Puntuacion { get; set; }
         public Nullable<bool> CondEspSeguridad { get; set; }
     
         public virtual C_Clientes C_Clientes { get; set; }

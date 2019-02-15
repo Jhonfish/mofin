@@ -16,11 +16,8 @@ using MOFIN_LIB;
 namespace MOFIN
 {
     enum TipoPersona    {natural = 1, juridica = 2};
-
     enum TipoVinculo    {Final = 1, Firmante = 2, Conyugue = 3};
-
     enum PeriodoUsoCta    {semanal = 1, mensual = 2, trimestral = 3, semestral = 4, anual = 5};
-
     enum TipoProdServ    {Producto = 1,Servicio = 2};
 
     struct Punt_Cliente
@@ -139,7 +136,83 @@ namespace MOFIN
             return (byte)Math.Round(Promedio);
         }
     }
-    
+
+    struct Punt_FirBenAcc
+    {
+        public byte puntos_nacionalidad;
+        public byte puntos_paisNac;
+        public byte puntos_paisRes;
+        public byte puntos_UbicGeo;
+        public byte puntos_edad;
+        public byte puntos_pep;
+        public byte puntos_profesion;
+        public byte puntos_cripto;
+ 
+        public byte total;
+        public byte sumatoria;
+        public decimal Promedio;
+
+        public byte Calculo()
+        {
+
+            total = 0;
+            sumatoria = 0;
+
+            if (puntos_nacionalidad != 0)
+            {
+                sumatoria += puntos_nacionalidad;
+                total++;
+            }
+            if (puntos_paisNac != 0)
+            {
+                sumatoria += puntos_paisNac;
+                total++;
+            }
+            if (puntos_paisRes != 0)
+            {
+                sumatoria += puntos_paisRes;
+                total++;
+            }
+            if (puntos_UbicGeo != 0)
+            {
+                sumatoria += puntos_UbicGeo;
+                total++;
+            }
+            if (puntos_profesion != 0)
+            {
+                sumatoria += puntos_profesion;
+                total++;
+            }
+            if (puntos_edad != 0)
+            {
+                sumatoria += puntos_edad;
+                total++;
+            }
+            if (puntos_pep != 0)
+            {
+                sumatoria += puntos_pep;
+                total++;
+            }
+            if (puntos_cripto != 0)
+            {
+                sumatoria += puntos_cripto;
+                total++;
+            }
+            if (total > 0)
+                Promedio = (decimal)((float)sumatoria / (float)total);
+                
+            else
+                Promedio = 0;
+
+            byte Puntuacion = (byte)Math.Round(Promedio, MidpointRounding.AwayFromZero);
+
+            MessageBox.Show(puntos_nacionalidad.ToString() + " + " + puntos_paisNac.ToString() + " + " + puntos_paisRes.ToString() + " + " + puntos_UbicGeo.ToString() + " + " + 
+                            puntos_edad.ToString()  + " + " + puntos_pep.ToString() + " + " + puntos_cripto.ToString() + " + " + puntos_profesion.ToString() +
+                            "\n\n" + sumatoria.ToString() + " / " + total.ToString() + "\n\n" + Promedio.ToString() + "\n\n" + Puntuacion.ToString());
+
+            return Puntuacion;
+        }
+    }
     public partial class Frm_Clientes : MetroForm
     {
         bool ClienteEsNuevo = true;
@@ -149,6 +222,7 @@ namespace MOFIN
         C_Clientes r_Cliente = new C_Clientes();
         C_FirBenAcc r_FirBenAcc = new C_FirBenAcc();
         Punt_Cliente punt_Cliente;
+        Punt_FirBenAcc punt_FirBenAcc;
         List<M_Servicios> m_Servicios;
         List<M_Productos> m_Productos;
         List<M_Productos> m_ProdSeleccionado = new List<M_Productos>();
@@ -163,7 +237,6 @@ namespace MOFIN
 
         private void Frm_Clientes_Load(object sender, EventArgs e)
         {
-            //BS_CHistActClientes.DataSource = NC_FirBenAcc.Listar();
             BS_CHistActClientes.DataSource = NC_HistActClientes.Listar();
 
             BS_MActivComercial.DataSource = NM_ActivComercial.Listar();
@@ -186,11 +259,6 @@ namespace MOFIN
             BS_Grupo_Opciones.DataSource = NGrupo_Opciones.ListarPorCodigo(MOFIN_LIB.Entorno.vs_Grupo);
             r_GrupoOpciones = BS_Grupo_Opciones.Current as Grupo_Opciones;
 
-            //Cmb_Nacionalidad.DataSource = NM_Pais.Listar();
-            //Cmb_Nacionalidad.DisplayMember = "Descripcion";
-            //Cmb_Nacionalidad.ValueMember = "Cod_Pais";
-            //Cmb_PaisNacimiento.DataSource = NM_Pais.Listar();
-            //Cmb_PaisResidencia.DataSource = NM_Pais.Listar();
             BS_Nac.DataSource = NM_Pais.Listar();
             BS_Res.DataSource = NM_Pais.Listar();
 
@@ -205,8 +273,6 @@ namespace MOFIN
             
             m_Servicios = NM_Servicios.Listar();
             m_Productos = NM_Productos.Listar();
-            //m_ProdServ = NC_ProdServ.Listar();
-
             
             foreach (M_Servicios item in m_Servicios)
             {
@@ -219,8 +285,7 @@ namespace MOFIN
             }
             
             BS_CClientes.DataSource = NC_Clientes.Listar();
-            //BS_CFirBenAcc.DataSource = NC_FirBenAcc.Listar();
-
+            
             this.Asigna_Nombres();
             this.Modo_Consulta();
             this.Grd_Clientes_CurrentCellChanged(false, e);
@@ -261,19 +326,16 @@ namespace MOFIN
             BS_CClientes.MoveFirst();
             TSB_ActualizaBotonesNavegacion();
         }
-
         private void TSB_Anterior_Click(object sender, EventArgs e)
         {
             BS_CClientes.MovePrevious();
             TSB_ActualizaBotonesNavegacion();
         }
-
         private void TSB_Siguiente_Click(object sender, EventArgs e)
         {
             BS_CClientes.MoveNext();
             TSB_ActualizaBotonesNavegacion();
         }
-
         private void TSB_Ultimo_Click(object sender, EventArgs e)
         {
             BS_CClientes.MoveLast();
@@ -304,19 +366,6 @@ namespace MOFIN
         }
         private void TSB_Eliminar_Click(object sender, EventArgs e)
         {
-/*            string vl_RegEliminar = r_Cliente.Nombre.Trim();
-            DialogResult vl_Resp = MessageBox.Show("Desea Eliminar este Registro? " + "\n\n" + vl_RegEliminar,
-                "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (vl_Resp == DialogResult.Yes)
-            {
-                NC_Clientes.Elimiar(BS_CClientes.Current as C_Clientes);
-                NC_FirBenAcc.Elimiar(BS_CFirBenAcc.Current as C_FirBenAcc);
-                BS_CClientes.DataSource = NC_Clientes.Listar();
-                Grd_Clientes.Refresh();
-                MessageBox.Show("Se eliminó el registro actual", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            //////////////////
-            *///
             string vl_RegEliminar = r_Cliente.Nombre.Trim(); 
             DialogResult vl_Resp = MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9010) + "\n\n" + vl_RegEliminar,
                 MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -346,11 +395,13 @@ namespace MOFIN
             {
                 if (Chlst_Productos.GetItemChecked(i))
                 {
-                    C_ProdServ m_ProdServ = new C_ProdServ();
-                    m_ProdServ.Cod_Cliente = r_Cliente.Codigo;
-                    m_ProdServ.Tipo_ProdServ = 1;
-                    m_ProdServ.Cod_Tipo = (byte)m_Productos[i].Codigo;
-                    m_ProdServ.Valor = m_Productos[i].Valor;
+                    C_ProdServ m_ProdServ = new C_ProdServ
+                    {
+                        Cod_Cliente = r_Cliente.Codigo,
+                        Tipo_ProdServ = 1,
+                        Cod_Tipo = (byte)m_Productos[i].Codigo,
+                        Valor = m_Productos[i].Valor
+                    };
                     NC_ProdServ.Insertar(m_ProdServ);
                 }
             }
@@ -358,21 +409,22 @@ namespace MOFIN
             {
                 if (Chlst_Servicios.GetItemChecked(i))
                 {
-                    C_ProdServ m_ProdServ = new C_ProdServ();
-                    m_ProdServ.Cod_Cliente = r_Cliente.Codigo;
-                    m_ProdServ.Tipo_ProdServ = 2;
-                    m_ProdServ.Cod_Tipo = (byte)m_Servicios[i].Codigo;
-                    m_ProdServ.Valor = m_Servicios[i].Valor;
+                    C_ProdServ m_ProdServ = new C_ProdServ
+                    {
+                        Cod_Cliente = r_Cliente.Codigo,
+                        Tipo_ProdServ = 2,
+                        Cod_Tipo = (byte)m_Servicios[i].Codigo,
+                        Valor = m_Servicios[i].Valor
+                    };
                     NC_ProdServ.Insertar(m_ProdServ);
                 }
             }
-
 
             this.Clientes_RellenaDatosCalculo();
             r_Cliente.InfGen_Punt = punt_Cliente.Calculo();
 
             if (r_Cliente.Benef_Punt > 0)
-                r_Cliente.Cliente_Punt = (byte)Math.Round((decimal)((float)r_Cliente.InfGen_Punt / (float)r_Cliente.Benef_Punt));
+                r_Cliente.Cliente_Punt = (byte)Math.Round((decimal)((float)r_Cliente.InfGen_Punt + (float)r_Cliente.Benef_Punt)/2, MidpointRounding.AwayFromZero);
             else
                 r_Cliente.Cliente_Punt = r_Cliente.InfGen_Punt;
 
@@ -434,6 +486,10 @@ namespace MOFIN
 
         private void Btn_BenefAceptar_Click(object sender, EventArgs e)
         {
+            
+            this.FirBenAcc_RellenaDatosCalculo();
+            r_FirBenAcc.Puntuacion = punt_FirBenAcc.Calculo();
+
             if (EsBenefNuevo)
             {
                 r_FirBenAcc.Cod_Cliente = r_Cliente.Codigo;
@@ -441,8 +497,6 @@ namespace MOFIN
             }
             else
             {
-                //NC_Clientes.Actualizar(BS_CClientes.Current as C_Clientes);
-                //NC_FirBenAcc.Actualizar(BS_CFirBenAcc.Current as C_FirBenAcc);
                 NC_FirBenAcc.Actualizar(r_FirBenAcc);
             }
             Pan_Detalles2.Enabled = false;
@@ -450,10 +504,31 @@ namespace MOFIN
             this.Grd_CFirBenAcc.Enabled = true;
             this.Pan_BenefBtns.Enabled = true;
             this.Pan_BenefAcepCanc.Visible = false;
-
             Cmb_BenefEstado.DataSource = NM_Estados.Listar();
 
+            BS_CFirBenAcc.MoveFirst();
+            byte vl_Cuantos = 0;
+            byte vl_Puntos = 0;
+            byte vl_Puntuacion = 0;
+
+            foreach(object Registro in BS_CFirBenAcc)
+            {
+                r_FirBenAcc = BS_CFirBenAcc.Current as C_FirBenAcc;
+                vl_Puntos = (byte)(vl_Puntos + r_FirBenAcc.Puntuacion);
+                vl_Cuantos++;
+                BS_CFirBenAcc.MoveNext();
+            }
+
+            if (vl_Cuantos >= 0)
+                vl_Puntuacion = (byte)Math.Round((decimal)((float)vl_Puntos / (float)vl_Cuantos), MidpointRounding.AwayFromZero);
+            else
+                vl_Puntuacion = 0;
+
+            r_Cliente.Benef_Punt = vl_Puntuacion;
+            this.Pag2.Text = MOFIN_LIB.Funciones._Mens_Idioma(11005) + ": " + r_Cliente.Benef_Punt.ToString();
+
             this.AcceptButton = this.Btn_Aceptar;
+            this.Grd_CFirBenAcc_CurrentCellChanged(true, e);
         }
 
         private void Btn_BenefCancelar_Click(object sender, EventArgs e)
@@ -467,6 +542,8 @@ namespace MOFIN
             Cmb_BenefEstado.DataSource = NM_Estados.Listar();
             this.AcceptButton = this.Btn_Aceptar;
         }
+
+        
         //**************
         // Eventos del formulario
         //**************
@@ -588,8 +665,7 @@ namespace MOFIN
             MOFIN_LIB.Funciones.TTT_Btn(Btn_Aceptar, MOFIN_LIB.Funciones._Mens_Idioma(141));
             MOFIN_LIB.Funciones.TTT_Btn(Btn_Cancelar, MOFIN_LIB.Funciones._Mens_Idioma(142));
         }
-
-
+        
         private void Modo_Consulta()
         {
             Cmb_Estado.DataSource = NM_Estados.Listar();
@@ -636,57 +712,64 @@ namespace MOFIN
 
         }
 
-
         private void Grd_Clientes_CurrentCellChanged(object sender, EventArgs e)
         {
             if (BS_CClientes.Current == null)
                 return;
-            else
-            {
-                r_Cliente = BS_CClientes.Current as C_Clientes;
 
-                this.Lbl_Activo.Text = Funciones._Mens_Idioma(r_Cliente.Activo == true ? 126 : 127);
-                this.Lbl_Activo.ForeColor = r_Cliente.Activo == true ? Color.Green : Color.Red;
-
-                this.Opc_TipPers1.Checked = r_Cliente.TipoPersona == (byte)TipoPersona.natural ? true : false ;
-                this.Opc_TipPers2.Checked = !this.Opc_TipPers1.Checked;
-
-                this.Lbl_Edad.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 10014 : 10012 );
-                Cmb_Edad.Visible = r_Cliente.TipoPersona == 1 ? true : false;
-                Cmb_Antiguedad.Visible = !Cmb_Edad.Visible;
-                Cmb_VolOperNat.Visible = Cmb_Edad.Visible;
-                Cmb_VolOperJur.Visible = !Cmb_Edad.Visible;
-
-                this.Chk_Opc5.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11024 : 1009);
-                this.Chk_Opc6.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11025 : 1011);
-                this.Chk_Opc16.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11034 : 11047);
-                this.Chk_Opc19.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11009 : 11043);
-                this.Chk_Opc20.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 2209 : 11044);
-                this.Chk_Opc21.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11036 : 11045);
-                this.Chk_Opc22.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11037 : 11046);
-                this.Chk_Opc23.Visible = r_Cliente.TipoPersona == 1 ? true : false;
-                this.Chk_Opc24.Visible = this.Chk_Opc23.Visible;
-                this.Chk_Opc25.Visible = this.Chk_Opc23.Visible;
-                this.Chk_Opc26.Visible = this.Chk_Opc23.Visible;
-                this.Chk_Opc27.Visible = this.Chk_Opc23.Visible;
-
-
-                if (r_Cliente.PeriodUsoCta == (byte)PeriodoUsoCta.semanal)
-                    Opt_PerUsoCta1.Checked = true;
-                else if (r_Cliente.PeriodUsoCta == (byte)PeriodoUsoCta.mensual)
-                    Opt_PerUsoCta2.Checked = true;
-                else if (r_Cliente.PeriodUsoCta == (byte)PeriodoUsoCta.trimestral)
-                    Opt_PerUsoCta3.Checked = true;
-                else if (r_Cliente.PeriodUsoCta == (byte)PeriodoUsoCta.semestral)
-                    Opt_PerUsoCta4.Checked = true;
-                else
-                    Opt_PerUsoCta5.Checked = true;
-
-                this.Pag1.Text = MOFIN_LIB.Funciones._Mens_Idioma(11004)+ ": " + r_Cliente.InfGen_Punt.ToString();
-                this.Pag2.Text = MOFIN_LIB.Funciones._Mens_Idioma(11005) + ": " + r_Cliente.Benef_Punt.ToString();
-                Lbl_Puntuacion.Text = r_Cliente.Cliente_Punt.ToString();
-            }
+            r_Cliente = BS_CClientes.Current as C_Clientes;
             BS_CFirBenAcc.DataSource = NC_FirBenAcc.ListarPorCliente(r_Cliente.Codigo);
+
+            this.Grd_CFirBenAcc_CurrentCellChanged(true, e);
+
+            this.Lbl_Activo.Text = Funciones._Mens_Idioma(r_Cliente.Activo == true ? 126 : 127);
+            this.Lbl_Activo.ForeColor = r_Cliente.Activo == true ? Color.Green : Color.Red;
+
+            this.Opc_TipPers1.Checked = r_Cliente.TipoPersona == (byte)TipoPersona.natural ? true : false ;
+            this.Opc_TipPers2.Checked = !this.Opc_TipPers1.Checked;
+
+            this.Lbl_Edad.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 10014 : 10012 );
+            Cmb_Edad.Visible = r_Cliente.TipoPersona == 1 ? true : false;
+            Cmb_Antiguedad.Visible = !Cmb_Edad.Visible;
+            Cmb_VolOperNat.Visible = Cmb_Edad.Visible;
+            Cmb_VolOperJur.Visible = !Cmb_Edad.Visible;
+
+            this.Chk_Opc5.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11024 : 1009);
+            this.Chk_Opc6.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11025 : 1011);
+            this.Chk_Opc16.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11034 : 11047);
+            this.Chk_Opc19.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11009 : 11043);
+            this.Chk_Opc20.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 2209 : 11044);
+            this.Chk_Opc21.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11036 : 11045);
+            this.Chk_Opc22.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11037 : 11046);
+            this.Chk_Opc23.Visible = r_Cliente.TipoPersona == 1 ? true : false;
+            this.Chk_Opc24.Visible = this.Chk_Opc23.Visible;
+            this.Chk_Opc25.Visible = this.Chk_Opc23.Visible;
+            this.Chk_Opc26.Visible = this.Chk_Opc23.Visible;
+            this.Chk_Opc27.Visible = this.Chk_Opc23.Visible;
+
+            switch(r_Cliente.PeriodUsoCta)
+            {
+                case (byte)PeriodoUsoCta.semanal:
+                    Opt_PerUsoCta1.Checked = true;
+                    break;
+                case (byte)PeriodoUsoCta.mensual:
+                    Opt_PerUsoCta2.Checked = true;
+                    break;
+                case (byte)PeriodoUsoCta.trimestral:
+                    Opt_PerUsoCta3.Checked = true;
+                    break;
+                case (byte)PeriodoUsoCta.semestral:
+                    Opt_PerUsoCta4.Checked = true;
+                    break;
+                case (byte)PeriodoUsoCta.anual:
+                    Opt_PerUsoCta5.Checked = true;
+                    break;
+            }
+
+            this.Pag1.Text = MOFIN_LIB.Funciones._Mens_Idioma(11004) + ": " + r_Cliente.InfGen_Punt.ToString();
+            this.Pag2.Text = MOFIN_LIB.Funciones._Mens_Idioma(11005) + ": " + r_Cliente.Benef_Punt.ToString();
+            Lbl_Puntuacion.Text = r_Cliente.Cliente_Punt.ToString();
+            
 
             List<C_ProdServ> ProdSelec = NC_ProdServ.ListarPorClienyTipProdServ(r_Cliente.Codigo, (byte)TipoProdServ.Producto);
             for (int i = 0; i < m_Productos.Count; i++)
@@ -720,24 +803,36 @@ namespace MOFIN
                     }
                 }
             }
+        }
 
+        private void Grd_CFirBenAcc_CurrentCellChanged(object sender, EventArgs e)
+        {
             if (BS_CFirBenAcc.Current == null)
+            {
+                Opc_TipVinc1.Checked = false;
+                Opc_TipVinc2.Checked = false;
+                Opc_TipVinc3.Checked = false;
                 return;
+            }
             else
             {
                 r_FirBenAcc = BS_CFirBenAcc.Current as C_FirBenAcc;
-            }
-        }
+                this.Lbl_BenefPuntuacion.Text = r_FirBenAcc.Puntuacion.ToString();
 
-       /* private void Cmb_PaisResidencia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(Cmb_PaisResidencia.SelectedIndex != -1)
-            {
-                M_Pais m_Pais = BS_MPais.Current as M_Pais;
-                punt_Cliente.puntos_paisRes = m_Pais.Valor;
+                switch(r_FirBenAcc.TipoVinculo)
+                {
+                    case (byte)TipoVinculo.Final :
+                        Opc_TipVinc1.Checked = true;
+                        break;
+                    case (byte)TipoVinculo.Firmante :
+                        Opc_TipVinc2.Checked = true;
+                        break;
+                    case (byte)TipoVinculo.Conyugue :
+                        Opc_TipVinc3.Checked = true;
+                        break;
+                }
             }
         }
-        */
 
         private void Opc_TipPers1_CheckedChanged(object sender, EventArgs e)
         {
@@ -781,22 +876,6 @@ namespace MOFIN
                     r_FirBenAcc.TipoVinculo = (byte)TipoVinculo.Conyugue;
             }
         }
-        private void Grd_CFirBenAcc_CurrentCellChanged(object sender, EventArgs e)
-        {
-            if (BS_CFirBenAcc.Current == null)
-                return;
-            else
-            {
-                r_FirBenAcc = BS_CFirBenAcc.Current as C_FirBenAcc;
-
-                if (r_FirBenAcc.TipoVinculo == (byte)TipoVinculo.Final)
-                    Opc_TipVinc1.Checked = true;
-                else if (r_FirBenAcc.TipoVinculo == (byte)TipoVinculo.Firmante)
-                    Opc_TipVinc2.Checked = true;
-                else
-                    Opc_TipVinc3.Checked = true;
-            }
-        }
         private void Opt_PerUsoCta1_CheckedChanged(object sender, EventArgs e)
         {
             if (ClientModConsulta == false)
@@ -813,110 +892,7 @@ namespace MOFIN
                     r_Cliente.PeriodUsoCta = (byte)PeriodoUsoCta.anual;
             }
         }
-        /*
-        private void Cmb_Nacionalidad_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Cmb_Nacionalidad.SelectedIndex != -1)
-            {
-                M_Pais m_Pais = BS_MPais.Current as M_Pais;
-                punt_Cliente.puntos_nacionalidad = m_Pais.Valor;
-            }
-        }
-
-        private void Cmb_PaisNacimiento_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Cmb_PaisNacimiento.SelectedIndex != -1)
-            {
-                M_Pais m_Pais = BS_MPais.Current as M_Pais;
-                punt_Cliente.puntos_paisNac = m_Pais.Valor;
-            }
-
-        }
-
-        private void Cmb_Estado_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Cmb_Estado.SelectedIndex != -1)
-            {
-                M_Estados m_Estados = BS_MEstados.Current as M_Estados;
-                puntuacion.puntos_UbicGeo = m_Estados.Valor;
-
- //               r_Cliente.IG_Estado = m_Estados.Cod_Compuesto;
-            }
-        }
-     
-        private void Cmb_Profesion_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Cmb_Profesion.SelectedIndex != -1)
-            {
-                M_Profesiones m_Profesion = BS_MProfesiones.Current as M_Profesiones;
-                punt_Cliente.puntos_profesion = m_Profesion.Valor;
-            }
-        }
-
-        private void Cmb_ActivComercial_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Cmb_ActivComercial.SelectedIndex != -1)
-            {
-                M_ActivComercial m_ActvComercial = BS_MActivComercial.Current as M_ActivComercial;
-                punt_Cliente.puntos_ActComer = m_ActvComercial.Valor;
-            }
-        }
-
-        private void Cmb_Edad_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Cmb_Edad.SelectedIndex != -1)
-            {
-                M_Edad m_Edad = BS_MEdad.Current as M_Edad;
-                punt_Cliente.puntos_edad = m_Edad.Valor;
-            }
-        }
-
-        private void Cmb_TipoPersJuridica_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Cmb_TipoPersJuridica.SelectedIndex != -1)
-            {
-                M_TipoPersJuridica m_TipoPersJuridica = BS_MTipoPersJuridica.Current as M_TipoPersJuridica;
-                punt_Cliente.puntos_tipoPers = m_TipoPersJuridica.Valor;
-            }
-        }
-
-        private void Cmb_TipoEstructura_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Cmb_TipoEstructura.SelectedIndex != -1)
-            {
-                M_TipoEstructuraEmpresa m_TipoEstructura = BS_MTipoEstructuraEmpresa.Current as M_TipoEstructuraEmpresa;
-                punt_Cliente.puntos_estruc = m_TipoEstructura.Valor;
-            }
-        }
-
-        private void Cmb_PEP_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Cmb_PEP.SelectedIndex != -1)
-            {
-                M_PEP m_Pep = BS_MPEP.Current as M_PEP;
-                punt_Cliente.puntos_pep = m_Pep.Valor;
-            }
-        }
-
-        private void Cmb_VolOperNat_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Cmb_VolOperNat.SelectedIndex != -1)
-            {
-                M_VolOperPersNat m_VolOperPerNat = BS_MVolOperPersNat.Current as M_VolOperPersNat;
-                punt_Cliente.puntos_volOper = m_VolOperPerNat.Valor;
-            }
-        }
-
-        private void Cmb_Criptomonedas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Cmb_Criptomonedas.SelectedIndex != -1)
-            {
-                M_Criptomonedas m_Cripto = BS_MCriptomonedas.Current as M_Criptomonedas;
-                punt_Cliente.puntos_cripto = m_Cripto.Valor;
-            }
-        }
-        */
-
+ 
         private void Frm_Clientes_KeyDown(object sender, KeyEventArgs e)
         {
             if ((ActiveControl.GetType().Name != "DataGridView") & (this.TSB_Salir.Enabled) & (e.KeyValue == 27 | e.KeyValue == 33 | e.KeyValue == 34 | e.KeyValue == 35 |
@@ -985,10 +961,10 @@ namespace MOFIN
 
         }
 
-        private void Grd_CFirBenAcc_CurrentCellChanged_1(object sender, EventArgs e)
+ /*       private void Grd_CFirBenAcc_CurrentCellChanged_1(object sender, EventArgs e)
         {
             r_FirBenAcc = BS_CFirBenAcc.Current as C_FirBenAcc ;
-        }
+        }*/
 
         private void Clientes_RellenaDatosCalculo()
         {
@@ -1130,6 +1106,108 @@ namespace MOFIN
             for (int i = 0; i < Cant_Serv; i++)
                 Suma_Serv = Suma_Serv + Lst_ServxClie[i].Valor;
             punt_Cliente.puntos_Servicios  = (byte)Math.Round(((float)Suma_Serv / (float)Cant_Serv));
+
+        }
+
+        private void FirBenAcc_RellenaDatosCalculo()
+        {
+            // son 13 controles fijos mas los producot sy sevicios
+
+            if (r_FirBenAcc.Nacionalidad != 0 & r_FirBenAcc.Nacionalidad!= null)
+            {
+                M_Pais r_Pais = NM_Pais.ListarPorCodigo((short)r_FirBenAcc.Nacionalidad).First();
+                punt_FirBenAcc.puntos_nacionalidad = r_Pais.Valor;
+            }
+            else
+                punt_FirBenAcc.puntos_nacionalidad = 0;
+
+            if (r_FirBenAcc.PaisNacim != 0 & r_FirBenAcc.PaisNacim != null)
+            {
+                M_Pais r_Pais = NM_Pais.ListarPorCodigo((short)r_FirBenAcc.PaisNacim).First();
+                punt_FirBenAcc.puntos_paisNac = r_Pais.Valor;
+            }
+            else
+                punt_FirBenAcc.puntos_paisNac = 0;
+
+            if (r_FirBenAcc.PaisResid != 0 & r_FirBenAcc.PaisResid != null)
+            {
+                M_Pais r_Pais = NM_Pais.ListarPorCodigo((short)r_FirBenAcc.PaisResid).First();
+                punt_FirBenAcc.puntos_paisRes = r_Pais.Valor;
+            }
+            else
+                punt_FirBenAcc.puntos_paisRes = 0;
+
+            if (r_FirBenAcc.Estado != 0 & r_FirBenAcc.Estado != null)
+            {
+                M_Estados r_Estados = NM_Estados.ListarPorCodigo((int)r_FirBenAcc.Estado).First();
+                punt_FirBenAcc.puntos_UbicGeo = r_Estados.Valor;
+            }
+            else
+                punt_FirBenAcc.puntos_UbicGeo = 0;
+
+            if (r_FirBenAcc.Edad != 0 & r_FirBenAcc.Edad != null)
+            {
+                M_Edad r_Edad = NM_Edad.ListarPorCodigo((short)r_FirBenAcc.Edad).First();
+                punt_FirBenAcc.puntos_edad = r_Edad.Valor;
+            }
+            else
+                punt_FirBenAcc.puntos_edad = 0;
+
+            if (r_FirBenAcc.PEP != 0 & r_FirBenAcc.PEP != null)
+            {
+                M_PEP r_PEP = NM_PEP.ListarPorCodigo((short)r_FirBenAcc.PEP).First();
+                punt_FirBenAcc.puntos_pep = r_PEP.Valor;
+            }
+            else
+                punt_FirBenAcc.puntos_pep = 0;
+
+            if (r_FirBenAcc.Criptomoneda != 0 & r_FirBenAcc.Criptomoneda != null)
+            {
+                M_Criptomonedas r_Criptomon = NM_Criptomonedas.ListarPorCodigo((short)r_FirBenAcc.Criptomoneda).First();
+                punt_FirBenAcc.puntos_cripto = r_Criptomon.Valor;
+            }
+            else
+                punt_FirBenAcc.puntos_cripto = 0;
+
+            if (r_FirBenAcc.Profesion != 0 & r_FirBenAcc.Profesion != null)
+            {
+                M_Profesiones r_Profesion = NM_Profesiones.ListarPorCodigo((short)r_FirBenAcc.Profesion).First();
+                punt_FirBenAcc.puntos_profesion = r_Profesion.Valor;
+            }
+            else
+                punt_FirBenAcc.puntos_profesion = 0;
+
+        }
+        private void Lbl_Puntuacion_TextChanged(object sender, EventArgs e)
+        {
+            switch(this.Lbl_Puntuacion.Text)
+            {
+                case "3":
+                    this.Lbl_Puntuacion.ForeColor = Color.Red;
+                    break;
+                case "2":
+                    this.Lbl_Puntuacion.ForeColor = Color.Yellow;
+                    break;
+                default:
+                    this.Lbl_Puntuacion.ForeColor = Color.Green;
+                    break;
+            }
+        }
+
+        private void Lbl_BenefPuntuacion_TextChanged(object sender, EventArgs e)
+        {
+            switch (this.Lbl_BenefPuntuacion.Text)
+            {
+                case "3":
+                    this.Lbl_BenefPuntuacion.ForeColor = Color.Red;
+                    break;
+                case "2":
+                    this.Lbl_BenefPuntuacion.ForeColor = Color.Yellow;
+                    break;
+                default:
+                    this.Lbl_BenefPuntuacion.ForeColor = Color.Green;
+                    break;
+            }
 
         }
     }
