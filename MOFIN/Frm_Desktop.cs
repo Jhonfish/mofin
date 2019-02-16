@@ -279,51 +279,51 @@ namespace MOFIN
         }
         private void Asigna_Nombres(object sender, EventArgs e)
         {
-            this.Text = MOFIN_LIB.Funciones._Mens_Idioma(1);
+            this.Text = Funciones._Mens_Idioma(1);
 
-            this.Mnu_Archivo.Text= MOFIN_LIB.Funciones._Mens_Idioma(401);
-                this.Arc_Abrir.Text = MOFIN_LIB.Funciones._Mens_Idioma(402);
-                this.Arc_SelEmpresa.Text = MOFIN_LIB.Funciones._Mens_Idioma(2000);
-                this.Arc_Imprimir.Text = MOFIN_LIB.Funciones._Mens_Idioma(139);
-                this.Arc_VistaPrevia.Text = MOFIN_LIB.Funciones._Mens_Idioma(403);
-                this.Arc_ConfigImpres.Text = MOFIN_LIB.Funciones._Mens_Idioma(404);
-                this.Arc_Salir.Text = MOFIN_LIB.Funciones._Mens_Idioma(140);
+            this.Mnu_Archivo.Text= Funciones._Mens_Idioma(401);
+                this.Arc_Abrir.Text = Funciones._Mens_Idioma(402);
+                this.Arc_SelEmpresa.Text = Funciones._Mens_Idioma(7000);
+                this.Arc_Imprimir.Text = Funciones._Mens_Idioma(139);
+                this.Arc_VistaPrevia.Text = Funciones._Mens_Idioma(403);
+                this.Arc_ConfigImpres.Text = Funciones._Mens_Idioma(404);
+                this.Arc_Salir.Text = Funciones._Mens_Idioma(140);
 
-            this.Mnu_Editar.Text = MOFIN_LIB.Funciones._Mens_Idioma(411);
-                this.Edi_Deshacer.Text = MOFIN_LIB.Funciones._Mens_Idioma(412);
-                this.Edi_Rehacer.Text = MOFIN_LIB.Funciones._Mens_Idioma(413);
-                this.Edi_Cortar.Text = MOFIN_LIB.Funciones._Mens_Idioma(414);
-                this.Edi_Copiar.Text = MOFIN_LIB.Funciones._Mens_Idioma(415);
-                this.Edi_Pegar.Text = MOFIN_LIB.Funciones._Mens_Idioma(416);
-                this.Edi_SelecTodo.Text = MOFIN_LIB.Funciones._Mens_Idioma(417);
+            this.Mnu_Editar.Text = Funciones._Mens_Idioma(411);
+                this.Edi_Deshacer.Text = Funciones._Mens_Idioma(412);
+                this.Edi_Rehacer.Text = Funciones._Mens_Idioma(413);
+                this.Edi_Cortar.Text = Funciones._Mens_Idioma(414);
+                this.Edi_Copiar.Text = Funciones._Mens_Idioma(415);
+                this.Edi_Pegar.Text = Funciones._Mens_Idioma(416);
+                this.Edi_SelecTodo.Text = Funciones._Mens_Idioma(417);
 
-            this.Mnu_Ver.Text = MOFIN_LIB.Funciones._Mens_Idioma(421);
-                this.Ver_BarraStado.Text = MOFIN_LIB.Funciones._Mens_Idioma(422);
+            this.Mnu_Ver.Text = Funciones._Mens_Idioma(421);
+                this.Ver_BarraStado.Text = Funciones._Mens_Idioma(422);
 
-            this.Mnu_Clientes.Text = MOFIN_LIB.Funciones._Mens_Idioma(2321);
-                this.Cli_Monitor.Text = MOFIN_LIB.Funciones._Mens_Idioma(11000);
-                this.Cli_Busqueda.Text = MOFIN_LIB.Funciones._Mens_Idioma(12000);
+            this.Mnu_Clientes.Text = Funciones._Mens_Idioma(7321);
+                this.Cli_Monitor.Text = Funciones._Mens_Idioma(11000);
+                this.Cli_Busqueda.Text = Funciones._Mens_Idioma(12000);
 
-            this.Mnu_Operaciones.Text = MOFIN_LIB.Funciones._Mens_Idioma(2331);
-                this.Ope_Financieras.Text = MOFIN_LIB.Funciones._Mens_Idioma(13000);
-                this.Ope_Transaccionales.Text = MOFIN_LIB.Funciones._Mens_Idioma(14000);
+            this.Mnu_Operaciones.Text = Funciones._Mens_Idioma(7331);
+                this.Ope_Financieras.Text = Funciones._Mens_Idioma(13000);
+                this.Ope_Transaccionales.Text = Funciones._Mens_Idioma(14000);
 
-            this.Mnu_TablasMaestras.Text = MOFIN_LIB.Funciones._Mens_Idioma(2341);
-                this.Tab_Maestros.Text = MOFIN_LIB.Funciones._Mens_Idioma(10001);
+            this.Mnu_TablasMaestras.Text = Funciones._Mens_Idioma(7341);
+                this.Tab_Maestros.Text = Funciones._Mens_Idioma(10001);
 
-            this.Mnu_Herramientas.Text = MOFIN_LIB.Funciones._Mens_Idioma(2311);
-                this.Her_Empresas.Text = MOFIN_LIB.Funciones._Mens_Idioma(2100);
-                this.Her_Grupos.Text = MOFIN_LIB.Funciones._Mens_Idioma(2300);
-                this.Her_Usuarios.Text = MOFIN_LIB.Funciones._Mens_Idioma(2200);
+            this.Mnu_Herramientas.Text = Funciones._Mens_Idioma(7311);
+                this.Her_Empresas.Text = Funciones._Mens_Idioma(7100);
+                this.Her_Grupos.Text = Funciones._Mens_Idioma(7300);
+                this.Her_Usuarios.Text = Funciones._Mens_Idioma(7200);
 
-            this.Mnu_Ventanas.Text = MOFIN_LIB.Funciones._Mens_Idioma(431);
-                this.Ven_Cascada.Text = MOFIN_LIB.Funciones._Mens_Idioma(432);
-                this.Ven_MosVert.Text = MOFIN_LIB.Funciones._Mens_Idioma(433);
-                this.Ven_MosHor.Text = MOFIN_LIB.Funciones._Mens_Idioma(434);
-                this.Ven_CerrarTodo.Text = MOFIN_LIB.Funciones._Mens_Idioma(435);
+            this.Mnu_Ventanas.Text = Funciones._Mens_Idioma(431);
+                this.Ven_Cascada.Text = Funciones._Mens_Idioma(432);
+                this.Ven_MosVert.Text = Funciones._Mens_Idioma(433);
+                this.Ven_MosHor.Text = Funciones._Mens_Idioma(434);
+                this.Ven_CerrarTodo.Text = Funciones._Mens_Idioma(435);
 
-            this.Mnu_Ayuda.Text = MOFIN_LIB.Funciones._Mens_Idioma(441);
-                this.Ayu_Acerca.Text = MOFIN_LIB.Funciones._Mens_Idioma(442);
+            this.Mnu_Ayuda.Text = Funciones._Mens_Idioma(441);
+                this.Ayu_Acerca.Text = Funciones._Mens_Idioma(442);
 
             //            MOFIN_LIB.Funciones.TTT_Btn(Btn_Aceptar, MOFIN_LIB.Funciones._Mens_Idioma(141));
             //            MOFIN_LIB.Funciones.TTT_Btn(Btn_Cancelar, MOFIN_LIB.Funciones._Mens_Idioma(142));

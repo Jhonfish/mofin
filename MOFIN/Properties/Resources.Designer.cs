@@ -263,6 +263,16 @@ namespace MOFIN.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MoFin {
+            get {
+                object obj = ResourceManager.GetObject("MoFin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MonitorClientes {
             get {
                 object obj = ResourceManager.GetObject("MonitorClientes", resourceCulture);

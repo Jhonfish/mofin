@@ -66,7 +66,7 @@
             this.Pan_Elementos2 = new System.Windows.Forms.Panel();
             this.Chk_OpeTra_ImpExp = new System.Windows.Forms.CheckBox();
             this.Chk_OpeFin_ImpExp = new System.Windows.Forms.CheckBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Pic_ImpExp = new System.Windows.Forms.PictureBox();
             this.Chk_OpTrans_P = new System.Windows.Forms.CheckBox();
             this.Chk_OpTrans_E = new System.Windows.Forms.CheckBox();
             this.Chk_OpTrans_M = new System.Windows.Forms.CheckBox();
@@ -126,7 +126,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupos)).BeginInit();
             this.Pag_Operaciones.SuspendLayout();
             this.Pan_Elementos2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_ImpExp)).BeginInit();
             this.Pag_Tablas.SuspendLayout();
             this.Pan_Elementos3.SuspendLayout();
             this.Pag_Reportes.SuspendLayout();
@@ -306,6 +306,7 @@
             this.TSB_Imprimir.Name = "TSB_Imprimir";
             this.TSB_Imprimir.Size = new System.Drawing.Size(40, 40);
             this.TSB_Imprimir.Text = "Imprimir";
+            this.TSB_Imprimir.Click += new System.EventHandler(this.TSB_Imprimir_Click);
             // 
             // toolStripSeparator3
             // 
@@ -498,7 +499,7 @@
             // 
             this.Pan_Elementos2.Controls.Add(this.Chk_OpeTra_ImpExp);
             this.Pan_Elementos2.Controls.Add(this.Chk_OpeFin_ImpExp);
-            this.Pan_Elementos2.Controls.Add(this.pictureBox1);
+            this.Pan_Elementos2.Controls.Add(this.Pic_ImpExp);
             this.Pan_Elementos2.Controls.Add(this.Chk_OpTrans_P);
             this.Pan_Elementos2.Controls.Add(this.Chk_OpTrans_E);
             this.Pan_Elementos2.Controls.Add(this.Chk_OpTrans_M);
@@ -533,15 +534,15 @@
             this.Chk_OpeFin_ImpExp.TabIndex = 90;
             this.Chk_OpeFin_ImpExp.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // Pic_ImpExp
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(329, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox1.TabIndex = 80;
-            this.pictureBox1.TabStop = false;
+            this.Pic_ImpExp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Pic_ImpExp.BackgroundImage")));
+            this.Pic_ImpExp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pic_ImpExp.Location = new System.Drawing.Point(329, 4);
+            this.Pic_ImpExp.Name = "Pic_ImpExp";
+            this.Pic_ImpExp.Size = new System.Drawing.Size(16, 16);
+            this.Pic_ImpExp.TabIndex = 80;
+            this.Pic_ImpExp.TabStop = false;
             // 
             // Chk_OpTrans_P
             // 
@@ -1085,6 +1086,7 @@
             this.Controls.Add(this.Pan_Elementos);
             this.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -1094,6 +1096,7 @@
             this.Style = MetroFramework.MetroColorStyle.Brown;
             this.Text = "Grupos";
             this.Load += new System.EventHandler(this.Frm_Grupos_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyPress_JF);
             this.TS_BarraHerramientas.ResumeLayout(false);
             this.TS_BarraHerramientas.PerformLayout();
             this.Tab_Opciones.ResumeLayout(false);
@@ -1103,7 +1106,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupos)).EndInit();
             this.Pag_Operaciones.ResumeLayout(false);
             this.Pan_Elementos2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_ImpExp)).EndInit();
             this.Pag_Tablas.ResumeLayout(false);
             this.Pan_Elementos3.ResumeLayout(false);
             this.Pag_Reportes.ResumeLayout(false);
@@ -1213,6 +1216,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Nombre;
         private System.Windows.Forms.CheckBox Chk_OpeTra_ImpExp;
         private System.Windows.Forms.CheckBox Chk_OpeFin_ImpExp;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox Pic_ImpExp;
     }
 }

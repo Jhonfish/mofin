@@ -46,18 +46,6 @@ namespace MOFIN
             r_GrupoOpciones = BS_Grupo_Opciones.Current as Grupo_Opciones;
 
             this.Modo_Consulta();
-            /*           foreach (DataGridView Controles in  Tab_MonOperaciones.Controls)
-                       {
-                           if (Controles is DataGridView)
-                           {
-                               Controles.DefaultCellStyle.BackColor = Color.Black;
-                               Controles.DefaultCellStyle.ForeColor = Color.White;
-                               Controles.BackgroundColor = Color.Black;
-                               Controles.GridColor = Color.Gray;
-                               Controles.ForeColor = Color.White;
-                           }
-                       }            */
-
         }
         private void Modo_Consulta()
         {
@@ -126,8 +114,131 @@ namespace MOFIN
         }
 
         /// *****************************
+        /// Comportamiento del formulario
+        /// *****************************
+        private void Grd_ClieInfInversor_CurrentCellChanged(object sender, EventArgs e)
+        {
+            r_Cliente = BS_CClientes.Current as C_Clientes;
+            BS_OHistPerfOperac.DataSource = NO_HistPerfOperac.ListarPorCodigoTipo(r_Cliente.Codigo, 2);
+            BS_OObservaciones.DataSource = NO_Observaciones.ListarPorCodigoTipo(r_Cliente.Codigo, 2);
+        }
+
+        private void Grd_ClieDetOper_CurrentCellChanged(object sender, EventArgs e)
+        {
+            r_Cliente = BS_CClientes.Current as C_Clientes;
+            BS_OOperTransaccionales.DataSource = NO_OperTransaccionales.ListarPorCodigo(r_Cliente.Codigo, null, null);
+        }
+
+        private void Asigna_Nombres(object sender, EventArgs e)
+        {
+            this.Text = Funciones._Mens_Idioma(14000);
+            this.Pag1.Text = Funciones._Mens_Idioma(13010);
+            this.Pag2.Text = Funciones._Mens_Idioma(13020);
+            this.Pag3.Text = Funciones._Mens_Idioma(13030);
+            this.Lbl_ListClientes1.Text = Funciones._Mens_Idioma(12007);
+            this.Lbl_ListClientes2.Text = Funciones._Mens_Idioma(12007);
+            this.Lbl_ListClientes3.Text = Funciones._Mens_Idioma(12007);
+            this.Lbl_ListOperAfec.Text = Funciones._Mens_Idioma(13011);
+            this.Lbl_Desde1.Text = Funciones._Mens_Idioma(1013);
+            this.Lbl_Desde2.Text = Funciones._Mens_Idioma(1013);
+            this.Lbl_Hasta1.Text = Funciones._Mens_Idioma(1014);
+            this.Lbl_Hasta2.Text = Funciones._Mens_Idioma(1014);
+            this.Chk_ExcMeses.Text = Funciones._Mens_Idioma(13012);
+            this.Chk_IncSoloExcep.Text = Funciones._Mens_Idioma(13013);
+            this.Lbl_ArcExpNme.Text = Funciones._Mens_Idioma(1002);
+            this.Lbl_ArcExpTip.Text = Funciones._Mens_Idioma(1017);
+            this.Lbl_Perfil.Text = Funciones._Mens_Idioma(13021);
+            this.Lbl_Obsvaciones.Text = Funciones._Mens_Idioma(1016);
+            this.Lbl_DetOperaciones.Text = Funciones._Mens_Idioma(13030);
+
+            Funciones.TTT_Btn(Btn_Aceptar, Funciones._Mens_Idioma(141));
+            Funciones.TTT_Btn(Btn_Cancelar, Funciones._Mens_Idioma(142));
+            Funciones.TTT_Btn(Btn_Procesar, Funciones._Mens_Idioma(1018));
+            Funciones.TTT_Chk(Chk_Exportar, Funciones._Mens_Idioma(1019));
+            Funciones.TTT_Btn(Btn_Exportar, Funciones._Mens_Idioma(1020));
+            Funciones.TTT_Btn(Btn_PerfInc, Funciones._Mens_Idioma(136));
+            Funciones.TTT_Btn(Btn_PerfMod, Funciones._Mens_Idioma(137));
+            Funciones.TTT_Btn(Btn_PerfEli, Funciones._Mens_Idioma(138));
+            Funciones.TTT_Btn(Btn_ObsInc, Funciones._Mens_Idioma(136));
+            Funciones.TTT_Btn(Btn_ObsMod, Funciones._Mens_Idioma(137));
+            Funciones.TTT_Btn(Btn_ObsEli, Funciones._Mens_Idioma(138));
+            Funciones.TTT_Chk(Chk_Reporte, Funciones._Mens_Idioma(13031));
+            Funciones.TTT_Btn(Btn_ProcReporte, Funciones._Mens_Idioma(1018));
+            Funciones.TTT_Chk(Chk_ElimOper, Funciones._Mens_Idioma(13032));
+            Funciones.TTT_Btn(Btn_MostrarTodos, Funciones._Mens_Idioma(143));
+            Funciones.TTT_Btn(Btn_Importar, Funciones._Mens_Idioma(1021));
+
+            ///
+            /// Grid Clientes Tab1
+            /// 
+            this.Codigo.HeaderText = Funciones._Mens_Idioma(1001);
+            this.Nombre.HeaderText = Funciones._Mens_Idioma(1002);
+            this.Doc_ID.HeaderText = Funciones._Mens_Idioma(1004);
+            this.Col_CliCod2.HeaderText = this.Codigo.HeaderText;
+            this.Col_CliNme2.HeaderText = this.Nombre.HeaderText;
+            this.Col_CliDocID2.HeaderText = this.Doc_ID.HeaderText;
+            this.Col_CliCod3.HeaderText = this.Codigo.HeaderText;
+            this.Col_CliNme3.HeaderText = this.Nombre.HeaderText;
+            this.Col_CliDocID3.HeaderText = this.Doc_ID.HeaderText;
+
+            ///
+            /// Grid Monitor Operaciones Tab1
+            /// 
+            this.Col_Alarma.HeaderText = Funciones._Mens_Idioma(13062);
+            this.Col_FecGenera.HeaderText = Funciones._Mens_Idioma(13051);
+            this.Col_FecUltOper.HeaderText = Funciones._Mens_Idioma(13052);
+            this.Col_Codigo.HeaderText = Funciones._Mens_Idioma(1001);
+            this.Col_Nombre.HeaderText = Funciones._Mens_Idioma(1002);
+            this.Col_DocID.HeaderText = Funciones._Mens_Idioma(1004);
+            this.Col_Nivriesgo.HeaderText = Funciones._Mens_Idioma(10016);
+            this.Col_PerUsoCta.HeaderText = Funciones._Mens_Idioma(13054);
+            this.Col_NroTrans.HeaderText = Funciones._Mens_Idioma(13056);
+            this.Col_PerfNroTrans.HeaderText = Funciones._Mens_Idioma(13055);
+            this.Col_PorcNroTrans.HeaderText = Funciones._Mens_Idioma(13057);
+            this.Col_MtoCompras.HeaderText = Funciones._Mens_Idioma(13058);
+            this.Col_MtoVentas.HeaderText = Funciones._Mens_Idioma(13059);
+            this.Col_TotalOperac.HeaderText = Funciones._Mens_Idioma(13060);
+            this.Col_PerfFinanciero.HeaderText = Funciones._Mens_Idioma(13061);
+            this.Col_PorcOperaciones.HeaderText = Funciones._Mens_Idioma(13057);
+            this.Col_Ejecutivo.HeaderText = Funciones._Mens_Idioma(13063);
+            this.Col_Comentarios.HeaderText = Funciones._Mens_Idioma(1016);
+
+            ///
+            /// Grid Perfil Operacional y Observaciones Tab2
+            /// 
+            this.Col_PerFec.HeaderText = Funciones._Mens_Idioma(1005);
+            this.Col_PerMto.HeaderText = Funciones._Mens_Idioma(13022);
+            this.Col_PerNroTra.HeaderText = Funciones._Mens_Idioma(13023);
+            this.Col_PerRiesgo.HeaderText = Funciones._Mens_Idioma(13024);
+            this.Col_ObsFec.HeaderText = Funciones._Mens_Idioma(1005);
+            this.Col_ObsObserv.HeaderText = Funciones._Mens_Idioma(1015);
+
+            ///
+            /// Grid Detalle de Operaciones Tab3
+            /// 
+            this.Col3_TipOrden.HeaderText = Funciones._Mens_Idioma(10033);
+            this.Col3_FecPacto.HeaderText = Funciones._Mens_Idioma(10034);
+            this.Col3_DocID.HeaderText = Funciones._Mens_Idioma(1004);
+            this.Col3_CodCliente.HeaderText = Funciones._Mens_Idioma(1001);
+            this.Col3_Nombre.HeaderText = Funciones._Mens_Idioma(1002);
+            this.Col3_FecCierre.HeaderText = Funciones._Mens_Idioma(10035);
+            this.Col3_FecValor.HeaderText = Funciones._Mens_Idioma(10036);
+            //            this.Col3_MtoSolic.HeaderText = Funciones._Mens_Idioma(10037);
+            this.Col3_MtoPactado.HeaderText = Funciones._Mens_Idioma(10038);
+            this.Col3_Efectivo.HeaderText = Funciones._Mens_Idioma(10039);
+            this.Col3_HoraCarga.HeaderText = Funciones._Mens_Idioma(10040);
+            this.Col3_Comprobante.HeaderText = Funciones._Mens_Idioma(10041);
+        }
+
+        private void Pag3_Enter(object sender, EventArgs e)
+        {
+            this.Btn_MostrarTodos_Click(null, null);
+        }
+
+        /// *****************************
         /// Comportamiento de los Botones
         /// *****************************
+        
         private void Btn_Aceptar_Click(object sender, EventArgs e)
         {
             r_Cliente = BS_CClientes.Current as C_Clientes;
@@ -157,27 +268,9 @@ namespace MOFIN
             this.Grd_HistPerfOperac.Refresh();
             this.Grd_Observaciones.Refresh();
         }
-
         private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
             this.Modo_Consulta();
-        }
-        private void Chk_Exportar_CheckStateChanged(object sender, EventArgs e)
-        {
-            if (this.Chk_Exportar.Checked == true)
-                this.Height = 675;
-            else
-                this.Height = 610;
-        }
-
-        private void Chk_Reporte_CheckedChanged(object sender, EventArgs e)
-        {
-            this.Pan_Reporte.Visible = this.Chk_Reporte.Checked;
-        }
-        private void Chk_ElimOper_CheckedChanged(object sender, EventArgs e)
-        {
-            this.Grd_DetOperaciones.AllowUserToDeleteRows = this.Chk_ElimOper.Checked;
-            this.Grd_DetOperaciones.RowHeadersVisible = this.Chk_ElimOper.Checked;
         }
 
         private void Btn_PerfInc_Click(object sender, EventArgs e)
@@ -187,33 +280,16 @@ namespace MOFIN
             BS_OHistPerfOperac.AddNew();
             this.Modo_Edicion(1);
         }
-
-        private void Btn_ObsInc_Click(object sender, EventArgs e)
-        {
-            vl_EsNuevo = true;
-            this.Grd_Observaciones.ReadOnly = false;
-            BS_OObservaciones.AddNew();
-            this.Modo_Edicion(2);
-        }
-
         private void Btn_PerfMod_Click(object sender, EventArgs e)
         {
             vl_EsNuevo = false;
             this.Grd_HistPerfOperac.ReadOnly = false;
             this.Modo_Edicion(1);
         }
-
-        private void Btn_ObsMod_Click(object sender, EventArgs e)
-        {
-            vl_EsNuevo = false;
-            this.Grd_Observaciones.ReadOnly = false;
-            this.Modo_Edicion(2);
-        }
-
         private void Btn_PerfEli_Click(object sender, EventArgs e)
         {
             r_HistPerfOperac = BS_OHistPerfOperac.Current as O_HistPerfOperac;
-            string vl_RegEliminar = r_HistPerfOperac.Fecha.ToShortDateString()+" / "+ r_HistPerfOperac.Mto_Perfil.ToString()+" / "+ r_HistPerfOperac.Nro_Transacciones.ToString(); 
+            string vl_RegEliminar = r_HistPerfOperac.Fecha.ToShortDateString() + " / " + r_HistPerfOperac.Mto_Perfil.ToString() + " / " + r_HistPerfOperac.Nro_Transacciones.ToString();
             DialogResult vl_Resp = MessageBox.Show("Desea Eliminar este Registro? " + "\n\n" + vl_RegEliminar,
                 "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (vl_Resp == DialogResult.Yes)
@@ -226,10 +302,23 @@ namespace MOFIN
             }
         }
 
+        private void Btn_ObsInc_Click(object sender, EventArgs e)
+        {
+            vl_EsNuevo = true;
+            this.Grd_Observaciones.ReadOnly = false;
+            BS_OObservaciones.AddNew();
+            this.Modo_Edicion(2);
+        }
+        private void Btn_ObsMod_Click(object sender, EventArgs e)
+        {
+            vl_EsNuevo = false;
+            this.Grd_Observaciones.ReadOnly = false;
+            this.Modo_Edicion(2);
+        }
         private void Btn_ObsEli_Click(object sender, EventArgs e)
         {
             r_Observaciones = BS_OObservaciones.Current as O_Observaciones;
-            string vl_RegEliminar = r_Observaciones.fecha.ToShortDateString()+ " / "+ r_Observaciones.Observacion; 
+            string vl_RegEliminar = r_Observaciones.fecha.ToShortDateString() + " / " + r_Observaciones.Observacion;
             DialogResult vl_Resp = MessageBox.Show("Desea Eliminar este Registro? " + "\n\n" + vl_RegEliminar,
                 "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (vl_Resp == DialogResult.Yes)
@@ -242,15 +331,6 @@ namespace MOFIN
             }
         }
 
-        private void Txt_NmeArchExport_DoubleClick(object sender, EventArgs e)
-        {
-            OpenFileDialog vl_ArchivoExport = new OpenFileDialog();
-            vl_ArchivoExport.Filter = this.Cmb_TipArchExport.Text.Trim();   
-            vl_ArchivoExport.CheckFileExists = false;
-            if (vl_ArchivoExport.ShowDialog() == DialogResult.OK)
-                this.Txt_NmeArchExport.Text = vl_ArchivoExport.FileName;
-        }
-
         private void Btn_Importar_Click(object sender, EventArgs e)
         {
             OpenFileDialog vl_ArchivoImport = new OpenFileDialog();
@@ -259,125 +339,42 @@ namespace MOFIN
             // vl_ArchivoImport.CheckFileExists = false;
             if (vl_ArchivoImport.ShowDialog() == DialogResult.OK)
                 MessageBox.Show(vl_ArchivoImport.FileName);
-                //this.Txt_NmeArchExport.Text = vl_ArchivoImport.FileName;
+            //this.Txt_NmeArchExport.Text = vl_ArchivoImport.FileName;
 
         }
-        private void Grd_ClieInfInversor_CurrentCellChanged(object sender, EventArgs e)
+
+        private void Chk_Exportar_CheckStateChanged(object sender, EventArgs e)
         {
-            r_Cliente = BS_CClientes.Current as C_Clientes;
-            BS_OHistPerfOperac.DataSource = NO_HistPerfOperac.ListarPorCodigoTipo(r_Cliente.Codigo, 2);
-            BS_OObservaciones.DataSource = NO_Observaciones.ListarPorCodigoTipo(r_Cliente.Codigo, 2);
+            if (this.Chk_Exportar.Checked == true)
+                this.Height = 675;
+            else
+                this.Height = 610;
         }
-
-        private void Grd_ClieDetOper_CurrentCellChanged(object sender, EventArgs e)
+        private void Txt_NmeArchExport_DoubleClick(object sender, EventArgs e)
         {
-            r_Cliente = BS_CClientes.Current as C_Clientes;
-            BS_OOperTransaccionales.DataSource = NO_OperTransaccionales.ListarPorCodigo(r_Cliente.Codigo, null, null);
+            OpenFileDialog vl_ArchivoExport = new OpenFileDialog();
+            vl_ArchivoExport.Filter = this.Cmb_TipArchExport.Text.Trim();
+            vl_ArchivoExport.CheckFileExists = false;
+            if (vl_ArchivoExport.ShowDialog() == DialogResult.OK)
+                this.Txt_NmeArchExport.Text = vl_ArchivoExport.FileName;
+        }
+        private void Btn_Exportar_Click(object sender, EventArgs e)
+        {
         }
 
+        private void Chk_Reporte_CheckedChanged(object sender, EventArgs e)
+        {
+            this.Pan_Reporte.Visible = this.Chk_Reporte.Checked;
+        }
+
+        private void Chk_ElimOper_CheckedChanged(object sender, EventArgs e)
+        {
+            this.Grd_DetOperaciones.AllowUserToDeleteRows = this.Chk_ElimOper.Checked;
+            this.Grd_DetOperaciones.RowHeadersVisible = this.Chk_ElimOper.Checked;
+        }
         private void Btn_MostrarTodos_Click(object sender, EventArgs e)
         {
             BS_OOperTransaccionales.DataSource = NO_OperTransaccionales.Listar();
-        }
-        private void Asigna_Nombres(object sender, EventArgs e)
-        {
-            this.Text = MOFIN_LIB.Funciones._Mens_Idioma(14000);
-            this.Pag1.Text = MOFIN_LIB.Funciones._Mens_Idioma(13010);
-            this.Pag2.Text = MOFIN_LIB.Funciones._Mens_Idioma(13020);
-            this.Pag3.Text = MOFIN_LIB.Funciones._Mens_Idioma(13030);
-            this.Lbl_ListClientes1.Text = MOFIN_LIB.Funciones._Mens_Idioma(12007);
-            this.Lbl_ListClientes2.Text = MOFIN_LIB.Funciones._Mens_Idioma(12007);
-            this.Lbl_ListClientes3.Text = MOFIN_LIB.Funciones._Mens_Idioma(12007);
-            this.Lbl_ListOperAfec.Text = MOFIN_LIB.Funciones._Mens_Idioma(13011);
-            this.Lbl_Desde1.Text = MOFIN_LIB.Funciones._Mens_Idioma(1013);
-            this.Lbl_Desde2.Text = MOFIN_LIB.Funciones._Mens_Idioma(1013);
-            this.Lbl_Hasta1.Text = MOFIN_LIB.Funciones._Mens_Idioma(1014);
-            this.Lbl_Hasta2.Text = MOFIN_LIB.Funciones._Mens_Idioma(1014);
-            this.Chk_ExcMeses.Text = MOFIN_LIB.Funciones._Mens_Idioma(13012);
-            this.Chk_IncSoloExcep.Text = MOFIN_LIB.Funciones._Mens_Idioma(13013);
-            this.Lbl_ArcExpNme.Text = MOFIN_LIB.Funciones._Mens_Idioma(1002);
-            this.Lbl_ArcExpTip.Text = MOFIN_LIB.Funciones._Mens_Idioma(1017);
-            this.Lbl_Perfil.Text = MOFIN_LIB.Funciones._Mens_Idioma(13021);
-            this.Lbl_Obsvaciones.Text = MOFIN_LIB.Funciones._Mens_Idioma(1016);
-            this.Lbl_DetOperaciones.Text = MOFIN_LIB.Funciones._Mens_Idioma(13030);
-
-            MOFIN_LIB.Funciones.TTT_Btn(Btn_Aceptar, MOFIN_LIB.Funciones._Mens_Idioma(141));
-            MOFIN_LIB.Funciones.TTT_Btn(Btn_Cancelar, MOFIN_LIB.Funciones._Mens_Idioma(142));
-            MOFIN_LIB.Funciones.TTT_Btn(Btn_Procesar, MOFIN_LIB.Funciones._Mens_Idioma(1018));
-            MOFIN_LIB.Funciones.TTT_Chk(Chk_Exportar, MOFIN_LIB.Funciones._Mens_Idioma(1019));
-            MOFIN_LIB.Funciones.TTT_Btn(Btn_Exportar, MOFIN_LIB.Funciones._Mens_Idioma(1020));
-            MOFIN_LIB.Funciones.TTT_Btn(Btn_PerfInc, MOFIN_LIB.Funciones._Mens_Idioma(136));
-            MOFIN_LIB.Funciones.TTT_Btn(Btn_PerfMod, MOFIN_LIB.Funciones._Mens_Idioma(137));
-            MOFIN_LIB.Funciones.TTT_Btn(Btn_PerfEli, MOFIN_LIB.Funciones._Mens_Idioma(138));
-            MOFIN_LIB.Funciones.TTT_Btn(Btn_ObsInc, MOFIN_LIB.Funciones._Mens_Idioma(136));
-            MOFIN_LIB.Funciones.TTT_Btn(Btn_ObsMod, MOFIN_LIB.Funciones._Mens_Idioma(137));
-            MOFIN_LIB.Funciones.TTT_Btn(Btn_ObsEli, MOFIN_LIB.Funciones._Mens_Idioma(138));
-            MOFIN_LIB.Funciones.TTT_Chk(Chk_Reporte, MOFIN_LIB.Funciones._Mens_Idioma(13031));
-            MOFIN_LIB.Funciones.TTT_Btn(Btn_ProcReporte, MOFIN_LIB.Funciones._Mens_Idioma(1018));
-            MOFIN_LIB.Funciones.TTT_Chk(Chk_ElimOper, MOFIN_LIB.Funciones._Mens_Idioma(13032));
-            MOFIN_LIB.Funciones.TTT_Btn(Btn_MostrarTodos, MOFIN_LIB.Funciones._Mens_Idioma(143));
-            MOFIN_LIB.Funciones.TTT_Btn(Btn_Importar, MOFIN_LIB.Funciones._Mens_Idioma(1021));
-
-            ///
-            /// Grid Clientes Tab1
-            /// 
-            this.Codigo.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1001);
-            this.Nombre.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1002);
-            this.Doc_ID.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1004);
-            this.Col_CliCod2.HeaderText = this.Codigo.HeaderText;
-            this.Col_CliNme2.HeaderText = this.Nombre.HeaderText;
-            this.Col_CliDocID2.HeaderText = this.Doc_ID.HeaderText;
-            this.Col_CliCod3.HeaderText = this.Codigo.HeaderText;
-            this.Col_CliNme3.HeaderText = this.Nombre.HeaderText;
-            this.Col_CliDocID3.HeaderText = this.Doc_ID.HeaderText;
-
-            ///
-            /// Grid Monitor Operaciones Tab1
-            /// 
-            this.Col_Alarma.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13062);
-            this.Col_FecGenera.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13051);
-            this.Col_FecUltOper.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13052);
-            this.Col_Codigo.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1001);
-            this.Col_Nombre.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1002);
-            this.Col_DocID.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1004);
-            this.Col_Nivriesgo.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10016);
-            this.Col_PerUsoCta.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13054);
-            this.Col_NroTrans.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13056);
-            this.Col_PerfNroTrans.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13055);
-            this.Col_PorcNroTrans.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13057);
-            this.Col_MtoCompras.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13058);
-            this.Col_MtoVentas.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13059);
-            this.Col_TotalOperac.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13060);
-            this.Col_PerfFinanciero.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13061);
-            this.Col_PorcOperaciones.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13057);
-            this.Col_Ejecutivo.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13063);
-            this.Col_Comentarios.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1016);
-
-            ///
-            /// Grid Perfil Operacional y Observaciones Tab2
-            /// 
-            this.Col_PerFec.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1005);
-            this.Col_PerMto.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13022);
-            this.Col_PerNroTra.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13023);
-            this.Col_PerRiesgo.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(13024);
-            this.Col_ObsFec.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1005);
-            this.Col_ObsObserv.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1015);
-
-            ///
-            /// Grid Detalle de Operaciones Tab3
-            /// 
-            this.Col3_TipOrden.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10033);
-            this.Col3_FecPacto.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10034);
-            this.Col3_DocID.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1004);
-            this.Col3_CodCliente.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1001);
-            this.Col3_Nombre.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1002);
-            this.Col3_FecCierre.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10035);
-            this.Col3_FecValor.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10036);
-//            this.Col3_MtoSolic.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10037);
-            this.Col3_MtoPactado.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10038);
-            this.Col3_Efectivo.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10039);
-            this.Col3_HoraCarga.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10040);
-            this.Col3_Comprobante.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(10041);
         }
 
         public class ListaReporte
@@ -525,16 +522,12 @@ namespace MOFIN
 
         }
 
-        private void Pag3_Enter(object sender, EventArgs e)
-        {
-            this.Btn_MostrarTodos_Click(null,null);
-        }
-
         private void Btn_Ocultar_Click(object sender, EventArgs e)
         {
             this.Grd_Reporte.Visible = false;
             this.Btn_Ocultar.Visible = false;
         }
+
         private void Btn_Procesar_Click(object sender, EventArgs e)
         {
             /// 
@@ -866,8 +859,5 @@ namespace MOFIN
             }
         }
 
-        private void Btn_Exportar_Click(object sender, EventArgs e)
-        {
-        }
     }
 }

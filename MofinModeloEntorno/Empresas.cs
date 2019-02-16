@@ -34,6 +34,8 @@ namespace MofinModeloEntorno
         public string Cad_Conexion { get; set; }
         public string Proveedor { get; set; }
         public string Metadata { get; set; }
+        public Nullable<byte> NroDesktops { get; set; }
+        public Nullable<byte> Tipo_Valoracion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Emp_Accesos> Emp_Accesos { get; set; }

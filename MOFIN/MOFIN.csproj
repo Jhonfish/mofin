@@ -270,9 +270,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_OpeTransac.resx">
       <DependentUpon>Frm_OpeTransac.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_OpeFinancieras.resx">
       <DependentUpon>Frm_OpeFinancieras.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_TablasMaestras.resx">
       <DependentUpon>Frm_TablasMaestras.cs</DependentUpon>
@@ -479,6 +481,7 @@
     <None Include="Resources\Salir.png" />
     <None Include="Resources\Siguiente.png" />
     <None Include="Resources\Procesar.png" />
+    <None Include="Resources\MoFin.png" />
     <Content Include="Resources\TablasMaestras.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

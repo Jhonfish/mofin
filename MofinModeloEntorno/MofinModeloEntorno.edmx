@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MofinModeloEntorno.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MofinModeloEntorno.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Emp_Accesos">
           <Key>
             <PropertyRef Name="ID_Sistema" />
@@ -32,6 +32,8 @@
           <Property Name="Cad_Conexion" Type="varchar" MaxLength="255" />
           <Property Name="Proveedor" Type="varchar" MaxLength="100" />
           <Property Name="Metadata" Type="varchar" MaxLength="250" />
+          <Property Name="NroDesktops" Type="tinyint" />
+          <Property Name="Tipo_Valoracion" Type="tinyint" />
         </EntityType>
         <EntityType Name="Grupo_Opciones">
           <Key>
@@ -136,6 +138,7 @@
           <Property Name="Cnfg_PaisUso" Type="tinyint" />
           <Property Name="Cnfg_FormFecha" Type="tinyint" />
           <Property Name="Cnfg_SonidoClick" Type="bit" />
+          <Property Name="Cnfg_BarraHerramientas" Type="bit" />
         </EntityType>
         <Association Name="FK_Emp_Accesos_Empresas1">
           <End Role="Empresas" Type="Self.Empresas" Multiplicity="1" />
@@ -179,8 +182,7 @@
             <End Role="Grupo_Opciones" EntitySet="Grupo_Opciones" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MofinModeloEntorno" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -213,6 +215,8 @@
           <Property Name="Proveedor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Metadata" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Emp_Accesos" Relationship="Self.FK_Emp_Accesos_Empresas1" FromRole="Empresas" ToRole="Emp_Accesos" />
+          <Property Name="NroDesktops" Type="Byte" />
+          <Property Name="Tipo_Valoracion" Type="Byte" />
         </EntityType>
         <EntityType Name="Grupo_Opciones">
           <Key>
@@ -319,6 +323,7 @@
           <Property Name="Cnfg_PaisUso" Type="Byte" />
           <Property Name="Cnfg_FormFecha" Type="Byte" />
           <Property Name="Cnfg_SonidoClick" Type="Boolean" />
+          <Property Name="Cnfg_BarraHerramientas" Type="Boolean" />
         </EntityType>
         <Association Name="FK_Emp_Accesos_Empresas1">
           <End Role="Empresas" Type="Self.Empresas" Multiplicity="1" />
@@ -381,6 +386,8 @@
           <EntitySetMapping Name="Empresas">
             <EntityTypeMapping TypeName="MofinModeloEntorno.Empresas">
               <MappingFragment StoreEntitySet="Empresas">
+                <ScalarProperty Name="Tipo_Valoracion" ColumnName="Tipo_Valoracion" />
+                <ScalarProperty Name="NroDesktops" ColumnName="NroDesktops" />
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -496,6 +503,7 @@
           <EntitySetMapping Name="Usuarios">
             <EntityTypeMapping TypeName="MofinModeloEntorno.Usuarios">
               <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="Cnfg_BarraHerramientas" ColumnName="Cnfg_BarraHerramientas" />
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />

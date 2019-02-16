@@ -108,9 +108,11 @@ namespace MofinModelo
         public Nullable<System.DateTime> Fec_UltimAct { get; set; }
         public Nullable<byte> Trim_Mes { get; set; }
         public Nullable<short> Trim_Ano { get; set; }
-        public Nullable<short> Trim_NroOperac { get; set; }
-        public Nullable<decimal> Trim_MontoOperac { get; set; }
         public string MapaEmpresa { get; set; }
+        public Nullable<decimal> Trim_MtoFinanc { get; set; }
+        public Nullable<decimal> Trim_MtoTransac { get; set; }
+        public Nullable<short> Trim_NroOperFin { get; set; }
+        public Nullable<short> Trim_NroOperTrans { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<C_HistActClientes> C_HistActClientes { get; set; }

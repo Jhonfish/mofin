@@ -40,7 +40,7 @@
             this.Lbl_PerUsoCta = new System.Windows.Forms.Label();
             this.Lbl_NroTransacciones = new System.Windows.Forms.Label();
             this.Lbl_FecUltAct = new System.Windows.Forms.Label();
-            this.Lbl_TrimMonto = new System.Windows.Forms.Label();
+            this.Lbl_TrimMtoFinanc = new System.Windows.Forms.Label();
             this.Lbl_TipDocID = new System.Windows.Forms.Label();
             this.Lbl_FecVencDocID = new System.Windows.Forms.Label();
             this.Lbl_Nacionalidad = new System.Windows.Forms.Label();
@@ -80,7 +80,7 @@
             this.TSB_Primero = new System.Windows.Forms.ToolStripButton();
             this.TSB_Anterior = new System.Windows.Forms.ToolStripButton();
             this.TSB_Ultimo = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ts_Sep1 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_Agregar = new System.Windows.Forms.ToolStripButton();
             this.TSB_Modificar = new System.Windows.Forms.ToolStripButton();
             this.TSB_Eliminar = new System.Windows.Forms.ToolStripButton();
@@ -197,15 +197,19 @@
             this.Chk_Opc2 = new System.Windows.Forms.CheckBox();
             this.Chk_Opc1 = new System.Windows.Forms.CheckBox();
             this.Pag4 = new System.Windows.Forms.TabPage();
-            this.Btn_Trimestre = new System.Windows.Forms.Button();
+            this.Lbl_TrimMtoTransac = new System.Windows.Forms.Label();
             this.Pan_Detalles4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Txt_TrimNroOperTran = new System.Windows.Forms.TextBox();
+            this.Txt_TrimOpTransac = new System.Windows.Forms.TextBox();
+            this.NUD_TriAno = new System.Windows.Forms.NumericUpDown();
+            this.NUD_TriMes = new System.Windows.Forms.NumericUpDown();
+            this.Btn_Trimestre = new System.Windows.Forms.Button();
+            this.Txt_TrimOpFinan = new System.Windows.Forms.TextBox();
+            this.Txt_TrimNroOperFin = new System.Windows.Forms.TextBox();
             this.Cmb_NivelRiesgo = new System.Windows.Forms.ComboBox();
             this.BS_MNivelRiesgo = new System.Windows.Forms.BindingSource(this.components);
             this.NUD_NroTransacciones = new System.Windows.Forms.NumericUpDown();
-            this.NUD_TriAno = new System.Windows.Forms.NumericUpDown();
-            this.NUD_TriMes = new System.Windows.Forms.NumericUpDown();
-            this.Txt_TriNroOperaciones = new System.Windows.Forms.TextBox();
-            this.Txt_TriMntOperaciones = new System.Windows.Forms.TextBox();
             this.DTP_FecUltAct = new System.Windows.Forms.DateTimePicker();
             this.Txt_PerFinanciero = new System.Windows.Forms.TextBox();
             this.Txt_Ejecutivo = new System.Windows.Forms.TextBox();
@@ -316,12 +320,11 @@
             this.fecUltimActDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trimMesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trimAnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trimNroOperacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trimMontoOperacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mapaEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_CHistActClientes = new System.Windows.Forms.BindingSource(this.components);
             this.BS_Grupo_Opciones = new System.Windows.Forms.BindingSource(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.BS_OOperfinancieras = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_OOperTransaccionales = new System.Windows.Forms.BindingSource(this.components);
             this.TS_BarraHerramientas.SuspendLayout();
             this.Tab_Clientes.SuspendLayout();
             this.Pag1.SuspendLayout();
@@ -361,10 +364,11 @@
             this.Pan_Detalles3.SuspendLayout();
             this.Pag4.SuspendLayout();
             this.Pan_Detalles4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_MNivelRiesgo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_NroTransacciones)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_TriAno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_TriMes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MNivelRiesgo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_NroTransacciones)).BeginInit();
             this.Grp_PerUsoCta.SuspendLayout();
             this.Pag5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_MapEpresa)).BeginInit();
@@ -376,7 +380,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Clientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_CHistActClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).BeginInit();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_OOperfinancieras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_OOperTransaccionales)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_Codigo
@@ -411,7 +416,7 @@
             // 
             // Lbl_Observacion
             // 
-            this.Lbl_Observacion.Location = new System.Drawing.Point(29, 27);
+            this.Lbl_Observacion.Location = new System.Drawing.Point(5, 27);
             this.Lbl_Observacion.Name = "Lbl_Observacion";
             this.Lbl_Observacion.Size = new System.Drawing.Size(120, 15);
             this.Lbl_Observacion.TabIndex = 0;
@@ -420,7 +425,7 @@
             // 
             // Lbl_Ejecutivo
             // 
-            this.Lbl_Ejecutivo.Location = new System.Drawing.Point(29, 233);
+            this.Lbl_Ejecutivo.Location = new System.Drawing.Point(5, 372);
             this.Lbl_Ejecutivo.Name = "Lbl_Ejecutivo";
             this.Lbl_Ejecutivo.Size = new System.Drawing.Size(120, 15);
             this.Lbl_Ejecutivo.TabIndex = 2;
@@ -429,7 +434,7 @@
             // 
             // Lbl_NivRiesgo
             // 
-            this.Lbl_NivRiesgo.Location = new System.Drawing.Point(29, 259);
+            this.Lbl_NivRiesgo.Location = new System.Drawing.Point(5, 290);
             this.Lbl_NivRiesgo.Name = "Lbl_NivRiesgo";
             this.Lbl_NivRiesgo.Size = new System.Drawing.Size(120, 15);
             this.Lbl_NivRiesgo.TabIndex = 6;
@@ -438,7 +443,7 @@
             // 
             // Lbl_PerFinanciero
             // 
-            this.Lbl_PerFinanciero.Location = new System.Drawing.Point(29, 285);
+            this.Lbl_PerFinanciero.Location = new System.Drawing.Point(5, 316);
             this.Lbl_PerFinanciero.Name = "Lbl_PerFinanciero";
             this.Lbl_PerFinanciero.Size = new System.Drawing.Size(120, 15);
             this.Lbl_PerFinanciero.TabIndex = 7;
@@ -447,7 +452,7 @@
             // 
             // Lbl_PerUsoCta
             // 
-            this.Lbl_PerUsoCta.Location = new System.Drawing.Point(29, 314);
+            this.Lbl_PerUsoCta.Location = new System.Drawing.Point(5, 221);
             this.Lbl_PerUsoCta.Name = "Lbl_PerUsoCta";
             this.Lbl_PerUsoCta.Size = new System.Drawing.Size(120, 15);
             this.Lbl_PerUsoCta.TabIndex = 8;
@@ -456,7 +461,7 @@
             // 
             // Lbl_NroTransacciones
             // 
-            this.Lbl_NroTransacciones.Location = new System.Drawing.Point(29, 346);
+            this.Lbl_NroTransacciones.Location = new System.Drawing.Point(5, 343);
             this.Lbl_NroTransacciones.Name = "Lbl_NroTransacciones";
             this.Lbl_NroTransacciones.Size = new System.Drawing.Size(120, 15);
             this.Lbl_NroTransacciones.TabIndex = 10;
@@ -465,21 +470,21 @@
             // 
             // Lbl_FecUltAct
             // 
-            this.Lbl_FecUltAct.Location = new System.Drawing.Point(29, 374);
+            this.Lbl_FecUltAct.Location = new System.Drawing.Point(5, 403);
             this.Lbl_FecUltAct.Name = "Lbl_FecUltAct";
             this.Lbl_FecUltAct.Size = new System.Drawing.Size(120, 15);
             this.Lbl_FecUltAct.TabIndex = 12;
             this.Lbl_FecUltAct.Text = "Fec Ultim Act:";
             this.Lbl_FecUltAct.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Lbl_TrimMonto
+            // Lbl_TrimMtoFinanc
             // 
-            this.Lbl_TrimMonto.Location = new System.Drawing.Point(575, 367);
-            this.Lbl_TrimMonto.Name = "Lbl_TrimMonto";
-            this.Lbl_TrimMonto.Size = new System.Drawing.Size(75, 15);
-            this.Lbl_TrimMonto.TabIndex = 20;
-            this.Lbl_TrimMonto.Text = "Monto:";
-            this.Lbl_TrimMonto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Lbl_TrimMtoFinanc.Location = new System.Drawing.Point(479, 325);
+            this.Lbl_TrimMtoFinanc.Name = "Lbl_TrimMtoFinanc";
+            this.Lbl_TrimMtoFinanc.Size = new System.Drawing.Size(100, 15);
+            this.Lbl_TrimMtoFinanc.TabIndex = 20;
+            this.Lbl_TrimMtoFinanc.Text = "Financiero";
+            this.Lbl_TrimMtoFinanc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Lbl_TipDocID
             // 
@@ -737,20 +742,21 @@
             // 
             // Lbl_TrimPeriodo
             // 
-            this.Lbl_TrimPeriodo.Location = new System.Drawing.Point(589, 257);
+            this.Lbl_TrimPeriodo.Location = new System.Drawing.Point(534, 229);
             this.Lbl_TrimPeriodo.Name = "Lbl_TrimPeriodo";
-            this.Lbl_TrimPeriodo.Size = new System.Drawing.Size(169, 15);
+            this.Lbl_TrimPeriodo.Size = new System.Drawing.Size(200, 15);
             this.Lbl_TrimPeriodo.TabIndex = 30;
             this.Lbl_TrimPeriodo.Text = "Total Movilizado del Trimestre";
+            this.Lbl_TrimPeriodo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Lbl_TrimNroOper
             // 
-            this.Lbl_TrimNroOper.Location = new System.Drawing.Point(575, 341);
+            this.Lbl_TrimNroOper.Location = new System.Drawing.Point(678, 261);
             this.Lbl_TrimNroOper.Name = "Lbl_TrimNroOper";
-            this.Lbl_TrimNroOper.Size = new System.Drawing.Size(120, 15);
+            this.Lbl_TrimNroOper.Size = new System.Drawing.Size(88, 51);
             this.Lbl_TrimNroOper.TabIndex = 31;
             this.Lbl_TrimNroOper.Text = "Nro. Operaciones:";
-            this.Lbl_TrimNroOper.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Lbl_TrimNroOper.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // Lbl_Edad
             // 
@@ -820,7 +826,7 @@
             this.TSB_Anterior,
             this.TSB_Siguiente,
             this.TSB_Ultimo,
-            this.toolStripSeparator1,
+            this.ts_Sep1,
             this.TSB_Agregar,
             this.TSB_Modificar,
             this.TSB_Eliminar,
@@ -864,10 +870,10 @@
             this.TSB_Ultimo.Text = "Último";
             this.TSB_Ultimo.Click += new System.EventHandler(this.TSB_Ultimo_Click);
             // 
-            // toolStripSeparator1
+            // ts_Sep1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 43);
+            this.ts_Sep1.Name = "ts_Sep1";
+            this.ts_Sep1.Size = new System.Drawing.Size(6, 43);
             // 
             // TSB_Agregar
             // 
@@ -2072,12 +2078,13 @@
             // Pag4
             // 
             this.Pag4.AutoScroll = true;
+            this.Pag4.Controls.Add(this.Lbl_TrimMtoTransac);
             this.Pag4.Controls.Add(this.Lbl_TrimPeriodo);
             this.Pag4.Controls.Add(this.Lbl_FecUltAct);
             this.Pag4.Controls.Add(this.Lbl_TrimNroOper);
             this.Pag4.Controls.Add(this.Lbl_NroTransacciones);
             this.Pag4.Controls.Add(this.Lbl_PerUsoCta);
-            this.Pag4.Controls.Add(this.Lbl_TrimMonto);
+            this.Pag4.Controls.Add(this.Lbl_TrimMtoFinanc);
             this.Pag4.Controls.Add(this.Lbl_PerFinanciero);
             this.Pag4.Controls.Add(this.Lbl_NivRiesgo);
             this.Pag4.Controls.Add(this.Lbl_Ejecutivo);
@@ -2091,15 +2098,15 @@
             this.Pag4.Text = "Observaciones";
             this.Pag4.UseVisualStyleBackColor = true;
             // 
-            // Btn_Trimestre
+            // Lbl_TrimMtoTransac
             // 
-            this.Btn_Trimestre.BackgroundImage = global::MOFIN.Properties.Resources.Procesar;
-            this.Btn_Trimestre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Btn_Trimestre.Location = new System.Drawing.Point(146, 31);
-            this.Btn_Trimestre.Name = "Btn_Trimestre";
-            this.Btn_Trimestre.Size = new System.Drawing.Size(48, 48);
-            this.Btn_Trimestre.TabIndex = 25;
-            this.Btn_Trimestre.UseVisualStyleBackColor = true;
+            this.Lbl_TrimMtoTransac.ForeColor = System.Drawing.Color.Black;
+            this.Lbl_TrimMtoTransac.Location = new System.Drawing.Point(479, 355);
+            this.Lbl_TrimMtoTransac.Name = "Lbl_TrimMtoTransac";
+            this.Lbl_TrimMtoTransac.Size = new System.Drawing.Size(100, 15);
+            this.Lbl_TrimMtoTransac.TabIndex = 31;
+            this.Lbl_TrimMtoTransac.Text = "Transaccional";
+            this.Lbl_TrimMtoTransac.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Pan_Detalles4
             // 
@@ -2111,10 +2118,122 @@
             this.Pan_Detalles4.Controls.Add(this.Txt_Ejecutivo);
             this.Pan_Detalles4.Controls.Add(this.Txt_Observacion);
             this.Pan_Detalles4.Controls.Add(this.Grp_PerUsoCta);
-            this.Pan_Detalles4.Location = new System.Drawing.Point(159, 6);
+            this.Pan_Detalles4.Location = new System.Drawing.Point(129, 6);
             this.Pan_Detalles4.Name = "Pan_Detalles4";
-            this.Pan_Detalles4.Size = new System.Drawing.Size(635, 394);
+            this.Pan_Detalles4.Size = new System.Drawing.Size(662, 417);
             this.Pan_Detalles4.TabIndex = 27;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.Txt_TrimNroOperTran);
+            this.panel1.Controls.Add(this.Txt_TrimOpTransac);
+            this.panel1.Controls.Add(this.NUD_TriAno);
+            this.panel1.Controls.Add(this.NUD_TriMes);
+            this.panel1.Controls.Add(this.Btn_Trimestre);
+            this.panel1.Controls.Add(this.Txt_TrimOpFinan);
+            this.panel1.Controls.Add(this.Txt_TrimNroOperFin);
+            this.panel1.Location = new System.Drawing.Point(346, 212);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(296, 169);
+            this.panel1.TabIndex = 39;
+            // 
+            // Txt_TrimNroOperTran
+            // 
+            this.Txt_TrimNroOperTran.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_CClientes, "Trim_NroOperTrans", true));
+            this.Txt_TrimNroOperTran.Enabled = false;
+            this.Txt_TrimNroOperTran.Location = new System.Drawing.Point(230, 130);
+            this.Txt_TrimNroOperTran.Name = "Txt_TrimNroOperTran";
+            this.Txt_TrimNroOperTran.Size = new System.Drawing.Size(40, 22);
+            this.Txt_TrimNroOperTran.TabIndex = 38;
+            // 
+            // Txt_TrimOpTransac
+            // 
+            this.Txt_TrimOpTransac.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_CClientes, "Trim_MtoTransac", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "N2"));
+            this.Txt_TrimOpTransac.Enabled = false;
+            this.Txt_TrimOpTransac.Location = new System.Drawing.Point(106, 130);
+            this.Txt_TrimOpTransac.Name = "Txt_TrimOpTransac";
+            this.Txt_TrimOpTransac.Size = new System.Drawing.Size(118, 22);
+            this.Txt_TrimOpTransac.TabIndex = 37;
+            this.Txt_TrimOpTransac.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // NUD_TriAno
+            // 
+            this.NUD_TriAno.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BS_CClientes, "Trim_Ano", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0"));
+            this.NUD_TriAno.Location = new System.Drawing.Point(29, 62);
+            this.NUD_TriAno.Maximum = new decimal(new int[] {
+            3000,
+            0,
+            0,
+            0});
+            this.NUD_TriAno.Minimum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.NUD_TriAno.Name = "NUD_TriAno";
+            this.NUD_TriAno.Size = new System.Drawing.Size(66, 22);
+            this.NUD_TriAno.TabIndex = 36;
+            this.NUD_TriAno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.NUD_TriAno.Value = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            // 
+            // NUD_TriMes
+            // 
+            this.NUD_TriMes.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BS_CClientes, "Trim_Mes", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0"));
+            this.NUD_TriMes.Location = new System.Drawing.Point(51, 36);
+            this.NUD_TriMes.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.NUD_TriMes.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NUD_TriMes.Name = "NUD_TriMes";
+            this.NUD_TriMes.Size = new System.Drawing.Size(44, 22);
+            this.NUD_TriMes.TabIndex = 35;
+            this.NUD_TriMes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.NUD_TriMes.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // Btn_Trimestre
+            // 
+            this.Btn_Trimestre.BackgroundImage = global::MOFIN.Properties.Resources.Procesar;
+            this.Btn_Trimestre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_Trimestre.Location = new System.Drawing.Point(123, 36);
+            this.Btn_Trimestre.Name = "Btn_Trimestre";
+            this.Btn_Trimestre.Size = new System.Drawing.Size(48, 48);
+            this.Btn_Trimestre.TabIndex = 25;
+            this.Btn_Trimestre.UseVisualStyleBackColor = true;
+            this.Btn_Trimestre.Click += new System.EventHandler(this.Btn_Trimestre_Click);
+            // 
+            // Txt_TrimOpFinan
+            // 
+            this.Txt_TrimOpFinan.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_CClientes, "Trim_MtoFinanc", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "N2"));
+            this.Txt_TrimOpFinan.Enabled = false;
+            this.Txt_TrimOpFinan.Location = new System.Drawing.Point(106, 101);
+            this.Txt_TrimOpFinan.Name = "Txt_TrimOpFinan";
+            this.Txt_TrimOpFinan.Size = new System.Drawing.Size(118, 22);
+            this.Txt_TrimOpFinan.TabIndex = 33;
+            this.Txt_TrimOpFinan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // Txt_TrimNroOperFin
+            // 
+            this.Txt_TrimNroOperFin.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_CClientes, "Trim_NroOperFin", true));
+            this.Txt_TrimNroOperFin.Enabled = false;
+            this.Txt_TrimNroOperFin.Location = new System.Drawing.Point(230, 101);
+            this.Txt_TrimNroOperFin.Name = "Txt_TrimNroOperFin";
+            this.Txt_TrimNroOperFin.Size = new System.Drawing.Size(40, 22);
+            this.Txt_TrimNroOperFin.TabIndex = 19;
             // 
             // Cmb_NivelRiesgo
             // 
@@ -2122,9 +2241,9 @@
             this.Cmb_NivelRiesgo.DataSource = this.BS_MNivelRiesgo;
             this.Cmb_NivelRiesgo.DisplayMember = "Descripcion";
             this.Cmb_NivelRiesgo.FormattingEnabled = true;
-            this.Cmb_NivelRiesgo.Location = new System.Drawing.Point(5, 250);
+            this.Cmb_NivelRiesgo.Location = new System.Drawing.Point(6, 278);
             this.Cmb_NivelRiesgo.Name = "Cmb_NivelRiesgo";
-            this.Cmb_NivelRiesgo.Size = new System.Drawing.Size(375, 23);
+            this.Cmb_NivelRiesgo.Size = new System.Drawing.Size(301, 23);
             this.Cmb_NivelRiesgo.TabIndex = 38;
             this.Cmb_NivelRiesgo.ValueMember = "Codigo";
             // 
@@ -2135,50 +2254,16 @@
             // NUD_NroTransacciones
             // 
             this.NUD_NroTransacciones.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BS_CClientes, "NroTransacciones", true));
-            this.NUD_NroTransacciones.Location = new System.Drawing.Point(5, 338);
+            this.NUD_NroTransacciones.Location = new System.Drawing.Point(6, 335);
             this.NUD_NroTransacciones.Name = "NUD_NroTransacciones";
             this.NUD_NroTransacciones.Size = new System.Drawing.Size(44, 22);
             this.NUD_NroTransacciones.TabIndex = 37;
-            // 
-            // NUD_TriAno
-            // 
-            this.NUD_TriAno.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BS_CClientes, "Trim_Ano", true));
-            this.NUD_TriAno.Location = new System.Drawing.Point(71, 35);
-            this.NUD_TriAno.Name = "NUD_TriAno";
-            this.NUD_TriAno.Size = new System.Drawing.Size(66, 22);
-            this.NUD_TriAno.TabIndex = 36;
-            // 
-            // NUD_TriMes
-            // 
-            this.NUD_TriMes.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BS_CClientes, "Trim_Mes", true));
-            this.NUD_TriMes.Location = new System.Drawing.Point(20, 35);
-            this.NUD_TriMes.Name = "NUD_TriMes";
-            this.NUD_TriMes.Size = new System.Drawing.Size(44, 22);
-            this.NUD_TriMes.TabIndex = 35;
-            // 
-            // Txt_TriNroOperaciones
-            // 
-            this.Txt_TriNroOperaciones.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_CClientes, "Trim_NroOperac", true));
-            this.Txt_TriNroOperaciones.Enabled = false;
-            this.Txt_TriNroOperaciones.Location = new System.Drawing.Point(135, 93);
-            this.Txt_TriNroOperaciones.Name = "Txt_TriNroOperaciones";
-            this.Txt_TriNroOperaciones.Size = new System.Drawing.Size(40, 22);
-            this.Txt_TriNroOperaciones.TabIndex = 19;
-            // 
-            // Txt_TriMntOperaciones
-            // 
-            this.Txt_TriMntOperaciones.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_CClientes, "Trim_MontoOperac", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-            this.Txt_TriMntOperaciones.Enabled = false;
-            this.Txt_TriMntOperaciones.Location = new System.Drawing.Point(85, 117);
-            this.Txt_TriMntOperaciones.Name = "Txt_TriMntOperaciones";
-            this.Txt_TriMntOperaciones.Size = new System.Drawing.Size(118, 22);
-            this.Txt_TriMntOperaciones.TabIndex = 33;
             // 
             // DTP_FecUltAct
             // 
             this.DTP_FecUltAct.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BS_CClientes, "Fec_UltimAct", true));
             this.DTP_FecUltAct.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTP_FecUltAct.Location = new System.Drawing.Point(5, 364);
+            this.DTP_FecUltAct.Location = new System.Drawing.Point(6, 391);
             this.DTP_FecUltAct.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
             this.DTP_FecUltAct.Name = "DTP_FecUltAct";
             this.DTP_FecUltAct.Size = new System.Drawing.Size(105, 22);
@@ -2188,7 +2273,7 @@
             // Txt_PerFinanciero
             // 
             this.Txt_PerFinanciero.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_CClientes, "PerfilFinanciero", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-            this.Txt_PerFinanciero.Location = new System.Drawing.Point(5, 277);
+            this.Txt_PerFinanciero.Location = new System.Drawing.Point(6, 307);
             this.Txt_PerFinanciero.Name = "Txt_PerFinanciero";
             this.Txt_PerFinanciero.Size = new System.Drawing.Size(176, 22);
             this.Txt_PerFinanciero.TabIndex = 30;
@@ -2196,7 +2281,7 @@
             // Txt_Ejecutivo
             // 
             this.Txt_Ejecutivo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_CClientes, "Ejecutivo", true));
-            this.Txt_Ejecutivo.Location = new System.Drawing.Point(5, 224);
+            this.Txt_Ejecutivo.Location = new System.Drawing.Point(6, 363);
             this.Txt_Ejecutivo.Name = "Txt_Ejecutivo";
             this.Txt_Ejecutivo.Size = new System.Drawing.Size(176, 22);
             this.Txt_Ejecutivo.TabIndex = 28;
@@ -2204,10 +2289,10 @@
             // Txt_Observacion
             // 
             this.Txt_Observacion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_CClientes, "Observacion", true));
-            this.Txt_Observacion.Location = new System.Drawing.Point(5, 16);
+            this.Txt_Observacion.Location = new System.Drawing.Point(6, 16);
             this.Txt_Observacion.Multiline = true;
             this.Txt_Observacion.Name = "Txt_Observacion";
-            this.Txt_Observacion.Size = new System.Drawing.Size(611, 203);
+            this.Txt_Observacion.Size = new System.Drawing.Size(654, 151);
             this.Txt_Observacion.TabIndex = 27;
             // 
             // Grp_PerUsoCta
@@ -2217,16 +2302,16 @@
             this.Grp_PerUsoCta.Controls.Add(this.Opt_PerUsoCta3);
             this.Grp_PerUsoCta.Controls.Add(this.Opt_PerUsoCta2);
             this.Grp_PerUsoCta.Controls.Add(this.Opt_PerUsoCta1);
-            this.Grp_PerUsoCta.Location = new System.Drawing.Point(5, 295);
+            this.Grp_PerUsoCta.Location = new System.Drawing.Point(6, 165);
             this.Grp_PerUsoCta.Name = "Grp_PerUsoCta";
-            this.Grp_PerUsoCta.Size = new System.Drawing.Size(375, 35);
+            this.Grp_PerUsoCta.Size = new System.Drawing.Size(176, 107);
             this.Grp_PerUsoCta.TabIndex = 34;
             this.Grp_PerUsoCta.TabStop = false;
             // 
             // Opt_PerUsoCta5
             // 
             this.Opt_PerUsoCta5.AutoSize = true;
-            this.Opt_PerUsoCta5.Location = new System.Drawing.Point(302, 10);
+            this.Opt_PerUsoCta5.Location = new System.Drawing.Point(6, 86);
             this.Opt_PerUsoCta5.Name = "Opt_PerUsoCta5";
             this.Opt_PerUsoCta5.Size = new System.Drawing.Size(58, 19);
             this.Opt_PerUsoCta5.TabIndex = 4;
@@ -2237,7 +2322,7 @@
             // Opt_PerUsoCta4
             // 
             this.Opt_PerUsoCta4.AutoSize = true;
-            this.Opt_PerUsoCta4.Location = new System.Drawing.Point(225, 10);
+            this.Opt_PerUsoCta4.Location = new System.Drawing.Point(6, 67);
             this.Opt_PerUsoCta4.Name = "Opt_PerUsoCta4";
             this.Opt_PerUsoCta4.Size = new System.Drawing.Size(76, 19);
             this.Opt_PerUsoCta4.TabIndex = 3;
@@ -2248,7 +2333,7 @@
             // Opt_PerUsoCta3
             // 
             this.Opt_PerUsoCta3.AutoSize = true;
-            this.Opt_PerUsoCta3.Location = new System.Drawing.Point(147, 10);
+            this.Opt_PerUsoCta3.Location = new System.Drawing.Point(6, 48);
             this.Opt_PerUsoCta3.Name = "Opt_PerUsoCta3";
             this.Opt_PerUsoCta3.Size = new System.Drawing.Size(78, 19);
             this.Opt_PerUsoCta3.TabIndex = 2;
@@ -2259,7 +2344,7 @@
             // Opt_PerUsoCta2
             // 
             this.Opt_PerUsoCta2.AutoSize = true;
-            this.Opt_PerUsoCta2.Location = new System.Drawing.Point(75, 10);
+            this.Opt_PerUsoCta2.Location = new System.Drawing.Point(5, 29);
             this.Opt_PerUsoCta2.Name = "Opt_PerUsoCta2";
             this.Opt_PerUsoCta2.Size = new System.Drawing.Size(72, 19);
             this.Opt_PerUsoCta2.TabIndex = 1;
@@ -2318,6 +2403,7 @@
             this.Lbl_Puntuacion.ForeColor = System.Drawing.Color.Yellow;
             this.Lbl_Puntuacion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Lbl_Puntuacion.Location = new System.Drawing.Point(955, 30);
+            this.Lbl_Puntuacion.Margin = new System.Windows.Forms.Padding(1, 0, 3, 0);
             this.Lbl_Puntuacion.Name = "Lbl_Puntuacion";
             this.Lbl_Puntuacion.Size = new System.Drawing.Size(88, 94);
             this.Lbl_Puntuacion.TabIndex = 0;
@@ -2512,8 +2598,6 @@
             this.fecUltimActDataGridViewTextBoxColumn,
             this.trimMesDataGridViewTextBoxColumn,
             this.trimAnoDataGridViewTextBoxColumn,
-            this.trimNroOperacDataGridViewTextBoxColumn,
-            this.trimMontoOperacDataGridViewTextBoxColumn,
             this.mapaEmpresaDataGridViewTextBoxColumn});
             this.Grd_Clientes.DataSource = this.BS_CClientes;
             this.Grd_Clientes.Location = new System.Drawing.Point(14, 131);
@@ -3199,22 +3283,6 @@
             this.trimAnoDataGridViewTextBoxColumn.ReadOnly = true;
             this.trimAnoDataGridViewTextBoxColumn.Visible = false;
             // 
-            // trimNroOperacDataGridViewTextBoxColumn
-            // 
-            this.trimNroOperacDataGridViewTextBoxColumn.DataPropertyName = "Trim_NroOperac";
-            this.trimNroOperacDataGridViewTextBoxColumn.HeaderText = "Trim_NroOperac";
-            this.trimNroOperacDataGridViewTextBoxColumn.Name = "trimNroOperacDataGridViewTextBoxColumn";
-            this.trimNroOperacDataGridViewTextBoxColumn.ReadOnly = true;
-            this.trimNroOperacDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // trimMontoOperacDataGridViewTextBoxColumn
-            // 
-            this.trimMontoOperacDataGridViewTextBoxColumn.DataPropertyName = "Trim_MontoOperac";
-            this.trimMontoOperacDataGridViewTextBoxColumn.HeaderText = "Trim_MontoOperac";
-            this.trimMontoOperacDataGridViewTextBoxColumn.Name = "trimMontoOperacDataGridViewTextBoxColumn";
-            this.trimMontoOperacDataGridViewTextBoxColumn.ReadOnly = true;
-            this.trimMontoOperacDataGridViewTextBoxColumn.Visible = false;
-            // 
             // mapaEmpresaDataGridViewTextBoxColumn
             // 
             this.mapaEmpresaDataGridViewTextBoxColumn.DataPropertyName = "MapaEmpresa";
@@ -3231,18 +3299,13 @@
             // 
             this.BS_Grupo_Opciones.DataSource = typeof(MofinModeloEntorno.Grupo_Opciones);
             // 
-            // panel1
+            // BS_OOperfinancieras
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.NUD_TriAno);
-            this.panel1.Controls.Add(this.NUD_TriMes);
-            this.panel1.Controls.Add(this.Btn_Trimestre);
-            this.panel1.Controls.Add(this.Txt_TriMntOperaciones);
-            this.panel1.Controls.Add(this.Txt_TriNroOperaciones);
-            this.panel1.Location = new System.Drawing.Point(407, 237);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(209, 154);
-            this.panel1.TabIndex = 39;
+            this.BS_OOperfinancieras.DataSource = typeof(MofinModelo.O_Operfinancieras);
+            // 
+            // BS_OOperTransaccionales
+            // 
+            this.BS_OOperTransaccionales.DataSource = typeof(MofinModelo.O_OperTransaccionales);
             // 
             // Frm_Clientes
             // 
@@ -3274,7 +3337,7 @@
             this.Resizable = false;
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.Frm_Clientes_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Frm_Clientes_KeyDown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyPressed_JF);
             this.TS_BarraHerramientas.ResumeLayout(false);
             this.TS_BarraHerramientas.PerformLayout();
             this.Tab_Clientes.ResumeLayout(false);
@@ -3318,10 +3381,12 @@
             this.Pag4.ResumeLayout(false);
             this.Pan_Detalles4.ResumeLayout(false);
             this.Pan_Detalles4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_MNivelRiesgo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_NroTransacciones)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_TriAno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_TriMes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MNivelRiesgo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_NroTransacciones)).EndInit();
             this.Grp_PerUsoCta.ResumeLayout(false);
             this.Grp_PerUsoCta.PerformLayout();
             this.Pag5.ResumeLayout(false);
@@ -3336,8 +3401,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Clientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_CHistActClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_OOperfinancieras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_OOperTransaccionales)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3351,7 +3416,7 @@
         private System.Windows.Forms.ToolStripButton TSB_Primero;
         private System.Windows.Forms.ToolStripButton TSB_Anterior;
         private System.Windows.Forms.ToolStripButton TSB_Ultimo;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator ts_Sep1;
         private System.Windows.Forms.ToolStripButton TSB_Agregar;
         private System.Windows.Forms.ToolStripButton TSB_Modificar;
         private System.Windows.Forms.ToolStripButton TSB_Eliminar;
@@ -3442,7 +3507,7 @@
         private System.Windows.Forms.CheckBox Chk_Opc1;
         private System.Windows.Forms.Panel Pan_Detalles4;
         private System.Windows.Forms.NumericUpDown NUD_NroTransacciones;
-        private System.Windows.Forms.TextBox Txt_TriMntOperaciones;
+        private System.Windows.Forms.TextBox Txt_TrimOpFinan;
         private System.Windows.Forms.DateTimePicker DTP_FecUltAct;
         private System.Windows.Forms.TextBox Txt_PerFinanciero;
         private System.Windows.Forms.TextBox Txt_Ejecutivo;
@@ -3584,7 +3649,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn trimMesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn trimAnoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn trimNroOperacDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn trimMontoOperacDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mapaEmpresaDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label Lbl_TipDocID;
         private System.Windows.Forms.Label Lbl_FecVencDocID;
@@ -3623,12 +3687,12 @@
         private System.Windows.Forms.Label Lbl_PerUsoCta;
         private System.Windows.Forms.Label Lbl_NroTransacciones;
         private System.Windows.Forms.Label Lbl_FecUltAct;
-        private System.Windows.Forms.Label Lbl_TrimMonto;
+        private System.Windows.Forms.Label Lbl_TrimMtoFinanc;
         private System.Windows.Forms.Label Lbl_TrimPeriodo;
         private System.Windows.Forms.Label Lbl_TrimNroOper;
         private System.Windows.Forms.NumericUpDown NUD_TriAno;
         private System.Windows.Forms.NumericUpDown NUD_TriMes;
-        private System.Windows.Forms.TextBox Txt_TriNroOperaciones;
+        private System.Windows.Forms.TextBox Txt_TrimNroOperFin;
         private System.Windows.Forms.BindingSource BS_Grupo_Opciones;
         private System.Windows.Forms.DataGridView Grd_CFirBenAcc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_BFANme;
@@ -3636,5 +3700,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
         private System.Windows.Forms.ComboBox Cmb_NivelRiesgo;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox Txt_TrimOpTransac;
+        private System.Windows.Forms.Label Lbl_TrimMtoTransac;
+        private System.Windows.Forms.BindingSource BS_OOperfinancieras;
+        private System.Windows.Forms.BindingSource BS_OOperTransaccionales;
+        private System.Windows.Forms.TextBox Txt_TrimNroOperTran;
     }
 }

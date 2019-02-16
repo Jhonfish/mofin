@@ -155,7 +155,7 @@ namespace MOFIN
         }
         private void Asigna_Nombres(object sender, EventArgs e)
         {
-            this.Text = MOFIN_LIB.Funciones._Mens_Idioma(2000);
+            this.Text = MOFIN_LIB.Funciones._Mens_Idioma(7000);
             this.Lbl_Empresa.Text = MOFIN_LIB.Funciones._Mens_Idioma(1006);
             this.Lbl_Usuario.Text = MOFIN_LIB.Funciones._Mens_Idioma(1007);
             this.Lbl_Contraseña.Text = MOFIN_LIB.Funciones._Mens_Idioma(1008);

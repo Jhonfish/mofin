@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="0f157589d4f8407db023ae134de8e6b4" Name="Diagram1" ZoomLevel="100">
         <EntityTypeShape EntityType="MonitorOperacionesModelo.B_Buscados" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.C_Clientes" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.C_Clientes" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModelo.C_FirBenAcc" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModelo.C_HistActClientes" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModelo.C_ValorItemConsExp" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />

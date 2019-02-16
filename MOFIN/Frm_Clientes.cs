@@ -40,103 +40,107 @@ namespace MOFIN
 
         public byte total;
         public byte sumatoria;
-        public decimal Promedio;
+        public decimal Puntaje;
 
         public byte Calculo()
         {
 
-            total = 0;
-            sumatoria = 0;
-            if ( puntos_TipoDocID != 0)
+            if (Entorno.vs_TipoValoracCliente == 1)    // Promedio
             {
-                sumatoria += puntos_TipoDocID;
-                total++;
+                total = 0;
+                sumatoria = 0;
+                if ( puntos_TipoDocID != 0)
+                {
+                    sumatoria += puntos_TipoDocID;
+                    total++;
+                }
+                if (puntos_nacionalidad != 0)
+                {
+                    sumatoria += puntos_nacionalidad;
+                    total++;
+                }
+                if (puntos_paisNac != 0)
+                {
+                    sumatoria += puntos_paisNac;
+                    total++;
+                }   
+                if (puntos_paisRes != 0)
+                {
+                    sumatoria += puntos_paisRes;
+                    total++;
+                }
+                if (puntos_UbicGeo != 0)
+                {
+                    sumatoria += puntos_UbicGeo;
+                    total++;
+                }
+                if (puntos_profesion != 0)
+                {
+                    sumatoria += puntos_profesion;
+                    total++;
+                }
+                if (puntos_ActComer != 0)
+                {
+                    sumatoria += puntos_ActComer;
+                    total++;
+                }
+                if (puntos_edad != 0)
+                {
+                    sumatoria += puntos_edad;
+                    total++;
+                }
+                if (puntos_tipoPers != 0)
+                {
+                    sumatoria += puntos_tipoPers;
+                    total++;
+                }
+                if (puntos_estruc != 0)
+                {
+                    sumatoria += puntos_estruc;
+                    total++;
+                }
+                if (puntos_pep != 0)
+                {
+                    sumatoria += puntos_pep;
+                    total++;
+                }
+                if (puntos_volOper != 0)
+                {
+                    sumatoria += puntos_volOper;
+                    total++;
+                }
+                if(puntos_cripto != 0)
+                {
+                    sumatoria += puntos_cripto;
+                    total++;
+                }
+                if(puntos_Productos != 0)
+                {
+                    sumatoria += puntos_Productos;
+                    total++;
+                }
+                if (puntos_Servicios != 0)
+                {
+                    sumatoria += puntos_Servicios;
+                    total++;
+                }
+                    if (total > 0)
+                        Puntaje = (decimal)((float)sumatoria / (float)total);
+                    else
+                        Puntaje = 0;
             }
-            if (puntos_nacionalidad != 0)
-            {
-                sumatoria += puntos_nacionalidad;
-                total++;
-            }
-            if (puntos_paisNac != 0)
-            {
-                sumatoria += puntos_paisNac;
-                total++;
-            }   
-            if (puntos_paisRes != 0)
-            {
-                sumatoria += puntos_paisRes;
-                total++;
-            }
-            if (puntos_UbicGeo != 0)
-            {
-                sumatoria += puntos_UbicGeo;
-                total++;
-            }
-            if (puntos_profesion != 0)
-            {
-                sumatoria += puntos_profesion;
-                total++;
-            }
-            if (puntos_ActComer != 0)
-            {
-                sumatoria += puntos_ActComer;
-                total++;
-            }
-            if (puntos_edad != 0)
-            {
-                sumatoria += puntos_edad;
-                total++;
-            }
-            if (puntos_tipoPers != 0)
-            {
-                sumatoria += puntos_tipoPers;
-                total++;
-            }
-            if (puntos_estruc != 0)
-            {
-                sumatoria += puntos_estruc;
-                total++;
-            }
-            if (puntos_pep != 0)
-            {
-                sumatoria += puntos_pep;
-                total++;
-            }
-            if (puntos_volOper != 0)
-            {
-                sumatoria += puntos_volOper;
-                total++;
-            }
-            if(puntos_cripto != 0)
-            {
-                sumatoria += puntos_cripto;
-                total++;
-            }
-            if(puntos_Productos != 0)
-            {
-                sumatoria += puntos_Productos;
-                total++;
-            }
-            if (puntos_Servicios != 0)
-            {
-                sumatoria += puntos_Servicios;
-                total++;
-            }
-            if (total > 0)
-                Promedio = (decimal)((float)sumatoria / (float)total);
-            else
-                Promedio = 0;
-            
+
+            byte Puntuacion = (byte)Math.Round(Puntaje, MidpointRounding.AwayFromZero);
+
             MessageBox.Show(puntos_TipoDocID.ToString() + " + " + puntos_nacionalidad.ToString() + " + " + puntos_paisNac.ToString() + " + " + puntos_paisRes.ToString() + " + " +
                             puntos_UbicGeo.ToString() + " + " + puntos_edad.ToString() + " + " + puntos_tipoPers.ToString() + " + " + puntos_estruc.ToString() + " + " + 
                             puntos_pep.ToString() + " + " + puntos_volOper.ToString() + " + " + puntos_cripto.ToString() + " + " + puntos_profesion.ToString() + " + " + 
-                            puntos_ActComer.ToString() + " + " + puntos_Productos.ToString() + " + " + puntos_Servicios.ToString() +
-                            "\n\n" + sumatoria.ToString()+ " / " + total.ToString()+ "\n\n"+ Promedio.ToString() + "\n\n" + Math.Round(Promedio).ToString());
+                            puntos_ActComer.ToString() + " + " + puntos_Servicios.ToString() + " + " + puntos_Productos.ToString() +
+                            "\n\n" + sumatoria.ToString()+ " / " + total.ToString()+ "\n\n"+ Puntaje.ToString() + "\n\n" + Puntuacion.ToString());
 
-            return (byte)Math.Round(Promedio);
+            return Puntuacion;
         }
     }
-
     struct Punt_FirBenAcc
     {
         public byte puntos_nacionalidad;
@@ -150,69 +154,72 @@ namespace MOFIN
  
         public byte total;
         public byte sumatoria;
-        public decimal Promedio;
+        public decimal Puntaje;
 
         public byte Calculo()
         {
 
-            total = 0;
-            sumatoria = 0;
+            if (Entorno.vs_TipoValoracCliente == 1)    // Promedio
+            {
+                total = 0;
+                sumatoria = 0;
 
-            if (puntos_nacionalidad != 0)
-            {
-                sumatoria += puntos_nacionalidad;
-                total++;
+                if (puntos_nacionalidad != 0)
+                {
+                    sumatoria += puntos_nacionalidad;
+                    total++;
+                }
+                if (puntos_paisNac != 0)
+                {
+                    sumatoria += puntos_paisNac;
+                    total++;
+                }
+                if (puntos_paisRes != 0)
+                {
+                    sumatoria += puntos_paisRes;
+                    total++;
+                }
+                if (puntos_UbicGeo != 0)
+                {
+                    sumatoria += puntos_UbicGeo;
+                    total++;
+                }
+                if (puntos_profesion != 0)
+                {
+                    sumatoria += puntos_profesion;
+                    total++;
+                }
+                if (puntos_edad != 0)
+                {
+                    sumatoria += puntos_edad;
+                    total++;
+                }
+                if (puntos_pep != 0)
+                {
+                    sumatoria += puntos_pep;
+                    total++;
+                }
+                if (puntos_cripto != 0)
+                {
+                    sumatoria += puntos_cripto;
+                    total++;
+                }
+                if (total > 0)
+                    Puntaje = (decimal)((float)sumatoria / (float)total);
+                else
+                    Puntaje = 0;
             }
-            if (puntos_paisNac != 0)
-            {
-                sumatoria += puntos_paisNac;
-                total++;
-            }
-            if (puntos_paisRes != 0)
-            {
-                sumatoria += puntos_paisRes;
-                total++;
-            }
-            if (puntos_UbicGeo != 0)
-            {
-                sumatoria += puntos_UbicGeo;
-                total++;
-            }
-            if (puntos_profesion != 0)
-            {
-                sumatoria += puntos_profesion;
-                total++;
-            }
-            if (puntos_edad != 0)
-            {
-                sumatoria += puntos_edad;
-                total++;
-            }
-            if (puntos_pep != 0)
-            {
-                sumatoria += puntos_pep;
-                total++;
-            }
-            if (puntos_cripto != 0)
-            {
-                sumatoria += puntos_cripto;
-                total++;
-            }
-            if (total > 0)
-                Promedio = (decimal)((float)sumatoria / (float)total);
-                
-            else
-                Promedio = 0;
 
-            byte Puntuacion = (byte)Math.Round(Promedio, MidpointRounding.AwayFromZero);
+            byte Puntuacion = (byte)Math.Round(Puntaje, MidpointRounding.AwayFromZero);
 
             MessageBox.Show(puntos_nacionalidad.ToString() + " + " + puntos_paisNac.ToString() + " + " + puntos_paisRes.ToString() + " + " + puntos_UbicGeo.ToString() + " + " + 
                             puntos_edad.ToString()  + " + " + puntos_pep.ToString() + " + " + puntos_cripto.ToString() + " + " + puntos_profesion.ToString() +
-                            "\n\n" + sumatoria.ToString() + " / " + total.ToString() + "\n\n" + Promedio.ToString() + "\n\n" + Puntuacion.ToString());
+                            "\n\n" + sumatoria.ToString() + " / " + total.ToString() + "\n\n" + Puntaje.ToString() + "\n\n" + Puntuacion.ToString());
 
             return Puntuacion;
         }
     }
+
     public partial class Frm_Clientes : MetroForm
     {
         bool ClienteEsNuevo = true;
@@ -233,6 +240,12 @@ namespace MOFIN
         public Frm_Clientes()
         {
             InitializeComponent();
+            this.TSB_Primero.Visible = Entorno.vs_CnfgBtnsNaveg;
+            this.TSB_Anterior.Visible = Entorno.vs_CnfgBtnsNaveg;
+            this.TSB_Siguiente.Visible = Entorno.vs_CnfgBtnsNaveg;
+            this.TSB_Ultimo.Visible = Entorno.vs_CnfgBtnsNaveg;
+            this.ts_Sep1.Visible = Entorno.vs_CnfgBtnsNaveg;
+
         }
 
         private void Frm_Clientes_Load(object sender, EventArgs e)
@@ -255,6 +268,9 @@ namespace MOFIN
             BS_MTipoPersJuridica.DataSource = NM_TipoPersJuridica.Listar();
             BS_MVolOperPersNat.DataSource = NM_VolOperPersNat.Listar();
             BS_MVolOperPersJur.DataSource = NM_VolOperPersJur.Listar();
+
+            BS_OOperfinancieras.DataSource = NO_Operfinancieras.Listar();
+            BS_OOperTransaccionales.DataSource = NO_OperTransaccionales.Listar();
 
             BS_Grupo_Opciones.DataSource = NGrupo_Opciones.ListarPorCodigo(MOFIN_LIB.Entorno.vs_Grupo);
             r_GrupoOpciones = BS_Grupo_Opciones.Current as Grupo_Opciones;
@@ -341,6 +357,50 @@ namespace MOFIN
             BS_CClientes.MoveLast();
             TSB_ActualizaBotonesNavegacion();
         }
+        private void KeyPressed_JF(object sender, KeyEventArgs e)
+        {
+            if ((ActiveControl.GetType().Name != "DataGridView") & (this.TSB_Salir.Enabled) & (e.KeyValue == 27 | e.KeyValue == 33 | e.KeyValue == 34 | e.KeyValue == 35 |
+                                e.KeyValue == 36 | e.KeyValue == 36 | e.KeyValue == 46 | e.KeyValue == 116 | e.KeyValue == 117 | e.KeyValue == 118 | e.KeyValue == 119))
+            {
+                //MessageBox.Show(e.KeyCode + " | " + e.KeyData + " | " + e.KeyValue);
+                //MessageBox.Show(sender.GetType().ToString());
+                //MessageBox.Show(ActiveControl.GetType().Name);
+
+                switch (e.KeyValue)
+                {
+                    case 27:
+                        this.TSB_Salir_Click(false, e);
+                        break;
+                    case 33:
+                        this.TSB_Anterior_Click(false, e);
+                        break;
+                    case 34:
+                        this.TSB_Siguiente_Click(false, e);
+                        break;
+                    case 35:
+                        this.TSB_Ultimo_Click(false, e);
+                        break;
+                    case 36:
+                        this.TSB_Primero_Click(false, e);
+                        break;
+                    case 46:
+                    case 118:
+                        this.TSB_Eliminar_Click(false, e);
+                        break;
+                    case 116:
+                        this.TSB_Agregar_Click(false, e);
+                        break;
+                    case 117:
+                        this.TSB_Modificar_Click(false, e);
+                        break;
+                    case 119:
+                        this.TSB_Imprimir_Click(false, e);
+                        break;
+                }
+            }
+
+        }
+
         private void TSB_Agregar_Click(object sender, EventArgs e)
         {
             ClienteEsNuevo = true;
@@ -371,8 +431,6 @@ namespace MOFIN
                 MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (vl_Resp == DialogResult.Yes)
             {
-                //NC_Clientes.Elimiar(BS_CClientes.Current as C_Clientes);
-                //NC_FirBenAcc.Elimiar(BS_CFirBenAcc.Current as C_FirBenAcc);   hay que eliminar todos los beneficiarios, historiales
                 BS_CClientes.DataSource = NC_Clientes.Listar();
                 MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9011), MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -428,6 +486,8 @@ namespace MOFIN
             else
                 r_Cliente.Cliente_Punt = r_Cliente.InfGen_Punt;
 
+            r_Cliente.Fec_UltimAct = DateTime.Today;
+
             if (ClienteEsNuevo)
                 NC_Clientes.Insertar(r_Cliente);
             else
@@ -436,14 +496,13 @@ namespace MOFIN
             BS_CClientes.DataSource = NC_Clientes.Listar();
             this.Modo_Consulta();
         }
-
         private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
             Modo_Consulta();
             BS_CClientes.CancelEdit();
         }
 
-         private void Btn_BenefIncluir_Click(object sender, EventArgs e)
+        private void Btn_BenefIncluir_Click(object sender, EventArgs e)
         {
             Pan_Detalles2.Enabled = true;
             BS_CFirBenAcc.AddNew();
@@ -456,7 +515,6 @@ namespace MOFIN
 
             this.AcceptButton = Btn_BenefAceptar;
         }
-
         private void Btn_BenefModificar_Click(object sender, EventArgs e)
         {
             Pan_Detalles2.Enabled = true;
@@ -471,15 +529,39 @@ namespace MOFIN
         }
         private void Btn_BenefEliminar_Click(object sender, EventArgs e)
         {
-            string RegEliminar = r_FirBenAcc.Nombre.Trim();
-            DialogResult Resp = MessageBox.Show("Desea Eliminar este Registro? " + "\n\n" + RegEliminar,
-                "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (Resp == DialogResult.Yes)
+            string vl_RegEliminar = r_FirBenAcc.Nombre.Trim();
+            DialogResult vl_Resp = MessageBox.Show(Funciones._Mens_Idioma(9010) + "\n\n" + vl_RegEliminar,
+                MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (vl_Resp == DialogResult.Yes)
             {
+                MessageBox.Show(Funciones._Mens_Idioma(9011), Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 NC_FirBenAcc.Elimiar(BS_CFirBenAcc.Current as C_FirBenAcc);
                 BS_CFirBenAcc.DataSource = NC_FirBenAcc.ListarPorCliente(Txt_Codigo.Text);
-                MessageBox.Show("Se eliminó el registro actual", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Procedimiento para calcular nuevamente la puntuacion de los Beneficiarios luego de eliminar uno
+                BS_CFirBenAcc.MoveFirst();
+                byte vl_Cuantos = 0;
+                byte vl_Puntos = 0;
+                byte vl_Puntuacion = 0;
+                foreach (object Registro in BS_CFirBenAcc)
+                {
+                    r_FirBenAcc = BS_CFirBenAcc.Current as C_FirBenAcc;
+                    vl_Puntos = (byte)(vl_Puntos + r_FirBenAcc.Puntuacion);
+                    vl_Cuantos++;
+                    BS_CFirBenAcc.MoveNext();
+                }
+
+                if (vl_Cuantos >= 0)
+                    vl_Puntuacion = (byte)Math.Round((decimal)((float)vl_Puntos / (float)vl_Cuantos), MidpointRounding.AwayFromZero);
+                else
+                    vl_Puntuacion = 0;
+
+                r_Cliente.Benef_Punt = vl_Puntuacion;
+                this.Pag2.Text = MOFIN_LIB.Funciones._Mens_Idioma(11005) + ": " + r_Cliente.Benef_Punt.ToString();
             }
+
+
             Pan_Detalles2.Enabled = false;
             BenefModConsulta = true;
         }
@@ -499,6 +581,7 @@ namespace MOFIN
             {
                 NC_FirBenAcc.Actualizar(r_FirBenAcc);
             }
+
             Pan_Detalles2.Enabled = false;
             BenefModConsulta = true;
             this.Grd_CFirBenAcc.Enabled = true;
@@ -620,7 +703,7 @@ namespace MOFIN
             this.Chk_Opc17.Text = MOFIN_LIB.Funciones._Mens_Idioma(11035);
             this.Chk_Opc18.Text = MOFIN_LIB.Funciones._Mens_Idioma(1010);
             this.Chk_Opc19.Text = MOFIN_LIB.Funciones._Mens_Idioma(11009);
-            this.Chk_Opc20.Text = MOFIN_LIB.Funciones._Mens_Idioma(2209);
+            this.Chk_Opc20.Text = MOFIN_LIB.Funciones._Mens_Idioma(1023);
             this.Chk_Opc21.Text = MOFIN_LIB.Funciones._Mens_Idioma(11036);
             this.Chk_Opc22.Text = MOFIN_LIB.Funciones._Mens_Idioma(11037);
             this.Chk_Opc23.Text = MOFIN_LIB.Funciones._Mens_Idioma(11038);
@@ -647,7 +730,8 @@ namespace MOFIN
             this.Lbl_FecUltAct.Text = MOFIN_LIB.Funciones._Mens_Idioma(11052);
             this.Lbl_TrimPeriodo.Text = MOFIN_LIB.Funciones._Mens_Idioma(11051);
             this.Lbl_TrimNroOper.Text = MOFIN_LIB.Funciones._Mens_Idioma(13023);
-            this.Lbl_TrimMonto.Text = MOFIN_LIB.Funciones._Mens_Idioma(2210);
+            this.Lbl_TrimMtoFinanc.Text = MOFIN_LIB.Funciones._Mens_Idioma(11053);
+            this.Lbl_TrimMtoTransac.Text = MOFIN_LIB.Funciones._Mens_Idioma(11054);
 
             this.Pag5.Text = MOFIN_LIB.Funciones._Mens_Idioma(11007);
 
@@ -726,7 +810,7 @@ namespace MOFIN
             this.Lbl_Activo.ForeColor = r_Cliente.Activo == true ? Color.Green : Color.Red;
 
             this.Opc_TipPers1.Checked = r_Cliente.TipoPersona == (byte)TipoPersona.natural ? true : false ;
-            this.Opc_TipPers2.Checked = !this.Opc_TipPers1.Checked;
+            this.Opc_TipPers2.Checked = r_Cliente.TipoPersona == (byte)TipoPersona.juridica ? true : false;
 
             this.Lbl_Edad.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 10014 : 10012 );
             Cmb_Edad.Visible = r_Cliente.TipoPersona == 1 ? true : false;
@@ -738,7 +822,7 @@ namespace MOFIN
             this.Chk_Opc6.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11025 : 1011);
             this.Chk_Opc16.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11034 : 11047);
             this.Chk_Opc19.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11009 : 11043);
-            this.Chk_Opc20.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 2209 : 11044);
+            this.Chk_Opc20.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 1023 : 11044);
             this.Chk_Opc21.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11036 : 11045);
             this.Chk_Opc22.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11037 : 11046);
             this.Chk_Opc23.Visible = r_Cliente.TipoPersona == 1 ? true : false;
@@ -853,7 +937,7 @@ namespace MOFIN
                 this.Chk_Opc6.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11025 : 1011);
                 this.Chk_Opc16.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11034 : 11047);
                 this.Chk_Opc19.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11009 : 11043);
-                this.Chk_Opc20.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 2209 : 11044);
+                this.Chk_Opc20.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 1023 : 11044);
                 this.Chk_Opc21.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11036 : 11045);
                 this.Chk_Opc22.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11037 : 11046);
                 this.Chk_Opc23.Visible = r_Cliente.TipoPersona == 1 ? true : false;
@@ -893,50 +977,6 @@ namespace MOFIN
             }
         }
  
-        private void Frm_Clientes_KeyDown(object sender, KeyEventArgs e)
-        {
-            if ((ActiveControl.GetType().Name != "DataGridView") & (this.TSB_Salir.Enabled) & (e.KeyValue == 27 | e.KeyValue == 33 | e.KeyValue == 34 | e.KeyValue == 35 |
-                                e.KeyValue == 36 | e.KeyValue == 36 | e.KeyValue == 46 | e.KeyValue == 116 | e.KeyValue == 117 | e.KeyValue == 118 | e.KeyValue == 119))
-            {
-                //MessageBox.Show(e.KeyCode + " | " + e.KeyData + " | " + e.KeyValue);
-                //MessageBox.Show(sender.GetType().ToString());
-                //MessageBox.Show(ActiveControl.GetType().Name);
-                
-                switch (e.KeyValue)
-                {
-                    case 27:
-                        this.TSB_Salir_Click(false, e);
-                        break;
-                    case 33:
-                        this.TSB_Anterior_Click(false, e);
-                        break;
-                    case 34:
-                        this.TSB_Siguiente_Click(false, e);
-                        break;
-                    case 35:
-                        this.TSB_Ultimo_Click(false, e);
-                        break;
-                    case 36:
-                        this.TSB_Primero_Click(false, e);
-                        break;
-                    case 46:
-                    case 118:
-                        this.TSB_Eliminar_Click(false, e);
-                        break;
-                    case 116:
-                        this.TSB_Agregar_Click(false, e);
-                        break;
-                    case 117:
-                        this.TSB_Modificar_Click(false, e);
-                        break;
-                    case 119:
-                        this.TSB_Imprimir_Click(false, e);
-                        break;
-                }
-            }
-
-        }
-
         private void Cmb_Estado_Enter(object sender, EventArgs e)
         {
             if (Cmb_PaisResidencia.SelectedIndex != -1)
@@ -960,11 +1000,6 @@ namespace MOFIN
             }
 
         }
-
- /*       private void Grd_CFirBenAcc_CurrentCellChanged_1(object sender, EventArgs e)
-        {
-            r_FirBenAcc = BS_CFirBenAcc.Current as C_FirBenAcc ;
-        }*/
 
         private void Clientes_RellenaDatosCalculo()
         {
@@ -1209,6 +1244,144 @@ namespace MOFIN
                     break;
             }
 
+        }
+
+        private void Btn_Trimestre_Click(object sender, EventArgs e)
+        {
+            DateTime vl_FDesde = DateTime.Today;
+            DateTime vl_FHasta = DateTime.Today;
+            switch (this.NUD_TriMes.Value)
+            {
+                case 1:
+                    vl_FDesde = DateTime.Parse("01/01/" + this.NUD_TriAno.Value.ToString());
+                    vl_FHasta = DateTime.Parse("31/03/" + this.NUD_TriAno.Value.ToString());
+                    break;
+                case 2:
+                    vl_FDesde = DateTime.Parse("01/04/" + this.NUD_TriAno.Value.ToString());
+                    vl_FHasta = DateTime.Parse("30/06/" + this.NUD_TriAno.Value.ToString());
+                    break;
+                case 3:
+                    vl_FDesde = DateTime.Parse("01/07/" + this.NUD_TriAno.Value.ToString());
+                    vl_FHasta = DateTime.Parse("30/09/" + this.NUD_TriAno.Value.ToString());
+                    break;
+                case 4:
+                    vl_FDesde = DateTime.Parse("01/10/" + this.NUD_TriAno.Value.ToString());
+                    vl_FHasta = DateTime.Parse("31/12/" + this.NUD_TriAno.Value.ToString());
+                    break;
+            }
+            ///
+            /// Calculo de las Operaciones Financieras
+            /// 
+            var Lst_OpeFinan = NO_Operfinancieras.ListarPorCodigo(r_Cliente.Codigo, vl_FDesde, vl_FHasta).ToList();
+            short vl_NroOperfin = (short)Lst_OpeFinan.Count();// (item => item.Efectivo);
+            decimal vl_TrimMtoFin = (decimal)Lst_OpeFinan.Sum(item => item.Efectivo);
+
+            Txt_TrimNroOperFin.Text = vl_NroOperfin.ToString();
+            this.Txt_TrimOpFinan.Text = vl_TrimMtoFin.ToString("N");
+
+            r_Cliente.Trim_NroOperFin = vl_NroOperfin;
+            r_Cliente.Trim_MtoFinanc = vl_TrimMtoFin;
+
+            ///
+            /// Calculo de las Operaciones Transaccionales
+            /// 
+            // List<O_OperTransaccionales> Lst_Operaciones;
+            var Lst_OpeTransac = NO_OperTransaccionales.ListarPorCodigo(r_Cliente.Codigo, vl_FDesde, vl_FHasta).ToList();
+            decimal vl_Compra = 0;
+            decimal vl_Venta = 0;
+            decimal vl_Total = 0;
+            short vl_NroOperTrans = 0;
+            foreach (var r_registro in Lst_OpeTransac)
+            {   /********
+                **Procedimiento para el calculo de los datos mensual del reporte
+                *******
+                * Tipo de Operacion         SUMA +      Valor       RESTA -     Valor
+                * Renta Variable            Venta       Columna1    Compra      Columna1
+                * Renta Fija                Compra      Columna1    Venta       Columna1
+                * Renta Fija                Venta       Columna1    Compra      Columna1 
+                * Margen                    Abono       Columna1    Retiro      Columna1
+                *                           Apertura    Columna1    Cierre      Columna1
+                * Mutuo                     Cierre      Columna2    Apertura    Columna1
+                *******
+                * Campos: rg_detopet
+                * Tip_Orden, Cod_Clie, mto_Pactad, Val_Efect, Grp_Clie
+                *
+                *******/
+                switch (r_registro.Tipo_Operacion.Trim())
+                {
+                    case "MARGEN":     // 0 : MARGEN
+                        if (r_registro.Tipo_Orden.ToUpper() == "ABONO" | r_registro.Tipo_Orden.ToUpper() == "APERT")
+                        {
+                            vl_Compra = (Decimal)r_registro.Monto_Pactado;
+                            vl_Venta = 0;
+                        }
+                        else
+                        {
+                            vl_Compra = 0;
+                            vl_Venta = (Decimal)r_registro.Monto_Pactado;
+                        }
+                        break;
+
+                    case "RENTA FIJA":     // 1 : RENTA FIJA
+                        if (r_registro.Tipo_Orden.ToUpper() == "VENTA")
+                        {
+                            vl_Compra = 0;
+                            vl_Venta = (Decimal)r_registro.Monto_Pactado;
+                        }
+                        else
+                        {
+                            vl_Compra = (Decimal)r_registro.Monto_Pactado;
+                            vl_Venta = 0;
+                        }
+                        break;
+
+                    case "RENTA VARIABLE":     // 2 : RENTA VARIABLE
+                        if (r_registro.Tipo_Orden.ToUpper() == "VENTA")
+                        {
+                            vl_Compra = 0;
+                            vl_Venta = (Decimal)r_registro.Monto_Pactado;
+                        }
+                        else
+                        {
+                            vl_Compra = (Decimal)r_registro.Monto_Pactado;
+                            vl_Venta = 0;
+                        }
+                        break;
+
+                    case "FURUTOS":     // 3 : FUTUROS
+                        vl_Compra = 0;
+                        vl_Venta = 0;
+                        break;
+
+                    case "OPCIONES":     // 4 : OPCIONES
+                        vl_Compra = 0;
+                        vl_Venta = 0;
+                        break;
+
+                    case "MUTUO":     // 0 :MUTUO
+                        if (r_registro.Tipo_Orden.ToUpper() == "CIERR")
+                        {
+                            vl_Compra = 0;
+                            vl_Venta = (Decimal)r_registro.Valor_Efectivo;
+                        }
+                        else
+                        {
+                            vl_Compra = (Decimal)r_registro.Monto_Pactado;
+                            vl_Venta = 0;
+                        }
+                        break;
+
+                }
+
+                vl_NroOperTrans++;
+                vl_Total = vl_Total + (vl_Compra + vl_Venta);
+
+            }
+
+            this.Txt_TrimNroOperTran.Text = vl_NroOperTrans.ToString();
+            this.Txt_TrimOpTransac.Text = vl_Total.ToString("N");
+            r_Cliente.Trim_NroOperTrans = vl_NroOperTrans;
+            r_Cliente.Trim_MtoTransac = vl_Total;
         }
     }
 }

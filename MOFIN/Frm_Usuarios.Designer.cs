@@ -86,6 +86,8 @@
             this.Btn_EmpAcc_Eli = new System.Windows.Forms.Button();
             this.Btn_EmpAcc_Mod = new System.Windows.Forms.Button();
             this.BS_Grupo_Opciones = new System.Windows.Forms.BindingSource(this.components);
+            this.Lbl_ConfigBtnsBarraHerram = new System.Windows.Forms.Label();
+            this.Chk_ConfigBtnsBarraHerram = new System.Windows.Forms.CheckBox();
             this.TS_BarraHerramientas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Usuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).BeginInit();
@@ -135,43 +137,41 @@
             // 
             // Lbl_FondoEscritorio
             // 
-            this.Lbl_FondoEscritorio.AutoSize = true;
-            this.Lbl_FondoEscritorio.Location = new System.Drawing.Point(85, 105);
+            this.Lbl_FondoEscritorio.Location = new System.Drawing.Point(338, 170);
             this.Lbl_FondoEscritorio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_FondoEscritorio.Name = "Lbl_FondoEscritorio";
-            this.Lbl_FondoEscritorio.Size = new System.Drawing.Size(168, 16);
+            this.Lbl_FondoEscritorio.Size = new System.Drawing.Size(205, 16);
             this.Lbl_FondoEscritorio.TabIndex = 27;
             this.Lbl_FondoEscritorio.Text = "Fondo de Escritorio:";
+            this.Lbl_FondoEscritorio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Lbl_Idioma
             // 
-            this.Lbl_Idioma.AutoSize = true;
-            this.Lbl_Idioma.Location = new System.Drawing.Point(304, 105);
+            this.Lbl_Idioma.Location = new System.Drawing.Point(624, 170);
             this.Lbl_Idioma.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_Idioma.Name = "Lbl_Idioma";
-            this.Lbl_Idioma.Size = new System.Drawing.Size(64, 16);
+            this.Lbl_Idioma.Size = new System.Drawing.Size(150, 16);
             this.Lbl_Idioma.TabIndex = 29;
             this.Lbl_Idioma.Text = "Idioma:";
             // 
             // Lbl_PaisUso
             // 
-            this.Lbl_PaisUso.AutoSize = true;
-            this.Lbl_PaisUso.Location = new System.Drawing.Point(85, 190);
+            this.Lbl_PaisUso.Location = new System.Drawing.Point(624, 247);
             this.Lbl_PaisUso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_PaisUso.Name = "Lbl_PaisUso";
-            this.Lbl_PaisUso.Size = new System.Drawing.Size(80, 16);
+            this.Lbl_PaisUso.Size = new System.Drawing.Size(150, 16);
             this.Lbl_PaisUso.TabIndex = 31;
             this.Lbl_PaisUso.Text = "Pais Uso:";
             // 
             // Lbl_FormatoFecha
             // 
-            this.Lbl_FormatoFecha.AutoSize = true;
-            this.Lbl_FormatoFecha.Location = new System.Drawing.Point(304, 190);
+            this.Lbl_FormatoFecha.Location = new System.Drawing.Point(338, 247);
             this.Lbl_FormatoFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_FormatoFecha.Name = "Lbl_FormatoFecha";
-            this.Lbl_FormatoFecha.Size = new System.Drawing.Size(144, 16);
+            this.Lbl_FormatoFecha.Size = new System.Drawing.Size(229, 16);
             this.Lbl_FormatoFecha.TabIndex = 33;
             this.Lbl_FormatoFecha.Text = "Formato de Fecha:";
+            this.Lbl_FormatoFecha.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Btn_Cancelar
             // 
@@ -319,6 +319,7 @@
             this.TSB_Imprimir.Name = "TSB_Imprimir";
             this.TSB_Imprimir.Size = new System.Drawing.Size(40, 40);
             this.TSB_Imprimir.Text = "Imprimir";
+            this.TSB_Imprimir.Click += new System.EventHandler(this.TSB_Imprimir_Click);
             // 
             // toolStripSeparator3
             // 
@@ -379,30 +380,27 @@
             // 
             // Pan_Elementos
             // 
+            this.Pan_Elementos.Controls.Add(this.Chk_ConfigBtnsBarraHerram);
             this.Pan_Elementos.Controls.Add(this.Pan_BotAcpcan_EmpAcc);
             this.Pan_Elementos.Controls.Add(this.Grd_EmpAccesos);
             this.Pan_Elementos.Controls.Add(this.Grp_FormatoFecha);
             this.Pan_Elementos.Controls.Add(this.Grp_Pais);
             this.Pan_Elementos.Controls.Add(this.Grp_Idioma);
             this.Pan_Elementos.Controls.Add(this.Grp_Desktop);
-            this.Pan_Elementos.Controls.Add(this.Lbl_PaisUso);
-            this.Pan_Elementos.Controls.Add(this.Lbl_Idioma);
-            this.Pan_Elementos.Controls.Add(this.Lbl_FormatoFecha);
-            this.Pan_Elementos.Controls.Add(this.Lbl_FondoEscritorio);
             this.Pan_Elementos.Controls.Add(this.Txt_IDUsuario);
             this.Pan_Elementos.Controls.Add(this.Txt_Nombre);
             this.Pan_Elementos.Controls.Add(this.Txt_Password);
             this.Pan_Elementos.Controls.Add(this.Pan_BtnsEmpAccesos);
             this.Pan_Elementos.Location = new System.Drawing.Point(330, 75);
             this.Pan_Elementos.Name = "Pan_Elementos";
-            this.Pan_Elementos.Size = new System.Drawing.Size(477, 446);
+            this.Pan_Elementos.Size = new System.Drawing.Size(490, 476);
             this.Pan_Elementos.TabIndex = 34;
             // 
             // Pan_BotAcpcan_EmpAcc
             // 
             this.Pan_BotAcpcan_EmpAcc.Controls.Add(this.Btn_EmpAcc_Cancelar);
             this.Pan_BotAcpcan_EmpAcc.Controls.Add(this.Btn_EmpAcc_Aceptar);
-            this.Pan_BotAcpcan_EmpAcc.Location = new System.Drawing.Point(367, 414);
+            this.Pan_BotAcpcan_EmpAcc.Location = new System.Drawing.Point(367, 423);
             this.Pan_BotAcpcan_EmpAcc.Name = "Pan_BotAcpcan_EmpAcc";
             this.Pan_BotAcpcan_EmpAcc.Size = new System.Drawing.Size(72, 30);
             this.Pan_BotAcpcan_EmpAcc.TabIndex = 52;
@@ -455,7 +453,7 @@
             this.Col_Empresa,
             this.Col_Grupo});
             this.Grd_EmpAccesos.DataSource = this.BS_Emp_Accesos;
-            this.Grd_EmpAccesos.Location = new System.Drawing.Point(11, 277);
+            this.Grd_EmpAccesos.Location = new System.Drawing.Point(11, 286);
             this.Grd_EmpAccesos.MultiSelect = false;
             this.Grd_EmpAccesos.Name = "Grd_EmpAccesos";
             this.Grd_EmpAccesos.ReadOnly = true;
@@ -476,14 +474,14 @@
             this.Col_Empresa.DataPropertyName = "Cod_Empresa";
             this.Col_Empresa.DataSource = this.BS_Empresas;
             this.Col_Empresa.DisplayMember = "Nombre";
-            this.Col_Empresa.FillWeight = 150F;
+            this.Col_Empresa.FillWeight = 227F;
             this.Col_Empresa.HeaderText = "Empresa";
             this.Col_Empresa.Name = "Col_Empresa";
             this.Col_Empresa.ReadOnly = true;
             this.Col_Empresa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Col_Empresa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Col_Empresa.ValueMember = "Codigo";
-            this.Col_Empresa.Width = 179;
+            this.Col_Empresa.Width = 227;
             // 
             // BS_Empresas
             // 
@@ -494,14 +492,14 @@
             this.Col_Grupo.DataPropertyName = "Cod_Grupo";
             this.Col_Grupo.DataSource = this.BS_Grupos;
             this.Col_Grupo.DisplayMember = "Nombre";
-            this.Col_Grupo.FillWeight = 200F;
+            this.Col_Grupo.FillWeight = 227F;
             this.Col_Grupo.HeaderText = "Grupo";
             this.Col_Grupo.Name = "Col_Grupo";
             this.Col_Grupo.ReadOnly = true;
             this.Col_Grupo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Col_Grupo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Col_Grupo.ValueMember = "Codigo";
-            this.Col_Grupo.Width = 275;
+            this.Col_Grupo.Width = 227;
             // 
             // BS_Grupos
             // 
@@ -515,16 +513,16 @@
             // 
             this.Grp_FormatoFecha.Controls.Add(this.Opc_FormFec2);
             this.Grp_FormatoFecha.Controls.Add(this.Opc_FormFec1);
-            this.Grp_FormatoFecha.Location = new System.Drawing.Point(315, 209);
+            this.Grp_FormatoFecha.Location = new System.Drawing.Point(108, 191);
             this.Grp_FormatoFecha.Name = "Grp_FormatoFecha";
-            this.Grp_FormatoFecha.Size = new System.Drawing.Size(132, 57);
+            this.Grp_FormatoFecha.Size = new System.Drawing.Size(132, 55);
             this.Grp_FormatoFecha.TabIndex = 49;
             this.Grp_FormatoFecha.TabStop = false;
             // 
             // Opc_FormFec2
             // 
             this.Opc_FormFec2.AutoSize = true;
-            this.Opc_FormFec2.Location = new System.Drawing.Point(10, 33);
+            this.Opc_FormFec2.Location = new System.Drawing.Point(10, 27);
             this.Opc_FormFec2.Name = "Opc_FormFec2";
             this.Opc_FormFec2.Size = new System.Drawing.Size(106, 20);
             this.Opc_FormFec2.TabIndex = 1;
@@ -547,16 +545,16 @@
             // 
             this.Grp_Pais.Controls.Add(this.Opc_Pais2);
             this.Grp_Pais.Controls.Add(this.Opc_Pais1);
-            this.Grp_Pais.Location = new System.Drawing.Point(108, 207);
+            this.Grp_Pais.Location = new System.Drawing.Point(312, 191);
             this.Grp_Pais.Name = "Grp_Pais";
-            this.Grp_Pais.Size = new System.Drawing.Size(132, 57);
+            this.Grp_Pais.Size = new System.Drawing.Size(132, 55);
             this.Grp_Pais.TabIndex = 48;
             this.Grp_Pais.TabStop = false;
             // 
             // Opc_Pais2
             // 
             this.Opc_Pais2.AutoSize = true;
-            this.Opc_Pais2.Location = new System.Drawing.Point(10, 33);
+            this.Opc_Pais2.Location = new System.Drawing.Point(10, 27);
             this.Opc_Pais2.Name = "Opc_Pais2";
             this.Opc_Pais2.Size = new System.Drawing.Size(74, 20);
             this.Opc_Pais2.TabIndex = 1;
@@ -579,16 +577,16 @@
             // 
             this.Grp_Idioma.Controls.Add(this.Opc_Idioma2);
             this.Grp_Idioma.Controls.Add(this.Opc_Idioma1);
-            this.Grp_Idioma.Location = new System.Drawing.Point(315, 120);
+            this.Grp_Idioma.Location = new System.Drawing.Point(312, 114);
             this.Grp_Idioma.Name = "Grp_Idioma";
-            this.Grp_Idioma.Size = new System.Drawing.Size(132, 57);
+            this.Grp_Idioma.Size = new System.Drawing.Size(132, 55);
             this.Grp_Idioma.TabIndex = 47;
             this.Grp_Idioma.TabStop = false;
             // 
             // Opc_Idioma2
             // 
             this.Opc_Idioma2.AutoSize = true;
-            this.Opc_Idioma2.Location = new System.Drawing.Point(10, 33);
+            this.Opc_Idioma2.Location = new System.Drawing.Point(10, 27);
             this.Opc_Idioma2.Name = "Opc_Idioma2";
             this.Opc_Idioma2.Size = new System.Drawing.Size(74, 20);
             this.Opc_Idioma2.TabIndex = 1;
@@ -611,16 +609,16 @@
             // 
             this.Grp_Desktop.Controls.Add(this.Opc_Desktop2);
             this.Grp_Desktop.Controls.Add(this.Opc_Desktop1);
-            this.Grp_Desktop.Location = new System.Drawing.Point(108, 124);
+            this.Grp_Desktop.Location = new System.Drawing.Point(108, 114);
             this.Grp_Desktop.Name = "Grp_Desktop";
-            this.Grp_Desktop.Size = new System.Drawing.Size(132, 57);
+            this.Grp_Desktop.Size = new System.Drawing.Size(132, 55);
             this.Grp_Desktop.TabIndex = 46;
             this.Grp_Desktop.TabStop = false;
             // 
             // Opc_Desktop2
             // 
             this.Opc_Desktop2.AutoSize = true;
-            this.Opc_Desktop2.Location = new System.Drawing.Point(10, 33);
+            this.Opc_Desktop2.Location = new System.Drawing.Point(10, 27);
             this.Opc_Desktop2.Name = "Opc_Desktop2";
             this.Opc_Desktop2.Size = new System.Drawing.Size(98, 20);
             this.Opc_Desktop2.TabIndex = 1;
@@ -674,7 +672,7 @@
             this.Pan_BtnsEmpAccesos.Controls.Add(this.Btn_EmpAcc_Inc);
             this.Pan_BtnsEmpAccesos.Controls.Add(this.Btn_EmpAcc_Eli);
             this.Pan_BtnsEmpAccesos.Controls.Add(this.Btn_EmpAcc_Mod);
-            this.Pan_BtnsEmpAccesos.Location = new System.Drawing.Point(197, 413);
+            this.Pan_BtnsEmpAccesos.Location = new System.Drawing.Point(197, 422);
             this.Pan_BtnsEmpAccesos.Name = "Pan_BtnsEmpAccesos";
             this.Pan_BtnsEmpAccesos.Size = new System.Drawing.Size(99, 34);
             this.Pan_BtnsEmpAccesos.TabIndex = 51;
@@ -738,13 +736,36 @@
             // 
             this.BS_Grupo_Opciones.DataSource = typeof(MofinModeloEntorno.Grupo_Opciones);
             // 
+            // Lbl_ConfigBtnsBarraHerram
+            // 
+            this.Lbl_ConfigBtnsBarraHerram.AutoSize = true;
+            this.Lbl_ConfigBtnsBarraHerram.Location = new System.Drawing.Point(338, 334);
+            this.Lbl_ConfigBtnsBarraHerram.Name = "Lbl_ConfigBtnsBarraHerram";
+            this.Lbl_ConfigBtnsBarraHerram.Size = new System.Drawing.Size(408, 16);
+            this.Lbl_ConfigBtnsBarraHerram.TabIndex = 52;
+            this.Lbl_ConfigBtnsBarraHerram.Text = "Mostrar Botones Navegacion en Barra de Herramienta";
+            // 
+            // Chk_ConfigBtnsBarraHerram
+            // 
+            this.Chk_ConfigBtnsBarraHerram.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Usuarios, "Cnfg_BarraHerramientas", true));
+            this.Chk_ConfigBtnsBarraHerram.Location = new System.Drawing.Point(431, 256);
+            this.Chk_ConfigBtnsBarraHerram.Name = "Chk_ConfigBtnsBarraHerram";
+            this.Chk_ConfigBtnsBarraHerram.Size = new System.Drawing.Size(23, 24);
+            this.Chk_ConfigBtnsBarraHerram.TabIndex = 53;
+            this.Chk_ConfigBtnsBarraHerram.UseVisualStyleBackColor = true;
+            // 
             // Frm_Usuarios
             // 
             this.AcceptButton = this.Btn_Aceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(827, 545);
+            this.ClientSize = new System.Drawing.Size(827, 551);
+            this.Controls.Add(this.Lbl_ConfigBtnsBarraHerram);
+            this.Controls.Add(this.Lbl_PaisUso);
+            this.Controls.Add(this.Lbl_FormatoFecha);
+            this.Controls.Add(this.Lbl_FondoEscritorio);
+            this.Controls.Add(this.Lbl_Idioma);
             this.Controls.Add(this.Grd_Usuarios);
             this.Controls.Add(this.TS_BarraHerramientas);
             this.Controls.Add(this.Lbl_IDUsuario);
@@ -755,6 +776,7 @@
             this.Controls.Add(this.Pan_Elementos);
             this.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -764,6 +786,7 @@
             this.Style = MetroFramework.MetroColorStyle.Brown;
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.Frm_Usuarios_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyPress_JF);
             this.TS_BarraHerramientas.ResumeLayout(false);
             this.TS_BarraHerramientas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Usuarios)).EndInit();
@@ -848,5 +871,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn iDUsuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn Col_Empresa;
         private System.Windows.Forms.DataGridViewComboBoxColumn Col_Grupo;
+        private System.Windows.Forms.Label Lbl_ConfigBtnsBarraHerram;
+        private System.Windows.Forms.CheckBox Chk_ConfigBtnsBarraHerram;
     }
 }

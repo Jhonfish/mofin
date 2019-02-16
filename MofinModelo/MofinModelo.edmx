@@ -105,8 +105,10 @@
           <Property Name="Fec_UltimAct" Type="date" />
           <Property Name="Trim_Mes" Type="tinyint" />
           <Property Name="Trim_Ano" Type="smallint" />
-          <Property Name="Trim_NroOperac" Type="smallint" />
-          <Property Name="Trim_MontoOperac" Type="money" />
+          <Property Name="Trim_NroOperFin" Type="smallint" />
+          <Property Name="Trim_NroOperTrans" Type="smallint" />
+          <Property Name="Trim_MtoTransac" Type="money" />
+          <Property Name="Trim_MtoFinanc" Type="money" />
           <Property Name="MapaEmpresa" Type="text" />
         </EntityType>
         <EntityType Name="C_FirBenAcc">
@@ -674,14 +676,16 @@
           <Property Name="Fec_UltimAct" Type="DateTime" Precision="0" />
           <Property Name="Trim_Mes" Type="Byte" />
           <Property Name="Trim_Ano" Type="Int16" />
-          <Property Name="Trim_NroOperac" Type="Int16" />
-          <Property Name="Trim_MontoOperac" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="MapaEmpresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="C_HistActClientes" Relationship="Self.FK_C_HistActClientes_C_Clientes" FromRole="C_Clientes" ToRole="C_HistActClientes" />
           <NavigationProperty Name="O_HistPerfOperac" Relationship="Self.FK_O_HistPerfOperac_C_Clientes" FromRole="C_Clientes" ToRole="O_HistPerfOperac" />
           <NavigationProperty Name="O_Observaciones" Relationship="Self.FK_O_Observaciones_C_Clientes" FromRole="C_Clientes" ToRole="O_Observaciones" />
           <NavigationProperty Name="C_FirBenAcc" Relationship="MonitorOperacionesModelo.FK_C_FirBenAcc_C_Clientes" FromRole="C_Clientes" ToRole="C_FirBenAcc" />
           <NavigationProperty Name="C_ProdServ" Relationship="MonitorOperacionesModelo.FK_C_ProdServ_C_Clientes" FromRole="C_Clientes" ToRole="C_ProdServ" />
+          <Property Name="Trim_MtoFinanc" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Trim_MtoTransac" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Trim_NroOperFin" Type="Int16" />
+          <Property Name="Trim_NroOperTrans" Type="Int16" />
         </EntityType>
         <EntityType Name="C_FirBenAcc">
           <Key>
@@ -1172,6 +1176,10 @@
           <EntitySetMapping Name="C_Clientes">
             <EntityTypeMapping TypeName="MonitorOperacionesModelo.C_Clientes">
               <MappingFragment StoreEntitySet="C_Clientes">
+                <ScalarProperty Name="Trim_NroOperTrans" ColumnName="Trim_NroOperTrans" />
+                <ScalarProperty Name="Trim_NroOperFin" ColumnName="Trim_NroOperFin" />
+                <ScalarProperty Name="Trim_MtoTransac" ColumnName="Trim_MtoTransac" />
+                <ScalarProperty Name="Trim_MtoFinanc" ColumnName="Trim_MtoFinanc" />
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
                 <ScalarProperty Name="TipoPersona" ColumnName="TipoPersona" />
@@ -1256,8 +1264,6 @@
                 <ScalarProperty Name="Fec_UltimAct" ColumnName="Fec_UltimAct" />
                 <ScalarProperty Name="Trim_Mes" ColumnName="Trim_Mes" />
                 <ScalarProperty Name="Trim_Ano" ColumnName="Trim_Ano" />
-                <ScalarProperty Name="Trim_NroOperac" ColumnName="Trim_NroOperac" />
-                <ScalarProperty Name="Trim_MontoOperac" ColumnName="Trim_MontoOperac" />
                 <ScalarProperty Name="MapaEmpresa" ColumnName="MapaEmpresa" />
               </MappingFragment>
             </EntityTypeMapping>

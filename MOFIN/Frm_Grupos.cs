@@ -67,6 +67,76 @@ namespace MOFIN
                 this.TSB_Imprimir.Enabled = Entorno.vs_Maestro ? true : r_CtrlAccGruposOpciones.Grupos_P == null ? false : (bool)r_CtrlAccGruposOpciones.Grupos_P;
             }
         }
+        private void TSB_Primero_Click(object sender, EventArgs e)
+        {
+            BS_Grupos.MoveFirst();
+            TSB_ActualizaBotonesNavegacion();
+        }
+
+        private void TSB_Anterior_Click(object sender, EventArgs e)
+        {
+            BS_Grupos.MovePrevious();
+            TSB_ActualizaBotonesNavegacion();
+        }
+
+        private void TSB_Siguiente_Click(object sender, EventArgs e)
+        {
+            BS_Grupos.MoveNext();
+            TSB_ActualizaBotonesNavegacion();
+        }
+
+        private void TSB_Ultimo_Click(object sender, EventArgs e)
+        {
+            BS_Grupos.MoveLast();
+            TSB_ActualizaBotonesNavegacion();
+        }
+
+        private void KeyPress_JF(object sender, KeyEventArgs e)
+        {
+            // Activar el KeyPreview = true en el formulario
+
+            if ((ActiveControl.GetType().Name != "DataGridView") & (this.TSB_Salir.Enabled) & (e.KeyValue == 27 | e.KeyValue == 33 | e.KeyValue == 34 | e.KeyValue == 35 |
+                                e.KeyValue == 36 | e.KeyValue == 36 | e.KeyValue == 46 | e.KeyValue == 116 | e.KeyValue == 117 | e.KeyValue == 118 | e.KeyValue == 119))
+            {
+                //MessageBox.Show(e.KeyCode + " | " + e.KeyData + " | " + e.KeyValue);
+                //MessageBox.Show(sender.GetType().ToString());
+                //MessageBox.Show(ActiveControl.GetType().Name);
+
+                switch (e.KeyValue)
+                {
+                    case 27:
+                        this.TSB_Salir_Click(false, e);
+                        break;
+                    case 33:
+                        this.TSB_Anterior_Click(false, e);
+                        break;
+                    case 34:
+                        this.TSB_Siguiente_Click(false, e);
+                        break;
+                    case 35:
+                        this.TSB_Ultimo_Click(false, e);
+                        break;
+                    case 36:
+                        this.TSB_Primero_Click(false, e);
+                        break;
+                    case 46:
+                    case 118:
+                        this.TSB_Eliminar_Click(false, e);
+                        break;
+                    case 116:
+                        this.TSB_Agregar_Click(false, e);
+                        break;
+                    case 117:
+                        this.TSB_Modificar_Click(false, e);
+                        break;
+                    case 119:
+                        this.TSB_Imprimir_Click(false, e);
+                        break;
+                }
+            }
+
+        }
+
 
         private void Btn_Aceptar_Click(object sender, EventArgs e)
         {
@@ -137,32 +207,12 @@ namespace MOFIN
                 MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9011), MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-        private void TSB_Primero_Click(object sender, EventArgs e)
+        private void TSB_Imprimir_Click(object sender, EventArgs e)
         {
-            BS_Grupos.MoveFirst();
-            TSB_ActualizaBotonesNavegacion();
+
         }
 
-        private void TSB_Anterior_Click(object sender, EventArgs e)
-        {
-            BS_Grupos.MovePrevious();
-            TSB_ActualizaBotonesNavegacion();
-        }
-
-        private void TSB_Siguiente_Click(object sender, EventArgs e)
-        {
-            BS_Grupos.MoveNext();
-            TSB_ActualizaBotonesNavegacion();
-        }
-
-        private void TSB_Ultimo_Click(object sender, EventArgs e)
-        {
-            BS_Grupos.MoveLast();
-            TSB_ActualizaBotonesNavegacion();
-        }
-
-        //**************
+      //**************
         // Eventos del formulario
         //**************
 
@@ -283,49 +333,58 @@ namespace MOFIN
         }
         private void Asigna_Nombres(object sender, EventArgs e)
         {
-            this.Text = MOFIN_LIB.Funciones._Mens_Idioma(2300);
-            this.Lbl_Codigo.Text = MOFIN_LIB.Funciones._Mens_Idioma(1001);
-            this.Lbl_Nombre.Text = MOFIN_LIB.Funciones._Mens_Idioma(1002);
+            this.Text = Funciones._Mens_Idioma(7300);
+            this.Lbl_Codigo.Text = Funciones._Mens_Idioma(1001);
+            this.Lbl_Nombre.Text = Funciones._Mens_Idioma(1002);
 
-            this.Pag_Clientes.Text = MOFIN_LIB.Funciones._Mens_Idioma(2321);
+            this.Pag_Clientes.Text = Funciones._Mens_Idioma(7321);
                 this.Chk_Clientes.Text = this.Pag_Clientes.Text;
-                this.Chk_CliMonitor.Text= MOFIN_LIB.Funciones._Mens_Idioma(2322);
-                this.Chk_CliBusqueda.Text= MOFIN_LIB.Funciones._Mens_Idioma(2323);
+                this.Chk_CliMonitor.Text= Funciones._Mens_Idioma(7322);
+                this.Chk_CliBusqueda.Text= Funciones._Mens_Idioma(7323);
 
-            this.Pag_Operaciones.Text = MOFIN_LIB.Funciones._Mens_Idioma(2331);
+            this.Pag_Operaciones.Text = Funciones._Mens_Idioma(7331);
                 this.Chk_MonitorOperaciones.Text = this.Pag_Operaciones.Text;
-                this.Chk_MonFinanciero.Text = MOFIN_LIB.Funciones._Mens_Idioma(2332);
-                this.Chk_MonTransaccional.Text = MOFIN_LIB.Funciones._Mens_Idioma(2333);
+                this.Chk_MonFinanciero.Text = Funciones._Mens_Idioma(7332);
+                this.Chk_MonTransaccional.Text = Funciones._Mens_Idioma(7333);
 
-            this.Pag_Tablas.Text = MOFIN_LIB.Funciones._Mens_Idioma(2341);
+            this.Pag_Tablas.Text = Funciones._Mens_Idioma(7341);
                 this.Chk_TablasMaestras.Text = this.Pag_Tablas.Text;
-                this.Chk_TabMaestras.Text = MOFIN_LIB.Funciones._Mens_Idioma(2342);
+                this.Chk_TabMaestras.Text = Funciones._Mens_Idioma(7342);
 
-            this.Pag_Reportes.Text = MOFIN_LIB.Funciones._Mens_Idioma(2351);
+            this.Pag_Reportes.Text = Funciones._Mens_Idioma(7351);
                 this.Chk_Reportes.Text = this.Pag_Reportes.Text;
 
-            this.Pag_OpcSistema.Text = MOFIN_LIB.Funciones._Mens_Idioma(2311);
+            this.Pag_OpcSistema.Text = Funciones._Mens_Idioma(7311);
                 this.Chk_Herramientas.Text = this.Pag_OpcSistema.Text;
-                this.Chk_HerUsuarios.Text = MOFIN_LIB.Funciones._Mens_Idioma(2200);
-                this.Chk_HerGrupos.Text = MOFIN_LIB.Funciones._Mens_Idioma(2300);
-                this.Chk_HerEmpresas.Text = MOFIN_LIB.Funciones._Mens_Idioma(2100);
+                this.Chk_HerUsuarios.Text = Funciones._Mens_Idioma(7200);
+                this.Chk_HerGrupos.Text = Funciones._Mens_Idioma(7300);
+                this.Chk_HerEmpresas.Text = Funciones._Mens_Idioma(7100);
 
-            this.TSB_Primero.Text = MOFIN_LIB.Funciones._Mens_Idioma(131);
-            this.TSB_Anterior.Text = MOFIN_LIB.Funciones._Mens_Idioma(132);
-            this.TSB_Siguiente.Text = MOFIN_LIB.Funciones._Mens_Idioma(133);
-            this.TSB_Ultimo.Text = MOFIN_LIB.Funciones._Mens_Idioma(134);
-            this.TSB_Agregar.Text = MOFIN_LIB.Funciones._Mens_Idioma(136);
-            this.TSB_Modificar.Text = MOFIN_LIB.Funciones._Mens_Idioma(137);
-            this.TSB_Eliminar.Text = MOFIN_LIB.Funciones._Mens_Idioma(138);
-            this.TSB_Imprimir.Text = MOFIN_LIB.Funciones._Mens_Idioma(139);
-            this.TSB_Salir.Text = MOFIN_LIB.Funciones._Mens_Idioma(140);
+            this.TSB_Primero.Text = Funciones._Mens_Idioma(131);
+            this.TSB_Anterior.Text = Funciones._Mens_Idioma(132);
+            this.TSB_Siguiente.Text = Funciones._Mens_Idioma(133);
+            this.TSB_Ultimo.Text = Funciones._Mens_Idioma(134);
+            this.TSB_Agregar.Text = Funciones._Mens_Idioma(136);
+            this.TSB_Modificar.Text = Funciones._Mens_Idioma(137);
+            this.TSB_Eliminar.Text = Funciones._Mens_Idioma(138);
+            this.TSB_Imprimir.Text = Funciones._Mens_Idioma(139);
+            this.TSB_Salir.Text = Funciones._Mens_Idioma(140);
 
-            this.Col_Codigo.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1001);
-            this.Col_Nombre.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1002);
+            this.Col_Codigo.HeaderText = Funciones._Mens_Idioma(1001);
+            this.Col_Nombre.HeaderText = Funciones._Mens_Idioma(1002);
 
-            MOFIN_LIB.Funciones.TTT_Btn(Btn_Aceptar, MOFIN_LIB.Funciones._Mens_Idioma(141));
-            MOFIN_LIB.Funciones.TTT_Btn(Btn_Cancelar, MOFIN_LIB.Funciones._Mens_Idioma(142));
+            Funciones.TTT_Btn(Btn_Aceptar, Funciones._Mens_Idioma(141));
+            Funciones.TTT_Btn(Btn_Cancelar, Funciones._Mens_Idioma(142));
+
+            Funciones.TTT_Pic(Pic_Incluir, Funciones._Mens_Idioma(136));
+            Funciones.TTT_Pic(Pic_Modificar, Funciones._Mens_Idioma(137));
+            Funciones.TTT_Pic(Pic_Eliminar, Funciones._Mens_Idioma(138));
+            Funciones.TTT_Pic(Pic_Imprimir, Funciones._Mens_Idioma(139));
+            Funciones.TTT_Pic(Pic_ImpExp, Funciones._Mens_Idioma(1024));
+
         }
+
+
     }
 }
     

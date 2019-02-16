@@ -18,6 +18,9 @@ namespace MOFIN_LIB
         public static string vs_Empresa = "001";
         public static string vs_Grupo = "001";
         public static string vs_Usuario = "JMARIN";
+        public static bool vs_CnfgBtnsNaveg = true;
+        public static byte vs_TipoValoracCliente = 1;   
+
     }
     public static class Funciones
     {
