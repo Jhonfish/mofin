@@ -25,6 +25,12 @@ namespace MOFIN
         public Frm_Usuarios()
         {
             InitializeComponent();
+
+            this.TSB_Primero.Visible = Entorno.vs_CnfgBtnsNaveg;
+            this.TSB_Anterior.Visible = Entorno.vs_CnfgBtnsNaveg;
+            this.TSB_Siguiente.Visible = Entorno.vs_CnfgBtnsNaveg;
+            this.TSB_Ultimo.Visible = Entorno.vs_CnfgBtnsNaveg;
+            this.ts_Sep1.Visible = Entorno.vs_CnfgBtnsNaveg;
             this.Asigna_Nombres(null, null);
         }
 
@@ -287,7 +293,7 @@ namespace MOFIN
             this.Opc_Idioma2.Text = Funciones._Mens_Idioma(312);
             this.Opc_Pais1.Text = Funciones._Mens_Idioma(301);
             this.Opc_Pais2.Text = Funciones._Mens_Idioma(302);
-            this.Lbl_ConfigBtnsBarraHerram.Text = Funciones._Mens_Idioma(7209);
+            this.Chk_ConfigBtnsBarraHerram.Text = Funciones._Mens_Idioma(7209);
 
             this.TSB_Primero.Text = Funciones._Mens_Idioma(131);
             this.TSB_Anterior.Text = Funciones._Mens_Idioma(132);

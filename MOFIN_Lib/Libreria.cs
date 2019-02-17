@@ -85,6 +85,30 @@ namespace MOFIN_LIB
             string MK = DateTime.Now.Day.ToString() + "BILLFISH" + DateTime.Now.Hour.ToString();
             return (MK);
         }
-
+        public static void Exportar_Excel(DataGridView Grd_Nombre)
+        {
+            Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);  
+            Microsoft.Office.Interop.Excel._Worksheet worksheet = workbook.Sheets[1] as Microsoft.Office.Interop.Excel.Worksheet;
+            if (worksheet != null)
+                worksheet.Name = "MOFIN";
+            app.Visible = true;
+            worksheet = workbook.Sheets[1];
+            worksheet = workbook.ActiveSheet;
+            for (int i = 1; i < Grd_Nombre.Columns.Count + 1; i++)
+            {
+                worksheet.Cells[1, i] = Grd_Nombre.Columns[i - 1].HeaderText;
+            }
+            for (int i = 0; i < Grd_Nombre.Rows.Count; i++)
+            {
+                for (int j = 0; j < Grd_Nombre.Columns.Count; j++)
+                {
+                    if (Grd_Nombre.Rows[i].Cells[j].Value != null)
+                        worksheet.Cells[i + 2, j + 1] = Grd_Nombre.Rows[i].Cells[j].Value;
+                    else
+                        worksheet.Cells[i + 2, j + 1] = "";
+                }
+            }
+        }
     }
 }

@@ -15,10 +15,12 @@ using MOFIN_LIB;
 using CrystalDecisions.CrystalReports.Engine;
 
 
+
 namespace MOFIN
 {
     public partial class Frm_OpeTransac : MetroForm
     {
+
         bool vl_EsNuevo = false;
         C_Clientes r_Cliente = new C_Clientes();
         O_Observaciones r_Observaciones = new O_Observaciones();
@@ -34,8 +36,6 @@ namespace MOFIN
 
         private void Frm_OpeTransaccionales_Load(object sender, EventArgs e)
         {
-            this.Cmb_TipArchExport.SelectedIndex = 0;
-            this.Height = 610;
             BS_CClientes.DataSource = NC_Clientes.Listar();
             BS_OObservaciones.DataSource = NO_Observaciones.Listar();
             BS_OHistPerfOperac.DataSource = NO_HistPerfOperac.Listar();
@@ -64,7 +64,6 @@ namespace MOFIN
             this.Btn_ObsMod.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperTransac_M == null ? false : (bool)r_GrupoOpciones.OperTransac_M;
             this.Btn_ObsEli.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperTransac_E == null ? false : (bool)r_GrupoOpciones.OperTransac_E;
             this.Chk_ElimOper.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperTransac_E == null ? false : (bool)r_GrupoOpciones.OperTransac_E;
-            this.Chk_Exportar.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperTransac_R == null ? false : (bool)r_GrupoOpciones.OperTransac_R;
             this.Btn_Importar.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.OperTransac_R == null ? false : (bool)r_GrupoOpciones.OperTransac_R;
 
             this.Pan_BtnsPerfil.Enabled = true;
@@ -81,9 +80,6 @@ namespace MOFIN
 
         private void Modo_Edicion(int vl_Opcion)
         {
-            this.Chk_Exportar.Checked = false;
-            this.Chk_Exportar_CheckStateChanged(null, null);
-
             this.Btn_PerfInc.Enabled = false;
             this.Btn_PerfMod.Enabled = false;
             this.Btn_PerfEli.Enabled = false;
@@ -91,7 +87,6 @@ namespace MOFIN
             this.Btn_ObsMod.Enabled = false;
             this.Btn_ObsEli.Enabled = false;
             this.Chk_ElimOper.Enabled = false;
-            this.Chk_Exportar.Enabled = false;
             this.Btn_Importar.Enabled = false;
 
             this.Pan_BtnsPerfil.Enabled = false;
@@ -145,8 +140,6 @@ namespace MOFIN
             this.Lbl_Hasta2.Text = Funciones._Mens_Idioma(1014);
             this.Chk_ExcMeses.Text = Funciones._Mens_Idioma(13012);
             this.Chk_IncSoloExcep.Text = Funciones._Mens_Idioma(13013);
-            this.Lbl_ArcExpNme.Text = Funciones._Mens_Idioma(1002);
-            this.Lbl_ArcExpTip.Text = Funciones._Mens_Idioma(1017);
             this.Lbl_Perfil.Text = Funciones._Mens_Idioma(13021);
             this.Lbl_Obsvaciones.Text = Funciones._Mens_Idioma(1016);
             this.Lbl_DetOperaciones.Text = Funciones._Mens_Idioma(13030);
@@ -154,8 +147,8 @@ namespace MOFIN
             Funciones.TTT_Btn(Btn_Aceptar, Funciones._Mens_Idioma(141));
             Funciones.TTT_Btn(Btn_Cancelar, Funciones._Mens_Idioma(142));
             Funciones.TTT_Btn(Btn_Procesar, Funciones._Mens_Idioma(1018));
-            Funciones.TTT_Chk(Chk_Exportar, Funciones._Mens_Idioma(1019));
-            Funciones.TTT_Btn(Btn_Exportar, Funciones._Mens_Idioma(1020));
+            Funciones.TTT_Btn(Btn_Export_OpAfec, Funciones._Mens_Idioma(1025));
+            Funciones.TTT_Btn(Btn_Export_OpClie, Funciones._Mens_Idioma(1025));
             Funciones.TTT_Btn(Btn_PerfInc, Funciones._Mens_Idioma(136));
             Funciones.TTT_Btn(Btn_PerfMod, Funciones._Mens_Idioma(137));
             Funciones.TTT_Btn(Btn_PerfEli, Funciones._Mens_Idioma(138));
@@ -288,17 +281,20 @@ namespace MOFIN
         }
         private void Btn_PerfEli_Click(object sender, EventArgs e)
         {
+
             r_HistPerfOperac = BS_OHistPerfOperac.Current as O_HistPerfOperac;
             string vl_RegEliminar = r_HistPerfOperac.Fecha.ToShortDateString() + " / " + r_HistPerfOperac.Mto_Perfil.ToString() + " / " + r_HistPerfOperac.Nro_Transacciones.ToString();
-            DialogResult vl_Resp = MessageBox.Show("Desea Eliminar este Registro? " + "\n\n" + vl_RegEliminar,
-                "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            DialogResult vl_Resp = MessageBox.Show(Funciones._Mens_Idioma(9010) + "\n\n" + vl_RegEliminar,
+                Funciones._Mens_Idioma(201), MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
             if (vl_Resp == DialogResult.Yes)
             {
                 //                NUsuarios.Elimiar(t_Usuarios);
                 //                BS_Usuarios.DataSource = NUsuarios.Listar();
                 NO_HistPerfOperac.Elimiar(r_HistPerfOperac);
                 BS_OHistPerfOperac.DataSource = NO_HistPerfOperac.Listar();
-                MessageBox.Show("Se eliminó el registro actual", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Funciones._Mens_Idioma(9011), Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -341,25 +337,6 @@ namespace MOFIN
                 MessageBox.Show(vl_ArchivoImport.FileName);
             //this.Txt_NmeArchExport.Text = vl_ArchivoImport.FileName;
 
-        }
-
-        private void Chk_Exportar_CheckStateChanged(object sender, EventArgs e)
-        {
-            if (this.Chk_Exportar.Checked == true)
-                this.Height = 675;
-            else
-                this.Height = 610;
-        }
-        private void Txt_NmeArchExport_DoubleClick(object sender, EventArgs e)
-        {
-            OpenFileDialog vl_ArchivoExport = new OpenFileDialog();
-            vl_ArchivoExport.Filter = this.Cmb_TipArchExport.Text.Trim();
-            vl_ArchivoExport.CheckFileExists = false;
-            if (vl_ArchivoExport.ShowDialog() == DialogResult.OK)
-                this.Txt_NmeArchExport.Text = vl_ArchivoExport.FileName;
-        }
-        private void Btn_Exportar_Click(object sender, EventArgs e)
-        {
         }
 
         private void Chk_Reporte_CheckedChanged(object sender, EventArgs e)
@@ -512,7 +489,11 @@ namespace MOFIN
                     vl_Obsers = vl_Obsers + r_Observaciones.fecha.ToShortDateString() + ": " + r_Observaciones.Observacion.Trim() + " \n";
                 BS_OObservaciones.MoveNext();
             }
- 
+
+            //BS_RepOperTrans_Cliente_Encabezado.DataSource = 
+            //BS_RepOperTrans_Cliente_Detalles.DataSource = Lst_Reporte;
+            
+
             BS_OHistPerfOperac.DataSource = NO_HistPerfOperac.ListarPorCodigoTipo(r_Cliente.Codigo, 2);
             BS_OObservaciones.DataSource = NO_Observaciones.ListarPorCodigoTipo(r_Cliente.Codigo, 2);
 
@@ -857,6 +838,15 @@ namespace MOFIN
                 if ((bool)row.Cells["Col_Alarma"].Value == true & (string)row.Cells["Col_Comentarios"].Value == "")
                     row.DefaultCellStyle.ForeColor = Color.Red;
             }
+        }
+        private void Btn_Export_OpAfec_Click(object sender, EventArgs e)
+        {
+            Funciones.Exportar_Excel(Grd_MonitorFinanciero);
+        }
+
+        private void Btn_Export_OpClie_Click(object sender, EventArgs e)
+        {
+            Funciones.Exportar_Excel(Grd_DetOperaciones);
         }
 
     }

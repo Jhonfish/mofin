@@ -12,8 +12,7 @@ using MofinModelo;
 using MofinModeloEntorno;
 using MOFIN_Lib;
 using MOFIN_LIB;
-
-
+using System.Data.OleDb;
 
 namespace MOFIN
 {
@@ -91,7 +90,41 @@ namespace MOFIN
 
         private void button4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(MOFIN_LIB.Funciones.MasterKey(""));
+            OpenFileDialog OFD = new OpenFileDialog();
+            OFD.Filter = "Excel |*.xls;*.xlsx;*.xlsm";
+            OFD.InitialDirectory = "Desktop";
+            string Ruta = "";
+            if (OFD.ShowDialog() == DialogResult.OK)
+            {
+                Ruta = OFD.FileName;
+            }
+            GRD_Excel.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; //se ajustan las
+                                                                                   //columnas al ancho del DataGridview para que no quede espacio en blanco (opcional)
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Ruta + @";Extended Properties=""Excel 12.0 Xml;HDR=YES;""";
+            string query = "SELECT * FROM [MOFIN$]";     // "SELECT ROW_NUMBER(2) NoPARTE, DESCRIPCION, TOTAL FROM [Hoja1$]";
+            //Creamos el provider
+            OleDbConnection excelConnection = new OleDbConnection(connectionString);
+            //Lo abrimos
+            excelConnection.Open();
+            
+            //Creamos un Data Adapter que extraiga los datos necesarios(todos) del provider
+            OleDbDataAdapter data = new OleDbDataAdapter(query, excelConnection);
+            
+            //Creamos una tabla
+            DataTable dTable = new DataTable();
+            DataSet dSet = new DataSet();
+            
+            //Usando el Data Adapter que tiene los datos seleccionados, rellenamos la tabla.
+            if (dTable == null)
+            {
+
+            }
+            data.Fill(dSet);
+            // Conectamos el BindingSource con la Tabla.
+            ///  DBSource.DataSource = dTable;
+            // Conectamos el DataGridView con el BindingSource
+            GRD_Excel.DataSource = dSet; // DBSource;
+            GRD_Excel.Refresh();
         }
 
         private void Prueba_KeyDown(object sender, KeyEventArgs e)

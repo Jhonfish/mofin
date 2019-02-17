@@ -44,7 +44,7 @@
             this.TSB_Anterior = new System.Windows.Forms.ToolStripButton();
             this.TSB_Siguiente = new System.Windows.Forms.ToolStripButton();
             this.TSB_Ultimo = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ts_Sep1 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_Agregar = new System.Windows.Forms.ToolStripButton();
             this.TSB_Modificar = new System.Windows.Forms.ToolStripButton();
             this.TSB_Eliminar = new System.Windows.Forms.ToolStripButton();
@@ -56,6 +56,7 @@
             this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_Usuarios = new System.Windows.Forms.BindingSource(this.components);
             this.Pan_Elementos = new System.Windows.Forms.Panel();
+            this.Chk_ConfigBtnsBarraHerram = new System.Windows.Forms.CheckBox();
             this.Pan_BotAcpcan_EmpAcc = new System.Windows.Forms.Panel();
             this.Btn_EmpAcc_Cancelar = new System.Windows.Forms.Button();
             this.Btn_EmpAcc_Aceptar = new System.Windows.Forms.Button();
@@ -86,8 +87,6 @@
             this.Btn_EmpAcc_Eli = new System.Windows.Forms.Button();
             this.Btn_EmpAcc_Mod = new System.Windows.Forms.Button();
             this.BS_Grupo_Opciones = new System.Windows.Forms.BindingSource(this.components);
-            this.Lbl_ConfigBtnsBarraHerram = new System.Windows.Forms.Label();
-            this.Chk_ConfigBtnsBarraHerram = new System.Windows.Forms.CheckBox();
             this.TS_BarraHerramientas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Usuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).BeginInit();
@@ -137,7 +136,7 @@
             // 
             // Lbl_FondoEscritorio
             // 
-            this.Lbl_FondoEscritorio.Location = new System.Drawing.Point(338, 170);
+            this.Lbl_FondoEscritorio.Location = new System.Drawing.Point(338, 173);
             this.Lbl_FondoEscritorio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_FondoEscritorio.Name = "Lbl_FondoEscritorio";
             this.Lbl_FondoEscritorio.Size = new System.Drawing.Size(205, 16);
@@ -147,7 +146,7 @@
             // 
             // Lbl_Idioma
             // 
-            this.Lbl_Idioma.Location = new System.Drawing.Point(624, 170);
+            this.Lbl_Idioma.Location = new System.Drawing.Point(624, 173);
             this.Lbl_Idioma.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_Idioma.Name = "Lbl_Idioma";
             this.Lbl_Idioma.Size = new System.Drawing.Size(150, 16);
@@ -156,7 +155,7 @@
             // 
             // Lbl_PaisUso
             // 
-            this.Lbl_PaisUso.Location = new System.Drawing.Point(624, 247);
+            this.Lbl_PaisUso.Location = new System.Drawing.Point(624, 252);
             this.Lbl_PaisUso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_PaisUso.Name = "Lbl_PaisUso";
             this.Lbl_PaisUso.Size = new System.Drawing.Size(150, 16);
@@ -165,7 +164,7 @@
             // 
             // Lbl_FormatoFecha
             // 
-            this.Lbl_FormatoFecha.Location = new System.Drawing.Point(338, 247);
+            this.Lbl_FormatoFecha.Location = new System.Drawing.Point(338, 252);
             this.Lbl_FormatoFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_FormatoFecha.Name = "Lbl_FormatoFecha";
             this.Lbl_FormatoFecha.Size = new System.Drawing.Size(229, 16);
@@ -222,7 +221,7 @@
             this.TSB_Anterior,
             this.TSB_Siguiente,
             this.TSB_Ultimo,
-            this.toolStripSeparator1,
+            this.ts_Sep1,
             this.TSB_Agregar,
             this.TSB_Modificar,
             this.TSB_Eliminar,
@@ -276,10 +275,10 @@
             this.TSB_Ultimo.Text = "Último";
             this.TSB_Ultimo.Click += new System.EventHandler(this.TSB_Ultimo_Click);
             // 
-            // toolStripSeparator1
+            // ts_Sep1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 43);
+            this.ts_Sep1.Name = "ts_Sep1";
+            this.ts_Sep1.Size = new System.Drawing.Size(6, 43);
             // 
             // TSB_Agregar
             // 
@@ -393,8 +392,20 @@
             this.Pan_Elementos.Controls.Add(this.Pan_BtnsEmpAccesos);
             this.Pan_Elementos.Location = new System.Drawing.Point(330, 75);
             this.Pan_Elementos.Name = "Pan_Elementos";
-            this.Pan_Elementos.Size = new System.Drawing.Size(490, 476);
+            this.Pan_Elementos.Size = new System.Drawing.Size(490, 459);
             this.Pan_Elementos.TabIndex = 34;
+            // 
+            // Chk_ConfigBtnsBarraHerram
+            // 
+            this.Chk_ConfigBtnsBarraHerram.AutoSize = true;
+            this.Chk_ConfigBtnsBarraHerram.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Chk_ConfigBtnsBarraHerram.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Usuarios, "Cnfg_BarraHerramientas", true));
+            this.Chk_ConfigBtnsBarraHerram.Location = new System.Drawing.Point(8, 254);
+            this.Chk_ConfigBtnsBarraHerram.Name = "Chk_ConfigBtnsBarraHerram";
+            this.Chk_ConfigBtnsBarraHerram.Size = new System.Drawing.Size(427, 20);
+            this.Chk_ConfigBtnsBarraHerram.TabIndex = 53;
+            this.Chk_ConfigBtnsBarraHerram.Text = "Mostrar Botones Navegacion en Barra de Herramienta";
+            this.Chk_ConfigBtnsBarraHerram.UseVisualStyleBackColor = true;
             // 
             // Pan_BotAcpcan_EmpAcc
             // 
@@ -736,32 +747,13 @@
             // 
             this.BS_Grupo_Opciones.DataSource = typeof(MofinModeloEntorno.Grupo_Opciones);
             // 
-            // Lbl_ConfigBtnsBarraHerram
-            // 
-            this.Lbl_ConfigBtnsBarraHerram.AutoSize = true;
-            this.Lbl_ConfigBtnsBarraHerram.Location = new System.Drawing.Point(338, 334);
-            this.Lbl_ConfigBtnsBarraHerram.Name = "Lbl_ConfigBtnsBarraHerram";
-            this.Lbl_ConfigBtnsBarraHerram.Size = new System.Drawing.Size(408, 16);
-            this.Lbl_ConfigBtnsBarraHerram.TabIndex = 52;
-            this.Lbl_ConfigBtnsBarraHerram.Text = "Mostrar Botones Navegacion en Barra de Herramienta";
-            // 
-            // Chk_ConfigBtnsBarraHerram
-            // 
-            this.Chk_ConfigBtnsBarraHerram.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Usuarios, "Cnfg_BarraHerramientas", true));
-            this.Chk_ConfigBtnsBarraHerram.Location = new System.Drawing.Point(431, 256);
-            this.Chk_ConfigBtnsBarraHerram.Name = "Chk_ConfigBtnsBarraHerram";
-            this.Chk_ConfigBtnsBarraHerram.Size = new System.Drawing.Size(23, 24);
-            this.Chk_ConfigBtnsBarraHerram.TabIndex = 53;
-            this.Chk_ConfigBtnsBarraHerram.UseVisualStyleBackColor = true;
-            // 
             // Frm_Usuarios
             // 
             this.AcceptButton = this.Btn_Aceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(827, 551);
-            this.Controls.Add(this.Lbl_ConfigBtnsBarraHerram);
+            this.ClientSize = new System.Drawing.Size(827, 537);
             this.Controls.Add(this.Lbl_PaisUso);
             this.Controls.Add(this.Lbl_FormatoFecha);
             this.Controls.Add(this.Lbl_FondoEscritorio);
@@ -822,7 +814,7 @@
         private System.Windows.Forms.ToolStripButton TSB_Anterior;
         private System.Windows.Forms.ToolStripButton TSB_Siguiente;
         private System.Windows.Forms.ToolStripButton TSB_Ultimo;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator ts_Sep1;
         private System.Windows.Forms.ToolStripButton TSB_Agregar;
         private System.Windows.Forms.ToolStripButton TSB_Modificar;
         private System.Windows.Forms.ToolStripButton TSB_Eliminar;
@@ -871,7 +863,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn iDUsuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn Col_Empresa;
         private System.Windows.Forms.DataGridViewComboBoxColumn Col_Grupo;
-        private System.Windows.Forms.Label Lbl_ConfigBtnsBarraHerram;
         private System.Windows.Forms.CheckBox Chk_ConfigBtnsBarraHerram;
     }
 }

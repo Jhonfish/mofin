@@ -126,9 +126,6 @@
             this.DTP_FecVencDocID = new System.Windows.Forms.DateTimePicker();
             this.Pag2 = new System.Windows.Forms.TabPage();
             this.Grd_CFirBenAcc = new System.Windows.Forms.DataGridView();
-            this.Col_BFANme = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_BFADocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_CFirBenAcc = new System.Windows.Forms.BindingSource(this.components);
             this.Pan_BenefAcepCanc = new System.Windows.Forms.Panel();
             this.Btn_BenefAceptar = new System.Windows.Forms.Button();
@@ -325,6 +322,9 @@
             this.BS_Grupo_Opciones = new System.Windows.Forms.BindingSource(this.components);
             this.BS_OOperfinancieras = new System.Windows.Forms.BindingSource(this.components);
             this.BS_OOperTransaccionales = new System.Windows.Forms.BindingSource(this.components);
+            this.Col_BFANme = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_BFADocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TS_BarraHerramientas.SuspendLayout();
             this.Tab_Clientes.SuspendLayout();
             this.Pag1.SuspendLayout();
@@ -479,7 +479,7 @@
             // 
             // Lbl_TrimMtoFinanc
             // 
-            this.Lbl_TrimMtoFinanc.Location = new System.Drawing.Point(479, 325);
+            this.Lbl_TrimMtoFinanc.Location = new System.Drawing.Point(433, 325);
             this.Lbl_TrimMtoFinanc.Name = "Lbl_TrimMtoFinanc";
             this.Lbl_TrimMtoFinanc.Size = new System.Drawing.Size(100, 15);
             this.Lbl_TrimMtoFinanc.TabIndex = 20;
@@ -488,7 +488,7 @@
             // 
             // Lbl_TipDocID
             // 
-            this.Lbl_TipDocID.Location = new System.Drawing.Point(3, 14);
+            this.Lbl_TipDocID.Location = new System.Drawing.Point(8, 14);
             this.Lbl_TipDocID.Name = "Lbl_TipDocID";
             this.Lbl_TipDocID.Size = new System.Drawing.Size(130, 15);
             this.Lbl_TipDocID.TabIndex = 1;
@@ -496,7 +496,7 @@
             // 
             // Lbl_FecVencDocID
             // 
-            this.Lbl_FecVencDocID.Location = new System.Drawing.Point(29, 44);
+            this.Lbl_FecVencDocID.Location = new System.Drawing.Point(34, 44);
             this.Lbl_FecVencDocID.Name = "Lbl_FecVencDocID";
             this.Lbl_FecVencDocID.Size = new System.Drawing.Size(120, 15);
             this.Lbl_FecVencDocID.TabIndex = 3;
@@ -504,7 +504,7 @@
             // 
             // Lbl_Nacionalidad
             // 
-            this.Lbl_Nacionalidad.Location = new System.Drawing.Point(3, 70);
+            this.Lbl_Nacionalidad.Location = new System.Drawing.Point(8, 70);
             this.Lbl_Nacionalidad.Name = "Lbl_Nacionalidad";
             this.Lbl_Nacionalidad.Size = new System.Drawing.Size(130, 15);
             this.Lbl_Nacionalidad.TabIndex = 5;
@@ -512,7 +512,7 @@
             // 
             // Lbl_PaisNacimiento
             // 
-            this.Lbl_PaisNacimiento.Location = new System.Drawing.Point(3, 101);
+            this.Lbl_PaisNacimiento.Location = new System.Drawing.Point(8, 101);
             this.Lbl_PaisNacimiento.Name = "Lbl_PaisNacimiento";
             this.Lbl_PaisNacimiento.Size = new System.Drawing.Size(130, 15);
             this.Lbl_PaisNacimiento.TabIndex = 7;
@@ -520,7 +520,7 @@
             // 
             // Lbl_PaisResidencia
             // 
-            this.Lbl_PaisResidencia.Location = new System.Drawing.Point(3, 129);
+            this.Lbl_PaisResidencia.Location = new System.Drawing.Point(8, 129);
             this.Lbl_PaisResidencia.Name = "Lbl_PaisResidencia";
             this.Lbl_PaisResidencia.Size = new System.Drawing.Size(130, 15);
             this.Lbl_PaisResidencia.TabIndex = 9;
@@ -528,7 +528,7 @@
             // 
             // Lbl_Estado
             // 
-            this.Lbl_Estado.Location = new System.Drawing.Point(3, 158);
+            this.Lbl_Estado.Location = new System.Drawing.Point(8, 158);
             this.Lbl_Estado.Name = "Lbl_Estado";
             this.Lbl_Estado.Size = new System.Drawing.Size(130, 15);
             this.Lbl_Estado.TabIndex = 11;
@@ -536,7 +536,7 @@
             // 
             // Lbl_Profesion
             // 
-            this.Lbl_Profesion.Location = new System.Drawing.Point(3, 185);
+            this.Lbl_Profesion.Location = new System.Drawing.Point(8, 185);
             this.Lbl_Profesion.Name = "Lbl_Profesion";
             this.Lbl_Profesion.Size = new System.Drawing.Size(130, 15);
             this.Lbl_Profesion.TabIndex = 25;
@@ -544,7 +544,7 @@
             // 
             // Lbl_ActivComercial
             // 
-            this.Lbl_ActivComercial.Location = new System.Drawing.Point(3, 213);
+            this.Lbl_ActivComercial.Location = new System.Drawing.Point(8, 213);
             this.Lbl_ActivComercial.Name = "Lbl_ActivComercial";
             this.Lbl_ActivComercial.Size = new System.Drawing.Size(130, 15);
             this.Lbl_ActivComercial.TabIndex = 27;
@@ -552,7 +552,7 @@
             // 
             // Lbl_TipoVinculo
             // 
-            this.Lbl_TipoVinculo.Location = new System.Drawing.Point(298, 27);
+            this.Lbl_TipoVinculo.Location = new System.Drawing.Point(237, 27);
             this.Lbl_TipoVinculo.Name = "Lbl_TipoVinculo";
             this.Lbl_TipoVinculo.Size = new System.Drawing.Size(130, 15);
             this.Lbl_TipoVinculo.TabIndex = 1;
@@ -561,7 +561,7 @@
             // 
             // Lbl_BenefName
             // 
-            this.Lbl_BenefName.Location = new System.Drawing.Point(298, 96);
+            this.Lbl_BenefName.Location = new System.Drawing.Point(237, 96);
             this.Lbl_BenefName.Name = "Lbl_BenefName";
             this.Lbl_BenefName.Size = new System.Drawing.Size(130, 15);
             this.Lbl_BenefName.TabIndex = 4;
@@ -570,7 +570,7 @@
             // 
             // Lbl_BenefDoc_ID
             // 
-            this.Lbl_BenefDoc_ID.Location = new System.Drawing.Point(298, 122);
+            this.Lbl_BenefDoc_ID.Location = new System.Drawing.Point(237, 122);
             this.Lbl_BenefDoc_ID.Name = "Lbl_BenefDoc_ID";
             this.Lbl_BenefDoc_ID.Size = new System.Drawing.Size(130, 15);
             this.Lbl_BenefDoc_ID.TabIndex = 6;
@@ -579,7 +579,7 @@
             // 
             // Lbl_BenefPaisNacim
             // 
-            this.Lbl_BenefPaisNacim.Location = new System.Drawing.Point(298, 148);
+            this.Lbl_BenefPaisNacim.Location = new System.Drawing.Point(237, 148);
             this.Lbl_BenefPaisNacim.Name = "Lbl_BenefPaisNacim";
             this.Lbl_BenefPaisNacim.Size = new System.Drawing.Size(130, 15);
             this.Lbl_BenefPaisNacim.TabIndex = 10;
@@ -588,7 +588,7 @@
             // 
             // Lbl_BenefNacionalidad
             // 
-            this.Lbl_BenefNacionalidad.Location = new System.Drawing.Point(298, 176);
+            this.Lbl_BenefNacionalidad.Location = new System.Drawing.Point(237, 176);
             this.Lbl_BenefNacionalidad.Name = "Lbl_BenefNacionalidad";
             this.Lbl_BenefNacionalidad.Size = new System.Drawing.Size(130, 15);
             this.Lbl_BenefNacionalidad.TabIndex = 12;
@@ -597,7 +597,7 @@
             // 
             // Lbl_BenefPaisResid
             // 
-            this.Lbl_BenefPaisResid.Location = new System.Drawing.Point(298, 204);
+            this.Lbl_BenefPaisResid.Location = new System.Drawing.Point(237, 204);
             this.Lbl_BenefPaisResid.Name = "Lbl_BenefPaisResid";
             this.Lbl_BenefPaisResid.Size = new System.Drawing.Size(130, 15);
             this.Lbl_BenefPaisResid.TabIndex = 14;
@@ -606,7 +606,7 @@
             // 
             // Lbl_BenefEstado
             // 
-            this.Lbl_BenefEstado.Location = new System.Drawing.Point(298, 233);
+            this.Lbl_BenefEstado.Location = new System.Drawing.Point(237, 233);
             this.Lbl_BenefEstado.Name = "Lbl_BenefEstado";
             this.Lbl_BenefEstado.Size = new System.Drawing.Size(130, 15);
             this.Lbl_BenefEstado.TabIndex = 16;
@@ -615,7 +615,7 @@
             // 
             // Lbl_BenefProfesion
             // 
-            this.Lbl_BenefProfesion.Location = new System.Drawing.Point(298, 261);
+            this.Lbl_BenefProfesion.Location = new System.Drawing.Point(237, 261);
             this.Lbl_BenefProfesion.Name = "Lbl_BenefProfesion";
             this.Lbl_BenefProfesion.Size = new System.Drawing.Size(130, 15);
             this.Lbl_BenefProfesion.TabIndex = 20;
@@ -624,7 +624,7 @@
             // 
             // Lbl_BenefVincPorcent
             // 
-            this.Lbl_BenefVincPorcent.Location = new System.Drawing.Point(298, 344);
+            this.Lbl_BenefVincPorcent.Location = new System.Drawing.Point(237, 344);
             this.Lbl_BenefVincPorcent.Name = "Lbl_BenefVincPorcent";
             this.Lbl_BenefVincPorcent.Size = new System.Drawing.Size(130, 15);
             this.Lbl_BenefVincPorcent.TabIndex = 26;
@@ -633,7 +633,7 @@
             // 
             // Lbl_BenefVincEmpresa
             // 
-            this.Lbl_BenefVincEmpresa.Location = new System.Drawing.Point(298, 318);
+            this.Lbl_BenefVincEmpresa.Location = new System.Drawing.Point(237, 318);
             this.Lbl_BenefVincEmpresa.Name = "Lbl_BenefVincEmpresa";
             this.Lbl_BenefVincEmpresa.Size = new System.Drawing.Size(130, 15);
             this.Lbl_BenefVincEmpresa.TabIndex = 60;
@@ -642,7 +642,7 @@
             // 
             // Lbl_BenefCriptomonedas
             // 
-            this.Lbl_BenefCriptomonedas.Location = new System.Drawing.Point(298, 289);
+            this.Lbl_BenefCriptomonedas.Location = new System.Drawing.Point(237, 289);
             this.Lbl_BenefCriptomonedas.Name = "Lbl_BenefCriptomonedas";
             this.Lbl_BenefCriptomonedas.Size = new System.Drawing.Size(170, 15);
             this.Lbl_BenefCriptomonedas.TabIndex = 58;
@@ -651,7 +651,7 @@
             // 
             // Lbl_Productos
             // 
-            this.Lbl_Productos.Location = new System.Drawing.Point(547, 243);
+            this.Lbl_Productos.Location = new System.Drawing.Point(529, 243);
             this.Lbl_Productos.Name = "Lbl_Productos";
             this.Lbl_Productos.Size = new System.Drawing.Size(150, 15);
             this.Lbl_Productos.TabIndex = 40;
@@ -659,7 +659,7 @@
             // 
             // Lbl_Servicios
             // 
-            this.Lbl_Servicios.Location = new System.Drawing.Point(144, 243);
+            this.Lbl_Servicios.Location = new System.Drawing.Point(162, 243);
             this.Lbl_Servicios.Name = "Lbl_Servicios";
             this.Lbl_Servicios.Size = new System.Drawing.Size(150, 15);
             this.Lbl_Servicios.TabIndex = 41;
@@ -667,7 +667,7 @@
             // 
             // Lbl_Criptomonedas
             // 
-            this.Lbl_Criptomonedas.Location = new System.Drawing.Point(346, 156);
+            this.Lbl_Criptomonedas.Location = new System.Drawing.Point(352, 156);
             this.Lbl_Criptomonedas.Name = "Lbl_Criptomonedas";
             this.Lbl_Criptomonedas.Size = new System.Drawing.Size(180, 15);
             this.Lbl_Criptomonedas.TabIndex = 39;
@@ -676,7 +676,7 @@
             // 
             // Lbl_VolOperaciones
             // 
-            this.Lbl_VolOperaciones.Location = new System.Drawing.Point(386, 128);
+            this.Lbl_VolOperaciones.Location = new System.Drawing.Point(392, 128);
             this.Lbl_VolOperaciones.Name = "Lbl_VolOperaciones";
             this.Lbl_VolOperaciones.Size = new System.Drawing.Size(140, 15);
             this.Lbl_VolOperaciones.TabIndex = 38;
@@ -685,7 +685,7 @@
             // 
             // Lbl_PEP
             // 
-            this.Lbl_PEP.Location = new System.Drawing.Point(386, 100);
+            this.Lbl_PEP.Location = new System.Drawing.Point(392, 100);
             this.Lbl_PEP.Name = "Lbl_PEP";
             this.Lbl_PEP.Size = new System.Drawing.Size(140, 15);
             this.Lbl_PEP.TabIndex = 37;
@@ -694,7 +694,7 @@
             // 
             // Lbl_TipoEstructura
             // 
-            this.Lbl_TipoEstructura.Location = new System.Drawing.Point(386, 72);
+            this.Lbl_TipoEstructura.Location = new System.Drawing.Point(392, 72);
             this.Lbl_TipoEstructura.Name = "Lbl_TipoEstructura";
             this.Lbl_TipoEstructura.Size = new System.Drawing.Size(140, 15);
             this.Lbl_TipoEstructura.TabIndex = 36;
@@ -703,7 +703,7 @@
             // 
             // Lbl_TipoPersJur
             // 
-            this.Lbl_TipoPersJur.Location = new System.Drawing.Point(377, 44);
+            this.Lbl_TipoPersJur.Location = new System.Drawing.Point(383, 44);
             this.Lbl_TipoPersJur.Name = "Lbl_TipoPersJur";
             this.Lbl_TipoPersJur.Size = new System.Drawing.Size(150, 15);
             this.Lbl_TipoPersJur.TabIndex = 35;
@@ -713,7 +713,7 @@
             // Lbl_BenefPEP
             // 
             this.Lbl_BenefPEP.BackColor = System.Drawing.SystemColors.Control;
-            this.Lbl_BenefPEP.Location = new System.Drawing.Point(643, 207);
+            this.Lbl_BenefPEP.Location = new System.Drawing.Point(582, 207);
             this.Lbl_BenefPEP.Name = "Lbl_BenefPEP";
             this.Lbl_BenefPEP.Size = new System.Drawing.Size(150, 15);
             this.Lbl_BenefPEP.TabIndex = 66;
@@ -723,7 +723,7 @@
             // Lbl_BenefEdad
             // 
             this.Lbl_BenefEdad.BackColor = System.Drawing.SystemColors.Control;
-            this.Lbl_BenefEdad.Location = new System.Drawing.Point(643, 150);
+            this.Lbl_BenefEdad.Location = new System.Drawing.Point(582, 150);
             this.Lbl_BenefEdad.Name = "Lbl_BenefEdad";
             this.Lbl_BenefEdad.Size = new System.Drawing.Size(150, 15);
             this.Lbl_BenefEdad.TabIndex = 65;
@@ -733,7 +733,7 @@
             // Lbl_BenefFecVenc
             // 
             this.Lbl_BenefFecVenc.BackColor = System.Drawing.SystemColors.Control;
-            this.Lbl_BenefFecVenc.Location = new System.Drawing.Point(535, 121);
+            this.Lbl_BenefFecVenc.Location = new System.Drawing.Point(474, 121);
             this.Lbl_BenefFecVenc.Name = "Lbl_BenefFecVenc";
             this.Lbl_BenefFecVenc.Size = new System.Drawing.Size(100, 15);
             this.Lbl_BenefFecVenc.TabIndex = 64;
@@ -742,7 +742,7 @@
             // 
             // Lbl_TrimPeriodo
             // 
-            this.Lbl_TrimPeriodo.Location = new System.Drawing.Point(534, 229);
+            this.Lbl_TrimPeriodo.Location = new System.Drawing.Point(488, 229);
             this.Lbl_TrimPeriodo.Name = "Lbl_TrimPeriodo";
             this.Lbl_TrimPeriodo.Size = new System.Drawing.Size(200, 15);
             this.Lbl_TrimPeriodo.TabIndex = 30;
@@ -751,7 +751,7 @@
             // 
             // Lbl_TrimNroOper
             // 
-            this.Lbl_TrimNroOper.Location = new System.Drawing.Point(678, 261);
+            this.Lbl_TrimNroOper.Location = new System.Drawing.Point(629, 261);
             this.Lbl_TrimNroOper.Name = "Lbl_TrimNroOper";
             this.Lbl_TrimNroOper.Size = new System.Drawing.Size(88, 51);
             this.Lbl_TrimNroOper.TabIndex = 31;
@@ -760,7 +760,7 @@
             // 
             // Lbl_Edad
             // 
-            this.Lbl_Edad.Location = new System.Drawing.Point(427, 15);
+            this.Lbl_Edad.Location = new System.Drawing.Point(433, 15);
             this.Lbl_Edad.Name = "Lbl_Edad";
             this.Lbl_Edad.Size = new System.Drawing.Size(100, 15);
             this.Lbl_Edad.TabIndex = 34;
@@ -834,7 +834,7 @@
             this.toolStripSeparator3,
             this.TSB_Salir});
             this.TS_BarraHerramientas.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.TS_BarraHerramientas.Location = new System.Drawing.Point(532, 18);
+            this.TS_BarraHerramientas.Location = new System.Drawing.Point(443, 18);
             this.TS_BarraHerramientas.Name = "TS_BarraHerramientas";
             this.TS_BarraHerramientas.Size = new System.Drawing.Size(384, 43);
             this.TS_BarraHerramientas.TabIndex = 47;
@@ -939,11 +939,11 @@
             this.Tab_Clientes.Controls.Add(this.Pag4);
             this.Tab_Clientes.Controls.Add(this.Pag5);
             this.Tab_Clientes.HotTrack = true;
-            this.Tab_Clientes.Location = new System.Drawing.Point(245, 131);
+            this.Tab_Clientes.Location = new System.Drawing.Point(240, 131);
             this.Tab_Clientes.Multiline = true;
             this.Tab_Clientes.Name = "Tab_Clientes";
             this.Tab_Clientes.SelectedIndex = 0;
-            this.Tab_Clientes.Size = new System.Drawing.Size(808, 460);
+            this.Tab_Clientes.Size = new System.Drawing.Size(760, 460);
             this.Tab_Clientes.TabIndex = 48;
             // 
             // Pag1
@@ -969,9 +969,9 @@
             this.Pag1.Location = new System.Drawing.Point(4, 27);
             this.Pag1.Name = "Pag1";
             this.Pag1.Padding = new System.Windows.Forms.Padding(3);
-            this.Pag1.Size = new System.Drawing.Size(800, 429);
+            this.Pag1.Size = new System.Drawing.Size(796, 429);
             this.Pag1.TabIndex = 0;
-            this.Pag1.Text = "Información General : 2";
+            this.Pag1.Text = "Inf. General : 2";
             this.Pag1.UseVisualStyleBackColor = true;
             // 
             // Pan_Detalles1
@@ -995,16 +995,16 @@
             this.Pan_Detalles1.Controls.Add(this.Cmb_PaisNacimiento);
             this.Pan_Detalles1.Controls.Add(this.Cmb_Nacionalidad);
             this.Pan_Detalles1.Controls.Add(this.DTP_FecVencDocID);
-            this.Pan_Detalles1.Location = new System.Drawing.Point(129, 8);
+            this.Pan_Detalles1.Location = new System.Drawing.Point(146, 8);
             this.Pan_Detalles1.Name = "Pan_Detalles1";
-            this.Pan_Detalles1.Size = new System.Drawing.Size(666, 415);
+            this.Pan_Detalles1.Size = new System.Drawing.Size(598, 415);
             this.Pan_Detalles1.TabIndex = 33;
             // 
             // Chlst_Productos
             // 
             this.Chlst_Productos.CheckOnClick = true;
             this.Chlst_Productos.FormattingEnabled = true;
-            this.Chlst_Productos.Location = new System.Drawing.Point(404, 253);
+            this.Chlst_Productos.Location = new System.Drawing.Point(339, 253);
             this.Chlst_Productos.Name = "Chlst_Productos";
             this.Chlst_Productos.Size = new System.Drawing.Size(250, 157);
             this.Chlst_Productos.TabIndex = 53;
@@ -1015,7 +1015,7 @@
             this.Chlst_Servicios.FormattingEnabled = true;
             this.Chlst_Servicios.Location = new System.Drawing.Point(4, 253);
             this.Chlst_Servicios.Name = "Chlst_Servicios";
-            this.Chlst_Servicios.Size = new System.Drawing.Size(393, 157);
+            this.Chlst_Servicios.Size = new System.Drawing.Size(315, 157);
             this.Chlst_Servicios.TabIndex = 52;
             // 
             // Cmb_VolOperJur
@@ -1024,9 +1024,9 @@
             this.Cmb_VolOperJur.DataSource = this.BS_MVolOperPersJur;
             this.Cmb_VolOperJur.DisplayMember = "Descripcion";
             this.Cmb_VolOperJur.FormattingEnabled = true;
-            this.Cmb_VolOperJur.Location = new System.Drawing.Point(404, 117);
+            this.Cmb_VolOperJur.Location = new System.Drawing.Point(389, 117);
             this.Cmb_VolOperJur.Name = "Cmb_VolOperJur";
-            this.Cmb_VolOperJur.Size = new System.Drawing.Size(250, 23);
+            this.Cmb_VolOperJur.Size = new System.Drawing.Size(200, 23);
             this.Cmb_VolOperJur.TabIndex = 51;
             this.Cmb_VolOperJur.ValueMember = "Codigo";
             // 
@@ -1044,9 +1044,9 @@
             this.Cmb_Antiguedad.DataSource = this.BS_MAntiguedad;
             this.Cmb_Antiguedad.DisplayMember = "Descripcion";
             this.Cmb_Antiguedad.FormattingEnabled = true;
-            this.Cmb_Antiguedad.Location = new System.Drawing.Point(404, 3);
+            this.Cmb_Antiguedad.Location = new System.Drawing.Point(389, 3);
             this.Cmb_Antiguedad.Name = "Cmb_Antiguedad";
-            this.Cmb_Antiguedad.Size = new System.Drawing.Size(250, 23);
+            this.Cmb_Antiguedad.Size = new System.Drawing.Size(200, 23);
             this.Cmb_Antiguedad.TabIndex = 50;
             this.Cmb_Antiguedad.ValueMember = "Codigo";
             // 
@@ -1062,7 +1062,7 @@
             this.Cmb_TipDocID.FormattingEnabled = true;
             this.Cmb_TipDocID.Location = new System.Drawing.Point(4, 6);
             this.Cmb_TipDocID.Name = "Cmb_TipDocID";
-            this.Cmb_TipDocID.Size = new System.Drawing.Size(250, 23);
+            this.Cmb_TipDocID.Size = new System.Drawing.Size(200, 23);
             this.Cmb_TipDocID.TabIndex = 49;
             this.Cmb_TipDocID.ValueMember = "Codigo";
             // 
@@ -1076,9 +1076,9 @@
             this.Cmb_Criptomonedas.DataSource = this.BS_MCriptomonedas;
             this.Cmb_Criptomonedas.DisplayMember = "Descripcion";
             this.Cmb_Criptomonedas.FormattingEnabled = true;
-            this.Cmb_Criptomonedas.Location = new System.Drawing.Point(404, 145);
+            this.Cmb_Criptomonedas.Location = new System.Drawing.Point(389, 145);
             this.Cmb_Criptomonedas.Name = "Cmb_Criptomonedas";
-            this.Cmb_Criptomonedas.Size = new System.Drawing.Size(250, 23);
+            this.Cmb_Criptomonedas.Size = new System.Drawing.Size(200, 23);
             this.Cmb_Criptomonedas.TabIndex = 47;
             this.Cmb_Criptomonedas.ValueMember = "Codigo";
             // 
@@ -1092,9 +1092,9 @@
             this.Cmb_VolOperNat.DataSource = this.BS_MVolOperPersNat;
             this.Cmb_VolOperNat.DisplayMember = "Descripcion";
             this.Cmb_VolOperNat.FormattingEnabled = true;
-            this.Cmb_VolOperNat.Location = new System.Drawing.Point(404, 117);
+            this.Cmb_VolOperNat.Location = new System.Drawing.Point(389, 117);
             this.Cmb_VolOperNat.Name = "Cmb_VolOperNat";
-            this.Cmb_VolOperNat.Size = new System.Drawing.Size(250, 23);
+            this.Cmb_VolOperNat.Size = new System.Drawing.Size(200, 23);
             this.Cmb_VolOperNat.TabIndex = 46;
             this.Cmb_VolOperNat.ValueMember = "Codigo";
             // 
@@ -1108,9 +1108,9 @@
             this.Cmb_PEP.DataSource = this.BS_MPEP;
             this.Cmb_PEP.DisplayMember = "Descripcion";
             this.Cmb_PEP.FormattingEnabled = true;
-            this.Cmb_PEP.Location = new System.Drawing.Point(404, 89);
+            this.Cmb_PEP.Location = new System.Drawing.Point(389, 89);
             this.Cmb_PEP.Name = "Cmb_PEP";
-            this.Cmb_PEP.Size = new System.Drawing.Size(250, 23);
+            this.Cmb_PEP.Size = new System.Drawing.Size(200, 23);
             this.Cmb_PEP.TabIndex = 45;
             this.Cmb_PEP.ValueMember = "Codigo";
             // 
@@ -1124,9 +1124,9 @@
             this.Cmb_TipoEstructura.DataSource = this.BS_MTipoEstructuraEmpresa;
             this.Cmb_TipoEstructura.DisplayMember = "Descripcion";
             this.Cmb_TipoEstructura.FormattingEnabled = true;
-            this.Cmb_TipoEstructura.Location = new System.Drawing.Point(404, 61);
+            this.Cmb_TipoEstructura.Location = new System.Drawing.Point(389, 61);
             this.Cmb_TipoEstructura.Name = "Cmb_TipoEstructura";
-            this.Cmb_TipoEstructura.Size = new System.Drawing.Size(250, 23);
+            this.Cmb_TipoEstructura.Size = new System.Drawing.Size(200, 23);
             this.Cmb_TipoEstructura.TabIndex = 44;
             this.Cmb_TipoEstructura.ValueMember = "Codigo";
             // 
@@ -1140,9 +1140,9 @@
             this.Cmb_TipoPersJuridica.DataSource = this.BS_MTipoPersJuridica;
             this.Cmb_TipoPersJuridica.DisplayMember = "Descripcion";
             this.Cmb_TipoPersJuridica.FormattingEnabled = true;
-            this.Cmb_TipoPersJuridica.Location = new System.Drawing.Point(404, 32);
+            this.Cmb_TipoPersJuridica.Location = new System.Drawing.Point(389, 32);
             this.Cmb_TipoPersJuridica.Name = "Cmb_TipoPersJuridica";
-            this.Cmb_TipoPersJuridica.Size = new System.Drawing.Size(250, 23);
+            this.Cmb_TipoPersJuridica.Size = new System.Drawing.Size(200, 23);
             this.Cmb_TipoPersJuridica.TabIndex = 43;
             this.Cmb_TipoPersJuridica.ValueMember = "Codigo";
             // 
@@ -1156,9 +1156,9 @@
             this.Cmb_Edad.DataSource = this.BS_MEdad;
             this.Cmb_Edad.DisplayMember = "Descripcion";
             this.Cmb_Edad.FormattingEnabled = true;
-            this.Cmb_Edad.Location = new System.Drawing.Point(404, 3);
+            this.Cmb_Edad.Location = new System.Drawing.Point(389, 3);
             this.Cmb_Edad.Name = "Cmb_Edad";
-            this.Cmb_Edad.Size = new System.Drawing.Size(250, 23);
+            this.Cmb_Edad.Size = new System.Drawing.Size(200, 23);
             this.Cmb_Edad.TabIndex = 42;
             this.Cmb_Edad.ValueMember = "Codigo";
             // 
@@ -1174,7 +1174,7 @@
             this.Cmb_ActivComercial.FormattingEnabled = true;
             this.Cmb_ActivComercial.Location = new System.Drawing.Point(4, 202);
             this.Cmb_ActivComercial.Name = "Cmb_ActivComercial";
-            this.Cmb_ActivComercial.Size = new System.Drawing.Size(650, 23);
+            this.Cmb_ActivComercial.Size = new System.Drawing.Size(585, 23);
             this.Cmb_ActivComercial.TabIndex = 40;
             this.Cmb_ActivComercial.ValueMember = "Codigo";
             // 
@@ -1190,7 +1190,7 @@
             this.Cmb_Profesion.FormattingEnabled = true;
             this.Cmb_Profesion.Location = new System.Drawing.Point(4, 174);
             this.Cmb_Profesion.Name = "Cmb_Profesion";
-            this.Cmb_Profesion.Size = new System.Drawing.Size(650, 23);
+            this.Cmb_Profesion.Size = new System.Drawing.Size(585, 23);
             this.Cmb_Profesion.TabIndex = 39;
             this.Cmb_Profesion.ValueMember = "Codigo";
             // 
@@ -1206,7 +1206,7 @@
             this.Cmb_Estado.FormattingEnabled = true;
             this.Cmb_Estado.Location = new System.Drawing.Point(4, 144);
             this.Cmb_Estado.Name = "Cmb_Estado";
-            this.Cmb_Estado.Size = new System.Drawing.Size(205, 23);
+            this.Cmb_Estado.Size = new System.Drawing.Size(200, 23);
             this.Cmb_Estado.TabIndex = 38;
             this.Cmb_Estado.ValueMember = "Cod_Compuesto";
             this.Cmb_Estado.Enter += new System.EventHandler(this.Cmb_Estado_Enter);
@@ -1223,7 +1223,7 @@
             this.Cmb_PaisResidencia.FormattingEnabled = true;
             this.Cmb_PaisResidencia.Location = new System.Drawing.Point(4, 116);
             this.Cmb_PaisResidencia.Name = "Cmb_PaisResidencia";
-            this.Cmb_PaisResidencia.Size = new System.Drawing.Size(250, 23);
+            this.Cmb_PaisResidencia.Size = new System.Drawing.Size(200, 23);
             this.Cmb_PaisResidencia.TabIndex = 37;
             this.Cmb_PaisResidencia.ValueMember = "Codigo";
             // 
@@ -1239,7 +1239,7 @@
             this.Cmb_PaisNacimiento.FormattingEnabled = true;
             this.Cmb_PaisNacimiento.Location = new System.Drawing.Point(4, 88);
             this.Cmb_PaisNacimiento.Name = "Cmb_PaisNacimiento";
-            this.Cmb_PaisNacimiento.Size = new System.Drawing.Size(250, 23);
+            this.Cmb_PaisNacimiento.Size = new System.Drawing.Size(200, 23);
             this.Cmb_PaisNacimiento.TabIndex = 36;
             this.Cmb_PaisNacimiento.ValueMember = "Codigo";
             // 
@@ -1255,7 +1255,7 @@
             this.Cmb_Nacionalidad.FormattingEnabled = true;
             this.Cmb_Nacionalidad.Location = new System.Drawing.Point(4, 60);
             this.Cmb_Nacionalidad.Name = "Cmb_Nacionalidad";
-            this.Cmb_Nacionalidad.Size = new System.Drawing.Size(250, 23);
+            this.Cmb_Nacionalidad.Size = new System.Drawing.Size(200, 23);
             this.Cmb_Nacionalidad.TabIndex = 35;
             this.Cmb_Nacionalidad.ValueMember = "Codigo";
             // 
@@ -1300,9 +1300,9 @@
             this.Pag2.Location = new System.Drawing.Point(4, 27);
             this.Pag2.Name = "Pag2";
             this.Pag2.Padding = new System.Windows.Forms.Padding(3);
-            this.Pag2.Size = new System.Drawing.Size(800, 429);
+            this.Pag2.Size = new System.Drawing.Size(752, 429);
             this.Pag2.TabIndex = 1;
-            this.Pag2.Text = "Beneficiarios / Autorizados : 2";
+            this.Pag2.Text = "Beneficiarios / Accionistas / Firmantes : 2";
             this.Pag2.UseVisualStyleBackColor = true;
             // 
             // Grd_CFirBenAcc
@@ -1316,37 +1316,14 @@
             this.Col_BFADocID,
             this.edadDataGridViewTextBoxColumn});
             this.Grd_CFirBenAcc.DataSource = this.BS_CFirBenAcc;
-            this.Grd_CFirBenAcc.Location = new System.Drawing.Point(14, 25);
+            this.Grd_CFirBenAcc.Location = new System.Drawing.Point(6, 25);
             this.Grd_CFirBenAcc.MultiSelect = false;
             this.Grd_CFirBenAcc.Name = "Grd_CFirBenAcc";
             this.Grd_CFirBenAcc.ReadOnly = true;
             this.Grd_CFirBenAcc.RowHeadersVisible = false;
-            this.Grd_CFirBenAcc.Size = new System.Drawing.Size(278, 332);
+            this.Grd_CFirBenAcc.Size = new System.Drawing.Size(227, 340);
             this.Grd_CFirBenAcc.TabIndex = 55;
             this.Grd_CFirBenAcc.CurrentCellChanged += new System.EventHandler(this.Grd_CFirBenAcc_CurrentCellChanged);
-            // 
-            // Col_BFANme
-            // 
-            this.Col_BFANme.DataPropertyName = "Nombre";
-            this.Col_BFANme.HeaderText = "Nombre";
-            this.Col_BFANme.Name = "Col_BFANme";
-            this.Col_BFANme.ReadOnly = true;
-            this.Col_BFANme.Width = 200;
-            // 
-            // Col_BFADocID
-            // 
-            this.Col_BFADocID.DataPropertyName = "Doc_ID";
-            this.Col_BFADocID.HeaderText = "Doc_ID";
-            this.Col_BFADocID.Name = "Col_BFADocID";
-            this.Col_BFADocID.ReadOnly = true;
-            // 
-            // edadDataGridViewTextBoxColumn
-            // 
-            this.edadDataGridViewTextBoxColumn.DataPropertyName = "Edad";
-            this.edadDataGridViewTextBoxColumn.HeaderText = "Edad";
-            this.edadDataGridViewTextBoxColumn.Name = "edadDataGridViewTextBoxColumn";
-            this.edadDataGridViewTextBoxColumn.ReadOnly = true;
-            this.edadDataGridViewTextBoxColumn.Visible = false;
             // 
             // BS_CFirBenAcc
             // 
@@ -1356,7 +1333,7 @@
             // 
             this.Pan_BenefAcepCanc.Controls.Add(this.Btn_BenefAceptar);
             this.Pan_BenefAcepCanc.Controls.Add(this.Btn_BenefCancelar);
-            this.Pan_BenefAcepCanc.Location = new System.Drawing.Point(551, 378);
+            this.Pan_BenefAcepCanc.Location = new System.Drawing.Point(481, 378);
             this.Pan_BenefAcepCanc.Name = "Pan_BenefAcepCanc";
             this.Pan_BenefAcepCanc.Size = new System.Drawing.Size(116, 44);
             this.Pan_BenefAcepCanc.TabIndex = 67;
@@ -1373,7 +1350,7 @@
             this.Btn_BenefAceptar.Location = new System.Drawing.Point(4, 5);
             this.Btn_BenefAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_BenefAceptar.Name = "Btn_BenefAceptar";
-            this.Btn_BenefAceptar.Size = new System.Drawing.Size(33, 36);
+            this.Btn_BenefAceptar.Size = new System.Drawing.Size(36, 36);
             this.Btn_BenefAceptar.TabIndex = 57;
             this.Btn_BenefAceptar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_BenefAceptar.UseVisualStyleBackColor = true;
@@ -1391,7 +1368,7 @@
             this.Btn_BenefCancelar.Location = new System.Drawing.Point(73, 5);
             this.Btn_BenefCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_BenefCancelar.Name = "Btn_BenefCancelar";
-            this.Btn_BenefCancelar.Size = new System.Drawing.Size(33, 36);
+            this.Btn_BenefCancelar.Size = new System.Drawing.Size(36, 36);
             this.Btn_BenefCancelar.TabIndex = 58;
             this.Btn_BenefCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_BenefCancelar.UseVisualStyleBackColor = true;
@@ -1464,7 +1441,7 @@
             // Lbl_BenefEtiqPuntuacion
             // 
             this.Lbl_BenefEtiqPuntuacion.Font = new System.Drawing.Font("Courier New", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_BenefEtiqPuntuacion.Location = new System.Drawing.Point(695, 10);
+            this.Lbl_BenefEtiqPuntuacion.Location = new System.Drawing.Point(634, 10);
             this.Lbl_BenefEtiqPuntuacion.Name = "Lbl_BenefEtiqPuntuacion";
             this.Lbl_BenefEtiqPuntuacion.Size = new System.Drawing.Size(56, 11);
             this.Lbl_BenefEtiqPuntuacion.TabIndex = 54;
@@ -1479,7 +1456,7 @@
             this.Lbl_BenefPuntuacion.Font = new System.Drawing.Font("Courier New", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_BenefPuntuacion.ForeColor = System.Drawing.Color.Yellow;
             this.Lbl_BenefPuntuacion.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Lbl_BenefPuntuacion.Location = new System.Drawing.Point(693, 8);
+            this.Lbl_BenefPuntuacion.Location = new System.Drawing.Point(632, 8);
             this.Lbl_BenefPuntuacion.Name = "Lbl_BenefPuntuacion";
             this.Lbl_BenefPuntuacion.Size = new System.Drawing.Size(60, 66);
             this.Lbl_BenefPuntuacion.TabIndex = 53;
@@ -1503,7 +1480,7 @@
             this.Pan_Detalles2.Controls.Add(this.Cmb_BenefEdad);
             this.Pan_Detalles2.Controls.Add(this.Dtp_BenefFec_Venc);
             this.Pan_Detalles2.Controls.Add(this.Grp_BenfTipoVinculacion);
-            this.Pan_Detalles2.Location = new System.Drawing.Point(430, 14);
+            this.Pan_Detalles2.Location = new System.Drawing.Point(369, 14);
             this.Pan_Detalles2.Name = "Pan_Detalles2";
             this.Pan_Detalles2.Size = new System.Drawing.Size(367, 358);
             this.Pan_Detalles2.TabIndex = 63;
@@ -1729,7 +1706,7 @@
             this.Pag3.Location = new System.Drawing.Point(4, 27);
             this.Pag3.Name = "Pag3";
             this.Pag3.Padding = new System.Windows.Forms.Padding(3);
-            this.Pag3.Size = new System.Drawing.Size(800, 429);
+            this.Pag3.Size = new System.Drawing.Size(752, 429);
             this.Pag3.TabIndex = 2;
             this.Pag3.Text = "Constitución del Expediente";
             this.Pag3.UseVisualStyleBackColor = true;
@@ -1766,17 +1743,17 @@
             this.Pan_Detalles3.Controls.Add(this.Chk_Opc3);
             this.Pan_Detalles3.Controls.Add(this.Chk_Opc2);
             this.Pan_Detalles3.Controls.Add(this.Chk_Opc1);
-            this.Pan_Detalles3.Location = new System.Drawing.Point(9, 6);
+            this.Pan_Detalles3.Location = new System.Drawing.Point(12, 6);
             this.Pan_Detalles3.Name = "Pan_Detalles3";
-            this.Pan_Detalles3.Size = new System.Drawing.Size(761, 412);
+            this.Pan_Detalles3.Size = new System.Drawing.Size(719, 412);
             this.Pan_Detalles3.TabIndex = 45;
             // 
             // Chk_Opc30
             // 
             this.Chk_Opc30.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc30", true));
-            this.Chk_Opc30.Location = new System.Drawing.Point(383, 383);
+            this.Chk_Opc30.Location = new System.Drawing.Point(332, 383);
             this.Chk_Opc30.Name = "Chk_Opc30";
-            this.Chk_Opc30.Size = new System.Drawing.Size(350, 22);
+            this.Chk_Opc30.Size = new System.Drawing.Size(380, 22);
             this.Chk_Opc30.TabIndex = 59;
             this.Chk_Opc30.Text = "OPC30";
             this.Chk_Opc30.UseVisualStyleBackColor = true;
@@ -1785,9 +1762,9 @@
             // Chk_Opc29
             // 
             this.Chk_Opc29.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc29", true));
-            this.Chk_Opc29.Location = new System.Drawing.Point(383, 357);
+            this.Chk_Opc29.Location = new System.Drawing.Point(332, 357);
             this.Chk_Opc29.Name = "Chk_Opc29";
-            this.Chk_Opc29.Size = new System.Drawing.Size(350, 22);
+            this.Chk_Opc29.Size = new System.Drawing.Size(380, 22);
             this.Chk_Opc29.TabIndex = 58;
             this.Chk_Opc29.Text = "OPC29";
             this.Chk_Opc29.UseVisualStyleBackColor = true;
@@ -1796,9 +1773,9 @@
             // Chk_Opc28
             // 
             this.Chk_Opc28.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc28", true));
-            this.Chk_Opc28.Location = new System.Drawing.Point(383, 331);
+            this.Chk_Opc28.Location = new System.Drawing.Point(332, 331);
             this.Chk_Opc28.Name = "Chk_Opc28";
-            this.Chk_Opc28.Size = new System.Drawing.Size(350, 22);
+            this.Chk_Opc28.Size = new System.Drawing.Size(380, 22);
             this.Chk_Opc28.TabIndex = 57;
             this.Chk_Opc28.Text = "OPC28";
             this.Chk_Opc28.UseVisualStyleBackColor = true;
@@ -1807,9 +1784,9 @@
             // Chk_Opc27
             // 
             this.Chk_Opc27.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc27", true));
-            this.Chk_Opc27.Location = new System.Drawing.Point(383, 305);
+            this.Chk_Opc27.Location = new System.Drawing.Point(332, 305);
             this.Chk_Opc27.Name = "Chk_Opc27";
-            this.Chk_Opc27.Size = new System.Drawing.Size(350, 22);
+            this.Chk_Opc27.Size = new System.Drawing.Size(380, 22);
             this.Chk_Opc27.TabIndex = 56;
             this.Chk_Opc27.Text = "Datos del Cónyugue o Cotitular";
             this.Chk_Opc27.UseVisualStyleBackColor = true;
@@ -1817,9 +1794,9 @@
             // Chk_Opc26
             // 
             this.Chk_Opc26.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc26", true));
-            this.Chk_Opc26.Location = new System.Drawing.Point(383, 279);
+            this.Chk_Opc26.Location = new System.Drawing.Point(332, 279);
             this.Chk_Opc26.Name = "Chk_Opc26";
-            this.Chk_Opc26.Size = new System.Drawing.Size(350, 22);
+            this.Chk_Opc26.Size = new System.Drawing.Size(380, 22);
             this.Chk_Opc26.TabIndex = 55;
             this.Chk_Opc26.Text = "Lugar y Fecha de Nacimiento";
             this.Chk_Opc26.UseVisualStyleBackColor = true;
@@ -1827,9 +1804,9 @@
             // Chk_Opc25
             // 
             this.Chk_Opc25.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc25", true));
-            this.Chk_Opc25.Location = new System.Drawing.Point(383, 253);
+            this.Chk_Opc25.Location = new System.Drawing.Point(332, 253);
             this.Chk_Opc25.Name = "Chk_Opc25";
-            this.Chk_Opc25.Size = new System.Drawing.Size(350, 22);
+            this.Chk_Opc25.Size = new System.Drawing.Size(380, 22);
             this.Chk_Opc25.TabIndex = 54;
             this.Chk_Opc25.Text = "Tipo de Negocio";
             this.Chk_Opc25.UseVisualStyleBackColor = true;
@@ -1837,9 +1814,9 @@
             // Chk_Opc24
             // 
             this.Chk_Opc24.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc24", true));
-            this.Chk_Opc24.Location = new System.Drawing.Point(383, 227);
+            this.Chk_Opc24.Location = new System.Drawing.Point(332, 227);
             this.Chk_Opc24.Name = "Chk_Opc24";
-            this.Chk_Opc24.Size = new System.Drawing.Size(350, 22);
+            this.Chk_Opc24.Size = new System.Drawing.Size(380, 22);
             this.Chk_Opc24.TabIndex = 53;
             this.Chk_Opc24.Text = "Cargo";
             this.Chk_Opc24.UseVisualStyleBackColor = true;
@@ -1847,9 +1824,9 @@
             // Chk_Opc23
             // 
             this.Chk_Opc23.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc23", true));
-            this.Chk_Opc23.Location = new System.Drawing.Point(383, 201);
+            this.Chk_Opc23.Location = new System.Drawing.Point(332, 201);
             this.Chk_Opc23.Name = "Chk_Opc23";
-            this.Chk_Opc23.Size = new System.Drawing.Size(350, 22);
+            this.Chk_Opc23.Size = new System.Drawing.Size(380, 22);
             this.Chk_Opc23.TabIndex = 52;
             this.Chk_Opc23.Text = "Referencias Bancarias, Comerciales y/o Personales";
             this.Chk_Opc23.UseVisualStyleBackColor = true;
@@ -1857,9 +1834,9 @@
             // Chk_Opc22
             // 
             this.Chk_Opc22.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc22", true));
-            this.Chk_Opc22.Location = new System.Drawing.Point(383, 175);
+            this.Chk_Opc22.Location = new System.Drawing.Point(332, 175);
             this.Chk_Opc22.Name = "Chk_Opc22";
-            this.Chk_Opc22.Size = new System.Drawing.Size(350, 22);
+            this.Chk_Opc22.Size = new System.Drawing.Size(380, 22);
             this.Chk_Opc22.TabIndex = 51;
             this.Chk_Opc22.Text = "Teléfono Laboral";
             this.Chk_Opc22.UseVisualStyleBackColor = true;
@@ -1867,9 +1844,9 @@
             // Chk_Opc21
             // 
             this.Chk_Opc21.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc21", true));
-            this.Chk_Opc21.Location = new System.Drawing.Point(383, 149);
+            this.Chk_Opc21.Location = new System.Drawing.Point(332, 149);
             this.Chk_Opc21.Name = "Chk_Opc21";
-            this.Chk_Opc21.Size = new System.Drawing.Size(350, 22);
+            this.Chk_Opc21.Size = new System.Drawing.Size(380, 22);
             this.Chk_Opc21.TabIndex = 50;
             this.Chk_Opc21.Text = "Dirección Laboral";
             this.Chk_Opc21.UseVisualStyleBackColor = true;
@@ -1877,9 +1854,9 @@
             // Chk_Opc20
             // 
             this.Chk_Opc20.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc20", true));
-            this.Chk_Opc20.Location = new System.Drawing.Point(383, 123);
+            this.Chk_Opc20.Location = new System.Drawing.Point(332, 123);
             this.Chk_Opc20.Name = "Chk_Opc20";
-            this.Chk_Opc20.Size = new System.Drawing.Size(350, 22);
+            this.Chk_Opc20.Size = new System.Drawing.Size(380, 22);
             this.Chk_Opc20.TabIndex = 49;
             this.Chk_Opc20.Text = "Estado Civil";
             this.Chk_Opc20.UseVisualStyleBackColor = true;
@@ -1887,9 +1864,9 @@
             // Chk_Opc19
             // 
             this.Chk_Opc19.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc19", true));
-            this.Chk_Opc19.Location = new System.Drawing.Point(383, 97);
+            this.Chk_Opc19.Location = new System.Drawing.Point(332, 97);
             this.Chk_Opc19.Name = "Chk_Opc19";
-            this.Chk_Opc19.Size = new System.Drawing.Size(350, 22);
+            this.Chk_Opc19.Size = new System.Drawing.Size(380, 22);
             this.Chk_Opc19.TabIndex = 48;
             this.Chk_Opc19.Text = "Nacionalidad";
             this.Chk_Opc19.UseVisualStyleBackColor = true;
@@ -1897,9 +1874,9 @@
             // Chk_Opc18
             // 
             this.Chk_Opc18.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc18", true));
-            this.Chk_Opc18.Location = new System.Drawing.Point(383, 71);
+            this.Chk_Opc18.Location = new System.Drawing.Point(332, 71);
             this.Chk_Opc18.Name = "Chk_Opc18";
-            this.Chk_Opc18.Size = new System.Drawing.Size(350, 22);
+            this.Chk_Opc18.Size = new System.Drawing.Size(380, 22);
             this.Chk_Opc18.TabIndex = 47;
             this.Chk_Opc18.Text = "Email";
             this.Chk_Opc18.UseVisualStyleBackColor = true;
@@ -1907,9 +1884,9 @@
             // Chk_Opc17
             // 
             this.Chk_Opc17.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc17", true));
-            this.Chk_Opc17.Location = new System.Drawing.Point(383, 45);
+            this.Chk_Opc17.Location = new System.Drawing.Point(332, 45);
             this.Chk_Opc17.Name = "Chk_Opc17";
-            this.Chk_Opc17.Size = new System.Drawing.Size(350, 22);
+            this.Chk_Opc17.Size = new System.Drawing.Size(380, 22);
             this.Chk_Opc17.TabIndex = 46;
             this.Chk_Opc17.Text = "W9";
             this.Chk_Opc17.UseVisualStyleBackColor = true;
@@ -1917,9 +1894,9 @@
             // Chk_Opc16
             // 
             this.Chk_Opc16.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc16", true));
-            this.Chk_Opc16.Location = new System.Drawing.Point(383, 19);
+            this.Chk_Opc16.Location = new System.Drawing.Point(332, 19);
             this.Chk_Opc16.Name = "Chk_Opc16";
-            this.Chk_Opc16.Size = new System.Drawing.Size(350, 22);
+            this.Chk_Opc16.Size = new System.Drawing.Size(380, 22);
             this.Chk_Opc16.TabIndex = 45;
             this.Chk_Opc16.Text = "W8BEN";
             this.Chk_Opc16.UseVisualStyleBackColor = true;
@@ -1929,7 +1906,7 @@
             this.Chk_Opc15.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc15", true));
             this.Chk_Opc15.Location = new System.Drawing.Point(4, 383);
             this.Chk_Opc15.Name = "Chk_Opc15";
-            this.Chk_Opc15.Size = new System.Drawing.Size(300, 22);
+            this.Chk_Opc15.Size = new System.Drawing.Size(320, 22);
             this.Chk_Opc15.TabIndex = 39;
             this.Chk_Opc15.Text = "OPC15";
             this.Chk_Opc15.UseVisualStyleBackColor = true;
@@ -1940,7 +1917,7 @@
             this.Chk_Opc14.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc14", true));
             this.Chk_Opc14.Location = new System.Drawing.Point(4, 357);
             this.Chk_Opc14.Name = "Chk_Opc14";
-            this.Chk_Opc14.Size = new System.Drawing.Size(300, 22);
+            this.Chk_Opc14.Size = new System.Drawing.Size(320, 22);
             this.Chk_Opc14.TabIndex = 38;
             this.Chk_Opc14.Text = "Actividad Profesional, Industrial o Comercial";
             this.Chk_Opc14.UseVisualStyleBackColor = true;
@@ -1950,7 +1927,7 @@
             this.Chk_Opc13.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc13", true));
             this.Chk_Opc13.Location = new System.Drawing.Point(4, 331);
             this.Chk_Opc13.Name = "Chk_Opc13";
-            this.Chk_Opc13.Size = new System.Drawing.Size(300, 22);
+            this.Chk_Opc13.Size = new System.Drawing.Size(320, 22);
             this.Chk_Opc13.TabIndex = 37;
             this.Chk_Opc13.Text = "Huella Dactilar";
             this.Chk_Opc13.UseVisualStyleBackColor = true;
@@ -1960,7 +1937,7 @@
             this.Chk_Opc12.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc12", true));
             this.Chk_Opc12.Location = new System.Drawing.Point(4, 305);
             this.Chk_Opc12.Name = "Chk_Opc12";
-            this.Chk_Opc12.Size = new System.Drawing.Size(300, 22);
+            this.Chk_Opc12.Size = new System.Drawing.Size(320, 22);
             this.Chk_Opc12.TabIndex = 36;
             this.Chk_Opc12.Text = "Patrimonio total";
             this.Chk_Opc12.UseVisualStyleBackColor = true;
@@ -1970,7 +1947,7 @@
             this.Chk_Opc11.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc11", true));
             this.Chk_Opc11.Location = new System.Drawing.Point(4, 279);
             this.Chk_Opc11.Name = "Chk_Opc11";
-            this.Chk_Opc11.Size = new System.Drawing.Size(300, 22);
+            this.Chk_Opc11.Size = new System.Drawing.Size(320, 22);
             this.Chk_Opc11.TabIndex = 35;
             this.Chk_Opc11.Text = "Total de Activos Líquidos";
             this.Chk_Opc11.UseVisualStyleBackColor = true;
@@ -1980,7 +1957,7 @@
             this.Chk_Opc10.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc10", true));
             this.Chk_Opc10.Location = new System.Drawing.Point(4, 253);
             this.Chk_Opc10.Name = "Chk_Opc10";
-            this.Chk_Opc10.Size = new System.Drawing.Size(300, 22);
+            this.Chk_Opc10.Size = new System.Drawing.Size(320, 22);
             this.Chk_Opc10.TabIndex = 34;
             this.Chk_Opc10.Text = "Ingresos Anuales";
             this.Chk_Opc10.UseVisualStyleBackColor = true;
@@ -1990,7 +1967,7 @@
             this.Chk_Opc9.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc9", true));
             this.Chk_Opc9.Location = new System.Drawing.Point(4, 227);
             this.Chk_Opc9.Name = "Chk_Opc9";
-            this.Chk_Opc9.Size = new System.Drawing.Size(300, 22);
+            this.Chk_Opc9.Size = new System.Drawing.Size(320, 22);
             this.Chk_Opc9.TabIndex = 33;
             this.Chk_Opc9.Text = "Objetivo de la Inversión en un Ciclo de Mercado";
             this.Chk_Opc9.UseVisualStyleBackColor = true;
@@ -2000,7 +1977,7 @@
             this.Chk_Opc8.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc8", true));
             this.Chk_Opc8.Location = new System.Drawing.Point(4, 201);
             this.Chk_Opc8.Name = "Chk_Opc8";
-            this.Chk_Opc8.Size = new System.Drawing.Size(300, 22);
+            this.Chk_Opc8.Size = new System.Drawing.Size(320, 22);
             this.Chk_Opc8.TabIndex = 32;
             this.Chk_Opc8.Text = "Experiencia y Conocimiento como Inversionista";
             this.Chk_Opc8.UseVisualStyleBackColor = true;
@@ -2010,7 +1987,7 @@
             this.Chk_Opc7.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc7", true));
             this.Chk_Opc7.Location = new System.Drawing.Point(4, 175);
             this.Chk_Opc7.Name = "Chk_Opc7";
-            this.Chk_Opc7.Size = new System.Drawing.Size(300, 22);
+            this.Chk_Opc7.Size = new System.Drawing.Size(320, 22);
             this.Chk_Opc7.TabIndex = 31;
             this.Chk_Opc7.Text = "Tipo y Número de Documento de Identificación";
             this.Chk_Opc7.UseVisualStyleBackColor = true;
@@ -2020,7 +1997,7 @@
             this.Chk_Opc6.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc6", true));
             this.Chk_Opc6.Location = new System.Drawing.Point(4, 149);
             this.Chk_Opc6.Name = "Chk_Opc6";
-            this.Chk_Opc6.Size = new System.Drawing.Size(300, 22);
+            this.Chk_Opc6.Size = new System.Drawing.Size(320, 22);
             this.Chk_Opc6.TabIndex = 30;
             this.Chk_Opc6.Text = "Teléfono / de habitacion";
             this.Chk_Opc6.UseVisualStyleBackColor = true;
@@ -2030,7 +2007,7 @@
             this.Chk_Opc5.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc5", true));
             this.Chk_Opc5.Location = new System.Drawing.Point(4, 123);
             this.Chk_Opc5.Name = "Chk_Opc5";
-            this.Chk_Opc5.Size = new System.Drawing.Size(300, 22);
+            this.Chk_Opc5.Size = new System.Drawing.Size(320, 22);
             this.Chk_Opc5.TabIndex = 29;
             this.Chk_Opc5.Text = "Dirección / de Habitación";
             this.Chk_Opc5.UseVisualStyleBackColor = true;
@@ -2040,7 +2017,7 @@
             this.Chk_Opc4.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc4", true));
             this.Chk_Opc4.Location = new System.Drawing.Point(4, 97);
             this.Chk_Opc4.Name = "Chk_Opc4";
-            this.Chk_Opc4.Size = new System.Drawing.Size(300, 22);
+            this.Chk_Opc4.Size = new System.Drawing.Size(320, 22);
             this.Chk_Opc4.TabIndex = 28;
             this.Chk_Opc4.Text = "Declaración Jurada de Origen y Destino de Fondos";
             this.Chk_Opc4.UseVisualStyleBackColor = true;
@@ -2050,7 +2027,7 @@
             this.Chk_Opc3.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc3", true));
             this.Chk_Opc3.Location = new System.Drawing.Point(4, 71);
             this.Chk_Opc3.Name = "Chk_Opc3";
-            this.Chk_Opc3.Size = new System.Drawing.Size(300, 22);
+            this.Chk_Opc3.Size = new System.Drawing.Size(320, 22);
             this.Chk_Opc3.TabIndex = 27;
             this.Chk_Opc3.Text = "Constancia de Chequeo en World Compliance";
             this.Chk_Opc3.UseVisualStyleBackColor = true;
@@ -2060,7 +2037,7 @@
             this.Chk_Opc2.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc2", true));
             this.Chk_Opc2.Location = new System.Drawing.Point(4, 45);
             this.Chk_Opc2.Name = "Chk_Opc2";
-            this.Chk_Opc2.Size = new System.Drawing.Size(300, 22);
+            this.Chk_Opc2.Size = new System.Drawing.Size(320, 22);
             this.Chk_Opc2.TabIndex = 26;
             this.Chk_Opc2.Text = "Copia de Recibo de Servicio Público";
             this.Chk_Opc2.UseVisualStyleBackColor = true;
@@ -2070,7 +2047,7 @@
             this.Chk_Opc1.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_CClientes, "CE_Opc1", true));
             this.Chk_Opc1.Location = new System.Drawing.Point(4, 19);
             this.Chk_Opc1.Name = "Chk_Opc1";
-            this.Chk_Opc1.Size = new System.Drawing.Size(300, 22);
+            this.Chk_Opc1.Size = new System.Drawing.Size(320, 22);
             this.Chk_Opc1.TabIndex = 25;
             this.Chk_Opc1.Text = "Copia del Documento de Identidad";
             this.Chk_Opc1.UseVisualStyleBackColor = true;
@@ -2093,7 +2070,7 @@
             this.Pag4.Location = new System.Drawing.Point(4, 27);
             this.Pag4.Name = "Pag4";
             this.Pag4.Padding = new System.Windows.Forms.Padding(3);
-            this.Pag4.Size = new System.Drawing.Size(800, 429);
+            this.Pag4.Size = new System.Drawing.Size(796, 429);
             this.Pag4.TabIndex = 3;
             this.Pag4.Text = "Observaciones";
             this.Pag4.UseVisualStyleBackColor = true;
@@ -2101,7 +2078,7 @@
             // Lbl_TrimMtoTransac
             // 
             this.Lbl_TrimMtoTransac.ForeColor = System.Drawing.Color.Black;
-            this.Lbl_TrimMtoTransac.Location = new System.Drawing.Point(479, 355);
+            this.Lbl_TrimMtoTransac.Location = new System.Drawing.Point(433, 355);
             this.Lbl_TrimMtoTransac.Name = "Lbl_TrimMtoTransac";
             this.Lbl_TrimMtoTransac.Size = new System.Drawing.Size(100, 15);
             this.Lbl_TrimMtoTransac.TabIndex = 31;
@@ -2120,7 +2097,7 @@
             this.Pan_Detalles4.Controls.Add(this.Grp_PerUsoCta);
             this.Pan_Detalles4.Location = new System.Drawing.Point(129, 6);
             this.Pan_Detalles4.Name = "Pan_Detalles4";
-            this.Pan_Detalles4.Size = new System.Drawing.Size(662, 417);
+            this.Pan_Detalles4.Size = new System.Drawing.Size(604, 417);
             this.Pan_Detalles4.TabIndex = 27;
             // 
             // panel1
@@ -2133,7 +2110,7 @@
             this.panel1.Controls.Add(this.Btn_Trimestre);
             this.panel1.Controls.Add(this.Txt_TrimOpFinan);
             this.panel1.Controls.Add(this.Txt_TrimNroOperFin);
-            this.panel1.Location = new System.Drawing.Point(346, 212);
+            this.panel1.Location = new System.Drawing.Point(295, 212);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(296, 169);
             this.panel1.TabIndex = 39;
@@ -2209,7 +2186,7 @@
             // 
             this.Btn_Trimestre.BackgroundImage = global::MOFIN.Properties.Resources.Procesar;
             this.Btn_Trimestre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Btn_Trimestre.Location = new System.Drawing.Point(123, 36);
+            this.Btn_Trimestre.Location = new System.Drawing.Point(130, 36);
             this.Btn_Trimestre.Name = "Btn_Trimestre";
             this.Btn_Trimestre.Size = new System.Drawing.Size(48, 48);
             this.Btn_Trimestre.TabIndex = 25;
@@ -2243,7 +2220,7 @@
             this.Cmb_NivelRiesgo.FormattingEnabled = true;
             this.Cmb_NivelRiesgo.Location = new System.Drawing.Point(6, 278);
             this.Cmb_NivelRiesgo.Name = "Cmb_NivelRiesgo";
-            this.Cmb_NivelRiesgo.Size = new System.Drawing.Size(301, 23);
+            this.Cmb_NivelRiesgo.Size = new System.Drawing.Size(228, 23);
             this.Cmb_NivelRiesgo.TabIndex = 38;
             this.Cmb_NivelRiesgo.ValueMember = "Codigo";
             // 
@@ -2292,7 +2269,7 @@
             this.Txt_Observacion.Location = new System.Drawing.Point(6, 16);
             this.Txt_Observacion.Multiline = true;
             this.Txt_Observacion.Name = "Txt_Observacion";
-            this.Txt_Observacion.Size = new System.Drawing.Size(654, 151);
+            this.Txt_Observacion.Size = new System.Drawing.Size(589, 151);
             this.Txt_Observacion.TabIndex = 27;
             // 
             // Grp_PerUsoCta
@@ -2311,7 +2288,7 @@
             // Opt_PerUsoCta5
             // 
             this.Opt_PerUsoCta5.AutoSize = true;
-            this.Opt_PerUsoCta5.Location = new System.Drawing.Point(6, 86);
+            this.Opt_PerUsoCta5.Location = new System.Drawing.Point(5, 86);
             this.Opt_PerUsoCta5.Name = "Opt_PerUsoCta5";
             this.Opt_PerUsoCta5.Size = new System.Drawing.Size(58, 19);
             this.Opt_PerUsoCta5.TabIndex = 4;
@@ -2322,7 +2299,7 @@
             // Opt_PerUsoCta4
             // 
             this.Opt_PerUsoCta4.AutoSize = true;
-            this.Opt_PerUsoCta4.Location = new System.Drawing.Point(6, 67);
+            this.Opt_PerUsoCta4.Location = new System.Drawing.Point(5, 67);
             this.Opt_PerUsoCta4.Name = "Opt_PerUsoCta4";
             this.Opt_PerUsoCta4.Size = new System.Drawing.Size(76, 19);
             this.Opt_PerUsoCta4.TabIndex = 3;
@@ -2333,7 +2310,7 @@
             // Opt_PerUsoCta3
             // 
             this.Opt_PerUsoCta3.AutoSize = true;
-            this.Opt_PerUsoCta3.Location = new System.Drawing.Point(6, 48);
+            this.Opt_PerUsoCta3.Location = new System.Drawing.Point(5, 48);
             this.Opt_PerUsoCta3.Name = "Opt_PerUsoCta3";
             this.Opt_PerUsoCta3.Size = new System.Drawing.Size(78, 19);
             this.Opt_PerUsoCta3.TabIndex = 2;
@@ -2371,9 +2348,9 @@
             this.Pag5.Location = new System.Drawing.Point(4, 27);
             this.Pag5.Name = "Pag5";
             this.Pag5.Padding = new System.Windows.Forms.Padding(3);
-            this.Pag5.Size = new System.Drawing.Size(800, 429);
+            this.Pag5.Size = new System.Drawing.Size(752, 429);
             this.Pag5.TabIndex = 4;
-            this.Pag5.Text = "Mapa de Propiesdad de la Empresa";
+            this.Pag5.Text = "Mapa de Propiesdad";
             this.Pag5.UseVisualStyleBackColor = true;
             // 
             // Pic_MapEpresa
@@ -2381,7 +2358,7 @@
             this.Pic_MapEpresa.Image = ((System.Drawing.Image)(resources.GetObject("Pic_MapEpresa.Image")));
             this.Pic_MapEpresa.Location = new System.Drawing.Point(6, 25);
             this.Pic_MapEpresa.Name = "Pic_MapEpresa";
-            this.Pic_MapEpresa.Size = new System.Drawing.Size(785, 393);
+            this.Pic_MapEpresa.Size = new System.Drawing.Size(716, 393);
             this.Pic_MapEpresa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Pic_MapEpresa.TabIndex = 0;
             this.Pic_MapEpresa.TabStop = false;
@@ -2402,7 +2379,7 @@
             this.Lbl_Puntuacion.Font = new System.Drawing.Font("Courier New", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Puntuacion.ForeColor = System.Drawing.Color.Yellow;
             this.Lbl_Puntuacion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Lbl_Puntuacion.Location = new System.Drawing.Point(955, 30);
+            this.Lbl_Puntuacion.Location = new System.Drawing.Point(908, 30);
             this.Lbl_Puntuacion.Margin = new System.Windows.Forms.Padding(1, 0, 3, 0);
             this.Lbl_Puntuacion.Name = "Lbl_Puntuacion";
             this.Lbl_Puntuacion.Size = new System.Drawing.Size(88, 94);
@@ -2416,14 +2393,14 @@
             this.Lbl_Activo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Lbl_Activo.Location = new System.Drawing.Point(635, 76);
             this.Lbl_Activo.Name = "Lbl_Activo";
-            this.Lbl_Activo.Size = new System.Drawing.Size(293, 43);
+            this.Lbl_Activo.Size = new System.Drawing.Size(239, 43);
             this.Lbl_Activo.TabIndex = 51;
             this.Lbl_Activo.Text = "Inactivo";
             this.Lbl_Activo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Lbl_EtiqPunt
             // 
-            this.Lbl_EtiqPunt.Location = new System.Drawing.Point(957, 32);
+            this.Lbl_EtiqPunt.Location = new System.Drawing.Point(910, 32);
             this.Lbl_EtiqPunt.Name = "Lbl_EtiqPunt";
             this.Lbl_EtiqPunt.Size = new System.Drawing.Size(83, 15);
             this.Lbl_EtiqPunt.TabIndex = 52;
@@ -2436,7 +2413,7 @@
             this.Pan_DetallesEnc.Controls.Add(this.Txt_Nombre);
             this.Pan_DetallesEnc.Controls.Add(this.Txt_DocID);
             this.Pan_DetallesEnc.Controls.Add(this.Txt_Codigo);
-            this.Pan_DetallesEnc.Location = new System.Drawing.Point(14, 64);
+            this.Pan_DetallesEnc.Location = new System.Drawing.Point(25, 64);
             this.Pan_DetallesEnc.Name = "Pan_DetallesEnc";
             this.Pan_DetallesEnc.Size = new System.Drawing.Size(583, 59);
             this.Pan_DetallesEnc.TabIndex = 53;
@@ -2600,7 +2577,7 @@
             this.trimAnoDataGridViewTextBoxColumn,
             this.mapaEmpresaDataGridViewTextBoxColumn});
             this.Grd_Clientes.DataSource = this.BS_CClientes;
-            this.Grd_Clientes.Location = new System.Drawing.Point(14, 131);
+            this.Grd_Clientes.Location = new System.Drawing.Point(9, 131);
             this.Grd_Clientes.Name = "Grd_Clientes";
             this.Grd_Clientes.ReadOnly = true;
             this.Grd_Clientes.RowHeadersVisible = false;
@@ -3307,13 +3284,37 @@
             // 
             this.BS_OOperTransaccionales.DataSource = typeof(MofinModelo.O_OperTransaccionales);
             // 
+            // Col_BFANme
+            // 
+            this.Col_BFANme.DataPropertyName = "Nombre";
+            this.Col_BFANme.FillWeight = 150F;
+            this.Col_BFANme.HeaderText = "Nombre";
+            this.Col_BFANme.Name = "Col_BFANme";
+            this.Col_BFANme.ReadOnly = true;
+            this.Col_BFANme.Width = 150;
+            // 
+            // Col_BFADocID
+            // 
+            this.Col_BFADocID.DataPropertyName = "Doc_ID";
+            this.Col_BFADocID.HeaderText = "Doc_ID";
+            this.Col_BFADocID.Name = "Col_BFADocID";
+            this.Col_BFADocID.ReadOnly = true;
+            // 
+            // edadDataGridViewTextBoxColumn
+            // 
+            this.edadDataGridViewTextBoxColumn.DataPropertyName = "Edad";
+            this.edadDataGridViewTextBoxColumn.HeaderText = "Edad";
+            this.edadDataGridViewTextBoxColumn.Name = "edadDataGridViewTextBoxColumn";
+            this.edadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.edadDataGridViewTextBoxColumn.Visible = false;
+            // 
             // Frm_Clientes
             // 
             this.AcceptButton = this.Btn_Aceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(1073, 611);
+            this.ClientSize = new System.Drawing.Size(1010, 600);
             this.Controls.Add(this.Grd_Clientes);
             this.Controls.Add(this.Lbl_EtiqPunt);
             this.Controls.Add(this.Lbl_Activo);
@@ -3695,9 +3696,6 @@
         private System.Windows.Forms.TextBox Txt_TrimNroOperFin;
         private System.Windows.Forms.BindingSource BS_Grupo_Opciones;
         private System.Windows.Forms.DataGridView Grd_CFirBenAcc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_BFANme;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_BFADocID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
         private System.Windows.Forms.ComboBox Cmb_NivelRiesgo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox Txt_TrimOpTransac;
@@ -3705,5 +3703,8 @@
         private System.Windows.Forms.BindingSource BS_OOperfinancieras;
         private System.Windows.Forms.BindingSource BS_OOperTransaccionales;
         private System.Windows.Forms.TextBox Txt_TrimNroOperTran;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_BFANme;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_BFADocID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
     }
 }

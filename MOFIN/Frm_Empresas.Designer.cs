@@ -39,7 +39,7 @@
             this.TSB_Anterior = new System.Windows.Forms.ToolStripButton();
             this.TSB_Siguiente = new System.Windows.Forms.ToolStripButton();
             this.TSB_Ultimo = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ts_Sep1 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_Agregar = new System.Windows.Forms.ToolStripButton();
             this.TSB_Modificar = new System.Windows.Forms.ToolStripButton();
             this.TSB_Eliminar = new System.Windows.Forms.ToolStripButton();
@@ -70,11 +70,15 @@
             this.Lbl_Direccion = new System.Windows.Forms.Label();
             this.Lbl_Logo = new System.Windows.Forms.Label();
             this.Pag2 = new System.Windows.Forms.TabPage();
+            this.Lbl_MetodoValClientes = new System.Windows.Forms.Label();
             this.Lbl_Metadata = new System.Windows.Forms.Label();
             this.Lbl_Proveedor = new System.Windows.Forms.Label();
             this.Lbl_ConexString = new System.Windows.Forms.Label();
             this.Lbl_DsktpImag = new System.Windows.Forms.Label();
             this.Pan_Config = new System.Windows.Forms.Panel();
+            this.Grp_MetodoValora = new System.Windows.Forms.GroupBox();
+            this.Opc_MetVal2 = new System.Windows.Forms.RadioButton();
+            this.Opc_MetVal1 = new System.Windows.Forms.RadioButton();
             this.Txt_Metadata = new System.Windows.Forms.TextBox();
             this.Txt_Proveedor = new System.Windows.Forms.TextBox();
             this.txt_ConexString = new System.Windows.Forms.TextBox();
@@ -82,10 +86,6 @@
             this.Btn_Cancelar = new System.Windows.Forms.Button();
             this.Btn_Aceptar = new System.Windows.Forms.Button();
             this.BS_Grupo_Opciones = new System.Windows.Forms.BindingSource(this.components);
-            this.Lbl_MetodoValClientes = new System.Windows.Forms.Label();
-            this.Grp_MetodoValora = new System.Windows.Forms.GroupBox();
-            this.Opc_MetVal1 = new System.Windows.Forms.RadioButton();
-            this.Opc_MetVal2 = new System.Windows.Forms.RadioButton();
             this.TS_BarraHerramientas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Empresas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Empresas)).BeginInit();
@@ -96,9 +96,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Logo)).BeginInit();
             this.Pag2.SuspendLayout();
             this.Pan_Config.SuspendLayout();
+            this.Grp_MetodoValora.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_DsktpNr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).BeginInit();
-            this.Grp_MetodoValora.SuspendLayout();
             this.SuspendLayout();
             // 
             // Lbl_Codigo
@@ -148,7 +148,7 @@
             this.TSB_Anterior,
             this.TSB_Siguiente,
             this.TSB_Ultimo,
-            this.toolStripSeparator1,
+            this.ts_Sep1,
             this.TSB_Agregar,
             this.TSB_Modificar,
             this.TSB_Eliminar,
@@ -158,7 +158,7 @@
             this.TS_BarraHerramientas.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.TS_BarraHerramientas.Location = new System.Drawing.Point(342, 13);
             this.TS_BarraHerramientas.Name = "TS_BarraHerramientas";
-            this.TS_BarraHerramientas.Size = new System.Drawing.Size(384, 43);
+            this.TS_BarraHerramientas.Size = new System.Drawing.Size(415, 43);
             this.TS_BarraHerramientas.TabIndex = 37;
             this.TS_BarraHerramientas.Text = "toolStrip1";
             // 
@@ -202,10 +202,10 @@
             this.TSB_Ultimo.Text = "Último";
             this.TSB_Ultimo.Click += new System.EventHandler(this.TSB_Ultimo_Click);
             // 
-            // toolStripSeparator1
+            // ts_Sep1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 43);
+            this.ts_Sep1.Name = "ts_Sep1";
+            this.ts_Sep1.Size = new System.Drawing.Size(6, 43);
             // 
             // TSB_Agregar
             // 
@@ -514,6 +514,15 @@
             this.Pag2.Text = "Configuración";
             this.Pag2.UseVisualStyleBackColor = true;
             // 
+            // Lbl_MetodoValClientes
+            // 
+            this.Lbl_MetodoValClientes.Location = new System.Drawing.Point(6, 160);
+            this.Lbl_MetodoValClientes.Name = "Lbl_MetodoValClientes";
+            this.Lbl_MetodoValClientes.Size = new System.Drawing.Size(160, 60);
+            this.Lbl_MetodoValClientes.TabIndex = 76;
+            this.Lbl_MetodoValClientes.Text = "Método de Valoración de Clientes";
+            this.Lbl_MetodoValClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Lbl_Metadata
             // 
             this.Lbl_Metadata.Location = new System.Drawing.Point(6, 108);
@@ -562,6 +571,36 @@
             this.Pan_Config.Name = "Pan_Config";
             this.Pan_Config.Size = new System.Drawing.Size(301, 270);
             this.Pan_Config.TabIndex = 75;
+            // 
+            // Grp_MetodoValora
+            // 
+            this.Grp_MetodoValora.Controls.Add(this.Opc_MetVal2);
+            this.Grp_MetodoValora.Controls.Add(this.Opc_MetVal1);
+            this.Grp_MetodoValora.Location = new System.Drawing.Point(7, 147);
+            this.Grp_MetodoValora.Name = "Grp_MetodoValora";
+            this.Grp_MetodoValora.Size = new System.Drawing.Size(206, 70);
+            this.Grp_MetodoValora.TabIndex = 3;
+            this.Grp_MetodoValora.TabStop = false;
+            // 
+            // Opc_MetVal2
+            // 
+            this.Opc_MetVal2.Location = new System.Drawing.Point(11, 39);
+            this.Opc_MetVal2.Name = "Opc_MetVal2";
+            this.Opc_MetVal2.Size = new System.Drawing.Size(150, 20);
+            this.Opc_MetVal2.TabIndex = 1;
+            this.Opc_MetVal2.TabStop = true;
+            this.Opc_MetVal2.Text = "Mayor Valor";
+            this.Opc_MetVal2.UseVisualStyleBackColor = true;
+            // 
+            // Opc_MetVal1
+            // 
+            this.Opc_MetVal1.Location = new System.Drawing.Point(11, 15);
+            this.Opc_MetVal1.Name = "Opc_MetVal1";
+            this.Opc_MetVal1.Size = new System.Drawing.Size(150, 20);
+            this.Opc_MetVal1.TabIndex = 0;
+            this.Opc_MetVal1.TabStop = true;
+            this.Opc_MetVal1.Text = "Promedio";
+            this.Opc_MetVal1.UseVisualStyleBackColor = true;
             // 
             // Txt_Metadata
             // 
@@ -660,45 +699,6 @@
             // 
             this.BS_Grupo_Opciones.DataSource = typeof(MofinModeloEntorno.Grupo_Opciones);
             // 
-            // Lbl_MetodoValClientes
-            // 
-            this.Lbl_MetodoValClientes.Location = new System.Drawing.Point(6, 160);
-            this.Lbl_MetodoValClientes.Name = "Lbl_MetodoValClientes";
-            this.Lbl_MetodoValClientes.Size = new System.Drawing.Size(160, 60);
-            this.Lbl_MetodoValClientes.TabIndex = 76;
-            this.Lbl_MetodoValClientes.Text = "Método de Valoración de Clientes";
-            this.Lbl_MetodoValClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // Grp_MetodoValora
-            // 
-            this.Grp_MetodoValora.Controls.Add(this.Opc_MetVal2);
-            this.Grp_MetodoValora.Controls.Add(this.Opc_MetVal1);
-            this.Grp_MetodoValora.Location = new System.Drawing.Point(7, 147);
-            this.Grp_MetodoValora.Name = "Grp_MetodoValora";
-            this.Grp_MetodoValora.Size = new System.Drawing.Size(206, 70);
-            this.Grp_MetodoValora.TabIndex = 3;
-            this.Grp_MetodoValora.TabStop = false;
-            // 
-            // Opc_MetVal1
-            // 
-            this.Opc_MetVal1.Location = new System.Drawing.Point(11, 15);
-            this.Opc_MetVal1.Name = "Opc_MetVal1";
-            this.Opc_MetVal1.Size = new System.Drawing.Size(150, 20);
-            this.Opc_MetVal1.TabIndex = 0;
-            this.Opc_MetVal1.TabStop = true;
-            this.Opc_MetVal1.Text = "Promedio";
-            this.Opc_MetVal1.UseVisualStyleBackColor = true;
-            // 
-            // Opc_MetVal2
-            // 
-            this.Opc_MetVal2.Location = new System.Drawing.Point(11, 39);
-            this.Opc_MetVal2.Name = "Opc_MetVal2";
-            this.Opc_MetVal2.Size = new System.Drawing.Size(150, 20);
-            this.Opc_MetVal2.TabIndex = 1;
-            this.Opc_MetVal2.TabStop = true;
-            this.Opc_MetVal2.Text = "Mayor Valor";
-            this.Opc_MetVal2.UseVisualStyleBackColor = true;
-            // 
             // Frm_Empresas
             // 
             this.AcceptButton = this.Btn_Aceptar;
@@ -744,9 +744,9 @@
             this.Pag2.ResumeLayout(false);
             this.Pan_Config.ResumeLayout(false);
             this.Pan_Config.PerformLayout();
+            this.Grp_MetodoValora.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.NUD_DsktpNr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).EndInit();
-            this.Grp_MetodoValora.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -758,7 +758,7 @@
         private System.Windows.Forms.ToolStripButton TSB_Anterior;
         private System.Windows.Forms.ToolStripButton TSB_Siguiente;
         private System.Windows.Forms.ToolStripButton TSB_Ultimo;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator ts_Sep1;
         private System.Windows.Forms.ToolStripButton TSB_Agregar;
         private System.Windows.Forms.ToolStripButton TSB_Modificar;
         private System.Windows.Forms.ToolStripButton TSB_Eliminar;

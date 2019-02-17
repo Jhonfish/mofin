@@ -28,7 +28,15 @@ namespace MOFIN
         public Frm_Empresas()
         {
             InitializeComponent();
+
+            this.TSB_Primero.Visible = Entorno.vs_CnfgBtnsNaveg;
+            this.TSB_Anterior.Visible = Entorno.vs_CnfgBtnsNaveg;
+            this.TSB_Siguiente.Visible = Entorno.vs_CnfgBtnsNaveg;
+            this.TSB_Ultimo.Visible = Entorno.vs_CnfgBtnsNaveg;
+            this.ts_Sep1.Visible = Entorno.vs_CnfgBtnsNaveg;
+
             this.Asigna_Nombres(null, null);
+
         }
 
         private void Frm_Empresas_Load(object sender, EventArgs e)

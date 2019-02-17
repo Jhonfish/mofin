@@ -46,7 +46,7 @@ namespace MOFIN
             this.TSB_Anterior = new System.Windows.Forms.ToolStripButton();
             this.TSB_Siguiente = new System.Windows.Forms.ToolStripButton();
             this.TSB_Ultimo = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ts_Sep1 = new System.Windows.Forms.ToolStripSeparator();
             this.TSB_Agregar = new System.Windows.Forms.ToolStripButton();
             this.TSB_Modificar = new System.Windows.Forms.ToolStripButton();
             this.TSB_Eliminar = new System.Windows.Forms.ToolStripButton();
@@ -223,7 +223,7 @@ namespace MOFIN
             this.TSB_Anterior,
             this.TSB_Siguiente,
             this.TSB_Ultimo,
-            this.toolStripSeparator1,
+            this.ts_Sep1,
             this.TSB_Agregar,
             this.TSB_Modificar,
             this.TSB_Eliminar,
@@ -277,10 +277,10 @@ namespace MOFIN
             this.TSB_Ultimo.Text = "Último";
             this.TSB_Ultimo.Click += new System.EventHandler(this.TSB_Ultimo_Click);
             // 
-            // toolStripSeparator1
+            // ts_Sep1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 43);
+            this.ts_Sep1.Name = "ts_Sep1";
+            this.ts_Sep1.Size = new System.Drawing.Size(6, 43);
             // 
             // TSB_Agregar
             // 
@@ -642,7 +642,7 @@ namespace MOFIN
         private System.Windows.Forms.ToolStripButton TSB_Anterior;
         private System.Windows.Forms.ToolStripButton TSB_Siguiente;
         private System.Windows.Forms.ToolStripButton TSB_Ultimo;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator ts_Sep1;
         private System.Windows.Forms.ToolStripButton TSB_Agregar;
         private System.Windows.Forms.ToolStripButton TSB_Modificar;
         private System.Windows.Forms.ToolStripButton TSB_Eliminar;

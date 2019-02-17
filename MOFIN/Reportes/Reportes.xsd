@@ -26,6 +26,29 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="dt_RepOperTrans_Cliente_Detalles" msprop:Generator_TableClassName="dt_RepOperTrans_Cliente_DetallesDataTable" msprop:Generator_TableVarName="tabledt_RepOperTrans_Cliente_Detalles" msprop:Generator_RowChangedName="dt_RepOperTrans_Cliente_DetallesRowChanged" msprop:Generator_TablePropName="dt_RepOperTrans_Cliente_Detalles" msprop:Generator_RowDeletingName="dt_RepOperTrans_Cliente_DetallesRowDeleting" msprop:Generator_RowChangingName="dt_RepOperTrans_Cliente_DetallesRowChanging" msprop:Generator_RowEvHandlerName="dt_RepOperTrans_Cliente_DetallesRowChangeEventHandler" msprop:Generator_RowDeletedName="dt_RepOperTrans_Cliente_DetallesRowDeleted" msprop:Generator_RowClassName="dt_RepOperTrans_Cliente_DetallesRow" msprop:Generator_UserTableName="dt_RepOperTrans_Cliente_Detalles" msprop:Generator_RowEvArgName="dt_RepOperTrans_Cliente_DetallesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cod_Ciente" msprop:Generator_ColumnVarNameInTable="columnCod_Ciente" msprop:Generator_ColumnPropNameInRow="Cod_Ciente" msprop:Generator_ColumnPropNameInTable="Cod_CienteColumn" msprop:Generator_UserColumnName="Cod_Ciente" type="xs:string" minOccurs="0" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:string" minOccurs="0" />
+              <xs:element name="Producto" msprop:Generator_ColumnVarNameInTable="columnProducto" msprop:Generator_ColumnPropNameInRow="Producto" msprop:Generator_ColumnPropNameInTable="ProductoColumn" msprop:Generator_UserColumnName="Producto" type="xs:string" minOccurs="0" />
+              <xs:element name="Compra" msprop:Generator_ColumnVarNameInTable="columnCompra" msprop:Generator_ColumnPropNameInRow="Compra" msprop:Generator_ColumnPropNameInTable="CompraColumn" msprop:Generator_UserColumnName="Compra" type="xs:string" minOccurs="0" />
+              <xs:element name="Venta" msprop:Generator_ColumnVarNameInTable="columnVenta" msprop:Generator_ColumnPropNameInRow="Venta" msprop:Generator_ColumnPropNameInTable="VentaColumn" msprop:Generator_UserColumnName="Venta" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dt_RepOperTrans_Cliente_Encabezado" msprop:Generator_TableClassName="dt_RepOperTrans_Cliente_EncabezadoDataTable" msprop:Generator_TableVarName="tabledt_RepOperTrans_Cliente_Encabezado" msprop:Generator_RowChangedName="dt_RepOperTrans_Cliente_EncabezadoRowChanged" msprop:Generator_TablePropName="dt_RepOperTrans_Cliente_Encabezado" msprop:Generator_RowDeletingName="dt_RepOperTrans_Cliente_EncabezadoRowDeleting" msprop:Generator_RowChangingName="dt_RepOperTrans_Cliente_EncabezadoRowChanging" msprop:Generator_RowEvHandlerName="dt_RepOperTrans_Cliente_EncabezadoRowChangeEventHandler" msprop:Generator_RowDeletedName="dt_RepOperTrans_Cliente_EncabezadoRowDeleted" msprop:Generator_RowClassName="dt_RepOperTrans_Cliente_EncabezadoRow" msprop:Generator_UserTableName="dt_RepOperTrans_Cliente_Encabezado" msprop:Generator_RowEvArgName="dt_RepOperTrans_Cliente_EncabezadoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cliente_Cod" msprop:Generator_ColumnVarNameInTable="columnCliente_Cod" msprop:Generator_ColumnPropNameInRow="Cliente_Cod" msprop:Generator_ColumnPropNameInTable="Cliente_CodColumn" msprop:Generator_UserColumnName="Cliente_Cod" type="xs:string" minOccurs="0" />
+              <xs:element name="Cliente_Nme" msprop:Generator_ColumnVarNameInTable="columnCliente_Nme" msprop:Generator_ColumnPropNameInRow="Cliente_Nme" msprop:Generator_ColumnPropNameInTable="Cliente_NmeColumn" msprop:Generator_UserColumnName="Cliente_Nme" type="xs:string" minOccurs="0" />
+              <xs:element name="Cliente_DocID" msprop:Generator_ColumnVarNameInTable="columnCliente_DocID" msprop:Generator_ColumnPropNameInRow="Cliente_DocID" msprop:Generator_ColumnPropNameInTable="Cliente_DocIDColumn" msprop:Generator_UserColumnName="Cliente_DocID" type="xs:string" minOccurs="0" />
+              <xs:element name="Cliente_Direc" msprop:Generator_ColumnVarNameInTable="columnCliente_Direc" msprop:Generator_ColumnPropNameInRow="Cliente_Direc" msprop:Generator_ColumnPropNameInTable="Cliente_DirecColumn" msprop:Generator_UserColumnName="Cliente_Direc" type="xs:string" minOccurs="0" />
+              <xs:element name="Rep_Encabezado" msprop:Generator_ColumnVarNameInTable="columnRep_Encabezado" msprop:Generator_ColumnPropNameInRow="Rep_Encabezado" msprop:Generator_ColumnPropNameInTable="Rep_EncabezadoColumn" msprop:Generator_UserColumnName="Rep_Encabezado" type="xs:string" minOccurs="0" />
+              <xs:element name="Rep_Observ" msprop:Generator_ColumnVarNameInTable="columnRep_Observ" msprop:Generator_ColumnPropNameInRow="Rep_Observ" msprop:Generator_ColumnPropNameInTable="Rep_ObservColumn" msprop:Generator_UserColumnName="Rep_Observ" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

@@ -25,13 +25,13 @@ namespace MOFIN
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var Acceso = new Frm_SeleccionEmpresa();
+            /*var Acceso = new Frm_SeleccionEmpresa();
             if (Acceso.ShowDialog() == DialogResult.OK)
             {
                 Application.Run(new Frm_Desktop());
-            }
+            }*/
             
-            //Application.Run(new Frm_Clientes());
+            Application.Run(new Prueba());
         }
     }
 }

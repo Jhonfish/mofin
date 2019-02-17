@@ -36,6 +36,7 @@ namespace MOFIN
               BS_Grupos.DataSource = NGrupos.Listar();
               BS_Usuarios.DataSource = NUsuarios.Listar();
               
+            this.Txt_Usuario.Text = Environment.UserName;
             this.Cmb_Empresa.SelectedIndex = 0;
             this.Cmb_Empresa.Focus();
         }
@@ -117,6 +118,10 @@ namespace MOFIN
                     Entorno.vs_Grupo = r_Grupos.Codigo;
                     Entorno.vs_Usuario = r_Usuarios.ID_Usuario;
                     Entorno.vs_Maestro = false;
+                    Entorno.vs_Idiomas = (int)r_Usuarios.Cnfg_Idioma;   // 1: Español, 2: Ingles
+                    Entorno.vs_CnfgBtnsNaveg = (bool)r_Usuarios.Cnfg_BarraHerramientas; // True: se muestran los valores
+                    Entorno.vs_TipoValoracCliente = (byte)r_Empresas.Tipo_Valoracion; // 1 Promedio, 2: Mayor Valor
+
 
                     IForm formInterface = this.MdiParent as IForm;
                     if (formInterface != null)

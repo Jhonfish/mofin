@@ -38,6 +38,7 @@ namespace MOFIN
         public void ActualizaLabeldesktop(string Text)
         {
             this.Lbl_Detalle1.Text = Text;
+            this.Asigna_Nombres(null, null);
         }
         public void ActualizaMenu()
         {
@@ -185,8 +186,6 @@ namespace MOFIN
             Form childForm = new Frm_SeleccionEmpresa();
             childForm.MdiParent = this;
             childForm.Show();
-//            childForm.Activate();
-
         }
 
         private void tablasMaestrasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -221,7 +220,6 @@ namespace MOFIN
             childForm.MdiParent = this;
             childForm.Show();
         }
-
 
         private void CambiaImagen()
         {

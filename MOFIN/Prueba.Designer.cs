@@ -46,10 +46,16 @@
             this.txt_quesebusca = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.reportes = new MOFIN.Reportes.Reportes();
+            this.dt_RepOperTrans_Cliente_EncabezadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.GRD_Excel = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Idiomas)).BeginInit();
             this.Pan_Prueba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Valor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Ano)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_RepOperTrans_Cliente_EncabezadoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GRD_Excel)).BeginInit();
             this.SuspendLayout();
             // 
             // BS_Idiomas
@@ -187,21 +193,21 @@
             // 
             // txt_dondesebuscara
             // 
-            this.txt_dondesebuscara.Location = new System.Drawing.Point(404, 187);
+            this.txt_dondesebuscara.Location = new System.Drawing.Point(270, 116);
             this.txt_dondesebuscara.Name = "txt_dondesebuscara";
             this.txt_dondesebuscara.Size = new System.Drawing.Size(235, 20);
             this.txt_dondesebuscara.TabIndex = 11;
             // 
             // txt_quesebusca
             // 
-            this.txt_quesebusca.Location = new System.Drawing.Point(403, 217);
+            this.txt_quesebusca.Location = new System.Drawing.Point(269, 146);
             this.txt_quesebusca.Name = "txt_quesebusca";
             this.txt_quesebusca.Size = new System.Drawing.Size(100, 20);
             this.txt_quesebusca.TabIndex = 12;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(541, 217);
+            this.button3.Location = new System.Drawing.Point(407, 146);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 13;
@@ -211,7 +217,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(204, 299);
+            this.button4.Location = new System.Drawing.Point(189, 415);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 14;
@@ -219,11 +225,30 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // reportes
+            // 
+            this.reportes.DataSetName = "Reportes";
+            this.reportes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dt_RepOperTrans_Cliente_EncabezadoBindingSource
+            // 
+            this.dt_RepOperTrans_Cliente_EncabezadoBindingSource.DataMember = "dt_RepOperTrans_Cliente_Encabezado";
+            this.dt_RepOperTrans_Cliente_EncabezadoBindingSource.DataSource = this.reportes;
+            // 
+            // GRD_Excel
+            // 
+            this.GRD_Excel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GRD_Excel.Location = new System.Drawing.Point(270, 173);
+            this.GRD_Excel.Name = "GRD_Excel";
+            this.GRD_Excel.Size = new System.Drawing.Size(518, 265);
+            this.GRD_Excel.TabIndex = 15;
+            // 
             // Prueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.GRD_Excel);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.txt_quesebusca);
@@ -247,6 +272,9 @@
             this.Pan_Prueba.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Valor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Ano)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_RepOperTrans_Cliente_EncabezadoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GRD_Excel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,5 +298,8 @@
         private System.Windows.Forms.TextBox txt_quesebusca;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private Reportes.Reportes reportes;
+        private System.Windows.Forms.BindingSource dt_RepOperTrans_Cliente_EncabezadoBindingSource;
+        private System.Windows.Forms.DataGridView GRD_Excel;
     }
 }

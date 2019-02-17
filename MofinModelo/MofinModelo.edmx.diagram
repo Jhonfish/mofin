@@ -28,7 +28,7 @@
         <EntityTypeShape EntityType="MonitorOperacionesModelo.M_VolOperPersNat" Width="1.5" PointX="5.75" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModelo.O_HistPerfOperac" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModelo.O_Observaciones" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.O_Operfinancieras" Width="1.5" PointX="13.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.O_Operfinancieras" Width="1.5" PointX="9.625" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModelo.O_OperTransaccionales" Width="1.5" PointX="7.75" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModelo.O_RepOperacional" Width="1.5" PointX="13.75" PointY="13.75" IsExpanded="true" />
         <AssociationConnector Association="MonitorOperacionesModelo.FK_C_HistActClientes_C_Clientes" ManuallyRouted="false" />

@@ -26,6 +26,10 @@ namespace MOFIN.Reportes {
         
         private OpeFinanc_ClientesDataTable tableOpeFinanc_Clientes;
         
+        private dt_RepOperTrans_Cliente_DetallesDataTable tabledt_RepOperTrans_Cliente_Detalles;
+        
+        private dt_RepOperTrans_Cliente_EncabezadoDataTable tabledt_RepOperTrans_Cliente_Encabezado;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -57,6 +61,12 @@ namespace MOFIN.Reportes {
                 if ((ds.Tables["OpeFinanc_Clientes"] != null)) {
                     base.Tables.Add(new OpeFinanc_ClientesDataTable(ds.Tables["OpeFinanc_Clientes"]));
                 }
+                if ((ds.Tables["dt_RepOperTrans_Cliente_Detalles"] != null)) {
+                    base.Tables.Add(new dt_RepOperTrans_Cliente_DetallesDataTable(ds.Tables["dt_RepOperTrans_Cliente_Detalles"]));
+                }
+                if ((ds.Tables["dt_RepOperTrans_Cliente_Encabezado"] != null)) {
+                    base.Tables.Add(new dt_RepOperTrans_Cliente_EncabezadoDataTable(ds.Tables["dt_RepOperTrans_Cliente_Encabezado"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -82,6 +92,26 @@ namespace MOFIN.Reportes {
         public OpeFinanc_ClientesDataTable OpeFinanc_Clientes {
             get {
                 return this.tableOpeFinanc_Clientes;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public dt_RepOperTrans_Cliente_DetallesDataTable dt_RepOperTrans_Cliente_Detalles {
+            get {
+                return this.tabledt_RepOperTrans_Cliente_Detalles;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public dt_RepOperTrans_Cliente_EncabezadoDataTable dt_RepOperTrans_Cliente_Encabezado {
+            get {
+                return this.tabledt_RepOperTrans_Cliente_Encabezado;
             }
         }
         
@@ -155,6 +185,12 @@ namespace MOFIN.Reportes {
                 if ((ds.Tables["OpeFinanc_Clientes"] != null)) {
                     base.Tables.Add(new OpeFinanc_ClientesDataTable(ds.Tables["OpeFinanc_Clientes"]));
                 }
+                if ((ds.Tables["dt_RepOperTrans_Cliente_Detalles"] != null)) {
+                    base.Tables.Add(new dt_RepOperTrans_Cliente_DetallesDataTable(ds.Tables["dt_RepOperTrans_Cliente_Detalles"]));
+                }
+                if ((ds.Tables["dt_RepOperTrans_Cliente_Encabezado"] != null)) {
+                    base.Tables.Add(new dt_RepOperTrans_Cliente_EncabezadoDataTable(ds.Tables["dt_RepOperTrans_Cliente_Encabezado"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -194,6 +230,18 @@ namespace MOFIN.Reportes {
                     this.tableOpeFinanc_Clientes.InitVars();
                 }
             }
+            this.tabledt_RepOperTrans_Cliente_Detalles = ((dt_RepOperTrans_Cliente_DetallesDataTable)(base.Tables["dt_RepOperTrans_Cliente_Detalles"]));
+            if ((initTable == true)) {
+                if ((this.tabledt_RepOperTrans_Cliente_Detalles != null)) {
+                    this.tabledt_RepOperTrans_Cliente_Detalles.InitVars();
+                }
+            }
+            this.tabledt_RepOperTrans_Cliente_Encabezado = ((dt_RepOperTrans_Cliente_EncabezadoDataTable)(base.Tables["dt_RepOperTrans_Cliente_Encabezado"]));
+            if ((initTable == true)) {
+                if ((this.tabledt_RepOperTrans_Cliente_Encabezado != null)) {
+                    this.tabledt_RepOperTrans_Cliente_Encabezado.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -206,11 +254,27 @@ namespace MOFIN.Reportes {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableOpeFinanc_Clientes = new OpeFinanc_ClientesDataTable();
             base.Tables.Add(this.tableOpeFinanc_Clientes);
+            this.tabledt_RepOperTrans_Cliente_Detalles = new dt_RepOperTrans_Cliente_DetallesDataTable();
+            base.Tables.Add(this.tabledt_RepOperTrans_Cliente_Detalles);
+            this.tabledt_RepOperTrans_Cliente_Encabezado = new dt_RepOperTrans_Cliente_EncabezadoDataTable();
+            base.Tables.Add(this.tabledt_RepOperTrans_Cliente_Encabezado);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializeOpeFinanc_Clientes() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializedt_RepOperTrans_Cliente_Detalles() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializedt_RepOperTrans_Cliente_Encabezado() {
             return false;
         }
         
@@ -271,6 +335,12 @@ namespace MOFIN.Reportes {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void OpeFinanc_ClientesRowChangeEventHandler(object sender, OpeFinanc_ClientesRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void dt_RepOperTrans_Cliente_DetallesRowChangeEventHandler(object sender, dt_RepOperTrans_Cliente_DetallesRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void dt_RepOperTrans_Cliente_EncabezadoRowChangeEventHandler(object sender, dt_RepOperTrans_Cliente_EncabezadoRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -622,6 +692,626 @@ namespace MOFIN.Reportes {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class dt_RepOperTrans_Cliente_DetallesDataTable : global::System.Data.TypedTableBase<dt_RepOperTrans_Cliente_DetallesRow> {
+            
+            private global::System.Data.DataColumn columnCod_Ciente;
+            
+            private global::System.Data.DataColumn columnFecha;
+            
+            private global::System.Data.DataColumn columnProducto;
+            
+            private global::System.Data.DataColumn columnCompra;
+            
+            private global::System.Data.DataColumn columnVenta;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public dt_RepOperTrans_Cliente_DetallesDataTable() {
+                this.TableName = "dt_RepOperTrans_Cliente_Detalles";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal dt_RepOperTrans_Cliente_DetallesDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected dt_RepOperTrans_Cliente_DetallesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Cod_CienteColumn {
+                get {
+                    return this.columnCod_Ciente;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn FechaColumn {
+                get {
+                    return this.columnFecha;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ProductoColumn {
+                get {
+                    return this.columnProducto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CompraColumn {
+                get {
+                    return this.columnCompra;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn VentaColumn {
+                get {
+                    return this.columnVenta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public dt_RepOperTrans_Cliente_DetallesRow this[int index] {
+                get {
+                    return ((dt_RepOperTrans_Cliente_DetallesRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event dt_RepOperTrans_Cliente_DetallesRowChangeEventHandler dt_RepOperTrans_Cliente_DetallesRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event dt_RepOperTrans_Cliente_DetallesRowChangeEventHandler dt_RepOperTrans_Cliente_DetallesRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event dt_RepOperTrans_Cliente_DetallesRowChangeEventHandler dt_RepOperTrans_Cliente_DetallesRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event dt_RepOperTrans_Cliente_DetallesRowChangeEventHandler dt_RepOperTrans_Cliente_DetallesRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Adddt_RepOperTrans_Cliente_DetallesRow(dt_RepOperTrans_Cliente_DetallesRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public dt_RepOperTrans_Cliente_DetallesRow Adddt_RepOperTrans_Cliente_DetallesRow(string Cod_Ciente, string Fecha, string Producto, string Compra, string Venta) {
+                dt_RepOperTrans_Cliente_DetallesRow rowdt_RepOperTrans_Cliente_DetallesRow = ((dt_RepOperTrans_Cliente_DetallesRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Cod_Ciente,
+                        Fecha,
+                        Producto,
+                        Compra,
+                        Venta};
+                rowdt_RepOperTrans_Cliente_DetallesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdt_RepOperTrans_Cliente_DetallesRow);
+                return rowdt_RepOperTrans_Cliente_DetallesRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                dt_RepOperTrans_Cliente_DetallesDataTable cln = ((dt_RepOperTrans_Cliente_DetallesDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new dt_RepOperTrans_Cliente_DetallesDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnCod_Ciente = base.Columns["Cod_Ciente"];
+                this.columnFecha = base.Columns["Fecha"];
+                this.columnProducto = base.Columns["Producto"];
+                this.columnCompra = base.Columns["Compra"];
+                this.columnVenta = base.Columns["Venta"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnCod_Ciente = new global::System.Data.DataColumn("Cod_Ciente", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCod_Ciente);
+                this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFecha);
+                this.columnProducto = new global::System.Data.DataColumn("Producto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProducto);
+                this.columnCompra = new global::System.Data.DataColumn("Compra", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCompra);
+                this.columnVenta = new global::System.Data.DataColumn("Venta", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVenta);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public dt_RepOperTrans_Cliente_DetallesRow Newdt_RepOperTrans_Cliente_DetallesRow() {
+                return ((dt_RepOperTrans_Cliente_DetallesRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new dt_RepOperTrans_Cliente_DetallesRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(dt_RepOperTrans_Cliente_DetallesRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.dt_RepOperTrans_Cliente_DetallesRowChanged != null)) {
+                    this.dt_RepOperTrans_Cliente_DetallesRowChanged(this, new dt_RepOperTrans_Cliente_DetallesRowChangeEvent(((dt_RepOperTrans_Cliente_DetallesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.dt_RepOperTrans_Cliente_DetallesRowChanging != null)) {
+                    this.dt_RepOperTrans_Cliente_DetallesRowChanging(this, new dt_RepOperTrans_Cliente_DetallesRowChangeEvent(((dt_RepOperTrans_Cliente_DetallesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.dt_RepOperTrans_Cliente_DetallesRowDeleted != null)) {
+                    this.dt_RepOperTrans_Cliente_DetallesRowDeleted(this, new dt_RepOperTrans_Cliente_DetallesRowChangeEvent(((dt_RepOperTrans_Cliente_DetallesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.dt_RepOperTrans_Cliente_DetallesRowDeleting != null)) {
+                    this.dt_RepOperTrans_Cliente_DetallesRowDeleting(this, new dt_RepOperTrans_Cliente_DetallesRowChangeEvent(((dt_RepOperTrans_Cliente_DetallesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Removedt_RepOperTrans_Cliente_DetallesRow(dt_RepOperTrans_Cliente_DetallesRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Reportes ds = new Reportes();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "dt_RepOperTrans_Cliente_DetallesDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class dt_RepOperTrans_Cliente_EncabezadoDataTable : global::System.Data.TypedTableBase<dt_RepOperTrans_Cliente_EncabezadoRow> {
+            
+            private global::System.Data.DataColumn columnCliente_Cod;
+            
+            private global::System.Data.DataColumn columnCliente_Nme;
+            
+            private global::System.Data.DataColumn columnCliente_DocID;
+            
+            private global::System.Data.DataColumn columnCliente_Direc;
+            
+            private global::System.Data.DataColumn columnRep_Encabezado;
+            
+            private global::System.Data.DataColumn columnRep_Observ;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public dt_RepOperTrans_Cliente_EncabezadoDataTable() {
+                this.TableName = "dt_RepOperTrans_Cliente_Encabezado";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal dt_RepOperTrans_Cliente_EncabezadoDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected dt_RepOperTrans_Cliente_EncabezadoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Cliente_CodColumn {
+                get {
+                    return this.columnCliente_Cod;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Cliente_NmeColumn {
+                get {
+                    return this.columnCliente_Nme;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Cliente_DocIDColumn {
+                get {
+                    return this.columnCliente_DocID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Cliente_DirecColumn {
+                get {
+                    return this.columnCliente_Direc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Rep_EncabezadoColumn {
+                get {
+                    return this.columnRep_Encabezado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Rep_ObservColumn {
+                get {
+                    return this.columnRep_Observ;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public dt_RepOperTrans_Cliente_EncabezadoRow this[int index] {
+                get {
+                    return ((dt_RepOperTrans_Cliente_EncabezadoRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event dt_RepOperTrans_Cliente_EncabezadoRowChangeEventHandler dt_RepOperTrans_Cliente_EncabezadoRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event dt_RepOperTrans_Cliente_EncabezadoRowChangeEventHandler dt_RepOperTrans_Cliente_EncabezadoRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event dt_RepOperTrans_Cliente_EncabezadoRowChangeEventHandler dt_RepOperTrans_Cliente_EncabezadoRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event dt_RepOperTrans_Cliente_EncabezadoRowChangeEventHandler dt_RepOperTrans_Cliente_EncabezadoRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Adddt_RepOperTrans_Cliente_EncabezadoRow(dt_RepOperTrans_Cliente_EncabezadoRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public dt_RepOperTrans_Cliente_EncabezadoRow Adddt_RepOperTrans_Cliente_EncabezadoRow(string Cliente_Cod, string Cliente_Nme, string Cliente_DocID, string Cliente_Direc, string Rep_Encabezado, string Rep_Observ) {
+                dt_RepOperTrans_Cliente_EncabezadoRow rowdt_RepOperTrans_Cliente_EncabezadoRow = ((dt_RepOperTrans_Cliente_EncabezadoRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Cliente_Cod,
+                        Cliente_Nme,
+                        Cliente_DocID,
+                        Cliente_Direc,
+                        Rep_Encabezado,
+                        Rep_Observ};
+                rowdt_RepOperTrans_Cliente_EncabezadoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdt_RepOperTrans_Cliente_EncabezadoRow);
+                return rowdt_RepOperTrans_Cliente_EncabezadoRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                dt_RepOperTrans_Cliente_EncabezadoDataTable cln = ((dt_RepOperTrans_Cliente_EncabezadoDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new dt_RepOperTrans_Cliente_EncabezadoDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnCliente_Cod = base.Columns["Cliente_Cod"];
+                this.columnCliente_Nme = base.Columns["Cliente_Nme"];
+                this.columnCliente_DocID = base.Columns["Cliente_DocID"];
+                this.columnCliente_Direc = base.Columns["Cliente_Direc"];
+                this.columnRep_Encabezado = base.Columns["Rep_Encabezado"];
+                this.columnRep_Observ = base.Columns["Rep_Observ"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnCliente_Cod = new global::System.Data.DataColumn("Cliente_Cod", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCliente_Cod);
+                this.columnCliente_Nme = new global::System.Data.DataColumn("Cliente_Nme", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCliente_Nme);
+                this.columnCliente_DocID = new global::System.Data.DataColumn("Cliente_DocID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCliente_DocID);
+                this.columnCliente_Direc = new global::System.Data.DataColumn("Cliente_Direc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCliente_Direc);
+                this.columnRep_Encabezado = new global::System.Data.DataColumn("Rep_Encabezado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRep_Encabezado);
+                this.columnRep_Observ = new global::System.Data.DataColumn("Rep_Observ", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRep_Observ);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public dt_RepOperTrans_Cliente_EncabezadoRow Newdt_RepOperTrans_Cliente_EncabezadoRow() {
+                return ((dt_RepOperTrans_Cliente_EncabezadoRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new dt_RepOperTrans_Cliente_EncabezadoRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(dt_RepOperTrans_Cliente_EncabezadoRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.dt_RepOperTrans_Cliente_EncabezadoRowChanged != null)) {
+                    this.dt_RepOperTrans_Cliente_EncabezadoRowChanged(this, new dt_RepOperTrans_Cliente_EncabezadoRowChangeEvent(((dt_RepOperTrans_Cliente_EncabezadoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.dt_RepOperTrans_Cliente_EncabezadoRowChanging != null)) {
+                    this.dt_RepOperTrans_Cliente_EncabezadoRowChanging(this, new dt_RepOperTrans_Cliente_EncabezadoRowChangeEvent(((dt_RepOperTrans_Cliente_EncabezadoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.dt_RepOperTrans_Cliente_EncabezadoRowDeleted != null)) {
+                    this.dt_RepOperTrans_Cliente_EncabezadoRowDeleted(this, new dt_RepOperTrans_Cliente_EncabezadoRowChangeEvent(((dt_RepOperTrans_Cliente_EncabezadoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.dt_RepOperTrans_Cliente_EncabezadoRowDeleting != null)) {
+                    this.dt_RepOperTrans_Cliente_EncabezadoRowDeleting(this, new dt_RepOperTrans_Cliente_EncabezadoRowChangeEvent(((dt_RepOperTrans_Cliente_EncabezadoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Removedt_RepOperTrans_Cliente_EncabezadoRow(dt_RepOperTrans_Cliente_EncabezadoRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Reportes ds = new Reportes();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "dt_RepOperTrans_Cliente_EncabezadoDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class OpeFinanc_ClientesRow : global::System.Data.DataRow {
@@ -865,6 +1555,355 @@ namespace MOFIN.Reportes {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class dt_RepOperTrans_Cliente_DetallesRow : global::System.Data.DataRow {
+            
+            private dt_RepOperTrans_Cliente_DetallesDataTable tabledt_RepOperTrans_Cliente_Detalles;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal dt_RepOperTrans_Cliente_DetallesRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabledt_RepOperTrans_Cliente_Detalles = ((dt_RepOperTrans_Cliente_DetallesDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Cod_Ciente {
+                get {
+                    try {
+                        return ((string)(this[this.tabledt_RepOperTrans_Cliente_Detalles.Cod_CienteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cod_Ciente\' de la tabla \'dt_RepOperTrans_Cliente_Detalles" +
+                                "\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledt_RepOperTrans_Cliente_Detalles.Cod_CienteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Fecha {
+                get {
+                    try {
+                        return ((string)(this[this.tabledt_RepOperTrans_Cliente_Detalles.FechaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Fecha\' de la tabla \'dt_RepOperTrans_Cliente_Detalles\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledt_RepOperTrans_Cliente_Detalles.FechaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Producto {
+                get {
+                    try {
+                        return ((string)(this[this.tabledt_RepOperTrans_Cliente_Detalles.ProductoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Producto\' de la tabla \'dt_RepOperTrans_Cliente_Detalles\' " +
+                                "es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledt_RepOperTrans_Cliente_Detalles.ProductoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Compra {
+                get {
+                    try {
+                        return ((string)(this[this.tabledt_RepOperTrans_Cliente_Detalles.CompraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Compra\' de la tabla \'dt_RepOperTrans_Cliente_Detalles\' es" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledt_RepOperTrans_Cliente_Detalles.CompraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Venta {
+                get {
+                    try {
+                        return ((string)(this[this.tabledt_RepOperTrans_Cliente_Detalles.VentaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Venta\' de la tabla \'dt_RepOperTrans_Cliente_Detalles\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledt_RepOperTrans_Cliente_Detalles.VentaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCod_CienteNull() {
+                return this.IsNull(this.tabledt_RepOperTrans_Cliente_Detalles.Cod_CienteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCod_CienteNull() {
+                this[this.tabledt_RepOperTrans_Cliente_Detalles.Cod_CienteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsFechaNull() {
+                return this.IsNull(this.tabledt_RepOperTrans_Cliente_Detalles.FechaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetFechaNull() {
+                this[this.tabledt_RepOperTrans_Cliente_Detalles.FechaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsProductoNull() {
+                return this.IsNull(this.tabledt_RepOperTrans_Cliente_Detalles.ProductoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetProductoNull() {
+                this[this.tabledt_RepOperTrans_Cliente_Detalles.ProductoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCompraNull() {
+                return this.IsNull(this.tabledt_RepOperTrans_Cliente_Detalles.CompraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCompraNull() {
+                this[this.tabledt_RepOperTrans_Cliente_Detalles.CompraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsVentaNull() {
+                return this.IsNull(this.tabledt_RepOperTrans_Cliente_Detalles.VentaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetVentaNull() {
+                this[this.tabledt_RepOperTrans_Cliente_Detalles.VentaColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class dt_RepOperTrans_Cliente_EncabezadoRow : global::System.Data.DataRow {
+            
+            private dt_RepOperTrans_Cliente_EncabezadoDataTable tabledt_RepOperTrans_Cliente_Encabezado;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal dt_RepOperTrans_Cliente_EncabezadoRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabledt_RepOperTrans_Cliente_Encabezado = ((dt_RepOperTrans_Cliente_EncabezadoDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Cliente_Cod {
+                get {
+                    try {
+                        return ((string)(this[this.tabledt_RepOperTrans_Cliente_Encabezado.Cliente_CodColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cliente_Cod\' de la tabla \'dt_RepOperTrans_Cliente_Encabez" +
+                                "ado\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledt_RepOperTrans_Cliente_Encabezado.Cliente_CodColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Cliente_Nme {
+                get {
+                    try {
+                        return ((string)(this[this.tabledt_RepOperTrans_Cliente_Encabezado.Cliente_NmeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cliente_Nme\' de la tabla \'dt_RepOperTrans_Cliente_Encabez" +
+                                "ado\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledt_RepOperTrans_Cliente_Encabezado.Cliente_NmeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Cliente_DocID {
+                get {
+                    try {
+                        return ((string)(this[this.tabledt_RepOperTrans_Cliente_Encabezado.Cliente_DocIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cliente_DocID\' de la tabla \'dt_RepOperTrans_Cliente_Encab" +
+                                "ezado\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledt_RepOperTrans_Cliente_Encabezado.Cliente_DocIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Cliente_Direc {
+                get {
+                    try {
+                        return ((string)(this[this.tabledt_RepOperTrans_Cliente_Encabezado.Cliente_DirecColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cliente_Direc\' de la tabla \'dt_RepOperTrans_Cliente_Encab" +
+                                "ezado\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledt_RepOperTrans_Cliente_Encabezado.Cliente_DirecColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Rep_Encabezado {
+                get {
+                    try {
+                        return ((string)(this[this.tabledt_RepOperTrans_Cliente_Encabezado.Rep_EncabezadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Rep_Encabezado\' de la tabla \'dt_RepOperTrans_Cliente_Enca" +
+                                "bezado\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledt_RepOperTrans_Cliente_Encabezado.Rep_EncabezadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Rep_Observ {
+                get {
+                    try {
+                        return ((string)(this[this.tabledt_RepOperTrans_Cliente_Encabezado.Rep_ObservColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Rep_Observ\' de la tabla \'dt_RepOperTrans_Cliente_Encabeza" +
+                                "do\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledt_RepOperTrans_Cliente_Encabezado.Rep_ObservColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCliente_CodNull() {
+                return this.IsNull(this.tabledt_RepOperTrans_Cliente_Encabezado.Cliente_CodColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCliente_CodNull() {
+                this[this.tabledt_RepOperTrans_Cliente_Encabezado.Cliente_CodColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCliente_NmeNull() {
+                return this.IsNull(this.tabledt_RepOperTrans_Cliente_Encabezado.Cliente_NmeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCliente_NmeNull() {
+                this[this.tabledt_RepOperTrans_Cliente_Encabezado.Cliente_NmeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCliente_DocIDNull() {
+                return this.IsNull(this.tabledt_RepOperTrans_Cliente_Encabezado.Cliente_DocIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCliente_DocIDNull() {
+                this[this.tabledt_RepOperTrans_Cliente_Encabezado.Cliente_DocIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCliente_DirecNull() {
+                return this.IsNull(this.tabledt_RepOperTrans_Cliente_Encabezado.Cliente_DirecColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCliente_DirecNull() {
+                this[this.tabledt_RepOperTrans_Cliente_Encabezado.Cliente_DirecColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsRep_EncabezadoNull() {
+                return this.IsNull(this.tabledt_RepOperTrans_Cliente_Encabezado.Rep_EncabezadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetRep_EncabezadoNull() {
+                this[this.tabledt_RepOperTrans_Cliente_Encabezado.Rep_EncabezadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsRep_ObservNull() {
+                return this.IsNull(this.tabledt_RepOperTrans_Cliente_Encabezado.Rep_ObservColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetRep_ObservNull() {
+                this[this.tabledt_RepOperTrans_Cliente_Encabezado.Rep_ObservColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -884,6 +1923,74 @@ namespace MOFIN.Reportes {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public OpeFinanc_ClientesRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class dt_RepOperTrans_Cliente_DetallesRowChangeEvent : global::System.EventArgs {
+            
+            private dt_RepOperTrans_Cliente_DetallesRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public dt_RepOperTrans_Cliente_DetallesRowChangeEvent(dt_RepOperTrans_Cliente_DetallesRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public dt_RepOperTrans_Cliente_DetallesRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class dt_RepOperTrans_Cliente_EncabezadoRowChangeEvent : global::System.EventArgs {
+            
+            private dt_RepOperTrans_Cliente_EncabezadoRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public dt_RepOperTrans_Cliente_EncabezadoRowChangeEvent(dt_RepOperTrans_Cliente_EncabezadoRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public dt_RepOperTrans_Cliente_EncabezadoRow Row {
                 get {
                     return this.eventRow;
                 }
