@@ -17,5 +17,13 @@ namespace MofinModeloEntorno
         public string FuenteLetra { get; set; }
         public Nullable<byte> Desktop_NroImgs { get; set; }
         public int ID_Sistema { get; set; }
+        public Nullable<byte> IdiomaPredeterminado { get; set; }
+        public Nullable<bool> PermitUserCamParam { get; set; }
+        public Nullable<byte> PaisUso { get; set; }
+        public Nullable<bool> BtnsNavegBarraHerram { get; set; }
+        public Nullable<bool> PermitUserCambIdioma { get; set; }
+        public Nullable<byte> FondoEscritorio { get; set; }
+        public Nullable<byte> FormFecha { get; set; }
+        public Nullable<byte> FormPuntodecimal { get; set; }
     }
 }

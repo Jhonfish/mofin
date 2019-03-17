@@ -45,6 +45,7 @@ namespace MOFIN
             BS_Grupo_Opciones.DataSource = NGrupo_Opciones.ListarPorCodigo(MOFIN_LIB.Entorno.vs_Grupo);
             r_GrupoOpciones = BS_Grupo_Opciones.Current as Grupo_Opciones;
 
+            this.Lbl_Procesando.Text = "";
             this.Modo_Consulta();
         }
         private void Modo_Consulta()
@@ -315,28 +316,113 @@ namespace MOFIN
         {
             r_Observaciones = BS_OObservaciones.Current as O_Observaciones;
             string vl_RegEliminar = r_Observaciones.fecha.ToShortDateString() + " / " + r_Observaciones.Observacion;
-            DialogResult vl_Resp = MessageBox.Show("Desea Eliminar este Registro? " + "\n\n" + vl_RegEliminar,
-                "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult vl_Resp = MessageBox.Show(Funciones._Mens_Idioma(9010) + "\n\n" + vl_RegEliminar,
+                Funciones._Mens_Idioma(201), MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (vl_Resp == DialogResult.Yes)
             {
                 //                NUsuarios.Elimiar(t_Usuarios);
                 //                BS_Usuarios.DataSource = NUsuarios.Listar();
                 NO_Observaciones.Elimiar(r_Observaciones);
                 BS_OObservaciones.DataSource = NO_Observaciones.Listar();
-                MessageBox.Show("Se eliminó el registro actual", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Funciones._Mens_Idioma(9011), Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void Btn_Importar_Click(object sender, EventArgs e)
         {
-            OpenFileDialog vl_ArchivoImport = new OpenFileDialog();
-            string vl_Tipoarchivo = "Archivo de Texto (*.txt)| *.TXT |Archivos CSV (*.CSV)| *.CSV |Archivos de Excel (*.XLS?)| *.XLS?";
-            vl_ArchivoImport.Filter = vl_Tipoarchivo;
-            // vl_ArchivoImport.CheckFileExists = false;
-            if (vl_ArchivoImport.ShowDialog() == DialogResult.OK)
-                MessageBox.Show(vl_ArchivoImport.FileName);
-            //this.Txt_NmeArchExport.Text = vl_ArchivoImport.FileName;
+            MessageBox.Show(Funciones._Mens_Idioma(14900), Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            //O_Operfinancieras r_OperFinancieras = new O_Operfinancieras();
+            O_OperTransaccionales r_OperTransaccionales = new O_OperTransaccionales();
+
+            OpenFileDialog vl_ArchivoImport = new OpenFileDialog();
+
+            string vl_Tipoarchivo = "Archivos de Excel (*.XLS?)|*.XLS?|Archivo de Texto (*.txt)|*.TXT|Archivos CSV (*.CSV)|*.CSV";
+            vl_ArchivoImport.Filter = vl_Tipoarchivo;
+            if (vl_ArchivoImport.ShowDialog() == DialogResult.OK)
+            {
+                Lbl_Procesando.Text = Funciones._Mens_Idioma(1030);
+                Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+                Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Open(vl_ArchivoImport.FileName);
+                Microsoft.Office.Interop.Excel._Worksheet worksheet = workbook.Sheets[1] as Microsoft.Office.Interop.Excel.Worksheet;
+                worksheet = workbook.Sheets[1];
+                worksheet = workbook.ActiveSheet;
+
+                int vl_TotalReg = 1;
+                while (true)
+                {
+                    //Lbl_Procesando.Text = Funciones._Mens_Idioma(1029) + vl_Indice.ToString();
+                    if (worksheet.Cells[vl_TotalReg, 1].Value() == "" | worksheet.Cells[vl_TotalReg, 1].Value() == null)
+                        break;
+                    Lbl_Procesando.Text = Funciones._Mens_Idioma(1030) + " " + vl_TotalReg.ToString();
+                    vl_TotalReg++;
+                }
+                vl_TotalReg--;
+                int vl_Indice = 0;
+                while (true)
+                {
+                    vl_Indice++;
+                    if (worksheet.Cells[vl_Indice, 1].Value() == "" | worksheet.Cells[vl_Indice, 1].Value() == null)
+                        break;
+                    else
+                    {
+                        Lbl_Procesando.Text = Funciones._Mens_Idioma(1029) + vl_Indice.ToString() + " / " + vl_TotalReg.ToString();
+                        
+                        /****
+                        ** Por solicitud de Angel R. se invierten las operaciones de RF y RV comrpa <-> venta.  01 / 11 / 2018
+                        ** Aparentemente, el sistema lo exporta de manera inversa al resto de los productos.
+                        ** Aplicable solo para panamá
+                        *****
+                           IF Opc_Sistema.C_PaisUso = 2 && Panamá
+                                GO TOP
+                                SCAN FOR VAL(Tip_Operac) = 1 && 1: Renta Fija
+                                    replace Tip_Orden WITH IIF(UPPER(ALLTRIM(ImportaOperaciones.Tip_Orden))= "VENTA", "COMPR", "VENTA")
+		                        ENDSCAN
+                            ENDIF
+                        *****/
+
+                        // 	Campos a Importar : Tip_Orden C(10), Fec_Pacto C(12), Clie_RifCI C(15), Cod_Clie C(10), Nme_Clie C(50), Fec_Cierre C(12), 
+                        //                      Fec_Valor C(12), Mto_Pacto C(20), Tip_Operac C(5), Val_Efec C(20), Grp_Clie c(10), Hr_CarOrd C(20)
+                        // IIF(UPPER(ALLTRIM(ImportaOperaciones.Tip_Orden))="INCRM", "COMPR", UPPER(ALLTRIM(ImportaOperaciones.Tip_Orden)) )
+
+                        r_OperTransaccionales.Tipo_Orden = worksheet.Cells[vl_Indice, 1].Value().Trim().ToUpper() == "INCRM" ? "COMPR" : worksheet.Cells[vl_Indice, 1].Value().Trim().ToUpper() ;
+                        r_OperTransaccionales.Fec_Pacto = (worksheet.Cells[vl_Indice, 2].Value() == null | worksheet.Cells[vl_Indice, 2].GetType().Name != "DateTime") ? DateTime.Today.Date : worksheet.Cells[vl_Indice, 2].Value();
+                        r_OperTransaccionales.Doc_ID = worksheet.Cells[vl_Indice, 3].Value() == null ? "" : worksheet.Cells[vl_Indice, 3].Value().Trim();
+                        r_OperTransaccionales.Cod_Cliente = worksheet.Cells[vl_Indice, 4].Value() == null ? "" : worksheet.Cells[vl_Indice, 4].Value().Trim();
+                        r_OperTransaccionales.Nme_Cliente = worksheet.Cells[vl_Indice, 5].Value() == null ? "" : worksheet.Cells[vl_Indice, 5].Value().Trim();
+                        r_OperTransaccionales.Fec_Cierre = (worksheet.Cells[vl_Indice, 6].Value() == null | worksheet.Cells[vl_Indice, 6].GetType().Name != "DateTime") ? DateTime.Today.Date : worksheet.Cells[vl_Indice, 6].Value();
+                        r_OperTransaccionales.Fec_Valor = (worksheet.Cells[vl_Indice, 7].Value() == null | worksheet.Cells[vl_Indice, 7].GetType().Name != "DateTime") ? DateTime.Today.Date : worksheet.Cells[vl_Indice, 7].Value();
+                        r_OperTransaccionales.Monto_Pactado = worksheet.Cells[vl_Indice, 8].Value() == null ? 0 : (Decimal)worksheet.Cells[vl_Indice, 8].Value();
+                        int vl_TipoOperacion = worksheet.Cells[vl_Indice, 9].Value() == null ? 9 : (int)worksheet.Cells[vl_Indice, 9].Value();
+                        r_OperTransaccionales.Tipo_Operacion = vl_TipoOperacion == 0? "MARGEN" :
+                                                                    vl_TipoOperacion == 1 ? "RENTA FIJA" :
+                                                                        vl_TipoOperacion == 2 ? "RENTA VARIABLE" :
+                                                                            vl_TipoOperacion == 3 ? "FUTUROS" :
+                                                                                vl_TipoOperacion == 4 ? "OPCIONES" :
+                                                                                    vl_TipoOperacion == 5 ? "MUTUO" : "INDEFINIDO";
+                        r_OperTransaccionales.Valor_Efectivo = worksheet.Cells[vl_Indice, 10].Value() == null ? 0 : (Decimal)worksheet.Cells[vl_Indice, 10].Value();
+                        r_OperTransaccionales.Grp_Cliente = worksheet.Cells[vl_Indice, 11].Value().Trim() ;
+                        r_OperTransaccionales.Comprobante = "";
+                        r_OperTransaccionales.Hora_Carga = worksheet.Cells[vl_Indice, 12].Value() ?? DateTime.Now;
+
+                        if(Entorno.vs_Pais == 2)    // 1: Venezuela, 2: Panamá
+                        {
+                            if(r_OperTransaccionales.Tipo_Operacion == "RENTA FIJA")
+                            {
+                                r_OperTransaccionales.Tipo_Orden = r_OperTransaccionales.Tipo_Orden == "VENTA" ? "COMPR" : "VENTA";
+                            }
+                        }
+                        
+                        //NO_Operfinancieras.Insertar(r_OperFinancieras);
+                        NO_OperTransaccionales.Insertar(r_OperTransaccionales);
+                    }
+                }
+
+                workbook.Close(false);
+                app.Quit();
+                Lbl_Procesando.Text = "";
+                this.Btn_MostrarTodos_Click(null, null);
+            }
         }
 
         private void Chk_Reporte_CheckedChanged(object sender, EventArgs e)
@@ -346,7 +432,23 @@ namespace MOFIN
 
         private void Chk_ElimOper_CheckedChanged(object sender, EventArgs e)
         {
-            this.Grd_DetOperaciones.AllowUserToDeleteRows = this.Chk_ElimOper.Checked;
+            if (!this.Chk_ElimOper.Checked)
+            {
+                string vl_NroRegElim = Grd_DetOperaciones.SelectedRows.Count.ToString();
+                if (MessageBox.Show(Funciones._Mens_Idioma(9017) + "\n\n" + vl_NroRegElim,
+                            Funciones._Mens_Idioma(201), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    O_OperTransaccionales r_OperTransc = new O_OperTransaccionales();
+                    foreach (DataGridViewRow Registro in Grd_DetOperaciones.SelectedRows)
+                    {
+                        r_OperTransc.ID_Sistema = (int)Registro.Cells["ID_Sistema"].Value;
+                        r_OperTransc.Cod_Cliente = Registro.Cells["Col3_CodCliente"].Value.ToString();
+                        NO_OperTransaccionales.Elimiar(r_OperTransc);
+                    }
+                    MessageBox.Show(vl_NroRegElim + " " + Funciones._Mens_Idioma(9018), Funciones._Mens_Idioma(203), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Btn_MostrarTodos_Click(null, null);
+                }
+            }
             this.Grd_DetOperaciones.RowHeadersVisible = this.Chk_ElimOper.Checked;
         }
         private void Btn_MostrarTodos_Click(object sender, EventArgs e)

@@ -54,14 +54,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Tab_MonOperaciones = new System.Windows.Forms.TabControl();
             this.Pag1 = new System.Windows.Forms.TabPage();
             this.Pan_Pag1 = new System.Windows.Forms.Panel();
             this.Btn_Export_OpAfec = new System.Windows.Forms.Button();
             this.Grd_Clientes = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Doc_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PeriodUsoCta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ejecutivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NivelRiesgo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PerfilFinanciero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroTransacciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_CClientes = new System.Windows.Forms.BindingSource(this.components);
             this.Lbl_Hasta1 = new System.Windows.Forms.Label();
             this.Lbl_Desde1 = new System.Windows.Forms.Label();
@@ -104,6 +113,10 @@
             this.Col_PerRiesgo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_OHistPerfOperac = new System.Windows.Forms.BindingSource(this.components);
             this.Grd_ClieInfInversor = new System.Windows.Forms.DataGridView();
+            this.Col_CliCod2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CliDocID2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CliNme2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lbl_Obsvaciones = new System.Windows.Forms.Label();
             this.Lbl_Perfil = new System.Windows.Forms.Label();
             this.Btn_Cancelar = new System.Windows.Forms.Button();
@@ -124,21 +137,12 @@
             this.Grd_Reporte = new System.Windows.Forms.DataGridView();
             this.Chk_ElimOper = new System.Windows.Forms.CheckBox();
             this.Grd_DetOperaciones = new System.Windows.Forms.DataGridView();
-            this.Col3_TipOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_FecPacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_DocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_TipOperacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_CodCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_FecCierre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_FecValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_Efectivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_MtoPactado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_GrpCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_Comprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_HoraCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_OOperTransaccionales = new System.Windows.Forms.BindingSource(this.components);
             this.Grd_ClieDetOper = new System.Windows.Forms.DataGridView();
+            this.Col_CliCod3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CliDocID3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CliNme3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Chk_Reporte = new System.Windows.Forms.CheckBox();
             this.Pan_Reporte = new System.Windows.Forms.Panel();
             this.Btn_ProcReporte = new System.Windows.Forms.Button();
@@ -157,23 +161,21 @@
             this.BS_Grupo_Opciones = new System.Windows.Forms.BindingSource(this.components);
             this.BS_RepOperTrans_Cliente_Encabezado = new System.Windows.Forms.BindingSource(this.components);
             this.BS_RepOperTrans_Cliente_Detalles = new System.Windows.Forms.BindingSource(this.components);
-            this.Col_CliCod2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CliDocID2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CliNme2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CliCod3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CliDocID3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CliNme3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Doc_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PeriodUsoCta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ejecutivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NivelRiesgo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PerfilFinanciero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NroTransacciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lbl_Procesando = new System.Windows.Forms.Label();
+            this.Col3_TipOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_FecPacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_DocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_TipOperacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_CodCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_FecCierre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_FecValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_Efectivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_MtoPactado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_GrpCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_Comprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_HoraCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_Sistema = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tab_MonOperaciones.SuspendLayout();
             this.Pag1.SuspendLayout();
             this.Pan_Pag1.SuspendLayout();
@@ -301,6 +303,78 @@
             this.Grd_Clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grd_Clientes.Size = new System.Drawing.Size(350, 321);
             this.Grd_Clientes.TabIndex = 17;
+            // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "Codigo";
+            this.Codigo.FillWeight = 75F;
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 75;
+            // 
+            // Doc_ID
+            // 
+            this.Doc_ID.DataPropertyName = "Doc_ID";
+            this.Doc_ID.HeaderText = "Doc_ID";
+            this.Doc_ID.Name = "Doc_ID";
+            this.Doc_ID.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.FillWeight = 250F;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 250;
+            // 
+            // PeriodUsoCta
+            // 
+            this.PeriodUsoCta.DataPropertyName = "PeriodUsoCta";
+            this.PeriodUsoCta.HeaderText = "PeriodUsoCta";
+            this.PeriodUsoCta.Name = "PeriodUsoCta";
+            this.PeriodUsoCta.ReadOnly = true;
+            // 
+            // Activo
+            // 
+            this.Activo.DataPropertyName = "Activo";
+            this.Activo.HeaderText = "Activo";
+            this.Activo.Name = "Activo";
+            this.Activo.ReadOnly = true;
+            this.Activo.Visible = false;
+            // 
+            // Ejecutivo
+            // 
+            this.Ejecutivo.DataPropertyName = "Ejecutivo";
+            this.Ejecutivo.HeaderText = "Ejecutivo";
+            this.Ejecutivo.Name = "Ejecutivo";
+            this.Ejecutivo.ReadOnly = true;
+            this.Ejecutivo.Visible = false;
+            // 
+            // NivelRiesgo
+            // 
+            this.NivelRiesgo.DataPropertyName = "NivelRiesgo";
+            this.NivelRiesgo.HeaderText = "NivelRiesgo";
+            this.NivelRiesgo.Name = "NivelRiesgo";
+            this.NivelRiesgo.ReadOnly = true;
+            this.NivelRiesgo.Visible = false;
+            // 
+            // PerfilFinanciero
+            // 
+            this.PerfilFinanciero.DataPropertyName = "PerfilFinanciero";
+            this.PerfilFinanciero.HeaderText = "PerfilFinanciero";
+            this.PerfilFinanciero.Name = "PerfilFinanciero";
+            this.PerfilFinanciero.ReadOnly = true;
+            this.PerfilFinanciero.Visible = false;
+            // 
+            // NroTransacciones
+            // 
+            this.NroTransacciones.DataPropertyName = "NroTransacciones";
+            this.NroTransacciones.HeaderText = "NroTransacciones";
+            this.NroTransacciones.Name = "NroTransacciones";
+            this.NroTransacciones.ReadOnly = true;
+            this.NroTransacciones.Visible = false;
             // 
             // BS_CClientes
             // 
@@ -803,6 +877,42 @@
             this.Grd_ClieInfInversor.TabIndex = 24;
             this.Grd_ClieInfInversor.CurrentCellChanged += new System.EventHandler(this.Grd_ClieInfInversor_CurrentCellChanged);
             // 
+            // Col_CliCod2
+            // 
+            this.Col_CliCod2.DataPropertyName = "Codigo";
+            this.Col_CliCod2.FillWeight = 75F;
+            this.Col_CliCod2.HeaderText = "Codigo";
+            this.Col_CliCod2.Name = "Col_CliCod2";
+            this.Col_CliCod2.ReadOnly = true;
+            this.Col_CliCod2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Col_CliCod2.Width = 75;
+            // 
+            // Col_CliDocID2
+            // 
+            this.Col_CliDocID2.DataPropertyName = "Doc_ID";
+            this.Col_CliDocID2.HeaderText = "Doc_ID";
+            this.Col_CliDocID2.Name = "Col_CliDocID2";
+            this.Col_CliDocID2.ReadOnly = true;
+            this.Col_CliDocID2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Col_CliNme2
+            // 
+            this.Col_CliNme2.DataPropertyName = "Nombre";
+            this.Col_CliNme2.FillWeight = 250F;
+            this.Col_CliNme2.HeaderText = "Nombre";
+            this.Col_CliNme2.Name = "Col_CliNme2";
+            this.Col_CliNme2.ReadOnly = true;
+            this.Col_CliNme2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Col_CliNme2.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "PeriodUsoCta";
+            this.dataGridViewTextBoxColumn1.HeaderText = "PeriodUsoCta";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // Lbl_Obsvaciones
             // 
             this.Lbl_Obsvaciones.AutoSize = true;
@@ -1096,7 +1206,7 @@
             this.Grd_DetOperaciones.AllowUserToDeleteRows = false;
             this.Grd_DetOperaciones.AllowUserToOrderColumns = true;
             this.Grd_DetOperaciones.AutoGenerateColumns = false;
-            this.Grd_DetOperaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.Grd_DetOperaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.Grd_DetOperaciones.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
@@ -1120,7 +1230,8 @@
             this.Col3_MtoPactado,
             this.Col3_GrpCliente,
             this.Col3_Comprobante,
-            this.Col3_HoraCarga});
+            this.Col3_HoraCarga,
+            this.ID_Sistema});
             this.Grd_DetOperaciones.DataSource = this.BS_OOperTransaccionales;
             dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle26.BackColor = System.Drawing.Color.Black;
@@ -1134,120 +1245,9 @@
             this.Grd_DetOperaciones.Name = "Grd_DetOperaciones";
             this.Grd_DetOperaciones.ReadOnly = true;
             this.Grd_DetOperaciones.RowHeadersVisible = false;
+            this.Grd_DetOperaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grd_DetOperaciones.Size = new System.Drawing.Size(577, 419);
             this.Grd_DetOperaciones.TabIndex = 34;
-            // 
-            // Col3_TipOrden
-            // 
-            this.Col3_TipOrden.DataPropertyName = "Tipo_Orden";
-            this.Col3_TipOrden.HeaderText = "Tipo_Orden";
-            this.Col3_TipOrden.Name = "Col3_TipOrden";
-            this.Col3_TipOrden.ReadOnly = true;
-            this.Col3_TipOrden.Width = 102;
-            // 
-            // Col3_FecPacto
-            // 
-            this.Col3_FecPacto.DataPropertyName = "Fec_Pacto";
-            this.Col3_FecPacto.HeaderText = "Fec_Pacto";
-            this.Col3_FecPacto.Name = "Col3_FecPacto";
-            this.Col3_FecPacto.ReadOnly = true;
-            this.Col3_FecPacto.Width = 95;
-            // 
-            // Col3_DocID
-            // 
-            this.Col3_DocID.DataPropertyName = "Doc_ID";
-            this.Col3_DocID.HeaderText = "Doc_ID";
-            this.Col3_DocID.Name = "Col3_DocID";
-            this.Col3_DocID.ReadOnly = true;
-            this.Col3_DocID.Width = 74;
-            // 
-            // Col3_TipOperacion
-            // 
-            this.Col3_TipOperacion.DataPropertyName = "Tipo_Operacion";
-            this.Col3_TipOperacion.HeaderText = "Tipo_Operacion";
-            this.Col3_TipOperacion.Name = "Col3_TipOperacion";
-            this.Col3_TipOperacion.ReadOnly = true;
-            this.Col3_TipOperacion.Width = 130;
-            // 
-            // Col3_CodCliente
-            // 
-            this.Col3_CodCliente.DataPropertyName = "Cod_Cliente";
-            this.Col3_CodCliente.HeaderText = "Cod_Cliente";
-            this.Col3_CodCliente.Name = "Col3_CodCliente";
-            this.Col3_CodCliente.ReadOnly = true;
-            this.Col3_CodCliente.Width = 109;
-            // 
-            // Col3_Nombre
-            // 
-            this.Col3_Nombre.DataPropertyName = "Nme_Cliente";
-            this.Col3_Nombre.HeaderText = "Nme_Cliente";
-            this.Col3_Nombre.Name = "Col3_Nombre";
-            this.Col3_Nombre.ReadOnly = true;
-            this.Col3_Nombre.Width = 109;
-            // 
-            // Col3_FecCierre
-            // 
-            this.Col3_FecCierre.DataPropertyName = "Fec_Cierre";
-            this.Col3_FecCierre.HeaderText = "Fec_Cierre";
-            this.Col3_FecCierre.Name = "Col3_FecCierre";
-            this.Col3_FecCierre.ReadOnly = true;
-            this.Col3_FecCierre.Width = 102;
-            // 
-            // Col3_FecValor
-            // 
-            this.Col3_FecValor.DataPropertyName = "Fec_Valor";
-            this.Col3_FecValor.HeaderText = "Fec_Valor";
-            this.Col3_FecValor.Name = "Col3_FecValor";
-            this.Col3_FecValor.ReadOnly = true;
-            this.Col3_FecValor.Width = 95;
-            // 
-            // Col3_Efectivo
-            // 
-            this.Col3_Efectivo.DataPropertyName = "Valor_Efectivo";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle24.Format = "N2";
-            dataGridViewCellStyle24.NullValue = null;
-            this.Col3_Efectivo.DefaultCellStyle = dataGridViewCellStyle24;
-            this.Col3_Efectivo.HeaderText = "Valor_Efectivo";
-            this.Col3_Efectivo.Name = "Col3_Efectivo";
-            this.Col3_Efectivo.ReadOnly = true;
-            this.Col3_Efectivo.Width = 130;
-            // 
-            // Col3_MtoPactado
-            // 
-            this.Col3_MtoPactado.DataPropertyName = "Monto_Pactado";
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle25.Format = "N2";
-            dataGridViewCellStyle25.NullValue = null;
-            this.Col3_MtoPactado.DefaultCellStyle = dataGridViewCellStyle25;
-            this.Col3_MtoPactado.HeaderText = "Monto_Pactado";
-            this.Col3_MtoPactado.Name = "Col3_MtoPactado";
-            this.Col3_MtoPactado.ReadOnly = true;
-            this.Col3_MtoPactado.Width = 123;
-            // 
-            // Col3_GrpCliente
-            // 
-            this.Col3_GrpCliente.DataPropertyName = "Grp_Cliente";
-            this.Col3_GrpCliente.HeaderText = "Grp_Cliente";
-            this.Col3_GrpCliente.Name = "Col3_GrpCliente";
-            this.Col3_GrpCliente.ReadOnly = true;
-            this.Col3_GrpCliente.Width = 109;
-            // 
-            // Col3_Comprobante
-            // 
-            this.Col3_Comprobante.DataPropertyName = "Comprobante";
-            this.Col3_Comprobante.HeaderText = "Comprobante";
-            this.Col3_Comprobante.Name = "Col3_Comprobante";
-            this.Col3_Comprobante.ReadOnly = true;
-            this.Col3_Comprobante.Width = 109;
-            // 
-            // Col3_HoraCarga
-            // 
-            this.Col3_HoraCarga.DataPropertyName = "Hora_Carga";
-            this.Col3_HoraCarga.HeaderText = "Hora_Carga";
-            this.Col3_HoraCarga.Name = "Col3_HoraCarga";
-            this.Col3_HoraCarga.ReadOnly = true;
-            this.Col3_HoraCarga.Width = 102;
             // 
             // BS_OOperTransaccionales
             // 
@@ -1283,6 +1283,42 @@
             this.Grd_ClieDetOper.Size = new System.Drawing.Size(350, 419);
             this.Grd_ClieDetOper.TabIndex = 34;
             this.Grd_ClieDetOper.CurrentCellChanged += new System.EventHandler(this.Grd_ClieDetOper_CurrentCellChanged);
+            // 
+            // Col_CliCod3
+            // 
+            this.Col_CliCod3.DataPropertyName = "Codigo";
+            this.Col_CliCod3.FillWeight = 75F;
+            this.Col_CliCod3.HeaderText = "Codigo";
+            this.Col_CliCod3.Name = "Col_CliCod3";
+            this.Col_CliCod3.ReadOnly = true;
+            this.Col_CliCod3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Col_CliCod3.Width = 75;
+            // 
+            // Col_CliDocID3
+            // 
+            this.Col_CliDocID3.DataPropertyName = "Doc_ID";
+            this.Col_CliDocID3.HeaderText = "Doc_ID";
+            this.Col_CliDocID3.Name = "Col_CliDocID3";
+            this.Col_CliDocID3.ReadOnly = true;
+            this.Col_CliDocID3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Col_CliNme3
+            // 
+            this.Col_CliNme3.DataPropertyName = "Nombre";
+            this.Col_CliNme3.FillWeight = 250F;
+            this.Col_CliNme3.HeaderText = "Nombre";
+            this.Col_CliNme3.Name = "Col_CliNme3";
+            this.Col_CliNme3.ReadOnly = true;
+            this.Col_CliNme3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Col_CliNme3.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "PeriodUsoCta";
+            this.dataGridViewTextBoxColumn2.HeaderText = "PeriodUsoCta";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Chk_Reporte
             // 
@@ -1454,155 +1490,141 @@
             this.BS_RepOperTrans_Cliente_Detalles.DataMember = "dt_RepOperTrans_Cliente_Detalles";
             this.BS_RepOperTrans_Cliente_Detalles.DataSource = this.reportes;
             // 
-            // Col_CliCod2
+            // Lbl_Procesando
             // 
-            this.Col_CliCod2.DataPropertyName = "Codigo";
-            this.Col_CliCod2.FillWeight = 75F;
-            this.Col_CliCod2.HeaderText = "Codigo";
-            this.Col_CliCod2.Name = "Col_CliCod2";
-            this.Col_CliCod2.ReadOnly = true;
-            this.Col_CliCod2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Col_CliCod2.Width = 75;
+            this.Lbl_Procesando.Location = new System.Drawing.Point(784, 24);
+            this.Lbl_Procesando.Name = "Lbl_Procesando";
+            this.Lbl_Procesando.Size = new System.Drawing.Size(200, 15);
+            this.Lbl_Procesando.TabIndex = 2;
+            this.Lbl_Procesando.Text = "Procesando...";
             // 
-            // Col_CliDocID2
+            // Col3_TipOrden
             // 
-            this.Col_CliDocID2.DataPropertyName = "Doc_ID";
-            this.Col_CliDocID2.HeaderText = "Doc_ID";
-            this.Col_CliDocID2.Name = "Col_CliDocID2";
-            this.Col_CliDocID2.ReadOnly = true;
-            this.Col_CliDocID2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Col3_TipOrden.DataPropertyName = "Tipo_Orden";
+            this.Col3_TipOrden.HeaderText = "Tipo_Orden";
+            this.Col3_TipOrden.Name = "Col3_TipOrden";
+            this.Col3_TipOrden.ReadOnly = true;
+            this.Col3_TipOrden.Width = 102;
             // 
-            // Col_CliNme2
+            // Col3_FecPacto
             // 
-            this.Col_CliNme2.DataPropertyName = "Nombre";
-            this.Col_CliNme2.FillWeight = 250F;
-            this.Col_CliNme2.HeaderText = "Nombre";
-            this.Col_CliNme2.Name = "Col_CliNme2";
-            this.Col_CliNme2.ReadOnly = true;
-            this.Col_CliNme2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Col_CliNme2.Width = 250;
+            this.Col3_FecPacto.DataPropertyName = "Fec_Pacto";
+            this.Col3_FecPacto.HeaderText = "Fec_Pacto";
+            this.Col3_FecPacto.Name = "Col3_FecPacto";
+            this.Col3_FecPacto.ReadOnly = true;
+            this.Col3_FecPacto.Width = 95;
             // 
-            // dataGridViewTextBoxColumn1
+            // Col3_DocID
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "PeriodUsoCta";
-            this.dataGridViewTextBoxColumn1.HeaderText = "PeriodUsoCta";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Col3_DocID.DataPropertyName = "Doc_ID";
+            this.Col3_DocID.HeaderText = "Doc_ID";
+            this.Col3_DocID.Name = "Col3_DocID";
+            this.Col3_DocID.ReadOnly = true;
+            this.Col3_DocID.Width = 74;
             // 
-            // Col_CliCod3
+            // Col3_TipOperacion
             // 
-            this.Col_CliCod3.DataPropertyName = "Codigo";
-            this.Col_CliCod3.FillWeight = 75F;
-            this.Col_CliCod3.HeaderText = "Codigo";
-            this.Col_CliCod3.Name = "Col_CliCod3";
-            this.Col_CliCod3.ReadOnly = true;
-            this.Col_CliCod3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Col_CliCod3.Width = 75;
+            this.Col3_TipOperacion.DataPropertyName = "Tipo_Operacion";
+            this.Col3_TipOperacion.HeaderText = "Tipo_Operacion";
+            this.Col3_TipOperacion.Name = "Col3_TipOperacion";
+            this.Col3_TipOperacion.ReadOnly = true;
+            this.Col3_TipOperacion.Width = 130;
             // 
-            // Col_CliDocID3
+            // Col3_CodCliente
             // 
-            this.Col_CliDocID3.DataPropertyName = "Doc_ID";
-            this.Col_CliDocID3.HeaderText = "Doc_ID";
-            this.Col_CliDocID3.Name = "Col_CliDocID3";
-            this.Col_CliDocID3.ReadOnly = true;
-            this.Col_CliDocID3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Col3_CodCliente.DataPropertyName = "Cod_Cliente";
+            this.Col3_CodCliente.HeaderText = "Cod_Cliente";
+            this.Col3_CodCliente.Name = "Col3_CodCliente";
+            this.Col3_CodCliente.ReadOnly = true;
+            this.Col3_CodCliente.Width = 109;
             // 
-            // Col_CliNme3
+            // Col3_Nombre
             // 
-            this.Col_CliNme3.DataPropertyName = "Nombre";
-            this.Col_CliNme3.FillWeight = 250F;
-            this.Col_CliNme3.HeaderText = "Nombre";
-            this.Col_CliNme3.Name = "Col_CliNme3";
-            this.Col_CliNme3.ReadOnly = true;
-            this.Col_CliNme3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Col_CliNme3.Width = 250;
+            this.Col3_Nombre.DataPropertyName = "Nme_Cliente";
+            this.Col3_Nombre.HeaderText = "Nme_Cliente";
+            this.Col3_Nombre.Name = "Col3_Nombre";
+            this.Col3_Nombre.ReadOnly = true;
+            this.Col3_Nombre.Width = 109;
             // 
-            // dataGridViewTextBoxColumn2
+            // Col3_FecCierre
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "PeriodUsoCta";
-            this.dataGridViewTextBoxColumn2.HeaderText = "PeriodUsoCta";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Col3_FecCierre.DataPropertyName = "Fec_Cierre";
+            this.Col3_FecCierre.HeaderText = "Fec_Cierre";
+            this.Col3_FecCierre.Name = "Col3_FecCierre";
+            this.Col3_FecCierre.ReadOnly = true;
+            this.Col3_FecCierre.Width = 102;
             // 
-            // Codigo
+            // Col3_FecValor
             // 
-            this.Codigo.DataPropertyName = "Codigo";
-            this.Codigo.FillWeight = 75F;
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.Width = 75;
+            this.Col3_FecValor.DataPropertyName = "Fec_Valor";
+            this.Col3_FecValor.HeaderText = "Fec_Valor";
+            this.Col3_FecValor.Name = "Col3_FecValor";
+            this.Col3_FecValor.ReadOnly = true;
+            this.Col3_FecValor.Width = 95;
             // 
-            // Doc_ID
+            // Col3_Efectivo
             // 
-            this.Doc_ID.DataPropertyName = "Doc_ID";
-            this.Doc_ID.HeaderText = "Doc_ID";
-            this.Doc_ID.Name = "Doc_ID";
-            this.Doc_ID.ReadOnly = true;
+            this.Col3_Efectivo.DataPropertyName = "Valor_Efectivo";
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle24.Format = "N2";
+            dataGridViewCellStyle24.NullValue = null;
+            this.Col3_Efectivo.DefaultCellStyle = dataGridViewCellStyle24;
+            this.Col3_Efectivo.HeaderText = "Valor_Efectivo";
+            this.Col3_Efectivo.Name = "Col3_Efectivo";
+            this.Col3_Efectivo.ReadOnly = true;
+            this.Col3_Efectivo.Width = 130;
             // 
-            // Nombre
+            // Col3_MtoPactado
             // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.FillWeight = 250F;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 250;
+            this.Col3_MtoPactado.DataPropertyName = "Monto_Pactado";
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle25.Format = "N2";
+            dataGridViewCellStyle25.NullValue = null;
+            this.Col3_MtoPactado.DefaultCellStyle = dataGridViewCellStyle25;
+            this.Col3_MtoPactado.HeaderText = "Monto_Pactado";
+            this.Col3_MtoPactado.Name = "Col3_MtoPactado";
+            this.Col3_MtoPactado.ReadOnly = true;
+            this.Col3_MtoPactado.Width = 123;
             // 
-            // PeriodUsoCta
+            // Col3_GrpCliente
             // 
-            this.PeriodUsoCta.DataPropertyName = "PeriodUsoCta";
-            this.PeriodUsoCta.HeaderText = "PeriodUsoCta";
-            this.PeriodUsoCta.Name = "PeriodUsoCta";
-            this.PeriodUsoCta.ReadOnly = true;
+            this.Col3_GrpCliente.DataPropertyName = "Grp_Cliente";
+            this.Col3_GrpCliente.HeaderText = "Grp_Cliente";
+            this.Col3_GrpCliente.Name = "Col3_GrpCliente";
+            this.Col3_GrpCliente.ReadOnly = true;
+            this.Col3_GrpCliente.Width = 109;
             // 
-            // Activo
+            // Col3_Comprobante
             // 
-            this.Activo.DataPropertyName = "Activo";
-            this.Activo.HeaderText = "Activo";
-            this.Activo.Name = "Activo";
-            this.Activo.ReadOnly = true;
-            this.Activo.Visible = false;
+            this.Col3_Comprobante.DataPropertyName = "Comprobante";
+            this.Col3_Comprobante.HeaderText = "Comprobante";
+            this.Col3_Comprobante.Name = "Col3_Comprobante";
+            this.Col3_Comprobante.ReadOnly = true;
+            this.Col3_Comprobante.Width = 109;
             // 
-            // Ejecutivo
+            // Col3_HoraCarga
             // 
-            this.Ejecutivo.DataPropertyName = "Ejecutivo";
-            this.Ejecutivo.HeaderText = "Ejecutivo";
-            this.Ejecutivo.Name = "Ejecutivo";
-            this.Ejecutivo.ReadOnly = true;
-            this.Ejecutivo.Visible = false;
+            this.Col3_HoraCarga.DataPropertyName = "Hora_Carga";
+            this.Col3_HoraCarga.HeaderText = "Hora_Carga";
+            this.Col3_HoraCarga.Name = "Col3_HoraCarga";
+            this.Col3_HoraCarga.ReadOnly = true;
+            this.Col3_HoraCarga.Width = 102;
             // 
-            // NivelRiesgo
+            // ID_Sistema
             // 
-            this.NivelRiesgo.DataPropertyName = "NivelRiesgo";
-            this.NivelRiesgo.HeaderText = "NivelRiesgo";
-            this.NivelRiesgo.Name = "NivelRiesgo";
-            this.NivelRiesgo.ReadOnly = true;
-            this.NivelRiesgo.Visible = false;
-            // 
-            // PerfilFinanciero
-            // 
-            this.PerfilFinanciero.DataPropertyName = "PerfilFinanciero";
-            this.PerfilFinanciero.HeaderText = "PerfilFinanciero";
-            this.PerfilFinanciero.Name = "PerfilFinanciero";
-            this.PerfilFinanciero.ReadOnly = true;
-            this.PerfilFinanciero.Visible = false;
-            // 
-            // NroTransacciones
-            // 
-            this.NroTransacciones.DataPropertyName = "NroTransacciones";
-            this.NroTransacciones.HeaderText = "NroTransacciones";
-            this.NroTransacciones.Name = "NroTransacciones";
-            this.NroTransacciones.ReadOnly = true;
-            this.NroTransacciones.Visible = false;
+            this.ID_Sistema.DataPropertyName = "ID_Sistema";
+            this.ID_Sistema.HeaderText = "ID_Sistema";
+            this.ID_Sistema.Name = "ID_Sistema";
+            this.ID_Sistema.ReadOnly = true;
+            this.ID_Sistema.Visible = false;
+            this.ID_Sistema.Width = 102;
             // 
             // Frm_OpeTransac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1010, 610);
+            this.Controls.Add(this.Lbl_Procesando);
             this.Controls.Add(this.Tab_MonOperaciones);
             this.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1736,19 +1758,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_PerMto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_PerNroTra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_PerRiesgo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_TipOrden;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_FecPacto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_DocID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_TipOperacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_CodCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_FecCierre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_FecValor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_Efectivo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_MtoPactado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_GrpCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_Comprobante;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_HoraCarga;
         private System.Windows.Forms.BindingSource BS_RepOperTrans_Cliente_Encabezado;
         private System.Windows.Forms.BindingSource BS_RepOperTrans_Cliente_Detalles;
         private System.Windows.Forms.Button Btn_Export_OpClie;
@@ -1769,5 +1778,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NivelRiesgo;
         private System.Windows.Forms.DataGridViewTextBoxColumn PerfilFinanciero;
         private System.Windows.Forms.DataGridViewTextBoxColumn NroTransacciones;
+        private System.Windows.Forms.Label Lbl_Procesando;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_TipOrden;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_FecPacto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_DocID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_TipOperacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_CodCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_FecCierre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_FecValor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_Efectivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_MtoPactado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_GrpCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_Comprobante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col3_HoraCarga;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Sistema;
     }
 }

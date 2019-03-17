@@ -19,7 +19,10 @@ namespace MOFIN_LIB
         public static string vs_Grupo = "001";
         public static string vs_Usuario = "JMARIN";
         public static bool vs_CnfgBtnsNaveg = true;
-        public static byte vs_TipoValoracCliente = 1;   
+        public static byte vs_TipoValoracCliente = 1;
+        public static byte vs_Pais = 2; // 1: Venezuela, 2: Panamá
+        public static short vs_FondoEscritorio = 1; // 1: Fijo, 2: Aleatorio
+        public static short vs_NroDesktops = 1; // Nro de Imágenes de Fondos de Escritorios
 
     }
     public static class Funciones
@@ -41,6 +44,14 @@ namespace MOFIN_LIB
             PictureTooltip.SetToolTip(objeto, vl_Mensaje);
         }
         public static void TTT_Chk(CheckBox objeto, string vl_Mensaje)
+        {
+            ToolTip PictureTooltip = new ToolTip();
+            PictureTooltip.AutoPopDelay = 5000;
+            PictureTooltip.InitialDelay = 250;
+            PictureTooltip.ReshowDelay = 500;
+            PictureTooltip.SetToolTip(objeto, vl_Mensaje);
+        }
+        public static void TTT_Cmb(ComboBox objeto, string vl_Mensaje)
         {
             ToolTip PictureTooltip = new ToolTip();
             PictureTooltip.AutoPopDelay = 5000;

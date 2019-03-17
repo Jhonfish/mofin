@@ -146,15 +146,15 @@ namespace MOFIN
         private void Btn_Aceptar_Click(object sender, EventArgs e)
         {
             r_Empresas.Tipo_Valoracion = (byte)(Opc_MetVal1.Checked? 1 : 2);
+            r_Empresas.NroDesktops = (byte)NUD_DsktpNr.Value;
 
             if (vl_EsNuevo)
                 NEmpresas.Insertar(r_Empresas);
-                //NEmpresas.Insertar(BS_Empresas.Current as Empresas);
             else
                 NEmpresas.Actualizar(r_Empresas);
-                //NEmpresas.Actualizar(BS_Empresas.Current as Empresas);
             this.Modo_Consulta();
             BS_Empresas.DataSource = NEmpresas.Listar();
+            MessageBox.Show(Funciones._Mens_Idioma(9019), Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
         private void Btn_Cancelar_Click(object sender, EventArgs e)
@@ -167,6 +167,8 @@ namespace MOFIN
             vl_EsNuevo = true;
             BS_Empresas.AddNew();
             r_Empresas =BS_Empresas.Current as Empresas;
+            r_Empresas.NroDesktops = 0;
+            r_Empresas.Tipo_Valoracion = 1;
 
             Opc_MetVal1.Checked = true;
             //BS_Empresas.Add(r_Empresas);
@@ -255,16 +257,6 @@ namespace MOFIN
             this.Btn_Cancelar.Visible = true;
         }
 
-       
-
- 
-        private void Grd_Empresas_CurrentCellChanged_1(object sender, EventArgs e)
-        {
-            if (Grd_Empresas.CurrentRow != null)
-            {
-                TSB_ActualizaBotonesNavegacion();
-            }
-        }
         private void Asigna_Nombres(object sender, EventArgs e)
         {
             this.Text = Funciones._Mens_Idioma(7100);
@@ -310,7 +302,7 @@ namespace MOFIN
         private void Txt_Logo_DoubleClick(object sender, EventArgs e)
         {
             OpenFileDialog vl_Logo = new OpenFileDialog();
-            string vl_Tipoarchivo = "*.JPG|*.JPG |*.BMP|*.BMP |*.PNG|*.PNG|*.*|*.*";
+            string vl_Tipoarchivo = "*.JPG|*.JPG|*.BMP|*.BMP|*.PNG|*.PNG|*.*|*.*";
             vl_Logo.Filter = vl_Tipoarchivo;
             // vl_ArchivoImport.CheckFileExists = false;
             if (vl_Logo.ShowDialog() == DialogResult.OK)

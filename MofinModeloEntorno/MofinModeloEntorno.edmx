@@ -75,6 +75,11 @@
           <Property Name="OperTransac_E" Type="bit" />
           <Property Name="OperTransac_P" Type="bit" />
           <Property Name="OperTransac_R" Type="bit" />
+          <Property Name="LibOper_I" Type="bit" />
+          <Property Name="LibOper_M" Type="bit" />
+          <Property Name="LibOper_E" Type="bit" />
+          <Property Name="LibOper_P" Type="bit" />
+          <Property Name="LibOper_A" Type="bit" />
         </EntityType>
         <EntityType Name="Grupos">
           <Key>
@@ -111,9 +116,17 @@
           <Key>
             <PropertyRef Name="ID_Sistema" />
           </Key>
-          <Property Name="FuenteLetra" Type="varchar" MaxLength="30" />
-          <Property Name="Desktop_NroImgs" Type="tinyint" />
           <Property Name="ID_Sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FuenteLetra" Type="varchar" MaxLength="30" />
+          <Property Name="IdiomaPredeterminado" Type="tinyint" />
+          <Property Name="Desktop_NroImgs" Type="tinyint" />
+          <Property Name="PermitUserCamParam" Type="bit" />
+          <Property Name="PermitUserCambIdioma" Type="bit" />
+          <Property Name="FondoEscritorio" Type="tinyint" />
+          <Property Name="PaisUso" Type="tinyint" />
+          <Property Name="FormFecha" Type="tinyint" />
+          <Property Name="FormPuntodecimal" Type="tinyint" />
+          <Property Name="BtnsNavegBarraHerram" Type="bit" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -259,6 +272,11 @@
           <Property Name="OperTransac_P" Type="Boolean" />
           <Property Name="OperTransac_R" Type="Boolean" />
           <NavigationProperty Name="Grupos" Relationship="Self.FK_Grupo_Opciones_Grupos" FromRole="Grupo_Opciones" ToRole="Grupos" />
+          <Property Name="LibOper_I" Type="Boolean" />
+          <Property Name="LibOper_M" Type="Boolean" />
+          <Property Name="LibOper_E" Type="Boolean" />
+          <Property Name="LibOper_P" Type="Boolean" />
+          <Property Name="LibOper_A" Type="Boolean" />
         </EntityType>
         <EntityType Name="Grupos">
           <Key>
@@ -299,6 +317,14 @@
           <Property Name="FuenteLetra" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Desktop_NroImgs" Type="Byte" />
           <Property Name="ID_Sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdiomaPredeterminado" Type="Byte" />
+          <Property Name="PermitUserCamParam" Type="Boolean" />
+          <Property Name="PaisUso" Type="Byte" />
+          <Property Name="BtnsNavegBarraHerram" Type="Boolean" />
+          <Property Name="PermitUserCambIdioma" Type="Boolean" />
+          <Property Name="FondoEscritorio" Type="Byte" />
+          <Property Name="FormFecha" Type="Byte" />
+          <Property Name="FormPuntodecimal" Type="Byte" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -408,6 +434,11 @@
           <EntitySetMapping Name="Grupo_Opciones">
             <EntityTypeMapping TypeName="MofinModeloEntorno.Grupo_Opciones">
               <MappingFragment StoreEntitySet="Grupo_Opciones">
+                <ScalarProperty Name="LibOper_A" ColumnName="LibOper_A" />
+                <ScalarProperty Name="LibOper_P" ColumnName="LibOper_P" />
+                <ScalarProperty Name="LibOper_E" ColumnName="LibOper_E" />
+                <ScalarProperty Name="LibOper_M" ColumnName="LibOper_M" />
+                <ScalarProperty Name="LibOper_I" ColumnName="LibOper_I" />
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />
                 <ScalarProperty Name="Cod_Grupo" ColumnName="Cod_Grupo" />
                 <ScalarProperty Name="Empresas_I" ColumnName="Empresas_I" />
@@ -483,6 +514,14 @@
           <EntitySetMapping Name="Opc_Sistema">
             <EntityTypeMapping TypeName="MofinModeloEntorno.Opc_Sistema">
               <MappingFragment StoreEntitySet="Opc_Sistema">
+                <ScalarProperty Name="FormPuntodecimal" ColumnName="FormPuntodecimal" />
+                <ScalarProperty Name="FormFecha" ColumnName="FormFecha" />
+                <ScalarProperty Name="FondoEscritorio" ColumnName="FondoEscritorio" />
+                <ScalarProperty Name="PermitUserCambIdioma" ColumnName="PermitUserCambIdioma" />
+                <ScalarProperty Name="BtnsNavegBarraHerram" ColumnName="BtnsNavegBarraHerram" />
+                <ScalarProperty Name="PaisUso" ColumnName="PaisUso" />
+                <ScalarProperty Name="PermitUserCamParam" ColumnName="PermitUserCamParam" />
+                <ScalarProperty Name="IdiomaPredeterminado" ColumnName="IdiomaPredeterminado" />
                 <ScalarProperty Name="FuenteLetra" ColumnName="FuenteLetra" />
                 <ScalarProperty Name="Desktop_NroImgs" ColumnName="Desktop_NroImgs" />
                 <ScalarProperty Name="ID_Sistema" ColumnName="ID_Sistema" />

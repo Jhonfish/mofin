@@ -35,9 +35,11 @@ namespace MOFIN
         public byte puntos_pep;
         public byte puntos_volOper;
         public byte puntos_cripto;
+
         public byte puntos_Productos;
         public byte puntos_Servicios;
 
+        public bool Cond_Esp_Seguridad;
         public byte total;
         public byte sumatoria;
         public decimal Puntaje;
@@ -45,8 +47,8 @@ namespace MOFIN
         public byte Calculo()
         {
 
-            if (Entorno.vs_TipoValoracCliente == 1)    // Promedio
-            {
+ //           if (Entorno.vs_TipoValoracCliente == 1)    // Promedio
+ //           {
                 total = 0;
                 sumatoria = 0;
                 if ( puntos_TipoDocID != 0)
@@ -128,7 +130,7 @@ namespace MOFIN
                         Puntaje = (decimal)((float)sumatoria / (float)total);
                     else
                         Puntaje = 0;
-            }
+ //           }
 
             byte Puntuacion = (byte)Math.Round(Puntaje, MidpointRounding.AwayFromZero);
 
@@ -151,7 +153,8 @@ namespace MOFIN
         public byte puntos_pep;
         public byte puntos_profesion;
         public byte puntos_cripto;
- 
+
+        public bool Cond_Esp_Seguridad;
         public byte total;
         public byte sumatoria;
         public decimal Puntaje;
@@ -159,8 +162,8 @@ namespace MOFIN
         public byte Calculo()
         {
 
-            if (Entorno.vs_TipoValoracCliente == 1)    // Promedio
-            {
+//            if (Entorno.vs_TipoValoracCliente == 1)    // Promedio
+//            {
                 total = 0;
                 sumatoria = 0;
 
@@ -208,7 +211,7 @@ namespace MOFIN
                     Puntaje = (decimal)((float)sumatoria / (float)total);
                 else
                     Puntaje = 0;
-            }
+ //           }
 
             byte Puntuacion = (byte)Math.Round(Puntaje, MidpointRounding.AwayFromZero);
 
@@ -272,7 +275,7 @@ namespace MOFIN
             BS_OOperfinancieras.DataSource = NO_Operfinancieras.Listar();
             BS_OOperTransaccionales.DataSource = NO_OperTransaccionales.Listar();
 
-            BS_Grupo_Opciones.DataSource = NGrupo_Opciones.ListarPorCodigo(MOFIN_LIB.Entorno.vs_Grupo);
+            BS_Grupo_Opciones.DataSource = NGrupo_Opciones.ListarPorCodigo(Entorno.vs_Grupo);
             r_GrupoOpciones = BS_Grupo_Opciones.Current as Grupo_Opciones;
 
             BS_Nac.DataSource = NM_Pais.Listar();
@@ -281,7 +284,7 @@ namespace MOFIN
             BS_AutPaisNac.DataSource = NM_Pais.Listar();
             BS_AutNac.DataSource = NM_Pais.Listar();
             BS_AutRes.DataSource = NM_Pais.Listar();
-
+            BS_AutEstados.DataSource = NM_Estados.Listar();
             BS_AutProfesion.DataSource = NM_Profesiones.Listar();
             BS_AutPEP.DataSource = NM_PEP.Listar();
             BS_AutCriptomoneda.DataSource = NM_Criptomonedas.Listar();
@@ -304,7 +307,7 @@ namespace MOFIN
             
             this.Asigna_Nombres();
             this.Modo_Consulta();
-            this.Grd_Clientes_CurrentCellChanged(false, e);
+           // this.Grd_Clientes_CurrentCellChanged(false, e);
 
         }
 
@@ -486,6 +489,22 @@ namespace MOFIN
             else
                 r_Cliente.Cliente_Punt = r_Cliente.InfGen_Punt;
 
+            ///
+            /// Verificacion de alguna CES en los Beneficiaros, Firmanetes o Accionistas.
+            ///
+            BS_CFirBenAcc.MoveFirst();
+            bool FirBenAcc_CES = false;
+            foreach (object Registro in BS_CFirBenAcc)
+            {
+                r_FirBenAcc = BS_CFirBenAcc.Current as C_FirBenAcc;
+                if (r_FirBenAcc.CondEspSeguridad != null)
+                    if ((bool)r_FirBenAcc.CondEspSeguridad)
+                        FirBenAcc_CES = true;
+                BS_CFirBenAcc.MoveNext();
+            }
+            r_Cliente.CondEspSeguridad = (punt_Cliente.Cond_Esp_Seguridad | FirBenAcc_CES)? true : false ;
+            ///
+
             r_Cliente.Fec_UltimAct = DateTime.Today;
 
             if (ClienteEsNuevo)
@@ -493,13 +512,27 @@ namespace MOFIN
             else
                 NC_Clientes.Actualizar(r_Cliente);
 
+            if(Lbl_Activo.ForeColor == Color.Gold)
+            {
+                C_HistActClientes r_HistActCliente = new C_HistActClientes();
+                r_HistActCliente.Codigo = r_Cliente.Codigo;
+                r_HistActCliente.Estado = (bool)r_Cliente.Activo;
+                r_HistActCliente.FechaCambio = DateTime.Now;
+                BS_CHistActClientes.AddNew();
+                NC_HistActClientes.Insertar(r_HistActCliente);
+            }
+
+            //Form Form_Reporte = new Frm_VisorCrystalRep();
+            //ShowDialog(Form_Reporte);
+
             BS_CClientes.DataSource = NC_Clientes.Listar();
             this.Modo_Consulta();
         }
         private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
-            Modo_Consulta();
             BS_CClientes.CancelEdit();
+            r_Cliente = BS_CClientes.Current as C_Clientes;
+            Modo_Consulta();
         }
 
         private void Btn_BenefIncluir_Click(object sender, EventArgs e)
@@ -571,6 +604,7 @@ namespace MOFIN
             
             this.FirBenAcc_RellenaDatosCalculo();
             r_FirBenAcc.Puntuacion = punt_FirBenAcc.Calculo();
+            r_FirBenAcc.CondEspSeguridad = punt_FirBenAcc.Cond_Esp_Seguridad;
 
             if (EsBenefNuevo)
             {
@@ -581,6 +615,7 @@ namespace MOFIN
             {
                 NC_FirBenAcc.Actualizar(r_FirBenAcc);
             }
+            BS_CFirBenAcc.DataSource = NC_FirBenAcc.Listar();
 
             Pan_Detalles2.Enabled = false;
             BenefModConsulta = true;
@@ -608,12 +643,12 @@ namespace MOFIN
                 vl_Puntuacion = 0;
 
             r_Cliente.Benef_Punt = vl_Puntuacion;
-            this.Pag2.Text = MOFIN_LIB.Funciones._Mens_Idioma(11005) + ": " + r_Cliente.Benef_Punt.ToString();
+            this.Pag2.Text = Funciones._Mens_Idioma(11005) + ": " + r_Cliente.Benef_Punt.ToString();
+            BS_CFirBenAcc.MoveFirst();
 
             this.AcceptButton = this.Btn_Aceptar;
             this.Grd_CFirBenAcc_CurrentCellChanged(true, e);
         }
-
         private void Btn_BenefCancelar_Click(object sender, EventArgs e)
         {
             Pan_Detalles2.Enabled = false;
@@ -626,114 +661,196 @@ namespace MOFIN
             this.AcceptButton = this.Btn_Aceptar;
         }
 
-        
+        public class ListaGeneraGridExort
+        {
+            public string Tipo_Persona { get; set; }
+            public string Status { get; set; }
+            public string Codigo { get; set; }
+            public string Doc_ID { get; set; }
+            public DateTime Doc_ID_Fec_Venc { get; set; }
+            public string Nombre { get; set; }
+            public byte Puntuacion { get; set; }
+            public string Pais_Nacimiento { get; set; }
+            public string Nacionalidad { get; set; }
+            public string Pais_Residencia { get; set; }
+            public string Estado { get; set; }
+            public string Edad { get; set; }
+            public string Tipo_PersJurid { get; set; }
+            public string Tipo_Estructura { get; set; }
+            public string PEP { get; set; }
+            public string Vol_Operaciones { get; set; }
+            public string Criptomonedas { get; set; }
+            public string Profesion { get; set; }
+            public string Activ_Comercial { get; set; }
+            public string Email { get; set; }
+            public string Uso_Cuenta { get; set; }
+            public string Nivel_Riesgo { get; set; }
+            public decimal Perfil_Financiero { get; set; }
+            public int Nro_Transacciones { get; set; }
+            public string Ejecutivo { get; set; }
+            public string Observacion { get; set; }
+            public DateTime Fec_Ult_Actualizacion { get; set; }
+        }
+        private void Btn_Exportar_Click(object sender, EventArgs e)
+        {
+            
+            C_Clientes r_RegCliente = new C_Clientes();
+            List<ListaGeneraGridExort> Lst_GeneraGridExport = new List<ListaGeneraGridExort>();
+            int vl_regact = BS_CClientes.Position;
+
+            BS_CClientes.MoveFirst();
+            foreach (object Registro in BS_CClientes)
+            {
+                r_RegCliente = BS_CClientes.Current as C_Clientes;
+                Lst_GeneraGridExport.Add(new ListaGeneraGridExort()
+                {
+                    Tipo_Persona = Funciones._Mens_Idioma(11000 + r_RegCliente.TipoPersona),
+                    Status = Funciones._Mens_Idioma(r_RegCliente.Activo == true ? 126 : 127),
+                    Codigo = r_RegCliente.Codigo,
+                    Doc_ID = r_RegCliente.Doc_ID,
+                    Doc_ID_Fec_Venc = r_RegCliente.IG_FecVencDocID != null ? (DateTime)r_RegCliente.IG_FecVencDocID : DateTime.Now,
+                    Nombre = r_RegCliente.Nombre,
+                    Puntuacion = (byte)r_RegCliente.Cliente_Punt,
+                    Pais_Nacimiento = r_RegCliente.IG_PaisNacim != null ? NM_Pais.ListarPorCodigo((short)r_RegCliente.IG_PaisNacim).First().Descripcion : "",
+                    Nacionalidad = r_RegCliente.IG_Nacionalidad != null ? NM_Pais.ListarPorCodigo((short)r_RegCliente.IG_Nacionalidad).First().Descripcion : "",
+                    Pais_Residencia = r_RegCliente.IG_PaisResid != null ? NM_Pais.ListarPorCodigo((short)r_RegCliente.IG_PaisResid).First().Descripcion : "",
+                    Estado = r_RegCliente.IG_Estado != null ? NM_Estados.ListarPorCodigo((int)r_RegCliente.IG_Estado).First().Descripcion : "",
+                    Edad = r_RegCliente.IG_Edad != null ? r_RegCliente.TipoPersona == 1 ? NM_Edad.ListarPorCodigo((short)r_RegCliente.IG_Edad).First().Descripcion :
+                                                                                                NM_Antiguedad.ListarPorCodigo((short)r_RegCliente.IG_Edad).First().Descripcion : "",
+                    Tipo_PersJurid = r_RegCliente.IG_TipoPersJur != null ? NM_TipoPersJuridica.ListarPorCodigo((short)r_RegCliente.IG_TipoPersJur).First().Descripcion : "",
+                    Tipo_Estructura = r_RegCliente.IG_TipoEstructura != null ? NM_TipoEstructuraEmpresa.ListarPorCodigo((short)r_RegCliente.IG_TipoEstructura).First().Descripcion : "",
+                    PEP = r_RegCliente.IG_PEP != null ? NM_PEP.ListarPorCodigo((short)r_RegCliente.IG_PEP).First().Descripcion : "",
+                    Vol_Operaciones = r_RegCliente.IG_VolumOperac != null ? r_RegCliente.TipoPersona == 1 ? NM_VolOperPersNat.ListarPorCodigo((short)r_RegCliente.IG_VolumOperac).First().Descripcion :
+                                                                                                                NM_VolOperPersJur.ListarPorCodigo((short)r_RegCliente.IG_VolumOperac).First().Descripcion : "",
+                    Criptomonedas = r_RegCliente.IG_Criptomoneda != null ? NM_Criptomonedas.ListarPorCodigo((short)r_RegCliente.IG_Criptomoneda).First().Descripcion : "",
+                    Profesion = r_RegCliente.IG_Profesion != null ? NM_Profesiones.ListarPorCodigo((short)r_RegCliente.IG_Profesion).First().Descripcion : "",
+                    Activ_Comercial = r_RegCliente.IG_ActivComer != null ? NM_ActivComercial.ListarPorCodigo((short)r_RegCliente.IG_ActivComer).First().Descripcion : "",
+                    Email = r_RegCliente.IG_Email,
+                    Uso_Cuenta = Funciones._Mens_Idioma((int)r_RegCliente.PeriodUsoCta+ 190),
+                    Nivel_Riesgo = r_RegCliente.NivelRiesgo != null ? NM_NivelRiesgo.ListarPorCodigo((short)r_RegCliente.NivelRiesgo).First().Descripcion : "",
+                    Perfil_Financiero = (decimal)r_RegCliente.PerfilFinanciero,
+                    Nro_Transacciones = (byte)r_RegCliente.NroTransacciones,
+                    Ejecutivo = r_RegCliente.Ejecutivo,
+                    Observacion =r_RegCliente.Observacion,
+                    Fec_Ult_Actualizacion = r_RegCliente.Fec_UltimAct != null ? (DateTime)r_RegCliente.Fec_UltimAct : DateTime.Now
+                });
+                BS_CClientes.MoveNext();
+            }
+            BS_CClientes.Position = vl_regact;
+            Grd_Exportacion.DataSource = Lst_GeneraGridExport;
+            Funciones.Exportar_Excel(Grd_Exportacion);
+
+        }
+
+
         //**************
         // Eventos del formulario
         //**************
         private void Asigna_Nombres()
         {
-            this.Text = MOFIN_LIB.Funciones._Mens_Idioma(11000);
-            this.Opc_TipPers1.Text = MOFIN_LIB.Funciones._Mens_Idioma(11001);
-            this.Opc_TipPers2.Text = MOFIN_LIB.Funciones._Mens_Idioma(11002);
-            this.Lbl_Codigo.Text = MOFIN_LIB.Funciones._Mens_Idioma(1001);
-            this.Lbl_DocID.Text = MOFIN_LIB.Funciones._Mens_Idioma(1004);
-            this.Lbl_Nombre.Text = MOFIN_LIB.Funciones._Mens_Idioma(1002);
-            this.Lbl_EtiqPunt.Text = MOFIN_LIB.Funciones._Mens_Idioma(11003);
+            this.Text = Funciones._Mens_Idioma(11000);
+            this.Opc_TipPers1.Text = Funciones._Mens_Idioma(11001);
+            this.Opc_TipPers2.Text = Funciones._Mens_Idioma(11002);
+            this.Lbl_Codigo.Text = Funciones._Mens_Idioma(1001);
+            this.Lbl_DocID.Text = Funciones._Mens_Idioma(1004);
+            this.Lbl_Nombre.Text = Funciones._Mens_Idioma(1002);
+            this.Lbl_EtiqPunt.Text = Funciones._Mens_Idioma(11003);
 
-            this.Col_CliCodigo.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1001);
-            this.Col_CliNme.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1002);
+            this.Col_CliCodigo.HeaderText = Funciones._Mens_Idioma(1001);
+            this.Col_CliNme.HeaderText = Funciones._Mens_Idioma(1002);
 
-            this.Pag1.Text = MOFIN_LIB.Funciones._Mens_Idioma(11004);
-            this.Lbl_TipDocID.Text = MOFIN_LIB.Funciones._Mens_Idioma(10022);
-            this.Lbl_FecVencDocID.Text = MOFIN_LIB.Funciones._Mens_Idioma(11008);
-            this.Lbl_Nacionalidad.Text = MOFIN_LIB.Funciones._Mens_Idioma(11009);
-            this.Lbl_PaisNacimiento.Text = MOFIN_LIB.Funciones._Mens_Idioma(11010);
-            this.Lbl_PaisResidencia.Text = MOFIN_LIB.Funciones._Mens_Idioma(11011);
-            this.Lbl_Estado.Text = MOFIN_LIB.Funciones._Mens_Idioma(11012);
-            this.Lbl_Edad.Text = MOFIN_LIB.Funciones._Mens_Idioma(10014);
-            this.Lbl_TipoPersJur.Text = MOFIN_LIB.Funciones._Mens_Idioma(10024);
-            this.Lbl_TipoEstructura.Text = MOFIN_LIB.Funciones._Mens_Idioma(10023);
-            this.Lbl_PEP.Text = MOFIN_LIB.Funciones._Mens_Idioma(10018);
-            this.Lbl_VolOperaciones.Text = MOFIN_LIB.Funciones._Mens_Idioma(11013);
-            this.Lbl_Criptomonedas.Text = MOFIN_LIB.Funciones._Mens_Idioma(10013);
-            this.Lbl_Profesion.Text = MOFIN_LIB.Funciones._Mens_Idioma(10020);
-            this.Lbl_ActivComercial.Text = MOFIN_LIB.Funciones._Mens_Idioma(10011);
-            this.Lbl_Productos.Text = MOFIN_LIB.Funciones._Mens_Idioma(10019);
-            this.Lbl_Servicios.Text = MOFIN_LIB.Funciones._Mens_Idioma(10021);
+            this.Pag1.Text = Funciones._Mens_Idioma(11004);
+            this.Lbl_TipDocID.Text = Funciones._Mens_Idioma(10022);
+            this.Lbl_FecVencDocID.Text = Funciones._Mens_Idioma(11008);
+            this.Lbl_Nacionalidad.Text = Funciones._Mens_Idioma(11009);
+            this.Lbl_PaisNacimiento.Text = Funciones._Mens_Idioma(11010);
+            this.Lbl_PaisResidencia.Text = Funciones._Mens_Idioma(11011);
+            this.Lbl_Estado.Text = Funciones._Mens_Idioma(11012);
+            this.Lbl_Edad.Text = Funciones._Mens_Idioma(10014);
+            this.Lbl_TipoPersJur.Text = Funciones._Mens_Idioma(10024);
+            this.Lbl_TipoEstructura.Text = Funciones._Mens_Idioma(10023);
+            this.Lbl_PEP.Text = Funciones._Mens_Idioma(10018);
+            this.Lbl_VolOperaciones.Text = Funciones._Mens_Idioma(11013);
+            this.Lbl_Criptomonedas.Text = Funciones._Mens_Idioma(10013);
+            this.Lbl_Profesion.Text = Funciones._Mens_Idioma(10020);
+            this.Lbl_ActivComercial.Text = Funciones._Mens_Idioma(10011);
+            this.Lbl_Email.Text = Funciones._Mens_Idioma(1010);
+            this.Lbl_Productos.Text = Funciones._Mens_Idioma(10019);
+            this.Lbl_Servicios.Text = Funciones._Mens_Idioma(10021);
 
-            this.Pag2.Text = MOFIN_LIB.Funciones._Mens_Idioma(11005);
-            this.Col_BFANme.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1002);
-            this.Col_BFADocID.HeaderText = MOFIN_LIB.Funciones._Mens_Idioma(1004);
-            this.Lbl_BenefEtiqPuntuacion.Text = MOFIN_LIB.Funciones._Mens_Idioma(11003);
-            this.Lbl_TipoVinculo.Text = MOFIN_LIB.Funciones._Mens_Idioma(11014);
-            this.Opc_TipVinc1.Text = MOFIN_LIB.Funciones._Mens_Idioma(11015);
-            this.Opc_TipVinc2.Text = MOFIN_LIB.Funciones._Mens_Idioma(11016);
-            this.Opc_TipVinc3.Text = MOFIN_LIB.Funciones._Mens_Idioma(11017);
-            this.Lbl_BenefName.Text = MOFIN_LIB.Funciones._Mens_Idioma(1002);
-            this.Lbl_BenefDoc_ID.Text = MOFIN_LIB.Funciones._Mens_Idioma(1004);
-            this.Lbl_BenefNacionalidad.Text = MOFIN_LIB.Funciones._Mens_Idioma(11009);
-            this.Lbl_BenefPaisNacim.Text = MOFIN_LIB.Funciones._Mens_Idioma(11010);
-            this.Lbl_BenefPaisResid.Text = MOFIN_LIB.Funciones._Mens_Idioma(11011);
-            this.Lbl_BenefEstado.Text = MOFIN_LIB.Funciones._Mens_Idioma(11012);
-            this.Lbl_BenefFecVenc.Text = MOFIN_LIB.Funciones._Mens_Idioma(11008);
-            this.Lbl_BenefEdad.Text = MOFIN_LIB.Funciones._Mens_Idioma(10014);
-            this.Lbl_BenefPEP.Text = MOFIN_LIB.Funciones._Mens_Idioma(10018);
-            this.Lbl_BenefProfesion.Text = MOFIN_LIB.Funciones._Mens_Idioma(10020);
-            this.Lbl_BenefCriptomonedas.Text = MOFIN_LIB.Funciones._Mens_Idioma(10013);
-            this.Lbl_BenefVincEmpresa.Text = MOFIN_LIB.Funciones._Mens_Idioma(11018);
-            this.Lbl_BenefVincPorcent.Text = MOFIN_LIB.Funciones._Mens_Idioma(11019);
+            this.Pag2.Text = Funciones._Mens_Idioma(11005);
+            this.Col_BFANme.HeaderText = Funciones._Mens_Idioma(1002);
+            this.Col_BFADocID.HeaderText = Funciones._Mens_Idioma(1004);
+            this.Lbl_BenefEtiqPuntuacion.Text = Funciones._Mens_Idioma(11003);
+            this.Lbl_TipoVinculo.Text = Funciones._Mens_Idioma(11014);
+            this.Opc_TipVinc1.Text = Funciones._Mens_Idioma(11015);
+            this.Opc_TipVinc2.Text = Funciones._Mens_Idioma(11016);
+            this.Opc_TipVinc3.Text = Funciones._Mens_Idioma(11017);
+            this.Lbl_BenefName.Text = Funciones._Mens_Idioma(1002);
+            this.Lbl_BenefDoc_ID.Text = Funciones._Mens_Idioma(1004);
+            this.Lbl_BenefNacionalidad.Text = Funciones._Mens_Idioma(11009);
+            this.Lbl_BenefPaisNacim.Text = Funciones._Mens_Idioma(11010);
+            this.Lbl_BenefPaisResid.Text = Funciones._Mens_Idioma(11011);
+            this.Lbl_BenefEstado.Text = Funciones._Mens_Idioma(11012);
+            this.Lbl_BenefFecVenc.Text = Funciones._Mens_Idioma(11008);
+            this.Lbl_BenefEdad.Text = Funciones._Mens_Idioma(10014);
+            this.Lbl_BenefPEP.Text = Funciones._Mens_Idioma(10018);
+            this.Lbl_BenefProfesion.Text = Funciones._Mens_Idioma(10020);
+            this.Lbl_BenefCriptomonedas.Text = Funciones._Mens_Idioma(10013);
+            this.Lbl_BenefVincEmpresa.Text = Funciones._Mens_Idioma(11018);
+            this.Lbl_BenefVincPorcent.Text = Funciones._Mens_Idioma(11019);
 
-            this.Pag3.Text = MOFIN_LIB.Funciones._Mens_Idioma(11006);
-            this.Chk_Opc1.Text = MOFIN_LIB.Funciones._Mens_Idioma(11020);
-            this.Chk_Opc2.Text = MOFIN_LIB.Funciones._Mens_Idioma(11021);
-            this.Chk_Opc3.Text = MOFIN_LIB.Funciones._Mens_Idioma(11022);
-            this.Chk_Opc4.Text = MOFIN_LIB.Funciones._Mens_Idioma(11023);
-            this.Chk_Opc5.Text = MOFIN_LIB.Funciones._Mens_Idioma(11024);
-            this.Chk_Opc6.Text = MOFIN_LIB.Funciones._Mens_Idioma(11025);
-            this.Chk_Opc7.Text = MOFIN_LIB.Funciones._Mens_Idioma(11026);
-            this.Chk_Opc8.Text = MOFIN_LIB.Funciones._Mens_Idioma(11027);
-            this.Chk_Opc9.Text = MOFIN_LIB.Funciones._Mens_Idioma(11028);
-            this.Chk_Opc10.Text = MOFIN_LIB.Funciones._Mens_Idioma(11029);
-            this.Chk_Opc11.Text = MOFIN_LIB.Funciones._Mens_Idioma(11030);
-            this.Chk_Opc12.Text = MOFIN_LIB.Funciones._Mens_Idioma(11031);
-            this.Chk_Opc13.Text = MOFIN_LIB.Funciones._Mens_Idioma(11032);
-            this.Chk_Opc14.Text = MOFIN_LIB.Funciones._Mens_Idioma(11033);
+            this.Pag3.Text = Funciones._Mens_Idioma(11006);
+            this.Chk_Opc1.Text = Funciones._Mens_Idioma(11020);
+            this.Chk_Opc2.Text = Funciones._Mens_Idioma(11021);
+            this.Chk_Opc3.Text = Funciones._Mens_Idioma(11022);
+            this.Chk_Opc4.Text = Funciones._Mens_Idioma(11023);
+            this.Chk_Opc5.Text = Funciones._Mens_Idioma(11024);
+            this.Chk_Opc6.Text = Funciones._Mens_Idioma(11025);
+            this.Chk_Opc7.Text = Funciones._Mens_Idioma(11026);
+            this.Chk_Opc8.Text = Funciones._Mens_Idioma(11027);
+            this.Chk_Opc9.Text = Funciones._Mens_Idioma(11028);
+            this.Chk_Opc10.Text = Funciones._Mens_Idioma(11029);
+            this.Chk_Opc11.Text = Funciones._Mens_Idioma(11030);
+            this.Chk_Opc12.Text = Funciones._Mens_Idioma(11031);
+            this.Chk_Opc13.Text = Funciones._Mens_Idioma(11032);
+            this.Chk_Opc14.Text = Funciones._Mens_Idioma(11033);
             this.Chk_Opc15.Text = "";
-            this.Chk_Opc16.Text = MOFIN_LIB.Funciones._Mens_Idioma(11034);
-            this.Chk_Opc17.Text = MOFIN_LIB.Funciones._Mens_Idioma(11035);
-            this.Chk_Opc18.Text = MOFIN_LIB.Funciones._Mens_Idioma(1010);
-            this.Chk_Opc19.Text = MOFIN_LIB.Funciones._Mens_Idioma(11009);
-            this.Chk_Opc20.Text = MOFIN_LIB.Funciones._Mens_Idioma(1023);
-            this.Chk_Opc21.Text = MOFIN_LIB.Funciones._Mens_Idioma(11036);
-            this.Chk_Opc22.Text = MOFIN_LIB.Funciones._Mens_Idioma(11037);
-            this.Chk_Opc23.Text = MOFIN_LIB.Funciones._Mens_Idioma(11038);
-            this.Chk_Opc24.Text = MOFIN_LIB.Funciones._Mens_Idioma(11039);
-            this.Chk_Opc25.Text = MOFIN_LIB.Funciones._Mens_Idioma(11040);
-            this.Chk_Opc26.Text = MOFIN_LIB.Funciones._Mens_Idioma(11041);
-            this.Chk_Opc27.Text = MOFIN_LIB.Funciones._Mens_Idioma(11042);
-            this.Chk_Opc28.Text = MOFIN_LIB.Funciones._Mens_Idioma(11043);
+            this.Chk_Opc16.Text = Funciones._Mens_Idioma(11034);
+            this.Chk_Opc17.Text = Funciones._Mens_Idioma(11035);
+            this.Chk_Opc18.Text = Funciones._Mens_Idioma(1010);
+            this.Chk_Opc19.Text = Funciones._Mens_Idioma(11009);
+            this.Chk_Opc20.Text = Funciones._Mens_Idioma(1023);
+            this.Chk_Opc21.Text = Funciones._Mens_Idioma(11036);
+            this.Chk_Opc22.Text = Funciones._Mens_Idioma(11037);
+            this.Chk_Opc23.Text = Funciones._Mens_Idioma(11038);
+            this.Chk_Opc24.Text = Funciones._Mens_Idioma(11039);
+            this.Chk_Opc25.Text = Funciones._Mens_Idioma(11040);
+            this.Chk_Opc26.Text = Funciones._Mens_Idioma(11041);
+            this.Chk_Opc27.Text = Funciones._Mens_Idioma(11042);
+            this.Chk_Opc28.Text = Funciones._Mens_Idioma(11043);
             this.Chk_Opc29.Text = "";
             this.Chk_Opc30.Text = "";
 
-            this.Pag4.Text = MOFIN_LIB.Funciones._Mens_Idioma(1016);
-            this.Lbl_Observacion.Text = MOFIN_LIB.Funciones._Mens_Idioma(1016);
-            this.Lbl_Ejecutivo.Text = MOFIN_LIB.Funciones._Mens_Idioma(13063);
-            this.Lbl_NivRiesgo.Text = MOFIN_LIB.Funciones._Mens_Idioma(13024);
-            this.Lbl_PerFinanciero.Text = MOFIN_LIB.Funciones._Mens_Idioma(13021);
-            this.Lbl_PerUsoCta.Text = MOFIN_LIB.Funciones._Mens_Idioma(11050);
-            this.Opt_PerUsoCta1.Text = MOFIN_LIB.Funciones._Mens_Idioma(191);
-            this.Opt_PerUsoCta2.Text = MOFIN_LIB.Funciones._Mens_Idioma(192);
-            this.Opt_PerUsoCta3.Text = MOFIN_LIB.Funciones._Mens_Idioma(193);
-            this.Opt_PerUsoCta4.Text = MOFIN_LIB.Funciones._Mens_Idioma(194);
-            this.Opt_PerUsoCta5.Text = MOFIN_LIB.Funciones._Mens_Idioma(195);
-            this.Lbl_NroTransacciones.Text = MOFIN_LIB.Funciones._Mens_Idioma(13023);
-            this.Lbl_FecUltAct.Text = MOFIN_LIB.Funciones._Mens_Idioma(11052);
-            this.Lbl_TrimPeriodo.Text = MOFIN_LIB.Funciones._Mens_Idioma(11051);
-            this.Lbl_TrimNroOper.Text = MOFIN_LIB.Funciones._Mens_Idioma(13023);
-            this.Lbl_TrimMtoFinanc.Text = MOFIN_LIB.Funciones._Mens_Idioma(11053);
-            this.Lbl_TrimMtoTransac.Text = MOFIN_LIB.Funciones._Mens_Idioma(11054);
+            this.Pag4.Text = Funciones._Mens_Idioma(1016);
+            this.Lbl_Observacion.Text = Funciones._Mens_Idioma(1016);
+            this.Lbl_Ejecutivo.Text = Funciones._Mens_Idioma(13063);
+            this.Lbl_NivRiesgo.Text = Funciones._Mens_Idioma(13024);
+            this.Lbl_PerFinanciero.Text = Funciones._Mens_Idioma(13021);
+            this.Lbl_PerUsoCta.Text = Funciones._Mens_Idioma(11050);
+            this.Opt_PerUsoCta1.Text = Funciones._Mens_Idioma(191);
+            this.Opt_PerUsoCta2.Text = Funciones._Mens_Idioma(192);
+            this.Opt_PerUsoCta3.Text = Funciones._Mens_Idioma(193);
+            this.Opt_PerUsoCta4.Text = Funciones._Mens_Idioma(194);
+            this.Opt_PerUsoCta5.Text = Funciones._Mens_Idioma(195);
+            this.Lbl_NroTransacciones.Text = Funciones._Mens_Idioma(13023);
+            this.Lbl_FecUltAct.Text = Funciones._Mens_Idioma(11052);
+            this.Lbl_TrimPeriodo.Text = Funciones._Mens_Idioma(11051);
+            this.Lbl_TrimNroOper.Text = Funciones._Mens_Idioma(13023);
+            this.Lbl_TrimMtoFinanc.Text = Funciones._Mens_Idioma(11053);
+            this.Lbl_TrimMtoTransac.Text = Funciones._Mens_Idioma(11054);
 
-            this.Pag5.Text = MOFIN_LIB.Funciones._Mens_Idioma(11007);
+            this.Pag5.Text = Funciones._Mens_Idioma(11007);
 
             this.TSB_Primero.Text = Funciones._Mens_Idioma(131);
             this.TSB_Anterior.Text = Funciones._Mens_Idioma(132);
@@ -746,14 +863,14 @@ namespace MOFIN
             this.TSB_Salir.Text = Funciones._Mens_Idioma(140);
 
 
-            MOFIN_LIB.Funciones.TTT_Btn(Btn_Aceptar, MOFIN_LIB.Funciones._Mens_Idioma(141));
-            MOFIN_LIB.Funciones.TTT_Btn(Btn_Cancelar, MOFIN_LIB.Funciones._Mens_Idioma(142));
+            Funciones.TTT_Btn(Btn_Aceptar, Funciones._Mens_Idioma(141));
+            Funciones.TTT_Btn(Btn_Cancelar, Funciones._Mens_Idioma(142));
         }
-        
+
         private void Modo_Consulta()
         {
-            Cmb_Estado.DataSource = NM_Estados.Listar();
-            Cmb_BenefEstado.DataSource = NM_Estados.Listar();
+            //Cmb_Estado.DataSource = NM_Estados.Listar();
+            //Cmb_BenefEstado.DataSource = NM_Estados.Listar();
 
             Pan_DetallesEnc.Enabled = false;
             Pan_Detalles1.Enabled = false;
@@ -770,7 +887,8 @@ namespace MOFIN
 
             this.Grd_Clientes.Enabled = true;
             this.Grd_CFirBenAcc.Enabled = true;
-            
+
+            this.Grd_Clientes_CurrentCellChanged(null, null);
             TSB_ActualizaBotonesNavegacion();
         }
 
@@ -802,8 +920,8 @@ namespace MOFIN
                 return;
 
             r_Cliente = BS_CClientes.Current as C_Clientes;
-            BS_CFirBenAcc.DataSource = NC_FirBenAcc.ListarPorCliente(r_Cliente.Codigo);
 
+            BS_CFirBenAcc.DataSource = NC_FirBenAcc.ListarPorCliente(r_Cliente.Codigo);
             this.Grd_CFirBenAcc_CurrentCellChanged(true, e);
 
             this.Lbl_Activo.Text = Funciones._Mens_Idioma(r_Cliente.Activo == true ? 126 : 127);
@@ -813,7 +931,7 @@ namespace MOFIN
             this.Opc_TipPers2.Checked = r_Cliente.TipoPersona == (byte)TipoPersona.juridica ? true : false;
 
             this.Lbl_Edad.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 10014 : 10012 );
-            Cmb_Edad.Visible = r_Cliente.TipoPersona == 1 ? true : false;
+            Cmb_Edad.Visible = r_Cliente.TipoPersona == (byte)TipoPersona.natural ? true : false;
             Cmb_Antiguedad.Visible = !Cmb_Edad.Visible;
             Cmb_VolOperNat.Visible = Cmb_Edad.Visible;
             Cmb_VolOperJur.Visible = !Cmb_Edad.Visible;
@@ -825,7 +943,7 @@ namespace MOFIN
             this.Chk_Opc20.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 1023 : 11044);
             this.Chk_Opc21.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11036 : 11045);
             this.Chk_Opc22.Text = Funciones._Mens_Idioma(r_Cliente.TipoPersona == (byte)TipoPersona.natural ? 11037 : 11046);
-            this.Chk_Opc23.Visible = r_Cliente.TipoPersona == 1 ? true : false;
+            this.Chk_Opc23.Visible = r_Cliente.TipoPersona == (byte)TipoPersona.natural ? true : false;
             this.Chk_Opc24.Visible = this.Chk_Opc23.Visible;
             this.Chk_Opc25.Visible = this.Chk_Opc23.Visible;
             this.Chk_Opc26.Visible = this.Chk_Opc23.Visible;
@@ -850,10 +968,11 @@ namespace MOFIN
                     break;
             }
 
-            this.Pag1.Text = MOFIN_LIB.Funciones._Mens_Idioma(11004) + ": " + r_Cliente.InfGen_Punt.ToString();
-            this.Pag2.Text = MOFIN_LIB.Funciones._Mens_Idioma(11005) + ": " + r_Cliente.Benef_Punt.ToString();
-            Lbl_Puntuacion.Text = r_Cliente.Cliente_Punt.ToString();
-            
+            this.Pag1.Text = Funciones._Mens_Idioma(11004) + ": " + r_Cliente.InfGen_Punt.ToString();
+            this.Pag2.Text = Funciones._Mens_Idioma(11005) + ": " + r_Cliente.Benef_Punt.ToString();
+
+            if (r_Cliente.CondEspSeguridad != null)
+                Lbl_Puntuacion.Text = (bool)r_Cliente.CondEspSeguridad ? "3*" : r_Cliente.Cliente_Punt.ToString();
 
             List<C_ProdServ> ProdSelec = NC_ProdServ.ListarPorClienyTipProdServ(r_Cliente.Codigo, (byte)TipoProdServ.Producto);
             for (int i = 0; i < m_Productos.Count; i++)
@@ -876,7 +995,6 @@ namespace MOFIN
             {
                 Chlst_Servicios.SetItemChecked(i, false);
             }
-
             for (int i = 0; i < m_Servicios.Count; i++)
             {
                 for (int j = 0; j < ServSelec.Count; j++)
@@ -887,6 +1005,105 @@ namespace MOFIN
                     }
                 }
             }
+
+            ///
+            /// proceso para advetir sobre cual campo es Condición Especial de Seguridad.
+            /// 
+
+            M_TipoDocID r_TipoDocID = BS_MTipoDocID.Current as M_TipoDocID;
+            if (r_TipoDocID.CondEspSeguridad != null & r_Cliente.IG_TipDocID > 0)
+                this.Lbl_TipDocID.ForeColor = (bool)r_TipoDocID.CondEspSeguridad ? Color.Red : Color.Black;
+            else
+                this.Lbl_TipDocID.ForeColor = Color.Black;
+
+            M_Pais r_Pais = BS_MPais.Current as M_Pais;
+            if (r_Pais.CondEspSeguridad != null & r_Cliente.IG_Nacionalidad > 0)
+                this.Lbl_Nacionalidad.ForeColor = (bool)r_Pais.CondEspSeguridad ? Color.Red : Color.Black;
+            else
+                this.Lbl_Nacionalidad.ForeColor = Color.Black;
+
+            r_Pais = BS_Nac.Current as M_Pais;
+            if (r_Pais.CondEspSeguridad != null & r_Cliente.IG_PaisNacim > 0)
+                this.Lbl_PaisNacimiento.ForeColor = (bool)r_Pais.CondEspSeguridad ? Color.Red : Color.Black;
+            else
+                this.Lbl_PaisNacimiento.ForeColor = Color.Black;
+
+            r_Pais = BS_Res.Current as M_Pais;
+            if (r_Pais.CondEspSeguridad != null & r_Cliente.IG_PaisResid > 0)
+                this.Lbl_PaisResidencia.ForeColor = (bool)r_Pais.CondEspSeguridad ? Color.Red : Color.Black;
+            else
+                this.Lbl_PaisResidencia.ForeColor = Color.Black;
+
+            M_Estados r_Estados = BS_MEstados.Current as M_Estados;
+            if (r_Estados.CondEspSeguridad != null & r_Cliente.IG_Estado > 0)
+                this.Lbl_Estado.ForeColor = (bool)r_Estados.CondEspSeguridad ? Color.Red : Color.Black;
+            else
+                this.Lbl_Estado.ForeColor = Color.Black;
+
+            if (r_Cliente.TipoPersona == (byte)TipoPersona.natural)
+            {
+                M_Edad r_Edad = BS_MEdad.Current as M_Edad;
+                if (r_Edad.CondEspSeguridad != null & r_Cliente.IG_Edad > 0)
+                    this.Lbl_Edad.ForeColor = (bool)r_Edad.CondEspSeguridad ? Color.Red : Color.Black;
+                else
+                    this.Lbl_Edad.ForeColor = Color.Black;
+
+                M_VolOperPersNat r_VolOperac = BS_MVolOperPersNat.Current as M_VolOperPersNat;
+                if (r_VolOperac.CondEspSeguridad != null & r_Cliente.IG_VolumOperac > 0)
+                    this.Lbl_VolOperaciones.ForeColor = (bool)r_VolOperac.CondEspSeguridad ? Color.Red : Color.Black;
+                else
+                    this.Lbl_VolOperaciones.ForeColor = Color.Black;
+            }
+            else
+            {
+                M_Antiguedad r_Edad = BS_MAntiguedad.Current as M_Antiguedad;
+                if (r_Edad.CondEspSeguridad != null & r_Cliente.IG_Edad > 0)
+                    this.Lbl_Edad.ForeColor = (bool)r_Edad.CondEspSeguridad ? Color.Red : Color.Black;
+                else
+                    this.Lbl_Edad.ForeColor = Color.Black;
+
+                M_VolOperPersJur r_VolOperac = BS_MVolOperPersJur.Current as M_VolOperPersJur;
+                if (r_VolOperac.CondEspSeguridad != null & r_Cliente.IG_VolumOperac > 0)
+                    this.Lbl_VolOperaciones.ForeColor = (bool)r_VolOperac.CondEspSeguridad ? Color.Red : Color.Black;
+                else
+                    this.Lbl_VolOperaciones.ForeColor = Color.Black;
+            }
+            M_TipoPersJuridica r_TipoPersJuridica = BS_MTipoPersJuridica.Current as M_TipoPersJuridica;
+            if (r_TipoPersJuridica.CondEspSeguridad != null & r_Cliente.IG_TipoPersJur > 0)
+                this.Lbl_TipoPersJur.ForeColor = (bool)r_TipoPersJuridica.CondEspSeguridad ? Color.Red: Color.Black;
+            else
+                this.Lbl_TipoPersJur.ForeColor = Color.Black;
+
+            M_TipoEstructuraEmpresa r_TipoEstructura = BS_MTipoEstructuraEmpresa.Current as M_TipoEstructuraEmpresa;
+            if (r_TipoEstructura.CondEspSeguridad != null & r_Cliente.IG_TipoEstructura > 0)
+                this.Lbl_TipoEstructura.ForeColor = (bool)r_TipoEstructura.CondEspSeguridad ? Color.Red : Color.Black;
+            else
+                this.Lbl_TipoEstructura.ForeColor = Color.Black;
+
+            M_PEP r_PEP = BS_MPEP.Current as M_PEP;
+            if (r_PEP.CondEspSeguridad != null & r_Cliente.IG_PEP > 0)
+                this.Lbl_PEP.ForeColor = (bool)r_PEP.CondEspSeguridad ? Color.Red : Color.Black;
+            else
+                this.Lbl_PEP.ForeColor = Color.Black;
+
+            M_Criptomonedas r_Criptomonedas = BS_MCriptomonedas.Current as M_Criptomonedas;
+            if (r_Criptomonedas.CondEspSeguridad != null & r_Cliente.IG_Criptomoneda > 0)
+                this.Lbl_Criptomonedas.ForeColor = (bool)r_Criptomonedas.CondEspSeguridad ? Color.Red : Color.Black;
+            else
+                this.Lbl_Criptomonedas.ForeColor = Color.Black;
+
+            M_Profesiones r_Profesiones = BS_MProfesiones.Current as M_Profesiones;
+            if (r_Profesiones.CondEspSeguridad != null & r_Cliente.IG_Profesion > 0)
+                this.Lbl_Profesion.ForeColor = (bool)r_Profesiones.CondEspSeguridad ? Color.Red : Color.Black;
+            else
+                this.Lbl_Profesion.ForeColor = Color.Black;
+
+            M_ActivComercial r_ActivComercial = BS_MActivComercial.Current as M_ActivComercial;
+            if(r_ActivComercial.CondEspSeguridad != null & r_Cliente.IG_ActivComer > 0)
+                this.Lbl_ActivComercial.ForeColor = (bool)r_ActivComercial.CondEspSeguridad ? Color.Red : Color.Black;
+            else
+                this.Lbl_ActivComercial.ForeColor = Color.Black;
+
         }
 
         private void Grd_CFirBenAcc_CurrentCellChanged(object sender, EventArgs e)
@@ -896,12 +1113,23 @@ namespace MOFIN
                 Opc_TipVinc1.Checked = false;
                 Opc_TipVinc2.Checked = false;
                 Opc_TipVinc3.Checked = false;
+
+                foreach(Control control in this.Pag2.Controls)
+                {
+                    if (control.GetType().Name == "Label")
+                        control.ForeColor = Color.Black;
+                }
+                
                 return;
             }
             else
             {
                 r_FirBenAcc = BS_CFirBenAcc.Current as C_FirBenAcc;
-                this.Lbl_BenefPuntuacion.Text = r_FirBenAcc.Puntuacion.ToString();
+
+                if (r_FirBenAcc.CondEspSeguridad != null)
+                    Lbl_BenefPuntuacion.Text = (bool)r_FirBenAcc.CondEspSeguridad ? "3*" : r_FirBenAcc.Puntuacion.ToString();
+
+               // this.Lbl_BenefPuntuacion.Text = r_FirBenAcc.Puntuacion.ToString();
 
                 switch(r_FirBenAcc.TipoVinculo)
                 {
@@ -914,7 +1142,62 @@ namespace MOFIN
                     case (byte)TipoVinculo.Conyugue :
                         Opc_TipVinc3.Checked = true;
                         break;
+                    default:
+                        Opc_TipVinc1.Checked = false;
+                        Opc_TipVinc2.Checked = false;
+                        Opc_TipVinc3.Checked = false;
+                        break;
+
                 }
+
+                M_Pais r_Pais = BS_AutPaisNac.Current as M_Pais;
+                if (r_Pais.CondEspSeguridad != null & r_FirBenAcc.PaisNacim > 0)
+                    this.Lbl_BenefPaisNacim.ForeColor = (bool)r_Pais.CondEspSeguridad ? Color.Red : Color.Black;
+                else
+                    this.Lbl_BenefPaisNacim.ForeColor = Color.Black;
+
+                r_Pais = BS_AutNac.Current as M_Pais;
+                if (r_Pais.CondEspSeguridad != null & r_FirBenAcc.Nacionalidad > 0)
+                    this.Lbl_BenefNacionalidad.ForeColor = (bool)r_Pais.CondEspSeguridad ? Color.Red : Color.Black;
+                else
+                    this.Lbl_BenefNacionalidad.ForeColor = Color.Black;
+
+                r_Pais = BS_AutRes.Current as M_Pais;
+                if (r_Pais.CondEspSeguridad != null & r_FirBenAcc.PaisResid > 0)
+                    this.Lbl_BenefPaisResid.ForeColor = (bool)r_Pais.CondEspSeguridad ? Color.Red : Color.Black;
+                else
+                    this.Lbl_BenefPaisResid.ForeColor = Color.Black;
+
+                M_Estados r_Estados = BS_AutEstados.Current as M_Estados;
+                if (r_Estados.CondEspSeguridad != null & r_FirBenAcc.Estado > 0)
+                    this.Lbl_BenefEstado.ForeColor = (bool)r_Estados.CondEspSeguridad ? Color.Red : Color.Black;
+                else
+                    this.Lbl_BenefEstado.ForeColor = Color.Black;
+
+                M_Edad r_Edad = BS_AutEdad.Current as M_Edad;
+                if (r_Edad.CondEspSeguridad != null & r_FirBenAcc.Edad > 0)
+                    this.Lbl_BenefEdad.ForeColor = (bool)r_Edad.CondEspSeguridad ? Color.Red : Color.Black;
+                else
+                    this.Lbl_BenefEdad.ForeColor = Color.Black;
+
+                M_PEP r_PEP = BS_AutPEP.Current as M_PEP;
+                if (r_PEP.CondEspSeguridad != null & r_FirBenAcc.PEP > 0)
+                    this.Lbl_BenefPEP.ForeColor = (bool)r_PEP.CondEspSeguridad ? Color.Red : Color.Black;
+                else
+                    this.Lbl_BenefPEP.ForeColor = Color.Black;
+
+                M_Profesiones r_Profesion = BS_AutProfesion.Current as M_Profesiones;
+                if (r_Profesion.CondEspSeguridad != null & r_FirBenAcc.Profesion > 0)
+                    this.Lbl_BenefProfesion.ForeColor = (bool)r_Profesion.CondEspSeguridad ? Color.Red : Color.Black;
+                else
+                    this.Lbl_BenefProfesion.ForeColor = Color.Black;
+
+                M_Criptomonedas r_Criptomonedas = BS_AutCriptomoneda.Current as M_Criptomonedas;
+                if (r_Criptomonedas.CondEspSeguridad != null & r_FirBenAcc.Criptomoneda > 0)
+                    this.Lbl_BenefCriptomonedas.ForeColor = (bool)r_Criptomonedas.CondEspSeguridad ? Color.Red : Color.Black;
+                else
+                    this.Lbl_BenefCriptomonedas.ForeColor = Color.Black;
+
             }
         }
 
@@ -1003,12 +1286,16 @@ namespace MOFIN
 
         private void Clientes_RellenaDatosCalculo()
         {
-            // son 13 controles fijos mas los producot sy sevicios
+            // son 14 controles fijos mas los producot sy sevicios
+
+            punt_Cliente.Cond_Esp_Seguridad = false;
 
             if (r_Cliente.IG_TipDocID != 0 & r_Cliente.IG_TipDocID != null)
             {
                 M_TipoDocID r_TipoDocID = NM_TipoDocID.ListarPorCodigo((short)r_Cliente.IG_TipDocID).First();
                 punt_Cliente.puntos_TipoDocID = r_TipoDocID.Valor;
+                if ((bool)r_TipoDocID.CondEspSeguridad)
+                    punt_Cliente.Cond_Esp_Seguridad = true;
             }
             else
                 punt_Cliente.puntos_TipoDocID = 0;
@@ -1017,6 +1304,8 @@ namespace MOFIN
             {
                 M_Pais r_Pais = NM_Pais.ListarPorCodigo((short)r_Cliente.IG_Nacionalidad).First();
                 punt_Cliente.puntos_nacionalidad = r_Pais.Valor;
+                if ((bool)r_Pais.CondEspSeguridad)
+                    punt_Cliente.Cond_Esp_Seguridad = true;
             }
             else
                 punt_Cliente.puntos_nacionalidad = 0;
@@ -1025,6 +1314,8 @@ namespace MOFIN
             {
                 M_Pais r_Pais = NM_Pais.ListarPorCodigo((short)r_Cliente.IG_PaisNacim).First();
                 punt_Cliente.puntos_paisNac = r_Pais.Valor;
+                if ((bool)r_Pais.CondEspSeguridad)
+                    punt_Cliente.Cond_Esp_Seguridad = true;
             }
             else
                 punt_Cliente.puntos_paisNac = 0;
@@ -1033,14 +1324,21 @@ namespace MOFIN
             {
                 M_Pais r_Pais = NM_Pais.ListarPorCodigo((short)r_Cliente.IG_PaisResid).First();
                 punt_Cliente.puntos_paisRes = r_Pais.Valor;
+                if ((bool)r_Pais.CondEspSeguridad)
+                    punt_Cliente.Cond_Esp_Seguridad = true;
             }
             else
                 punt_Cliente.puntos_paisRes = 0;
 
             if (r_Cliente.IG_Estado != 0 & r_Cliente.IG_Estado != null)
             {
-                M_Estados r_Estados = NM_Estados.ListarPorCodigo((int)r_Cliente.IG_Estado).First();
-                punt_Cliente.puntos_UbicGeo = r_Estados.Valor;
+                if (NM_Estados.ListarPorCodigo((int)r_Cliente.IG_Estado).Count > 0)
+                {
+                    M_Estados r_Estados = NM_Estados.ListarPorCodigo((int)r_Cliente.IG_Estado).First();
+                    punt_Cliente.puntos_UbicGeo = r_Estados.Valor;
+                    if ((bool)r_Estados.CondEspSeguridad)
+                        punt_Cliente.Cond_Esp_Seguridad = true;
+                }
             }
             else
                 punt_Cliente.puntos_UbicGeo = 0;
@@ -1051,6 +1349,8 @@ namespace MOFIN
                 {
                     M_Edad r_Edad = NM_Edad.ListarPorCodigo((short)r_Cliente.IG_Edad).First();
                     punt_Cliente.puntos_edad = r_Edad.Valor;
+                    if ((bool)r_Edad.CondEspSeguridad)
+                        punt_Cliente.Cond_Esp_Seguridad = true;
                 }
                 else
                     punt_Cliente.puntos_edad = 0;
@@ -1061,6 +1361,8 @@ namespace MOFIN
                 {
                     M_Antiguedad r_Antiguedad = NM_Antiguedad.ListarPorCodigo((short)r_Cliente.IG_Edad).First();
                     punt_Cliente.puntos_edad = r_Antiguedad.Valor;
+                    if ((bool)r_Antiguedad.CondEspSeguridad)
+                        punt_Cliente.Cond_Esp_Seguridad = true;
                 }
                 else
                     punt_Cliente.puntos_edad = 0;
@@ -1070,6 +1372,8 @@ namespace MOFIN
             {
                 M_TipoPersJuridica r_TipoPersJuridica = NM_TipoPersJuridica.ListarPorCodigo((short)r_Cliente.IG_TipoPersJur).First();
                 punt_Cliente.puntos_tipoPers = r_TipoPersJuridica.Valor;
+                if ((bool)r_TipoPersJuridica.CondEspSeguridad)
+                    punt_Cliente.Cond_Esp_Seguridad = true;
             }
             else
                 punt_Cliente.puntos_tipoPers = 0;
@@ -1078,6 +1382,8 @@ namespace MOFIN
             {
                 M_TipoEstructuraEmpresa r_TipoEstructura = NM_TipoEstructuraEmpresa.ListarPorCodigo((short)r_Cliente.IG_TipoEstructura).First();
                 punt_Cliente.puntos_estruc = r_TipoEstructura.Valor;
+                if ((bool)r_TipoEstructura.CondEspSeguridad)
+                    punt_Cliente.Cond_Esp_Seguridad = true;
             }
             else
                 punt_Cliente.puntos_estruc = 0;
@@ -1086,6 +1392,8 @@ namespace MOFIN
             {
                 M_PEP r_PEP = NM_PEP.ListarPorCodigo((short)r_Cliente.IG_PEP).First();
                 punt_Cliente.puntos_pep = r_PEP.Valor;
+                if ((bool)r_PEP.CondEspSeguridad)
+                    punt_Cliente.Cond_Esp_Seguridad = true;
             }
             else
                 punt_Cliente.puntos_pep = 0;
@@ -1095,10 +1403,18 @@ namespace MOFIN
                 M_VolOperPersNat r_VolOperNat = BS_MVolOperPersNat.Current as M_VolOperPersNat;
                 M_VolOperPersJur r_VolOperJur = BS_MVolOperPersJur.Current as M_VolOperPersJur;
                 if (r_Cliente.TipoPersona == (byte)TipoPersona.natural)
+                {
                     r_VolOperNat = NM_VolOperPersNat.ListarPorCodigo((short)r_Cliente.IG_VolumOperac).First();
+                    if ((bool)r_VolOperNat.CondEspSeguridad)
+                        punt_Cliente.Cond_Esp_Seguridad = true;
+                }
                 else
+                {
                     r_VolOperJur = NM_VolOperPersJur.ListarPorCodigo((short)r_Cliente.IG_VolumOperac).First();
+                    if ((bool)r_VolOperJur.CondEspSeguridad)
+                        punt_Cliente.Cond_Esp_Seguridad = true;
 
+                }
                 punt_Cliente.puntos_volOper = r_Cliente.TipoPersona == (byte)TipoPersona.natural?  r_VolOperNat.Valor : r_VolOperJur.Valor;
             }
             else
@@ -1108,6 +1424,8 @@ namespace MOFIN
             {
                 M_Criptomonedas r_Criptomon = NM_Criptomonedas.ListarPorCodigo((short)r_Cliente.IG_Criptomoneda).First();
                 punt_Cliente.puntos_cripto = r_Criptomon.Valor;
+                if ((bool)r_Criptomon.CondEspSeguridad)
+                    punt_Cliente.Cond_Esp_Seguridad = true;
             }
             else
                 punt_Cliente.puntos_cripto = 0;
@@ -1116,6 +1434,8 @@ namespace MOFIN
             {
                 M_Profesiones r_Profesion = NM_Profesiones.ListarPorCodigo((short)r_Cliente.IG_Profesion).First();
                 punt_Cliente.puntos_profesion = r_Profesion.Valor;
+                if ((bool)r_Profesion.CondEspSeguridad)
+                    punt_Cliente.Cond_Esp_Seguridad = true;
             }
             else
                 punt_Cliente.puntos_profesion = 0;
@@ -1124,6 +1444,9 @@ namespace MOFIN
             {
                 M_ActivComercial r_ActivComerc = NM_ActivComercial.ListarPorCodigo((short)r_Cliente.IG_ActivComer).First();
                 punt_Cliente.puntos_ActComer = r_ActivComerc.Valor;
+                if (r_ActivComerc.CondEspSeguridad != null)
+                    if ((bool)r_ActivComerc.CondEspSeguridad)
+                        punt_Cliente.Cond_Esp_Seguridad = true;
             }
             else
                 punt_Cliente.puntos_ActComer = 0;
@@ -1143,15 +1466,17 @@ namespace MOFIN
             punt_Cliente.puntos_Servicios  = (byte)Math.Round(((float)Suma_Serv / (float)Cant_Serv));
 
         }
-
         private void FirBenAcc_RellenaDatosCalculo()
         {
-            // son 13 controles fijos mas los producot sy sevicios
+            // son 8 controles fijos mas los producot sy sevicios
+            punt_FirBenAcc.Cond_Esp_Seguridad = false;
 
             if (r_FirBenAcc.Nacionalidad != 0 & r_FirBenAcc.Nacionalidad!= null)
             {
                 M_Pais r_Pais = NM_Pais.ListarPorCodigo((short)r_FirBenAcc.Nacionalidad).First();
                 punt_FirBenAcc.puntos_nacionalidad = r_Pais.Valor;
+                if ((bool)r_Pais.CondEspSeguridad)
+                    punt_FirBenAcc.Cond_Esp_Seguridad = true;
             }
             else
                 punt_FirBenAcc.puntos_nacionalidad = 0;
@@ -1160,6 +1485,8 @@ namespace MOFIN
             {
                 M_Pais r_Pais = NM_Pais.ListarPorCodigo((short)r_FirBenAcc.PaisNacim).First();
                 punt_FirBenAcc.puntos_paisNac = r_Pais.Valor;
+                if ((bool)r_Pais.CondEspSeguridad)
+                    punt_FirBenAcc.Cond_Esp_Seguridad = true;
             }
             else
                 punt_FirBenAcc.puntos_paisNac = 0;
@@ -1168,6 +1495,8 @@ namespace MOFIN
             {
                 M_Pais r_Pais = NM_Pais.ListarPorCodigo((short)r_FirBenAcc.PaisResid).First();
                 punt_FirBenAcc.puntos_paisRes = r_Pais.Valor;
+                if ((bool)r_Pais.CondEspSeguridad)
+                    punt_FirBenAcc.Cond_Esp_Seguridad = true;
             }
             else
                 punt_FirBenAcc.puntos_paisRes = 0;
@@ -1176,6 +1505,8 @@ namespace MOFIN
             {
                 M_Estados r_Estados = NM_Estados.ListarPorCodigo((int)r_FirBenAcc.Estado).First();
                 punt_FirBenAcc.puntos_UbicGeo = r_Estados.Valor;
+                if ((bool)r_Estados.CondEspSeguridad)
+                    punt_FirBenAcc.Cond_Esp_Seguridad = true;
             }
             else
                 punt_FirBenAcc.puntos_UbicGeo = 0;
@@ -1184,6 +1515,8 @@ namespace MOFIN
             {
                 M_Edad r_Edad = NM_Edad.ListarPorCodigo((short)r_FirBenAcc.Edad).First();
                 punt_FirBenAcc.puntos_edad = r_Edad.Valor;
+                if ((bool)r_Edad.CondEspSeguridad)
+                    punt_FirBenAcc.Cond_Esp_Seguridad = true;
             }
             else
                 punt_FirBenAcc.puntos_edad = 0;
@@ -1192,6 +1525,8 @@ namespace MOFIN
             {
                 M_PEP r_PEP = NM_PEP.ListarPorCodigo((short)r_FirBenAcc.PEP).First();
                 punt_FirBenAcc.puntos_pep = r_PEP.Valor;
+                if ((bool)r_PEP.CondEspSeguridad)
+                    punt_FirBenAcc.Cond_Esp_Seguridad = true;
             }
             else
                 punt_FirBenAcc.puntos_pep = 0;
@@ -1200,6 +1535,8 @@ namespace MOFIN
             {
                 M_Criptomonedas r_Criptomon = NM_Criptomonedas.ListarPorCodigo((short)r_FirBenAcc.Criptomoneda).First();
                 punt_FirBenAcc.puntos_cripto = r_Criptomon.Valor;
+                if ((bool)r_Criptomon.CondEspSeguridad)
+                    punt_FirBenAcc.Cond_Esp_Seguridad = true;
             }
             else
                 punt_FirBenAcc.puntos_cripto = 0;
@@ -1208,39 +1545,41 @@ namespace MOFIN
             {
                 M_Profesiones r_Profesion = NM_Profesiones.ListarPorCodigo((short)r_FirBenAcc.Profesion).First();
                 punt_FirBenAcc.puntos_profesion = r_Profesion.Valor;
+                if ((bool)r_Profesion.CondEspSeguridad)
+                    punt_FirBenAcc.Cond_Esp_Seguridad = true;
             }
             else
                 punt_FirBenAcc.puntos_profesion = 0;
 
         }
+
         private void Lbl_Puntuacion_TextChanged(object sender, EventArgs e)
         {
             switch(this.Lbl_Puntuacion.Text)
             {
-                case "3":
-                    this.Lbl_Puntuacion.ForeColor = Color.Red;
+                case "1":
+                    this.Lbl_Puntuacion.ForeColor = Color.Green;
                     break;
                 case "2":
                     this.Lbl_Puntuacion.ForeColor = Color.Yellow;
                     break;
                 default:
-                    this.Lbl_Puntuacion.ForeColor = Color.Green;
+                    this.Lbl_Puntuacion.ForeColor = Color.Red;
                     break;
             }
         }
-
         private void Lbl_BenefPuntuacion_TextChanged(object sender, EventArgs e)
         {
             switch (this.Lbl_BenefPuntuacion.Text)
             {
-                case "3":
-                    this.Lbl_BenefPuntuacion.ForeColor = Color.Red;
+                case "1":
+                    this.Lbl_BenefPuntuacion.ForeColor = Color.Green;
                     break;
                 case "2":
                     this.Lbl_BenefPuntuacion.ForeColor = Color.Yellow;
                     break;
                 default:
-                    this.Lbl_BenefPuntuacion.ForeColor = Color.Green;
+                    this.Lbl_BenefPuntuacion.ForeColor = Color.Red;
                     break;
             }
 
@@ -1383,5 +1722,22 @@ namespace MOFIN
             r_Cliente.Trim_NroOperTrans = vl_NroOperTrans;
             r_Cliente.Trim_MtoTransac = vl_Total;
         }
+
+        private void Lbl_Activo_DoubleClick(object sender, EventArgs e)
+        {
+            if (!Txt_Nombre.Enabled)
+                return;
+
+            DialogResult vl_Resp = MessageBox.Show(Funciones._Mens_Idioma((bool)r_Cliente.Activo? 11055 : 11056) + "\n\n" + r_Cliente.Nombre,
+                Funciones._Mens_Idioma(201), MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (vl_Resp == DialogResult.Yes)
+            {
+                this.Lbl_Activo.Text = Funciones._Mens_Idioma((bool)r_Cliente.Activo? 127 : 126);
+                this.Lbl_Activo.ForeColor = Color.Gold;
+                r_Cliente.Activo = !r_Cliente.Activo;
+                //MessageBox.Show(Funciones._Mens_Idioma(1026), Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
     }
 }

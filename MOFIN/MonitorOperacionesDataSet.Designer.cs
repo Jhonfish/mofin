@@ -87,6 +87,7 @@ namespace MOFIN {
             base.Tables.CollectionChanged += schemaChangedHandler;
             base.Relations.CollectionChanged += schemaChangedHandler;
             this.EndInit();
+            this.InitExpressions();
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -98,6 +99,9 @@ namespace MOFIN {
                 global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler1 = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
                 this.Tables.CollectionChanged += schemaChangedHandler1;
                 this.Relations.CollectionChanged += schemaChangedHandler1;
+                if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.ExcludeSchema)) {
+                    this.InitExpressions();
+                }
                 return;
             }
             string strSchema = ((string)(info.GetValue("XmlSchema", typeof(string))));
@@ -193,6 +197,7 @@ namespace MOFIN {
             }
             else {
                 this.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
+                this.InitExpressions();
             }
             this.GetSerializationData(info, context);
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -504,6 +509,7 @@ namespace MOFIN {
         public override global::System.Data.DataSet Clone() {
             MonitorOperacionesDataSet cln = ((MonitorOperacionesDataSet)(base.Clone()));
             cln.InitVars();
+            cln.InitExpressions();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
         }
@@ -836,7 +842,7 @@ namespace MOFIN {
             base.Tables.Add(this.tableM_Profesiones);
             this.tableM_Servicios = new M_ServiciosDataTable();
             base.Tables.Add(this.tableM_Servicios);
-            this.tableM_TipoDocID = new M_TipoDocIDDataTable();
+            this.tableM_TipoDocID = new M_TipoDocIDDataTable(false);
             base.Tables.Add(this.tableM_TipoDocID);
             this.tableM_TipoEstructuraEmpresa = new M_TipoEstructuraEmpresaDataTable();
             base.Tables.Add(this.tableM_TipoEstructuraEmpresa);
@@ -1067,6 +1073,12 @@ namespace MOFIN {
             }
             xs.Add(dsSchema);
             return type;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitExpressions() {
+            this.M_TipoDocID.Info_MostrarColumn.Expression = "Descripcion+ \' | \'+ Valor + \' | \'+ CondEspSeguridad";
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -7775,12 +7787,23 @@ namespace MOFIN {
             
             private global::System.Data.DataColumn columnCondEspSeguridad;
             
+            private global::System.Data.DataColumn columnInfo_Mostrar;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public M_TipoDocIDDataTable() {
+            public M_TipoDocIDDataTable() : 
+                    this(false) {
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public M_TipoDocIDDataTable(bool initExpressions) {
                 this.TableName = "M_TipoDocID";
                 this.BeginInit();
                 this.InitClass();
+                if ((initExpressions == true)) {
+                    this.InitExpressions();
+                }
                 this.EndInit();
             }
             
@@ -7842,6 +7865,14 @@ namespace MOFIN {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Info_MostrarColumn {
+                get {
+                    return this.columnInfo_Mostrar;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7877,13 +7908,29 @@ namespace MOFIN {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public M_TipoDocIDRow AddM_TipoDocIDRow(short Codigo, string Descripcion, byte Valor, bool CondEspSeguridad, string Info_Mostrar) {
+                M_TipoDocIDRow rowM_TipoDocIDRow = ((M_TipoDocIDRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Codigo,
+                        Descripcion,
+                        Valor,
+                        CondEspSeguridad,
+                        Info_Mostrar};
+                rowM_TipoDocIDRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowM_TipoDocIDRow);
+                return rowM_TipoDocIDRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public M_TipoDocIDRow AddM_TipoDocIDRow(short Codigo, string Descripcion, byte Valor, bool CondEspSeguridad) {
                 M_TipoDocIDRow rowM_TipoDocIDRow = ((M_TipoDocIDRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Codigo,
                         Descripcion,
                         Valor,
-                        CondEspSeguridad};
+                        CondEspSeguridad,
+                        null};
                 rowM_TipoDocIDRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowM_TipoDocIDRow);
                 return rowM_TipoDocIDRow;
@@ -7910,6 +7957,7 @@ namespace MOFIN {
                 this.columnDescripcion = base.Columns["Descripcion"];
                 this.columnValor = base.Columns["Valor"];
                 this.columnCondEspSeguridad = base.Columns["CondEspSeguridad"];
+                this.columnInfo_Mostrar = base.Columns["Info_Mostrar"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7923,10 +7971,13 @@ namespace MOFIN {
                 base.Columns.Add(this.columnValor);
                 this.columnCondEspSeguridad = new global::System.Data.DataColumn("CondEspSeguridad", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCondEspSeguridad);
+                this.columnInfo_Mostrar = new global::System.Data.DataColumn("Info_Mostrar", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInfo_Mostrar);
                 this.columnCodigo.AllowDBNull = false;
                 this.columnDescripcion.AllowDBNull = false;
                 this.columnDescripcion.MaxLength = 2147483647;
                 this.columnValor.AllowDBNull = false;
+                this.columnInfo_Mostrar.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7945,6 +7996,12 @@ namespace MOFIN {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
                 return typeof(M_TipoDocIDRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitExpressions() {
+                this.Info_MostrarColumn.Expression = "Descripcion+ \' | \'+ Valor + \' | \'+ CondEspSeguridad";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16196,6 +16253,22 @@ namespace MOFIN {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Info_Mostrar {
+                get {
+                    try {
+                        return ((string)(this[this.tableM_TipoDocID.Info_MostrarColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Info_Mostrar\' de la tabla \'M_TipoDocID\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableM_TipoDocID.Info_MostrarColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsCondEspSeguridadNull() {
                 return this.IsNull(this.tableM_TipoDocID.CondEspSeguridadColumn);
             }
@@ -16204,6 +16277,18 @@ namespace MOFIN {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetCondEspSeguridadNull() {
                 this[this.tableM_TipoDocID.CondEspSeguridadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsInfo_MostrarNull() {
+                return this.IsNull(this.tableM_TipoDocID.Info_MostrarColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetInfo_MostrarNull() {
+                this[this.tableM_TipoDocID.Info_MostrarColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -24227,7 +24312,7 @@ namespace MOFIN.MonitorOperacionesDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual MonitorOperacionesDataSet.M_TipoDocIDDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            MonitorOperacionesDataSet.M_TipoDocIDDataTable dataTable = new MonitorOperacionesDataSet.M_TipoDocIDDataTable();
+            MonitorOperacionesDataSet.M_TipoDocIDDataTable dataTable = new MonitorOperacionesDataSet.M_TipoDocIDDataTable(true);
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

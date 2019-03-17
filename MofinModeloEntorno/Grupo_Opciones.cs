@@ -50,6 +50,11 @@ namespace MofinModeloEntorno
         public Nullable<bool> OperTransac_E { get; set; }
         public Nullable<bool> OperTransac_P { get; set; }
         public Nullable<bool> OperTransac_R { get; set; }
+        public Nullable<bool> LibOper_I { get; set; }
+        public Nullable<bool> LibOper_M { get; set; }
+        public Nullable<bool> LibOper_E { get; set; }
+        public Nullable<bool> LibOper_P { get; set; }
+        public Nullable<bool> LibOper_A { get; set; }
     
         public virtual Grupos Grupos { get; set; }
     }

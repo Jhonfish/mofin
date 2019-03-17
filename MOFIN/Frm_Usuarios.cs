@@ -21,6 +21,7 @@ namespace MOFIN
         Usuarios r_Usuarios = new Usuarios();
         Grupo_Opciones r_GrupoOpciones = new Grupo_Opciones();
         Emp_Accesos r_EmpAccesos = new Emp_Accesos();
+        Opc_Sistema r_OpcSistema = new Opc_Sistema();
 
         public Frm_Usuarios()
         {
@@ -45,6 +46,8 @@ namespace MOFIN
             this.Grd_Usuarios.Focus();
             BS_Empresas.DataSource = NEmpresas.Listar();
             BS_Grupos.DataSource = NGrupos.Listar();
+            BS_OpcSistema.DataSource = NOpc_Sistema.Listar();
+            r_OpcSistema = BS_OpcSistema.Current as Opc_Sistema;
         }
        //************
         // Comportamiento de Los Botones 
@@ -54,19 +57,16 @@ namespace MOFIN
             BS_Usuarios.MoveFirst();
             TSB_ActualizaBotonesNavegacion();
         }
-
         private void TSB_Anterior_Click(object sender, EventArgs e)
         {
             BS_Usuarios.MovePrevious();
             TSB_ActualizaBotonesNavegacion();
         }
-
         private void TSB_Siguiente_Click(object sender, EventArgs e)
         {
             BS_Usuarios.MoveNext();
             TSB_ActualizaBotonesNavegacion();
         }
-
         private void TSB_Ultimo_Click(object sender, EventArgs e)
         {
             BS_Usuarios.MoveLast();
@@ -121,11 +121,30 @@ namespace MOFIN
         private void TSB_Agregar_Click(object sender, EventArgs e)
         {
             vl_EsNuevo = true;
-            this.Modo_Edicion();
-            BS_Usuarios.Add(new Usuarios());
-            BS_Usuarios.MoveLast();
-        }
+            BS_Usuarios.AddNew();
+            //BS_Usuarios.MoveLast();
 
+            r_Usuarios = BS_Usuarios.Current as Usuarios;
+            if (r_OpcSistema.IdiomaPredeterminado == 2)
+                Opc_Idioma2.Checked = true;
+            else
+                Opc_Idioma1.Checked = true;
+            if (r_OpcSistema.FondoEscritorio == 2)
+                Opc_Desktop2.Checked = true;
+            else
+                Opc_Desktop1.Checked = true;
+            if (r_OpcSistema.FormFecha == 2)
+                Opc_FormFec2.Checked = true;
+            else
+                Opc_FormFec1.Checked = true;
+            if (r_OpcSistema.PaisUso == 2)
+                Opc_Pais2.Checked = true;
+            else
+                Opc_Pais1.Checked = true;
+            Chk_ConfigBtnsBarraHerram.Checked = (bool)r_OpcSistema.BtnsNavegBarraHerram;
+
+            this.Modo_Edicion();
+        }
         private void TSB_Modificar_Click(object sender, EventArgs e)
         {
             if (BS_Usuarios.Current == null)
@@ -134,12 +153,10 @@ namespace MOFIN
             this.Modo_Edicion();
             this.Txt_IDUsuario.Focus();
         }
-
         private void TSB_Salir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void TSB_Eliminar_Click(object sender, EventArgs e)
         {
             string vl_RegEliminar = r_Usuarios.Nombre.ToString();
@@ -150,7 +167,7 @@ namespace MOFIN
                 NUsuarios.Elimiar(r_Usuarios);
                 BS_Usuarios.DataSource = NUsuarios.Listar();
                 Grd_Usuarios.Refresh();
-                MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9011), MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Funciones._Mens_Idioma(9011), Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -171,10 +188,13 @@ namespace MOFIN
             //                NEmp_Accesos.Actualizar(BS_Emp_Accesos.Current as Emp_Accesos);
             this.Modo_Consulta();
             BS_Usuarios.DataSource = NUsuarios.Listar();
-        }
 
+            MessageBox.Show(Funciones._Mens_Idioma(9019), Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
         private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
+            BS_Usuarios.CancelEdit();
+            r_Usuarios = BS_Usuarios.Current as Usuarios;
             this.Modo_Consulta();
         }
 
@@ -232,7 +252,6 @@ namespace MOFIN
             Pan_BotAcpcan_EmpAcc.Visible = false;
             this.Grd_Usuarios_CurrentCellChanged(null,null);
         }
-
         private void Btn_EmpAcc_Cancelar_Click(object sender, EventArgs e)
         {
             BS_Emp_Accesos.CancelEdit();
@@ -242,7 +261,6 @@ namespace MOFIN
             Pan_BtnsEmpAccesos.Enabled = true;
             Pan_BotAcpcan_EmpAcc.Visible = false;
         }
-
         private void TSB_Imprimir_Click(object sender, EventArgs e)
         {
 
@@ -265,12 +283,16 @@ namespace MOFIN
                 Opc_Pais2.Checked = r_Usuarios.Cnfg_PaisUso.ToString() == "2" ? true : false;      // Panamá
                 Opc_FormFec1.Checked = r_Usuarios.Cnfg_FormFecha.ToString() == "1" ? true : false; // DD/MM/AAAA
                 Opc_FormFec2.Checked = r_Usuarios.Cnfg_FormFecha.ToString() == "2" ? true : false; // MM/DD/AAAA
-            }
-            BS_Emp_Accesos.DataSource = NEmp_Accesos.ListarPorUsuario(r_Usuarios.ID_Usuario.Trim());
-            Grd_EmpAccesos.DataSource = BS_Emp_Accesos;
-            r_EmpAccesos = BS_Emp_Accesos.Current as Emp_Accesos;
+                r_Usuarios.Cnfg_BarraHerramientas = Chk_ConfigBtnsBarraHerram.Checked;
 
-            TSB_ActualizaBotonesNavegacion();
+                if (r_Usuarios.ID_Usuario != null & r_Usuarios.ID_Usuario != "")
+                {
+                    BS_Emp_Accesos.DataSource = NEmp_Accesos.ListarPorUsuario(r_Usuarios.ID_Usuario.Trim());
+                    Grd_EmpAccesos.DataSource = BS_Emp_Accesos;
+                    r_EmpAccesos = BS_Emp_Accesos.Current as Emp_Accesos;
+                }
+                TSB_ActualizaBotonesNavegacion();
+            }
         }
 
         private void Asigna_Nombres(object sender, EventArgs e)
@@ -315,6 +337,7 @@ namespace MOFIN
         private void Modo_Consulta()
         {
             this.Pan_Elementos.Enabled = false;
+            this.Pan_ElementControlados.Enabled = false;
             this.Pan_BtnsEmpAccesos.Visible = false;
 
             this.TS_BarraHerramientas.Enabled = true;
@@ -328,6 +351,7 @@ namespace MOFIN
         private void Modo_Edicion()
         {
             this.Pan_Elementos.Enabled = true;
+            this.Pan_ElementControlados.Enabled = (bool)r_OpcSistema.PermitUserCamParam;
             this.Pan_BtnsEmpAccesos.Visible = true;
 
             this.TS_BarraHerramientas.Enabled = false;

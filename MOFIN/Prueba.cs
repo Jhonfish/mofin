@@ -87,9 +87,60 @@ namespace MOFIN
                 }
 
         }
-
+        public class ListaImportar
+        {
+            public string Campo1 { get; set; }
+            public string Campo2 { get; set; }
+            public string Campo3 { get; set; }
+            public string Campo4 { get; set; }
+            public string Campo5 { get; set; }
+            public string Campo6 { get; set; }
+            public string Campo7 { get; set; }
+            public string Campo8 { get; set; }
+            public string Campo9 { get; set; }
+            public string Campo10 { get; set; }
+        }
         private void button4_Click(object sender, EventArgs e)
         {
+            List<ListaImportar> Lst_Importa = new List<ListaImportar>();
+
+            OpenFileDialog vl_ArchivoImport = new OpenFileDialog();
+            string vl_Tipoarchivo = "Archivos de Excel (*.XLS?)| *.XLS?";
+            vl_ArchivoImport.Filter = vl_Tipoarchivo;
+            // vl_ArchivoImport.CheckFileExists = false;
+            if (vl_ArchivoImport.ShowDialog() == DialogResult.OK)
+            {
+
+                Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+                Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Open(vl_ArchivoImport.FileName);    // .Add(Type.Missing);
+                Microsoft.Office.Interop.Excel._Worksheet worksheet = workbook.Sheets[1] as Microsoft.Office.Interop.Excel.Worksheet;
+                if (worksheet != null)
+                    worksheet.Name = "MOFIN";
+                app.Visible = true;
+                worksheet = workbook.Sheets[1];
+                worksheet = workbook.ActiveSheet;
+                for (int i = 2; i < 11 ; i++)   // 10 es el número de clumnas del grid, los campos que se van a importar
+                {
+                    Lst_Importa.Add(new ListaImportar()
+                    {
+                        Campo1 = worksheet.Cells[i, 1].Value.ToString() ,
+                        Campo2 = worksheet.Cells[i, 2].Value.ToString(),
+                        Campo3 = worksheet.Cells[i, 3].Value.ToString(),
+                        Campo4 = worksheet.Cells[i, 4].Value.ToString(),
+                        Campo5 = worksheet.Cells[i, 5].Value.ToString(),
+                        Campo6 = worksheet.Cells[i, 6].Value.ToString(),
+                        Campo7 = worksheet.Cells[i, 7].Value.ToString(),
+                        Campo8 = worksheet.Cells[i, 8].Value.ToString(),
+                        Campo9 = worksheet.Cells[i, 9].Value.ToString(),
+                        Campo10 = worksheet.Cells[i, 10].Value.ToString(),
+                    });
+                }
+                GRD_Excel.DataSource = Lst_Importa;
+                //workbook.Close(false);
+                app.Quit();
+                //app.Workbooks.Close();
+            }
+            /*///// Intento de Importacion 1
             OpenFileDialog OFD = new OpenFileDialog();
             OFD.Filter = "Excel |*.xls;*.xlsx;*.xlsm";
             OFD.InitialDirectory = "Desktop";
@@ -124,7 +175,7 @@ namespace MOFIN
             ///  DBSource.DataSource = dTable;
             // Conectamos el DataGridView con el BindingSource
             GRD_Excel.DataSource = dSet; // DBSource;
-            GRD_Excel.Refresh();
+            GRD_Excel.Refresh();*/
         }
 
         private void Prueba_KeyDown(object sender, KeyEventArgs e)

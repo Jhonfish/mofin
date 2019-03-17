@@ -217,7 +217,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(189, 415);
+            this.button4.Location = new System.Drawing.Point(171, 325);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 14;
@@ -237,9 +237,12 @@
             // 
             // GRD_Excel
             // 
+            this.GRD_Excel.AllowUserToAddRows = false;
+            this.GRD_Excel.AllowUserToDeleteRows = false;
             this.GRD_Excel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GRD_Excel.Location = new System.Drawing.Point(270, 173);
             this.GRD_Excel.Name = "GRD_Excel";
+            this.GRD_Excel.ReadOnly = true;
             this.GRD_Excel.Size = new System.Drawing.Size(518, 265);
             this.GRD_Excel.TabIndex = 15;
             // 

@@ -158,7 +158,7 @@
             this.TS_BarraHerramientas.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.TS_BarraHerramientas.Location = new System.Drawing.Point(342, 13);
             this.TS_BarraHerramientas.Name = "TS_BarraHerramientas";
-            this.TS_BarraHerramientas.Size = new System.Drawing.Size(415, 43);
+            this.TS_BarraHerramientas.Size = new System.Drawing.Size(384, 43);
             this.TS_BarraHerramientas.TabIndex = 37;
             this.TS_BarraHerramientas.Text = "toolStrip1";
             // 
@@ -634,15 +634,10 @@
             // 
             // NUD_DsktpNr
             // 
-            this.NUD_DsktpNr.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BS_Empresas, "NroDesktops", true));
+            this.NUD_DsktpNr.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.BS_Empresas, "NroDesktops", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0"));
             this.NUD_DsktpNr.Location = new System.Drawing.Point(8, 223);
             this.NUD_DsktpNr.Maximum = new decimal(new int[] {
             15,
-            0,
-            0,
-            0});
-            this.NUD_DsktpNr.Minimum = new decimal(new int[] {
-            1,
             0,
             0,
             0});
@@ -650,11 +645,6 @@
             this.NUD_DsktpNr.Size = new System.Drawing.Size(61, 22);
             this.NUD_DsktpNr.TabIndex = 4;
             this.NUD_DsktpNr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.NUD_DsktpNr.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // Btn_Cancelar
             // 

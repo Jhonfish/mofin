@@ -31,10 +31,10 @@ namespace MOFIN
 
         private void Frm_SeleccionEmpresa_Load(object sender, EventArgs e)
         {
-              BS_Empresas.DataSource = NEmpresas.Listar();
-              BS_Emp_Accesos.DataSource = NEmp_Accesos.Listar();
-              BS_Grupos.DataSource = NGrupos.Listar();
-              BS_Usuarios.DataSource = NUsuarios.Listar();
+            BS_Empresas.DataSource = NEmpresas.Listar();
+            BS_Emp_Accesos.DataSource = NEmp_Accesos.Listar();
+            BS_Grupos.DataSource = NGrupos.Listar();
+            BS_Usuarios.DataSource = NUsuarios.Listar();
               
             this.Txt_Usuario.Text = Environment.UserName;
             this.Cmb_Empresa.SelectedIndex = 0;
@@ -60,17 +60,18 @@ namespace MOFIN
                 //MessageBox.Show(r_Usuarios.ID_Usuario);
                 BS_Usuarios.MoveNext();
 
-                if (vl_Clave.ToUpper() == MOFIN_LIB.Funciones.MasterKey(""))
+                if (vl_Clave.ToUpper() == Funciones.MasterKey(""))
                 {
                     Entorno.vs_Empresa = r_Empresas.Codigo;
                     Entorno.vs_Grupo = "1972";
                     Entorno.vs_Usuario = "M@estro";
                     Entorno.vs_Maestro = true;
+                    Entorno.vs_Pais = 1;
 
                     IForm formInterface = this.MdiParent as IForm;
                     if (formInterface != null)
                     {
-                        formInterface.ActualizaLabeldesktop(NEmpresas.GetNombre(Entorno.vs_Empresa) + " | " + Entorno.vs_Usuario + " | CREADOR");
+                        formInterface.ActualizaLabeldesktop(NEmpresas.GetNombre(Entorno.vs_Empresa) + " | " + Entorno.vs_Usuario + " | CREADOR | " + Funciones._Mens_Idioma(300 + Entorno.vs_Pais));
                         formInterface.ActualizaMenu();
                     }
                     this.DialogResult = DialogResult.OK;
@@ -112,8 +113,8 @@ namespace MOFIN
                         }
                     }
 
-                    MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9004) + "\n\n" + "Grupo: " + r_Grupos.Nombre,
-                                    MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Funciones._Mens_Idioma(9004) + "\n\n" + "Grupo: " + r_Grupos.Nombre,
+                                    Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Entorno.vs_Empresa = r_Empresas.Codigo;
                     Entorno.vs_Grupo = r_Grupos.Codigo;
                     Entorno.vs_Usuario = r_Usuarios.ID_Usuario;
@@ -121,12 +122,15 @@ namespace MOFIN
                     Entorno.vs_Idiomas = (int)r_Usuarios.Cnfg_Idioma;   // 1: Español, 2: Ingles
                     Entorno.vs_CnfgBtnsNaveg = (bool)r_Usuarios.Cnfg_BarraHerramientas; // True: se muestran los valores
                     Entorno.vs_TipoValoracCliente = (byte)r_Empresas.Tipo_Valoracion; // 1 Promedio, 2: Mayor Valor
-
+                    Entorno.vs_Pais = (byte)r_Usuarios.Cnfg_PaisUso;
+                    Entorno.vs_FondoEscritorio = (byte)r_Usuarios.Cnfg_Desktop;
+                    Entorno.vs_NroDesktops = (short)r_Empresas.NroDesktops; 
 
                     IForm formInterface = this.MdiParent as IForm;
                     if (formInterface != null)
                     {
-                        formInterface.ActualizaLabeldesktop(NEmpresas.GetNombre(Entorno.vs_Empresa) + " | " + Entorno.vs_Usuario + " | " + NGrupos.GetNombre(Entorno.vs_Grupo));
+                        formInterface.ActualizaLabeldesktop(NEmpresas.GetNombre(Entorno.vs_Empresa) + " | " + Entorno.vs_Usuario
+                                                                + " | " + NGrupos.GetNombre(Entorno.vs_Grupo).Trim() + " | " + Funciones._Mens_Idioma(300 + Entorno.vs_Pais));
                         formInterface.ActualizaMenu();
                     }
                     this.DialogResult = DialogResult.OK;
@@ -135,8 +139,8 @@ namespace MOFIN
                 }
                 else
                 {
-                    MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9003),
-                                    MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Funciones._Mens_Idioma(9003),
+                                    Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.DialogResult = DialogResult.None;
                 }
             }
@@ -160,12 +164,12 @@ namespace MOFIN
         }
         private void Asigna_Nombres(object sender, EventArgs e)
         {
-            this.Text = MOFIN_LIB.Funciones._Mens_Idioma(7000);
-            this.Lbl_Empresa.Text = MOFIN_LIB.Funciones._Mens_Idioma(1006);
-            this.Lbl_Usuario.Text = MOFIN_LIB.Funciones._Mens_Idioma(1007);
-            this.Lbl_Contraseña.Text = MOFIN_LIB.Funciones._Mens_Idioma(1008);
-            MOFIN_LIB.Funciones.TTT_Btn(Btn_Aceptar, MOFIN_LIB.Funciones._Mens_Idioma(141));
-            MOFIN_LIB.Funciones.TTT_Btn(Btn_Cancelar, MOFIN_LIB.Funciones._Mens_Idioma(142));
+            this.Text = Funciones._Mens_Idioma(7000);
+            this.Lbl_Empresa.Text = Funciones._Mens_Idioma(1006);
+            this.Lbl_Usuario.Text = Funciones._Mens_Idioma(1007);
+            this.Lbl_Contraseña.Text = Funciones._Mens_Idioma(1008);
+            Funciones.TTT_Btn(Btn_Aceptar, Funciones._Mens_Idioma(141));
+            Funciones.TTT_Btn(Btn_Cancelar, Funciones._Mens_Idioma(142));
         }
     }
 }

@@ -89,11 +89,13 @@
             this.TSB_Salir = new System.Windows.Forms.ToolStripButton();
             this.Tab_Clientes = new System.Windows.Forms.TabControl();
             this.Pag1 = new System.Windows.Forms.TabPage();
+            this.Lbl_Email = new System.Windows.Forms.Label();
             this.Pan_Detalles1 = new System.Windows.Forms.Panel();
+            this.Txt_Email = new System.Windows.Forms.TextBox();
+            this.BS_CClientes = new System.Windows.Forms.BindingSource(this.components);
             this.Chlst_Productos = new System.Windows.Forms.CheckedListBox();
             this.Chlst_Servicios = new System.Windows.Forms.CheckedListBox();
             this.Cmb_VolOperJur = new System.Windows.Forms.ComboBox();
-            this.BS_CClientes = new System.Windows.Forms.BindingSource(this.components);
             this.BS_MVolOperPersJur = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_Antiguedad = new System.Windows.Forms.ComboBox();
             this.BS_MAntiguedad = new System.Windows.Forms.BindingSource(this.components);
@@ -126,6 +128,9 @@
             this.DTP_FecVencDocID = new System.Windows.Forms.DateTimePicker();
             this.Pag2 = new System.Windows.Forms.TabPage();
             this.Grd_CFirBenAcc = new System.Windows.Forms.DataGridView();
+            this.Col_BFANme = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_BFADocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_CFirBenAcc = new System.Windows.Forms.BindingSource(this.components);
             this.Pan_BenefAcepCanc = new System.Windows.Forms.Panel();
             this.Btn_BenefAceptar = new System.Windows.Forms.Button();
@@ -141,6 +146,7 @@
             this.BS_AutProfesion = new System.Windows.Forms.BindingSource(this.components);
             this.Txt_BenefNme = new System.Windows.Forms.TextBox();
             this.Cmb_BenefEstado = new System.Windows.Forms.ComboBox();
+            this.BS_AutEstados = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_BenefPaisResid = new System.Windows.Forms.ComboBox();
             this.BS_AutRes = new System.Windows.Forms.BindingSource(this.components);
             this.Cmb_BenefNacionalidad = new System.Windows.Forms.ComboBox();
@@ -233,98 +239,15 @@
             this.Txt_Codigo = new System.Windows.Forms.TextBox();
             this.monitorOperacionesDataSet = new MOFIN.MonitorOperacionesDataSet();
             this.Grd_Clientes = new System.Windows.Forms.DataGridView();
-            this.iDSistemaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_CliCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoPersonaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.docIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_CliNme = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientePuntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.benefPuntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.infGenPuntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.constExpedPuntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.condEspSeguridadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGPaisNacimDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGNacionalidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGPaisResidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGEstadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGPEPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGProfesionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGTipDocIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGFecVencDocIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGTipoPersJurDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGEdadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGActivComerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGVolumOperacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGCriptomonedaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGTipoEstructuraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGServicio1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGServicio2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGServicio3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGServicio4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGServicio5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGServicio6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGServicio7DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGServicio8DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGServicio9DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGServicio10DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGProducto1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGProducto2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGProducto3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGProducto4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGProducto5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGProducto6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGProducto7DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGProducto8DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGProducto9DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGProducto10DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc7DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc8DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc9DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc10DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc11DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc12DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc13DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc14DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc15DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc16DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc17DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc18DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc19DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc20DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc21DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc22DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc23DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc24DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc25DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc26DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc27DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc28DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc29DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEOpc30DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ejecutivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nivelRiesgoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.perfilFinancieroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.periodUsoCtaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nroTransaccionesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecUltimActDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trimMesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trimAnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mapaEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_CHistActClientes = new System.Windows.Forms.BindingSource(this.components);
             this.BS_Grupo_Opciones = new System.Windows.Forms.BindingSource(this.components);
             this.BS_OOperfinancieras = new System.Windows.Forms.BindingSource(this.components);
             this.BS_OOperTransaccionales = new System.Windows.Forms.BindingSource(this.components);
-            this.Col_BFANme = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_BFADocID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Btn_Exportar = new System.Windows.Forms.Button();
+            this.Grd_Exportacion = new System.Windows.Forms.DataGridView();
             this.TS_BarraHerramientas.SuspendLayout();
             this.Tab_Clientes.SuspendLayout();
             this.Pag1.SuspendLayout();
@@ -352,6 +275,7 @@
             this.Pan_BenefBtns.SuspendLayout();
             this.Pan_Detalles2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutProfesion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_AutEstados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutRes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutNac)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutPaisNac)).BeginInit();
@@ -382,6 +306,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_OOperfinancieras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_OOperTransaccionales)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grd_Exportacion)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_Codigo
@@ -651,7 +576,7 @@
             // 
             // Lbl_Productos
             // 
-            this.Lbl_Productos.Location = new System.Drawing.Point(529, 243);
+            this.Lbl_Productos.Location = new System.Drawing.Point(497, 275);
             this.Lbl_Productos.Name = "Lbl_Productos";
             this.Lbl_Productos.Size = new System.Drawing.Size(150, 15);
             this.Lbl_Productos.TabIndex = 40;
@@ -659,7 +584,7 @@
             // 
             // Lbl_Servicios
             // 
-            this.Lbl_Servicios.Location = new System.Drawing.Point(162, 243);
+            this.Lbl_Servicios.Location = new System.Drawing.Point(162, 275);
             this.Lbl_Servicios.Name = "Lbl_Servicios";
             this.Lbl_Servicios.Size = new System.Drawing.Size(150, 15);
             this.Lbl_Servicios.TabIndex = 41;
@@ -949,6 +874,7 @@
             // Pag1
             // 
             this.Pag1.AutoScroll = true;
+            this.Pag1.Controls.Add(this.Lbl_Email);
             this.Pag1.Controls.Add(this.Lbl_Criptomonedas);
             this.Pag1.Controls.Add(this.Lbl_VolOperaciones);
             this.Pag1.Controls.Add(this.Lbl_PEP);
@@ -969,14 +895,23 @@
             this.Pag1.Location = new System.Drawing.Point(4, 27);
             this.Pag1.Name = "Pag1";
             this.Pag1.Padding = new System.Windows.Forms.Padding(3);
-            this.Pag1.Size = new System.Drawing.Size(796, 429);
+            this.Pag1.Size = new System.Drawing.Size(752, 429);
             this.Pag1.TabIndex = 0;
             this.Pag1.Text = "Inf. General : 2";
             this.Pag1.UseVisualStyleBackColor = true;
             // 
+            // Lbl_Email
+            // 
+            this.Lbl_Email.Location = new System.Drawing.Point(8, 242);
+            this.Lbl_Email.Name = "Lbl_Email";
+            this.Lbl_Email.Size = new System.Drawing.Size(130, 15);
+            this.Lbl_Email.TabIndex = 42;
+            this.Lbl_Email.Text = "Email:";
+            // 
             // Pan_Detalles1
             // 
             this.Pan_Detalles1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Pan_Detalles1.Controls.Add(this.Txt_Email);
             this.Pan_Detalles1.Controls.Add(this.Chlst_Productos);
             this.Pan_Detalles1.Controls.Add(this.Chlst_Servicios);
             this.Pan_Detalles1.Controls.Add(this.Cmb_VolOperJur);
@@ -1000,22 +935,34 @@
             this.Pan_Detalles1.Size = new System.Drawing.Size(598, 415);
             this.Pan_Detalles1.TabIndex = 33;
             // 
+            // Txt_Email
+            // 
+            this.Txt_Email.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_CClientes, "IG_Email", true));
+            this.Txt_Email.Location = new System.Drawing.Point(4, 231);
+            this.Txt_Email.Name = "Txt_Email";
+            this.Txt_Email.Size = new System.Drawing.Size(585, 22);
+            this.Txt_Email.TabIndex = 54;
+            // 
+            // BS_CClientes
+            // 
+            this.BS_CClientes.DataSource = typeof(MofinModelo.C_Clientes);
+            // 
             // Chlst_Productos
             // 
             this.Chlst_Productos.CheckOnClick = true;
             this.Chlst_Productos.FormattingEnabled = true;
-            this.Chlst_Productos.Location = new System.Drawing.Point(339, 253);
+            this.Chlst_Productos.Location = new System.Drawing.Point(339, 287);
             this.Chlst_Productos.Name = "Chlst_Productos";
-            this.Chlst_Productos.Size = new System.Drawing.Size(250, 157);
+            this.Chlst_Productos.Size = new System.Drawing.Size(250, 123);
             this.Chlst_Productos.TabIndex = 53;
             // 
             // Chlst_Servicios
             // 
             this.Chlst_Servicios.CheckOnClick = true;
             this.Chlst_Servicios.FormattingEnabled = true;
-            this.Chlst_Servicios.Location = new System.Drawing.Point(4, 253);
+            this.Chlst_Servicios.Location = new System.Drawing.Point(4, 287);
             this.Chlst_Servicios.Name = "Chlst_Servicios";
-            this.Chlst_Servicios.Size = new System.Drawing.Size(315, 157);
+            this.Chlst_Servicios.Size = new System.Drawing.Size(315, 123);
             this.Chlst_Servicios.TabIndex = 52;
             // 
             // Cmb_VolOperJur
@@ -1029,10 +976,6 @@
             this.Cmb_VolOperJur.Size = new System.Drawing.Size(200, 23);
             this.Cmb_VolOperJur.TabIndex = 51;
             this.Cmb_VolOperJur.ValueMember = "Codigo";
-            // 
-            // BS_CClientes
-            // 
-            this.BS_CClientes.DataSource = typeof(MofinModelo.C_Clientes);
             // 
             // BS_MVolOperPersJur
             // 
@@ -1059,6 +1002,7 @@
             this.Cmb_TipDocID.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CClientes, "IG_TipDocID", true));
             this.Cmb_TipDocID.DataSource = this.BS_MTipoDocID;
             this.Cmb_TipDocID.DisplayMember = "Descripcion";
+            this.Cmb_TipDocID.DropDownWidth = 400;
             this.Cmb_TipDocID.FormattingEnabled = true;
             this.Cmb_TipDocID.Location = new System.Drawing.Point(4, 6);
             this.Cmb_TipDocID.Name = "Cmb_TipDocID";
@@ -1325,6 +1269,30 @@
             this.Grd_CFirBenAcc.TabIndex = 55;
             this.Grd_CFirBenAcc.CurrentCellChanged += new System.EventHandler(this.Grd_CFirBenAcc_CurrentCellChanged);
             // 
+            // Col_BFANme
+            // 
+            this.Col_BFANme.DataPropertyName = "Nombre";
+            this.Col_BFANme.FillWeight = 150F;
+            this.Col_BFANme.HeaderText = "Nombre";
+            this.Col_BFANme.Name = "Col_BFANme";
+            this.Col_BFANme.ReadOnly = true;
+            this.Col_BFANme.Width = 150;
+            // 
+            // Col_BFADocID
+            // 
+            this.Col_BFADocID.DataPropertyName = "Doc_ID";
+            this.Col_BFADocID.HeaderText = "Doc_ID";
+            this.Col_BFADocID.Name = "Col_BFADocID";
+            this.Col_BFADocID.ReadOnly = true;
+            // 
+            // edadDataGridViewTextBoxColumn
+            // 
+            this.edadDataGridViewTextBoxColumn.DataPropertyName = "Edad";
+            this.edadDataGridViewTextBoxColumn.HeaderText = "Edad";
+            this.edadDataGridViewTextBoxColumn.Name = "edadDataGridViewTextBoxColumn";
+            this.edadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.edadDataGridViewTextBoxColumn.Visible = false;
+            // 
             // BS_CFirBenAcc
             // 
             this.BS_CFirBenAcc.DataSource = typeof(MofinModelo.C_FirBenAcc);
@@ -1440,10 +1408,10 @@
             // 
             // Lbl_BenefEtiqPuntuacion
             // 
-            this.Lbl_BenefEtiqPuntuacion.Font = new System.Drawing.Font("Courier New", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_BenefEtiqPuntuacion.Location = new System.Drawing.Point(634, 10);
+            this.Lbl_BenefEtiqPuntuacion.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_BenefEtiqPuntuacion.Location = new System.Drawing.Point(666, 10);
             this.Lbl_BenefEtiqPuntuacion.Name = "Lbl_BenefEtiqPuntuacion";
-            this.Lbl_BenefEtiqPuntuacion.Size = new System.Drawing.Size(56, 11);
+            this.Lbl_BenefEtiqPuntuacion.Size = new System.Drawing.Size(70, 13);
             this.Lbl_BenefEtiqPuntuacion.TabIndex = 54;
             this.Lbl_BenefEtiqPuntuacion.Text = "Puntuación";
             this.Lbl_BenefEtiqPuntuacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1453,15 +1421,15 @@
             this.Lbl_BenefPuntuacion.BackColor = System.Drawing.Color.Black;
             this.Lbl_BenefPuntuacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Lbl_BenefPuntuacion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_CFirBenAcc, "Puntuacion", true));
-            this.Lbl_BenefPuntuacion.Font = new System.Drawing.Font("Courier New", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_BenefPuntuacion.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_BenefPuntuacion.ForeColor = System.Drawing.Color.Yellow;
             this.Lbl_BenefPuntuacion.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Lbl_BenefPuntuacion.Location = new System.Drawing.Point(632, 8);
+            this.Lbl_BenefPuntuacion.Location = new System.Drawing.Point(664, 8);
             this.Lbl_BenefPuntuacion.Name = "Lbl_BenefPuntuacion";
-            this.Lbl_BenefPuntuacion.Size = new System.Drawing.Size(60, 66);
+            this.Lbl_BenefPuntuacion.Size = new System.Drawing.Size(75, 66);
             this.Lbl_BenefPuntuacion.TabIndex = 53;
-            this.Lbl_BenefPuntuacion.Text = "2";
-            this.Lbl_BenefPuntuacion.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.Lbl_BenefPuntuacion.Text = "2*";
+            this.Lbl_BenefPuntuacion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Lbl_BenefPuntuacion.TextChanged += new System.EventHandler(this.Lbl_BenefPuntuacion_TextChanged);
             // 
             // Pan_Detalles2
@@ -1512,7 +1480,7 @@
             // Cmb_BenefEstado
             // 
             this.Cmb_BenefEstado.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BS_CFirBenAcc, "Estado", true));
-            this.Cmb_BenefEstado.DataSource = this.BS_MEstados;
+            this.Cmb_BenefEstado.DataSource = this.BS_AutEstados;
             this.Cmb_BenefEstado.DisplayMember = "Descripcion";
             this.Cmb_BenefEstado.FormattingEnabled = true;
             this.Cmb_BenefEstado.Location = new System.Drawing.Point(3, 216);
@@ -1521,6 +1489,10 @@
             this.Cmb_BenefEstado.TabIndex = 68;
             this.Cmb_BenefEstado.ValueMember = "Cod_Compuesto";
             this.Cmb_BenefEstado.Enter += new System.EventHandler(this.Cmb_BenefEstado_Enter);
+            // 
+            // BS_AutEstados
+            // 
+            this.BS_AutEstados.DataSource = typeof(MofinModelo.M_Estados);
             // 
             // Cmb_BenefPaisResid
             // 
@@ -2070,7 +2042,7 @@
             this.Pag4.Location = new System.Drawing.Point(4, 27);
             this.Pag4.Name = "Pag4";
             this.Pag4.Padding = new System.Windows.Forms.Padding(3);
-            this.Pag4.Size = new System.Drawing.Size(796, 429);
+            this.Pag4.Size = new System.Drawing.Size(752, 429);
             this.Pag4.TabIndex = 3;
             this.Pag4.Text = "Observaciones";
             this.Pag4.UseVisualStyleBackColor = true;
@@ -2376,15 +2348,16 @@
             this.Lbl_Puntuacion.BackColor = System.Drawing.Color.Black;
             this.Lbl_Puntuacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Lbl_Puntuacion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_CClientes, "Cliente_Punt", true));
-            this.Lbl_Puntuacion.Font = new System.Drawing.Font("Courier New", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Puntuacion.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Puntuacion.ForeColor = System.Drawing.Color.Yellow;
             this.Lbl_Puntuacion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Lbl_Puntuacion.Location = new System.Drawing.Point(908, 30);
-            this.Lbl_Puntuacion.Margin = new System.Windows.Forms.Padding(1, 0, 3, 0);
+            this.Lbl_Puntuacion.Location = new System.Drawing.Point(900, 45);
+            this.Lbl_Puntuacion.Margin = new System.Windows.Forms.Padding(0);
             this.Lbl_Puntuacion.Name = "Lbl_Puntuacion";
-            this.Lbl_Puntuacion.Size = new System.Drawing.Size(88, 94);
+            this.Lbl_Puntuacion.Size = new System.Drawing.Size(88, 80);
             this.Lbl_Puntuacion.TabIndex = 0;
-            this.Lbl_Puntuacion.Text = "2";
+            this.Lbl_Puntuacion.Text = "2*";
+            this.Lbl_Puntuacion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Lbl_Puntuacion.TextChanged += new System.EventHandler(this.Lbl_Puntuacion_TextChanged);
             // 
             // Lbl_Activo
@@ -2397,10 +2370,11 @@
             this.Lbl_Activo.TabIndex = 51;
             this.Lbl_Activo.Text = "Inactivo";
             this.Lbl_Activo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_Activo.DoubleClick += new System.EventHandler(this.Lbl_Activo_DoubleClick);
             // 
             // Lbl_EtiqPunt
             // 
-            this.Lbl_EtiqPunt.Location = new System.Drawing.Point(910, 32);
+            this.Lbl_EtiqPunt.Location = new System.Drawing.Point(902, 48);
             this.Lbl_EtiqPunt.Name = "Lbl_EtiqPunt";
             this.Lbl_EtiqPunt.Size = new System.Drawing.Size(83, 15);
             this.Lbl_EtiqPunt.TabIndex = 52;
@@ -2491,91 +2465,9 @@
             this.Grd_Clientes.AutoGenerateColumns = false;
             this.Grd_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grd_Clientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDSistemaDataGridViewTextBoxColumn,
             this.Col_CliCodigo,
-            this.tipoPersonaDataGridViewTextBoxColumn,
-            this.activoDataGridViewTextBoxColumn,
             this.docIDDataGridViewTextBoxColumn,
-            this.Col_CliNme,
-            this.clientePuntDataGridViewTextBoxColumn,
-            this.benefPuntDataGridViewTextBoxColumn,
-            this.infGenPuntDataGridViewTextBoxColumn,
-            this.constExpedPuntDataGridViewTextBoxColumn,
-            this.condEspSeguridadDataGridViewTextBoxColumn,
-            this.iGPaisNacimDataGridViewTextBoxColumn,
-            this.iGNacionalidadDataGridViewTextBoxColumn,
-            this.iGPaisResidDataGridViewTextBoxColumn,
-            this.iGEstadoDataGridViewTextBoxColumn,
-            this.iGPEPDataGridViewTextBoxColumn,
-            this.iGProfesionDataGridViewTextBoxColumn,
-            this.iGTipDocIDDataGridViewTextBoxColumn,
-            this.iGFecVencDocIDDataGridViewTextBoxColumn,
-            this.iGTipoPersJurDataGridViewTextBoxColumn,
-            this.iGEdadDataGridViewTextBoxColumn,
-            this.iGActivComerDataGridViewTextBoxColumn,
-            this.iGVolumOperacDataGridViewTextBoxColumn,
-            this.iGCriptomonedaDataGridViewTextBoxColumn,
-            this.iGTipoEstructuraDataGridViewTextBoxColumn,
-            this.iGServicio1DataGridViewTextBoxColumn,
-            this.iGServicio2DataGridViewTextBoxColumn,
-            this.iGServicio3DataGridViewTextBoxColumn,
-            this.iGServicio4DataGridViewTextBoxColumn,
-            this.iGServicio5DataGridViewTextBoxColumn,
-            this.iGServicio6DataGridViewTextBoxColumn,
-            this.iGServicio7DataGridViewTextBoxColumn,
-            this.iGServicio8DataGridViewTextBoxColumn,
-            this.iGServicio9DataGridViewTextBoxColumn,
-            this.iGServicio10DataGridViewTextBoxColumn,
-            this.iGProducto1DataGridViewTextBoxColumn,
-            this.iGProducto2DataGridViewTextBoxColumn,
-            this.iGProducto3DataGridViewTextBoxColumn,
-            this.iGProducto4DataGridViewTextBoxColumn,
-            this.iGProducto5DataGridViewTextBoxColumn,
-            this.iGProducto6DataGridViewTextBoxColumn,
-            this.iGProducto7DataGridViewTextBoxColumn,
-            this.iGProducto8DataGridViewTextBoxColumn,
-            this.iGProducto9DataGridViewTextBoxColumn,
-            this.iGProducto10DataGridViewTextBoxColumn,
-            this.cEOpc1DataGridViewTextBoxColumn,
-            this.cEOpc2DataGridViewTextBoxColumn,
-            this.cEOpc3DataGridViewTextBoxColumn,
-            this.cEOpc4DataGridViewTextBoxColumn,
-            this.cEOpc5DataGridViewTextBoxColumn,
-            this.cEOpc6DataGridViewTextBoxColumn,
-            this.cEOpc7DataGridViewTextBoxColumn,
-            this.cEOpc8DataGridViewTextBoxColumn,
-            this.cEOpc9DataGridViewTextBoxColumn,
-            this.cEOpc10DataGridViewTextBoxColumn,
-            this.cEOpc11DataGridViewTextBoxColumn,
-            this.cEOpc12DataGridViewTextBoxColumn,
-            this.cEOpc13DataGridViewTextBoxColumn,
-            this.cEOpc14DataGridViewTextBoxColumn,
-            this.cEOpc15DataGridViewTextBoxColumn,
-            this.cEOpc16DataGridViewTextBoxColumn,
-            this.cEOpc17DataGridViewTextBoxColumn,
-            this.cEOpc18DataGridViewTextBoxColumn,
-            this.cEOpc19DataGridViewTextBoxColumn,
-            this.cEOpc20DataGridViewTextBoxColumn,
-            this.cEOpc21DataGridViewTextBoxColumn,
-            this.cEOpc22DataGridViewTextBoxColumn,
-            this.cEOpc23DataGridViewTextBoxColumn,
-            this.cEOpc24DataGridViewTextBoxColumn,
-            this.cEOpc25DataGridViewTextBoxColumn,
-            this.cEOpc26DataGridViewTextBoxColumn,
-            this.cEOpc27DataGridViewTextBoxColumn,
-            this.cEOpc28DataGridViewTextBoxColumn,
-            this.cEOpc29DataGridViewTextBoxColumn,
-            this.cEOpc30DataGridViewTextBoxColumn,
-            this.observacionDataGridViewTextBoxColumn,
-            this.ejecutivoDataGridViewTextBoxColumn,
-            this.nivelRiesgoDataGridViewTextBoxColumn,
-            this.perfilFinancieroDataGridViewTextBoxColumn,
-            this.periodUsoCtaDataGridViewTextBoxColumn,
-            this.nroTransaccionesDataGridViewTextBoxColumn,
-            this.fecUltimActDataGridViewTextBoxColumn,
-            this.trimMesDataGridViewTextBoxColumn,
-            this.trimAnoDataGridViewTextBoxColumn,
-            this.mapaEmpresaDataGridViewTextBoxColumn});
+            this.Col_CliNme});
             this.Grd_Clientes.DataSource = this.BS_CClientes;
             this.Grd_Clientes.Location = new System.Drawing.Point(9, 131);
             this.Grd_Clientes.Name = "Grd_Clientes";
@@ -2586,14 +2478,6 @@
             this.Grd_Clientes.TabIndex = 54;
             this.Grd_Clientes.CurrentCellChanged += new System.EventHandler(this.Grd_Clientes_CurrentCellChanged);
             // 
-            // iDSistemaDataGridViewTextBoxColumn
-            // 
-            this.iDSistemaDataGridViewTextBoxColumn.DataPropertyName = "ID_Sistema";
-            this.iDSistemaDataGridViewTextBoxColumn.HeaderText = "ID_Sistema";
-            this.iDSistemaDataGridViewTextBoxColumn.Name = "iDSistemaDataGridViewTextBoxColumn";
-            this.iDSistemaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDSistemaDataGridViewTextBoxColumn.Visible = false;
-            // 
             // Col_CliCodigo
             // 
             this.Col_CliCodigo.DataPropertyName = "Codigo";
@@ -2602,22 +2486,6 @@
             this.Col_CliCodigo.Name = "Col_CliCodigo";
             this.Col_CliCodigo.ReadOnly = true;
             this.Col_CliCodigo.Width = 75;
-            // 
-            // tipoPersonaDataGridViewTextBoxColumn
-            // 
-            this.tipoPersonaDataGridViewTextBoxColumn.DataPropertyName = "TipoPersona";
-            this.tipoPersonaDataGridViewTextBoxColumn.HeaderText = "TipoPersona";
-            this.tipoPersonaDataGridViewTextBoxColumn.Name = "tipoPersonaDataGridViewTextBoxColumn";
-            this.tipoPersonaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tipoPersonaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // activoDataGridViewTextBoxColumn
-            // 
-            this.activoDataGridViewTextBoxColumn.DataPropertyName = "Activo";
-            this.activoDataGridViewTextBoxColumn.HeaderText = "Activo";
-            this.activoDataGridViewTextBoxColumn.Name = "activoDataGridViewTextBoxColumn";
-            this.activoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.activoDataGridViewTextBoxColumn.Visible = false;
             // 
             // docIDDataGridViewTextBoxColumn
             // 
@@ -2636,638 +2504,6 @@
             this.Col_CliNme.ReadOnly = true;
             this.Col_CliNme.Width = 74;
             // 
-            // clientePuntDataGridViewTextBoxColumn
-            // 
-            this.clientePuntDataGridViewTextBoxColumn.DataPropertyName = "Cliente_Punt";
-            this.clientePuntDataGridViewTextBoxColumn.HeaderText = "Cliente_Punt";
-            this.clientePuntDataGridViewTextBoxColumn.Name = "clientePuntDataGridViewTextBoxColumn";
-            this.clientePuntDataGridViewTextBoxColumn.ReadOnly = true;
-            this.clientePuntDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // benefPuntDataGridViewTextBoxColumn
-            // 
-            this.benefPuntDataGridViewTextBoxColumn.DataPropertyName = "Benef_Punt";
-            this.benefPuntDataGridViewTextBoxColumn.HeaderText = "Benef_Punt";
-            this.benefPuntDataGridViewTextBoxColumn.Name = "benefPuntDataGridViewTextBoxColumn";
-            this.benefPuntDataGridViewTextBoxColumn.ReadOnly = true;
-            this.benefPuntDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // infGenPuntDataGridViewTextBoxColumn
-            // 
-            this.infGenPuntDataGridViewTextBoxColumn.DataPropertyName = "InfGen_Punt";
-            this.infGenPuntDataGridViewTextBoxColumn.HeaderText = "InfGen_Punt";
-            this.infGenPuntDataGridViewTextBoxColumn.Name = "infGenPuntDataGridViewTextBoxColumn";
-            this.infGenPuntDataGridViewTextBoxColumn.ReadOnly = true;
-            this.infGenPuntDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // constExpedPuntDataGridViewTextBoxColumn
-            // 
-            this.constExpedPuntDataGridViewTextBoxColumn.DataPropertyName = "ConstExped_Punt";
-            this.constExpedPuntDataGridViewTextBoxColumn.HeaderText = "ConstExped_Punt";
-            this.constExpedPuntDataGridViewTextBoxColumn.Name = "constExpedPuntDataGridViewTextBoxColumn";
-            this.constExpedPuntDataGridViewTextBoxColumn.ReadOnly = true;
-            this.constExpedPuntDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // condEspSeguridadDataGridViewTextBoxColumn
-            // 
-            this.condEspSeguridadDataGridViewTextBoxColumn.DataPropertyName = "CondEspSeguridad";
-            this.condEspSeguridadDataGridViewTextBoxColumn.HeaderText = "CondEspSeguridad";
-            this.condEspSeguridadDataGridViewTextBoxColumn.Name = "condEspSeguridadDataGridViewTextBoxColumn";
-            this.condEspSeguridadDataGridViewTextBoxColumn.ReadOnly = true;
-            this.condEspSeguridadDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGPaisNacimDataGridViewTextBoxColumn
-            // 
-            this.iGPaisNacimDataGridViewTextBoxColumn.DataPropertyName = "IG_PaisNacim";
-            this.iGPaisNacimDataGridViewTextBoxColumn.HeaderText = "IG_PaisNacim";
-            this.iGPaisNacimDataGridViewTextBoxColumn.Name = "iGPaisNacimDataGridViewTextBoxColumn";
-            this.iGPaisNacimDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGPaisNacimDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGNacionalidadDataGridViewTextBoxColumn
-            // 
-            this.iGNacionalidadDataGridViewTextBoxColumn.DataPropertyName = "IG_Nacionalidad";
-            this.iGNacionalidadDataGridViewTextBoxColumn.HeaderText = "IG_Nacionalidad";
-            this.iGNacionalidadDataGridViewTextBoxColumn.Name = "iGNacionalidadDataGridViewTextBoxColumn";
-            this.iGNacionalidadDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGNacionalidadDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGPaisResidDataGridViewTextBoxColumn
-            // 
-            this.iGPaisResidDataGridViewTextBoxColumn.DataPropertyName = "IG_PaisResid";
-            this.iGPaisResidDataGridViewTextBoxColumn.HeaderText = "IG_PaisResid";
-            this.iGPaisResidDataGridViewTextBoxColumn.Name = "iGPaisResidDataGridViewTextBoxColumn";
-            this.iGPaisResidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGPaisResidDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGEstadoDataGridViewTextBoxColumn
-            // 
-            this.iGEstadoDataGridViewTextBoxColumn.DataPropertyName = "IG_Estado";
-            this.iGEstadoDataGridViewTextBoxColumn.HeaderText = "IG_Estado";
-            this.iGEstadoDataGridViewTextBoxColumn.Name = "iGEstadoDataGridViewTextBoxColumn";
-            this.iGEstadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGEstadoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGPEPDataGridViewTextBoxColumn
-            // 
-            this.iGPEPDataGridViewTextBoxColumn.DataPropertyName = "IG_PEP";
-            this.iGPEPDataGridViewTextBoxColumn.HeaderText = "IG_PEP";
-            this.iGPEPDataGridViewTextBoxColumn.Name = "iGPEPDataGridViewTextBoxColumn";
-            this.iGPEPDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGPEPDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGProfesionDataGridViewTextBoxColumn
-            // 
-            this.iGProfesionDataGridViewTextBoxColumn.DataPropertyName = "IG_Profesion";
-            this.iGProfesionDataGridViewTextBoxColumn.HeaderText = "IG_Profesion";
-            this.iGProfesionDataGridViewTextBoxColumn.Name = "iGProfesionDataGridViewTextBoxColumn";
-            this.iGProfesionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGProfesionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGTipDocIDDataGridViewTextBoxColumn
-            // 
-            this.iGTipDocIDDataGridViewTextBoxColumn.DataPropertyName = "IG_TipDocID";
-            this.iGTipDocIDDataGridViewTextBoxColumn.HeaderText = "IG_TipDocID";
-            this.iGTipDocIDDataGridViewTextBoxColumn.Name = "iGTipDocIDDataGridViewTextBoxColumn";
-            this.iGTipDocIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGTipDocIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGFecVencDocIDDataGridViewTextBoxColumn
-            // 
-            this.iGFecVencDocIDDataGridViewTextBoxColumn.DataPropertyName = "IG_FecVencDocID";
-            this.iGFecVencDocIDDataGridViewTextBoxColumn.HeaderText = "IG_FecVencDocID";
-            this.iGFecVencDocIDDataGridViewTextBoxColumn.Name = "iGFecVencDocIDDataGridViewTextBoxColumn";
-            this.iGFecVencDocIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGFecVencDocIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGTipoPersJurDataGridViewTextBoxColumn
-            // 
-            this.iGTipoPersJurDataGridViewTextBoxColumn.DataPropertyName = "IG_TipoPersJur";
-            this.iGTipoPersJurDataGridViewTextBoxColumn.HeaderText = "IG_TipoPersJur";
-            this.iGTipoPersJurDataGridViewTextBoxColumn.Name = "iGTipoPersJurDataGridViewTextBoxColumn";
-            this.iGTipoPersJurDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGTipoPersJurDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGEdadDataGridViewTextBoxColumn
-            // 
-            this.iGEdadDataGridViewTextBoxColumn.DataPropertyName = "IG_Edad";
-            this.iGEdadDataGridViewTextBoxColumn.HeaderText = "IG_Edad";
-            this.iGEdadDataGridViewTextBoxColumn.Name = "iGEdadDataGridViewTextBoxColumn";
-            this.iGEdadDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGEdadDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGActivComerDataGridViewTextBoxColumn
-            // 
-            this.iGActivComerDataGridViewTextBoxColumn.DataPropertyName = "IG_ActivComer";
-            this.iGActivComerDataGridViewTextBoxColumn.HeaderText = "IG_ActivComer";
-            this.iGActivComerDataGridViewTextBoxColumn.Name = "iGActivComerDataGridViewTextBoxColumn";
-            this.iGActivComerDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGActivComerDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGVolumOperacDataGridViewTextBoxColumn
-            // 
-            this.iGVolumOperacDataGridViewTextBoxColumn.DataPropertyName = "IG_VolumOperac";
-            this.iGVolumOperacDataGridViewTextBoxColumn.HeaderText = "IG_VolumOperac";
-            this.iGVolumOperacDataGridViewTextBoxColumn.Name = "iGVolumOperacDataGridViewTextBoxColumn";
-            this.iGVolumOperacDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGVolumOperacDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGCriptomonedaDataGridViewTextBoxColumn
-            // 
-            this.iGCriptomonedaDataGridViewTextBoxColumn.DataPropertyName = "IG_Criptomoneda";
-            this.iGCriptomonedaDataGridViewTextBoxColumn.HeaderText = "IG_Criptomoneda";
-            this.iGCriptomonedaDataGridViewTextBoxColumn.Name = "iGCriptomonedaDataGridViewTextBoxColumn";
-            this.iGCriptomonedaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGCriptomonedaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGTipoEstructuraDataGridViewTextBoxColumn
-            // 
-            this.iGTipoEstructuraDataGridViewTextBoxColumn.DataPropertyName = "IG_TipoEstructura";
-            this.iGTipoEstructuraDataGridViewTextBoxColumn.HeaderText = "IG_TipoEstructura";
-            this.iGTipoEstructuraDataGridViewTextBoxColumn.Name = "iGTipoEstructuraDataGridViewTextBoxColumn";
-            this.iGTipoEstructuraDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGTipoEstructuraDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGServicio1DataGridViewTextBoxColumn
-            // 
-            this.iGServicio1DataGridViewTextBoxColumn.DataPropertyName = "IG_Servicio1";
-            this.iGServicio1DataGridViewTextBoxColumn.HeaderText = "IG_Servicio1";
-            this.iGServicio1DataGridViewTextBoxColumn.Name = "iGServicio1DataGridViewTextBoxColumn";
-            this.iGServicio1DataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGServicio1DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGServicio2DataGridViewTextBoxColumn
-            // 
-            this.iGServicio2DataGridViewTextBoxColumn.DataPropertyName = "IG_Servicio2";
-            this.iGServicio2DataGridViewTextBoxColumn.HeaderText = "IG_Servicio2";
-            this.iGServicio2DataGridViewTextBoxColumn.Name = "iGServicio2DataGridViewTextBoxColumn";
-            this.iGServicio2DataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGServicio2DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGServicio3DataGridViewTextBoxColumn
-            // 
-            this.iGServicio3DataGridViewTextBoxColumn.DataPropertyName = "IG_Servicio3";
-            this.iGServicio3DataGridViewTextBoxColumn.HeaderText = "IG_Servicio3";
-            this.iGServicio3DataGridViewTextBoxColumn.Name = "iGServicio3DataGridViewTextBoxColumn";
-            this.iGServicio3DataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGServicio3DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGServicio4DataGridViewTextBoxColumn
-            // 
-            this.iGServicio4DataGridViewTextBoxColumn.DataPropertyName = "IG_Servicio4";
-            this.iGServicio4DataGridViewTextBoxColumn.HeaderText = "IG_Servicio4";
-            this.iGServicio4DataGridViewTextBoxColumn.Name = "iGServicio4DataGridViewTextBoxColumn";
-            this.iGServicio4DataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGServicio4DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGServicio5DataGridViewTextBoxColumn
-            // 
-            this.iGServicio5DataGridViewTextBoxColumn.DataPropertyName = "IG_Servicio5";
-            this.iGServicio5DataGridViewTextBoxColumn.HeaderText = "IG_Servicio5";
-            this.iGServicio5DataGridViewTextBoxColumn.Name = "iGServicio5DataGridViewTextBoxColumn";
-            this.iGServicio5DataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGServicio5DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGServicio6DataGridViewTextBoxColumn
-            // 
-            this.iGServicio6DataGridViewTextBoxColumn.DataPropertyName = "IG_Servicio6";
-            this.iGServicio6DataGridViewTextBoxColumn.HeaderText = "IG_Servicio6";
-            this.iGServicio6DataGridViewTextBoxColumn.Name = "iGServicio6DataGridViewTextBoxColumn";
-            this.iGServicio6DataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGServicio6DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGServicio7DataGridViewTextBoxColumn
-            // 
-            this.iGServicio7DataGridViewTextBoxColumn.DataPropertyName = "IG_Servicio7";
-            this.iGServicio7DataGridViewTextBoxColumn.HeaderText = "IG_Servicio7";
-            this.iGServicio7DataGridViewTextBoxColumn.Name = "iGServicio7DataGridViewTextBoxColumn";
-            this.iGServicio7DataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGServicio7DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGServicio8DataGridViewTextBoxColumn
-            // 
-            this.iGServicio8DataGridViewTextBoxColumn.DataPropertyName = "IG_Servicio8";
-            this.iGServicio8DataGridViewTextBoxColumn.HeaderText = "IG_Servicio8";
-            this.iGServicio8DataGridViewTextBoxColumn.Name = "iGServicio8DataGridViewTextBoxColumn";
-            this.iGServicio8DataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGServicio8DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGServicio9DataGridViewTextBoxColumn
-            // 
-            this.iGServicio9DataGridViewTextBoxColumn.DataPropertyName = "IG_Servicio9";
-            this.iGServicio9DataGridViewTextBoxColumn.HeaderText = "IG_Servicio9";
-            this.iGServicio9DataGridViewTextBoxColumn.Name = "iGServicio9DataGridViewTextBoxColumn";
-            this.iGServicio9DataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGServicio9DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGServicio10DataGridViewTextBoxColumn
-            // 
-            this.iGServicio10DataGridViewTextBoxColumn.DataPropertyName = "IG_Servicio10";
-            this.iGServicio10DataGridViewTextBoxColumn.HeaderText = "IG_Servicio10";
-            this.iGServicio10DataGridViewTextBoxColumn.Name = "iGServicio10DataGridViewTextBoxColumn";
-            this.iGServicio10DataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGServicio10DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGProducto1DataGridViewTextBoxColumn
-            // 
-            this.iGProducto1DataGridViewTextBoxColumn.DataPropertyName = "IG_Producto1";
-            this.iGProducto1DataGridViewTextBoxColumn.HeaderText = "IG_Producto1";
-            this.iGProducto1DataGridViewTextBoxColumn.Name = "iGProducto1DataGridViewTextBoxColumn";
-            this.iGProducto1DataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGProducto1DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGProducto2DataGridViewTextBoxColumn
-            // 
-            this.iGProducto2DataGridViewTextBoxColumn.DataPropertyName = "IG_Producto2";
-            this.iGProducto2DataGridViewTextBoxColumn.HeaderText = "IG_Producto2";
-            this.iGProducto2DataGridViewTextBoxColumn.Name = "iGProducto2DataGridViewTextBoxColumn";
-            this.iGProducto2DataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGProducto2DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGProducto3DataGridViewTextBoxColumn
-            // 
-            this.iGProducto3DataGridViewTextBoxColumn.DataPropertyName = "IG_Producto3";
-            this.iGProducto3DataGridViewTextBoxColumn.HeaderText = "IG_Producto3";
-            this.iGProducto3DataGridViewTextBoxColumn.Name = "iGProducto3DataGridViewTextBoxColumn";
-            this.iGProducto3DataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGProducto3DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGProducto4DataGridViewTextBoxColumn
-            // 
-            this.iGProducto4DataGridViewTextBoxColumn.DataPropertyName = "IG_Producto4";
-            this.iGProducto4DataGridViewTextBoxColumn.HeaderText = "IG_Producto4";
-            this.iGProducto4DataGridViewTextBoxColumn.Name = "iGProducto4DataGridViewTextBoxColumn";
-            this.iGProducto4DataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGProducto4DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGProducto5DataGridViewTextBoxColumn
-            // 
-            this.iGProducto5DataGridViewTextBoxColumn.DataPropertyName = "IG_Producto5";
-            this.iGProducto5DataGridViewTextBoxColumn.HeaderText = "IG_Producto5";
-            this.iGProducto5DataGridViewTextBoxColumn.Name = "iGProducto5DataGridViewTextBoxColumn";
-            this.iGProducto5DataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGProducto5DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGProducto6DataGridViewTextBoxColumn
-            // 
-            this.iGProducto6DataGridViewTextBoxColumn.DataPropertyName = "IG_Producto6";
-            this.iGProducto6DataGridViewTextBoxColumn.HeaderText = "IG_Producto6";
-            this.iGProducto6DataGridViewTextBoxColumn.Name = "iGProducto6DataGridViewTextBoxColumn";
-            this.iGProducto6DataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGProducto6DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGProducto7DataGridViewTextBoxColumn
-            // 
-            this.iGProducto7DataGridViewTextBoxColumn.DataPropertyName = "IG_Producto7";
-            this.iGProducto7DataGridViewTextBoxColumn.HeaderText = "IG_Producto7";
-            this.iGProducto7DataGridViewTextBoxColumn.Name = "iGProducto7DataGridViewTextBoxColumn";
-            this.iGProducto7DataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGProducto7DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGProducto8DataGridViewTextBoxColumn
-            // 
-            this.iGProducto8DataGridViewTextBoxColumn.DataPropertyName = "IG_Producto8";
-            this.iGProducto8DataGridViewTextBoxColumn.HeaderText = "IG_Producto8";
-            this.iGProducto8DataGridViewTextBoxColumn.Name = "iGProducto8DataGridViewTextBoxColumn";
-            this.iGProducto8DataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGProducto8DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGProducto9DataGridViewTextBoxColumn
-            // 
-            this.iGProducto9DataGridViewTextBoxColumn.DataPropertyName = "IG_Producto9";
-            this.iGProducto9DataGridViewTextBoxColumn.HeaderText = "IG_Producto9";
-            this.iGProducto9DataGridViewTextBoxColumn.Name = "iGProducto9DataGridViewTextBoxColumn";
-            this.iGProducto9DataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGProducto9DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iGProducto10DataGridViewTextBoxColumn
-            // 
-            this.iGProducto10DataGridViewTextBoxColumn.DataPropertyName = "IG_Producto10";
-            this.iGProducto10DataGridViewTextBoxColumn.HeaderText = "IG_Producto10";
-            this.iGProducto10DataGridViewTextBoxColumn.Name = "iGProducto10DataGridViewTextBoxColumn";
-            this.iGProducto10DataGridViewTextBoxColumn.ReadOnly = true;
-            this.iGProducto10DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc1DataGridViewTextBoxColumn
-            // 
-            this.cEOpc1DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc1";
-            this.cEOpc1DataGridViewTextBoxColumn.HeaderText = "CE_Opc1";
-            this.cEOpc1DataGridViewTextBoxColumn.Name = "cEOpc1DataGridViewTextBoxColumn";
-            this.cEOpc1DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc1DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc2DataGridViewTextBoxColumn
-            // 
-            this.cEOpc2DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc2";
-            this.cEOpc2DataGridViewTextBoxColumn.HeaderText = "CE_Opc2";
-            this.cEOpc2DataGridViewTextBoxColumn.Name = "cEOpc2DataGridViewTextBoxColumn";
-            this.cEOpc2DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc2DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc3DataGridViewTextBoxColumn
-            // 
-            this.cEOpc3DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc3";
-            this.cEOpc3DataGridViewTextBoxColumn.HeaderText = "CE_Opc3";
-            this.cEOpc3DataGridViewTextBoxColumn.Name = "cEOpc3DataGridViewTextBoxColumn";
-            this.cEOpc3DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc3DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc4DataGridViewTextBoxColumn
-            // 
-            this.cEOpc4DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc4";
-            this.cEOpc4DataGridViewTextBoxColumn.HeaderText = "CE_Opc4";
-            this.cEOpc4DataGridViewTextBoxColumn.Name = "cEOpc4DataGridViewTextBoxColumn";
-            this.cEOpc4DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc4DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc5DataGridViewTextBoxColumn
-            // 
-            this.cEOpc5DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc5";
-            this.cEOpc5DataGridViewTextBoxColumn.HeaderText = "CE_Opc5";
-            this.cEOpc5DataGridViewTextBoxColumn.Name = "cEOpc5DataGridViewTextBoxColumn";
-            this.cEOpc5DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc5DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc6DataGridViewTextBoxColumn
-            // 
-            this.cEOpc6DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc6";
-            this.cEOpc6DataGridViewTextBoxColumn.HeaderText = "CE_Opc6";
-            this.cEOpc6DataGridViewTextBoxColumn.Name = "cEOpc6DataGridViewTextBoxColumn";
-            this.cEOpc6DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc6DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc7DataGridViewTextBoxColumn
-            // 
-            this.cEOpc7DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc7";
-            this.cEOpc7DataGridViewTextBoxColumn.HeaderText = "CE_Opc7";
-            this.cEOpc7DataGridViewTextBoxColumn.Name = "cEOpc7DataGridViewTextBoxColumn";
-            this.cEOpc7DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc7DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc8DataGridViewTextBoxColumn
-            // 
-            this.cEOpc8DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc8";
-            this.cEOpc8DataGridViewTextBoxColumn.HeaderText = "CE_Opc8";
-            this.cEOpc8DataGridViewTextBoxColumn.Name = "cEOpc8DataGridViewTextBoxColumn";
-            this.cEOpc8DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc8DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc9DataGridViewTextBoxColumn
-            // 
-            this.cEOpc9DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc9";
-            this.cEOpc9DataGridViewTextBoxColumn.HeaderText = "CE_Opc9";
-            this.cEOpc9DataGridViewTextBoxColumn.Name = "cEOpc9DataGridViewTextBoxColumn";
-            this.cEOpc9DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc9DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc10DataGridViewTextBoxColumn
-            // 
-            this.cEOpc10DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc10";
-            this.cEOpc10DataGridViewTextBoxColumn.HeaderText = "CE_Opc10";
-            this.cEOpc10DataGridViewTextBoxColumn.Name = "cEOpc10DataGridViewTextBoxColumn";
-            this.cEOpc10DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc10DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc11DataGridViewTextBoxColumn
-            // 
-            this.cEOpc11DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc11";
-            this.cEOpc11DataGridViewTextBoxColumn.HeaderText = "CE_Opc11";
-            this.cEOpc11DataGridViewTextBoxColumn.Name = "cEOpc11DataGridViewTextBoxColumn";
-            this.cEOpc11DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc11DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc12DataGridViewTextBoxColumn
-            // 
-            this.cEOpc12DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc12";
-            this.cEOpc12DataGridViewTextBoxColumn.HeaderText = "CE_Opc12";
-            this.cEOpc12DataGridViewTextBoxColumn.Name = "cEOpc12DataGridViewTextBoxColumn";
-            this.cEOpc12DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc12DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc13DataGridViewTextBoxColumn
-            // 
-            this.cEOpc13DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc13";
-            this.cEOpc13DataGridViewTextBoxColumn.HeaderText = "CE_Opc13";
-            this.cEOpc13DataGridViewTextBoxColumn.Name = "cEOpc13DataGridViewTextBoxColumn";
-            this.cEOpc13DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc13DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc14DataGridViewTextBoxColumn
-            // 
-            this.cEOpc14DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc14";
-            this.cEOpc14DataGridViewTextBoxColumn.HeaderText = "CE_Opc14";
-            this.cEOpc14DataGridViewTextBoxColumn.Name = "cEOpc14DataGridViewTextBoxColumn";
-            this.cEOpc14DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc14DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc15DataGridViewTextBoxColumn
-            // 
-            this.cEOpc15DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc15";
-            this.cEOpc15DataGridViewTextBoxColumn.HeaderText = "CE_Opc15";
-            this.cEOpc15DataGridViewTextBoxColumn.Name = "cEOpc15DataGridViewTextBoxColumn";
-            this.cEOpc15DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc15DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc16DataGridViewTextBoxColumn
-            // 
-            this.cEOpc16DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc16";
-            this.cEOpc16DataGridViewTextBoxColumn.HeaderText = "CE_Opc16";
-            this.cEOpc16DataGridViewTextBoxColumn.Name = "cEOpc16DataGridViewTextBoxColumn";
-            this.cEOpc16DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc16DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc17DataGridViewTextBoxColumn
-            // 
-            this.cEOpc17DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc17";
-            this.cEOpc17DataGridViewTextBoxColumn.HeaderText = "CE_Opc17";
-            this.cEOpc17DataGridViewTextBoxColumn.Name = "cEOpc17DataGridViewTextBoxColumn";
-            this.cEOpc17DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc17DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc18DataGridViewTextBoxColumn
-            // 
-            this.cEOpc18DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc18";
-            this.cEOpc18DataGridViewTextBoxColumn.HeaderText = "CE_Opc18";
-            this.cEOpc18DataGridViewTextBoxColumn.Name = "cEOpc18DataGridViewTextBoxColumn";
-            this.cEOpc18DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc18DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc19DataGridViewTextBoxColumn
-            // 
-            this.cEOpc19DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc19";
-            this.cEOpc19DataGridViewTextBoxColumn.HeaderText = "CE_Opc19";
-            this.cEOpc19DataGridViewTextBoxColumn.Name = "cEOpc19DataGridViewTextBoxColumn";
-            this.cEOpc19DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc19DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc20DataGridViewTextBoxColumn
-            // 
-            this.cEOpc20DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc20";
-            this.cEOpc20DataGridViewTextBoxColumn.HeaderText = "CE_Opc20";
-            this.cEOpc20DataGridViewTextBoxColumn.Name = "cEOpc20DataGridViewTextBoxColumn";
-            this.cEOpc20DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc20DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc21DataGridViewTextBoxColumn
-            // 
-            this.cEOpc21DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc21";
-            this.cEOpc21DataGridViewTextBoxColumn.HeaderText = "CE_Opc21";
-            this.cEOpc21DataGridViewTextBoxColumn.Name = "cEOpc21DataGridViewTextBoxColumn";
-            this.cEOpc21DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc21DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc22DataGridViewTextBoxColumn
-            // 
-            this.cEOpc22DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc22";
-            this.cEOpc22DataGridViewTextBoxColumn.HeaderText = "CE_Opc22";
-            this.cEOpc22DataGridViewTextBoxColumn.Name = "cEOpc22DataGridViewTextBoxColumn";
-            this.cEOpc22DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc22DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc23DataGridViewTextBoxColumn
-            // 
-            this.cEOpc23DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc23";
-            this.cEOpc23DataGridViewTextBoxColumn.HeaderText = "CE_Opc23";
-            this.cEOpc23DataGridViewTextBoxColumn.Name = "cEOpc23DataGridViewTextBoxColumn";
-            this.cEOpc23DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc23DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc24DataGridViewTextBoxColumn
-            // 
-            this.cEOpc24DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc24";
-            this.cEOpc24DataGridViewTextBoxColumn.HeaderText = "CE_Opc24";
-            this.cEOpc24DataGridViewTextBoxColumn.Name = "cEOpc24DataGridViewTextBoxColumn";
-            this.cEOpc24DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc24DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc25DataGridViewTextBoxColumn
-            // 
-            this.cEOpc25DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc25";
-            this.cEOpc25DataGridViewTextBoxColumn.HeaderText = "CE_Opc25";
-            this.cEOpc25DataGridViewTextBoxColumn.Name = "cEOpc25DataGridViewTextBoxColumn";
-            this.cEOpc25DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc25DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc26DataGridViewTextBoxColumn
-            // 
-            this.cEOpc26DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc26";
-            this.cEOpc26DataGridViewTextBoxColumn.HeaderText = "CE_Opc26";
-            this.cEOpc26DataGridViewTextBoxColumn.Name = "cEOpc26DataGridViewTextBoxColumn";
-            this.cEOpc26DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc26DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc27DataGridViewTextBoxColumn
-            // 
-            this.cEOpc27DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc27";
-            this.cEOpc27DataGridViewTextBoxColumn.HeaderText = "CE_Opc27";
-            this.cEOpc27DataGridViewTextBoxColumn.Name = "cEOpc27DataGridViewTextBoxColumn";
-            this.cEOpc27DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc27DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc28DataGridViewTextBoxColumn
-            // 
-            this.cEOpc28DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc28";
-            this.cEOpc28DataGridViewTextBoxColumn.HeaderText = "CE_Opc28";
-            this.cEOpc28DataGridViewTextBoxColumn.Name = "cEOpc28DataGridViewTextBoxColumn";
-            this.cEOpc28DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc28DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc29DataGridViewTextBoxColumn
-            // 
-            this.cEOpc29DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc29";
-            this.cEOpc29DataGridViewTextBoxColumn.HeaderText = "CE_Opc29";
-            this.cEOpc29DataGridViewTextBoxColumn.Name = "cEOpc29DataGridViewTextBoxColumn";
-            this.cEOpc29DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc29DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cEOpc30DataGridViewTextBoxColumn
-            // 
-            this.cEOpc30DataGridViewTextBoxColumn.DataPropertyName = "CE_Opc30";
-            this.cEOpc30DataGridViewTextBoxColumn.HeaderText = "CE_Opc30";
-            this.cEOpc30DataGridViewTextBoxColumn.Name = "cEOpc30DataGridViewTextBoxColumn";
-            this.cEOpc30DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEOpc30DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // observacionDataGridViewTextBoxColumn
-            // 
-            this.observacionDataGridViewTextBoxColumn.DataPropertyName = "Observacion";
-            this.observacionDataGridViewTextBoxColumn.HeaderText = "Observacion";
-            this.observacionDataGridViewTextBoxColumn.Name = "observacionDataGridViewTextBoxColumn";
-            this.observacionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.observacionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // ejecutivoDataGridViewTextBoxColumn
-            // 
-            this.ejecutivoDataGridViewTextBoxColumn.DataPropertyName = "Ejecutivo";
-            this.ejecutivoDataGridViewTextBoxColumn.HeaderText = "Ejecutivo";
-            this.ejecutivoDataGridViewTextBoxColumn.Name = "ejecutivoDataGridViewTextBoxColumn";
-            this.ejecutivoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ejecutivoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nivelRiesgoDataGridViewTextBoxColumn
-            // 
-            this.nivelRiesgoDataGridViewTextBoxColumn.DataPropertyName = "NivelRiesgo";
-            this.nivelRiesgoDataGridViewTextBoxColumn.HeaderText = "NivelRiesgo";
-            this.nivelRiesgoDataGridViewTextBoxColumn.Name = "nivelRiesgoDataGridViewTextBoxColumn";
-            this.nivelRiesgoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nivelRiesgoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // perfilFinancieroDataGridViewTextBoxColumn
-            // 
-            this.perfilFinancieroDataGridViewTextBoxColumn.DataPropertyName = "PerfilFinanciero";
-            this.perfilFinancieroDataGridViewTextBoxColumn.HeaderText = "PerfilFinanciero";
-            this.perfilFinancieroDataGridViewTextBoxColumn.Name = "perfilFinancieroDataGridViewTextBoxColumn";
-            this.perfilFinancieroDataGridViewTextBoxColumn.ReadOnly = true;
-            this.perfilFinancieroDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // periodUsoCtaDataGridViewTextBoxColumn
-            // 
-            this.periodUsoCtaDataGridViewTextBoxColumn.DataPropertyName = "PeriodUsoCta";
-            this.periodUsoCtaDataGridViewTextBoxColumn.HeaderText = "PeriodUsoCta";
-            this.periodUsoCtaDataGridViewTextBoxColumn.Name = "periodUsoCtaDataGridViewTextBoxColumn";
-            this.periodUsoCtaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.periodUsoCtaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nroTransaccionesDataGridViewTextBoxColumn
-            // 
-            this.nroTransaccionesDataGridViewTextBoxColumn.DataPropertyName = "NroTransacciones";
-            this.nroTransaccionesDataGridViewTextBoxColumn.HeaderText = "NroTransacciones";
-            this.nroTransaccionesDataGridViewTextBoxColumn.Name = "nroTransaccionesDataGridViewTextBoxColumn";
-            this.nroTransaccionesDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nroTransaccionesDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // fecUltimActDataGridViewTextBoxColumn
-            // 
-            this.fecUltimActDataGridViewTextBoxColumn.DataPropertyName = "Fec_UltimAct";
-            this.fecUltimActDataGridViewTextBoxColumn.HeaderText = "Fec_UltimAct";
-            this.fecUltimActDataGridViewTextBoxColumn.Name = "fecUltimActDataGridViewTextBoxColumn";
-            this.fecUltimActDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fecUltimActDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // trimMesDataGridViewTextBoxColumn
-            // 
-            this.trimMesDataGridViewTextBoxColumn.DataPropertyName = "Trim_Mes";
-            this.trimMesDataGridViewTextBoxColumn.HeaderText = "Trim_Mes";
-            this.trimMesDataGridViewTextBoxColumn.Name = "trimMesDataGridViewTextBoxColumn";
-            this.trimMesDataGridViewTextBoxColumn.ReadOnly = true;
-            this.trimMesDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // trimAnoDataGridViewTextBoxColumn
-            // 
-            this.trimAnoDataGridViewTextBoxColumn.DataPropertyName = "Trim_Ano";
-            this.trimAnoDataGridViewTextBoxColumn.HeaderText = "Trim_Ano";
-            this.trimAnoDataGridViewTextBoxColumn.Name = "trimAnoDataGridViewTextBoxColumn";
-            this.trimAnoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.trimAnoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // mapaEmpresaDataGridViewTextBoxColumn
-            // 
-            this.mapaEmpresaDataGridViewTextBoxColumn.DataPropertyName = "MapaEmpresa";
-            this.mapaEmpresaDataGridViewTextBoxColumn.HeaderText = "MapaEmpresa";
-            this.mapaEmpresaDataGridViewTextBoxColumn.Name = "mapaEmpresaDataGridViewTextBoxColumn";
-            this.mapaEmpresaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mapaEmpresaDataGridViewTextBoxColumn.Visible = false;
-            // 
             // BS_CHistActClientes
             // 
             this.BS_CHistActClientes.DataSource = typeof(MofinModelo.C_HistActClientes);
@@ -3284,29 +2520,35 @@
             // 
             this.BS_OOperTransaccionales.DataSource = typeof(MofinModelo.O_OperTransaccionales);
             // 
-            // Col_BFANme
+            // Btn_Exportar
             // 
-            this.Col_BFANme.DataPropertyName = "Nombre";
-            this.Col_BFANme.FillWeight = 150F;
-            this.Col_BFANme.HeaderText = "Nombre";
-            this.Col_BFANme.Name = "Col_BFANme";
-            this.Col_BFANme.ReadOnly = true;
-            this.Col_BFANme.Width = 150;
+            this.Btn_Exportar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_Exportar.BackgroundImage")));
+            this.Btn_Exportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_Exportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_Exportar.FlatAppearance.BorderSize = 0;
+            this.Btn_Exportar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Btn_Exportar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Btn_Exportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Exportar.Location = new System.Drawing.Point(198, 547);
+            this.Btn_Exportar.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_Exportar.Name = "Btn_Exportar";
+            this.Btn_Exportar.Size = new System.Drawing.Size(36, 36);
+            this.Btn_Exportar.TabIndex = 55;
+            this.Btn_Exportar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_Exportar.UseVisualStyleBackColor = true;
+            this.Btn_Exportar.Click += new System.EventHandler(this.Btn_Exportar_Click);
             // 
-            // Col_BFADocID
+            // Grd_Exportacion
             // 
-            this.Col_BFADocID.DataPropertyName = "Doc_ID";
-            this.Col_BFADocID.HeaderText = "Doc_ID";
-            this.Col_BFADocID.Name = "Col_BFADocID";
-            this.Col_BFADocID.ReadOnly = true;
-            // 
-            // edadDataGridViewTextBoxColumn
-            // 
-            this.edadDataGridViewTextBoxColumn.DataPropertyName = "Edad";
-            this.edadDataGridViewTextBoxColumn.HeaderText = "Edad";
-            this.edadDataGridViewTextBoxColumn.Name = "edadDataGridViewTextBoxColumn";
-            this.edadDataGridViewTextBoxColumn.ReadOnly = true;
-            this.edadDataGridViewTextBoxColumn.Visible = false;
+            this.Grd_Exportacion.AllowUserToAddRows = false;
+            this.Grd_Exportacion.AllowUserToDeleteRows = false;
+            this.Grd_Exportacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grd_Exportacion.Location = new System.Drawing.Point(9, 549);
+            this.Grd_Exportacion.Name = "Grd_Exportacion";
+            this.Grd_Exportacion.ReadOnly = true;
+            this.Grd_Exportacion.Size = new System.Drawing.Size(52, 45);
+            this.Grd_Exportacion.TabIndex = 56;
+            this.Grd_Exportacion.Visible = false;
             // 
             // Frm_Clientes
             // 
@@ -3315,6 +2557,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(1010, 600);
+            this.Controls.Add(this.Grd_Exportacion);
+            this.Controls.Add(this.Btn_Exportar);
             this.Controls.Add(this.Grd_Clientes);
             this.Controls.Add(this.Lbl_EtiqPunt);
             this.Controls.Add(this.Lbl_Activo);
@@ -3344,6 +2588,7 @@
             this.Tab_Clientes.ResumeLayout(false);
             this.Pag1.ResumeLayout(false);
             this.Pan_Detalles1.ResumeLayout(false);
+            this.Pan_Detalles1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BS_CClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MVolOperPersJur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MAntiguedad)).EndInit();
@@ -3368,6 +2613,7 @@
             this.Pan_Detalles2.ResumeLayout(false);
             this.Pan_Detalles2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutProfesion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_AutEstados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutRes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutNac)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_AutPaisNac)).EndInit();
@@ -3404,6 +2650,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_OOperfinancieras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_OOperTransaccionales)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grd_Exportacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3565,92 +2812,6 @@
         private System.Windows.Forms.Label Lbl_Codigo;
         private System.Windows.Forms.Label Lbl_DocID;
         private System.Windows.Forms.Label Lbl_Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDSistemaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_CliCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoPersonaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn activoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn docIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_CliNme;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientePuntDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn benefPuntDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn infGenPuntDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn constExpedPuntDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn condEspSeguridadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGPaisNacimDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGNacionalidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGPaisResidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGEstadoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGPEPDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGProfesionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGTipDocIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGFecVencDocIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGTipoPersJurDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGEdadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGActivComerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGVolumOperacDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGCriptomonedaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGTipoEstructuraDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGServicio1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGServicio2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGServicio3DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGServicio4DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGServicio5DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGServicio6DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGServicio7DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGServicio8DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGServicio9DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGServicio10DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGProducto1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGProducto2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGProducto3DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGProducto4DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGProducto5DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGProducto6DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGProducto7DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGProducto8DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGProducto9DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iGProducto10DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc3DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc4DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc5DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc6DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc7DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc8DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc9DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc10DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc11DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc12DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc13DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc14DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc15DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc16DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc17DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc18DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc19DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc20DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc21DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc22DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc23DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc24DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc25DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc26DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc27DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc28DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc29DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEOpc30DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn observacionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ejecutivoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nivelRiesgoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn perfilFinancieroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn periodUsoCtaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nroTransaccionesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecUltimActDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn trimMesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn trimAnoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn trimNroOperacDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mapaEmpresaDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label Lbl_TipDocID;
         private System.Windows.Forms.Label Lbl_FecVencDocID;
         private System.Windows.Forms.Label Lbl_Nacionalidad;
@@ -3706,5 +2867,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_BFANme;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_BFADocID;
         private System.Windows.Forms.DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_CliCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn docIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_CliNme;
+        private System.Windows.Forms.BindingSource BS_AutEstados;
+        private System.Windows.Forms.Label Lbl_Email;
+        private System.Windows.Forms.TextBox Txt_Email;
+        private System.Windows.Forms.Button Btn_Exportar;
+        private System.Windows.Forms.DataGridView Grd_Exportacion;
     }
 }

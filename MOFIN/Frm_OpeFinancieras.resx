@@ -13615,6 +13615,9 @@
         bsn+BaPnsOnu30H32bSP7v/B63/9r/8f9U7Sw3Csrz8AAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="ID_Sistema.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="BS_OOperFinancieras.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>633, 17</value>
   </metadata>
@@ -34213,12 +34216,12 @@
     <value>15, 17</value>
   </metadata>
   <metadata name="BS_MNivelRiesgo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>486, 47</value>
+    <value>944, 19</value>
   </metadata>
   <metadata name="reportes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>197, 48</value>
   </metadata>
-  <metadata name="BS_opeFinanc_Clientes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="BS_OpeFinanc_Clientes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>327, 45</value>
   </metadata>
   <metadata name="BS_Grupo_Opciones.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

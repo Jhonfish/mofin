@@ -84,6 +84,10 @@ namespace MOFIN
             this.Cmb_Pais = new System.Windows.Forms.ComboBox();
             this.Lbl_CondEspSeguridad = new System.Windows.Forms.Label();
             this.BS_Grupo_Opciones = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_MTipoOrdenes = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_MTitulos = new System.Windows.Forms.BindingSource(this.components);
+            this.Txt_ISINCode = new System.Windows.Forms.TextBox();
+            this.Lbl_ISINCode = new System.Windows.Forms.Label();
             this.TS_BarraHerramientas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Detalles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_MActivComercial)).BeginInit();
@@ -106,6 +110,8 @@ namespace MOFIN
             this.Pan_Elementos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Valor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MTipoOrdenes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MTitulos)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_Codigo
@@ -475,6 +481,7 @@ namespace MOFIN
             this.Pan_Elementos.Controls.Add(this.Txt_CodAlfa3);
             this.Pan_Elementos.Controls.Add(this.Txt_Nombre);
             this.Pan_Elementos.Controls.Add(this.Chk_CES);
+            this.Pan_Elementos.Controls.Add(this.Txt_ISINCode);
             this.Pan_Elementos.Location = new System.Drawing.Point(19, 155);
             this.Pan_Elementos.Name = "Pan_Elementos";
             this.Pan_Elementos.Size = new System.Drawing.Size(353, 201);
@@ -518,7 +525,7 @@ namespace MOFIN
             // 
             this.Txt_CodAlfa3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.Txt_CodAlfa3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BS_TablaMaestra, "Cod_AlfaNum3", true));
-            this.Txt_CodAlfa3.Location = new System.Drawing.Point(279, 5);
+            this.Txt_CodAlfa3.Location = new System.Drawing.Point(279, 4);
             this.Txt_CodAlfa3.MaxLength = 3;
             this.Txt_CodAlfa3.Name = "Txt_CodAlfa3";
             this.Txt_CodAlfa3.Size = new System.Drawing.Size(57, 22);
@@ -571,6 +578,32 @@ namespace MOFIN
             // 
             this.BS_Grupo_Opciones.DataSource = typeof(MofinModeloEntorno.Grupo_Opciones);
             // 
+            // BS_MTipoOrdenes
+            // 
+            this.BS_MTipoOrdenes.DataSource = typeof(MofinModelo.M_TipoOrdenes);
+            // 
+            // BS_MTitulos
+            // 
+            this.BS_MTitulos.DataSource = typeof(MofinModelo.M_Titulos);
+            // 
+            // Txt_ISINCode
+            // 
+            this.Txt_ISINCode.Location = new System.Drawing.Point(160, 4);
+            this.Txt_ISINCode.Name = "Txt_ISINCode";
+            this.Txt_ISINCode.Size = new System.Drawing.Size(176, 22);
+            this.Txt_ISINCode.TabIndex = 64;
+            this.Txt_ISINCode.Visible = false;
+            // 
+            // Lbl_ISINCode
+            // 
+            this.Lbl_ISINCode.AutoSize = true;
+            this.Lbl_ISINCode.Location = new System.Drawing.Point(206, 140);
+            this.Lbl_ISINCode.Name = "Lbl_ISINCode";
+            this.Lbl_ISINCode.Size = new System.Drawing.Size(80, 16);
+            this.Lbl_ISINCode.TabIndex = 64;
+            this.Lbl_ISINCode.Text = "ISIN Code";
+            this.Lbl_ISINCode.Visible = false;
+            // 
             // Frm_TablasMaestras
             // 
             this.AcceptButton = this.Btn_Aceptar;
@@ -578,8 +611,8 @@ namespace MOFIN
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(782, 436);
+            this.Controls.Add(this.Lbl_ISINCode);
             this.Controls.Add(this.Lbl_CondEspSeguridad);
-            this.Controls.Add(this.Cmb_Pais);
             this.Controls.Add(this.Lbl_Pais);
             this.Controls.Add(this.Lbl_tablaMaestra);
             this.Controls.Add(this.Cmb_TablaMaestra);
@@ -593,8 +626,10 @@ namespace MOFIN
             this.Controls.Add(this.Btn_Cancelar);
             this.Controls.Add(this.Btn_Aceptar);
             this.Controls.Add(this.Pan_Elementos);
+            this.Controls.Add(this.Cmb_Pais);
             this.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -628,6 +663,8 @@ namespace MOFIN
             this.Pan_Elementos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Valor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MTipoOrdenes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_MTitulos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -687,5 +724,9 @@ namespace MOFIN
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Nombre;
         private System.Windows.Forms.BindingSource BS_Grupo_Opciones;
+        private System.Windows.Forms.BindingSource BS_MTipoOrdenes;
+        private System.Windows.Forms.BindingSource BS_MTitulos;
+        private System.Windows.Forms.TextBox Txt_ISINCode;
+        private System.Windows.Forms.Label Lbl_ISINCode;
     }
 }

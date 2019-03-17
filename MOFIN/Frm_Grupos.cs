@@ -36,7 +36,7 @@ namespace MOFIN
 
         private void Frm_Grupos_Load(object sender, EventArgs e)
         {
-            BS_Grupo_Opciones.DataSource = NGrupo_Opciones.ListarPorCodigo(MOFIN_LIB.Entorno.vs_Grupo);
+            BS_Grupo_Opciones.DataSource = NGrupo_Opciones.ListarPorCodigo(Entorno.vs_Grupo);
             r_CtrlAccGruposOpciones = BS_Grupo_Opciones.Current as Grupo_Opciones;
 
             BS_Grupos.DataSource = NGrupos.Listar();
@@ -78,23 +78,47 @@ namespace MOFIN
             BS_Grupos.MoveFirst();
             TSB_ActualizaBotonesNavegacion();
         }
-
         private void TSB_Anterior_Click(object sender, EventArgs e)
         {
             BS_Grupos.MovePrevious();
             TSB_ActualizaBotonesNavegacion();
         }
-
         private void TSB_Siguiente_Click(object sender, EventArgs e)
         {
             BS_Grupos.MoveNext();
             TSB_ActualizaBotonesNavegacion();
         }
-
         private void TSB_Ultimo_Click(object sender, EventArgs e)
         {
             BS_Grupos.MoveLast();
             TSB_ActualizaBotonesNavegacion();
+        }
+        private void TSB_Agregar_Click(object sender, EventArgs e)
+        {
+            vl_EsNuevo = true;
+            BS_Grupos.Add(r_Grupos);
+            BS_Grupos.MoveLast();
+            BS_Grupo_Opciones.Add(r_GruposOpciones);
+            BS_Grupo_Opciones.MoveLast();
+
+            r_Grupos = BS_Grupos.Current as Grupos;
+            r_GruposOpciones = BS_Grupo_Opciones.AddNew() as Grupo_Opciones;
+
+            this.Modo_Edicion();
+        }
+        private void TSB_Modificar_Click(object sender, EventArgs e)
+        {
+            if (BS_Grupos.Current == null)
+                return;
+            vl_EsNuevo = false;
+            r_Grupos = BS_Grupos.Current as Grupos;
+            r_GruposOpciones = BS_Grupo_Opciones.Current as Grupo_Opciones;
+
+            this.Modo_Edicion();
+        }
+        private void TSB_Salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void KeyPress_JF(object sender, KeyEventArgs e)
@@ -143,7 +167,6 @@ namespace MOFIN
 
         }
 
-
         private void Btn_Aceptar_Click(object sender, EventArgs e)
         {
             if (vl_EsNuevo)
@@ -159,42 +182,12 @@ namespace MOFIN
             }
             this.Modo_Consulta();
             BS_Grupos.DataSource = NGrupos.Listar();
-            
-        }
+            MessageBox.Show(Funciones._Mens_Idioma(9019), Funciones._Mens_Idioma(201), MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
         private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
             this.Modo_Consulta();
-        }
-
-        private void TSB_Agregar_Click(object sender, EventArgs e)
-        {
-            vl_EsNuevo = true;
-            BS_Grupos.Add(r_Grupos);
-            BS_Grupos.MoveLast();
-            BS_Grupo_Opciones.Add(r_GruposOpciones);
-            BS_Grupo_Opciones.MoveLast();
-
-            r_Grupos = BS_Grupos.Current as Grupos;
-            r_GruposOpciones = BS_Grupo_Opciones.AddNew() as Grupo_Opciones;
-
-            this.Modo_Edicion();
-        }
-
-        private void TSB_Modificar_Click(object sender, EventArgs e)
-        {
-            if (BS_Grupos.Current == null)
-                return;
-            vl_EsNuevo = false;
-            r_Grupos = BS_Grupos.Current as Grupos;
-            r_GruposOpciones = BS_Grupo_Opciones.Current as Grupo_Opciones;
-
-            this.Modo_Edicion();
-        }
-
-        private void TSB_Salir_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void TSB_Eliminar_Click(object sender, EventArgs e)

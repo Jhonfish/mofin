@@ -47,10 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NLists_Exportar.cs" />
     <Compile Include="NC_ProvServ.cs" />
+    <Compile Include="NM_TipoOrdenes.cs" />
+    <Compile Include="NM_Titulos.cs" />
+    <Compile Include="NOpc_Sistema.cs" />
     <Compile Include="NIdiomas.cs" />
     <Compile Include="NO_HistPerfOperac.cs" />
     <Compile Include="NO_Observaciones.cs" />
+    <Compile Include="NL_LibroOrdenes.cs" />
     <Compile Include="NO_Operfinancieras.cs" />
     <Compile Include="NO_OperTransaccionales.cs" />
     <Compile Include="NO_RepOperacional.cs" />

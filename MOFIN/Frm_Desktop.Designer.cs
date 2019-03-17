@@ -32,38 +32,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Desktop));
             this.TS_MenuPrincipal = new System.Windows.Forms.MenuStrip();
             this.Mnu_Archivo = new System.Windows.Forms.ToolStripMenuItem();
-            this.Arc_Abrir = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.Arc_SelEmpresa = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.Arc_Imprimir = new System.Windows.Forms.ToolStripMenuItem();
-            this.Arc_VistaPrevia = new System.Windows.Forms.ToolStripMenuItem();
             this.Arc_ConfigImpres = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.Arc_Salir = new System.Windows.Forms.ToolStripMenuItem();
             this.Mnu_Editar = new System.Windows.Forms.ToolStripMenuItem();
-            this.Edi_Deshacer = new System.Windows.Forms.ToolStripMenuItem();
-            this.Edi_Rehacer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.Edi_Cortar = new System.Windows.Forms.ToolStripMenuItem();
-            this.Edi_Copiar = new System.Windows.Forms.ToolStripMenuItem();
-            this.Edi_Pegar = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.Edi_SelecTodo = new System.Windows.Forms.ToolStripMenuItem();
-            this.Mnu_Ver = new System.Windows.Forms.ToolStripMenuItem();
-            this.Ver_BarraStado = new System.Windows.Forms.ToolStripMenuItem();
             this.Mnu_Clientes = new System.Windows.Forms.ToolStripMenuItem();
-            this.Cli_Monitor = new System.Windows.Forms.ToolStripMenuItem();
-            this.Cli_Busqueda = new System.Windows.Forms.ToolStripMenuItem();
             this.Mnu_Operaciones = new System.Windows.Forms.ToolStripMenuItem();
-            this.Ope_Financieras = new System.Windows.Forms.ToolStripMenuItem();
-            this.Ope_Transaccionales = new System.Windows.Forms.ToolStripMenuItem();
             this.Mnu_TablasMaestras = new System.Windows.Forms.ToolStripMenuItem();
-            this.Tab_Maestros = new System.Windows.Forms.ToolStripMenuItem();
             this.Mnu_Herramientas = new System.Windows.Forms.ToolStripMenuItem();
-            this.Her_Usuarios = new System.Windows.Forms.ToolStripMenuItem();
-            this.Her_Grupos = new System.Windows.Forms.ToolStripMenuItem();
-            this.Her_Empresas = new System.Windows.Forms.ToolStripMenuItem();
             this.Mnu_Ventanas = new System.Windows.Forms.ToolStripMenuItem();
             this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Ven_Cascada = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,10 +54,30 @@
             this.Ayu_Acerca = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiaFondoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SS_BarradeEstadoPrincipal = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.Lbl_Detalle1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.Arc_Abrir = new System.Windows.Forms.ToolStripMenuItem();
+            this.Arc_SelEmpresa = new System.Windows.Forms.ToolStripMenuItem();
+            this.Arc_Imprimir = new System.Windows.Forms.ToolStripMenuItem();
+            this.Arc_VistaPrevia = new System.Windows.Forms.ToolStripMenuItem();
+            this.Arc_Salir = new System.Windows.Forms.ToolStripMenuItem();
+            this.Edi_Deshacer = new System.Windows.Forms.ToolStripMenuItem();
+            this.Edi_Rehacer = new System.Windows.Forms.ToolStripMenuItem();
+            this.Edi_Cortar = new System.Windows.Forms.ToolStripMenuItem();
+            this.Edi_Copiar = new System.Windows.Forms.ToolStripMenuItem();
+            this.Edi_Pegar = new System.Windows.Forms.ToolStripMenuItem();
+            this.Cli_Monitor = new System.Windows.Forms.ToolStripMenuItem();
+            this.Cli_Busqueda = new System.Windows.Forms.ToolStripMenuItem();
+            this.Ope_Financieras = new System.Windows.Forms.ToolStripMenuItem();
+            this.Ope_Transaccionales = new System.Windows.Forms.ToolStripMenuItem();
+            this.Tab_Maestros = new System.Windows.Forms.ToolStripMenuItem();
+            this.Her_Usuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.Her_Grupos = new System.Windows.Forms.ToolStripMenuItem();
+            this.Her_Empresas = new System.Windows.Forms.ToolStripMenuItem();
+            this.Her_ParamGrles = new System.Windows.Forms.ToolStripMenuItem();
             this.BS_Grupos = new System.Windows.Forms.BindingSource(this.components);
+            this.Mnu_Ordenes = new System.Windows.Forms.ToolStripMenuItem();
+            this.Ord_LibroOrdenes = new System.Windows.Forms.ToolStripMenuItem();
             this.TS_MenuPrincipal.SuspendLayout();
             this.SS_BarradeEstadoPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupos)).BeginInit();
@@ -90,9 +90,9 @@
             this.TS_MenuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Mnu_Archivo,
             this.Mnu_Editar,
-            this.Mnu_Ver,
             this.Mnu_Clientes,
             this.Mnu_Operaciones,
+            this.Mnu_Ordenes,
             this.Mnu_TablasMaestras,
             this.Mnu_Herramientas,
             this.Mnu_Ventanas,
@@ -122,50 +122,15 @@
             this.Mnu_Archivo.Size = new System.Drawing.Size(76, 20);
             this.Mnu_Archivo.Text = "&Archivo";
             // 
-            // Arc_Abrir
-            // 
-            this.Arc_Abrir.Image = ((System.Drawing.Image)(resources.GetObject("Arc_Abrir.Image")));
-            this.Arc_Abrir.ImageTransparentColor = System.Drawing.Color.Black;
-            this.Arc_Abrir.Name = "Arc_Abrir";
-            this.Arc_Abrir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.Arc_Abrir.Size = new System.Drawing.Size(276, 22);
-            this.Arc_Abrir.Text = "&Abrir";
-            this.Arc_Abrir.Click += new System.EventHandler(this.OpenFile);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(273, 6);
             // 
-            // Arc_SelEmpresa
-            // 
-            this.Arc_SelEmpresa.Image = ((System.Drawing.Image)(resources.GetObject("Arc_SelEmpresa.Image")));
-            this.Arc_SelEmpresa.Name = "Arc_SelEmpresa";
-            this.Arc_SelEmpresa.Size = new System.Drawing.Size(276, 22);
-            this.Arc_SelEmpresa.Text = "Selecionar Empresa";
-            this.Arc_SelEmpresa.Click += new System.EventHandler(this.Arc_SelEmpresa_Click);
-            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(273, 6);
-            // 
-            // Arc_Imprimir
-            // 
-            this.Arc_Imprimir.Image = ((System.Drawing.Image)(resources.GetObject("Arc_Imprimir.Image")));
-            this.Arc_Imprimir.ImageTransparentColor = System.Drawing.Color.Black;
-            this.Arc_Imprimir.Name = "Arc_Imprimir";
-            this.Arc_Imprimir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.Arc_Imprimir.Size = new System.Drawing.Size(276, 22);
-            this.Arc_Imprimir.Text = "&Imprimir";
-            // 
-            // Arc_VistaPrevia
-            // 
-            this.Arc_VistaPrevia.Image = ((System.Drawing.Image)(resources.GetObject("Arc_VistaPrevia.Image")));
-            this.Arc_VistaPrevia.ImageTransparentColor = System.Drawing.Color.Black;
-            this.Arc_VistaPrevia.Name = "Arc_VistaPrevia";
-            this.Arc_VistaPrevia.Size = new System.Drawing.Size(276, 22);
-            this.Arc_VistaPrevia.Text = "&Vista previa de impresión";
             // 
             // Arc_ConfigImpres
             // 
@@ -177,14 +142,6 @@
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(273, 6);
-            // 
-            // Arc_Salir
-            // 
-            this.Arc_Salir.Image = global::MOFIN.Properties.Resources.Salir;
-            this.Arc_Salir.Name = "Arc_Salir";
-            this.Arc_Salir.Size = new System.Drawing.Size(276, 22);
-            this.Arc_Salir.Text = "&Salir";
-            this.Arc_Salir.Click += new System.EventHandler(this.ExitToolsStripMenuItem_Click);
             // 
             // Mnu_Editar
             // 
@@ -201,58 +158,10 @@
             this.Mnu_Editar.Size = new System.Drawing.Size(68, 20);
             this.Mnu_Editar.Text = "&Editar";
             // 
-            // Edi_Deshacer
-            // 
-            this.Edi_Deshacer.Image = ((System.Drawing.Image)(resources.GetObject("Edi_Deshacer.Image")));
-            this.Edi_Deshacer.ImageTransparentColor = System.Drawing.Color.Black;
-            this.Edi_Deshacer.Name = "Edi_Deshacer";
-            this.Edi_Deshacer.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.Edi_Deshacer.Size = new System.Drawing.Size(260, 22);
-            this.Edi_Deshacer.Text = "&Deshacer";
-            // 
-            // Edi_Rehacer
-            // 
-            this.Edi_Rehacer.Image = ((System.Drawing.Image)(resources.GetObject("Edi_Rehacer.Image")));
-            this.Edi_Rehacer.ImageTransparentColor = System.Drawing.Color.Black;
-            this.Edi_Rehacer.Name = "Edi_Rehacer";
-            this.Edi_Rehacer.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.Edi_Rehacer.Size = new System.Drawing.Size(260, 22);
-            this.Edi_Rehacer.Text = "&Rehacer";
-            // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(257, 6);
-            // 
-            // Edi_Cortar
-            // 
-            this.Edi_Cortar.Image = ((System.Drawing.Image)(resources.GetObject("Edi_Cortar.Image")));
-            this.Edi_Cortar.ImageTransparentColor = System.Drawing.Color.Black;
-            this.Edi_Cortar.Name = "Edi_Cortar";
-            this.Edi_Cortar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.Edi_Cortar.Size = new System.Drawing.Size(260, 22);
-            this.Edi_Cortar.Text = "Cor&tar";
-            this.Edi_Cortar.Click += new System.EventHandler(this.CutToolStripMenuItem_Click);
-            // 
-            // Edi_Copiar
-            // 
-            this.Edi_Copiar.Image = ((System.Drawing.Image)(resources.GetObject("Edi_Copiar.Image")));
-            this.Edi_Copiar.ImageTransparentColor = System.Drawing.Color.Black;
-            this.Edi_Copiar.Name = "Edi_Copiar";
-            this.Edi_Copiar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.Edi_Copiar.Size = new System.Drawing.Size(260, 22);
-            this.Edi_Copiar.Text = "&Copiar";
-            this.Edi_Copiar.Click += new System.EventHandler(this.CopyToolStripMenuItem_Click);
-            // 
-            // Edi_Pegar
-            // 
-            this.Edi_Pegar.Image = ((System.Drawing.Image)(resources.GetObject("Edi_Pegar.Image")));
-            this.Edi_Pegar.ImageTransparentColor = System.Drawing.Color.Black;
-            this.Edi_Pegar.Name = "Edi_Pegar";
-            this.Edi_Pegar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.Edi_Pegar.Size = new System.Drawing.Size(260, 22);
-            this.Edi_Pegar.Text = "&Pegar";
-            this.Edi_Pegar.Click += new System.EventHandler(this.PasteToolStripMenuItem_Click);
             // 
             // toolStripSeparator7
             // 
@@ -266,24 +175,6 @@
             this.Edi_SelecTodo.Size = new System.Drawing.Size(260, 22);
             this.Edi_SelecTodo.Text = "Seleccionar &todo";
             // 
-            // Mnu_Ver
-            // 
-            this.Mnu_Ver.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Ver_BarraStado});
-            this.Mnu_Ver.Name = "Mnu_Ver";
-            this.Mnu_Ver.Size = new System.Drawing.Size(44, 20);
-            this.Mnu_Ver.Text = "&Ver";
-            // 
-            // Ver_BarraStado
-            // 
-            this.Ver_BarraStado.Checked = true;
-            this.Ver_BarraStado.CheckOnClick = true;
-            this.Ver_BarraStado.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.Ver_BarraStado.Name = "Ver_BarraStado";
-            this.Ver_BarraStado.Size = new System.Drawing.Size(196, 22);
-            this.Ver_BarraStado.Text = "&Barra de estado";
-            this.Ver_BarraStado.Click += new System.EventHandler(this.StatusBarToolStripMenuItem_Click);
-            // 
             // Mnu_Clientes
             // 
             this.Mnu_Clientes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -292,22 +183,6 @@
             this.Mnu_Clientes.Name = "Mnu_Clientes";
             this.Mnu_Clientes.Size = new System.Drawing.Size(84, 20);
             this.Mnu_Clientes.Text = "&Clientes";
-            // 
-            // Cli_Monitor
-            // 
-            this.Cli_Monitor.Image = global::MOFIN.Properties.Resources.MonitorClientes;
-            this.Cli_Monitor.Name = "Cli_Monitor";
-            this.Cli_Monitor.Size = new System.Drawing.Size(236, 22);
-            this.Cli_Monitor.Text = "Monitor de Clientes";
-            this.Cli_Monitor.Click += new System.EventHandler(this.monitorDeClientesToolStripMenuItem_Click);
-            // 
-            // Cli_Busqueda
-            // 
-            this.Cli_Busqueda.Image = ((System.Drawing.Image)(resources.GetObject("Cli_Busqueda.Image")));
-            this.Cli_Busqueda.Name = "Cli_Busqueda";
-            this.Cli_Busqueda.Size = new System.Drawing.Size(236, 22);
-            this.Cli_Busqueda.Text = "Búsqueda de Clientes";
-            this.Cli_Busqueda.Click += new System.EventHandler(this.búsquedaDeClientesToolStripMenuItem_Click);
             // 
             // Mnu_Operaciones
             // 
@@ -318,22 +193,6 @@
             this.Mnu_Operaciones.Size = new System.Drawing.Size(108, 20);
             this.Mnu_Operaciones.Text = "&Operaciones";
             // 
-            // Ope_Financieras
-            // 
-            this.Ope_Financieras.Image = global::MOFIN.Properties.Resources.MonitorFinanciero;
-            this.Ope_Financieras.Name = "Ope_Financieras";
-            this.Ope_Financieras.Size = new System.Drawing.Size(196, 22);
-            this.Ope_Financieras.Text = "Financieras";
-            this.Ope_Financieras.Click += new System.EventHandler(this.financierasToolStripMenuItem_Click);
-            // 
-            // Ope_Transaccionales
-            // 
-            this.Ope_Transaccionales.Image = global::MOFIN.Properties.Resources.MonitorOperacional;
-            this.Ope_Transaccionales.Name = "Ope_Transaccionales";
-            this.Ope_Transaccionales.Size = new System.Drawing.Size(196, 22);
-            this.Ope_Transaccionales.Text = "Transaccionales";
-            this.Ope_Transaccionales.Click += new System.EventHandler(this.Ope_Transaccionales_Click);
-            // 
             // Mnu_TablasMaestras
             // 
             this.Mnu_TablasMaestras.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -342,47 +201,16 @@
             this.Mnu_TablasMaestras.Size = new System.Drawing.Size(140, 20);
             this.Mnu_TablasMaestras.Text = "Tablas &Maestras";
             // 
-            // Tab_Maestros
-            // 
-            this.Tab_Maestros.Image = global::MOFIN.Properties.Resources.TablasMaestras;
-            this.Tab_Maestros.Name = "Tab_Maestros";
-            this.Tab_Maestros.Size = new System.Drawing.Size(196, 22);
-            this.Tab_Maestros.Text = "Tablas Maestras";
-            this.Tab_Maestros.Click += new System.EventHandler(this.tablasMaestrasToolStripMenuItem_Click);
-            // 
             // Mnu_Herramientas
             // 
             this.Mnu_Herramientas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Her_Usuarios,
             this.Her_Grupos,
-            this.Her_Empresas});
+            this.Her_Empresas,
+            this.Her_ParamGrles});
             this.Mnu_Herramientas.Name = "Mnu_Herramientas";
             this.Mnu_Herramientas.Size = new System.Drawing.Size(116, 20);
             this.Mnu_Herramientas.Text = "&Herramientas";
-            // 
-            // Her_Usuarios
-            // 
-            this.Her_Usuarios.Image = global::MOFIN.Properties.Resources.Usuario;
-            this.Her_Usuarios.Name = "Her_Usuarios";
-            this.Her_Usuarios.Size = new System.Drawing.Size(188, 22);
-            this.Her_Usuarios.Text = "Usuarios";
-            this.Her_Usuarios.Click += new System.EventHandler(this.Her_Usuarios_Click);
-            // 
-            // Her_Grupos
-            // 
-            this.Her_Grupos.Image = global::MOFIN.Properties.Resources.Grupos;
-            this.Her_Grupos.Name = "Her_Grupos";
-            this.Her_Grupos.Size = new System.Drawing.Size(188, 22);
-            this.Her_Grupos.Text = "Gupos/Perfiles";
-            this.Her_Grupos.Click += new System.EventHandler(this.Her_Grupos_Click);
-            // 
-            // Her_Empresas
-            // 
-            this.Her_Empresas.Image = global::MOFIN.Properties.Resources.Empresas;
-            this.Her_Empresas.Name = "Her_Empresas";
-            this.Her_Empresas.Size = new System.Drawing.Size(188, 22);
-            this.Her_Empresas.Text = "Empresas";
-            this.Her_Empresas.Click += new System.EventHandler(this.Her_Empresas_Click);
             // 
             // Mnu_Ventanas
             // 
@@ -456,7 +284,6 @@
             // SS_BarradeEstadoPrincipal
             // 
             this.SS_BarradeEstadoPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel,
             this.Lbl_Detalle1});
             this.SS_BarradeEstadoPrincipal.Location = new System.Drawing.Point(3, 533);
             this.SS_BarradeEstadoPrincipal.Name = "SS_BarradeEstadoPrincipal";
@@ -464,13 +291,6 @@
             this.SS_BarradeEstadoPrincipal.Size = new System.Drawing.Size(837, 22);
             this.SS_BarradeEstadoPrincipal.TabIndex = 2;
             this.SS_BarradeEstadoPrincipal.Text = "Sistema de Monitoreo Financiero";
-            // 
-            // toolStripStatusLabel
-            // 
-            this.toolStripStatusLabel.ImageTransparentColor = System.Drawing.Color.Transparent;
-            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
-            this.toolStripStatusLabel.Text = "Estado";
             // 
             // Lbl_Detalle1
             // 
@@ -480,9 +300,187 @@
             this.Lbl_Detalle1.Size = new System.Drawing.Size(208, 17);
             this.Lbl_Detalle1.Text = "Empresa / Usuario / Grupo";
             // 
+            // Arc_Abrir
+            // 
+            this.Arc_Abrir.Image = ((System.Drawing.Image)(resources.GetObject("Arc_Abrir.Image")));
+            this.Arc_Abrir.ImageTransparentColor = System.Drawing.Color.Black;
+            this.Arc_Abrir.Name = "Arc_Abrir";
+            this.Arc_Abrir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.Arc_Abrir.Size = new System.Drawing.Size(276, 22);
+            this.Arc_Abrir.Text = "&Abrir";
+            this.Arc_Abrir.Click += new System.EventHandler(this.OpenFile);
+            // 
+            // Arc_SelEmpresa
+            // 
+            this.Arc_SelEmpresa.Image = ((System.Drawing.Image)(resources.GetObject("Arc_SelEmpresa.Image")));
+            this.Arc_SelEmpresa.Name = "Arc_SelEmpresa";
+            this.Arc_SelEmpresa.Size = new System.Drawing.Size(276, 22);
+            this.Arc_SelEmpresa.Text = "Selecionar Empresa";
+            this.Arc_SelEmpresa.Click += new System.EventHandler(this.Arc_SelEmpresa_Click);
+            // 
+            // Arc_Imprimir
+            // 
+            this.Arc_Imprimir.Image = ((System.Drawing.Image)(resources.GetObject("Arc_Imprimir.Image")));
+            this.Arc_Imprimir.ImageTransparentColor = System.Drawing.Color.Black;
+            this.Arc_Imprimir.Name = "Arc_Imprimir";
+            this.Arc_Imprimir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.Arc_Imprimir.Size = new System.Drawing.Size(276, 22);
+            this.Arc_Imprimir.Text = "&Imprimir";
+            // 
+            // Arc_VistaPrevia
+            // 
+            this.Arc_VistaPrevia.Image = ((System.Drawing.Image)(resources.GetObject("Arc_VistaPrevia.Image")));
+            this.Arc_VistaPrevia.ImageTransparentColor = System.Drawing.Color.Black;
+            this.Arc_VistaPrevia.Name = "Arc_VistaPrevia";
+            this.Arc_VistaPrevia.Size = new System.Drawing.Size(276, 22);
+            this.Arc_VistaPrevia.Text = "&Vista previa de impresión";
+            // 
+            // Arc_Salir
+            // 
+            this.Arc_Salir.Image = global::MOFIN.Properties.Resources.Salir;
+            this.Arc_Salir.Name = "Arc_Salir";
+            this.Arc_Salir.Size = new System.Drawing.Size(276, 22);
+            this.Arc_Salir.Text = "&Salir";
+            this.Arc_Salir.Click += new System.EventHandler(this.ExitToolsStripMenuItem_Click);
+            // 
+            // Edi_Deshacer
+            // 
+            this.Edi_Deshacer.Image = ((System.Drawing.Image)(resources.GetObject("Edi_Deshacer.Image")));
+            this.Edi_Deshacer.ImageTransparentColor = System.Drawing.Color.Black;
+            this.Edi_Deshacer.Name = "Edi_Deshacer";
+            this.Edi_Deshacer.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.Edi_Deshacer.Size = new System.Drawing.Size(260, 22);
+            this.Edi_Deshacer.Text = "&Deshacer";
+            // 
+            // Edi_Rehacer
+            // 
+            this.Edi_Rehacer.Image = ((System.Drawing.Image)(resources.GetObject("Edi_Rehacer.Image")));
+            this.Edi_Rehacer.ImageTransparentColor = System.Drawing.Color.Black;
+            this.Edi_Rehacer.Name = "Edi_Rehacer";
+            this.Edi_Rehacer.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.Edi_Rehacer.Size = new System.Drawing.Size(260, 22);
+            this.Edi_Rehacer.Text = "&Rehacer";
+            // 
+            // Edi_Cortar
+            // 
+            this.Edi_Cortar.Image = ((System.Drawing.Image)(resources.GetObject("Edi_Cortar.Image")));
+            this.Edi_Cortar.ImageTransparentColor = System.Drawing.Color.Black;
+            this.Edi_Cortar.Name = "Edi_Cortar";
+            this.Edi_Cortar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.Edi_Cortar.Size = new System.Drawing.Size(260, 22);
+            this.Edi_Cortar.Text = "Cor&tar";
+            this.Edi_Cortar.Click += new System.EventHandler(this.CutToolStripMenuItem_Click);
+            // 
+            // Edi_Copiar
+            // 
+            this.Edi_Copiar.Image = ((System.Drawing.Image)(resources.GetObject("Edi_Copiar.Image")));
+            this.Edi_Copiar.ImageTransparentColor = System.Drawing.Color.Black;
+            this.Edi_Copiar.Name = "Edi_Copiar";
+            this.Edi_Copiar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.Edi_Copiar.Size = new System.Drawing.Size(260, 22);
+            this.Edi_Copiar.Text = "&Copiar";
+            this.Edi_Copiar.Click += new System.EventHandler(this.CopyToolStripMenuItem_Click);
+            // 
+            // Edi_Pegar
+            // 
+            this.Edi_Pegar.Image = ((System.Drawing.Image)(resources.GetObject("Edi_Pegar.Image")));
+            this.Edi_Pegar.ImageTransparentColor = System.Drawing.Color.Black;
+            this.Edi_Pegar.Name = "Edi_Pegar";
+            this.Edi_Pegar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.Edi_Pegar.Size = new System.Drawing.Size(260, 22);
+            this.Edi_Pegar.Text = "&Pegar";
+            this.Edi_Pegar.Click += new System.EventHandler(this.PasteToolStripMenuItem_Click);
+            // 
+            // Cli_Monitor
+            // 
+            this.Cli_Monitor.Image = global::MOFIN.Properties.Resources.MonitorClientes;
+            this.Cli_Monitor.Name = "Cli_Monitor";
+            this.Cli_Monitor.Size = new System.Drawing.Size(236, 22);
+            this.Cli_Monitor.Text = "Monitor de Clientes";
+            this.Cli_Monitor.Click += new System.EventHandler(this.monitorDeClientesToolStripMenuItem_Click);
+            // 
+            // Cli_Busqueda
+            // 
+            this.Cli_Busqueda.Image = ((System.Drawing.Image)(resources.GetObject("Cli_Busqueda.Image")));
+            this.Cli_Busqueda.Name = "Cli_Busqueda";
+            this.Cli_Busqueda.Size = new System.Drawing.Size(236, 22);
+            this.Cli_Busqueda.Text = "Búsqueda de Clientes";
+            this.Cli_Busqueda.Click += new System.EventHandler(this.búsquedaDeClientesToolStripMenuItem_Click);
+            // 
+            // Ope_Financieras
+            // 
+            this.Ope_Financieras.Image = global::MOFIN.Properties.Resources.MonitorFinanciero;
+            this.Ope_Financieras.Name = "Ope_Financieras";
+            this.Ope_Financieras.Size = new System.Drawing.Size(196, 22);
+            this.Ope_Financieras.Text = "Financieras";
+            this.Ope_Financieras.Click += new System.EventHandler(this.financierasToolStripMenuItem_Click);
+            // 
+            // Ope_Transaccionales
+            // 
+            this.Ope_Transaccionales.Image = global::MOFIN.Properties.Resources.MonitorOperacional;
+            this.Ope_Transaccionales.Name = "Ope_Transaccionales";
+            this.Ope_Transaccionales.Size = new System.Drawing.Size(196, 22);
+            this.Ope_Transaccionales.Text = "Transaccionales";
+            this.Ope_Transaccionales.Click += new System.EventHandler(this.Ope_Transaccionales_Click);
+            // 
+            // Tab_Maestros
+            // 
+            this.Tab_Maestros.Image = global::MOFIN.Properties.Resources.TablasMaestras;
+            this.Tab_Maestros.Name = "Tab_Maestros";
+            this.Tab_Maestros.Size = new System.Drawing.Size(196, 22);
+            this.Tab_Maestros.Text = "Tablas Maestras";
+            this.Tab_Maestros.Click += new System.EventHandler(this.tablasMaestrasToolStripMenuItem_Click);
+            // 
+            // Her_Usuarios
+            // 
+            this.Her_Usuarios.Image = global::MOFIN.Properties.Resources.Usuario;
+            this.Her_Usuarios.Name = "Her_Usuarios";
+            this.Her_Usuarios.Size = new System.Drawing.Size(236, 22);
+            this.Her_Usuarios.Text = "Usuarios";
+            this.Her_Usuarios.Click += new System.EventHandler(this.Her_Usuarios_Click);
+            // 
+            // Her_Grupos
+            // 
+            this.Her_Grupos.Image = global::MOFIN.Properties.Resources.Grupos;
+            this.Her_Grupos.Name = "Her_Grupos";
+            this.Her_Grupos.Size = new System.Drawing.Size(236, 22);
+            this.Her_Grupos.Text = "Gupos/Perfiles";
+            this.Her_Grupos.Click += new System.EventHandler(this.Her_Grupos_Click);
+            // 
+            // Her_Empresas
+            // 
+            this.Her_Empresas.Image = global::MOFIN.Properties.Resources.Empresas;
+            this.Her_Empresas.Name = "Her_Empresas";
+            this.Her_Empresas.Size = new System.Drawing.Size(236, 22);
+            this.Her_Empresas.Text = "Empresas";
+            this.Her_Empresas.Click += new System.EventHandler(this.Her_Empresas_Click);
+            // 
+            // Her_ParamGrles
+            // 
+            this.Her_ParamGrles.Image = global::MOFIN.Properties.Resources.OpcionesSistema;
+            this.Her_ParamGrles.Name = "Her_ParamGrles";
+            this.Her_ParamGrles.Size = new System.Drawing.Size(236, 22);
+            this.Her_ParamGrles.Text = "Parámetros Generales";
+            this.Her_ParamGrles.Click += new System.EventHandler(this.Her_ParamGrles_Click);
+            // 
             // BS_Grupos
             // 
             this.BS_Grupos.DataSource = typeof(MofinModeloEntorno.Grupos);
+            // 
+            // Mnu_Ordenes
+            // 
+            this.Mnu_Ordenes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Ord_LibroOrdenes});
+            this.Mnu_Ordenes.Name = "Mnu_Ordenes";
+            this.Mnu_Ordenes.Size = new System.Drawing.Size(76, 20);
+            this.Mnu_Ordenes.Text = "Ordenes";
+            // 
+            // Ord_LibroOrdenes
+            // 
+            this.Ord_LibroOrdenes.Name = "Ord_LibroOrdenes";
+            this.Ord_LibroOrdenes.Size = new System.Drawing.Size(204, 22);
+            this.Ord_LibroOrdenes.Text = "Libro de Ordenes";
+            this.Ord_LibroOrdenes.Click += new System.EventHandler(this.Ord_LibroOrdenes_Click);
             // 
             // Frm_Desktop
             // 
@@ -524,7 +522,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem Arc_ConfigImpres;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolStripMenuItem Ayu_Acerca;
         private System.Windows.Forms.ToolStripMenuItem Ven_MosHor;
         private System.Windows.Forms.ToolStripMenuItem Mnu_Archivo;
@@ -539,8 +536,6 @@
         private System.Windows.Forms.ToolStripMenuItem Edi_Copiar;
         private System.Windows.Forms.ToolStripMenuItem Edi_Pegar;
         private System.Windows.Forms.ToolStripMenuItem Edi_SelecTodo;
-        private System.Windows.Forms.ToolStripMenuItem Mnu_Ver;
-        private System.Windows.Forms.ToolStripMenuItem Ver_BarraStado;
         private System.Windows.Forms.ToolStripMenuItem Mnu_Herramientas;
         private System.Windows.Forms.ToolStripMenuItem Her_Usuarios;
         private System.Windows.Forms.ToolStripMenuItem Mnu_Ventanas;
@@ -564,6 +559,9 @@
         public System.Windows.Forms.ToolStripStatusLabel Lbl_Detalle1;
         private System.Windows.Forms.BindingSource BS_Grupos;
         private System.Windows.Forms.ToolStripMenuItem cambiaFondoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Her_ParamGrles;
+        private System.Windows.Forms.ToolStripMenuItem Mnu_Ordenes;
+        private System.Windows.Forms.ToolStripMenuItem Ord_LibroOrdenes;
     }
 }
 

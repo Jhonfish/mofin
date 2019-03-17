@@ -44,6 +44,8 @@ namespace MOFIN
             BS_Grupo_Opciones.DataSource = NGrupo_Opciones.ListarPorCodigo(MOFIN_LIB.Entorno.vs_Grupo);
             r_GrupoOpciones = BS_Grupo_Opciones.Current as Grupo_Opciones;
 
+            Lbl_Procesando.Text = "";
+
             this.Modo_Consulta();
 
             var vl_Controles = this.Tab_MonOperaciones.Controls;
@@ -132,7 +134,8 @@ namespace MOFIN
             r_Cliente = BS_CClientes.Current as C_Clientes;
             if (Grd_HistPerfOperac.Enabled == true)
             {
-                BS_OHistPerfOperac.MoveLast();
+                if (vl_EsNuevo)
+                    BS_OHistPerfOperac.MoveLast();
                 r_HistPerfOperac = BS_OHistPerfOperac.Current as O_HistPerfOperac;
                 r_HistPerfOperac.Tipo_Perfil = 1;
                 r_HistPerfOperac.Cod_Cliente = r_Cliente.Codigo;
@@ -143,7 +146,8 @@ namespace MOFIN
             }
             else
             {
-                BS_OObservaciones.MoveLast();
+                if (vl_EsNuevo)
+                    BS_OObservaciones.MoveLast();
                 r_Observaciones = BS_OObservaciones.Current as O_Observaciones;
                 r_Observaciones.Tipo_Perfil = 1;
                 r_Observaciones.Cod_Cliente = r_Cliente.Codigo;
@@ -167,7 +171,23 @@ namespace MOFIN
         }
         private void Chk_ElimOper_CheckedChanged(object sender, EventArgs e)
         {
-            this.Grd_DetOperaciones.AllowUserToDeleteRows = this.Chk_ElimOper.Checked;
+            if (!this.Chk_ElimOper.Checked)
+            {
+                string vl_NroRegElim = Grd_DetOperaciones.SelectedRows.Count.ToString();
+                if (MessageBox.Show(Funciones._Mens_Idioma(9017) + "\n\n" + vl_NroRegElim, 
+                            Funciones._Mens_Idioma(201), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    O_Operfinancieras r_OperFinancieras = new O_Operfinancieras();
+                    foreach (DataGridViewRow Registro in Grd_DetOperaciones.SelectedRows)
+                    {
+                        r_OperFinancieras.ID_Sistema = (int)Registro.Cells["ID_Sistema"].Value; 
+                        r_OperFinancieras.Cod_Cliente = Registro.Cells["Col3_CodCliente"].Value.ToString();
+                        NO_Operfinancieras.Elimiar(r_OperFinancieras);
+                    }
+                    this.Btn_MostrarTodos_Click(null, null);
+                    MessageBox.Show(vl_NroRegElim +" "+ Funciones._Mens_Idioma(9018), Funciones._Mens_Idioma(203), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
             this.Grd_DetOperaciones.RowHeadersVisible = this.Chk_ElimOper.Checked;
         }
 
@@ -235,14 +255,77 @@ namespace MOFIN
 
         private void Btn_Importar_Click(object sender, EventArgs e)
         {
-            OpenFileDialog vl_ArchivoImport = new OpenFileDialog();
-            string vl_Tipoarchivo = "Archivo de Texto (*.txt)| *.TXT |Archivos CSV (*.CSV)| *.CSV |Archivos de Excel (*.XLS?)| *.XLS?";
-            vl_ArchivoImport.Filter = vl_Tipoarchivo;
-            // vl_ArchivoImport.CheckFileExists = false;
-            if (vl_ArchivoImport.ShowDialog() == DialogResult.OK)
-                MessageBox.Show(vl_ArchivoImport.FileName);
-            //this.Txt_NmeArchExport.Text = vl_ArchivoImport.FileName;
+            MessageBox.Show(Funciones._Mens_Idioma(13900));
 
+           // List<O_Operfinancieras> Lst_Importa = new List<O_Operfinancieras>();
+            O_Operfinancieras r_OperFinancieras = new O_Operfinancieras();
+
+
+            OpenFileDialog vl_ArchivoImport = new OpenFileDialog();
+                                           
+            string vl_Tipoarchivo = "Archivos de Excel (*.XLS?)|*.XLS?|Archivo de Texto (*.txt)|*.TXT|Archivos CSV (*.CSV)|*.CSV";
+            vl_ArchivoImport.Filter = vl_Tipoarchivo;
+            if (vl_ArchivoImport.ShowDialog() == DialogResult.OK)
+            {
+                Lbl_Procesando.Text = Funciones._Mens_Idioma(1030);
+                Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+                Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Open(vl_ArchivoImport.FileName);   
+                Microsoft.Office.Interop.Excel._Worksheet worksheet = workbook.Sheets[1] as Microsoft.Office.Interop.Excel.Worksheet;
+                worksheet = workbook.Sheets[1];
+                worksheet = workbook.ActiveSheet;
+
+                int vl_TotalReg = 1;
+                while (true)
+                {
+                    //Lbl_Procesando.Text = Funciones._Mens_Idioma(1029) + vl_Indice.ToString();
+                    if (worksheet.Cells[vl_TotalReg, 1].Value() == "" | worksheet.Cells[vl_TotalReg, 1].Value() == null)
+                        break;
+                    Lbl_Procesando.Text = Funciones._Mens_Idioma(1030)+ " "+vl_TotalReg.ToString();
+                    vl_TotalReg++;
+                }
+                vl_TotalReg--;
+                int vl_Indice = 0;
+                while(true)
+                {
+                    vl_Indice++;
+                    if (worksheet.Cells[vl_Indice, 1].Value() == "" | worksheet.Cells[vl_Indice, 1].Value() == null)
+                        break;
+                    else
+                    {
+                        Lbl_Procesando.Text = Funciones._Mens_Idioma(1029) + vl_Indice.ToString() + " / " + vl_TotalReg.ToString();
+
+                         r_OperFinancieras.Tipo_Orden = worksheet.Cells[vl_Indice, 1].Value().Trim();
+                         r_OperFinancieras.Fec_Pacto = (worksheet.Cells[vl_Indice, 2].Value() == null | worksheet.Cells[vl_Indice, 2].GetType().Name != "DateTime") ? DateTime.Today.Date : worksheet.Cells[vl_Indice, 2].Value();
+                         r_OperFinancieras.Doc_ID = worksheet.Cells[vl_Indice, 3].Value() == null ? "" : worksheet.Cells[vl_Indice, 3].Value().Trim(); 
+                         r_OperFinancieras.Cod_Cliente = worksheet.Cells[vl_Indice, 5].Value() == null ? "" : worksheet.Cells[vl_Indice, 5].Value().Trim(); 
+                         r_OperFinancieras.Nme_Cliente = worksheet.Cells[vl_Indice, 6].Value() == null ? "" : worksheet.Cells[vl_Indice, 6].Value().Trim();
+                         r_OperFinancieras.Fec_Cierre = (worksheet.Cells[vl_Indice, 7].Value() == null | worksheet.Cells[vl_Indice, 7].GetType().Name != "DateTime") ? DateTime.Today.Date : worksheet.Cells[vl_Indice, 7].Value();
+                         r_OperFinancieras.Fec_Valor = (worksheet.Cells[vl_Indice, 8].Value() == null | worksheet.Cells[vl_Indice, 8].GetType().Name != "DateTime") ? DateTime.Today.Date : worksheet.Cells[vl_Indice, 8].Value();
+                         r_OperFinancieras.Mto_Solicitado = worksheet.Cells[vl_Indice, 4].Value() == null ? 0 : (Decimal)worksheet.Cells[vl_Indice, 4].Value();
+                         r_OperFinancieras.Mto_Pactado = worksheet.Cells[vl_Indice, 10].Value() == null ? 0 : (Decimal)worksheet.Cells[vl_Indice, 10].Value();
+                         r_OperFinancieras.Cod_Titulo = worksheet.Cells[vl_Indice, 9].Value() == null ? "" : worksheet.Cells[vl_Indice, 9].Value().Substring(0, 20);
+                         r_OperFinancieras.Precio_USD = worksheet.Cells[vl_Indice, 11].Value() == null ? 0 : (Decimal)worksheet.Cells[vl_Indice, 11].Value();
+                         r_OperFinancieras.Efectivo = worksheet.Cells[vl_Indice, 12].Value() == null ? 0 : (Decimal)worksheet.Cells[vl_Indice, 12].Value();
+                         r_OperFinancieras.Comision_Clie = worksheet.Cells[vl_Indice, 13].Value() == null ? 0 : (Decimal)worksheet.Cells[vl_Indice, 13].Value();
+                         r_OperFinancieras.Cod_Contraparte = worksheet.Cells[vl_Indice, 14].Value() == null ? "" : worksheet.Cells[vl_Indice, 14].Value().Trim().Substring(0, 10); ;
+                         r_OperFinancieras.Nme_Contraparte = worksheet.Cells[vl_Indice, 15].Value() == null ? "" : worksheet.Cells[vl_Indice, 15].Value().Trim().Substring(0, 50); ;
+                         r_OperFinancieras.Agencia = worksheet.Cells[vl_Indice, 16].Value() == null ? "" : worksheet.Cells[vl_Indice, 16].Value().Trim().Substring(0, 30); ;
+                         r_OperFinancieras.Sec_Operac = worksheet.Cells[vl_Indice, 17].Value();
+                         r_OperFinancieras.Cod_Bloq = worksheet.Cells[vl_Indice, 18].Value();
+                         r_OperFinancieras.Nro_OrdBCV = worksheet.Cells[vl_Indice, 19].Value();
+                         r_OperFinancieras.Cta_USD = worksheet.Cells[vl_Indice, 20].Value() == null ? "" : worksheet.Cells[vl_Indice, 20].Value().Trim().Substring(0, 35);
+                         r_OperFinancieras.Comprobante = "";
+                         r_OperFinancieras.Hora_carga = worksheet.Cells[vl_Indice, 21].Value() ?? DateTime.Now;  
+
+                        NO_Operfinancieras.Insertar(r_OperFinancieras);
+                    }
+                } 
+
+                workbook.Close(false);
+                app.Quit();
+                Lbl_Procesando.Text = "";
+                this.Btn_MostrarTodos_Click(null, null);
+            }
         }
         private void Grd_ClieInfInversor_CurrentCellChanged(object sender, EventArgs e)
         {
@@ -367,13 +450,16 @@ namespace MOFIN
             public decimal PerfTrans_Mto { get; set; }
             public decimal Aportes { get; set; }
             public decimal Retiros { get; set; }
-            public int PerfTrans_Nro { get; set; }
-            public int NroOperac { get; set; }
+            public short PerfTrans_Nro { get; set; }
+            public short NroOperac { get; set; }
             public string Observ { get; set; }
         }
         private void Btn_ProcReporte_Click(object sender, EventArgs e)
         {
             //BS_CClientes.DataSource = NC_Clientes.Listar();
+
+            ListaReporte r_OpeFin_Clte = new ListaReporte();
+
             r_Cliente = BS_CClientes.Current as C_Clientes;
             List<ListaReporte> Lst_Reporte = new List<ListaReporte>();
 
@@ -562,10 +648,13 @@ namespace MOFIN
                     PerfTrans_Mto = vl_PerFinMonto,
                     Aportes = vl_Abonos,
                     Retiros = vl_Retiros,
-                    PerfTrans_Nro = vl_PerFinNrOper,
-                    NroOperac = vl_NroOper,
+                    PerfTrans_Nro = (short)vl_PerFinNrOper,
+                    NroOperac = (short)vl_NroOper,
                     Observ = vl_Obsers
                 });
+                r_OpeFin_Clte = Lst_Reporte.Last();
+                BS_OpeFinanc_Clientes.Add(r_OpeFin_Clte);
+
             } while (vl_GrupoFHasta.Date < vl_FHasta.Date);
 
             BS_OObservaciones.DataSource = NO_Observaciones.Listar();
@@ -582,7 +671,7 @@ namespace MOFIN
             cryRpt.Load("PUT CRYSTAL REPORT PATHHERE\\CrystalReport1.rpt");
                 crystalReportViewer1.ReportSource = cryRpt;
                 crystalReportViewer1.Refresh();*/
-        }
+                }
 
         private void Pag3_Enter(object sender, EventArgs e)
         {
@@ -882,5 +971,6 @@ namespace MOFIN
         {
             Funciones.Exportar_Excel(Grd_DetOperaciones);
         }
+
     }
 }

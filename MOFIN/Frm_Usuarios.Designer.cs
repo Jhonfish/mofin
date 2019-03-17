@@ -56,7 +56,6 @@
             this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_Usuarios = new System.Windows.Forms.BindingSource(this.components);
             this.Pan_Elementos = new System.Windows.Forms.Panel();
-            this.Chk_ConfigBtnsBarraHerram = new System.Windows.Forms.CheckBox();
             this.Pan_BotAcpcan_EmpAcc = new System.Windows.Forms.Panel();
             this.Btn_EmpAcc_Cancelar = new System.Windows.Forms.Button();
             this.Btn_EmpAcc_Aceptar = new System.Windows.Forms.Button();
@@ -73,12 +72,6 @@
             this.Grp_Pais = new System.Windows.Forms.GroupBox();
             this.Opc_Pais2 = new System.Windows.Forms.RadioButton();
             this.Opc_Pais1 = new System.Windows.Forms.RadioButton();
-            this.Grp_Idioma = new System.Windows.Forms.GroupBox();
-            this.Opc_Idioma2 = new System.Windows.Forms.RadioButton();
-            this.Opc_Idioma1 = new System.Windows.Forms.RadioButton();
-            this.Grp_Desktop = new System.Windows.Forms.GroupBox();
-            this.Opc_Desktop2 = new System.Windows.Forms.RadioButton();
-            this.Opc_Desktop1 = new System.Windows.Forms.RadioButton();
             this.Txt_IDUsuario = new System.Windows.Forms.TextBox();
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
             this.Txt_Password = new System.Windows.Forms.TextBox();
@@ -87,6 +80,15 @@
             this.Btn_EmpAcc_Eli = new System.Windows.Forms.Button();
             this.Btn_EmpAcc_Mod = new System.Windows.Forms.Button();
             this.BS_Grupo_Opciones = new System.Windows.Forms.BindingSource(this.components);
+            this.Pan_ElementControlados = new System.Windows.Forms.Panel();
+            this.Grp_Idioma = new System.Windows.Forms.GroupBox();
+            this.Opc_Idioma2 = new System.Windows.Forms.RadioButton();
+            this.Opc_Idioma1 = new System.Windows.Forms.RadioButton();
+            this.Grp_Desktop = new System.Windows.Forms.GroupBox();
+            this.Opc_Desktop2 = new System.Windows.Forms.RadioButton();
+            this.Opc_Desktop1 = new System.Windows.Forms.RadioButton();
+            this.Chk_ConfigBtnsBarraHerram = new System.Windows.Forms.CheckBox();
+            this.BS_OpcSistema = new System.Windows.Forms.BindingSource(this.components);
             this.TS_BarraHerramientas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grd_Usuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Usuarios)).BeginInit();
@@ -98,10 +100,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.BS_Emp_Accesos)).BeginInit();
             this.Grp_FormatoFecha.SuspendLayout();
             this.Grp_Pais.SuspendLayout();
-            this.Grp_Idioma.SuspendLayout();
-            this.Grp_Desktop.SuspendLayout();
             this.Pan_BtnsEmpAccesos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).BeginInit();
+            this.Pan_ElementControlados.SuspendLayout();
+            this.Grp_Idioma.SuspendLayout();
+            this.Grp_Desktop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_OpcSistema)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_IDUsuario
@@ -181,7 +185,7 @@
             this.Btn_Cancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Btn_Cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Cancelar.Location = new System.Drawing.Point(183, 496);
+            this.Btn_Cancelar.Location = new System.Drawing.Point(183, 504);
             this.Btn_Cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Cancelar.Name = "Btn_Cancelar";
             this.Btn_Cancelar.Size = new System.Drawing.Size(38, 38);
@@ -200,7 +204,7 @@
             this.Btn_Aceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Btn_Aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Btn_Aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Aceptar.Location = new System.Drawing.Point(101, 496);
+            this.Btn_Aceptar.Location = new System.Drawing.Point(101, 504);
             this.Btn_Aceptar.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Aceptar.Name = "Btn_Aceptar";
             this.Btn_Aceptar.Size = new System.Drawing.Size(38, 38);
@@ -349,7 +353,7 @@
             this.Grd_Usuarios.Name = "Grd_Usuarios";
             this.Grd_Usuarios.ReadOnly = true;
             this.Grd_Usuarios.RowHeadersVisible = false;
-            this.Grd_Usuarios.Size = new System.Drawing.Size(298, 412);
+            this.Grd_Usuarios.Size = new System.Drawing.Size(298, 421);
             this.Grd_Usuarios.TabIndex = 8;
             this.Grd_Usuarios.CurrentCellChanged += new System.EventHandler(this.Grd_Usuarios_CurrentCellChanged);
             // 
@@ -379,33 +383,17 @@
             // 
             // Pan_Elementos
             // 
-            this.Pan_Elementos.Controls.Add(this.Chk_ConfigBtnsBarraHerram);
             this.Pan_Elementos.Controls.Add(this.Pan_BotAcpcan_EmpAcc);
             this.Pan_Elementos.Controls.Add(this.Grd_EmpAccesos);
-            this.Pan_Elementos.Controls.Add(this.Grp_FormatoFecha);
-            this.Pan_Elementos.Controls.Add(this.Grp_Pais);
-            this.Pan_Elementos.Controls.Add(this.Grp_Idioma);
-            this.Pan_Elementos.Controls.Add(this.Grp_Desktop);
             this.Pan_Elementos.Controls.Add(this.Txt_IDUsuario);
             this.Pan_Elementos.Controls.Add(this.Txt_Nombre);
             this.Pan_Elementos.Controls.Add(this.Txt_Password);
             this.Pan_Elementos.Controls.Add(this.Pan_BtnsEmpAccesos);
+            this.Pan_Elementos.Controls.Add(this.Pan_ElementControlados);
             this.Pan_Elementos.Location = new System.Drawing.Point(330, 75);
             this.Pan_Elementos.Name = "Pan_Elementos";
             this.Pan_Elementos.Size = new System.Drawing.Size(490, 459);
             this.Pan_Elementos.TabIndex = 34;
-            // 
-            // Chk_ConfigBtnsBarraHerram
-            // 
-            this.Chk_ConfigBtnsBarraHerram.AutoSize = true;
-            this.Chk_ConfigBtnsBarraHerram.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Chk_ConfigBtnsBarraHerram.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Usuarios, "Cnfg_BarraHerramientas", true));
-            this.Chk_ConfigBtnsBarraHerram.Location = new System.Drawing.Point(8, 254);
-            this.Chk_ConfigBtnsBarraHerram.Name = "Chk_ConfigBtnsBarraHerram";
-            this.Chk_ConfigBtnsBarraHerram.Size = new System.Drawing.Size(427, 20);
-            this.Chk_ConfigBtnsBarraHerram.TabIndex = 53;
-            this.Chk_ConfigBtnsBarraHerram.Text = "Mostrar Botones Navegacion en Barra de Herramienta";
-            this.Chk_ConfigBtnsBarraHerram.UseVisualStyleBackColor = true;
             // 
             // Pan_BotAcpcan_EmpAcc
             // 
@@ -524,7 +512,7 @@
             // 
             this.Grp_FormatoFecha.Controls.Add(this.Opc_FormFec2);
             this.Grp_FormatoFecha.Controls.Add(this.Opc_FormFec1);
-            this.Grp_FormatoFecha.Location = new System.Drawing.Point(108, 191);
+            this.Grp_FormatoFecha.Location = new System.Drawing.Point(86, 76);
             this.Grp_FormatoFecha.Name = "Grp_FormatoFecha";
             this.Grp_FormatoFecha.Size = new System.Drawing.Size(132, 55);
             this.Grp_FormatoFecha.TabIndex = 49;
@@ -556,7 +544,7 @@
             // 
             this.Grp_Pais.Controls.Add(this.Opc_Pais2);
             this.Grp_Pais.Controls.Add(this.Opc_Pais1);
-            this.Grp_Pais.Location = new System.Drawing.Point(312, 191);
+            this.Grp_Pais.Location = new System.Drawing.Point(290, 76);
             this.Grp_Pais.Name = "Grp_Pais";
             this.Grp_Pais.Size = new System.Drawing.Size(132, 55);
             this.Grp_Pais.TabIndex = 48;
@@ -583,70 +571,6 @@
             this.Opc_Pais1.TabStop = true;
             this.Opc_Pais1.Text = "Venezuela";
             this.Opc_Pais1.UseVisualStyleBackColor = true;
-            // 
-            // Grp_Idioma
-            // 
-            this.Grp_Idioma.Controls.Add(this.Opc_Idioma2);
-            this.Grp_Idioma.Controls.Add(this.Opc_Idioma1);
-            this.Grp_Idioma.Location = new System.Drawing.Point(312, 114);
-            this.Grp_Idioma.Name = "Grp_Idioma";
-            this.Grp_Idioma.Size = new System.Drawing.Size(132, 55);
-            this.Grp_Idioma.TabIndex = 47;
-            this.Grp_Idioma.TabStop = false;
-            // 
-            // Opc_Idioma2
-            // 
-            this.Opc_Idioma2.AutoSize = true;
-            this.Opc_Idioma2.Location = new System.Drawing.Point(10, 27);
-            this.Opc_Idioma2.Name = "Opc_Idioma2";
-            this.Opc_Idioma2.Size = new System.Drawing.Size(74, 20);
-            this.Opc_Idioma2.TabIndex = 1;
-            this.Opc_Idioma2.TabStop = true;
-            this.Opc_Idioma2.Text = "Inglés";
-            this.Opc_Idioma2.UseVisualStyleBackColor = true;
-            // 
-            // Opc_Idioma1
-            // 
-            this.Opc_Idioma1.AutoSize = true;
-            this.Opc_Idioma1.Location = new System.Drawing.Point(10, 10);
-            this.Opc_Idioma1.Name = "Opc_Idioma1";
-            this.Opc_Idioma1.Size = new System.Drawing.Size(82, 20);
-            this.Opc_Idioma1.TabIndex = 0;
-            this.Opc_Idioma1.TabStop = true;
-            this.Opc_Idioma1.Text = "Español";
-            this.Opc_Idioma1.UseVisualStyleBackColor = true;
-            // 
-            // Grp_Desktop
-            // 
-            this.Grp_Desktop.Controls.Add(this.Opc_Desktop2);
-            this.Grp_Desktop.Controls.Add(this.Opc_Desktop1);
-            this.Grp_Desktop.Location = new System.Drawing.Point(108, 114);
-            this.Grp_Desktop.Name = "Grp_Desktop";
-            this.Grp_Desktop.Size = new System.Drawing.Size(132, 55);
-            this.Grp_Desktop.TabIndex = 46;
-            this.Grp_Desktop.TabStop = false;
-            // 
-            // Opc_Desktop2
-            // 
-            this.Opc_Desktop2.AutoSize = true;
-            this.Opc_Desktop2.Location = new System.Drawing.Point(10, 27);
-            this.Opc_Desktop2.Name = "Opc_Desktop2";
-            this.Opc_Desktop2.Size = new System.Drawing.Size(98, 20);
-            this.Opc_Desktop2.TabIndex = 1;
-            this.Opc_Desktop2.TabStop = true;
-            this.Opc_Desktop2.Text = "Aleatorio";
-            this.Opc_Desktop2.UseVisualStyleBackColor = true;
-            // 
-            // Opc_Desktop1
-            // 
-            this.Opc_Desktop1.AutoSize = true;
-            this.Opc_Desktop1.Location = new System.Drawing.Point(10, 10);
-            this.Opc_Desktop1.Name = "Opc_Desktop1";
-            this.Opc_Desktop1.Size = new System.Drawing.Size(58, 20);
-            this.Opc_Desktop1.TabIndex = 0;
-            this.Opc_Desktop1.TabStop = true;
-            this.Opc_Desktop1.Text = "Fijo";
-            this.Opc_Desktop1.UseVisualStyleBackColor = true;
             // 
             // Txt_IDUsuario
             // 
@@ -747,13 +671,103 @@
             // 
             this.BS_Grupo_Opciones.DataSource = typeof(MofinModeloEntorno.Grupo_Opciones);
             // 
+            // Pan_ElementControlados
+            // 
+            this.Pan_ElementControlados.Controls.Add(this.Chk_ConfigBtnsBarraHerram);
+            this.Pan_ElementControlados.Controls.Add(this.Grp_Idioma);
+            this.Pan_ElementControlados.Controls.Add(this.Grp_Desktop);
+            this.Pan_ElementControlados.Controls.Add(this.Grp_FormatoFecha);
+            this.Pan_ElementControlados.Controls.Add(this.Grp_Pais);
+            this.Pan_ElementControlados.Location = new System.Drawing.Point(22, 118);
+            this.Pan_ElementControlados.Name = "Pan_ElementControlados";
+            this.Pan_ElementControlados.Size = new System.Drawing.Size(432, 169);
+            this.Pan_ElementControlados.TabIndex = 54;
+            // 
+            // Grp_Idioma
+            // 
+            this.Grp_Idioma.Controls.Add(this.Opc_Idioma2);
+            this.Grp_Idioma.Controls.Add(this.Opc_Idioma1);
+            this.Grp_Idioma.Location = new System.Drawing.Point(290, 3);
+            this.Grp_Idioma.Name = "Grp_Idioma";
+            this.Grp_Idioma.Size = new System.Drawing.Size(132, 55);
+            this.Grp_Idioma.TabIndex = 51;
+            this.Grp_Idioma.TabStop = false;
+            // 
+            // Opc_Idioma2
+            // 
+            this.Opc_Idioma2.AutoSize = true;
+            this.Opc_Idioma2.Location = new System.Drawing.Point(10, 27);
+            this.Opc_Idioma2.Name = "Opc_Idioma2";
+            this.Opc_Idioma2.Size = new System.Drawing.Size(74, 20);
+            this.Opc_Idioma2.TabIndex = 1;
+            this.Opc_Idioma2.TabStop = true;
+            this.Opc_Idioma2.Text = "Inglés";
+            this.Opc_Idioma2.UseVisualStyleBackColor = true;
+            // 
+            // Opc_Idioma1
+            // 
+            this.Opc_Idioma1.AutoSize = true;
+            this.Opc_Idioma1.Location = new System.Drawing.Point(10, 10);
+            this.Opc_Idioma1.Name = "Opc_Idioma1";
+            this.Opc_Idioma1.Size = new System.Drawing.Size(82, 20);
+            this.Opc_Idioma1.TabIndex = 0;
+            this.Opc_Idioma1.TabStop = true;
+            this.Opc_Idioma1.Text = "Español";
+            this.Opc_Idioma1.UseVisualStyleBackColor = true;
+            // 
+            // Grp_Desktop
+            // 
+            this.Grp_Desktop.Controls.Add(this.Opc_Desktop2);
+            this.Grp_Desktop.Controls.Add(this.Opc_Desktop1);
+            this.Grp_Desktop.Location = new System.Drawing.Point(86, 3);
+            this.Grp_Desktop.Name = "Grp_Desktop";
+            this.Grp_Desktop.Size = new System.Drawing.Size(132, 55);
+            this.Grp_Desktop.TabIndex = 50;
+            this.Grp_Desktop.TabStop = false;
+            // 
+            // Opc_Desktop2
+            // 
+            this.Opc_Desktop2.AutoSize = true;
+            this.Opc_Desktop2.Location = new System.Drawing.Point(10, 27);
+            this.Opc_Desktop2.Name = "Opc_Desktop2";
+            this.Opc_Desktop2.Size = new System.Drawing.Size(98, 20);
+            this.Opc_Desktop2.TabIndex = 1;
+            this.Opc_Desktop2.TabStop = true;
+            this.Opc_Desktop2.Text = "Aleatorio";
+            this.Opc_Desktop2.UseVisualStyleBackColor = true;
+            // 
+            // Opc_Desktop1
+            // 
+            this.Opc_Desktop1.AutoSize = true;
+            this.Opc_Desktop1.Location = new System.Drawing.Point(10, 10);
+            this.Opc_Desktop1.Name = "Opc_Desktop1";
+            this.Opc_Desktop1.Size = new System.Drawing.Size(58, 20);
+            this.Opc_Desktop1.TabIndex = 0;
+            this.Opc_Desktop1.TabStop = true;
+            this.Opc_Desktop1.Text = "Fijo";
+            this.Opc_Desktop1.UseVisualStyleBackColor = true;
+            // 
+            // Chk_ConfigBtnsBarraHerram
+            // 
+            this.Chk_ConfigBtnsBarraHerram.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.BS_Usuarios, "Cnfg_BarraHerramientas", true));
+            this.Chk_ConfigBtnsBarraHerram.Location = new System.Drawing.Point(86, 132);
+            this.Chk_ConfigBtnsBarraHerram.Name = "Chk_ConfigBtnsBarraHerram";
+            this.Chk_ConfigBtnsBarraHerram.Size = new System.Drawing.Size(250, 37);
+            this.Chk_ConfigBtnsBarraHerram.TabIndex = 54;
+            this.Chk_ConfigBtnsBarraHerram.Text = "Mostrar Botones Navegacion en Barra de Herramienta";
+            this.Chk_ConfigBtnsBarraHerram.UseVisualStyleBackColor = true;
+            // 
+            // BS_OpcSistema
+            // 
+            this.BS_OpcSistema.DataSource = typeof(MofinModeloEntorno.Opc_Sistema);
+            // 
             // Frm_Usuarios
             // 
             this.AcceptButton = this.Btn_Aceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(827, 537);
+            this.ClientSize = new System.Drawing.Size(840, 550);
             this.Controls.Add(this.Lbl_PaisUso);
             this.Controls.Add(this.Lbl_FormatoFecha);
             this.Controls.Add(this.Lbl_FondoEscritorio);
@@ -794,12 +808,14 @@
             this.Grp_FormatoFecha.PerformLayout();
             this.Grp_Pais.ResumeLayout(false);
             this.Grp_Pais.PerformLayout();
+            this.Pan_BtnsEmpAccesos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).EndInit();
+            this.Pan_ElementControlados.ResumeLayout(false);
             this.Grp_Idioma.ResumeLayout(false);
             this.Grp_Idioma.PerformLayout();
             this.Grp_Desktop.ResumeLayout(false);
             this.Grp_Desktop.PerformLayout();
-            this.Pan_BtnsEmpAccesos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.BS_Grupo_Opciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_OpcSistema)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -830,12 +846,6 @@
         private System.Windows.Forms.GroupBox Grp_Pais;
         private System.Windows.Forms.RadioButton Opc_Pais2;
         private System.Windows.Forms.RadioButton Opc_Pais1;
-        private System.Windows.Forms.GroupBox Grp_Idioma;
-        private System.Windows.Forms.RadioButton Opc_Idioma2;
-        private System.Windows.Forms.RadioButton Opc_Idioma1;
-        private System.Windows.Forms.GroupBox Grp_Desktop;
-        private System.Windows.Forms.RadioButton Opc_Desktop2;
-        private System.Windows.Forms.RadioButton Opc_Desktop1;
         private System.Windows.Forms.TextBox Txt_IDUsuario;
         private System.Windows.Forms.TextBox Txt_Nombre;
         private System.Windows.Forms.TextBox Txt_Password;
@@ -863,6 +873,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn iDUsuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn Col_Empresa;
         private System.Windows.Forms.DataGridViewComboBoxColumn Col_Grupo;
+        private System.Windows.Forms.Panel Pan_ElementControlados;
         private System.Windows.Forms.CheckBox Chk_ConfigBtnsBarraHerram;
+        private System.Windows.Forms.GroupBox Grp_Idioma;
+        private System.Windows.Forms.RadioButton Opc_Idioma2;
+        private System.Windows.Forms.RadioButton Opc_Idioma1;
+        private System.Windows.Forms.GroupBox Grp_Desktop;
+        private System.Windows.Forms.RadioButton Opc_Desktop2;
+        private System.Windows.Forms.RadioButton Opc_Desktop1;
+        private System.Windows.Forms.BindingSource BS_OpcSistema;
     }
 }

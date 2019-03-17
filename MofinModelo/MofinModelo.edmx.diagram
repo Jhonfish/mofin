@@ -4,40 +4,45 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0f157589d4f8407db023ae134de8e6b4" Name="Diagram1" ZoomLevel="100">
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.B_Buscados" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="0f157589d4f8407db023ae134de8e6b4" Name="Diagram1" ZoomLevel="75">
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.B_Buscados" Width="1.5" PointX="5" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModelo.C_Clientes" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.C_FirBenAcc" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.C_HistActClientes" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.C_ValorItemConsExp" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_ActivComercial" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_Antiguedad" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_Criptomonedas" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_Edad" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_Estados" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_NivelRiesgo" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_Pais" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_PEP" Width="1.5" PointX="7.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_Productos" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_Profesiones" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_Servicios" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_TipoDocID" Width="1.5" PointX="11.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_TipoEstructuraEmpresa" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.C_FirBenAcc" Width="1.5" PointX="2.875" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.C_HistActClientes" Width="1.5" PointX="2.875" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.C_ValorItemConsExp" Width="1.75" PointX="5" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_ActivComercial" Width="1.5" PointX="7.125" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_Antiguedad" Width="1.5" PointX="7.125" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_Criptomonedas" Width="1.5" PointX="9.125" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_Edad" Width="1.5" PointX="9" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_Estados" Width="1.5" PointX="9.125" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_NivelRiesgo" Width="1.5" PointX="11.375" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_Pais" Width="1.5" PointX="7.125" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_PEP" Width="1.5" PointX="7.125" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_Productos" Width="1.5" PointX="9" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_Profesiones" Width="1.5" PointX="11.375" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_Servicios" Width="1.5" PointX="11.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_TipoDocID" Width="1.5" PointX="11.125" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_TipoEstructuraEmpresa" Width="1.5" PointX="13" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModelo.M_TipoPersJuridica" Width="1.5" PointX="11.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_VolOperPersJur" Width="1.5" PointX="13.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_VolOperPersJur" Width="1.5" PointX="13" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="MonitorOperacionesModelo.M_VolOperPersNat" Width="1.5" PointX="5.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.O_HistPerfOperac" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.O_Observaciones" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.O_Operfinancieras" Width="1.5" PointX="9.625" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.O_OperTransaccionales" Width="1.5" PointX="7.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.O_RepOperacional" Width="1.5" PointX="13.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.O_HistPerfOperac" Width="1.5" PointX="2.875" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.O_Observaciones" Width="1.5" PointX="2.875" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.O_Operfinancieras" Width="1.875" PointX="9.625" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.O_OperTransaccionales" Width="2" PointX="7.5" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.O_RepOperacional" Width="1.875" PointX="12.875" PointY="8.5" IsExpanded="true" />
         <AssociationConnector Association="MonitorOperacionesModelo.FK_C_HistActClientes_C_Clientes" ManuallyRouted="false" />
         <AssociationConnector Association="MonitorOperacionesModelo.FK_O_HistPerfOperac_C_Clientes" ManuallyRouted="false" />
         <AssociationConnector Association="MonitorOperacionesModelo.FK_O_Observaciones_C_Clientes" ManuallyRouted="false" />
         <AssociationConnector Association="MonitorOperacionesModelo.FK_M_Estados_M_Pais" ManuallyRouted="false" />
         <AssociationConnector Association="MonitorOperacionesModelo.FK_C_FirBenAcc_C_Clientes" />
-        <EntityTypeShape EntityType="MonitorOperacionesModelo.C_ProdServ" Width="1.5" PointX="3" PointY="19" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.C_ProdServ" Width="1.5" PointX="2.875" PointY="12.875" />
         <AssociationConnector Association="MonitorOperacionesModelo.FK_C_ProdServ_C_Clientes" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_Titulos" Width="1.5" PointX="13" PointY="6" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.M_TipoOrdenes" Width="1.5" PointX="15.25" PointY="6.25" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.Exp_Clientes" Width="1.5" PointX="12.375" PointY="15.75" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.Exp_LibroOrdenes" Width="1.5" PointX="14.375" PointY="15.75" />
+        <EntityTypeShape EntityType="MonitorOperacionesModelo.L_LibroOrdenes" Width="1.5" PointX="15.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

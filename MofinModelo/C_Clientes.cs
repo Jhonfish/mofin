@@ -49,26 +49,6 @@ namespace MofinModelo
         public Nullable<short> IG_VolumOperac { get; set; }
         public Nullable<short> IG_Criptomoneda { get; set; }
         public Nullable<short> IG_TipoEstructura { get; set; }
-        public Nullable<bool> IG_Servicio1 { get; set; }
-        public Nullable<bool> IG_Servicio2 { get; set; }
-        public Nullable<bool> IG_Servicio3 { get; set; }
-        public Nullable<bool> IG_Servicio4 { get; set; }
-        public Nullable<bool> IG_Servicio5 { get; set; }
-        public Nullable<bool> IG_Servicio6 { get; set; }
-        public Nullable<bool> IG_Servicio7 { get; set; }
-        public Nullable<bool> IG_Servicio8 { get; set; }
-        public Nullable<bool> IG_Servicio9 { get; set; }
-        public Nullable<bool> IG_Servicio10 { get; set; }
-        public Nullable<bool> IG_Producto1 { get; set; }
-        public Nullable<bool> IG_Producto2 { get; set; }
-        public Nullable<bool> IG_Producto3 { get; set; }
-        public Nullable<bool> IG_Producto4 { get; set; }
-        public Nullable<bool> IG_Producto5 { get; set; }
-        public Nullable<bool> IG_Producto6 { get; set; }
-        public Nullable<bool> IG_Producto7 { get; set; }
-        public Nullable<bool> IG_Producto8 { get; set; }
-        public Nullable<bool> IG_Producto9 { get; set; }
-        public Nullable<bool> IG_Producto10 { get; set; }
         public Nullable<bool> CE_Opc1 { get; set; }
         public Nullable<bool> CE_Opc2 { get; set; }
         public Nullable<bool> CE_Opc3 { get; set; }
@@ -113,6 +93,7 @@ namespace MofinModelo
         public Nullable<decimal> Trim_MtoTransac { get; set; }
         public Nullable<short> Trim_NroOperFin { get; set; }
         public Nullable<short> Trim_NroOperTrans { get; set; }
+        public string IG_Email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<C_HistActClientes> C_HistActClientes { get; set; }

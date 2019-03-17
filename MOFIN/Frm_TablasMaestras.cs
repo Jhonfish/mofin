@@ -39,6 +39,8 @@ namespace MOFIN
         M_VolOperPersJur r_TablaMaestra15 = new M_VolOperPersJur();
         Grupo_Opciones r_GrupoOpciones = new Grupo_Opciones();
 
+        M_TipoOrdenes r_TablaMaestra16 = new M_TipoOrdenes();
+        M_Titulos r_TablaMaestra17 = new M_Titulos();
 
         public Frm_TablasMaestras()
         {
@@ -67,7 +69,9 @@ namespace MOFIN
             BS_MServicios.DataSource = NM_Servicios.Listar();
             BS_MTipoDocID.DataSource = NM_TipoDocID.Listar();
             BS_MTipoEstructuraEmpresa.DataSource = NM_TipoEstructuraEmpresa.Listar();
+            BS_MTipoOrdenes.DataSource = NM_TipoOrdenes.Listar();
             BS_MTipoPersJuridica.DataSource = NM_TipoPersJuridica.Listar();
+            BS_MTitulos.DataSource = NM_Titulos.Listar();
             BS_MVolOperPersNat.DataSource = NM_VolOperPersNat.Listar();
             BS_MVolOperPersJur.DataSource = NM_VolOperPersJur.Listar();
 
@@ -93,115 +97,57 @@ namespace MOFIN
                 {
                     case 0:  // "Actividad Comercial"
                         r_TablaMaestra0 = BS_TablaMaestra.Current as M_ActivComercial;
-                        //BS_MActivComercial.Position = BS_TablaMaestra.Position;
-                        //r_TablaMaestra0 = BS_MActivComercial.Current as M_ActivComercial;
-                        if (r_TablaMaestra0.Descripcion != null)
-                            vl_RegEliminar = r_TablaMaestra0.Descripcion.Trim();
                         break;
                     case 1:  // "Antigüedad"
                         r_TablaMaestra1 = BS_TablaMaestra.Current as M_Antiguedad;
-                        //BS_MAntiguedad.Position = BS_TablaMaestra.Position;
-                        //r_TablaMaestra1 = BS_MAntiguedad.Current as M_Antiguedad;
-                        if (r_TablaMaestra1.Descripcion != null)
-                            vl_RegEliminar = r_TablaMaestra1.Descripcion.Trim();
                         break;
                     case 2:  // "Criptomonedas"
                         r_TablaMaestra2 = BS_TablaMaestra.Current as M_Criptomonedas;
-                        //BS_MCriptomonedas.Position = BS_TablaMaestra.Position;
-                        //r_TablaMaestra2 = BS_MCriptomonedas.Current as M_Criptomonedas;
-                        if (r_TablaMaestra2.Descripcion != null)
-                            vl_RegEliminar = r_TablaMaestra2.Descripcion.Trim();
                         break;
                     case 3:  // "Edad"
                         r_TablaMaestra3 = BS_TablaMaestra.Current as M_Edad;
-                        //BS_MEdad.Position = BS_TablaMaestra.Position;
-                        //r_TablaMaestra3 = BS_MEdad.Current as M_Edad;
-                        if (r_TablaMaestra3.Descripcion != null)
-                            vl_RegEliminar = r_TablaMaestra3.Descripcion.Trim();
                         break;
                     case 4:  // "Estados"
                         r_TablaMaestra4 = BS_TablaMaestra.Current as M_Estados;
-                        // BS_MEstados.Position = BS_TablaMaestra.Position;
-                        // r_TablaMaestra4 = BS_MEstados.Current as M_Estados;
-                        if (r_TablaMaestra4.Descripcion != null)
-                            vl_RegEliminar = r_TablaMaestra4.Descripcion.Trim();
                         break;
                     case 5: // Nivel de Riesgo
                         r_TablaMaestra5 = BS_TablaMaestra.Current as M_NivelRiesgo;
-                        //BS_MNivelRiesgo.Position = BS_TablaMaestra.Position;
-                        //r_TablaMaestra5 = BS_MNivelRiesgo.Current as M_NivelRiesgo;
-                        if (r_TablaMaestra5.Descripcion != null)
-                            vl_RegEliminar = r_TablaMaestra5.Descripcion.Trim();
                         break;
                     case 6:  // "Pais"
                         r_TablaMaestra6 = BS_TablaMaestra.Current as M_Pais;
-                        //BS_MPais.Position = BS_TablaMaestra.Position;
-                        //r_TablaMaestra6 = BS_MPais.Current as M_Pais;
-                        if (r_TablaMaestra6.Descripcion != null)
-                            vl_RegEliminar = r_TablaMaestra6.Descripcion.Trim();
                         break;
                     case 7:  // "P.E.P."
                         r_TablaMaestra7 = BS_TablaMaestra.Current as M_PEP;
-                        //BS_MPEP.Position = BS_TablaMaestra.Position;
-                        //r_TablaMaestra7 = BS_MPEP.Current as M_PEP;
-                        if (r_TablaMaestra7.Descripcion != null)
-                            vl_RegEliminar = r_TablaMaestra7.Descripcion.Trim();
                         break;
                     case 8:  // "Productos"
                         r_TablaMaestra8 = BS_TablaMaestra.Current as M_Productos;
-                        //BS_MProductos.Position = BS_TablaMaestra.Position;
-                        //r_TablaMaestra8 = BS_MProductos.Current as M_Productos;
-                        if (r_TablaMaestra8.Descripcion != null)
-                            vl_RegEliminar = r_TablaMaestra8.Descripcion.Trim();
                         break;
                     case 9:  // "Profesión"
                         r_TablaMaestra9 = BS_TablaMaestra.Current as M_Profesiones;
-                        //BS_MProfesiones.Position = BS_TablaMaestra.Position;
-                        //r_TablaMaestra9 = BS_MProfesiones.Current as M_Profesiones;
-                        if (r_TablaMaestra9.Descripcion != null)
-                            vl_RegEliminar = r_TablaMaestra9.Descripcion.Trim();
                         break;
                     case 10:  // "Servicios"
                         r_TablaMaestra10 = BS_TablaMaestra.Current as M_Servicios;
-                        //BS_MServicios.Position = BS_TablaMaestra.Position;
-                        //r_TablaMaestra10 = BS_MServicios.Current as M_Servicios;
-                        if (r_TablaMaestra10.Descripcion != null)
-                            vl_RegEliminar = r_TablaMaestra10.Descripcion.Trim();
                         break;
                     case 11:  // "Tipo de Documento Identidad"
                         r_TablaMaestra11 = BS_TablaMaestra.Current as M_TipoDocID;
-                        //BS_MTipoDocID.Position = BS_TablaMaestra.Position;
-                        //r_TablaMaestra11 = BS_MTipoDocID.Current as M_TipoDocID;
-                        if (r_TablaMaestra11.Descripcion != null)
-                            vl_RegEliminar = r_TablaMaestra11.Descripcion.Trim();
                         break;
                     case 12:  // "Tipo de Estructura"
                         r_TablaMaestra12 = BS_TablaMaestra.Current as M_TipoEstructuraEmpresa;
-                        //BS_MTipoEstructuraEmpresa.Position = BS_TablaMaestra.Position;
-                        //r_TablaMaestra12 = BS_MTipoEstructuraEmpresa.Current as M_TipoEstructuraEmpresa;
-                        if (r_TablaMaestra12.Descripcion != null)
-                            vl_RegEliminar = r_TablaMaestra12.Descripcion.Trim();
                         break;
                     case 13:  // "Tipo de Persona Jurídica"
                         r_TablaMaestra13 = BS_TablaMaestra.Current as M_TipoPersJuridica;
-                        //BS_MTipoPersJuridica.Position = BS_TablaMaestra.Position;
-                        //r_TablaMaestra13 = BS_MTipoPersJuridica.Current as M_TipoPersJuridica;
-                        if (r_TablaMaestra13.Descripcion != null)
-                            vl_RegEliminar = r_TablaMaestra13.Descripcion.Trim();
                         break;
                     case 14:  // "Vol. Oper. Pers. Natural"
                         r_TablaMaestra14 = BS_TablaMaestra.Current as M_VolOperPersNat;
-                        //BS_MVolOperPersNat.Position = BS_TablaMaestra.Position;
-                        //r_TablaMaestra14 = BS_MVolOperPersNat.Current as M_VolOperPersNat;
-                        if (r_TablaMaestra14.Descripcion != null)
-                            vl_RegEliminar = r_TablaMaestra14.Descripcion.Trim();
                         break;
                     case 15:  // "Vol. Oper. Pers. Jurídica"
                         r_TablaMaestra15 = BS_TablaMaestra.Current as M_VolOperPersJur;
-                        //BS_MVolOperPersJur.Position = BS_TablaMaestra.Position;
-                        //r_TablaMaestra15 = BS_MVolOperPersJur.Current as M_VolOperPersJur;
-                        if (r_TablaMaestra15.Descripcion != null)
-                            vl_RegEliminar = r_TablaMaestra15.Descripcion.Trim();
+                        break;
+                    case 16:  // "Vol. Oper. Pers. Jurídica"
+                        r_TablaMaestra16 = BS_TablaMaestra.Current as M_TipoOrdenes;
+                        break;
+                    case 17:  // "Vol. Oper. Pers. Jurídica"
+                        r_TablaMaestra17 = BS_TablaMaestra.Current as M_Titulos;
                         break;
                 }
             }
@@ -241,14 +187,17 @@ namespace MOFIN
         {
             this.Txt_CodAlfa2.DataBindings.Clear();
             this.Txt_CodAlfa3.DataBindings.Clear();
+            this.Txt_ISINCode.DataBindings.Clear();
 
             this.Cmb_Pais.Visible = false;
             this.Txt_CodAlfa2.Visible = false;
             this.Txt_CodAlfa3.Visible = false;
+            this.Txt_ISINCode.Visible = false;
 
             this.Lbl_Pais.Visible = false;
             this.Lbl_CodAlfa2.Visible = false;
             this.Lbl_CodAlfa3.Visible = false;
+            this.Lbl_ISINCode.Visible = false;
 
             switch (Cmb_TablaMaestra.SelectedIndex)
             {
@@ -308,6 +257,15 @@ namespace MOFIN
                     break;
                 case 15:  // "Vol. Oper. Pers. Jurídica"
                     BS_TablaMaestra.DataSource = BS_MVolOperPersJur;
+                    break;
+                case 16:  // "Tipo de Ordenes"
+                    BS_TablaMaestra.DataSource = BS_MTipoOrdenes;
+                    break;
+                case 17:  // "Títulos"
+                    BS_TablaMaestra.DataSource = BS_MTitulos;
+                    this.Txt_ISINCode.DataBindings.Add("Text", BS_TablaMaestra, "ISIN");
+                    this.Txt_ISINCode.Visible = true;
+                    this.Lbl_ISINCode.Visible = true;
                     break;
             }
             BS_TablaMaestra.MoveFirst();
@@ -534,6 +492,30 @@ namespace MOFIN
                         NM_VolOperPersJur.Actualizar(r_TablaMaestra15);
                     BS_MVolOperPersJur.DataSource = NM_VolOperPersJur.Listar();
                     break;
+                case 16:  // "Tipo de Orden"
+                    r_TablaMaestra16.Codigo = short.Parse(Txt_Codigo.Text);
+                    r_TablaMaestra16.Descripcion = this.Txt_Nombre.Text.Trim();
+                    r_TablaMaestra16.Valor = byte.Parse(this.NUD_Valor.Value.ToString());
+                    r_TablaMaestra16.CondEspSeguridad = this.Chk_CES.Checked;
+                    if (vl_EsNuevo)
+                        NM_TipoOrdenes.Insertar(r_TablaMaestra16);
+                    else
+                        NM_TipoOrdenes.Actualizar(r_TablaMaestra16);
+                    BS_MTipoOrdenes.DataSource = NM_TipoOrdenes.Listar();
+                    break;
+                case 17:  // "Títulos"
+                    r_TablaMaestra17.Codigo = Txt_Codigo.Text.Trim();
+                    r_TablaMaestra17.ISIN = Txt_ISINCode.Text.Trim();
+                    r_TablaMaestra17.Descripcion = this.Txt_Nombre.Text.Trim();
+                    r_TablaMaestra17.Valor = byte.Parse(this.NUD_Valor.Value.ToString());
+                    r_TablaMaestra17.CondEspSeguridad = this.Chk_CES.Checked;
+                    if (vl_EsNuevo)
+                        NM_Titulos.Insertar(r_TablaMaestra17);
+                    else
+                        NM_Titulos.Actualizar(r_TablaMaestra17);
+                    BS_MTitulos.DataSource = NM_Titulos.Listar();
+                    break;
+
             }
             this.Modo_Consulta();
         }
@@ -613,15 +595,15 @@ namespace MOFIN
             this.Txt_Nombre.Focus();
         }
 
-        private void TSB_Salir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void TSB_Eliminar_Click(object sender, EventArgs e)
         {
-            DialogResult vl_Resp = MessageBox.Show(MOFIN_LIB.Funciones._Mens_Idioma(9010) + "\n\n"+ vl_RegEliminar,
-                MOFIN_LIB.Funciones._Mens_Idioma(201), MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Grd_Detalles.CurrentRow != null)
+            {
+                vl_RegEliminar = Grd_Detalles.CurrentRow.Cells["Col_Nombre"].Value.ToString();
+            }
+
+            DialogResult vl_Resp = MessageBox.Show(Funciones._Mens_Idioma(9010) + "\n\n"+ vl_RegEliminar,
+                Funciones._Mens_Idioma(201), MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (vl_Resp == DialogResult.Yes)
             {
                 switch (Cmb_TablaMaestra.SelectedIndex)
@@ -702,6 +684,11 @@ namespace MOFIN
 
         }
 
+        private void TSB_Salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void TSB_Primero_Click(object sender, EventArgs e)
         {
             BS_TablaMaestra.MoveFirst();
@@ -757,7 +744,7 @@ namespace MOFIN
             this.Lbl_CodAlfa3.Text = MOFIN_LIB.Funciones._Mens_Idioma(10003)+"3";
             this.Lbl_CondEspSeguridad.Text = MOFIN_LIB.Funciones._Mens_Idioma(10004);
             this.Cmb_TablaMaestra.Items.Clear();
-            for (int i = 0; i < 16; i++)
+            for (int i = 0; i < 18; i++)
                 this.Cmb_TablaMaestra.Items.Add(MOFIN_LIB.Funciones._Mens_Idioma(10011 + i));
             
             this.TSB_Primero.Text = MOFIN_LIB.Funciones._Mens_Idioma(131);

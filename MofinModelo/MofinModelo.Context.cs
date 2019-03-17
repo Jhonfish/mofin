@@ -52,5 +52,10 @@ namespace MofinModelo
         public virtual DbSet<O_OperTransaccionales> O_OperTransaccionales { get; set; }
         public virtual DbSet<O_RepOperacional> O_RepOperacional { get; set; }
         public virtual DbSet<C_ProdServ> C_ProdServ { get; set; }
+        public virtual DbSet<M_Titulos> M_Titulos { get; set; }
+        public virtual DbSet<M_TipoOrdenes> M_TipoOrdenes { get; set; }
+        public virtual DbSet<Exp_Clientes> Exp_Clientes { get; set; }
+        public virtual DbSet<Exp_LibroOrdenes> Exp_LibroOrdenes { get; set; }
+        public virtual DbSet<L_LibroOrdenes> L_LibroOrdenes { get; set; }
     }
 }

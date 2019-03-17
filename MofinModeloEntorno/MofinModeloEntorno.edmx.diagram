@@ -10,7 +10,7 @@
         <EntityTypeShape EntityType="MofinModeloEntorno.Grupo_Opciones" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="MofinModeloEntorno.Grupos" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="MofinModeloEntorno.Idiomas" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MofinModeloEntorno.Opc_Sistema" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MofinModeloEntorno.Opc_Sistema" Width="1.875" PointX="7.625" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="MofinModeloEntorno.sysdiagrams" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MofinModeloEntorno.Usuarios" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
         <AssociationConnector Association="MofinModeloEntorno.FK_Emp_Accesos_Empresas1" ManuallyRouted="false" />

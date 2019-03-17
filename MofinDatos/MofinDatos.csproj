@@ -53,6 +53,10 @@
     <Compile Include="DC_HistActClientes.cs" />
     <Compile Include="DC_ProdServ.cs" />
     <Compile Include="DC_ValorItemConsExp.cs" />
+    <Compile Include="DExp_LibroOrdenes.cs" />
+    <Compile Include="DM_TipoOrdenes.cs" />
+    <Compile Include="DM_Titulos.cs" />
+    <Compile Include="DOpc_Sistema.cs" />
     <Compile Include="DIdiomas.cs" />
     <Compile Include="DEmpresas.cs" />
     <Compile Include="DEmp_Accesos.cs" />
@@ -76,6 +80,7 @@
     <Compile Include="DM_VolOperPersNat.cs" />
     <Compile Include="DO_HistPerfOperac.cs" />
     <Compile Include="DO_Observaciones.cs" />
+    <Compile Include="DL_LibroOrdenes.cs" />
     <Compile Include="DO_Operfinancieras.cs" />
     <Compile Include="DO_OperTransaccionales.cs" />
     <Compile Include="DO_RepOperacional.cs" />

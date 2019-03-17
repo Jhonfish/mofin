@@ -31,7 +31,9 @@ namespace MOFIN
             this.Asigna_Nombres(null, null);
             //TS_MenuPrincipal.ForeColor = Color.White; ;
             //this.Inicio();
-            this.Lbl_Detalle1.Text = NEmpresas.GetNombre(Entorno.vs_Empresa) + " | " + Entorno.vs_Usuario + " | " + NGrupos.GetNombre(Entorno.vs_Grupo);
+             this.Lbl_Detalle1.Text = NEmpresas.GetNombre(Entorno.vs_Empresa) + " | " + Entorno.vs_Usuario
+                                         + " | " + NGrupos.GetNombre(Entorno.vs_Grupo).Trim() + " | " + Funciones._Mens_Idioma(300 + Entorno.vs_Pais);
+
         }
 
         #region IForm Members
@@ -52,18 +54,20 @@ namespace MOFIN
             Ope_Financieras.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Mon_Financiero == null ? false : (bool)r_GrupoOpciones.Mon_Financiero;
             Ope_Transaccionales.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Mon_Operacional == null ? false : (bool)r_GrupoOpciones.Mon_Operacional;
             Mnu_TablasMaestras.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Tablas_Maestras == null ? false : (bool)r_GrupoOpciones.Tablas_Maestras;
-            Mnu_TablasMaestras.Visible = MOFIN_LIB.Entorno.vs_Maestro;
+            Mnu_TablasMaestras.Visible = Entorno.vs_Maestro;
             Tab_Maestros.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Tab_Maestras == null ? false : (bool)r_GrupoOpciones.Tab_Maestras;
             Mnu_Herramientas.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Opc_Sistema == null ? false : (bool)r_GrupoOpciones.Opc_Sistema;
             Her_Empresas.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Ops_Empresas == null ? false : (bool)r_GrupoOpciones.Ops_Empresas;
             Her_Grupos.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Ops_Grupos == null ? false : (bool)r_GrupoOpciones.Ops_Grupos;
             Her_Usuarios.Enabled = Entorno.vs_Maestro ? true : r_GrupoOpciones.Ops_Usuarios == null ? false : (bool)r_GrupoOpciones.Ops_Usuarios;
+            Her_ParamGrles.Visible = Entorno.vs_Maestro;
         }
 
         #endregion
 
         private void Frm_Desktop_Load(object sender, EventArgs e)
         {
+            this.ActualizaMenu();
         }
 
         private void Inicio()
@@ -128,11 +132,6 @@ namespace MOFIN
         {
         }
 
-         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SS_BarradeEstadoPrincipal.Visible = Ver_BarraStado.Checked;
-        }
-
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.Cascade);
@@ -181,6 +180,13 @@ namespace MOFIN
             childForm.Show();
         }
 
+        private void Her_ParamGrles_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Frm_ParamGrles();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
         private void Arc_SelEmpresa_Click(object sender, EventArgs e)
         {
             Form childForm = new Frm_SeleccionEmpresa();
@@ -223,57 +229,61 @@ namespace MOFIN
 
         private void CambiaImagen()
         {
-            Random vl_Rnd = new Random();
-            int aleatorio = vl_Rnd.Next(0, 7);
-            switch (aleatorio)
+            if (Entorno.vs_FondoEscritorio == 1)
+                this.BackgroundImage = global::MOFIN.Properties.Resources.desktop0;
+            else
             {
-                case 0:
-                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop0;
-                    break;
-                case 1:
-                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop1;
-                    break;
-                case 2:
-                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop2;
-                    break;
-                case 3:
-                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop3;
-                    break;
-                case 4:
-                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop4;
-                    break;
-                case 5:
-                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop5;
-                    break;
-                case 6:
-                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop6;
-                    break;
-                case 7:
-                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop7;
-                    break;
-/*                case 8:
-                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop8;
-                    break;
-                case 9:
-                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop9;
-                    break;
-                case 10:
-                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop10;
-                    break;
-                case 11:
-                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop11;
-                    break;
-                case 12:
-                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop12;
-                    break;
-                case 13:
-                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop13;
-                    break;
-                case 14:
-                    this.BackgroundImage = global::MOFIN.Properties.Resources.desktop14;
-                    break;*/
+                Random vl_Rnd = new Random();
+                int aleatorio = vl_Rnd.Next(0, Entorno.vs_NroDesktops);
+                switch (aleatorio)
+                {
+                    case 0:
+                        this.BackgroundImage = global::MOFIN.Properties.Resources.desktop0;
+                        break;
+                    case 1:
+                        this.BackgroundImage = global::MOFIN.Properties.Resources.desktop1;
+                        break;
+                    case 2:
+                        this.BackgroundImage = global::MOFIN.Properties.Resources.desktop2;
+                        break;
+                    case 3:
+                        this.BackgroundImage = global::MOFIN.Properties.Resources.desktop3;
+                        break;
+                    case 4:
+                        this.BackgroundImage = global::MOFIN.Properties.Resources.desktop4;
+                        break;
+                    case 5:
+                        this.BackgroundImage = global::MOFIN.Properties.Resources.desktop5;
+                        break;
+                    case 6:
+                        this.BackgroundImage = global::MOFIN.Properties.Resources.desktop6;
+                        break;
+                    case 7:
+                        this.BackgroundImage = global::MOFIN.Properties.Resources.desktop7;
+                        break;
+                        /*                case 8:
+                                            this.BackgroundImage = global::MOFIN.Properties.Resources.desktop8;
+                                            break;
+                                        case 9:
+                                            this.BackgroundImage = global::MOFIN.Properties.Resources.desktop9;
+                                            break;
+                                        case 10:
+                                            this.BackgroundImage = global::MOFIN.Properties.Resources.desktop10;
+                                            break;
+                                        case 11:
+                                            this.BackgroundImage = global::MOFIN.Properties.Resources.desktop11;
+                                            break;
+                                        case 12:
+                                            this.BackgroundImage = global::MOFIN.Properties.Resources.desktop12;
+                                            break;
+                                        case 13:
+                                            this.BackgroundImage = global::MOFIN.Properties.Resources.desktop13;
+                                            break;
+                                        case 14:
+                                            this.BackgroundImage = global::MOFIN.Properties.Resources.desktop14;
+                                            break;*/
+                }
             }
-
         }
         private void Asigna_Nombres(object sender, EventArgs e)
         {
@@ -294,9 +304,6 @@ namespace MOFIN
                 this.Edi_Copiar.Text = Funciones._Mens_Idioma(415);
                 this.Edi_Pegar.Text = Funciones._Mens_Idioma(416);
                 this.Edi_SelecTodo.Text = Funciones._Mens_Idioma(417);
-
-            this.Mnu_Ver.Text = Funciones._Mens_Idioma(421);
-                this.Ver_BarraStado.Text = Funciones._Mens_Idioma(422);
 
             this.Mnu_Clientes.Text = Funciones._Mens_Idioma(7321);
                 this.Cli_Monitor.Text = Funciones._Mens_Idioma(11000);
@@ -335,6 +342,14 @@ namespace MOFIN
         private void Frm_Desktop_Activated(object sender, EventArgs e)
         {
             this.Lbl_Detalle1.Text = NEmpresas.GetNombre(Entorno.vs_Empresa) + " / " + Entorno.vs_Usuario + " / " + NGrupos.GetNombre(Entorno.vs_Grupo);
+
+        }
+
+        private void Ord_LibroOrdenes_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Frm_LibroOrdenes();
+            childForm.MdiParent = this;
+            childForm.Show();
 
         }
     }
